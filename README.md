@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MCC Website
 
-## Getting Started
+- MCCのホームページ
+- Next.jsで作り、GitHub Pagesで公開
+- コンテンツがどうしても少ないので、アニメーションなど見た目や動きに力を入れたい。（できるとは言っていない）
+- ほかの部員がみてもある程度理解できるようにしたい。
 
-First, run the development server:
+## 概要
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- `/pages`以下にtsxファイルを追加。`フォルダ名/ファイル名`がそのままURLでそのページへのパスになる。
+- `/components`以下に、各ページに共通する部分などを小分けに入れておき、使いまわす。
+- tsxファイルとは、拡張子が`.tsx`で、TypeScriptの中にHTMLを書くようなイメージ。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## キーワード
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+`SSG`, `SPA`, `JAMStack`, `React`, ...
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+気になったら調べてね。
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+# 環境（2022.11現在）
 
-## Learn More
+- Node.js: v18.12.1
+- Next.js: v13
+- TypeScript: v4.9.3
 
-To learn more about Next.js, take a look at the following resources:
+# メンテ
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 後で書きます。
+- 何かあればIssueに。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# 開発記録（備忘録）
 
-## Deploy on Vercel
+## 引継ぎではなしたこと
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- リニューアルに際し、GitHubリポジトリは新しくつくる。
+- フレームワークはNuxtではなくNextを使う。
+- 記事の更新は、当面はプロジェクトをクローンしてマークダウンで追加。
+- いずれMicro CMSのようなヘッドレスCMSを導入したいが、アカウント管理・引継ぎが面倒。
+- GitHub ActionsでCD/CIを実装する。
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 今のところの方針（変わる可能性あり）
+
+- 阿部寛のようにはしない
+- cssのフレームワークは`Chakra UI`を使う。
+
+## Next.jsプロジェクトを作成した
+
+1. `nvm`(`node.js`のバージョン管理ツールの1つ)のアップデート。`apt`で管理できないので忘れがちかも
+2. `node.js`のアップデート。`nvm install --lts`
+3. 親ディレクトリにて、`npx create-next-app@latest`を実行（Next.js公式HPを参照のこと）
+4. プロジェクト名を聞かれる。TypeScriptを使うかと、ESLintを使うかを聞かれるので、両方`Yes`
+5. 完了（超らくちん）
+
+`git init`なども自動でされるので、あとはリモートを追加して`push`!
