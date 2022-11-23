@@ -47,3 +47,6 @@
 
 ## 開発記録（備忘録みたいな感じ）
 
+ここに書くとかさむので、移動しました。
+
+https://github.com/tuatmcc/mcc-website/wiki
