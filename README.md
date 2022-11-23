@@ -49,4 +49,4 @@
 
 ここに書くとかさむので、移動しました。
 
-https://github.com/tuatmcc/mcc-website/wiki
+[このリポジトリのwiki](https://github.com/tuatmcc/mcc-website/wiki)
