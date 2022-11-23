@@ -27,7 +27,7 @@
 - 後で書きます。
 - 何かあればIssueに。
 
-## 開発記録（備忘録みたいな）
+## リニューアルにあたって
 
 ### 引継ぎではなしたこと
 
@@ -37,15 +37,18 @@
 - いずれMicro CMSのようなヘッドレスCMSを導入したいが、アカウント管理・引継ぎが面倒。
 - GitHub ActionsでCD/CIを実装する。
 - developブランチで開発・編集、master(main)にマージして自動デプロイ
+- `yarn`じゃなくて`npm`だけでパッケージ管理する。
 
 ### 今のところの方針（変わる可能性あり）
 
 - 阿部寛のようにはしない
 - cssのフレームワークは`Chakra UI`を使う。
 
-### Next.jsプロジェクトを作成した
+## 開発記録（備忘録みたいな感じ）
 
-wsl(Ubuntu)でやってます。
+### Next.js プロジェクトを作成した
+
+wsl(Ubuntu)でやってます。IDEとかは使わずVSCodeを使用。
 
 1. `nvm`(`node.js`のバージョン管理ツールの1つ)のアップデート。`apt`で管理できないので忘れがちかも
 2. `node.js`のアップデート。`nvm install --lts`
@@ -54,3 +57,25 @@ wsl(Ubuntu)でやってます。
 5. 完了（超らくちん）
 
 `git init`なども自動でされるので、あとはリモートを追加して`push`!
+
+### Chakra UI を導入した
+
+1. 公式の通り`npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6`を実行。
+2. `_app.tsx`を編集
+
+```tsx
+import '../styles/globals.css'
+import type { AppProps } from 'next/app'
+import { ChakraProvider } from '@chakra-ui/react'
+
+const App = ({ Component, pageProps }: AppProps) => {
+  return (
+    <ChakraProvider>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  )
+}
+
+export default App
+
+```
