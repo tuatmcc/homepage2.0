@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { TitleCanvas } from '../components/title-animations'
 
 const Home = () => {
   return (
@@ -15,11 +16,10 @@ const Home = () => {
       </Head>
 
       <main className={styles.main}>
+        <TitleCanvas />
         <h1 className={styles.title}>
           <Image alt="logo" width={130} height={130} src="/mcc-logo.svg" />
-          <span className='title-m1'>M</span>
-          <span>C</span>
-          <span>C</span>
+          M<span style={{fontSize: '1rem'}}>icro</span>C<span style={{fontSize: '1rem'}}>omputer</span>C<span style={{fontSize: '1rem'}}>lub</span>
         </h1>
       </main>
     </div>
