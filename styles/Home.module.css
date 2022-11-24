@@ -42,7 +42,10 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 10rem;
+  font-weight: bold;
+  font-family: fantasy;
+  overflow: hidden;
 }
 
 .title,
@@ -127,3 +130,5 @@
     filter: invert(1);
   }
 }
+
+
