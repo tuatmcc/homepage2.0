@@ -2,8 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { TitleCanvas } from '../components/title-animations'
+import { NextPage } from 'next'
 
-const Home = () => {
+const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>

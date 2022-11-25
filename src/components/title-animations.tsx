@@ -1,4 +1,4 @@
-import React, { Context, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 /**
  * 位置が固定されたcanvas
@@ -24,7 +24,7 @@ export const TitleCanvas = () => {
     const ctx = canvas.getContext('2d')
     if (canvas && ctx) {
       // 全アニメーションはここで実行される
-      moveAnimation(canvas, ctx, false)
+      moveAnimation(canvas, ctx, true)
     }
     setContext(ctx || undefined)
   }, [])
@@ -52,7 +52,7 @@ const moveAnimation = (
     bgColor: '#333333',
     color: '#eee',
     font1: `${canvas.width / 50}px 游明朝`,
-    text1: '東京農工大学　Tech系サークル',
+    text1: '東京農工大学　の　Tech系サークル',
     currentTextIndex: 0,
     draw() {
       if (isPointing) return
