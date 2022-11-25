@@ -24,7 +24,7 @@ export const TitleCanvas = () => {
     const ctx = canvas.getContext('2d')
     if (canvas && ctx) {
       // 全アニメーションはここで実行される
-      moveAnimation(canvas, ctx, true)
+      moveAnimation(canvas, ctx, false)
     }
     setContext(ctx || undefined)
   }, [])
