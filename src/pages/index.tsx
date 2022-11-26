@@ -3,7 +3,6 @@ import Image from 'next/image'
 import styles from '../styles/home.module.css'
 import { NextPage } from 'next'
 import { HomeContainer, HomeLayer } from '../components/home-layers'
-import { TitleCanvas } from '../components/title-animations'
 
 /**
  * サイトのトップページ。パスは'/'でマッチします
