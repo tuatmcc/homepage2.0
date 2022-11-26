@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next lint && prettier --write . && next dev",
     "build": "next build",
-    "export": "next build && next export -o docs",
+    "export": "npm run build && next export -o docs",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint && prettier --write ."
   },
   "dependencies": {
     "@chakra-ui/react": "^2.4.1",
