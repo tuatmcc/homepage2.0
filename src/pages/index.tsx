@@ -14,16 +14,19 @@ const Home: NextPage = () => {
       <Head>
         <title>HOME - MCC</title>
         <meta
-          name="description"
-          content="東京農工大学公認サークルMCC(マイクロコンピュータクラブ)のホームページです"
+          lang='ja'
+          name='description'
+          content='東京農工大学公認サークルMCC(マイクロコンピュータクラブ)のホームページです'
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <TitleLayer className={styles.main}>
         <h1 className={styles.title}>
-          <Image alt="logo" width={130} height={130} src="/mcc-logo.svg" />
-          M<span style={{fontSize: '1rem'}}>icro</span>C<span style={{fontSize: '1rem'}}>omputer</span>C<span style={{fontSize: '1rem'}}>lub</span>
+          <Image alt='logo' width={130} height={130} src='/mcc-logo.svg' />M
+          <span style={{ fontSize: '1rem' }}>icro</span>C
+          <span style={{ fontSize: '1rem' }}>omputer</span>C
+          <span style={{ fontSize: '1rem' }}>lub</span>
         </h1>
       </TitleLayer>
     </div>
