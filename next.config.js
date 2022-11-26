@@ -17,7 +17,7 @@ const withMDX = require('@next/mdx')({
     // https://github.com/remarkjs/remark-gfm#install
     remarkPlugins: [],
     rehypePlugins: [],
-    providerImportSource: "@mdx-js/react",
+    providerImportSource: '@mdx-js/react',
   },
 })
 module.exports = withMDX({

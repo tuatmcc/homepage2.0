@@ -1,6 +1,6 @@
-import {ReactElement} from "react"
+import { ReactElement } from 'react'
 
-const TitleLayer = (props: { children: ReactElement, className: string }) => {
+const TitleLayer = (props: { children: ReactElement; className: string }) => {
   return (
     <div
       style={{
@@ -19,7 +19,7 @@ const TitleLayer = (props: { children: ReactElement, className: string }) => {
     >
       {props.children}
     </div>
-  );
+  )
 }
 
 export default TitleLayer

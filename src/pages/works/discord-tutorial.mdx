@@ -1,8 +1,8 @@
 export const meta = {
-    title: 'Discord Bot チュートリアル',
-    // description:
-    // img: 'first-blog-post.jpg'
-    // category: 'dev'
+  title: 'Discord Bot チュートリアル',
+  // description:
+  // img: 'first-blog-post.jpg'
+  // category: 'dev'
 }
 
 import Image from 'next/image'
@@ -135,11 +135,11 @@ Bot をサーバーに追加していきます。最初にテスト用のサー�
 1. Discord にログインした状態で、Discord Developer Portal の[Application](https://discord.com/developers/applications/)ページに移動してください。
 2. 右上の`New Application`をクリックして、いい感じの名前をつけて`Create`してください。
 
-<Image alt={'image'} src="/works/discord-tutorial/create_app.png"/>
+<Image alt={'image'} src='/works/discord-tutorial/create_app.png' />
 
 3. 左のメニューから`Bot`をクリックして、`Add Bot -> Yes, do it!`をクリックしてください。`A wild bot has appeared!`みたいなメッセージが表示されれば OK です。
 
-<Image alt={'image'} src="/works/discord-tutorial/add_bot.png"/>
+<Image alt={'image'} src='/works/discord-tutorial/add_bot.png' />
 
 ### Bot をサーバーに招待
 
@@ -263,11 +263,11 @@ client.login(process.env.TOKEN)
 
 1. Discord アプリの設定画面を開き、「詳細設定」の「開発者モード」をオンにしておきます。
 
-<Image alt={''} src="/works/discord-tutorial/devmode.png"/>
+<Image alt={''} src='/works/discord-tutorial/devmode.png' />
 
 1. サーバーアイコン上で右クリックして、「ID をコピー」を選択します。サーバー ID がクリップボードにコピーされます。
 
-<Image alt={''} src="/works/discord-tutorial/copy_server_id.png"/>
+<Image alt={''} src='/works/discord-tutorial/copy_server_id.png' />
 
 `.env`に次の項目を追記してください。`<サーバーID>`は実際の値に置き換えてください。
 
