@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 /**
- * 位置が固定されたcanvas
+ * ボツにしました。タイプライターとスポットライト的演出
  * @returns <div><canvas>
  */
 export const TitleCanvas = () => {

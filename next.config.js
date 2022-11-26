@@ -17,10 +17,13 @@ const withMDX = require('@next/mdx')({
     // https://github.com/remarkjs/remark-gfm#install
     remarkPlugins: [],
     rehypePlugins: [],
-    providerImportSource: "@mdx-js/react",
+    providerImportSource: '@mdx-js/react',
   },
 })
 module.exports = withMDX({
   // Append the default value with md extensions
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  images: {
+    unoptimized: true,
+  },
 })
