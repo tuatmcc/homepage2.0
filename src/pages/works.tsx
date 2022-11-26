@@ -1,4 +1,3 @@
-import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import { PostCollector, Post }from '../lib/post-collector'
 
@@ -23,6 +22,6 @@ const Works = ({ posts }: Props) => {
 
 
 // This function gets called at build time on server-side.
-export const getStaticProps: GetStaticProps<{ posts: Post[] }> = new PostCollector('works').getStaticProps
+export const getStaticProps = new PostCollector('works').getStaticProps
 
 export default Works
