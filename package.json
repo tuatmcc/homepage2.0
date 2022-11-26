@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next lint && prettier --write . && next dev",
+    "dev": "next dev",
     "build": "next build",
     "export": "npm run build && next export -o docs",
     "start": "next start",

@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/home.module.css'
 import { NextPage } from 'next'
-import TitleLayer from '../components/title-layer'
+import { HomeContainer, HomeLayer } from '../components/home-layers'
+import { TitleCanvas } from '../components/title-animations'
 
 /**
  * サイトのトップページ。パスは'/'でマッチします
@@ -10,7 +11,7 @@ import TitleLayer from '../components/title-layer'
  */
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>HOME - MCC</title>
         <meta
@@ -21,15 +22,20 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <TitleLayer className={styles.main}>
-        <h1 className={styles.title}>
-          <Image alt='logo' width={130} height={130} src='/mcc-logo.svg' />M
-          <span style={{ fontSize: '1rem' }}>icro</span>C
-          <span style={{ fontSize: '1rem' }}>omputer</span>C
-          <span style={{ fontSize: '1rem' }}>lub</span>
-        </h1>
-      </TitleLayer>
-    </div>
+      <HomeContainer>
+        <HomeLayer>
+          <h1 className={styles.title}>
+            <Image alt='logo' width={130} height={130} src='/mcc-logo.svg' />M
+            <span style={{ fontSize: '1rem' }}>icro</span>C
+            <span style={{ fontSize: '1rem' }}>omputer</span>C
+            <span style={{ fontSize: '1rem' }}>lub</span>
+          </h1>
+        </HomeLayer>
+        <HomeLayer>
+          <h2 className={styles.subTitle}>東京農工大学公認サークル</h2>
+        </HomeLayer>
+      </HomeContainer>
+    </>
   )
 }
 
