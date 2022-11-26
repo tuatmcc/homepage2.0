@@ -36,5 +36,8 @@ yarn-error.log*
 next-env.d.ts
 
 # editors
-.vscode
-.idea
+/.vscode
+/.idea
+
+# wiki
+/*.wiki
