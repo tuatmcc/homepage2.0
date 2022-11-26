@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next build && next export",
+    "export": "npm run build && next export -o docs",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint && prettier --write ."
   },
   "dependencies": {
     "@chakra-ui/react": "^2.4.1",
@@ -29,6 +29,9 @@
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.5.0",
-    "prettier": "2.8.0"
+    "prettier": "2.8.0",
+    "stylelint": "^14.15.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-standard": "^29.0.0"
   }
 }
