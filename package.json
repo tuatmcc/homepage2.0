@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "npm run build && next export -o docs",
+    "export": "npm run build && next export",
     "start": "next start",
     "lint": "next lint && prettier --write ."
   },
