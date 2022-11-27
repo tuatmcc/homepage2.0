@@ -29,7 +29,7 @@ export const HomeLayer = (props: { children?: ReactElement }) => {
 /**
  * 重なるレイヤーのコンテナを作成する。
  * @param props children
- * @returns 
+ * @returns
  */
 export const HomeContainer = (props: {
   children: ReactElement | ReactElement[]

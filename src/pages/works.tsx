@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { PostCollector, Post }from '../lib/post-collector'
+import { PostCollector, Post } from '../lib/post-collector'
 
 interface Props {
   posts: Post[]
@@ -19,7 +19,6 @@ const Works = ({ posts }: Props) => {
     </ul>
   )
 }
-
 
 // This function gets called at build time on server-side.
 export const getStaticProps = new PostCollector('works').getStaticProps

@@ -1,42 +1,33 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Unity WebGL Player | mcc-website</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <link rel="stylesheet" href="TemplateData/style.css" />
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas"></canvas>
-      <script>
-        var canvas = document.getElementById("unity-canvas");
-        var reseizeCanvas = () => {
-          canvas.width = window.innerWidth + 'px';
-          canvas.height = window.innerHeight + 'px';
-        };
-        addEventListener('resize', (event) => reseizeCanvas);
-        addEventListener('load', (event) => reseizeCanvas);
-      </script>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
-      <div id="unity-warning"> </div>
+      <div id="unity-warning"></div>
       <div id="unity-footer">
         <div id="unity-fullscreen-button" hidden></div>
       </div>
     </div>
     <script>
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      var warningBanner = document.querySelector("#unity-warning");
+      var container = document.querySelector('#unity-container')
+      var canvas = document.querySelector('#unity-canvas')
+      var loadingBar = document.querySelector('#unity-loading-bar')
+      var progressBarFull = document.querySelector('#unity-progress-bar-full')
+      var fullscreenButton = document.querySelector('#unity-fullscreen-button')
+      var warningBanner = document.querySelector('#unity-warning')
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
@@ -46,34 +37,37 @@
       // user.
       function unityShowBanner(msg, type) {
         function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+          warningBanner.style.display = warningBanner.children.length
+            ? 'block'
+            : 'none'
         }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
+        var div = document.createElement('div')
+        div.innerHTML = msg
+        warningBanner.appendChild(div)
+        if (type == 'error') div.style = 'background: red; padding: 10px;'
         else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
+          if (type == 'warning')
+            div.style = 'background: yellow; padding: 10px;'
+          setTimeout(function () {
+            warningBanner.removeChild(div)
+            updateBannerVisibility()
+          }, 5000)
         }
-        updateBannerVisibility();
+        updateBannerVisibility()
       }
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Builds.loader.js";
+      var buildUrl = 'Build'
+      var loaderUrl = buildUrl + '/Builds.loader.js'
       var config = {
-        dataUrl: buildUrl + "/Builds.data",
-        frameworkUrl: buildUrl + "/Builds.framework.js",
-        codeUrl: buildUrl + "/Builds.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "mcc-website",
-        productVersion: "1.0.2",
+        dataUrl: buildUrl + '/Builds.data',
+        frameworkUrl: buildUrl + '/Builds.framework.js',
+        codeUrl: buildUrl + '/Builds.wasm',
+        streamingAssetsUrl: 'StreamingAssets',
+        companyName: 'DefaultCompany',
+        productName: 'mcc-website',
+        productVersion: '1.0.2',
         showBanner: unityShowBanner,
-      };
+      }
 
       // By default Unity keeps WebGL canvas render target size matched with
       // the DOM size of the canvas element (scaled by window.devicePixelRatio)
@@ -85,40 +79,49 @@
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
 
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
+        var meta = document.createElement('meta')
+        meta.name = 'viewport'
+        meta.content =
+          'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes'
+        document.getElementsByTagName('head')[0].appendChild(meta)
+        container.className = 'unity-mobile'
+        canvas.className = 'unity-mobile'
 
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
         // config.devicePixelRatio = 1;
 
-        unityShowBanner('WebGL builds are not supported on mobile devices.');
+        unityShowBanner('WebGL builds are not supported on mobile devices.')
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-
       }
 
-      loadingBar.style.display = "block";
+      loadingBar.style.display = 'block'
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
+      var script = document.createElement('script')
+      script.src = loaderUrl
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
+          progressBarFull.style.width = 100 * progress + '%'
+        })
+          .then((unityInstance) => {
+            loadingBar.style.display = 'none'
+            fullscreenButton.onclick = () => {
+              unityInstance.SetFullscreen(1)
+            }
+          })
+          .catch((message) => {
+            alert(message)
+          })
+      }
+      document.body.appendChild(script)
+      
+      var checkIfLoaded = setInterval(function() {
+        if (loadingBarFull) {
+          clearInterval(checkIfLoaded);
+          document.getElementById('unity-container').hidden = true;
+        }
+      }, 100);
     </script>
   </body>
 </html>

@@ -29,7 +29,7 @@ const Home = () => {
           </h1>
         </HomeLayer>
         <HomeLayer>
-          <div className={styles.curtain}>
+          <div>
             <h2 className={styles.subTitle}>東京農工大学公認サークル</h2>
           </div>
         </HomeLayer>

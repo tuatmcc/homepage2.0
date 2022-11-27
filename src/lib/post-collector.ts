@@ -9,11 +9,10 @@ export interface Post {
 }
 
 export class PostCollector {
-
   targetDir: string
 
   /**
-   * 
+   *
    * @param targetDir src/pages/targetDir
    */
   constructor(targetDir: string) {
@@ -21,13 +20,15 @@ export class PostCollector {
   }
 
   getStaticProps: GetStaticProps<{ posts: Post[] }> = async () => {
-
     // https://nextjs.org/docs/api-reference/data-fetching/get-static-props#reading-files-use-processcwd
-    
+
     // This function gets called at build time on server-side.
     // It won't be called on client-side, so you can even do
     // direct database queries.
-    const postsDirectory = path.join(process.cwd(), `src/pages/${this.targetDir}`)
+    const postsDirectory = path.join(
+      process.cwd(),
+      `src/pages/${this.targetDir}`
+    )
     const filenames = await fs.readdir(postsDirectory)
 
     const posts: Promise<Post>[] = filenames.map(async (filename) => {
