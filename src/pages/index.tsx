@@ -1,15 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/home.module.css'
-import { NextPage } from 'next'
 import { HomeContainer, HomeLayer } from '../components/home-layers'
-import { TitleCanvas } from '../components/title-animations'
-
 /**
  * サイトのトップページ。パスは'/'でマッチします
  * @returns Home
  */
-const Home: NextPage = () => {
+const Home = () => {
   return (
     <>
       <Head>
@@ -33,6 +30,12 @@ const Home: NextPage = () => {
         </HomeLayer>
         <HomeLayer>
           <h2 className={styles.subTitle}>東京農工大学公認サークル</h2>
+        </HomeLayer>
+        <HomeLayer>
+          <iframe
+            src='Builds/index.html'
+            style={{ height: '100%', width: '100%' }}
+          />
         </HomeLayer>
       </HomeContainer>
     </>
