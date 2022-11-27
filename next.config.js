@@ -5,6 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  basePath: '/mcc-website', // debug
 }
 
 module.exports = nextConfig
