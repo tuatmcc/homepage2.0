@@ -9,7 +9,16 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <canvas id="unity-canvas"></canvas>
+      <script>
+        var canvas = document.getElementById("unity-canvas");
+        var reseizeCanvas = () => {
+          canvas.width = window.innerWidth + 'px';
+          canvas.height = window.innerHeight + 'px';
+        };
+        addEventListener('resize', (event) => reseizeCanvas);
+        addEventListener('load', (event) => reseizeCanvas);
+      </script>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -18,9 +27,7 @@
       </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">mcc-website</div>
+        <div id="unity-fullscreen-button" hidden></div>
       </div>
     </div>
     <script>
@@ -93,8 +100,6 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
       }
 
       loadingBar.style.display = "block";
