@@ -1,13 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/home.module.css'
-import { NextPage } from 'next'
+import { useEffect } from 'react'
 
 /**
  * サイトのトップページ。パスは'/'でマッチします
  * @returns Home
  */
-const Home: NextPage = () => {
+const Home = () => {
+
   return (
     <>
       <Head>
@@ -20,8 +21,8 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div className={styles.titleContainer}>
-        <div className={styles.titleLayer}>
+      <div className={styles.container}>
+        <div className={styles.center}>
           <h1 className={styles.title}>
             <Image alt='logo' width={130} height={130} src='/mcc-logo.svg' />M
             <span style={{ fontSize: '1rem' }}>icro</span>C
@@ -29,8 +30,8 @@ const Home: NextPage = () => {
             <span style={{ fontSize: '1rem' }}>lub</span>
           </h1>
         </div>
-        <div className={styles.titleLayer}>
-          <h2 className={styles.subTitle}>東京農工大学</h2>
+        <div className={styles.top}>
+          <h2 className={styles.subtitle}>東京農工大学Tech系サークル</h2>
         </div>
       </div>
     </>

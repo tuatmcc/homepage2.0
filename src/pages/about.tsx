@@ -1,7 +1,5 @@
-import { NextPage } from 'next'
-
-const About: NextPage = () => {
-  return <></>
+const About = () => {
+  return <>About</>
 }
 
 export default About

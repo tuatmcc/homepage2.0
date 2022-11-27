@@ -1,42 +1,63 @@
-
-.title-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 0;
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
 }
 
-.title-layer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 0;
+.center {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.top {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  place-items: top;
 }
 
 .title {
-    margin: 0;
-    line-height: 1.15;
-    font-size: 10rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    overflow: hidden;
-    text-align: center;
+  position: relative;
+  margin: 0;
+  font-size: 15rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
 }
 
+.subtitle {
+  position: relative;
+  margin: 0;
+  font-size: 2rem;
+  font-family: '游明朝', YuMincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro',
+    'ヒラギノ明朝 Pro W3', 'ＭＳ Ｐ明朝', 'MS PMincho',
+    serif;
+  text-align: center;
+}
 
 .logo {
-    height: 1em;
-    margin-left: 0.5rem;
+  height: 1em;
+  margin-left: 0.5rem;
 }
 
 @media (max-width: 600px) {
-    .grid {
-        width: 100%;
-        flex-direction: column;
-    }
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-    .logo img {
-        filter: invert(1);
-    }
+  .logo img {
+    filter: invert(1);
+  }
 }
