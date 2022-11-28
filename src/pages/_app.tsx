@@ -1,5 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
+import { ChakraProvider } from '@chakra-ui/react'
+import theme from '../styles/theme'
 
 /**
  * SPAのおおもと。
@@ -7,7 +9,11 @@ import type { AppProps } from 'next/app'
  * @returns
  */
 const App = ({ Component, pageProps }: AppProps) => {
-  return <Component {...pageProps} />
+  return (
+    <ChakraProvider theme={theme}>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  )
 }
 
 export default App

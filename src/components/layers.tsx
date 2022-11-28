@@ -1,48 +1,39 @@
 import { ReactElement, useEffect, useRef, useState } from 'react'
-import styles from '../styles/home.module.css'
+import { chakra } from '@chakra-ui/react'
 
 /**
- * 重なるレイヤーを作成する。何重にも重ねることができる。
- * @param props children, classNmae
+ * 画面いっぱいで重なるdiv要素を作成する。
  * @returns
  */
-export const HomeLayer = (props: { children?: ReactElement }) => {
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-        padding: 0,
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      {props.children}
-    </div>
-  )
-}
+export const Full = chakra('div', {
+  baseStyle: {
+    pos: 'absolute',
+    w: '100%', // width
+    maxW: '100%',
+    minW: '100%',
+    h: '100%', // height
+    maxH: '100%',
+    minH: '100%',
+    p: 0, // padding
+    m: 0, // margin
+  },
+})
 
 /**
- * 重なるレイヤーのコンテナを作成する。
+ * 画面いっぱいで重なるdiv要素の親コンテナを作成する。
  * @param props children
  * @returns
  */
-export const HomeContainer = (props: {
-  children: ReactElement | ReactElement[]
-}) => {
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        width: '100%',
-        height: '100%',
-      }}
-    >
-      {props.children}
-    </div>
-  )
-}
+export const FullContainer = chakra('div', {
+  baseStyle: {
+    pos: 'fixed',
+    w: '100%',
+    maxW: '100%',
+    minW: '100%',
+    h: '100%',
+    maxH: '100%',
+    minH: '100%',
+    p: 0,
+    m: 0,
+  },
+})

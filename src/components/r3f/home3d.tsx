@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react'
 import { Canvas, MeshProps, useFrame } from '@react-three/fiber'
 import { Environment, Plane } from '@react-three/drei'
 import { Model } from './model'
+import THREE from 'three'
+import { chakra } from '@chakra-ui/react'
 
 const Box = (props: any) => {
   const mesh = useRef<THREE.Mesh>(null!)
@@ -61,9 +63,22 @@ const MccModel = (props: any) => {
   )
 }
 
+// Override the default Canvas component
+const CustumizedCanvas = chakra(Canvas, {
+  pos: 'absolute',
+  w: '100%',
+  maxW: '100%',
+  minW: '100%',
+  h: '100%',
+  maxH: '100%',
+  minH: '100%',
+  p: 0,
+  m: 0,
+})
+
 export const Home3D = () => {
   return (
-    <Canvas style={{ zIndex: 10 }} camera={{ position: [-5, 0, 5], fov: 45 }}>
+    <CustumizedCanvas camera={{ position: [-5, 0, 5], fov: 45 }}>
       <color attach='background' args={['#f0f0f0']} />
       <directionalLight
         position={[-10, 10, 5]}
@@ -77,6 +92,6 @@ export const Home3D = () => {
       <Plane args={[100, 100]} position={[0, -2, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
         <meshStandardMaterial color='#fff' />
       </Plane>
-    </Canvas>
+    </CustumizedCanvas>
   )
 }
