@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Full, FullContainer } from '../components/layers'
-import { Home3D } from '../components/r3f/home3d'
+import { HomeCanvas } from '../components/r3f/home-canvas'
 import { Nav } from '../components/nav'
 import { Box, Container, Flex, Heading, Spacer, Text } from '@chakra-ui/react'
 
@@ -24,28 +24,33 @@ const Home = () => {
 
       <FullContainer>
         <Full alignContent='center' display='flex' flexDir='row'>
-          <Home3D />
-          <Nav />
-          <Full display='flex' flexDir='row' alignContent='center' alignItems='center' justifyContent='center' justifyItems='center'>
-            <Flex
+          <HomeCanvas />
+          <Flex
+            pos='absolute'
+            flexDir='row'
+            px={5}
+            width='100%'
+            alignItems='center'
+          >
+            <Box
               pos='relative'
-              flexDir='column'
-              width={['5em', '5em', '15em']}
-              height={['5em', '5em', '15em']}
+              w={['2em', '5em', '10em']}
+              h={['2em', '5em', '10em']}
             >
-              <Image src='/mcc-logo.svg' alt='mcc-logo' fill />
-            </Flex>
-            <Flex pos='relative' flexDir='column'>
-              <Heading as='h1' color='#fff' fontSize={['2xl', '2xl', '15rem']}>
-                  MCC
+              <Image fill src='/mcc-logo.svg' alt='mcc-logo' />
+            </Box>
+            <Box pos='relative' display='flex'>
+              <Heading fontSize={['2em', '3em', '6em']} color='white'>
+                Micro
               </Heading>
-            </Flex>
-          </Full>
-        </Full>
-        <Flex pos='absolute'>
-          <h2>東京農工大学</h2>
-        </Flex>
-        <Full>
+              <Heading fontSize={['2em', '3em', '6em']} color='white'>
+                Computer
+              </Heading>
+              <Heading fontSize={['2em', '3em', '6em']} color='white'>
+                Club
+              </Heading>
+            </Box>
+          </Flex>
           <Nav />
         </Full>
       </FullContainer>

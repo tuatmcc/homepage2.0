@@ -26,9 +26,12 @@ const CustomLink = chakra(Link, {
     display: 'flex',
     direction: 'column',
     flex: ['0 1 100%', '0 1 100%', '1 1 100%'],
-    p: '5',
-    m: '5',
+    px: '5',
+    py: '3',
+    mx: '5',
+    my: '3',
     bgColor: 'white',
+    fontFamily: 'Noto Sans JP',
     color: 'black',
     fontSize: 'xl',
     borderRadius: '5em',
@@ -43,7 +46,7 @@ export const Nav = () => {
   const btnRef = React.useRef<HTMLButtonElement>(null)
 
   return (
-    <Box pos='absolute' w='100%' textAlign='end'>
+    <Box pos='absolute' w='100%' textAlign='end' verticalAlign='end'>
       <IconButton
         aria-label='Open Sidebar'
         ref={btnRef}
@@ -54,6 +57,7 @@ export const Nav = () => {
         width='4em'
         height='4em'
         m='5'
+        justifySelf='end'
         _hover={{ shadow: '0 0 2em 0.5em #00000050' }}
         icon={<HamburgerIcon />}
       ></IconButton>

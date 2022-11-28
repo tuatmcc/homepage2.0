@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react'
-import { Canvas, MeshProps, useFrame } from '@react-three/fiber'
+import React, { ReactNode, useRef, useState } from 'react'
+import { Canvas, MeshProps, Props, useFrame } from '@react-three/fiber'
 import { Environment, Plane } from '@react-three/drei'
 import { Model } from './model'
-import THREE from 'three'
-import { chakra } from '@chakra-ui/react'
+import * as THREE from 'three'
+import { chakra, ChakraComponent } from '@chakra-ui/react'
 
 const Box = (props: any) => {
   const mesh = useRef<THREE.Mesh>(null!)
@@ -76,7 +76,7 @@ const CustumizedCanvas = chakra(Canvas, {
   m: 0,
 })
 
-export const Home3D = () => {
+export const HomeCanvas = () => {
   return (
     <CustumizedCanvas camera={{ position: [-5, 0, 5], fov: 45 }}>
       <color attach='background' args={['#f0f0f0']} />
@@ -89,8 +89,13 @@ export const Home3D = () => {
         <orthographicCamera attach='shadow-camera' args={[-10, 10, -10, 10]} />
       </directionalLight>
       <MccModel position={[0, 0, 0]} />
-      <Plane args={[100, 100]} position={[0, -2, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
-        <meshStandardMaterial color='#fff' />
+      <Plane
+        args={[100, 100]}
+        position={[0, -2, 0]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        receiveShadow
+      >
+        <meshStandardMaterial color='#fff' side={THREE.DoubleSide} />
       </Plane>
     </CustumizedCanvas>
   )
