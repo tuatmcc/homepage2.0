@@ -1,15 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/home.module.css'
-import { NextPage } from 'next'
-import { HomeContainer, HomeLayer } from '../components/home-layers'
-import { TitleCanvas } from '../components/title-animations'
+import { Full, FullContainer } from '../components/layers'
+import { HomeCanvas } from '../components/r3f/home-canvas'
+import { Nav } from '../components/nav'
+import { Box, Container, Flex, Heading, Spacer, Text } from '@chakra-ui/react'
 
 /**
  * サイトのトップページ。パスは'/'でマッチします
  * @returns Home
  */
-const Home: NextPage = () => {
+const Home = () => {
   return (
     <>
       <Head>
@@ -22,19 +22,38 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <HomeContainer>
-        <HomeLayer>
-          <h1 className={styles.title}>
-            <Image alt='logo' width={130} height={130} src='/mcc-logo.svg' />M
-            <span style={{ fontSize: '1rem' }}>icro</span>C
-            <span style={{ fontSize: '1rem' }}>omputer</span>C
-            <span style={{ fontSize: '1rem' }}>lub</span>
-          </h1>
-        </HomeLayer>
-        <HomeLayer>
-          <h2 className={styles.subTitle}>東京農工大学公認サークル</h2>
-        </HomeLayer>
-      </HomeContainer>
+      <FullContainer>
+        <Full alignContent='center' display='flex' flexDir='row'>
+          <HomeCanvas />
+          <Flex
+            pos='absolute'
+            flexDir='row'
+            px={5}
+            width='100%'
+            alignItems='center'
+          >
+            <Box
+              pos='relative'
+              w={['2em', '5em', '10em']}
+              h={['2em', '5em', '10em']}
+            >
+              <Image fill src='/mcc-logo.svg' alt='mcc-logo' />
+            </Box>
+            <Box pos='relative' display='flex'>
+              <Heading fontSize={['2em', '3em', '6em']} color='white'>
+                Micro
+              </Heading>
+              <Heading fontSize={['2em', '3em', '6em']} color='white'>
+                Computer
+              </Heading>
+              <Heading fontSize={['2em', '3em', '6em']} color='white'>
+                Club
+              </Heading>
+            </Box>
+          </Flex>
+          <Nav />
+        </Full>
+      </FullContainer>
     </>
   )
 }
