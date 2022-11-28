@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/home.module.css'
-import { HomeContainer, HomeLayer } from '../components/home-layers'
+import { HomeContainer, HomeLayer } from '../components/layers'
+import { Home3D } from '../components/three-fiber/home3d'
+
 /**
  * サイトのトップページ。パスは'/'でマッチします
  * @returns Home
@@ -34,10 +36,7 @@ const Home = () => {
           </div>
         </HomeLayer>
         <HomeLayer>
-          <iframe
-            src='Builds/index.html'
-            style={{ height: '100%', width: '100%', zIndex: 1 }}
-          />
+          <Home3D/>
         </HomeLayer>
       </HomeContainer>
     </>
