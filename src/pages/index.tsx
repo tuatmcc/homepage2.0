@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Full, FullContainer } from '../components/layers'
 import { Home3D } from '../components/r3f/home3d'
 import { Nav } from '../components/nav'
-import { Box, Container, Heading } from '@chakra-ui/react'
+import { Box, Container, Flex, Heading, Spacer, Text } from '@chakra-ui/react'
 
 /**
  * サイトのトップページ。パスは'/'でマッチします
@@ -21,23 +21,30 @@ const Home = () => {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      
+
       <FullContainer>
-      <Full>
+        <Full alignContent='center' display='flex' flexDir='row'>
           <Home3D />
-        </Full>
-        <Full>
           <Nav />
+          <Full display='flex' flexDir='row' alignContent='center' alignItems='center' justifyContent='center' justifyItems='center'>
+            <Flex
+              pos='relative'
+              flexDir='column'
+              width={['5em', '5em', '15em']}
+              height={['5em', '5em', '15em']}
+            >
+              <Image src='/mcc-logo.svg' alt='mcc-logo' fill />
+            </Flex>
+            <Flex pos='relative' flexDir='column'>
+              <Heading as='h1' color='#fff' fontSize={['2xl', '2xl', '15rem']}>
+                  MCC
+              </Heading>
+            </Flex>
+          </Full>
         </Full>
-        <Full>
-          <Heading>
-            <Image alt='logo' width={130} height={130} src='/mcc-logo.svg' />M
-            <span style={{ fontSize: '1rem' }}>icro</span>C
-            <span style={{ fontSize: '1rem' }}>omputer</span>C
-            <span style={{ fontSize: '1rem' }}>lub</span>
-          </Heading>
-            <h2>東京農工大学公認サークル</h2>
-        </Full>
+        <Flex pos='absolute'>
+          <h2>東京農工大学</h2>
+        </Flex>
         <Full>
           <Nav />
         </Full>

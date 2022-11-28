@@ -1,38 +1,22 @@
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme, defineStyle, defineStyleConfig } from '@chakra-ui/react'
+
+// Define custom variants
+export const iconButtonTheme = defineStyleConfig({
+  variants: {
+    solid: defineStyle({
+      backgroundColor: 'white.100',
+      color: 'black',
+      borderRadius: '50%',
+      boxShadow: '0 0 0 1px rgba(0, 0, 0, 0.1)',
+      _hover: {
+        background: 'gray.100',
+      },
+    }),
+  },
+})
 
 const theme = extendTheme({
-  components: {
-    Container: {
-      variants: {
-        fill: {
-          pos: 'absolute',
-          w: '100%', // width
-          maxW: '100%',
-          minW: '100%',
-          h: '100%', // height
-          maxH: '100%',
-          minH: '100%',
-          p: 0, // padding
-          m: 0, // margin
-        },
-      },
-    },
-    Box: {
-      variants: {
-        fill: {
-          pos: 'absolute',
-          w: '100%',
-          maxW: '100%',
-          minW: '100%',
-          h: '100%',
-          maxH: '100%',
-          minH: '100%',
-          p: 0,
-          m: 0,
-        },
-      },
-    },
-  },
+  components: { IconButton: iconButtonTheme },
 })
 
 export default theme
