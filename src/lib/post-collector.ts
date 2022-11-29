@@ -2,10 +2,14 @@ import { promises as fs } from 'fs'
 import { GetStaticProps } from 'next'
 import path from 'path'
 
-export interface Post {
+interface Post {
   filePath: string
   filename: string
   content: string
+}
+
+export interface PostCollectorProps {
+  posts: Post[]
 }
 
 export class PostCollector {
@@ -39,7 +43,7 @@ export class PostCollector {
       // For example you can transform markdown to HTML here
 
       return {
-        filePath: `/${this.targetDir}/${filename.replace(/\.mdx$/, '')}`,
+        filePath: `/${this.targetDir}/${filename.replace(/\.mdx?$/, '')}`,
         filename,
         content: fileContents,
       }
