@@ -21,6 +21,7 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 import React, { ReactNode } from 'react'
 import Link from 'next/link'
 
+// Override the default Next Link
 const CustomLink = chakra(Link, {
   baseStyle: {
     display: 'flex',

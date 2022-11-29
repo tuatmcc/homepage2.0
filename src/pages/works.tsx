@@ -1,12 +1,8 @@
 import Link from 'next/link'
-import { PostCollector, Post } from '../lib/post-collector'
-
-interface Props {
-  posts: Post[]
-}
+import { PostCollector, PostCollectorProps } from '../lib/post-collector'
 
 // posts will be populated at build time by getStaticProps()
-const Works = ({ posts }: Props) => {
+const Works = ({ posts }: PostCollectorProps) => {
   return (
     <ul>
       {posts.map((post) => (
