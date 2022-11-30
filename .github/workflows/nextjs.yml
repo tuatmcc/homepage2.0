@@ -79,7 +79,8 @@ jobs:
         # This is only for debugging. After changed the domain name, you must remove this step.
         # replace href="/_next -> href="/mcc-website/_next"
       - name: Replace refs for test
-        run: sed -i s/href=\"\/_next/href=\"\/mcc-website\/_next/g ./out/index.html
+        shell: bash
+        run: sed -i s/href=\"\/_next/href=\"\/mcc-website\/_next/g ${{ github.workspace }}/out/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
