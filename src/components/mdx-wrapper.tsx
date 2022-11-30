@@ -38,7 +38,7 @@ export const MDXWrapper: ({ meta, children }: MDXProps) => JSX.Element = ({
 }: MDXProps) => {
   const { title, description, img, tags } = meta
   const [lWidth, mWidth, rWidth] = [
-    [0, 0, '40%', '30%'],
+    [0, 0, '30%', '30%'],
     ['100%', '100%', '60%', '50%'],
     [0, 0, 0, '20%'],
   ]
@@ -50,12 +50,12 @@ export const MDXWrapper: ({ meta, children }: MDXProps) => JSX.Element = ({
         {img && <meta property='og:image' content={img} />}
       </Head>
 
-      <Flex pos='relative' h={['auto', 'auto', 0]}>
+      <Flex pos='relative' h={['auto', 'auto', 0]} w='100%'>
         Here Comes the Navigation Bar
         <Link href='/'>Home</Link>
       </Flex>
 
-      <Flex maxW='100%' pos='relative'>
+      <Flex w='100%' pos='relative'>
         {/* Left Sidebar */}
         <Flex w={lWidth}>
           Here Comes the Left Sidebar (Navigation)
@@ -63,7 +63,7 @@ export const MDXWrapper: ({ meta, children }: MDXProps) => JSX.Element = ({
         </Flex>
 
         {/* Main */}
-        <Flex flexDir='column' w={mWidth} mx='2em'>
+        <Flex flexDir='column' w={mWidth} mx='2em' >
           <Flex my='3'>
             {tags?.map((tag) => (
               <Tag key={tag} colorScheme='green' m='1'>
