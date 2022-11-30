@@ -1,0 +1,46 @@
+{
+  "name": "mcc-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "npm run build && next export",
+    "replace": "sed -e '_next/mcc-website\/_next' out/index.html",
+    "start": "next start",
+    "lint": "next lint && prettier --write ."
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^2.0.12",
+    "@chakra-ui/react": "^2.4.1",
+    "@emotion/css": "^11.10.5",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mdx-js/loader": "^2.1.5",
+    "@mdx-js/react": "^2.1.5",
+    "@next/mdx": "^13.0.5",
+    "@react-three/drei": "^9.45.0",
+    "@react-three/fiber": "^8.9.1",
+    "@react-three/postprocessing": "^2.7.0",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "css": "^3.0.0",
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.0.4",
+    "framer-motion": "^6.5.1",
+    "next": "13.0.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "three": "^0.146.0",
+    "typescript": "4.9.3"
+  },
+  "devDependencies": {
+    "@types/three": "^0.146.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "2.8.0",
+    "stylelint": "^14.15.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-standard": "^29.0.0"
+  }
+}
