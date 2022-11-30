@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "export": "npm run build && next export",
+    "replace": "sed -e '_next/mcc-website\/_next' out/index.html",
     "start": "next start",
     "lint": "next lint && prettier --write ."
   },
