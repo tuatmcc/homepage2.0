@@ -82,7 +82,7 @@ jobs:
         uses: actions/github-script@v2
         with:
           script: |
-            require('${{ github.workspace }}/out/replace.js')
+            require('${{ github.workspace }}/out/script/replace.js')
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
