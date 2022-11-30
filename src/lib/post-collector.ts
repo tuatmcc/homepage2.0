@@ -35,12 +35,12 @@ export class PostCollector {
     )
     const filenames = await fs.readdir(postsDirectory)
 
+    // Remove index.tsx from list as it is not a post
+    filenames.splice(filenames.indexOf('index.tsx'), 1)
+
     const posts: Promise<Post>[] = filenames.map(async (filename) => {
       const filePath = path.join(postsDirectory, filename)
       const fileContents = await fs.readFile(filePath, 'utf8')
-
-      // Generally you would parse/transform the contents
-      // For example you can transform markdown to HTML here
 
       return {
         filePath: `/${this.targetDir}/${filename.replace(/\.mdx?$/, '')}`,
