@@ -1,18 +1,13 @@
 import {
   Box,
   Center,
-  chakra,
   Flex,
-  GridItem,
   Heading,
-  HStack,
   Spacer,
-  Stack,
   Tag,
-  VStack,
+  Link
 } from '@chakra-ui/react'
 import Head from 'next/head'
-import Link from 'next/link'
 import Image from 'next/image'
 import { ReactNode } from 'react'
 import LeftSideBar from './left-side-bar'
@@ -46,14 +41,14 @@ export const Page: ({ meta, children, isMdx }: PageProps) => JSX.Element = ({
 
   // Responsive grid [sm, md, lg, xl, 2xl]
   const [lWidth, mWidth, rWidth] = [
-    [0, 0, '30%', '20%'],
-    ['90vw', '90vw', '70%', '75%', '55%'],
-    [0, 0, 0, 0, 0, '20%'],
+    [0, 0, '30vw', '20vw'],
+    ['100vw', '100vw', '70vw', '75vw', '60vw'],
+    [0, 0, 0, 0, '20vw'],
   ]
   const [lDisplay, mDisplay, rDisplay] = [
     ['none', 'none', 'flex', 'flex'],
     'flex',
-    ['none', 'none', 'none', 'none', 'none', 'flex'],
+    ['none', 'none', 'none', 'none', 'flex'],
   ]
   return (
     <>
@@ -65,40 +60,34 @@ export const Page: ({ meta, children, isMdx }: PageProps) => JSX.Element = ({
 
       <Flex h={['auto', 'auto', 0]}>
         Here Comes the Navigation Bar
-        <Link href='/'>Home</Link>
       </Flex>
 
       <Flex>
         {/* Left Sidebar */}
         <Flex w={lWidth} display={lDisplay} overflow='auto'>
-          <LeftSideBar />
+          <LeftSideBar w='inherit' />
         </Flex>
 
         {/* Main */}
-        <Flex flexDir='column' w={mWidth} display={mDisplay} mx='5'>
-          <Flex my='3'>{meta.date && <Tag m='1'>{meta.date}</Tag>}</Flex>
-          <Heading as='h1' size='2xl'>
+        <Flex flexDir='column' w={mWidth} display={mDisplay} px='1rem'>
+          <Flex py='0.5em'>{meta.date && <Tag>{meta.date}</Tag>}</Flex>
+          <Heading as='h1' size='2xl' py='4rem'>
             {title}
           </Heading>
           <Center>
-            <Image
-              src={img ? img : '/mcc-logo.svg'}
-              alt='Image'
-              width={100}
-              height={100}
-              style={{
-                display: 'flex',
-                height: '50vh',
-                maxHeight: '50vh',
-                width: 'auto',
-                maxWidth: '100%',
-                margin: '1em',
-              }}
-            />
+            <Box h='50vh'>
+              <Image
+                src={img ? img : '/mcc-logo.svg'}
+                alt='Image'
+                width={200}
+                height={200}
+                style={{ width: '100%', height: '50vh', objectFit: 'contain'}}
+              />
+            </Box>
           </Center>
-          <Flex>
+          <Flex py='0.5rem'>
             {tags?.map((tag) => (
-              <Tag key={tag} colorScheme='green' m='1'>
+              <Tag key={tag} colorScheme='green'>
                 #{tag}
               </Tag>
             ))}
@@ -109,8 +98,8 @@ export const Page: ({ meta, children, isMdx }: PageProps) => JSX.Element = ({
         </Flex>
 
         {/* Right Sidebar */}
-        <Flex w={rWidth} flexDir='column' mx='5' display={rDisplay}>
-          <Box pos='fixed' mt='10%' w='20%' height='50%' overflowY='scroll'>
+        <Flex w={rWidth} flexDir='column' py='5em' display={rDisplay}>
+          <Box pos='fixed' w='inherit' height='50%' overflowY='scroll' px='0.5rem'>
             <a
               className='twitter-timeline'
               href='https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw'
