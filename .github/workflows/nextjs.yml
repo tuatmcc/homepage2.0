@@ -82,10 +82,7 @@ jobs:
         uses: actions/github-script@v2
         with:
           script: |
-            const fs = require('fs')
-            const targetFile = fs.readFileSync('${{ github.workspace }}/out/index.html', 'utf8')
-            const newFile = targetFile.replace(/href="\/_next/g, 'href="/mcc-website/_next').replace(/src="\//g, 'src="/mcc-website/')
-            fs.writeFileSync('${{ github.workspace }}/out/index.html', newFile, 'utf8')
+            require('$GITHUB_WORKSPACE/.github/scripts/replace.js')
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
