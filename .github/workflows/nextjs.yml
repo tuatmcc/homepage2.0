@@ -50,7 +50,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18'
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         uses: actions/configure-pages@v2
@@ -79,10 +79,10 @@ jobs:
         # This is only for debugging. After changed the domain name, you must remove this step.
         # replace href="/_next -> href="/mcc-website/_next"
       - name: Replace
-        uses: actions/github-script@v2
+        uses: actions/github-script@v3
         with:
           script: |
-            require('$GITHUB_WORKSPACE/.github/scripts/replace.js')
+            require('${{ github.workspace }}/.github/scripts/replace.js')
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
