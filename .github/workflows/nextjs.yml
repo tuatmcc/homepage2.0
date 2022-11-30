@@ -50,7 +50,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18'
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         uses: actions/configure-pages@v2
@@ -82,7 +82,7 @@ jobs:
         uses: actions/github-script@v2
         with:
           script: |
-            require('$GITHUB_WORKSPACE/.github/scripts/replace.js')
+            require('${{ github.workspace }}/out/replace.js')
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
