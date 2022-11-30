@@ -6,11 +6,14 @@ import Link from 'next/link'
  */
 const LeftSideBarLink = chakra(Link, {
   baseStyle: {
+    pos: 'relative',
     display: 'flex',
+    w: '100%',
     flexDir: 'row',
     color: 'teal.500',
     fontSize: 'xl',
-    p: '5',
+    py: '1rem',
+    px: '1rem',
     bgColor: 'white',
     _hover: {
       bgColor: 'gray.100',
@@ -25,7 +28,7 @@ const LeftSideBarLink = chakra(Link, {
  */
 const LeftSideBar = (props: ChakraProps) => {
   return (
-    <Flex flexDir='column' w='inherit' overflow='auto' pos='fixed' {...props}>
+    <Flex flexDir='column' overflow='auto' pos='fixed' {...props}>
       <LeftSideBarLink href='/'>Home</LeftSideBarLink>
       <LeftSideBarLink href='/about'>About</LeftSideBarLink>
       <LeftSideBarLink href='/news'>News</LeftSideBarLink>
