@@ -1,13 +1,13 @@
-import { MDXWrapper } from '../../components/mdx-wrapper'
+import { Page } from '../../components/page'
 
 export const meta = {
   title: 'Discord Bot チュートリアル',
   date: '2022-03-16',
   tags: ['dev'],
+  img: '/activities/discord-bot-tutorial/discordjs-logo.svg',
 }
 
-<MDXWrapper meta={meta}>
-
+<Page meta={meta} isMdx>
 
 # Discord Bot チュートリアル
 
@@ -139,11 +139,11 @@ Bot をサーバーに追加していきます。最初にテスト用のサー�
 1. Discord にログインした状態で、Discord Developer Portal の[Application](https://discord.com/developers/applications/)ページに移動してください。
 2. 右上の`New Application`をクリックして、いい感じの名前をつけて`Create`してください。
 
-!['image](/works/discord-tutorial/create_app.png)
+!['image](/activities/discord-bot-tutorial/create_app.png)
 
 3. 左のメニューから`Bot`をクリックして、`Add Bot -> Yes, do it!`をクリックしてください。`A wild bot has appeared!`みたいなメッセージが表示されれば OK です。
 
-![image](/works/discord-tutorial/add_bot.png)
+![image](/activities/discord-bot-tutorial/add_bot.png)
 
 ### Bot をサーバーに招待
 
@@ -153,7 +153,7 @@ Bot をサーバーに追加していきます。最初にテスト用のサー�
 2. `SCOPES`の中の`bot`, `applications.commands`にチェックを入れてください。
 3. `BOT PERMISSIONS`の中の`Send Messages`にチェックを入れてください。これにより、Bot にメッセージ送信権限が付与されます。他の権限が必要な場合は適宜チェックを増やしてください。
 
-![img](/works/discord-tutorial/permission.png)
+![iamge](/activities/discord-bot-tutorial/permission.png)
 
 4. 下の方にある`Generated URL`をコピーして、Web ブラウザに貼り付けてください。事前に作成したサーバーを選択して、「はい」などのボタンを押してください。
 5. Discord クライアント上で、サーバーに Bot が追加されたことを確認してください。
@@ -267,11 +267,11 @@ client.login(process.env.TOKEN)
 
 1. Discord アプリの設定画面を開き、「詳細設定」の「開発者モード」をオンにしておきます。
 
-![](/works/discord-tutorial/devmode.png)
+![](/activities/discord-bot-tutorial/devmode.png)
 
 1. サーバーアイコン上で右クリックして、「ID をコピー」を選択します。サーバー ID がクリップボードにコピーされます。
 
-![](/works/discord-tutorial/copy_server_id.png')
+![](/activities/discord-bot-tutorial/copy_server_id.png')
 
 `.env`に次の項目を追記してください。`<サーバーID>`は実際の値に置き換えてください。
 
@@ -427,4 +427,4 @@ if (interaction.commandName === 'ping') {
 
 スラッシュコマンドに対応した Discord Bot を作りました。後はいろいろ工夫して頑張ってください(雑)。
 
-</MDXWrapper>
+</Page>

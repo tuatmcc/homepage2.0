@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { PostCollector, PostCollectorProps } from '../lib/post-collector'
+import { PostCollector, PostCollectorProps } from '../../lib/post-collector'
 
 // posts will be populated at build time by getStaticProps()
 const Works = ({ posts }: PostCollectorProps) => {

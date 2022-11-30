@@ -76,6 +76,9 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
+        # This is only for debugging. After changed the domain name, you must remove this step.
+      - name: Replace refs for test
+        run: sed -e "s/href=\"_next/href=\"/mcc-website/_next/" ./out/index.html > ./out/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
