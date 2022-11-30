@@ -79,10 +79,10 @@ jobs:
         # This is only for debugging. After changed the domain name, you must remove this step.
         # replace href="/_next -> href="/mcc-website/_next"
       - name: Replace
-        uses: actions/github-script@v2
+        uses: actions/github-script@v3
         with:
           script: |
-            require('${{ github.workspace }}/.github/script/replace.js')
+            require('${{ github.workspace }}/.github/scripts/replace.js')
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
