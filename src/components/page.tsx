@@ -13,12 +13,10 @@ import {
 } from '@chakra-ui/react'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ReactNode } from 'react'
-import { Full } from './layers'
-import { Nav } from './nav'
-import { HomeCanvas } from './r3f/home-canvas'
 
-interface MDXMeta {
+export interface PageMeta {
   title: string
   description?: string
   date?: string
@@ -27,64 +25,82 @@ interface MDXMeta {
   author?: string
 }
 
-interface MDXProps {
-  meta: MDXMeta
-  children: ReactNode[]
+interface PageProps {
+  meta: PageMeta
+  children: ReactNode | ReactNode[]
+  isMdx?: boolean
 }
 
-export const MDXWrapper: ({ meta, children }: MDXProps) => JSX.Element = ({
+export const Page: ({ meta, children, isMdx }: PageProps) => JSX.Element = ({
   meta,
   children,
-}: MDXProps) => {
+  isMdx = false,
+}: PageProps) => {
   const { title, description, img, tags } = meta
   const [lWidth, mWidth, rWidth] = [
-    [0, 0, '40%', '30%'],
-    ['100%', '100%', '60%', '50%'],
-    [0, 0, 0, '20%'],
+    [0, 0, '30%', '25%'],
+    ['90vw', '90vw', '70%', '75%', '55%'],
+    [0, 0, 0, 0, 0, '20%'],
+  ]
+  const [lDisplay, mDisplay, rDisplay] = [
+    ['none', 'none', 'flex', 'flex'],
+    'flex',
+    ['none', 'none', 'none', 'none', 'none', 'flex'],
   ]
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{`${title} - TUATMCC`}</title>
         {description && <meta name='description' content={description} />}
         {img && <meta property='og:image' content={img} />}
       </Head>
 
-      <Flex pos='relative' h={['auto', 'auto', 0]}>
+      <Flex h={['auto', 'auto', 0]}>
         Here Comes the Navigation Bar
         <Link href='/'>Home</Link>
       </Flex>
 
-      <Flex maxW='100%' pos='relative'>
+      <Flex>
         {/* Left Sidebar */}
-        <Flex w={lWidth}>
+        <Flex w={lWidth} display={lDisplay} overflow='auto'>
           Here Comes the Left Sidebar (Navigation)
           <Link href='/'>Home</Link>
         </Flex>
 
         {/* Main */}
-        <Flex flexDir='column' w={mWidth} mx='2em'>
-          <Flex my='3'>
+        <Flex
+          flexDir='column'
+          w={mWidth}
+          display={mDisplay}
+          mx='5'
+        >
+          <Flex my='3'>{meta.date && <Tag m='1'>{meta.date}</Tag>}</Flex>
+          <Heading as='h1' size='2xl'>
+            {title}
+          </Heading>
+          <Center>
+            <Image
+              src={img ? img : '/mcc-logo.svg'}
+              alt='Image'
+              width={100}
+              height={100}
+              style={{ display: 'flex', height: '50vh', maxHeight:'50vh', width:'auto', maxWidth: '100%', margin: '1em' }}
+            />
+          </Center>
+          <Flex>
             {tags?.map((tag) => (
               <Tag key={tag} colorScheme='green' m='1'>
                 #{tag}
               </Tag>
             ))}
-            <Spacer />
-            {meta.date && (
-              <Tag m='1' mx='5'>
-                {meta.date}
-              </Tag>
-            )}
           </Flex>
-          <Heading as='h1' size='2xl' mt='2em' mb='4em'>
-            {title}
-          </Heading>
-          <Box className='mdx-prose'>{children}</Box>
+          <Flex flexDir='column' className={isMdx ? 'mdx-prose' : ''}>
+            {children}
+          </Flex>
         </Flex>
 
         {/* Right Sidebar */}
-        <Flex w={rWidth} flexDir='column'>
+        <Flex w={rWidth} flexDir='column' mx='5' display={rDisplay}>
           <Box pos='fixed' mt='10%' w='20%' height='50%' overflowY='scroll'>
             <a
               className='twitter-timeline'

@@ -5,7 +5,6 @@ const theme = extendTheme({
   styles: {
     global: {
       '.mdx-prose': {
-        
         h1: {
           fontSize: '2em',
           fontWeight: 'bold',
@@ -28,10 +27,8 @@ const theme = extendTheme({
           my: '4',
         },
         p: {
-          
+          fontSize: 'lg',
           my: '5',
-          py: '2',
-          overflowX: 'auto',
         },
         a: {
           color: '#00f',
