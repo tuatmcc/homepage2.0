@@ -81,8 +81,8 @@ jobs:
       - name: Replace
         uses: actions/github-script@v2
         with:
-        script: |
-          require('./replace.js')()
+          script: |
+            require('./replace.js')()
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
