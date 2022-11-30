@@ -15,6 +15,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ReactNode } from 'react'
+import LeftSideBar from './left-side-bar'
 
 export interface PageMeta {
   title: string
@@ -31,14 +32,21 @@ interface PageProps {
   isMdx?: boolean
 }
 
+/**
+ * Common page layout
+ * @param param0
+ * @returns
+ */
 export const Page: ({ meta, children, isMdx }: PageProps) => JSX.Element = ({
   meta,
   children,
   isMdx = false,
 }: PageProps) => {
   const { title, description, img, tags } = meta
+
+  // Responsive grid [sm, md, lg, xl, 2xl]
   const [lWidth, mWidth, rWidth] = [
-    [0, 0, '30%', '25%'],
+    [0, 0, '30%', '20%'],
     ['90vw', '90vw', '70%', '75%', '55%'],
     [0, 0, 0, 0, 0, '20%'],
   ]
@@ -63,17 +71,11 @@ export const Page: ({ meta, children, isMdx }: PageProps) => JSX.Element = ({
       <Flex>
         {/* Left Sidebar */}
         <Flex w={lWidth} display={lDisplay} overflow='auto'>
-          Here Comes the Left Sidebar (Navigation)
-          <Link href='/'>Home</Link>
+          <LeftSideBar />
         </Flex>
 
         {/* Main */}
-        <Flex
-          flexDir='column'
-          w={mWidth}
-          display={mDisplay}
-          mx='5'
-        >
+        <Flex flexDir='column' w={mWidth} display={mDisplay} mx='5'>
           <Flex my='3'>{meta.date && <Tag m='1'>{meta.date}</Tag>}</Flex>
           <Heading as='h1' size='2xl'>
             {title}
@@ -84,7 +86,14 @@ export const Page: ({ meta, children, isMdx }: PageProps) => JSX.Element = ({
               alt='Image'
               width={100}
               height={100}
-              style={{ display: 'flex', height: '50vh', maxHeight:'50vh', width:'auto', maxWidth: '100%', margin: '1em' }}
+              style={{
+                display: 'flex',
+                height: '50vh',
+                maxHeight: '50vh',
+                width: 'auto',
+                maxWidth: '100%',
+                margin: '1em',
+              }}
             />
           </Center>
           <Flex>
