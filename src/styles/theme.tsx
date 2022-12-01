@@ -6,23 +6,23 @@ const theme = extendTheme({
     global: {
       '.mdx-prose': {
         h1: {
-          fontSize: '2em',
+          fontSize: '2rem',
           fontWeight: 'bold',
-          my: '1em',
+          my: '1rem',
           borderBottom: '1px solid',
         },
         h2: {
-          fontSize: '1.5em',
+          fontSize: '1.5rem',
           fontWeight: 'bold',
-          my: '0.5em',
+          my: '0.5rem',
         },
         h3: {
-          fontSize: '1.17em',
+          fontSize: '1.17rem',
           fontWeight: 'bold',
           my: '4',
         },
         h4: {
-          fontSize: '1em',
+          fontSize: '1rem',
           fontWeight: 'bold',
           my: '4',
         },
@@ -51,22 +51,22 @@ const theme = extendTheme({
         },
         blockquote: {
           borderLeft: '4px solid #ccc',
-          paddingLeft: '1em',
+          paddingLeft: '1rem',
           fontStyle: 'italic',
           m: '4',
         },
         code: {
           backgroundColor: '#d0dde5',
-          padding: '0.2em',
-          paddingX: '0.4em',
-          mx: '4',
-          borderRadius: '0.4em',
+          padding: '0.2rem',
+          paddingX: '0.4rem',
+          mx: '1',
+          borderRadius: '0.4rem',
         },
         pre: {
           backgroundColor: '#d0f5f0',
           color: '#000',
-          padding: '1em',
-          borderRadius: '0.2em',
+          padding: '1rem',
+          borderRadius: '0.2rem',
           overflow: 'auto',
         },
         'pre code': {

@@ -35,7 +35,7 @@ const CustomLink = chakra(Link, {
     fontFamily: 'Noto Sans JP',
     color: 'black',
     fontSize: 'xl',
-    borderRadius: '5em',
+    borderRadius: '5rem',
     textAlign: 'start',
     _hover: { bgColor: 'gray.100', shadow: '0 0 2em 0.5em #00000050' },
   },
@@ -55,8 +55,8 @@ export const Nav = () => {
         bgColor='white'
         borderRadius='50%'
         size='lg'
-        width='4em'
-        height='4em'
+        width='4rem'
+        height='4rem'
         m='5'
         justifySelf='end'
         _hover={{ shadow: '0 0 2em 0.5em #00000050' }}

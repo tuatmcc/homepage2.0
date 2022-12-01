@@ -51,7 +51,7 @@ export const Page: ({ meta, children, isMdx }: PageProps) => JSX.Element = ({
         {img && <meta property='og:image' content={img} />}
       </Head>
 
-      <Flex h='3em'>
+      <Flex h='3rem'>
         <Navbar pos='fixed' />
       </Flex>
 
@@ -64,7 +64,7 @@ export const Page: ({ meta, children, isMdx }: PageProps) => JSX.Element = ({
         {/* Main */}
         <Flex flexDir='column' w={mWidth} display={mDisplay}>
           <Flex flexDir='column' w='inherit' px='1rem'>
-            <Flex py='0.5em'>{meta.date && <Tag>{meta.date}</Tag>}</Flex>
+            <Flex py='0.5rem'>{meta.date && <Tag>{meta.date}</Tag>}</Flex>
             <Heading as='h1' size='2xl' py='4rem'>
               {title}
             </Heading>
@@ -97,7 +97,7 @@ export const Page: ({ meta, children, isMdx }: PageProps) => JSX.Element = ({
         </Flex>
 
         {/* Right Sidebar */}
-        <Flex w={rWidth} flexDir='column' py='5em' display={rDisplay}>
+        <Flex w={rWidth} flexDir='column' py='5rem' display={rDisplay}>
           <Box
             pos='fixed'
             w='inherit'
