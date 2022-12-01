@@ -1,16 +1,9 @@
-import {
-  Box,
-  Center,
-  Flex,
-  Heading,
-  Spacer,
-  Tag,
-  Link
-} from '@chakra-ui/react'
+import { Box, Center, Flex, Heading, Spacer, Tag, Link } from '@chakra-ui/react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { ReactNode } from 'react'
 import LeftSideBar from './left-side-bar'
+import Navbar from './navbar'
 
 export interface PageMeta {
   title: string
@@ -58,48 +51,60 @@ export const Page: ({ meta, children, isMdx }: PageProps) => JSX.Element = ({
         {img && <meta property='og:image' content={img} />}
       </Head>
 
-      <Flex h={['auto', 'auto', 0]}>
-        Here Comes the Navigation Bar
+      <Flex h='3em'>
+        <Navbar pos='fixed' />
       </Flex>
 
       <Flex>
         {/* Left Sidebar */}
         <Flex w={lWidth} display={lDisplay} overflow='auto'>
-          <LeftSideBar w='inherit' />
+          <LeftSideBar w='inherit' pos='fixed' />
         </Flex>
 
         {/* Main */}
-        <Flex flexDir='column' w={mWidth} display={mDisplay} px='1rem'>
-          <Flex py='0.5em'>{meta.date && <Tag>{meta.date}</Tag>}</Flex>
-          <Heading as='h1' size='2xl' py='4rem'>
-            {title}
-          </Heading>
-          <Center>
-            <Box h='50vh'>
-              <Image
-                src={img ? img : '/mcc-logo.svg'}
-                alt='Image'
-                width={200}
-                height={200}
-                style={{ width: '100%', height: '50vh', objectFit: 'contain'}}
-              />
-            </Box>
-          </Center>
-          <Flex py='0.5rem'>
-            {tags?.map((tag) => (
-              <Tag key={tag} colorScheme='green'>
-                #{tag}
-              </Tag>
-            ))}
-          </Flex>
-          <Flex flexDir='column' className={isMdx ? 'mdx-prose' : ''}>
-            {children}
+        <Flex flexDir='column' w={mWidth} display={mDisplay}>
+          <Flex flexDir='column' w='inherit' px='1rem'>
+            <Flex py='0.5em'>{meta.date && <Tag>{meta.date}</Tag>}</Flex>
+            <Heading as='h1' size='2xl' py='4rem'>
+              {title}
+            </Heading>
+            <Center>
+              <Box h='50vh'>
+                <Image
+                  src={img ? img : '/mcc-logo.svg'}
+                  alt='Image'
+                  width={200}
+                  height={200}
+                  style={{
+                    width: '100%',
+                    height: '50vh',
+                    objectFit: 'contain',
+                  }}
+                />
+              </Box>
+            </Center>
+            <Flex py='0.5rem'>
+              {tags?.map((tag) => (
+                <Tag key={tag} colorScheme='green'>
+                  #{tag}
+                </Tag>
+              ))}
+            </Flex>
+            <Flex flexDir='column' className={isMdx ? 'mdx-prose' : ''}>
+              {children}
+            </Flex>
           </Flex>
         </Flex>
 
         {/* Right Sidebar */}
         <Flex w={rWidth} flexDir='column' py='5em' display={rDisplay}>
-          <Box pos='fixed' w='inherit' height='50%' overflowY='scroll' px='0.5rem'>
+          <Box
+            pos='fixed'
+            w='inherit'
+            height='50%'
+            overflowY='scroll'
+            px='0.5rem'
+          >
             <a
               className='twitter-timeline'
               href='https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw'
