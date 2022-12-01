@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, Link as ChakraLink } from '@chakra-ui/react'
 import Link from 'next/link'
 import { Page, PageMeta } from '../../components/page'
 import { PostCollector, PostCollectorProps } from '../../lib/post-collector'
@@ -12,12 +12,10 @@ const meta: PageMeta = {
 const Works = ({ posts }: PostCollectorProps) => {
   return (
     <Page meta={meta}>
-      <Flex flexWrap='wrap'>
+      <Flex flexDir='column'>
         {posts.map((post) => (
-          <Flex key={0} flex='1 1 30em'>
-            <Box>
+          <Flex key={0}>
               <Link href={post.filePath}>{post.filename}</Link>
-            </Box>
           </Flex>
         ))}
       </Flex>

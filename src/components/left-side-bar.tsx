@@ -28,7 +28,7 @@ const LeftSideBarLink = chakra(Link, {
  */
 const LeftSideBar = (props: ChakraProps) => {
   return (
-    <Flex flexDir='column' overflow='auto' pos='fixed' {...props}>
+    <Flex flexDir='column' overflow='auto' {...props}>
       <LeftSideBarLink href='/'>Home</LeftSideBarLink>
       <LeftSideBarLink href='/about'>About</LeftSideBarLink>
       <LeftSideBarLink href='/news'>News</LeftSideBarLink>

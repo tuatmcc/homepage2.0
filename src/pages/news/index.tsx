@@ -12,9 +12,9 @@ const meta: PageMeta = {
 const Works = ({ posts }: PostCollectorProps) => {
   return (
     <Page meta={meta}>
-      <Flex flexWrap='wrap'>
+      <Flex flexDir='column'>
         {posts.map((post) => (
-          <Flex key={0} flex='1 1 30em'>
+          <Flex key={0}>
             <Box>
               <Link href={post.filePath}>{post.filename}</Link>
             </Box>

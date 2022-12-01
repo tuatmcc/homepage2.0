@@ -34,19 +34,19 @@ const Home = () => {
           >
             <Box
               pos='relative'
-              w={['2em', '5em', '10em']}
-              h={['2em', '5em', '10em']}
+              w={['2rem', '5rem', '10rem']}
+              h={['2rem', '5rem', '10rem']}
             >
               <Image fill src='/mcc-logo.svg' alt='mcc-logo' />
             </Box>
             <Box pos='relative' display='flex'>
-              <Heading fontSize={['2em', '3em', '6em']} color='white'>
+              <Heading fontSize={['2rem', '3rem', '6rem']} color='white'>
                 Micro
               </Heading>
-              <Heading fontSize={['2em', '3em', '6em']} color='white'>
+              <Heading fontSize={['2rem', '3rem', '6rem']} color='white'>
                 Computer
               </Heading>
-              <Heading fontSize={['2em', '3em', '6em']} color='white'>
+              <Heading fontSize={['2rem', '3rem', '6rem']} color='white'>
                 Club
               </Heading>
             </Box>
