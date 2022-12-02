@@ -1,5 +1,5 @@
 import { Flex, ChakraProps } from '@chakra-ui/react'
-import { CustomLink } from './custom-link'
+import CustomLink from './custom-link'
 
 /**
  * A Simple LeftSideBar component.
@@ -11,7 +11,7 @@ const LeftSideBar = (props: ChakraProps) => {
     { href: '/about', label: 'About' },
     { href: '/news', label: 'News' },
     { href: '/activities', label: 'Activities' },
-    { href: 'works', label: 'Works' },
+    { href: '/works', label: 'Works' },
   ]
 
   const linkItems = links.map((link) => {
@@ -36,7 +36,11 @@ const LeftSideBar = (props: ChakraProps) => {
     )
   })
 
-  return <Flex flexDir="column" overflow="auto" {...props}>{linkItems}</Flex>
+  return (
+    <Flex flexDir="column" overflow="auto" {...props}>
+      {linkItems}
+    </Flex>
+  )
 }
 
 export default LeftSideBar

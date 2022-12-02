@@ -20,12 +20,12 @@ const Twitter = (props: ChakraProps) => {
   })
   return (
     <Box {...props} ref={ref}>
-      <CustomAnchor
-        className='twitter-timeline'
-        href='https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw'
+      <a
+        className="twitter-timeline"
+        href="https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw"
       >
         Tweets by TUATMCC
-      </CustomAnchor>
+      </a>
     </Box>
   )
 }

@@ -39,7 +39,7 @@ const CustomLink = chakra(Link, {
     textAlign: 'start',
     _hover: { bgColor: 'gray.100', shadow: '0 0 2em 0.5em #00000050' },
   },
-  shouldForwardProp: prop => ['href', 'children'].includes(prop),
+  shouldForwardProp: (prop) => ['href', 'children'].includes(prop),
 })
 
 export const Nav = () => {
@@ -47,33 +47,33 @@ export const Nav = () => {
   const btnRef = React.useRef<HTMLButtonElement>(null)
 
   return (
-    <Box pos='absolute' w='100%' textAlign='end' verticalAlign='end'>
+    <Box pos="absolute" w="100%" textAlign="end" verticalAlign="end">
       <IconButton
-        aria-label='Open Sidebar'
+        aria-label="Open Sidebar"
         ref={btnRef}
         onClick={onToggle}
-        bgColor='white'
-        borderRadius='50%'
-        size='lg'
-        width='4rem'
-        height='4rem'
-        m='5'
-        justifySelf='end'
+        bgColor="white"
+        borderRadius="50%"
+        size="lg"
+        width="4rem"
+        height="4rem"
+        m="5"
+        justifySelf="end"
         _hover={{ shadow: '0 0 2em 0.5em #00000050' }}
         icon={<HamburgerIcon />}
       ></IconButton>
       <Collapse in={isOpen} animateOpacity dragListener>
         <Flex
-          p='5'
-          color='white'
-          mx='4'
+          p="5"
+          color="white"
+          mx="4"
           ml={['4', '4', '60%']}
-          bg='transparent'
-          rounded='md'
-          opacity='1'
-          dir='row'
-          flexWrap='wrap'
-          overflowY='auto'
+          bg="transparent"
+          rounded="md"
+          opacity="1"
+          dir="row"
+          flexWrap="wrap"
+          overflowY="auto"
         >
           {[
             { name: 'Home', href: '/' },
@@ -82,7 +82,9 @@ export const Nav = () => {
             { name: 'Works', href: '/works' },
             { name: 'Contact', href: '/contact' },
           ].map((item, index) => (
-            <CustomLink key={index} href={item.href}>{item.name}</CustomLink>
+            <CustomLink key={index} href={item.href}>
+              {item.name}
+            </CustomLink>
           ))}
         </Flex>
       </Collapse>

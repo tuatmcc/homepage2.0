@@ -1,13 +1,9 @@
-import { Page } from '../../components/page'
-
-export const meta = {
-  title: 'Discord Bot チュートリアル',
-  date: '2022-03-16',
-  tags: ['dev'],
-  img: '/activities/discord-bot-tutorial/discordjs-logo.svg',
-}
-
-<Page meta={meta} isMdx>
+---
+title: Discord Bot チュートリアル,
+date: 2022-03-16,
+tags: ['dev']
+img: '/activities/discord-bot-tutorial/discordjs-logo.svg'
+---
 
 # Discord Bot チュートリアル
 
@@ -426,5 +422,3 @@ if (interaction.commandName === 'ping') {
 # おわり
 
 スラッシュコマンドに対応した Discord Bot を作りました。後はいろいろ工夫して頑張ってください(雑)。
-
-</Page>

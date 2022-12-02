@@ -1,11 +1,25 @@
-import { promises as fs } from 'fs'
 import { GetStaticProps } from 'next'
 import path from 'path'
+import fs from 'fs'
+import matter from 'gray-matter'
 
-interface Post {
-  filePath: string
-  filename: string
+/**
+ * @param {string} slug - The slug of the post. This is the name of the markdown file without the extension.
+ * @param frontmatter - The metadata of the post.
+ */
+export interface Post {
+  slug: string
+  frontmatter: { [key: string]: any }
   content: string
+}
+
+/**
+ * @param slug filename without the extension
+ * @param filePath absolute path to the file
+ */
+interface PostPath {
+  slug: string
+  fullPath: string
 }
 
 export interface PostCollectorProps {
@@ -14,44 +28,60 @@ export interface PostCollectorProps {
 
 export class PostCollector {
   targetDir: string
+  targetDirFullPath: string
 
   /**
-   *
    * @param targetDir src/pages/targetDir
    */
   constructor(targetDir: string) {
     this.targetDir = targetDir
+    this.targetDirFullPath = path.join(process.cwd(), 'src/posts', targetDir)
   }
 
-  getStaticProps: GetStaticProps<{ posts: Post[] }> = async () => {
-    // https://nextjs.org/docs/api-reference/data-fetching/get-static-props#reading-files-use-processcwd
+  /**
+   * Collects all posts from the target directory
+   * @param slug src/pages/targetDir/slug.md
+   * @returns
+   */
+  getPostBySlug = (slug: string): Post => {
+    const fullPath = path.join(this.targetDirFullPath, `${slug}.md`)
+    try {
+      const fileContents = fs.readFileSync(fullPath, 'utf8')
+      const { data, content } = matter(fileContents)
+      return { slug: slug, frontmatter: data, content }
+    } catch (e) {
+      console.error(e)
+      return { slug: '/404', frontmatter: { title: 'Error'}, content: '' }
+    }
+  }
 
-    // This function gets called at build time on server-side.
-    // It won't be called on client-side, so you can even do
-    // direct database queries.
-    const postsDirectory = path.join(
-      process.cwd(),
-      `src/pages/${this.targetDir}`
-    )
-    const filenames = await fs.readdir(postsDirectory)
-
-    // Remove index.tsx from list, as it is not a post
-    filenames.splice(filenames.indexOf('index.tsx'), 1)
-
-
-    // Read all files in the posts dir, customize and return their contents
-    const posts: Promise<Post>[] = filenames.map(async (filename) => {
-      const filePath = path.join(postsDirectory, filename)
-      const fileContents = await fs.readFile(filePath, 'utf8')
-
+  /**
+   * Collects all markdown files from the target directory
+   */
+  getAllPostPaths = (): PostPath[] => {
+    const postNames = fs.readdirSync(this.targetDirFullPath)
+    const postPaths = postNames.map((postName) => {
       return {
-        filePath: `/${this.targetDir}/${filename.replace(/\.mdx?$/, '')}`,
-        filename,
-        content: fileContents,
+        slug: postName.replace(/\.md$/, ''),
+        fullPath: `${this.targetDir}/${postName}`,
       }
     })
-    // By returning { props: { posts } }, the Blog component
-    // will receive `posts` as a prop at build time
+    return postPaths
+  }
+
+  getAllPosts = () => {
+    const postPaths = this.getAllPostPaths()
+    const posts = postPaths.map((postPath) => this.getPostBySlug(postPath.slug))
+    return posts
+  }
+
+  /**
+   * 記事一覧ページのためのデータを作成する。
+   * @returns
+   */
+  getStaticProps: GetStaticProps<{ posts: Post[] }> = async () => {
+    const postPaths = this.getAllPostPaths()
+    const posts = this.getAllPosts()
     return {
       props: {
         posts: await Promise.all(posts),

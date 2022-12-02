@@ -79,14 +79,14 @@ const CustumizedCanvas = chakra(Canvas, {
 export const HomeCanvas = () => {
   return (
     <CustumizedCanvas camera={{ position: [-5, 0, 5], fov: 45 }}>
-      <color attach='background' args={['#f0f0f0']} />
+      <color attach="background" args={['#f0f0f0']} />
       <directionalLight
         position={[-10, 10, 5]}
         shadow-mapSize={[256, 256]}
         shadow-bias={-0.0001}
         castShadow
       >
-        <orthographicCamera attach='shadow-camera' args={[-10, 10, -10, 10]} />
+        <orthographicCamera attach="shadow-camera" args={[-10, 10, -10, 10]} />
       </directionalLight>
       <MccModel position={[0, 0, 0]} />
       <Plane
@@ -95,7 +95,7 @@ export const HomeCanvas = () => {
         rotation={[-Math.PI / 2, 0, 0]}
         receiveShadow
       >
-        <meshStandardMaterial color='#fff' side={THREE.DoubleSide} />
+        <meshStandardMaterial color="#fff" side={THREE.DoubleSide} />
       </Plane>
     </CustumizedCanvas>
   )

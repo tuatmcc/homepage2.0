@@ -13,8 +13,8 @@ const Works = ({ posts }: PostCollectorProps) => {
   return (
     <Page meta={meta}>
       {posts.map((post) => (
-        <Flex key={post.filename} flexDir='column'>
-            <Link href={post.filePath}>{post.filename}</Link>
+        <Flex key={post.slug} flexDir="column">
+          <Link href={`works/${post.slug}`}>{post.slug}</Link>
         </Flex>
       ))}
     </Page>

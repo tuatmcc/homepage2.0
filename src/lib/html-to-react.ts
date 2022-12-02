@@ -3,9 +3,14 @@ import rehypeParse from 'rehype-parse'
 import rehypeReact, { Options as RehypeReactOptions } from 'rehype-react'
 import React from 'react'
 
-import { CustomLink, LinkProps } from '../components/custom-link'
+import CustomLink, { LinkProps } from '../components/custom-link'
 
-const HtmlToReact = (html: string) => {
+/**
+ * useEffect内で使用される。
+ * @param html HTML string that is parsed from a markdown post
+ * @returns
+ */
+const htmlToReact = (html: string) => {
   const processor = unified()
     .use(rehypeParse, { fragment: true })
     .use(rehypeReact, {
@@ -19,4 +24,4 @@ const HtmlToReact = (html: string) => {
   return processor.result
 }
 
-export default HtmlToReact
+export default htmlToReact

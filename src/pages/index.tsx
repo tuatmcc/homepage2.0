@@ -15,38 +15,38 @@ const Home = () => {
       <Head>
         <title>HOME - MCC</title>
         <meta
-          lang='ja'
-          name='description'
-          content='東京農工大学公認サークルMCC(マイクロコンピュータクラブ)のホームページです'
+          lang="ja"
+          name="description"
+          content="東京農工大学公認サークルMCC(マイクロコンピュータクラブ)のホームページです"
         />
-        <link rel='icon' href='/favicon.ico' />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <FullContainer>
-        <Full alignContent='center' display='flex' flexDir='row'>
+        <Full alignContent="center" display="flex" flexDir="row">
           <HomeCanvas />
           <Flex
-            pos='absolute'
-            flexDir='row'
+            pos="absolute"
+            flexDir="row"
             px={5}
-            width='100%'
-            alignItems='center'
+            width="100%"
+            alignItems="center"
           >
             <Box
-              pos='relative'
+              pos="relative"
               w={['2rem', '5rem', '10rem']}
               h={['2rem', '5rem', '10rem']}
             >
-              <Image fill src='/mcc-logo.svg' alt='mcc-logo' />
+              <Image fill src="/mcc-logo.svg" alt="mcc-logo" />
             </Box>
-            <Box pos='relative' display='flex'>
-              <Heading fontSize={['2rem', '3rem', '6rem']} color='white'>
+            <Box pos="relative" display="flex">
+              <Heading fontSize={['2rem', '3rem', '6rem']} color="white">
                 Micro
               </Heading>
-              <Heading fontSize={['2rem', '3rem', '6rem']} color='white'>
+              <Heading fontSize={['2rem', '3rem', '6rem']} color="white">
                 Computer
               </Heading>
-              <Heading fontSize={['2rem', '3rem', '6rem']} color='white'>
+              <Heading fontSize={['2rem', '3rem', '6rem']} color="white">
                 Club
               </Heading>
             </Box>

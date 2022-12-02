@@ -6,18 +6,16 @@ import remarkGemoji from 'remark-gemoji'
 import remarkToc from 'remark-toc'
 import remarkRehype from 'remark-rehype'
 import rehypeKatex from 'rehype-katex'
-import rehypeShiki from '@leafac/rehype-shiki'
-import shiki from 'shiki'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutoLinkHeadings from 'rehype-autolink-headings'
 import rehypeStringify from 'rehype-stringify'
 
 /**
- * Parse markdown to html at build time
- * @param markdown 
- * @returns 
+ * Parse markdown to html. This function must be used inside the getStaticProps function.
+ * @param markdown
+ * @returns
  */
-const MarkdownToHtml = async (markdown: string) => {
+const markdownToHtml = async (markdown: string) => {
   const html = await unified()
     .use(remarkParse)
     .use(remarkGfm)
@@ -25,13 +23,12 @@ const MarkdownToHtml = async (markdown: string) => {
     .use(remarkToc, { heading: 'Index', tight: true })
     .use(remarkRehype)
     .use(rehypeKatex)
-    .use(rehypeShiki, { highlighter: await shiki.getHighlighter({ theme: 'nord'}) })
     .use(rehypeSlug)
     .use(rehypeAutoLinkHeadings, { behavior: 'wrap' })
     .use(rehypeStringify)
     .process(markdown)
 
-  return html
+  return html.toString()
 }
 
-export default MarkdownToHtml
+export default markdownToHtml
