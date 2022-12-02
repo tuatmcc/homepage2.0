@@ -35,9 +35,11 @@ export class PostCollector {
     )
     const filenames = await fs.readdir(postsDirectory)
 
-    // Remove index.tsx from list as it is not a post
+    // Remove index.tsx from list, as it is not a post
     filenames.splice(filenames.indexOf('index.tsx'), 1)
 
+
+    // Read all files in the posts dir, customize and return their contents
     const posts: Promise<Post>[] = filenames.map(async (filename) => {
       const filePath = path.join(postsDirectory, filename)
       const fileContents = await fs.readFile(filePath, 'utf8')
