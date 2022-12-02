@@ -1,9 +1,10 @@
-import { Box, Center, Flex, Heading, Spacer, Tag, Link } from '@chakra-ui/react'
+import { Box, Center, Flex, Heading, Tag } from '@chakra-ui/react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { ReactNode } from 'react'
 import LeftSideBar from './left-side-bar'
 import Navbar from './navbar'
+import Twitter from './twitter'
 
 export interface PageMeta {
   title: string
@@ -33,15 +34,15 @@ export const Page: ({ meta, children, isMdx }: PageProps) => JSX.Element = ({
   const { title, description, img, tags } = meta
 
   // Responsive grid [sm, md, lg, xl, 2xl]
-  const [lWidth, mWidth, rWidth] = [
-    [0, 0, '30vw', '20vw'],
-    ['100vw', '100vw', '70vw', '75vw', '60vw'],
-    [0, 0, 0, 0, '20vw'],
+  const [leftWidth, mainWidth, rightWidth] = [
+    { base: 0, lg: '25%', '2xl': '20%' },
+    { base: '100%', lg: '75%', '2xl': '60%' },
+    { base: 0, '2xl': '20%' },
   ]
-  const [lDisplay, mDisplay, rDisplay] = [
-    ['none', 'none', 'flex', 'flex'],
+  const [leftDisplay, mainDisplay, rightDisplay] = [
+    { base: 'none', lg: 'flex' },
     'flex',
-    ['none', 'none', 'none', 'none', 'flex'],
+    { base: 'none', '2xl': 'flex' },
   ]
   return (
     <>
@@ -51,19 +52,20 @@ export const Page: ({ meta, children, isMdx }: PageProps) => JSX.Element = ({
         {img && <meta property='og:image' content={img} />}
       </Head>
 
-      <Flex h='3rem'>
-        <Navbar pos='fixed' />
+      <Flex h='3rem' pos='relative' zIndex={100}>
+        {/* 高さを確保するために、relativeな要素の中に入れる */}
+        <Navbar pos='fixed' shadow='0 0 0.2rem 0.1rem #aaa' />
       </Flex>
 
-      <Flex>
-        {/* Left Sidebar */}
-        <Flex w={lWidth} display={lDisplay} overflow='auto'>
+      {/* Left Sidebar */}
+      <Flex pos='relative'>
+        <Flex w={leftWidth} display={leftDisplay}>
           <LeftSideBar w='inherit' pos='fixed' />
         </Flex>
 
         {/* Main */}
-        <Flex flexDir='column' w={mWidth} display={mDisplay}>
-          <Flex flexDir='column' w='inherit' px='1rem'>
+        <Flex flexDir='column' w={mainWidth} display={mainDisplay}>
+          <Flex flexDir='column' w='100%' px='1rem'>
             <Flex py='0.5rem'>{meta.date && <Tag>{meta.date}</Tag>}</Flex>
             <Heading as='h1' size='2xl' py='4rem'>
               {title}
@@ -97,25 +99,20 @@ export const Page: ({ meta, children, isMdx }: PageProps) => JSX.Element = ({
         </Flex>
 
         {/* Right Sidebar */}
-        <Flex w={rWidth} flexDir='column' py='5rem' display={rDisplay}>
-          <Box
+        <Flex
+          w={rightWidth}
+          flexDir='column'
+          pos='relative'
+          display={rightDisplay}
+        >
+          <Twitter
             pos='fixed'
             w='inherit'
-            height='50%'
+            height='90%'
             overflowY='scroll'
             px='0.5rem'
-          >
-            <a
-              className='twitter-timeline'
-              href='https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw'
-            >
-              Tweets by TUATMCC
-            </a>{' '}
-            <script
-              async
-              src='https://platform.twitter.com/widgets.js'
-            ></script>
-          </Box>
+            pt='5rem'
+          />
         </Flex>
       </Flex>
     </>

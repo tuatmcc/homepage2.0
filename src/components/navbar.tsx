@@ -33,14 +33,15 @@ const NavbarBrandLink = chakra(Link, {
 const Navbar = (props: ChakraProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef(null)
+  const height = props.h ? props.h : props.height ? props.height : '3rem'
 
   return (
     <>
       <Flex
         {...props}
-        bgColor='#f0f0f0e0'
+        bgColor='#fffffff0'
         w='100%'
-        h={props.h ? props.h : '3rem'}
+        h={height}
         alignItems='center'
       >
         <NavbarBrandLink href='/'>
@@ -50,8 +51,8 @@ const Navbar = (props: ChakraProps) => {
             width={100}
             height={100}
             style={{
-              height: `${props.h ? props.h : '3rem'}`,
-              width: `${props.h ? props.h : '3rem'}`,
+              height: `${height}`,
+              width: `${height}`,
             }}
           />
           <Heading color='#0080f0'>MicroComputerClub</Heading>
@@ -78,8 +79,8 @@ const Navbar = (props: ChakraProps) => {
             width={100}
             height={100}
             style={{
-              height: `${props.h ? props.h : '3rem'}`,
-              width: `${props.h ? props.h : '3rem'}`,
+              height: `${height}`,
+              width: `${height}`,
               objectFit: 'contain',
             }}
           />
