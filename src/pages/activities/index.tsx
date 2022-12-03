@@ -9,13 +9,13 @@ const meta: PageMeta = {
 }
 
 // posts will be populated at build time by getStaticProps()
-const Works = ({ posts }: PostCollectorProps) => {
+const Activities = ({ posts }: PostCollectorProps) => {
   return (
     <Page meta={meta}>
-      <Flex flexDir='column'>
+      <Flex flexDir="column">
         {posts.map((post) => (
           <Flex key={0}>
-              <Link href={post.filePath}>{post.filename}</Link>
+            <Link href={`activities/${post.slug}`}>{post.slug}</Link>
           </Flex>
         ))}
       </Flex>
@@ -26,4 +26,4 @@ const Works = ({ posts }: PostCollectorProps) => {
 // This function gets called at build time on server-side.
 export const getStaticProps = new PostCollector('activities').getStaticProps
 
-export default Works
+export default Activities

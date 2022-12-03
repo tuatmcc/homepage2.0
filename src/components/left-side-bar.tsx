@@ -1,39 +1,44 @@
-import { Flex, chakra, ChakraProps } from '@chakra-ui/react'
-import Link from 'next/link'
-
-/**
- * A link that overrides the default behavior of Next.js' Link component.
- */
-const LeftSideBarLink = chakra(Link, {
-  baseStyle: {
-    pos: 'relative',
-    display: 'flex',
-    w: '100%',
-    flexDir: 'row',
-    color: 'teal.500',
-    fontSize: 'xl',
-    py: '1rem',
-    px: '1rem',
-    bgColor: 'white',
-    _hover: {
-      bgColor: 'gray.100',
-    },
-  },
-  shouldForwardProp: (prop) => ['href', 'children'].includes(prop),
-})
+import { Flex, ChakraProps } from '@chakra-ui/react'
+import CustomLink from './custom-link'
 
 /**
  * A Simple LeftSideBar component.
  * @returns LeftSideBar
  */
 const LeftSideBar = (props: ChakraProps) => {
+  const links = [
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
+    { href: '/news', label: 'News' },
+    { href: '/activities', label: 'Activities' },
+    { href: '/works', label: 'Works' },
+  ]
+
+  const linkItems = links.map((link) => {
+    return (
+      <CustomLink
+        key={link.href}
+        href={link.href}
+        pos="relative"
+        display="flex"
+        w="100%"
+        color="teal.500"
+        fontSize="xl"
+        py="1rem"
+        px="1rem"
+        bgColor="white"
+        _hover={{
+          bgColor: 'gray.100',
+        }}
+      >
+        {link.label}
+      </CustomLink>
+    )
+  })
+
   return (
-    <Flex flexDir='column' overflow='auto' {...props}>
-      <LeftSideBarLink href='/'>Home</LeftSideBarLink>
-      <LeftSideBarLink href='/about'>About</LeftSideBarLink>
-      <LeftSideBarLink href='/news'>News</LeftSideBarLink>
-      <LeftSideBarLink href='/activities'>Activities</LeftSideBarLink>
-      <LeftSideBarLink href='/works'>Works</LeftSideBarLink>
+    <Flex flexDir="column" overflow="auto" {...props}>
+      {linkItems}
     </Flex>
   )
 }

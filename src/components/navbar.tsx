@@ -39,15 +39,15 @@ const Navbar = (props: ChakraProps) => {
     <>
       <Flex
         {...props}
-        bgColor='#fffffff0'
-        w='100%'
+        bgColor="#fffffff0"
+        w="100%"
         h={height}
-        alignItems='center'
+        alignItems="center"
       >
-        <NavbarBrandLink href='/'>
+        <NavbarBrandLink href="/">
           <Image
-            src='/mcc-logo.svg'
-            alt='MCC Logo'
+            src="/mcc-logo.svg"
+            alt="MCC Logo"
             width={100}
             height={100}
             style={{
@@ -55,14 +55,14 @@ const Navbar = (props: ChakraProps) => {
               width: `${height}`,
             }}
           />
-          <Heading color='#0080f0'>MicroComputerClub</Heading>
+          <Heading color="#0080f0">MicroComputerClub</Heading>
         </NavbarBrandLink>
         <Spacer />
         <IconButton
           display={['block', 'block', 'none']}
           ref={btnRef}
-          colorScheme='teal'
-          variant='outline'
+          colorScheme="teal"
+          variant="outline"
           onClick={onOpen}
           aria-label={''}
         >
@@ -70,12 +70,12 @@ const Navbar = (props: ChakraProps) => {
         </IconButton>
         <ChakraLink
           display={['none', 'none', 'block']}
-          href='https://twitter.com/TUATMCC'
+          href="https://twitter.com/TUATMCC"
           isExternal
         >
           <Image
-            alt='twitter'
-            src='/twitter.svg'
+            alt="twitter"
+            src="/twitter.svg"
             width={100}
             height={100}
             style={{
@@ -88,7 +88,7 @@ const Navbar = (props: ChakraProps) => {
       </Flex>
       <Drawer
         isOpen={isOpen}
-        placement='right'
+        placement="right"
         onClose={onClose}
         finalFocusRef={btnRef}
       >
@@ -102,7 +102,7 @@ const Navbar = (props: ChakraProps) => {
           </DrawerBody>
 
           <DrawerFooter>
-            <Button variant='outline' mr={3} onClick={onClose}>
+            <Button variant="outline" mr={3} onClick={onClose}>
               Cancel
             </Button>
           </DrawerFooter>
