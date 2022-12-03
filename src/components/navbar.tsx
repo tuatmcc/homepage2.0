@@ -34,6 +34,7 @@ const Navbar = (props: ChakraProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef(null)
   const height = props.h ? props.h : props.height ? props.height : '3rem'
+  const imgHeight = `${+height.toString().replace('rem', '') * 0.8}rem`
 
   return (
     <>
@@ -51,11 +52,12 @@ const Navbar = (props: ChakraProps) => {
             width={100}
             height={100}
             style={{
-              height: `${height}`,
-              width: `${height}`,
+              height: `${imgHeight}`,
+              width: `${imgHeight}`,
             }}
           />
-          <Heading color="#0080f0">MicroComputerClub</Heading>
+          <Heading color="#0080f0" display={{base: 'none', md:'block'}}>MicroComputerClub</Heading>
+          <Heading color="#0080f0" display={{base: 'block', md:'none'}}>MCC</Heading>
         </NavbarBrandLink>
         <Spacer />
         <IconButton

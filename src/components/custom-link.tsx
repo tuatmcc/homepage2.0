@@ -28,6 +28,12 @@ const CustomLink = (props: LinkProps & ChakraProps) => {
         {children}
       </ChakraLink>
     )
+  } else if (href.match('#')) {
+    return (
+      <ChakraLink href={href} {...chakraProps} color='inherit' textDecoration='inherit' _hover={{ textDecor: 'inherit', color: 'inherit'}}>
+        {children}
+      </ChakraLink>
+    )
   } else {
     // Internal link
     return (

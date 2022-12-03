@@ -1,6 +1,6 @@
 ---
-title: Discord Bot チュートリアル,
-date: 2022-03-16,
+title: 'Discord Bot チュートリアル'
+date: '2022-03-16'
 tags: ['dev']
 img: '/activities/discord-bot-tutorial/discordjs-logo.svg'
 ---
@@ -78,7 +78,7 @@ npm install --save discord.js dotenv typescript @types/node@16 ts-node tsconfig-
 
 `tsconfig.json`には設定項目が大量にありますが、中身については省略します。`baseUrl`の項目だけ次のように変えてください。
 
-```jsonc
+```json
 {
   // ...
   "baseUrl": "./src"
@@ -90,7 +90,7 @@ npm install --save discord.js dotenv typescript @types/node@16 ts-node tsconfig-
 
 `package.json`の`"scripts"`の箇所を次のように編集してください。
 
-```jsonc
+```json
 {
   // ...
   "scripts": {

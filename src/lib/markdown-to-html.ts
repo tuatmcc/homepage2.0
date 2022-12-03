@@ -6,6 +6,7 @@ import remarkGemoji from 'remark-gemoji'
 import remarkToc from 'remark-toc'
 import remarkRehype from 'remark-rehype'
 import rehypeKatex from 'rehype-katex'
+import rehypeHighlight from 'rehype-highlight'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutoLinkHeadings from 'rehype-autolink-headings'
 import rehypeStringify from 'rehype-stringify'
@@ -23,6 +24,7 @@ const markdownToHtml = async (markdown: string) => {
     .use(remarkToc, { heading: 'Index', tight: true })
     .use(remarkRehype)
     .use(rehypeKatex)
+    .use(rehypeHighlight, { ignoreMissing: true })
     .use(rehypeSlug)
     .use(rehypeAutoLinkHeadings, { behavior: 'wrap' })
     .use(rehypeStringify)

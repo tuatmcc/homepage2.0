@@ -1,5 +1,8 @@
 import type { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
+
+import 'highlight.js/styles/base16/atelier-lakeside-light.css'
+
 import theme from '../styles/theme'
 
 /**
