@@ -21,6 +21,8 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 import React, { ReactNode } from 'react'
 import Link from 'next/link'
 
+// ToDo: トップページを整えるときに、ここもちゃんと整理する。汚すぎる。
+
 // Override the default Next Link
 const CustomLink = chakra(Link, {
   baseStyle: {

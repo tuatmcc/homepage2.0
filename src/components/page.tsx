@@ -22,7 +22,7 @@ interface PageProps {
 }
 
 /**
- * Common page layout
+ * 簡易的な共通ページレイアウト。特に、記事のレイアウトに使用する。ばっちりレスポンシブ対応。
  * @param param0
  * @returns
  */

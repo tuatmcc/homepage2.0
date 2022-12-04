@@ -1,3 +1,7 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+
 import { HamburgerIcon } from '@chakra-ui/icons'
 import {
   Button,
@@ -15,21 +19,16 @@ import {
   IconButton,
   Spacer,
   useDisclosure,
-  Link as ChakraLink,
 } from '@chakra-ui/react'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+
+import CustomLink from './custom-link'
 import LeftSideBar from './left-side-bar'
 
-// Override the default Next.js Link component to use Chakra UI's Props
-const NavbarBrandLink = chakra(Link, {
-  baseStyle: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-})
-
+/**
+ * 簡易的なナビゲーションバー。レスポンシブ対応。
+ * @param props ChakraProps
+ * @returns 
+ */
 const Navbar = (props: ChakraProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef(null)
@@ -45,7 +44,7 @@ const Navbar = (props: ChakraProps) => {
         h={height}
         alignItems="center"
       >
-        <NavbarBrandLink href="/">
+        <CustomLink href="/" display='flex' alignItems='center'>
           <Image
             src="/mcc-logo.svg"
             alt="MCC Logo"
@@ -58,7 +57,7 @@ const Navbar = (props: ChakraProps) => {
           />
           <Heading color="#0080f0" display={{base: 'none', md:'block'}}>MicroComputerClub</Heading>
           <Heading color="#0080f0" display={{base: 'block', md:'none'}}>MCC</Heading>
-        </NavbarBrandLink>
+        </CustomLink>
         <Spacer />
         <IconButton
           display={['block', 'block', 'none']}
@@ -70,10 +69,9 @@ const Navbar = (props: ChakraProps) => {
         >
           <HamburgerIcon />
         </IconButton>
-        <ChakraLink
+        <CustomLink
           display={['none', 'none', 'block']}
           href="https://twitter.com/TUATMCC"
-          isExternal
         >
           <Image
             alt="twitter"
@@ -86,7 +84,7 @@ const Navbar = (props: ChakraProps) => {
               objectFit: 'contain',
             }}
           />
-        </ChakraLink>
+        </CustomLink>
       </Flex>
       <Drawer
         isOpen={isOpen}

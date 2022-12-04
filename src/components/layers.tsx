@@ -1,6 +1,8 @@
 import { ReactElement, useEffect, useRef, useState } from 'react'
 import { chakra } from '@chakra-ui/react'
 
+// ToDo: ここのコンポーネントを整える、またはいい感じに削除する
+
 /**
  * 画面いっぱいに重なるdiv要素を作成する。
  * @returns

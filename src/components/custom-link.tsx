@@ -3,7 +3,7 @@ import NextLink from 'next/link'
 import { ReactNode } from 'react'
 export interface LinkProps {
   href: string
-  children?: string | ReactNode | ReactNode[]
+  children?: ReactNode | ReactNode[]
 }
 
 /**
@@ -15,8 +15,8 @@ const ChakraNextLink = chakra(NextLink, {
 })
 
 /**
- * A custom link that uses Next.js Link and Chakra Link components. This can automatically be an external link if the href starts with http.
- * @param href The href, children, and any other chakra props to pass to the Chakra Link component
+ * 外部リンクと内部リンクを判別して、適切なChakraコンポーネントを返すリンク。すべてのリンクはこのコンポーネントを使用する。
+ * @param props href, children, ChakraProps
  * @returns
  */
 const CustomLink = (props: LinkProps & ChakraProps) => {
@@ -29,6 +29,7 @@ const CustomLink = (props: LinkProps & ChakraProps) => {
       </ChakraLink>
     )
   } else if (href.match('#')) {
+    // Auto-Linked Headding
     return (
       <ChakraLink href={href} {...chakraProps} color='inherit' textDecoration='inherit' _hover={{ textDecor: 'inherit', color: 'inherit'}}>
         {children}

@@ -4,7 +4,26 @@ import Image from 'next/image'
 import { unified } from 'unified'
 import rehypeParse from 'rehype-parse'
 import rehypeReact, { Options as RehypeReactOptions } from 'rehype-react'
-import { Heading, Text, Code, chakra, ChakraProps, useClipboard, List, ListItem, UnorderedList, OrderedList } from '@chakra-ui/react'
+import {
+  Heading,
+  Text,
+  Code,
+  chakra,
+  ChakraProps,
+  useClipboard,
+  List,
+  ListItem,
+  UnorderedList,
+  OrderedList,
+  Table,
+  Tr,
+  Td,
+  Th,
+  Tfoot,
+  Tbody,
+  TableCaption,
+  Thead,
+} from '@chakra-ui/react'
 
 import CustomLink, { LinkProps } from '../components/custom-link'
 
@@ -26,7 +45,13 @@ const htmlToReact = (html: string) => {
         ),
 
         h1: ({ children }) => (
-          <Heading as="h1" size="xl" my={4} borderBottom='1px' borderStyle='dotted'>
+          <Heading
+            as="h1"
+            size="xl"
+            my={4}
+            borderBottom="1px"
+            borderStyle="dotted"
+          >
             {children}
           </Heading>
         ),
@@ -55,23 +80,60 @@ const htmlToReact = (html: string) => {
             {children}
           </Heading>
         ),
-        p: ({ children }) => <Text fontSize="md" lineHeight='1.5rem'>{children}</Text>,
+        p: ({ children }) => (
+          <Text fontSize="md" lineHeight="1.5rem">
+            {children}
+          </Text>
+        ),
         del: ({ children }) => (
           <Text as="span" textDecor="line-through">
             {children}
           </Text>
         ),
-        code: ({ children }) => <Code colorScheme="gray" my='0.5'>{children}</Code>,
+        code: ({ children }) => (
+          <Code colorScheme="gray" my="0.5">
+            {children}
+          </Code>
+        ),
         pre: ({ children }) => {
           return (
-            <chakra.pre p='0.5rem' overflow="auto" bgColor="gray.100" my={4}>
+            <chakra.pre p="0.5rem" overflow="auto" bgColor="gray.100" my={4}>
               {children}
             </chakra.pre>
           )
         },
-        ul: ({ children }) => <UnorderedList spacing={3} my='1.5rem'>{children}</UnorderedList>,
-        ol: ({ children }) => <OrderedList spacing={3} as="ol">{children}</OrderedList>,
+        ul: ({ children }) => (
+          <UnorderedList spacing={3} my="1.5rem">
+            {children}
+          </UnorderedList>
+        ),
+        ol: ({ children }) => (
+          <OrderedList spacing={3} as="ol">
+            {children}
+          </OrderedList>
+        ),
         li: ({ children }) => <ListItem>{children}</ListItem>,
+        table: ({ children }) => (
+          <Table variant="simple" my="1.5rem">
+            {children}
+          </Table>
+        ),
+        tr: ({ children }) => <Tr>{children}</Tr>,
+        td: ({ children }) => <Td>{children}</Td>,
+        th: ({ children }) => <Th>{children}</Th>,
+        tbody: ({ children }) => <Tbody>{children}</Tbody>,
+        tfoot: ({ children }) => <Tfoot>{children}</Tfoot>,
+        caption: ({ children }) => <TableCaption>{children}</TableCaption>,
+        thead: ({ children }) => <Thead>{children}</Thead>,
+        img: ({ src = '', alt = 'image' }) => (
+          <Image
+            src={src}
+            alt={alt}
+            width={640}
+            height={480}
+            style={{ width: 'auto', height: 'auto' }}
+          />
+        ),
       },
     } as RehypeReactOptions)
     .processSync(html)

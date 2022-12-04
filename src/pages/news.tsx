@@ -1,6 +1,6 @@
 import { Box, Flex } from '@chakra-ui/react'
-import { Page, PageMeta } from '../../components/page'
-import { PostCollector, PostCollectorProps } from '../../lib/post-collector'
+import { Page, PageMeta } from '../components/page'
+import { PostCollector, PostCollectorProps } from '../lib/post-collector'
 
 const meta: PageMeta = {
   title: 'お知らせ',

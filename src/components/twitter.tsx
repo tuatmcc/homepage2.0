@@ -1,16 +1,15 @@
 import { Box, chakra, ChakraProps } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 
-const CustomAnchor = chakra('a', {
-  baseStyle: {
-    width: '100%',
-    height: '10rem',
-    display: 'block',
-  },
-})
-
+/**
+ * ツイッターの埋め込みを表示するコンポーネント。
+ * @param props ChakraProps
+ * @returns 
+ */
 const Twitter = (props: ChakraProps) => {
   const ref = React.useRef<HTMLDivElement>(null)
+  // 埋め込みコードのもとはググると公式のが出てくる
+  // public/index.htmlにあらかじめ直接<script>タグを書いておく方が良いかもしれない
   useEffect(() => {
     if (ref.current) {
       const script = document.createElement('script')

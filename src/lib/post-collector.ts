@@ -3,6 +3,10 @@ import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
 
+// 記事を取得するためのクラス。index.tsxで使う生このpostCollectorと、
+// [slug].tsxで使うdynamicRoutingというwrapperクラス用とで、2つの別インスタンスができてしまい、
+// 一部処理が重複しているのが気になる。余裕があれば直したいが、設計をちゃんと考えてから実装する必要がある。
+
 /**
  * @param {string} slug - The slug of the post. This is the name of the markdown file without the extension.
  * @param frontmatter - The metadata of the post.
@@ -77,7 +81,7 @@ export class PostCollector {
 
   /**
    * 記事一覧ページのためのデータを作成する。
-   * @returns
+   * @returns posts: { slug: string, frontmatter: { title: string, etc... } }[]
    */
   getStaticProps: GetStaticProps<{ posts: Post[] }> = async () => {
     const postPaths = this.getAllPostPaths()

@@ -2,7 +2,7 @@ import { Flex, ChakraProps } from '@chakra-ui/react'
 import CustomLink from './custom-link'
 
 /**
- * A Simple LeftSideBar component.
+ * 簡易的な左サイドバーの中身。
  * @returns LeftSideBar
  */
 const LeftSideBar = (props: ChakraProps) => {
