@@ -31,7 +31,13 @@ const CustomLink = (props: LinkProps & ChakraProps) => {
   } else if (href.match('#')) {
     // Auto-Linked Headding
     return (
-      <ChakraLink href={href} {...chakraProps} color='inherit' textDecoration='inherit' _hover={{ textDecor: 'inherit', color: 'inherit'}}>
+      <ChakraLink
+        href={href}
+        {...chakraProps}
+        color="inherit"
+        textDecoration="inherit"
+        _hover={{ textDecor: 'inherit', color: 'inherit' }}
+      >
         {children}
       </ChakraLink>
     )

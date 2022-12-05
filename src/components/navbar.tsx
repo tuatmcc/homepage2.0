@@ -27,7 +27,7 @@ import LeftSideBar from './left-side-bar'
 /**
  * 簡易的なナビゲーションバー。レスポンシブ対応。
  * @param props ChakraProps
- * @returns 
+ * @returns
  */
 const Navbar = (props: ChakraProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -44,7 +44,7 @@ const Navbar = (props: ChakraProps) => {
         h={height}
         alignItems="center"
       >
-        <CustomLink href="/" display='flex' alignItems='center'>
+        <CustomLink href="/" display="flex" alignItems="center">
           <Image
             src="/mcc-logo.svg"
             alt="MCC Logo"
@@ -55,8 +55,12 @@ const Navbar = (props: ChakraProps) => {
               width: `${imgHeight}`,
             }}
           />
-          <Heading color="#0080f0" display={{base: 'none', md:'block'}}>MicroComputerClub</Heading>
-          <Heading color="#0080f0" display={{base: 'block', md:'none'}}>MCC</Heading>
+          <Heading color="#0080f0" display={{ base: 'none', md: 'block' }}>
+            MicroComputerClub
+          </Heading>
+          <Heading color="#0080f0" display={{ base: 'block', md: 'none' }}>
+            MCC
+          </Heading>
         </CustomLink>
         <Spacer />
         <IconButton

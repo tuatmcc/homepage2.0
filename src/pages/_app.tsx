@@ -3,8 +3,6 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 import 'highlight.js/styles/base16/atelier-lakeside-light.css'
 
-import theme from '../styles/theme'
-
 /**
  * SPAのおおもと。
  * @param param0
@@ -12,7 +10,7 @@ import theme from '../styles/theme'
  */
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider>
       <Component {...pageProps} />
     </ChakraProvider>
   )

@@ -1,4 +1,4 @@
-import CustomLink from '../components/custom-link'
+import CustomLink from '../../components/custom-link'
 
 const About = () => {
   return (

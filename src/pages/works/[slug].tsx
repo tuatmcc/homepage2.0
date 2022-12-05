@@ -2,10 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { Page, PageMeta } from '../../components/page'
 import htmlToReact from '../../lib/html-to-react'
-import {
-  PostCollector,
-  Post,
-} from '../../lib/post-collector'
+import { PostCollector, Post } from '../../lib/post-collector'
 import { DynamicRouting } from '../../lib/dynamic-routing'
 
 const postCollector = new PostCollector('works')
@@ -13,8 +10,8 @@ const dynamicRouting = new DynamicRouting(postCollector)
 
 /**
  * works以下のマークダウンファイルへのパスはここに通されます。
- * @param param0 
- * @returns 
+ * @param param0
+ * @returns
  */
 const WorksPost = ({ post }: { post: Post }) => {
   const { title, description, img } = post.frontmatter

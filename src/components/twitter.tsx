@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 /**
  * ツイッターの埋め込みを表示するコンポーネント。
  * @param props ChakraProps
- * @returns 
+ * @returns
  */
 const Twitter = (props: ChakraProps) => {
   const ref = React.useRef<HTMLDivElement>(null)
