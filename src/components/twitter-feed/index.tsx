@@ -6,7 +6,7 @@ import React, { useEffect } from 'react'
  * @param props ChakraProps
  * @returns
  */
-const Twitter = (props: ChakraProps) => {
+const TwitterFeed = (props: ChakraProps) => {
   const ref = React.useRef<HTMLDivElement>(null)
   // 埋め込みコードのもとはググると公式のが出てくる
   // public/index.htmlにあらかじめ直接<script>タグを書いておく方が良いかもしれない
@@ -29,4 +29,4 @@ const Twitter = (props: ChakraProps) => {
   )
 }
 
-export default Twitter
+export default TwitterFeed

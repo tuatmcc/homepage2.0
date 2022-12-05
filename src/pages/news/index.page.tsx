@@ -8,7 +8,7 @@ const meta: PageMeta = {
 }
 
 // posts will be populated at build time by getStaticProps()
-const News = () => {
+const NewsPage = () => {
   return (
     <Page meta={meta}>
       <Flex flexDir="column"></Flex>
@@ -18,4 +18,4 @@ const News = () => {
 
 // This function gets called at build time on server-side.
 
-export default News
+export default NewsPage

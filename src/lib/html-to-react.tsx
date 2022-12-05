@@ -25,7 +25,7 @@ import {
   Thead,
 } from '@chakra-ui/react'
 
-import CustomLink, { LinkProps } from '../components/custom-link'
+import CustomLink, { LinkProps } from '../components/link'
 
 /**
  * useEffect内で使用される。

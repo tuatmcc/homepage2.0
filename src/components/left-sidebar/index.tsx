@@ -1,5 +1,5 @@
 import { Flex, ChakraProps } from '@chakra-ui/react'
-import CustomLink from './custom-link'
+import CustomLink from '../link'
 
 /**
  * 簡易的な左サイドバーの中身。

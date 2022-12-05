@@ -1,0 +1,7 @@
+{
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.preferences.jsxAttributeCompletionStyle": "auto",
+  "stylelint.enable": true,
+  "eslint.enable": true,  
+  "prettier.withNodeModules": true,
+}

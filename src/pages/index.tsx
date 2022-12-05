@@ -9,7 +9,7 @@ import { Box, Container, Flex, Heading, Spacer, Text } from '@chakra-ui/react'
  * サイトのトップページ。パスは'/'でマッチします
  * @returns Home
  */
-const Home = () => {
+const IndexPage = () => {
   return (
     <>
       <Head>
@@ -58,4 +58,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default IndexPage

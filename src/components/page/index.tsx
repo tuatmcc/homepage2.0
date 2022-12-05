@@ -2,9 +2,9 @@ import { Box, Center, Flex, Heading, Tag } from '@chakra-ui/react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { ReactNode } from 'react'
-import LeftSideBar from './left-side-bar'
-import Navbar from './navbar'
-import Twitter from './twitter'
+import LeftSideBar from '../left-sidebar'
+import Navbar from '../navbar'
+import TwitterFeed from '../twitter-feed'
 
 export interface PageMeta {
   title: string
@@ -105,7 +105,7 @@ export const Page: ({ meta, children, isMdx }: PageProps) => JSX.Element = ({
           pos="relative"
           display={rightDisplay}
         >
-          <Twitter
+          <TwitterFeed
             pos="fixed"
             w="inherit"
             height="90%"

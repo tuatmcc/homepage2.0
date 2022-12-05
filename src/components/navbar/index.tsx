@@ -21,8 +21,8 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 
-import CustomLink from './custom-link'
-import LeftSideBar from './left-side-bar'
+import CustomLink from '../link'
+import LeftSideBar from '../left-sidebar'
 
 /**
  * 簡易的なナビゲーションバー。レスポンシブ対応。

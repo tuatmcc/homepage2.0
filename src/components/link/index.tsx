@@ -24,7 +24,7 @@ const CustomLink = (props: LinkProps & ChakraProps) => {
   if (href.startsWith('http')) {
     // External link
     return (
-      <ChakraLink href={href} rel="noreferrer" target="_blank" {...chakraProps}>
+      <ChakraLink href={href} rel="noreferrer" target="_blank" color="blue.600" {...chakraProps}>
         {children}
       </ChakraLink>
     )
