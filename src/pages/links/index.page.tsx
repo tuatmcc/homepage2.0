@@ -1,4 +1,4 @@
-import CustomLink from '../../components/link'
+import CustomLink from '../../components/AutoLink/AutoLink'
 
 const LinksPage = () => {
   return (

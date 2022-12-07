@@ -4,28 +4,11 @@ import Image from 'next/image'
 import { unified } from 'unified'
 import rehypeParse from 'rehype-parse'
 import rehypeReact, { Options as RehypeReactOptions } from 'rehype-react'
-import {
-  Heading,
-  Text,
-  Code,
-  chakra,
-  ChakraProps,
-  useClipboard,
-  List,
-  ListItem,
-  UnorderedList,
-  OrderedList,
-  Table,
-  Tr,
-  Td,
-  Th,
-  Tfoot,
-  Tbody,
-  TableCaption,
-  Thead,
-} from '@chakra-ui/react'
 
-import CustomLink, { LinkProps } from '../components/link'
+import AutoLink, { AutoLinkProps } from '../components/AutoLink/AutoLink'
+import Del from '~/components/Del/Del'
+import Code from '~/components/Code/Code'
+import Pre from '~/components/Pre/Pre'
 
 /**
  * useEffect内で使用される。
@@ -38,100 +21,19 @@ const htmlToReact = (html: string) => {
     .use(rehypeReact, {
       createElement: React.createElement,
       components: {
-        a: ({ href, children }: LinkProps) => (
-          <CustomLink href={href} color="blue.600">
-            {children}
-          </CustomLink>
+        a: ({ href, children }: AutoLinkProps) => (
+          <AutoLink href={href}>{children}</AutoLink>
         ),
-
-        h1: ({ children }) => (
-          <Heading
-            as="h1"
-            size="xl"
-            my={4}
-            borderBottom="1px"
-            borderStyle="dotted"
-          >
-            {children}
-          </Heading>
-        ),
-        h2: ({ children }) => (
-          <Heading as="h2" size="lg" my={4}>
-            {children}
-          </Heading>
-        ),
-        h3: ({ children }) => (
-          <Heading as="h3" size="md" my={4}>
-            {children}
-          </Heading>
-        ),
-        h4: ({ children }) => (
-          <Heading as="h4" size="sm" my={4}>
-            {children}
-          </Heading>
-        ),
-        h5: ({ children }) => (
-          <Heading as="h5" size="sm" my={4}>
-            {children}
-          </Heading>
-        ),
-        h6: ({ children }) => (
-          <Heading as="h6" size="xs" my={4}>
-            {children}
-          </Heading>
-        ),
-        p: ({ children }) => (
-          <Text fontSize="md" lineHeight="1.5rem">
-            {children}
-          </Text>
-        ),
-        del: ({ children }) => (
-          <Text as="span" textDecor="line-through">
-            {children}
-          </Text>
-        ),
-        code: ({ children }) => (
-          <Code colorScheme="gray" my="0.5">
-            {children}
-          </Code>
-        ),
-        pre: ({ children }) => {
-          return (
-            <chakra.pre p="0.5rem" overflow="auto" bgColor="gray.100" my={4}>
-              {children}
-            </chakra.pre>
-          )
-        },
-        ul: ({ children }) => (
-          <UnorderedList spacing={3} my="1.5rem">
-            {children}
-          </UnorderedList>
-        ),
-        ol: ({ children }) => (
-          <OrderedList spacing={3} as="ol">
-            {children}
-          </OrderedList>
-        ),
-        li: ({ children }) => <ListItem>{children}</ListItem>,
-        table: ({ children }) => (
-          <Table variant="simple" my="1.5rem">
-            {children}
-          </Table>
-        ),
-        tr: ({ children }) => <Tr>{children}</Tr>,
-        td: ({ children }) => <Td>{children}</Td>,
-        th: ({ children }) => <Th>{children}</Th>,
-        tbody: ({ children }) => <Tbody>{children}</Tbody>,
-        tfoot: ({ children }) => <Tfoot>{children}</Tfoot>,
-        caption: ({ children }) => <TableCaption>{children}</TableCaption>,
-        thead: ({ children }) => <Thead>{children}</Thead>,
+        del: ({ children }) => <Del>{children}</Del>,
+        code: ({ children }) => <Code>{children}</Code>,
+        pre: ({ children }) => <Pre>{children}</Pre>,
         img: ({ src = '', alt = 'image' }) => (
           <Image
             src={src}
             alt={alt}
             width={640}
             height={480}
-            style={{ width: 'auto', height: 'auto' }}
+            style={{ width: 'auto', height: 'auto', maxWidth: '100%' }}
           />
         ),
       },

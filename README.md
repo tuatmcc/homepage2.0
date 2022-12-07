@@ -28,6 +28,7 @@
 
 ## メンテの仕方
 
+- `VSCode`の使用を想定しています。
 - [ここ](https://github.com/tuatmcc/mcc-website/wiki/development-maintenance)を参照
 - 何かあれば Issue に。
 
@@ -48,12 +49,13 @@
 
 ### 今のところの方針やアイデア（変わる可能性あり）
 
-- **阿部寛のようにはしない**
-- css フレームワークは`Chakra UI`を使う
-- 3D のために`React Three Fiber`をいれた。
-- ある程度形にしてから CD/CI を整える
+- 阿部寛のようにはしない
+- レスポンシブ対応
+- プロジェクトから`CSS in JS`を撲滅し、`css-modules`を使う
+- `module.scss`でスタイルを書く
 - svg で作ってアニメーションとか？
 - React Three Fiber で背景に 3D とか
+- 3D のために`React Three Fiber`をいれた。
 
 ## 開発記録
 

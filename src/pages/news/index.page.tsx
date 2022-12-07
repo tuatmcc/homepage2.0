@@ -1,6 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react'
-import { Page, PageMeta } from '../../components/page'
-import { PostCollector, PostCollectorProps } from '../../lib/post-collector'
+import { CommonPage, PageMeta } from '../../components/CommonPage/CommonPage'
 
 const meta: PageMeta = {
   title: 'お知らせ',
@@ -10,9 +8,8 @@ const meta: PageMeta = {
 // posts will be populated at build time by getStaticProps()
 const NewsPage = () => {
   return (
-    <Page meta={meta}>
-      <Flex flexDir="column"></Flex>
-    </Page>
+    <CommonPage meta={meta}>
+    </CommonPage>
   )
 }
 

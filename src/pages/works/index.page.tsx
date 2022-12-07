@@ -1,6 +1,5 @@
-import { Flex } from '@chakra-ui/react'
 import Link from 'next/link'
-import { Page, PageMeta } from '../../components/page'
+import { CommonPage, PageMeta } from '../../components/CommonPage/CommonPage'
 import { PostCollector, PostCollectorProps } from '../../lib/post-collector'
 
 const meta: PageMeta = {
@@ -11,13 +10,13 @@ const meta: PageMeta = {
 // posts will be populated at build time by getStaticProps()
 const Works = ({ posts }: PostCollectorProps) => {
   return (
-    <Page meta={meta}>
+    <CommonPage meta={meta}>
       {posts.map((post) => (
-        <Flex key={post.slug} flexDir="column">
+        <div key={post.slug}>
           <Link href={`works/${post.slug}`}>{post.slug}</Link>
-        </Flex>
+        </div>
       ))}
-    </Page>
+    </CommonPage>
   )
 }
 

@@ -1,0 +1,19 @@
+.internalLink {
+  color: #05f;
+  text-decoration: none;
+}
+
+.externalLink {
+  color: #05f;
+  text-decoration: none;
+}
+
+.linkedHeading {
+  color: #002;
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
+    text-decoration: inherit;
+  }
+}

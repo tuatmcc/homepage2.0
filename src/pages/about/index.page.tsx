@@ -1,6 +1,4 @@
-import { NextPage } from 'next'
-
-const About: NextPage = () => {
+const About = () => {
   return <></>
 }
 
