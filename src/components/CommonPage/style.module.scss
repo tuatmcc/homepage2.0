@@ -1,0 +1,77 @@
+@use '~/styles/variables.scss' as *;
+
+.navbar {
+  height: 3em;
+  position: relative;
+}
+
+.commonPage {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+
+  .sidebarLeft {
+    height: 100%;
+    position: relative;
+    width: 20%;
+  }
+
+  .sidebarRight {
+    height: 100%;
+    position: relative;
+    width: 20%;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    width: 60%;
+
+    @include mq('xl') {
+      padding: 0;
+      width: 80%;
+    }
+
+    @include mq('md') {
+      padding: 0;
+      width: 100%;
+    }
+
+    .date {
+      color: #888;
+      display: flex;
+      font-size: 0.8em;
+      margin-bottom: 0.5em;
+    }
+
+    .title {
+      display: flex;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 2em;
+    }
+
+    .img {
+      height: 50vh;
+      object-fit: contain;
+      width: 100%;
+    }
+
+    .tags {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 1.1em;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.sidebarLeft {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  position: fixed;
+  width: 16%;
+  min-width: 80px;
+  top: 0;
+  left: 2%;
+
+  .link {
+    color: #0cc;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.5em;
+    padding: 0.5em 1em;
+    position: relative;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #eff;
+      text-decoration: none;
+    }
+  }
+}

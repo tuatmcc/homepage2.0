@@ -3,6 +3,12 @@ import markdownToHtml from './markdown-to-html'
 import { Post } from './post-collector'
 import { PostCollector } from './post-collector'
 
+/**
+ * 記事へのルーティングをするためのクラス。いまはpostCollectorクラスのインスタンスを受け取っていて、
+ * works, activitiesなどのディレクトリごとにインスタンスを作っている。
+ * 余裕があれば、src/postsディレクトリからすべての記事を取得して、ルーティングをするようにしたい。
+ * 設計をちゃんと考えてから実装する必要がある。
+ */
 export class DynamicRouting {
   postCollector: PostCollector
 
