@@ -16,11 +16,7 @@ const Sidebar = (props: SidebarProps) => {
     )
   })
 
-  return (
-    <div className={styles.sidebarLeft}>
-      {linkItems}
-    </div>
-  )
+  return <div className={styles.sidebarLeft}>{linkItems}</div>
 }
 
 export default Sidebar

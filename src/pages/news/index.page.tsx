@@ -7,10 +7,7 @@ const meta: PageMeta = {
 
 // posts will be populated at build time by getStaticProps()
 const NewsPage = () => {
-  return (
-    <CommonPage meta={meta}>
-    </CommonPage>
-  )
+  return <CommonPage meta={meta}>あ</CommonPage>
 }
 
 // This function gets called at build time on server-side.

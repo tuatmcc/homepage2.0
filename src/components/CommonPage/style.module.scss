@@ -7,15 +7,15 @@ $navbarHeight: 3em;
 .header {
   position: fixed;
   width: $sidebarWidth;
-  text-align: center;
   padding-top: calc($sideHeaderHeight / 2);
+  text-align: center;
 
   @include mq('lg') {
+    display: flex;
+    align-items: center;
     width: 100%;
     padding-top: 0;
     text-align: start;
-    display: flex;
-    align-items: center;
     background-color: #fff;
 
     .brand {
@@ -25,26 +25,26 @@ $navbarHeight: 3em;
 }
 
 .sidebar {
-  width: $sidebarWidth;
   position: fixed;
-  overflow-x: auto;
+  width: $sidebarWidth;
   padding-top: $sideHeaderHeight;
+  overflow-x: auto;
   background-color: #fff;
 
   .sidebarIn {
     .linkList {
-      list-style: none;
       padding: $sideHeaderHeight 0;
+      list-style: none;
 
       .list {
         position: relative;
 
         .link {
-          text-decoration: none;
-          font-size: 1.2em;
-          color: #0aa;
           display: block;
           padding: 1em 1.5em;
+          font-size: 1.2em;
+          color: #0aa;
+          text-decoration: none;
           transition: background-color 0.4s linear;
 
           &:hover {
@@ -56,8 +56,8 @@ $navbarHeight: 3em;
   }
 
   @include mq('lg') {
-    width: 0;
     top: 0;
+    width: 0;
     padding-top: 0;
 
     .isSidebarActive {
@@ -74,21 +74,21 @@ $navbarHeight: 3em;
     margin: 0 2em;
 
     @include mq('lg') {
-      padding-left: 0;
       padding-top: $navbarHeight;
+      padding-left: 0;
     }
   }
 }
 
 .navToggle {
-  width: $navbarHeight;
-  height: $navbarHeight;
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 101;
+  width: $navbarHeight;
+  height: $navbarHeight;
   background-color: #fff;
   border: none;
-  z-index: 101;
 
   &:active {
     background-color: #eee;

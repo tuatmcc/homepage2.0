@@ -3,7 +3,10 @@ export const ROUTES = {
   ABOUT: { PATH: '/about', LABEL: 'About' },
   NEWS: { PATH: '/news', LABEL: 'News' },
   ACTIVITIES: { PATH: '/activities', LABEL: 'Activities' },
-  ACTIVITIES_DISCORD_TUTORIAL: { PATH: '/activities/discord-tutorial', LABEL: 'Discord Tutorial' },
+  ACTIVITIES_DISCORD_TUTORIAL: {
+    PATH: '/activities/discord-tutorial',
+    LABEL: 'Discord Tutorial',
+  },
   WORKS: { PATH: '/works', LABEL: 'Works' },
   LINKS: { PATH: '/links', LABEL: 'Links' },
 }
@@ -17,5 +20,4 @@ export const BASE_ROUTES_LIST = [
   ROUTES.LINKS,
 ]
 
-export const ACTIVITIES_ROUTES_LIST = [
-]
+export const ACTIVITIES_ROUTES_LIST = []

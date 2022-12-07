@@ -54,7 +54,9 @@ export const CommonPage: FC<CommonPageProps> = ({
         {img && <meta property="og:image" content={img} />}
       </Head>
 
-      <aside className={`${styles.sidebar} ${opened ? styles.isSidebarActive : ''}`}>
+      <aside
+        className={`${styles.sidebar} ${opened ? styles.isSidebarActive : ''}`}
+      >
         <nav className={styles.sidebarIn}>
           <ul className={styles.linkList}>
             {BASE_ROUTES_LIST.map((route) => (
@@ -94,10 +96,9 @@ export const CommonPage: FC<CommonPageProps> = ({
       </main>
 
       {!mq.lg && (
-        <button
-          className={styles.navToggle}
-          onClick={() => setOpened(!opened)}
-        >{'<'}</button>
+        <button className={styles.navToggle} onClick={() => setOpened(!opened)}>
+          {'<'}
+        </button>
       )}
     </>
   )
