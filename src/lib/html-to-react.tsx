@@ -9,6 +9,7 @@ import AutoLink, { AutoLinkProps } from '../components/AutoLink/AutoLink'
 import Del from '~/components/Del/Del'
 import Code from '~/components/Code/Code'
 import Pre from '~/components/Pre/Pre'
+import Paragraph from '~/components/Paragraph/Paragraph'
 
 /**
  * useEffect内で使用される。
@@ -36,6 +37,7 @@ const htmlToReact = (html: string) => {
             style={{ width: 'auto', height: 'auto', maxWidth: '100%' }}
           />
         ),
+        p: ({ children }) => <Paragraph>{children}</Paragraph>,
       },
     } as RehypeReactOptions)
     .processSync(html)

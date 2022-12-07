@@ -1,15 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { ReactNode } from 'react'
+import { FC, ReactNode, useState } from 'react'
 
 import classNames from 'classnames'
 
-import SidebarLeft from '../SidebarLeft/SidebarLeft'
-import Navbar from '../Navbar/Navbar'
+import { ROUTES, BASE_ROUTES_LIST } from '~/constants/routes'
 import useMediaQuery from '~/hooks/useMediaQuery'
+import Sidebar from '../Sidebar/Sidebar'
+import Navbar from '../Navbar/Navbar'
 import SidebarRight from '../SidebarRight/SidebarRight'
 import Tag from '../Tag/Tag'
 import styles from './style.module.scss'
+import TagList from '../TagList/TagList'
+import Logo from '../Logo/Logo'
 
 export type PageMeta = {
   title: string
@@ -31,11 +34,7 @@ export type CommonPageProps = {
  * @param param0
  * @returns
  */
-export const CommonPage: ({
-  meta,
-  children,
-  isMdx,
-}: CommonPageProps) => JSX.Element = ({
+export const CommonPage: FC<CommonPageProps> = ({
   meta,
   children,
   isMdx = false,
@@ -43,7 +42,8 @@ export const CommonPage: ({
   const { title, description, img, tags } = meta
   const mq = useMediaQuery()
 
-  const dateElement = meta.date && <Tag>{meta.date}</Tag>
+  const [opened, setOpened] = useState<boolean>(true)
+
   const tagElements = tags?.map((tag) => <Tag key={tag}>{`#${tag}`}</Tag>)
 
   return (
@@ -54,42 +54,51 @@ export const CommonPage: ({
         {img && <meta property="og:image" content={img} />}
       </Head>
 
-      <div className={styles.navbar}>
-        <Navbar />
-      </div>
+      <aside className={`${styles.sidebar} ${opened ? styles.isSidebarActive : ''}`}>
+        <nav className={styles.sidebarIn}>
+          <ul className={styles.linkList}>
+            {BASE_ROUTES_LIST.map((route) => (
+              <li key={route.LABEL} className={styles.list}>
+                <a href={route.PATH} className={styles.link}>
+                  {route.LABEL}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
 
-      <div className={styles.commonPage}>
-        {/* Left Sidebar */}
-        {!mq.md && (
-          <div className={styles.sidebarLeft}>
-            <SidebarLeft />
+      <header className={styles.header}>
+        <Image alt="" src="/mcc-logo.svg" width={32} height={32} />
+        <h1 className={styles.brand}>MCC</h1>
+      </header>
+
+      <main className={styles.main}>
+        <div className={styles.mainIn}>
+          <div className={styles.date}>{meta.date && meta.date}</div>
+          <div className={styles.mainVisual}>
+            <h1 className={styles.title}>{title}</h1>
+            <Image
+              src={img ? img : '/mcc-logo.svg'}
+              alt="Image"
+              width={200}
+              height={200}
+              className={styles.img}
+            />
           </div>
-        )}
-
-        {/* Main */}
-        <main className={styles.main}>
-          <div className={styles.date}>{dateElement && dateElement}</div>
-          <h1 className={styles.title}>{title}</h1>
-          <Image
-            src={img ? img : '/mcc-logo.svg'}
-            alt="Image"
-            width={200}
-            height={200}
-            className={styles.img}
-          />
-          <div className={styles.tags}>{tagElements && tagElements}</div>
-          <div className={classNames(isMdx ? 'mdx-prose' : '', styles.content)}>
+          <TagList>{tagElements && tagElements}</TagList>
+          <div className={`${isMdx ? 'mdx-prose' : ''} ${styles.article}`}>
             {children}
           </div>
-        </main>
+        </div>
+      </main>
 
-        {/* Right Sidebar */}
-        {!mq.xl && (
-          <div className={styles.sidebarRight}>
-            <SidebarRight />
-          </div>
-        )}
-      </div>
+      {!mq.lg && (
+        <button
+          className={styles.navToggle}
+          onClick={() => setOpened(!opened)}
+        >{'<'}</button>
+      )}
     </>
   )
 }

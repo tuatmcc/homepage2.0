@@ -6,8 +6,8 @@ export type TagProps = {
   children: string
 }
 
-const Tag: FC<TagProps> = (props) => {
-  return <div className={styles.tag}>{props.children}</div>
+const Tag: FC<TagProps> = ({ children }) => {
+  return <div className={styles.tag}>{children}</div>
 }
 
 export default Tag

@@ -1,77 +1,96 @@
 @use '~/styles/variables.scss' as *;
 
-.navbar {
-  height: 3em;
-  position: relative;
+$sidebarWidth: 15em;
+$sideHeaderHeight: 5em;
+$navbarHeight: 3em;
+
+.header {
+  position: fixed;
+  width: $sidebarWidth;
+  text-align: center;
+  padding-top: calc($sideHeaderHeight / 2);
+
+  @include mq('lg') {
+    width: 100%;
+    padding-top: 0;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+
+    .brand {
+      margin: 0;
+    }
+  }
 }
 
-.commonPage {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  justify-content: center;
-  position: relative;
-  width: 100%;
+.sidebar {
+  width: $sidebarWidth;
+  position: fixed;
+  overflow-x: auto;
+  padding-top: $sideHeaderHeight;
+  background-color: #fff;
 
-  .sidebarLeft {
-    height: 100%;
-    position: relative;
-    width: 20%;
+  .sidebarIn {
+    .linkList {
+      list-style: none;
+      padding: $sideHeaderHeight 0;
+
+      .list {
+        position: relative;
+
+        .link {
+          text-decoration: none;
+          font-size: 1.2em;
+          color: #0aa;
+          display: block;
+          padding: 1em 1.5em;
+          transition: background-color 0.4s linear;
+
+          &:hover {
+            background-color: #cee;
+          }
+        }
+      }
+    }
   }
 
-  .sidebarRight {
-    height: 100%;
-    position: relative;
-    width: 20%;
+  @include mq('lg') {
+    width: 0;
+    top: 0;
+    padding-top: 0;
+
+    .isSidebarActive {
+      width: $sidebarWidth;
+    }
   }
+}
 
-  .main {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    position: relative;
-    width: 60%;
+.main {
+  display: block;
 
-    @include mq('xl') {
-      padding: 0;
-      width: 80%;
+  .mainIn {
+    padding-left: $sidebarWidth;
+    margin: 0 2em;
+
+    @include mq('lg') {
+      padding-left: 0;
+      padding-top: $navbarHeight;
     }
+  }
+}
 
-    @include mq('md') {
-      padding: 0;
-      width: 100%;
-    }
+.navToggle {
+  width: $navbarHeight;
+  height: $navbarHeight;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  border: none;
+  z-index: 101;
 
-    .date {
-      color: #888;
-      display: flex;
-      font-size: 0.8em;
-      margin-bottom: 0.5em;
-    }
-
-    .title {
-      display: flex;
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 2em;
-    }
-
-    .img {
-      height: 50vh;
-      object-fit: contain;
-      width: 100%;
-    }
-
-    .tags {
-      display: flex;
-      flex-direction: row;
-    }
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 1.1em;
-      width: 100%;
-    }
+  &:active {
+    background-color: #eee;
   }
 }

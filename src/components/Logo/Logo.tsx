@@ -1,8 +1,8 @@
 import { FC } from 'react'
 
 export type LogoProps = {
-  height?: string | number
-  width?: string | number
+  height: string | number
+  width: string | number
 }
 
 const Logo: FC<LogoProps> = (props) => {

@@ -1,15 +1,15 @@
 .sidebarRight {
-  background-color: #fff;
+  position: fixed;
+  right: 2%;
   display: flex;
   flex-direction: column;
+  width: 18%;
   height: 100%;
   overflow: auto;
-  position: fixed;
-  width: 18%;
-  right: 2%;
+  background-color: #fff;
 
   .twitterTimeLine {
-    height: 100%;
     width: 100%;
+    height: 100%;
   }
 }
