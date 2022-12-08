@@ -10,6 +10,10 @@ $navbarHeight: 3em;
   padding-top: calc($sideHeaderHeight / 2);
   text-align: center;
 
+  .brand {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
   @include mq('lg') {
     display: flex;
     align-items: center;
@@ -27,9 +31,10 @@ $navbarHeight: 3em;
 .sidebar {
   position: fixed;
   width: $sidebarWidth;
+  height: 100%;
   padding-top: $sideHeaderHeight;
   overflow-x: auto;
-  background-color: #fff;
+  background-color: #eff;
 
   .sidebarIn {
     .linkList {
@@ -79,6 +84,7 @@ $navbarHeight: 3em;
     }
   }
 }
+
 
 .navToggle {
   position: fixed;
