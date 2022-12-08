@@ -17,7 +17,7 @@
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
     "classnames": "^2.3.2",
-    "framer-motion": "^6.5.1",
+    "framer-motion": "^7.6.19",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.7.0",
     "next": "13.0.4",
