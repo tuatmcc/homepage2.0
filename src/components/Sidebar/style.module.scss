@@ -1,13 +1,12 @@
 .sidebarLeft {
   position: fixed;
-  top: 0;
-  left: 2%;
+  top: 3em;
   display: flex;
   flex-direction: column;
-  width: 16%;
-  min-width: 80px;
+  width: 100%;
   height: 100%;
   overflow-y: auto;
+  background-color: #ffffffe5;
 
   .link {
     position: relative;

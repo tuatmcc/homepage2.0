@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { CommonPage, PageMeta } from '../../components/CommonPage/CommonPage'
+import { Page, PageMeta } from '../../components/Page/Page'
 import { PostCollector, PostCollectorProps } from '../../lib/post-collector'
 
 const meta: PageMeta = {
@@ -10,13 +10,13 @@ const meta: PageMeta = {
 // posts will be populated at build time by getStaticProps()
 const Works = ({ posts }: PostCollectorProps) => {
   return (
-    <CommonPage meta={meta}>
+    <Page meta={meta}>
       {posts.map((post) => (
         <div key={post.slug}>
           <Link href={`works/${post.slug}`}>{post.slug}</Link>
         </div>
       ))}
-    </CommonPage>
+    </Page>
   )
 }
 

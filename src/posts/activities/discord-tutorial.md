@@ -2,7 +2,7 @@
 title: 'Discord Bot チュートリアル'
 date: '2022-03-16'
 tags: ['dev']
-img: '/activities/discord-bot-tutorial/discordjs-logo.svg'
+img: '/random-programing-image-2.jpg'
 ---
 
 # Discord Bot チュートリアル

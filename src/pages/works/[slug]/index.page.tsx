@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect } from 'react'
-import { CommonPage, PageMeta } from '../../../components/CommonPage/CommonPage'
+import { Page, PageMeta } from '../../../components/Page/Page'
 import htmlToReact from '../../../lib/html-to-react'
 import { PostCollector, Post } from '../../../lib/post-collector'
 import { DynamicRouting } from '../../../lib/dynamic-routing'
@@ -24,7 +24,7 @@ const WorksPost = ({ post }: { post: Post }) => {
 
   return (
     <>
-      <CommonPage meta={post.frontmatter as PageMeta}>{postContent}</CommonPage>
+      <Page meta={post.frontmatter as PageMeta}>{postContent}</Page>
     </>
   )
 }

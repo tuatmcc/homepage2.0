@@ -2,7 +2,7 @@ import { createContext, FC, useCallback, useState } from 'react'
 
 type SidebarContextType = {
   isOpened: boolean
-  toggle: () => void
+  setIsOpened: (isOpened: boolean) => void
 }
 
 export type SidebarProviderProps = {
@@ -11,16 +11,15 @@ export type SidebarProviderProps = {
 
 export const SidebarContext = createContext<SidebarContextType>({
   isOpened: true,
-  toggle: () => {},
+  setIsOpened: () => {},
 })
 
 const SidebarProvider: FC<SidebarProviderProps> = ({ children }) => {
   const [isOpened, setIsOpened] = useState<boolean>(false)
 
-  const toggle = () => setIsOpened(() => !isOpened)
 
   return (
-    <SidebarContext.Provider value={{ isOpened, toggle }}>
+    <SidebarContext.Provider value={{ isOpened, setIsOpened }}>
       {children}
     </SidebarContext.Provider>
   )

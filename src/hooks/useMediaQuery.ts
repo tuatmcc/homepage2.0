@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react'
 
 type MediaQuery = {
-  lg: boolean
-  xl: boolean
-  xxl: boolean
+  isMobile: boolean
 }
 
 /**
@@ -12,9 +10,7 @@ type MediaQuery = {
  */
 const useMediaQuery = () => {
   const initialMq = {
-    lg: false,
-    xl: false,
-    xxl: false,
+    isMobile: false,
   }
 
   const [mq, setMq] = useState<MediaQuery>(initialMq)
@@ -23,9 +19,7 @@ const useMediaQuery = () => {
     if (typeof window === 'undefined') return
     const handleResize = () => {
       setMq({
-        lg: matchMedia('screen and (max-width: 62em)').matches, // スマホのとき
-        xl: matchMedia('screen and (max-width: 75em)').matches,
-        xxl: matchMedia('screen and (max-width: 90em)').matches,
+        isMobile: matchMedia('screen and (max-width: 62em)').matches, // スマホのとき
       })
     }
 

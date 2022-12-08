@@ -11,16 +11,18 @@ export type SidebarProps = {
  * @returns Sidebar
  */
 const Sidebar: FC<SidebarProps> = ({ isOpened = true }) => {
-  const linkItems = BASE_ROUTES_LIST.map((path) => {
-    return (
-      <a key={path.LABEL} href={path.PATH} className={styles.link}>
-        {path.LABEL}
-      </a>
-    )
-  })
-
   if (isOpened) {
-    return <div className={styles.sidebarLeft}>{linkItems}</div>
+    return (
+      <div className={styles.sidebarLeft}>
+        {BASE_ROUTES_LIST.map((path) => {
+          return (
+            <a key={path.LABEL} href={path.PATH} className={styles.link}>
+              {path.LABEL}
+            </a>
+          )
+        })}
+      </div>
+    )
   } else {
     return <></>
   }

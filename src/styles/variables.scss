@@ -8,3 +8,15 @@ $breakpoints: (
     @content;
   }
 }
+
+@mixin _mobile {
+  @media screen and (max-width: 62em) {
+    @content;
+  }
+}
+
+@mixin _pc {
+  @media screen and (min-width: 62em) {
+    @content;
+  }
+}
