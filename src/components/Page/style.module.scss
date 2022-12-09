@@ -3,7 +3,7 @@
 $sidebarWidth: 15em;
 $sideHeaderHeight: 5em;
 $navbarHeight: 3em;
-$--color-mcc: #08f;
+$color-mcc: #08f;
 
 .header {
   position: fixed;
@@ -14,7 +14,7 @@ $--color-mcc: #08f;
   .brand {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.5em;
-    color: $--color-mcc;
+    color: $color-mcc;
   }
 
   @include mq('lg') {

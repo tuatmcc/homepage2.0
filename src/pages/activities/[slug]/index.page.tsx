@@ -16,14 +16,6 @@ const dynamicRouting = new DynamicRouting(postCollector)
  * @returns
  */
 const ActivitiesPost = ({ post }: { post: Post }) => {
-  const { title, description, img } = post.frontmatter
-  const [postContent, setPostContent] = React.useState<React.ReactNode>(null)
-
-  // HTMLに変換されたMarkdownの内容を、Reactコンポーネントに変換します。
-  useEffect(() => {
-    setPostContent(htmlToReact(post.content))
-  }, [post.content])
-
   return (
     <Page meta={post.frontmatter as PageMeta}>
       <ArticleWrapper>{post.content}</ArticleWrapper>
