@@ -3,6 +3,7 @@ import styles from './style.module.scss'
 
 export type DelProps = {
   children: ReactNode
+  className?: string
 }
 
 /**
@@ -10,8 +11,8 @@ export type DelProps = {
  * @param param0
  * @returns
  */
-const Del: FC<DelProps> = ({ children = '' }) => (
-  <span className={styles.del}>{children}</span>
+const Del: FC<DelProps> = ({ children = '', className = '' }) => (
+  <span className={`${styles.del} ${className}`}>{children}</span>
 )
 
 export default Del

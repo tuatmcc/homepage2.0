@@ -5,6 +5,7 @@ import { Page, PageMeta } from '../../../components/Page/Page'
 import htmlToReact from '../../../lib/html-to-react'
 import { PostCollector, Post } from '../../../lib/post-collector'
 import { DynamicRouting } from '../../../lib/dynamic-routing'
+import ArticleWrapper from '~/components/ArticleWrapper/ArticleWrapper'
 
 const postCollector = new PostCollector('activities')
 const dynamicRouting = new DynamicRouting(postCollector)
@@ -24,7 +25,9 @@ const ActivitiesPost = ({ post }: { post: Post }) => {
   }, [post.content])
 
   return (
-    <Page meta={post.frontmatter as PageMeta}>{postContent}</Page>
+    <Page meta={post.frontmatter as PageMeta}>
+      <ArticleWrapper>{post.content}</ArticleWrapper>
+    </Page>
   )
 }
 

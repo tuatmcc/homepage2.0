@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import HomeCanvas from '~/components/HomeCanvas/HomeCanvas'
 import Navbar from '~/components/Navbar/Navbar'
-import Sidebar from '~/components/Sidebar/Sidebar'
+import FullNavigation from '~/components/FullNavigation/FullNavigation'
 
 import styles from './style.module.scss'
 
@@ -23,7 +23,7 @@ const landingPage = () => {
         <Navbar />
         <HomeCanvas />
         <div className={styles.sidebarLeft}>
-          <Sidebar />
+          <FullNavigation />
         </div>
       </div>
     </>

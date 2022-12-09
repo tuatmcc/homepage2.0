@@ -6,7 +6,7 @@ import classNames from 'classnames'
 
 import { ROUTES, BASE_ROUTES_LIST } from '~/constants/routes'
 import useMediaQuery from '~/hooks/useMediaQuery'
-import Sidebar from '../Sidebar/Sidebar'
+import FullNavigation from '../FullNavigation/FullNavigation'
 import Navbar from '../Navbar/Navbar'
 import SidebarRight from '../SidebarRight/SidebarRight'
 import Tag from '../Tag/Tag'
@@ -31,7 +31,7 @@ export type PageProps = {
 }
 
 /**
- * 簡易的な共通ページレイアウト。特に、記事のレイアウトに使用する。レスポンシブ対応。
+ * 共通ページレイアウトのプロトタイプ。特に、記事のレイアウトに使用する。レスポンシブ対応。
  * @param param0
  * @returns
  */
@@ -84,27 +84,29 @@ export const Page: FC<PageProps> = ({
               width={200}
               height={200}
               className={styles.img}
-              onError={(e) => {e.currentTarget.hidden = true}}
+              onError={(e) => {
+                e.currentTarget.hidden = true
+              }}
             />
             <h1 className={styles.title}>{title}</h1>
           </div>
-          <TagList className={styles.tagList}>{tagElements && tagElements}</TagList>
+          <TagList className={styles.tagList}>
+            {tagElements && tagElements}
+          </TagList>
           <div className={`${isMdx ? 'mdx-prose' : ''} ${styles.article}`}>
             {children}
           </div>
         </div>
       </main>
 
-      {mq.isMobile && (
-        <button
-          className={styles.navToggle}
-          onClick={() => setIsOpened(!isOpened)}
-          onFocusCapture={() => setIsOpened(false)}
-        >
-          {'<'}
-        </button>
-      )}
-      <Sidebar isOpened={isOpened} />
+      <button
+        className={styles.navToggle}
+        onClick={() => setIsOpened(!isOpened)}
+        onFocusCapture={() => setIsOpened(false)}
+      >
+        {'<'}
+      </button>
+      <FullNavigation isOpened={isOpened} />
     </>
   )
 }
