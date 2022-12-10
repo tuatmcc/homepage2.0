@@ -5,15 +5,15 @@ import { FC, ReactNode, useContext, useState } from 'react'
 import classNames from 'classnames'
 
 import { ROUTES, BASE_ROUTES_LIST } from '~/constants/routes'
-import useMediaQuery from '~/hooks/useMediaQuery'
-import FullNavigation from '../FullNavigation/FullNavigation'
-import Navbar from '../Navbar/Navbar'
-import SidebarRight from '../SidebarRight/SidebarRight'
+import FullScreenNavigation from '../FullScreenNavigation/FullScreenNavigation'
+import HeaderTop from '../HeaderTop/HeaderTop'
 import Tag from '../Tag/Tag'
 import styles from './style.module.scss'
 import TagList from '../TagList/TagList'
-import Logo from '../Logo/Logo'
-import SidebarProvider, { SidebarContext } from '~/providers/SidebarProvider'
+import BackgroundDesign from '../BackgroundDesign/BakgroundDesign'
+import Button from '../Button/Button'
+import HumbergurIcon from '../HumbergurIcon/HumbergurIcon'
+import { MediaQueryContext } from '~/providers/MediaQueryProvider'
 
 export type PageMeta = {
   title: string
@@ -41,7 +41,7 @@ export const Page: FC<PageProps> = ({
   isMdx = false,
 }: PageProps) => {
   const { title, description, img, tags } = meta
-  const mq = useMediaQuery()
+  const { isMobile } = useContext(MediaQueryContext)
 
   const [isOpened, setIsOpened] = useState<boolean>(false)
 
@@ -54,6 +54,8 @@ export const Page: FC<PageProps> = ({
         {description && <meta name="description" content={description} />}
         {img && <meta property="og:image" content={img} />}
       </Head>
+
+      <BackgroundDesign />
 
       <aside className={`${styles.sidebar}`}>
         <nav className={styles.sidebarIn}>
@@ -70,8 +72,18 @@ export const Page: FC<PageProps> = ({
       </aside>
 
       <header className={styles.header}>
-        <Image alt="" src="/mcc-logo.svg" width={32} height={32} />
-        <h1 className={styles.brand}>MCC</h1>
+        <a className={styles.brandLink} href={ROUTES.HOME.PATH}>
+          <Image alt="" src="/mcc-logo.svg" width={32} height={32} />
+          <h1 className={styles.brandName}>MCC</h1>
+        </a>
+        {isMobile && (
+          <HumbergurIcon
+            className={styles.menuIcon}
+            as="button"
+            isActive={isOpened}
+            onClick={() => setIsOpened(!isOpened)}
+          />
+        )}
       </header>
 
       <main className={styles.main}>
@@ -93,20 +105,11 @@ export const Page: FC<PageProps> = ({
           <TagList className={styles.tagList}>
             {tagElements && tagElements}
           </TagList>
-          <div className={`${isMdx ? 'mdx-prose' : ''} ${styles.article}`}>
-            {children}
-          </div>
+          <div className={`${styles.article}`}>{children}</div>
         </div>
       </main>
 
-      <button
-        className={styles.navToggle}
-        onClick={() => setIsOpened(!isOpened)}
-        onFocusCapture={() => setIsOpened(false)}
-      >
-        {'<'}
-      </button>
-      <FullNavigation isOpened={isOpened} />
+      {isMobile && <FullScreenNavigation isOpened={isOpened} />}
     </>
   )
 }

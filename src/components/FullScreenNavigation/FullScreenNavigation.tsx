@@ -2,19 +2,19 @@ import { FC } from 'react'
 import { BASE_ROUTES_LIST } from '~/constants/routes'
 import styles from './style.module.scss'
 
-export type FullNavigationProps = {
+export type FullScreenNavigationProps = {
   isOpened?: boolean
   className?: string
 }
 
-const FullNavigation: FC<FullNavigationProps> = ({
+const FullScreenNavigation: FC<FullScreenNavigationProps> = ({
   isOpened = true,
   className = '',
 }) => {
   return (
     <div
-      className={`${className} ${
-        isOpened ? styles.openNav : styles.closeNav
+      className={`${styles.nav} ${
+        isOpened ? styles.nav_open : styles.nav_close
       }`}
     >
       <nav className={styles.navIn}>
@@ -34,4 +34,4 @@ const FullNavigation: FC<FullNavigationProps> = ({
   )
 }
 
-export default FullNavigation
+export default FullScreenNavigation

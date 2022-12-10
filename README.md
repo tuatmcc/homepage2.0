@@ -1,5 +1,6 @@
-# 農工大のサークル MCC のホームページ
+# 農工大マイクロコンピュータークラブのホームページ
 
+- 勝手に[mcc-website-forked.vercel.app](https://mcc-website-forked.vercel.app)でデモを動かしています。コロコロ変わります。
 - `Next.js`で作成、`GitHub Pages`で公開
 - 何も知らない部員が見ても、理解できるようにしたい → [記録](https://github.com/tuatmcc/mcc-website/wiki)
 

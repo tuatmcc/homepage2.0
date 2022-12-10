@@ -3,33 +3,49 @@
 $sidebarWidth: 15em;
 $sideHeaderHeight: 5em;
 $navbarHeight: 3em;
-$color-mcc: #08f;
+$color-link: #058;
 
 .header {
   position: fixed;
   width: $sidebarWidth;
   padding-top: calc($sideHeaderHeight / 2);
-  text-align: center;
 
-  .brand {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.5em;
-    color: $color-mcc;
+  .brandLink {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+
+    .brandName {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 1.5em;
+      color: $color-mcc-primary;
+    }
+  }
+
+  .menuIcon {
+    z-index: 100;
+    margin-right: 5px;
   }
 
   @include mq('lg') {
     z-index: 1;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     height: $navbarHeight;
     padding-top: 0;
-    text-align: start;
     background-color: #fff;
     box-shadow: 0 0 0.5em #00000050;
 
-    .brand {
-      margin: 0;
+    .brandLink {
+      display: flex;
+      align-items: center;
+      height: inherit;
+
+      .brandName {
+        margin: 0;
+      }
     }
   }
 }
@@ -40,7 +56,7 @@ $color-mcc: #08f;
   height: 100%;
   padding-top: $sideHeaderHeight;
   overflow-y: auto;
-  box-shadow: 0 0 0.5em #00000050;
+  background: linear-gradient(140deg, #fff, #adf, #058);
 
   .sidebarIn {
     .linkList {
@@ -55,13 +71,13 @@ $color-mcc: #08f;
           padding: 1em 1.5em;
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           font-size: 1.2em;
-          color: #058;
+          color: $color-link;
           text-decoration: none;
           transition: background-color 0.3s linear;
 
-          &:hover {
-            color: #fff;
-            background-color: #058;
+          &:hover,
+          &:focus {
+            background-color: #fff;
           }
         }
       }
@@ -119,7 +135,7 @@ $color-mcc: #08f;
         width: 100%;
         padding: 1em 0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 2.2em;
+        font-size: 2rem;
         font-weight: normal;
         color: #000;
         text-align: center;
@@ -135,7 +151,6 @@ $color-mcc: #08f;
       margin: 0 1em;
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 1em;
-      color: #333;
     }
   }
 }

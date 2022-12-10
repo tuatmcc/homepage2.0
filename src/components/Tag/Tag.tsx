@@ -4,10 +4,11 @@ import styles from './style.module.scss'
 
 export type TagProps = {
   children: string
+  className?: string
 }
 
-const Tag: FC<TagProps> = ({ children }) => {
-  return <div className={styles.tag}>{children}</div>
+const Tag: FC<TagProps> = ({ children, className = '' }) => {
+  return <div className={`${styles.tag} ${className}`}>{children}</div>
 }
 
 export default Tag

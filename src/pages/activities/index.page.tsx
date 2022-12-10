@@ -11,11 +11,11 @@ const meta: PageMeta = {
 const Activities = ({ posts }: PostCollectorProps) => {
   return (
     <Page meta={meta}>
-        {posts.map((post) => (
-          <div key={0}>
-            <Link href={`activities/${post.slug}`}>{post.slug}</Link>
-          </div>
-        ))}
+      {posts.map((post) => (
+        <div key={0}>
+          <Link href={`activities/${post.slug}`}>{post.slug}</Link>
+        </div>
+      ))}
     </Page>
   )
 }

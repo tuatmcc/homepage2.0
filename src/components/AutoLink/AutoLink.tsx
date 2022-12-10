@@ -13,7 +13,11 @@ export interface AutoLinkProps {
  * @param props href, children
  * @returns
  */
-const CustomLink = ({ href = '', children = '', className = '' }: AutoLinkProps) => {
+const CustomLink = ({
+  href = '',
+  children = '',
+  className = '',
+}: AutoLinkProps) => {
   if (href.startsWith('http')) {
     return (
       <a

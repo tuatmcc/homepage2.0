@@ -9,14 +9,7 @@ $breakpoints: (
   }
 }
 
-@mixin _mobile {
-  @media screen and (max-width: 62em) {
-    @content;
-  }
-}
+$navbarHeight: 3em;
 
-@mixin _pc {
-  @media screen and (min-width: 62em) {
-    @content;
-  }
-}
+$color-mcc-primary: #08f;
+$color-mcc-secondary: #058;

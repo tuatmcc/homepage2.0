@@ -17,9 +17,9 @@ export type ArticleWrapperProps = {
 }
 
 /**
- * 
+ *
  * @param props `{children: string}` html to be rendered as ReactNode
- * @returns 
+ * @returns
  */
 const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
   const [article, setArticle] = useState<ReactNode>(null)
@@ -49,7 +49,7 @@ const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
       } as RehypeReactOptions)
       .processSync(props.children)
 
-      setArticle(processor.result)
+    setArticle(processor.result)
   }, [props.children])
 
   return <div className={styles.article}>{article}</div>
