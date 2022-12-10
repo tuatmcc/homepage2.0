@@ -10,7 +10,7 @@
     "lint": "npx eslint --fix **/*.tsx **/*.ts && next lint && stylelint \"**/*.scss\" --fix && prettier --write ."
   },
   "dependencies": {
-    "@react-three/drei": "^9.46.3",
+    "@react-three/drei": "^9.46.4",
     "@react-three/fiber": "^8.9.1",
     "@react-three/postprocessing": "^2.7.0",
     "@types/node": "18.11.11",
