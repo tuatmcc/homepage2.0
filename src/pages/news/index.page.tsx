@@ -1,4 +1,4 @@
-import { CommonPage, PageMeta } from '../../components/CommonPage/CommonPage'
+import { Page, PageMeta } from '../../components/Page/Page'
 
 const meta: PageMeta = {
   title: 'お知らせ',
@@ -7,10 +7,7 @@ const meta: PageMeta = {
 
 // posts will be populated at build time by getStaticProps()
 const NewsPage = () => {
-  return (
-    <CommonPage meta={meta}>
-    </CommonPage>
-  )
+  return <Page meta={meta}>あ</Page>
 }
 
 // This function gets called at build time on server-side.

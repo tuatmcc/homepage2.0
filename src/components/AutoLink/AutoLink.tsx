@@ -5,6 +5,7 @@ import styles from './style.module.scss'
 export interface AutoLinkProps {
   href?: string
   children?: string
+  className?: string
 }
 
 /**
@@ -12,12 +13,16 @@ export interface AutoLinkProps {
  * @param props href, children
  * @returns
  */
-const CustomLink = ({ href = '', children = '' }: AutoLinkProps) => {
+const CustomLink = ({
+  href = '',
+  children = '',
+  className = '',
+}: AutoLinkProps) => {
   if (href.startsWith('http')) {
     return (
       <a
         href={href}
-        className={styles.externalLink}
+        className={`${styles.externalLink} ${className}}`}
         target="_brank"
         rel="noreferror"
       >
@@ -26,13 +31,13 @@ const CustomLink = ({ href = '', children = '' }: AutoLinkProps) => {
     )
   } else if (href.match('#')) {
     return (
-      <a href={href} className={styles.linkedHeading}>
+      <a href={href} className={`${styles.linkedHeading} ${className}}`}>
         {children}
       </a>
     )
   } else {
     return (
-      <Link href={href} className={styles.internalLink}>
+      <Link href={href} className={`${styles.internalLink} ${className}}`}>
         {children}
       </Link>
     )

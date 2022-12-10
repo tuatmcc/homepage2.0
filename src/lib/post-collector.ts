@@ -39,7 +39,7 @@ export class PostCollector {
    */
   constructor(targetDir: string) {
     this.targetDir = targetDir
-    this.targetDirFullPath = path.join(process.cwd(), 'src/posts', targetDir)
+    this.targetDirFullPath = path.join(process.cwd(), 'posts', targetDir)
   }
 
   /**

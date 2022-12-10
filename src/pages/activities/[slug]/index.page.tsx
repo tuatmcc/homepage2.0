@@ -1,10 +1,11 @@
 import React from 'react'
 import { useEffect } from 'react'
 
-import { CommonPage, PageMeta } from '../../../components/CommonPage/CommonPage'
+import { Page, PageMeta } from '../../../components/Page/Page'
 import htmlToReact from '../../../lib/html-to-react'
 import { PostCollector, Post } from '../../../lib/post-collector'
 import { DynamicRouting } from '../../../lib/dynamic-routing'
+import ArticleWrapper from '~/components/ArticleWrapper/ArticleWrapper'
 
 const postCollector = new PostCollector('activities')
 const dynamicRouting = new DynamicRouting(postCollector)
@@ -15,16 +16,10 @@ const dynamicRouting = new DynamicRouting(postCollector)
  * @returns
  */
 const ActivitiesPost = ({ post }: { post: Post }) => {
-  const { title, description, img } = post.frontmatter
-  const [postContent, setPostContent] = React.useState<React.ReactNode>(null)
-
-  // HTMLに変換されたMarkdownの内容を、Reactコンポーネントに変換します。
-  useEffect(() => {
-    setPostContent(htmlToReact(post.content))
-  }, [post.content])
-
   return (
-    <CommonPage meta={post.frontmatter as PageMeta}>{postContent}</CommonPage>
+    <Page meta={post.frontmatter as PageMeta}>
+      <ArticleWrapper>{post.content}</ArticleWrapper>
+    </Page>
   )
 }
 

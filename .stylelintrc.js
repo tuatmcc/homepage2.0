@@ -1,5 +1,9 @@
 module.exports = {
-  extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-config-prettier',
+    'stylelint-config-recess-order',
+  ],
   plugins: [
     'stylelint-scss',
     'stylelint-order',
@@ -10,7 +14,7 @@ module.exports = {
     'scss/at-import-no-partial-leading-underscore': null,
     'at-rule-no-unknown': null,
     'property-no-unknown': true,
-    'order/properties-alphabetical-order': true,
+    'order/properties-alphabetical-order': null,
     'selector-class-pattern': '^([_]?)[a-z][a-zA-Z0-9]+$', // lowerCamelCase
   },
   ignoreFiles: ['node_modules/**/*', 'public/**/*'],

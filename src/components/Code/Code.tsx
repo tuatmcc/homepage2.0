@@ -4,9 +4,10 @@ import styles from './style.module.scss'
 
 export type CodeProps = {
   children: ReactNode | ReactNode[]
+  className?: string
 }
 
-const Code: FC<CodeProps> = ({ children = '' }) => (
+const Code: FC<CodeProps> = ({ children = '', className = '' }) => (
   <code className={styles.code}>{children}</code>
 )
 

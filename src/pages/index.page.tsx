@@ -1,15 +1,16 @@
-import { GetStaticProps } from 'next'
+import { NextPage } from 'next'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
-const IndexPage = () => <></>
+import { ROUTES } from '~/constants/routes'
+
+const IndexPage: NextPage = () => {
+  const router = useRouter()
+
+  useEffect(() => {
+    router.replace(ROUTES.HOME.PATH)
+  })
+  return <div>Loading...</div>
+}
 
 export default IndexPage
-
-// `/home` にリダイレクト
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    redirect: {
-      destination: '/home',
-      permanent: false,
-    },
-  }
-}

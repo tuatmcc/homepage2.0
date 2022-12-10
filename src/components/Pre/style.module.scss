@@ -1,8 +1,13 @@
 .pre {
-  background-color: #c6e8fa;
-  border-radius: 4px;
-  line-height: 1.5;
+  padding: 1.5em;
   margin: 8px 0;
   overflow-x: auto;
-  padding: 8px;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #16283a;
+  border-radius: 4px;
+
+  code {
+    background-color: inherit;
+  }
 }

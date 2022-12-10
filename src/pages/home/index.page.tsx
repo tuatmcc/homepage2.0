@@ -1,12 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import HomeCanvas from '~/components/HomeCanvas/HomeCanvas'
-import Navbar from '~/components/Navbar/Navbar'
-import SidebarLeft from '~/components/SidebarLeft/SidebarLeft'
+import { FC, useState } from 'react'
 
+import HomeCanvas from '~/components/HomeCanvas/HomeCanvas'
+import HeaderTop from '~/components/HeaderTop/HeaderTop'
 import styles from './style.module.scss'
 
-const landingPage = () => {
+export type LandingPageProps = {}
+
+const LandingPage: FC<LandingPageProps> = () => {
   return (
     <>
       <Head>
@@ -20,14 +22,12 @@ const landingPage = () => {
       </Head>
 
       <div className={styles.landingPage}>
-        <Navbar />
         <HomeCanvas />
-        <div className={styles.sidebarLeft}>
-          <SidebarLeft />
-        </div>
       </div>
+
+      <HeaderTop />
     </>
   )
 }
 
-export default landingPage
+export default LandingPage
