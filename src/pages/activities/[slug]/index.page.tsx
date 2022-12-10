@@ -1,11 +1,8 @@
-import React from 'react'
-import { useEffect } from 'react'
+import ArticleWrapper from '~/components/ArticleWrapper/ArticleWrapper'
 
 import { Page, PageMeta } from '../../../components/Page/Page'
-import htmlToReact from '../../../lib/html-to-react'
-import { PostCollector, Post } from '../../../lib/post-collector'
 import { DynamicRouting } from '../../../lib/dynamic-routing'
-import ArticleWrapper from '~/components/ArticleWrapper/ArticleWrapper'
+import { Post, PostCollector } from '../../../lib/post-collector'
 
 const postCollector = new PostCollector('activities')
 const dynamicRouting = new DynamicRouting(postCollector)

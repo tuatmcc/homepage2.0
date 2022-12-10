@@ -1,5 +1,7 @@
 import { FC } from 'react'
+
 import { BASE_ROUTES_LIST } from '~/constants/routes'
+
 import styles from './style.module.scss'
 
 export type FullScreenNavigationProps = {

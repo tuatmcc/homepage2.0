@@ -1,9 +1,7 @@
-import React from 'react'
-import { useEffect } from 'react'
-import { Page, PageMeta } from '../../../components/Page/Page'
-import { PostCollector, Post } from '../../../lib/post-collector'
-import { DynamicRouting } from '../../../lib/dynamic-routing'
 import ArticleWrapper from '~/components/ArticleWrapper/ArticleWrapper'
+import { Page, PageMeta } from '~/components/Page/Page'
+import { DynamicRouting } from '~/lib/dynamic-routing'
+import { Post, PostCollector } from '~/lib/post-collector'
 
 const postCollector = new PostCollector('works')
 const dynamicRouting = new DynamicRouting(postCollector)

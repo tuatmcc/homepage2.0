@@ -1,19 +1,21 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import { FC, ReactNode, useContext, useState } from 'react'
 
 import classNames from 'classnames'
+import Head from 'next/head'
+import Image from 'next/image'
 
-import { ROUTES, BASE_ROUTES_LIST } from '~/constants/routes'
-import FullScreenNavigation from '../FullScreenNavigation/FullScreenNavigation'
-import HeaderTop from '../HeaderTop/HeaderTop'
-import Tag from '../Tag/Tag'
-import styles from './style.module.scss'
-import TagList from '../TagList/TagList'
+import { BASE_ROUTES_LIST, ROUTES } from '~/constants/routes'
+import { MediaQueryContext } from '~/providers/MediaQueryProvider'
+
 import BackgroundDesign from '../BackgroundDesign/BakgroundDesign'
 import Button from '../Button/Button'
+import FullScreenNavigation from '../FullScreenNavigation/FullScreenNavigation'
+import HeaderTop from '../HeaderTop/HeaderTop'
 import HumbergurIcon from '../HumbergurIcon/HumbergurIcon'
-import { MediaQueryContext } from '~/providers/MediaQueryProvider'
+import Tag from '../Tag/Tag'
+import TagList from '../TagList/TagList'
+
+import styles from './style.module.scss'
 
 export type PageMeta = {
   title: string

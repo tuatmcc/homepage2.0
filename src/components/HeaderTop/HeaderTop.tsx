@@ -1,7 +1,10 @@
+import React, { FC } from 'react'
+
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { FC } from 'react'
+
 import { ROUTES } from '~/constants/routes'
+
 import FullScreenNavigation from '../FullScreenNavigation/FullScreenNavigation'
 import HumbergurIcon from '../HumbergurIcon/HumbergurIcon'
 
