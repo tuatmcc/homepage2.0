@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
+
 import markdownToHtml from './markdown-to-html'
 import { Post } from './post-collector'
 import { PostCollector } from './post-collector'

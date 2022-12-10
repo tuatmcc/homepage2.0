@@ -1,4 +1,5 @@
 import Link from 'next/link'
+
 import { Page, PageMeta } from '../../components/Page/Page'
 import { PostCollector, PostCollectorProps } from '../../lib/post-collector'
 

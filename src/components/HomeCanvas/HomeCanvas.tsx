@@ -1,10 +1,10 @@
 import React, { ReactNode, useRef, useState } from 'react'
 
-import { Canvas, MeshProps, Props, useFrame } from '@react-three/fiber'
 import { Environment, Plane } from '@react-three/drei'
-import { Model } from './model'
+import { Canvas, MeshProps, Props, useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
+import { Model } from './model'
 import styles from './style.module.scss'
 
 const Box = (props: any) => {

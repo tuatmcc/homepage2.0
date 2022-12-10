@@ -1,15 +1,16 @@
 import { join } from 'path'
-import { unified } from 'unified'
-import remarkParse from 'remark-parse'
-import remarkGfm from 'remark-gfm'
-import remarkGemoji from 'remark-gemoji'
-import remarkToc from 'remark-toc'
-import remarkRehype from 'remark-rehype'
-import rehypeKatex from 'rehype-katex'
-import rehypeHighlight from 'rehype-highlight'
-import rehypeSlug from 'rehype-slug'
+
 import rehypeAutoLinkHeadings from 'rehype-autolink-headings'
+import rehypeHighlight from 'rehype-highlight'
+import rehypeKatex from 'rehype-katex'
+import rehypeSlug from 'rehype-slug'
 import rehypeStringify from 'rehype-stringify'
+import remarkGemoji from 'remark-gemoji'
+import remarkGfm from 'remark-gfm'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import remarkToc from 'remark-toc'
+import { unified } from 'unified'
 
 /**
  * Parse markdown to html. This function must be used inside the getStaticProps function.
