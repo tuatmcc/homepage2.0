@@ -1,8 +1,12 @@
 {
   "typescript.preferences.quoteStyle": "single",
   "typescript.preferences.jsxAttributeCompletionStyle": "auto",
-  "prettier.withNodeModules": true,
-  "prettier.enable": true,
+  "eslint.format.enable": true,
   "stylelint.enable": true,
-  "eslint.enable": true
+  "eslint.enable": true,
+  "files.autoSave": "afterDelay",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  }
 }

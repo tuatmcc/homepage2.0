@@ -1,4 +1,4 @@
-import CustomLink from '../../components/AutoLink/AutoLink'
+import CustomLink from '../../components/AutoLink/AutoLink';
 
 const LinksPage = () => {
   return (
@@ -7,7 +7,7 @@ const LinksPage = () => {
         Markdown記法 チートシート - Qiita
       </CustomLink>
     </>
-  )
-}
+  );
+};
 
-export default LinksPage
+export default LinksPage;

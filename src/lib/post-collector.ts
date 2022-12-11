@@ -1,8 +1,8 @@
-import fs from 'fs'
-import path from 'path'
+import fs from 'fs';
+import path from 'path';
 
-import matter from 'gray-matter'
-import { GetStaticProps } from 'next'
+import matter from 'gray-matter';
+import { GetStaticProps } from 'next';
 
 // 記事を取得するためのクラス。index.tsxで使う生このpostCollectorと、
 // [slug].tsxで使うdynamicRoutingというwrapperクラス用とで、2つの別インスタンスができてしまい、
@@ -13,9 +13,9 @@ import { GetStaticProps } from 'next'
  * @param frontmatter - The metadata of the post.
  */
 export interface Post {
-  slug: string
-  frontmatter: { [key: string]: any }
-  content: string
+  slug: string;
+  frontmatter: { [key: string]: any };
+  content: string;
 }
 
 /**
@@ -23,24 +23,24 @@ export interface Post {
  * @param filePath absolute path to the file
  */
 interface PostPath {
-  slug: string
-  fullPath: string
+  slug: string;
+  fullPath: string;
 }
 
 export interface PostCollectorProps {
-  posts: Post[]
+  posts: Post[];
 }
 
 export class PostCollector {
-  targetDir: string
-  targetDirFullPath: string
+  targetDir: string;
+  targetDirFullPath: string;
 
   /**
    * @param targetDir src/pages/targetDir
    */
   constructor(targetDir: string) {
-    this.targetDir = targetDir
-    this.targetDirFullPath = path.join(process.cwd(), 'posts', targetDir)
+    this.targetDir = targetDir;
+    this.targetDirFullPath = path.join(process.cwd(), 'posts', targetDir);
   }
 
   /**
@@ -49,48 +49,48 @@ export class PostCollector {
    * @returns
    */
   getPostBySlug = (slug: string): Post => {
-    const fullPath = path.join(this.targetDirFullPath, `${slug}.md`)
+    const fullPath = path.join(this.targetDirFullPath, `${slug}.md`);
     try {
-      const fileContents = fs.readFileSync(fullPath, 'utf8')
-      const { data, content } = matter(fileContents)
-      return { slug: slug, frontmatter: data, content }
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const { data, content } = matter(fileContents);
+      return { slug: slug, frontmatter: data, content };
     } catch (e) {
-      console.error(e)
-      return { slug: '/404', frontmatter: { title: 'Error' }, content: '' }
+      console.error(e);
+      return { slug: '/404', frontmatter: { title: 'Error' }, content: '' };
     }
-  }
+  };
 
   /**
    * Collects all markdown files from the target directory
    */
   getAllPostPaths = (): PostPath[] => {
-    const postNames = fs.readdirSync(this.targetDirFullPath)
+    const postNames = fs.readdirSync(this.targetDirFullPath);
     const postPaths = postNames.map((postName) => {
       return {
         slug: postName.replace(/\.md$/, ''),
         fullPath: `${this.targetDir}/${postName}`,
-      }
-    })
-    return postPaths
-  }
+      };
+    });
+    return postPaths;
+  };
 
   getAllPosts = () => {
-    const postPaths = this.getAllPostPaths()
-    const posts = postPaths.map((postPath) => this.getPostBySlug(postPath.slug))
-    return posts
-  }
+    const postPaths = this.getAllPostPaths();
+    const posts = postPaths.map((postPath) => this.getPostBySlug(postPath.slug));
+    return posts;
+  };
 
   /**
    * 記事一覧ページのためのデータを作成する。
    * @returns posts: { slug: string, frontmatter: { title: string, etc... } }[]
    */
   getStaticProps: GetStaticProps<{ posts: Post[] }> = async () => {
-    const postPaths = this.getAllPostPaths()
-    const posts = this.getAllPosts()
+    const postPaths = this.getAllPostPaths();
+    const posts = this.getAllPosts();
     return {
       props: {
         posts: await Promise.all(posts),
       },
-    }
-  }
+    };
+  };
 }

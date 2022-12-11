@@ -1,9 +1,9 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
 export type LogoProps = {
-  height: string | number
-  width: string | number
-}
+  height: string | number;
+  width: string | number;
+};
 
 const Logo: FC<LogoProps> = (props) => {
   return (
@@ -29,7 +29,7 @@ const Logo: FC<LogoProps> = (props) => {
         />
       </svg>
     </div>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;

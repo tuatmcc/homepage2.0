@@ -1,24 +1,17 @@
-import { FC } from 'react'
+import { FC } from 'react';
 
-import { BASE_ROUTES_LIST } from '~/constants/routes'
+import { BASE_ROUTES_LIST } from '~/constants/routes';
 
-import styles from './style.module.scss'
+import styles from './style.module.scss';
 
 export type FullScreenNavigationProps = {
-  isOpened?: boolean
-  className?: string
-}
+  isOpened?: boolean;
+  className?: string;
+};
 
-const FullScreenNavigation: FC<FullScreenNavigationProps> = ({
-  isOpened = true,
-  className = '',
-}) => {
+const FullScreenNavigation: FC<FullScreenNavigationProps> = ({ isOpened = true, className = '' }) => {
   return (
-    <div
-      className={`${styles.nav} ${
-        isOpened ? styles.nav_open : styles.nav_close
-      }`}
-    >
+    <div className={`${styles.nav} ${isOpened ? styles.nav_open : styles.nav_close}`}>
       <nav className={styles.navIn}>
         <ul className={styles.linkList}>
           {BASE_ROUTES_LIST.map((path) => {
@@ -28,12 +21,12 @@ const FullScreenNavigation: FC<FullScreenNavigationProps> = ({
                   {path.LABEL}
                 </a>
               </li>
-            )
+            );
           })}
         </ul>
       </nav>
     </div>
-  )
-}
+  );
+};
 
-export default FullScreenNavigation
+export default FullScreenNavigation;
