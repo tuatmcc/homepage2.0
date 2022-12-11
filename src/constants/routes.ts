@@ -9,15 +9,8 @@ export const ROUTES = {
   },
   WORKS: { PATH: '/works', LABEL: 'Works' },
   LINKS: { PATH: '/links', LABEL: 'Links' },
-}
+};
 
-export const BASE_ROUTES_LIST = [
-  ROUTES.HOME,
-  ROUTES.ABOUT,
-  ROUTES.NEWS,
-  ROUTES.ACTIVITIES,
-  ROUTES.WORKS,
-  ROUTES.LINKS,
-]
+export const BASE_ROUTES_LIST = [ROUTES.HOME, ROUTES.ABOUT, ROUTES.NEWS, ROUTES.ACTIVITIES, ROUTES.WORKS, ROUTES.LINKS];
 
-export const ACTIVITIES_ROUTES_LIST = []
+export const ACTIVITIES_ROUTES_LIST = [];

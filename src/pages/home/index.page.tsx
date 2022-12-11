@@ -1,14 +1,14 @@
-import { FC, useState } from 'react'
+import { FC, useState } from 'react';
 
-import Head from 'next/head'
-import Image from 'next/image'
+import Head from 'next/head';
+import Image from 'next/image';
 
-import HeaderTop from '~/components/HeaderTop/HeaderTop'
-import HomeCanvas from '~/components/HomeCanvas/HomeCanvas'
+import HeaderTop from '~/components/HeaderTop/HeaderTop';
+import HomeCanvas from '~/components/HomeCanvas/HomeCanvas';
 
-import styles from './style.module.scss'
+import styles from './style.module.scss';
 
-export type LandingPageProps = {}
+export type LandingPageProps = {};
 
 const LandingPage: FC<LandingPageProps> = () => {
   return (
@@ -29,7 +29,7 @@ const LandingPage: FC<LandingPageProps> = () => {
 
       <HeaderTop />
     </>
-  )
-}
+  );
+};
 
-export default LandingPage
+export default LandingPage;

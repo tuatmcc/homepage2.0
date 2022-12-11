@@ -1,53 +1,49 @@
-import { FC, ReactNode, useContext, useState } from 'react'
+import { FC, ReactNode, useContext, useState } from 'react';
 
-import classNames from 'classnames'
-import Head from 'next/head'
-import Image from 'next/image'
+import classNames from 'classnames';
+import Head from 'next/head';
+import Image from 'next/image';
 
-import { BASE_ROUTES_LIST, ROUTES } from '~/constants/routes'
-import { MediaQueryContext } from '~/providers/MediaQueryProvider'
+import { BASE_ROUTES_LIST, ROUTES } from '~/constants/routes';
+import { MediaQueryContext } from '~/providers/MediaQueryProvider';
 
-import BackgroundDesign from '../BackgroundDesign/BakgroundDesign'
-import Button from '../Button/Button'
-import FullScreenNavigation from '../FullScreenNavigation/FullScreenNavigation'
-import HeaderTop from '../HeaderTop/HeaderTop'
-import HumbergurIcon from '../HumbergurIcon/HumbergurIcon'
-import Tag from '../Tag/Tag'
-import TagList from '../TagList/TagList'
+import BackgroundDesign from '../BackgroundDesign/BakgroundDesign';
+import Button from '../Button/Button';
+import FullScreenNavigation from '../FullScreenNavigation/FullScreenNavigation';
+import HeaderTop from '../HeaderTop/HeaderTop';
+import HumbergurIcon from '../HumbergurIcon/HumbergurIcon';
+import Tag from '../Tag/Tag';
+import TagList from '../TagList/TagList';
 
-import styles from './style.module.scss'
+import styles from './style.module.scss';
 
 export type PageMeta = {
-  title: string
-  description?: string
-  date?: string
-  tags?: string[]
-  img?: string
-  author?: string
-}
+  title: string;
+  description?: string;
+  date?: string;
+  tags?: string[];
+  img?: string;
+  author?: string;
+};
 
 export type PageProps = {
-  meta: PageMeta
-  children: ReactNode | ReactNode[]
-  isMdx?: boolean
-}
+  meta: PageMeta;
+  children: ReactNode | ReactNode[];
+  isMdx?: boolean;
+};
 
 /**
  * 共通ページレイアウトのプロトタイプ。特に、記事のレイアウトに使用する。レスポンシブ対応。
  * @param param0
  * @returns
  */
-export const Page: FC<PageProps> = ({
-  meta,
-  children,
-  isMdx = false,
-}: PageProps) => {
-  const { title, description, img, tags } = meta
-  const { isMobile } = useContext(MediaQueryContext)
+export const Page: FC<PageProps> = ({ meta, children, isMdx = false }: PageProps) => {
+  const { title, description, img, tags } = meta;
+  const { isMobile } = useContext(MediaQueryContext);
 
-  const [isOpened, setIsOpened] = useState<boolean>(false)
+  const [isOpened, setIsOpened] = useState<boolean>(false);
 
-  const tagElements = tags?.map((tag) => <Tag key={tag}>{`#${tag}`}</Tag>)
+  const tagElements = tags?.map((tag) => <Tag key={tag}>{`#${tag}`}</Tag>);
 
   return (
     <>
@@ -99,19 +95,17 @@ export const Page: FC<PageProps> = ({
               height={200}
               className={styles.img}
               onError={(e) => {
-                e.currentTarget.hidden = true
+                e.currentTarget.hidden = true;
               }}
             />
             <h1 className={styles.title}>{title}</h1>
           </div>
-          <TagList className={styles.tagList}>
-            {tagElements && tagElements}
-          </TagList>
+          <TagList className={styles.tagList}>{tagElements && tagElements}</TagList>
           <div className={`${styles.article}`}>{children}</div>
         </div>
       </main>
 
       {isMobile && <FullScreenNavigation isOpened={isOpened} />}
     </>
-  )
-}
+  );
+};

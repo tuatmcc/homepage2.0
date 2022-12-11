@@ -1,14 +1,14 @@
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react';
 
-import styles from './style.module.scss'
+import styles from './style.module.scss';
 
 export type TagListProps = {
-  children: ReactNode | ReactNode[]
-  className?: string
-}
+  children: ReactNode | ReactNode[];
+  className?: string;
+};
 
 const TagList: FC<TagListProps> = ({ children = [], className = '' }) => (
   <div className={`${styles.tagList} ${className}`}>{children}</div>
-)
+);
 
-export default TagList
+export default TagList;

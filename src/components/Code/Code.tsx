@@ -1,14 +1,12 @@
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react';
 
-import styles from './style.module.scss'
+import styles from './style.module.scss';
 
 export type CodeProps = {
-  children: ReactNode | ReactNode[]
-  className?: string
-}
+  children: ReactNode | ReactNode[];
+  className?: string;
+};
 
-const Code: FC<CodeProps> = ({ children = '', className = '' }) => (
-  <code className={styles.code}>{children}</code>
-)
+const Code: FC<CodeProps> = ({ children = '', className = '' }) => <code className={styles.code}>{children}</code>;
 
-export default Code
+export default Code;
