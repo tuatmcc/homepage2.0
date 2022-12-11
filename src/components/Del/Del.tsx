@@ -1,11 +1,11 @@
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react';
 
-import styles from './style.module.scss'
+import styles from './style.module.css';
 
 export type DelProps = {
-  children: ReactNode
-  className?: string
-}
+  children: ReactNode;
+  className?: string;
+};
 
 /**
  * Convert `<del>` to `<span>` with `text-decoration: line-through`.
@@ -14,6 +14,6 @@ export type DelProps = {
  */
 const Del: FC<DelProps> = ({ children = '', className = '' }) => (
   <span className={`${styles.del} ${className}`}>{children}</span>
-)
+);
 
-export default Del
+export default Del;

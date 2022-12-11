@@ -24,6 +24,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "src"],
+  "include": ["next-env.d.ts", "src", "postcss.config.js", "postcss.config.js"],
   "exclude": ["node_modules"]
 }

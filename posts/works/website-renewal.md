@@ -1,7 +1,7 @@
 ---
-title: 'MCCのWebサイトをリニューアルしました'
-date: '2022'
-tags: ['web', 'dev']
+title: "MCCのWebサイトをリニューアルしました"
+date: "2022"
+tags: ["web", "dev"]
 ---
 
 # マークダウンテスト h1 タグです
@@ -67,8 +67,8 @@ const App: FC<Props> = ({ children }) => {
       <p>これはtsxです</p>
       <p>{children}</p>
     </div>
-  )
-}
+  );
+};
 ```
 
 数式。対応させたはずなのに...

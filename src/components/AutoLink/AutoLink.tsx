@@ -1,11 +1,11 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
-import styles from './style.module.scss'
+import styles from './style.module.css';
 
 export interface AutoLinkProps {
-  href?: string
-  children?: string
-  className?: string
+  href?: string;
+  children?: string;
+  className?: string;
 }
 
 /**
@@ -13,35 +13,26 @@ export interface AutoLinkProps {
  * @param props href, children
  * @returns
  */
-const CustomLink = ({
-  href = '',
-  children = '',
-  className = '',
-}: AutoLinkProps) => {
+const CustomLink = ({ href = '', children = '', className = '' }: AutoLinkProps) => {
   if (href.startsWith('http')) {
     return (
-      <a
-        href={href}
-        className={`${styles.externalLink} ${className}}`}
-        target="_brank"
-        rel="noreferror"
-      >
+      <a href={href} className={`${styles.externalLink} ${className}}`} target="_brank" rel="noreferror">
         {children}
       </a>
-    )
+    );
   } else if (href.match('#')) {
     return (
       <a href={href} className={`${styles.linkedHeading} ${className}}`}>
         {children}
       </a>
-    )
+    );
   } else {
     return (
       <Link href={href} className={`${styles.internalLink} ${className}}`}>
         {children}
       </Link>
-    )
+    );
   }
-}
+};
 
-export default CustomLink
+export default CustomLink;

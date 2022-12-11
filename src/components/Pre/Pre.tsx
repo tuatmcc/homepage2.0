@@ -1,14 +1,14 @@
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react';
 
-import styles from './style.module.scss'
+import styles from './style.module.css';
 
 export type PreProps = {
-  children: ReactNode | ReactNode[]
-  className?: string
-}
+  children: ReactNode | ReactNode[];
+  className?: string;
+};
 
 const Pre: FC<PreProps> = ({ children = '', className = '' }) => (
   <pre className={`${styles.pre} ${className}`}>{children}</pre>
-)
+);
 
-export default Pre
+export default Pre;

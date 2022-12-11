@@ -1,23 +1,23 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
 
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { ROUTES } from '~/constants/routes'
+import { ROUTES } from '~/constants/routes';
 
-import FullScreenNavigation from '../FullScreenNavigation/FullScreenNavigation'
-import HumbergurIcon from '../HumbergurIcon/HumbergurIcon'
+import FullScreenNavigation from '../FullScreenNavigation/FullScreenNavigation';
+import HumbergurIcon from '../HumbergurIcon/HumbergurIcon';
 
-import styles from './style.module.scss'
+import styles from './style.module.css';
 
-export type HeaderProps = {}
+export type HeaderProps = {};
 
 /**
  * 簡易的なナビゲーションバー。レスポンシブ対応。
  * @returns
  */
 const HeaderTop: FC<HeaderProps> = () => {
-  const [isOpened, setIsOpened] = React.useState(false)
+  const [isOpened, setIsOpened] = React.useState(false);
 
   return (
     <header className={styles.header}>
@@ -33,7 +33,7 @@ const HeaderTop: FC<HeaderProps> = () => {
         onClick={() => setIsOpened(!isOpened)}
       />
     </header>
-  )
-}
+  );
+};
 
-export default HeaderTop
+export default HeaderTop;

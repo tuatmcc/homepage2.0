@@ -53,7 +53,7 @@
 - 阿部寛のようにはしない
 - レスポンシブ対応
 - プロジェクトから`CSS in JS`を撲滅し、`css-modules`を使う
-- `module.scss`でスタイルを書く
+- `module.css`でスタイルを書く
 - svg で作ってアニメーションとか？
 - React Three Fiber で背景に 3D とか
 - 3D のために`React Three Fiber`をいれた。

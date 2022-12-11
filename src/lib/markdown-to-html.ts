@@ -1,16 +1,16 @@
-import { join } from 'path'
+import { join } from 'path';
 
-import rehypeAutoLinkHeadings from 'rehype-autolink-headings'
-import rehypeHighlight from 'rehype-highlight'
-import rehypeKatex from 'rehype-katex'
-import rehypeSlug from 'rehype-slug'
-import rehypeStringify from 'rehype-stringify'
-import remarkGemoji from 'remark-gemoji'
-import remarkGfm from 'remark-gfm'
-import remarkParse from 'remark-parse'
-import remarkRehype from 'remark-rehype'
-import remarkToc from 'remark-toc'
-import { unified } from 'unified'
+import rehypeAutoLinkHeadings from 'rehype-autolink-headings';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeKatex from 'rehype-katex';
+import rehypeSlug from 'rehype-slug';
+import rehypeStringify from 'rehype-stringify';
+import remarkGemoji from 'remark-gemoji';
+import remarkGfm from 'remark-gfm';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import remarkToc from 'remark-toc';
+import { unified } from 'unified';
 
 /**
  * Parse markdown to html. This function must be used inside the getStaticProps function.
@@ -29,9 +29,9 @@ const markdownToHtml = async (markdown: string) => {
     .use(rehypeSlug)
     .use(rehypeAutoLinkHeadings, { behavior: 'wrap' })
     .use(rehypeStringify)
-    .process(markdown)
+    .process(markdown);
 
-  return html.toString()
-}
+  return html.toString();
+};
 
-export default markdownToHtml
+export default markdownToHtml;

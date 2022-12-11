@@ -1,8 +1,8 @@
 ---
-title: 'Discord Bot チュートリアル'
-date: '2022-03-16'
-tags: ['dev']
-img: '/random-programing-image-2.jpg'
+title: "Discord Bot チュートリアル"
+date: "2022-03-16"
+tags: ["dev"]
+img: "/random-programing-image-2.jpg"
 ---
 
 # Discord Bot チュートリアル
@@ -113,7 +113,7 @@ npm install --save discord.js dotenv typescript @types/node@16 ts-node tsconfig-
 そして、次のコードをコピペしてください。
 
 ```typescript
-console.log('Hello World!')
+console.log("Hello World!");
 ```
 
 最後に、プロジェクトルートに居る状態で`npm start`を実行してください。`Hello World!`と表示されれば成功です！
@@ -183,25 +183,25 @@ Bot をサーバーにログインさせる処理を書いていきます。
 
 ```typescript
 // 1: インポート
-import * as dotenv from 'dotenv'
-import { Client, ClientOptions } from 'discord.js'
+import * as dotenv from "dotenv";
+import { Client, ClientOptions } from "discord.js";
 
 // 2: .envを読み込み、環境変数に登録
-dotenv.config()
+dotenv.config();
 
 // 3: クライアントを初期化
 const clientOptions: ClientOptions = {
-  intents: ['GUILD_MESSAGES', 'GUILDS'],
-}
-const client = new Client(clientOptions)
+  intents: ["GUILD_MESSAGES", "GUILDS"],
+};
+const client = new Client(clientOptions);
 
 // 4: ログイン完了時に実行するコールバック関数を登録
-client.once('ready', () => {
-  console.log("I'm  ready!")
-})
+client.once("ready", () => {
+  console.log("I'm  ready!");
+});
 
 // 5: ログイン
-client.login(process.env.TOKEN)
+client.login(process.env.TOKEN);
 ```
 
 コードの中身を説明していきます。
@@ -288,8 +288,8 @@ SERVER_ID=<サーバーID>
 ```typescript
 declare namespace NodeJS {
   interface ProcessEnv {
-    readonly TOKEN: string
-    readonly SERVER_ID: string
+    readonly TOKEN: string;
+    readonly SERVER_ID: string;
   }
 }
 ```
@@ -299,33 +299,33 @@ declare namespace NodeJS {
 実際にコマンドを作っていきます。次のコードを参考にして、`ready`イベントのコールバックを編集し、`interactionCreate`イベントのコールバックを追加してください。`async`キーワードが新しく加わっていることに注意してください。
 
 ```typescript
-import { ApplicationCommandData, Client, ClientOptions } from 'discord.js' // インポート部分が変わっています
+import { ApplicationCommandData, Client, ClientOptions } from "discord.js"; // インポート部分が変わっています
 
 // ...
 
 // ログイン完了時に実行するコールバック関数を登録
-client.once('ready', async () => {
+client.once("ready", async () => {
   const commands: ApplicationCommandData[] = [
     {
-      name: 'ping',
-      description: 'pongと返します。',
+      name: "ping",
+      description: "pongと返します。",
     },
-  ]
-  await client.application?.commands.set(commands, process.env.SERVER_ID)
+  ];
+  await client.application?.commands.set(commands, process.env.SERVER_ID);
 
-  console.log("I'm  ready!")
-})
+  console.log("I'm  ready!");
+});
 
 // コマンド受信時のコールバック関数を登録
-client.on('interactionCreate', async (interaction) => {
+client.on("interactionCreate", async (interaction) => {
   if (!interaction.isCommand()) {
-    return
+    return;
   }
-  if (interaction.commandName === 'ping') {
+  if (interaction.commandName === "ping") {
     // pingコマンドが来たら:
-    await interaction.reply('pong') // pongとreplyする
+    await interaction.reply("pong"); // pongとreplyする
   }
-})
+});
 ```
 
 書けたら`npm start`して、アプリ上でコマンドを使えるかどうか確認してみましょう。
@@ -341,22 +341,22 @@ client.on('interactionCreate', async (interaction) => {
 ```typescript
 const commands: ApplicationCommandData[] = [
   {
-    name: 'ping',
-    description: 'pongと返します。',
+    name: "ping",
+    description: "pongと返します。",
   },
   {
-    name: 'echo',
-    description: '入力された文字をそのまま返します。',
+    name: "echo",
+    description: "入力された文字をそのまま返します。",
     options: [
       {
-        type: 'STRING',
-        name: 'value',
-        description: '文字列',
+        type: "STRING",
+        name: "value",
+        description: "文字列",
         required: true,
       },
     ],
   },
-]
+];
 ```
 
 ### コマンドの中身を実装
@@ -364,12 +364,12 @@ const commands: ApplicationCommandData[] = [
 次のコードを参考にして、コマンドの中身を実装してください。引数は`interaction.options.getString()`などで受け取ることができます。
 
 ```typescript
-if (interaction.commandName === 'ping') {
-  await interaction.reply('pong')
+if (interaction.commandName === "ping") {
+  await interaction.reply("pong");
 }
-if (interaction.commandName === 'echo') {
-  const value = interaction.options.getString('value', true) // 引数valueを受け取る
-  await interaction.reply(value)
+if (interaction.commandName === "echo") {
+  const value = interaction.options.getString("value", true); // 引数valueを受け取る
+  await interaction.reply(value);
 }
 ```
 
@@ -382,10 +382,10 @@ if (interaction.commandName === 'echo') {
 `ping`コマンドを次のように編集してみます。ここでは 4000 ミリ秒後に"pong"と返信するコードを書いています。
 
 ```typescript
-if (interaction.commandName === 'ping') {
+if (interaction.commandName === "ping") {
   setTimeout(async () => {
-    await interaction.reply('pong')
-  }, 4000) // 4000ミリ秒後に"pong"と返信
+    await interaction.reply("pong");
+  }, 4000); // 4000ミリ秒後に"pong"と返信
 }
 ```
 
@@ -396,11 +396,11 @@ if (interaction.commandName === 'ping') {
 これを回避するため、`deferReply()`, `followUp()`という関数を使います。
 
 ```typescript
-if (interaction.commandName === 'ping') {
-  await interaction.deferReply() // 追加
+if (interaction.commandName === "ping") {
+  await interaction.deferReply(); // 追加
   setTimeout(async () => {
-    await interaction.followUp('pong') // 変更
-  }, 4000) // 4000ミリ秒後に"pong"と返信
+    await interaction.followUp("pong"); // 変更
+  }, 4000); // 4000ミリ秒後に"pong"と返信
 }
 ```
 
