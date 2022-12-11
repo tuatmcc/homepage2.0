@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 
-import styles from './style.module.scss';
+import styles from './style.module.css';
 
 export type DelProps = {
   children: ReactNode;

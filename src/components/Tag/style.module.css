@@ -1,6 +1,8 @@
 .tag {
   padding: 0.2em 0.5em;
   margin-right: 0.5em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
   color: #000;
   background-color: #8cb;
   border-radius: 0.3em;

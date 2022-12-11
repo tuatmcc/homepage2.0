@@ -10,7 +10,7 @@ import Code from '~/components/Code/Code';
 import Del from '~/components/Del/Del';
 import Pre from '~/components/Pre/Pre';
 
-import styles from './style.module.scss';
+import styles from './style.module.css';
 
 export type ArticleWrapperProps = {
   children: string;

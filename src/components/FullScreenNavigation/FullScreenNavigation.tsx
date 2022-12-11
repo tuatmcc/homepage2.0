@@ -1,8 +1,10 @@
 import { FC } from 'react';
 
+import Link from 'next/link';
+
 import { BASE_ROUTES_LIST } from '~/constants/routes';
 
-import styles from './style.module.scss';
+import styles from './style.module.css';
 
 export type FullScreenNavigationProps = {
   isOpened?: boolean;
@@ -11,15 +13,15 @@ export type FullScreenNavigationProps = {
 
 const FullScreenNavigation: FC<FullScreenNavigationProps> = ({ isOpened = true, className = '' }) => {
   return (
-    <div className={`${styles.nav} ${isOpened ? styles.nav_open : styles.nav_close}`}>
+    <div className={`${styles.nav} ${isOpened ? styles.open : styles.close}`}>
       <nav className={styles.navIn}>
         <ul className={styles.linkList}>
           {BASE_ROUTES_LIST.map((path) => {
             return (
               <li key={path.LABEL} className={styles.list}>
-                <a href={path.PATH} className={styles.link}>
+                <Link href={path.PATH} className={styles.link}>
                   {path.LABEL}
-                </a>
+                </Link>
               </li>
             );
           })}

@@ -1,49 +1,44 @@
 @use '~/styles/variables.scss' as *;
 
-$sidebarWidth: 15em;
-$sideHeaderHeight: 5em;
-$navbarHeight: 3em;
-$color-link: #058;
-
 .header {
   position: fixed;
-  width: $sidebarWidth;
-  padding-top: calc($sideHeaderHeight / 2);
+  width: var(--sidebar-width);
+  padding-top: calc(var(--side-header-height) / 2);
 
-  .brandLink {
+  & .brandLink {
     display: block;
     text-align: center;
     text-decoration: none;
 
-    .brandName {
+    & .brandName {
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       font-size: 1.5em;
-      color: $color-mcc-primary;
+      color: var(--color-mcc-primary);
     }
   }
 
-  .menuIcon {
+  & .menuIcon {
     z-index: 100;
     margin-right: 5px;
   }
 
-  @include mq('lg') {
+  @media screen and (max-width: 62em) {
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: $navbarHeight;
+    height: var(--navbar-height);
     padding-top: 0;
     background-color: #fff;
     box-shadow: 0 0 0.5em #00000050;
 
-    .brandLink {
+    & .brandLink {
       display: flex;
       align-items: center;
       height: inherit;
 
-      .brandName {
+      & .brandName {
         margin: 0;
       }
     }
@@ -52,26 +47,27 @@ $color-link: #058;
 
 .sidebar {
   position: fixed;
-  width: $sidebarWidth;
+  width: var(--sidebar-width);
   height: 100%;
-  padding-top: $sideHeaderHeight;
+  padding-top: var(--side-header-height);
   overflow-y: auto;
-  background: linear-gradient(140deg, #fff, #adf, #058);
+  background: linear-gradient(140deg, #bdf, #058);
 
-  .sidebarIn {
-    .linkList {
-      padding: $sideHeaderHeight 0;
+  & .sidebarIn {
+    & .linkList {
+      padding: var(--side-header-height) 0;
       list-style: none;
 
-      .list {
+      & .list {
         position: relative;
 
-        .link {
+        & .link {
           display: block;
           padding: 1em 1.5em;
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           font-size: 1.2em;
-          color: $color-link;
+          font-weight: 700;
+          color: var(--color-mcc-secondary);
           text-decoration: none;
           transition: background-color 0.3s linear;
 
@@ -84,13 +80,13 @@ $color-link: #058;
     }
   }
 
-  @include mq('lg') {
+  @media screen and (max-width: 62em) {
     top: 0;
     width: 0;
     padding-top: 0;
 
-    .isSidebarActive {
-      width: $sidebarWidth;
+    & .isSidebarActive {
+      width: var(--sidebar-width);
     }
   }
 }
@@ -98,21 +94,21 @@ $color-link: #058;
 .main {
   display: block;
 
-  .mainIn {
-    padding-left: $sidebarWidth;
+  & .mainIn {
+    padding-left: var(--sidebar-width);
     margin: 0 10em 0 2em;
 
-    @include mq('lg') {
-      padding-top: $navbarHeight;
+    @media screen and (max-width: 62em) {
+      padding-top: var(--navbar-height);
       padding-left: 0;
       margin: 0;
     }
 
-    .date {
+    & .date {
       font-family: 'Courier New', Courier, monospace;
     }
 
-    .mainVisual {
+    & .mainVisual {
       position: relative;
       display: flex;
       flex-direction: column;
@@ -121,7 +117,7 @@ $color-link: #058;
       height: 50svh;
       margin-bottom: 2em;
 
-      .img {
+      & .img {
         position: absolute;
         width: 100%;
         height: auto;
@@ -129,7 +125,7 @@ $color-link: #058;
         object-fit: cover;
       }
 
-      .title {
+      & .title {
         position: absolute;
         display: block;
         width: 100%;
@@ -143,11 +139,11 @@ $color-link: #058;
       }
     }
 
-    .tagList {
+    & .tagList {
       margin: 0 2em;
     }
 
-    .article {
+    & .article {
       margin: 0 1em;
       font-family: 'Noto Sans JP', sans-serif;
       font-size: 1em;
@@ -160,8 +156,8 @@ $color-link: #058;
   top: 0;
   right: 0;
   z-index: 101;
-  width: $navbarHeight;
-  height: $navbarHeight;
+  width: var(--navbar-height);
+  height: var(--navbar-height);
   background-color: #fff;
   border: none;
 

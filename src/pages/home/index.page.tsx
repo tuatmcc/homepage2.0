@@ -6,7 +6,7 @@ import Image from 'next/image';
 import HeaderTop from '~/components/HeaderTop/HeaderTop';
 import HomeCanvas from '~/components/HomeCanvas/HomeCanvas';
 
-import styles from './style.module.scss';
+import styles from './style.module.css';
 
 export type LandingPageProps = {};
 

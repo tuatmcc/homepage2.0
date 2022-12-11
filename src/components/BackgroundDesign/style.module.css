@@ -5,7 +5,7 @@
   height: 100%;
   overflow: hidden;
 
-  .square {
+  & .square {
     position: absolute;
     right: 0;
     bottom: 0;

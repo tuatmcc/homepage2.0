@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import styles from './style.module.scss';
+import styles from './style.module.css';
 
 export interface AutoLinkProps {
   href?: string;

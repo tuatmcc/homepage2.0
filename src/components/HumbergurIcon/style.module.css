@@ -9,7 +9,7 @@
   background-color: transparent;
   border-style: none;
 
-  .lineTop {
+  & .lineTop {
     position: absolute;
     top: 0;
     left: 0;
@@ -20,7 +20,7 @@
     transition: all 0.3s ease;
   }
 
-  .lineMiddle {
+  & .lineMiddle {
     position: absolute;
     top: 0.8rem;
     left: 0;
@@ -31,7 +31,7 @@
     transition: all 0.3s ease;
   }
 
-  .lineBottom {
+  & .lineBottom {
     position: absolute;
     top: 1.6rem;
     left: 0;
@@ -49,11 +49,11 @@
       background-color: #058;
     }
 
-    .lineMiddle {
+    & .lineMiddle {
       width: 0;
     }
 
-    .lineBottom {
+    & .lineBottom {
       top: 0.8rem;
       width: 1.5rem;
       background-color: #058;

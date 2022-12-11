@@ -5,7 +5,7 @@ import { Canvas, MeshProps, Props, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
 import { Model } from './model';
-import styles from './style.module.scss';
+import styles from './style.module.css';
 
 const Box = (props: any) => {
   const mesh = useRef<THREE.Mesh>(null!);

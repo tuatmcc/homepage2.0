@@ -3,18 +3,18 @@
 .button {
   border-radius: 6px;
 
-  &.primary {
+  & .primary {
     color: #fff;
-    background-color: $color-mcc-primary;
+    background-color: var(--color-mcc-primary);
 
     &:hover,
     &:focus {
-      color: $color-mcc-primary;
+      color: var(--color-mcc-primary);
       background-color: #fff;
     }
   }
 
-  &.secondary {
+  & .secondary {
     color: #fff;
     background-color: $color-mcc-secondary;
 
@@ -25,12 +25,12 @@
     }
   }
 
-  &.md {
+  & .md {
     padding: 1px 6px;
     font-size: 1rem;
   }
 
-  &.lg {
+  & .lg {
     padding: 0.5rem 1rem;
     font-size: 1.2rem;
   }

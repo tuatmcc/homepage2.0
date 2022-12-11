@@ -3,6 +3,7 @@ import { FC, ReactNode, useContext, useState } from 'react';
 import classNames from 'classnames';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { BASE_ROUTES_LIST, ROUTES } from '~/constants/routes';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
@@ -15,7 +16,7 @@ import HumbergurIcon from '../HumbergurIcon/HumbergurIcon';
 import Tag from '../Tag/Tag';
 import TagList from '../TagList/TagList';
 
-import styles from './style.module.scss';
+import styles from './style.module.css';
 
 export type PageMeta = {
   title: string;
@@ -60,9 +61,9 @@ export const Page: FC<PageProps> = ({ meta, children, isMdx = false }: PageProps
           <ul className={styles.linkList}>
             {BASE_ROUTES_LIST.map((route) => (
               <li key={route.LABEL} className={styles.list}>
-                <a href={route.PATH} className={styles.link}>
+                <Link href={route.PATH} className={styles.link}>
                   {route.LABEL}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

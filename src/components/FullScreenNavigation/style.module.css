@@ -9,14 +9,14 @@
   background-color: #fff;
   box-shadow: 0 0 0.5em #00000050;
 
-  &_open {
+  &.open {
     display: block;
     animation-name: fade-in;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
   }
 
-  &_close {
+  &.close {
     animation-name: fade-out;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;

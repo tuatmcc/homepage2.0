@@ -1,5 +1,3 @@
-@use '~/styles/variables.scss' as *;
-
 .header {
   position: fixed;
   z-index: 1;
@@ -7,23 +5,23 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: $navbarHeight;
+  height: var(--navbar-height);
   padding-top: 0;
   background-color: #fff;
   box-shadow: 0 0 0.5em #00000050;
 
-  .brandLink {
+  & .brandLink {
     display: flex;
     align-items: center;
     width: 50%;
     height: inherit;
     text-decoration: none;
 
-    .brandName {
+    & .brandName {
       margin: 0;
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       font-size: 1.5em;
-      color: $color-mcc-primary;
+      color: var(--color-mcc-primary);
     }
   }
 
@@ -32,24 +30,24 @@
     margin-right: 5px;
   }
 
-  @include mq('lg') {
+  @media screen and (max-width: 62em) {
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: $navbarHeight;
+    height: var(--navbar-height);
     padding-top: 0;
     background-color: #fff;
     box-shadow: 0 0 0.5em #00000050;
 
-    .brandLink {
+    & .brandLink {
       display: flex;
       align-items: center;
       width: 50%;
       height: inherit;
 
-      .brandName {
+      & .brandName {
         margin: 0;
       }
     }

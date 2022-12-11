@@ -15,5 +15,5 @@ module.exports = {
     "order/properties-alphabetical-order": null,
     "selector-class-pattern": "^([_]?)[a-z][a-zA-Z0-9]+$", // lowerCamelCase
   },
-  ignoreFiles: ["node_modules/**/*", "public/**/*"],
+  ignoreFiles: ["node_modules/**/*", "public/**/*", "out/**/*", ".next/**/*"],
 };

@@ -8,7 +8,7 @@ import { ROUTES } from '~/constants/routes';
 import FullScreenNavigation from '../FullScreenNavigation/FullScreenNavigation';
 import HumbergurIcon from '../HumbergurIcon/HumbergurIcon';
 
-import styles from './style.module.scss';
+import styles from './style.module.css';
 
 export type HeaderProps = {};
 
