@@ -1,10 +1,9 @@
+import Link from 'next/link';
 import { FC } from 'react';
 
-import Link from 'next/link';
+import styles from './style.module.css';
 
 import { BASE_ROUTES_LIST } from '~/constants/routes';
-
-import styles from './style.module.css';
 
 export type FullScreenNavigationProps = {
   isOpened?: boolean;

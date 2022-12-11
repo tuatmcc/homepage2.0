@@ -1,16 +1,15 @@
-import { createElement, FC, ReactNode, useEffect, useState } from 'react';
-
 import Image from 'next/image';
+import { createElement, FC, ReactNode, useEffect, useState } from 'react';
 import rehypeParse from 'rehype-parse';
 import rehypeReact, { Options as RehypeReactOptions } from 'rehype-react';
 import { unified } from 'unified';
+
+import styles from './style.module.css';
 
 import AutoLink, { AutoLinkProps } from '~/components/AutoLink/AutoLink';
 import Code from '~/components/Code/Code';
 import Del from '~/components/Del/Del';
 import Pre from '~/components/Pre/Pre';
-
-import styles from './style.module.css';
 
 export type ArticleWrapperProps = {
   children: string;

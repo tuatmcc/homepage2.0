@@ -1,14 +1,13 @@
-import React, { FC } from 'react';
-
 import Image from 'next/image';
 import Link from 'next/link';
-
-import { ROUTES } from '~/constants/routes';
+import React, { FC } from 'react';
 
 import FullScreenNavigation from '../FullScreenNavigation/FullScreenNavigation';
 import HumbergurIcon from '../HumbergurIcon/HumbergurIcon';
 
 import styles from './style.module.css';
+
+import { ROUTES } from '~/constants/routes';
 
 export type HeaderProps = {};
 

@@ -1,12 +1,8 @@
-import { FC, ReactNode, useContext, useState } from 'react';
-
 import classNames from 'classnames';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-
-import { BASE_ROUTES_LIST, ROUTES } from '~/constants/routes';
-import { MediaQueryContext } from '~/providers/MediaQueryProvider';
+import { FC, ReactNode, useContext, useState } from 'react';
 
 import BackgroundDesign from '../BackgroundDesign/BakgroundDesign';
 import Button from '../Button/Button';
@@ -17,6 +13,9 @@ import Tag from '../Tag/Tag';
 import TagList from '../TagList/TagList';
 
 import styles from './style.module.css';
+
+import { BASE_ROUTES_LIST, ROUTES } from '~/constants/routes';
+import { MediaQueryContext } from '~/providers/MediaQueryProvider';
 
 export type PageMeta = {
   title: string;

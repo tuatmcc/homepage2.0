@@ -1,7 +1,6 @@
-import React, { ReactNode, useRef, useState } from 'react';
-
 import { Environment, Plane } from '@react-three/drei';
 import { Canvas, MeshProps, Props, useFrame } from '@react-three/fiber';
+import React, { ReactNode, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 import { Model } from './model';
