@@ -33,7 +33,7 @@
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.7.0",
     "next": "13.0.6",
-    "postcss": "^8.4.19",
+    "postcss": "^8.4.20",
     "postcss-loader": "^7.0.1",
     "postcss-nested": "^6.0.0",
     "postcss-normalize": "^10.0.1",
