@@ -4,8 +4,8 @@ import { FC, useState } from 'react';
 
 import styles from './style.module.css';
 
-import HeaderTop from '~/components/HeaderTop/HeaderTop';
-import HomeCanvas from '~/components/HomeCanvas/HomeCanvas';
+import HeaderTop from '~/components/common/HeaderTop/HeaderTop';
+import HomeCanvas from '~/components/home/HomeCanvas/HomeCanvas';
 
 export type LandingPageProps = {};
 

@@ -10,7 +10,7 @@ export type FullScreenNavigationProps = {
   className?: string;
 };
 
-const FullScreenNavigation: FC<FullScreenNavigationProps> = ({ isOpened = true, className = '' }) => {
+const FullScreenNavigation: FC<FullScreenNavigationProps> = ({ isOpened = false, className = '' }) => {
   return (
     <div className={`${styles.nav} ${isOpened ? styles.open : styles.close}`}>
       <nav className={styles.navIn}>

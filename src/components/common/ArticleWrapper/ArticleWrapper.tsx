@@ -6,10 +6,10 @@ import { unified } from 'unified';
 
 import styles from './style.module.css';
 
-import AutoLink, { AutoLinkProps } from '~/components/AutoLink/AutoLink';
-import Code from '~/components/Code/Code';
-import Del from '~/components/Del/Del';
-import Pre from '~/components/Pre/Pre';
+import AutoLink, { AutoLinkProps } from '~/components/common/AutoLink/AutoLink';
+import Code from '~/components/common/Code/Code';
+import Del from '~/components/common/Del/Del';
+import Pre from '~/components/common/Pre/Pre';
 
 export type ArticleWrapperProps = {
   children: string;

@@ -1,8 +1,8 @@
-import { Page, PageMeta } from '../../../components/Page/Page';
+import { Page, PageMeta } from '../../../components/common/Page/Page';
 import { DynamicRouting } from '../../../lib/dynamic-routing';
 import { Post, PostCollector } from '../../../lib/post-collector';
 
-import ArticleWrapper from '~/components/ArticleWrapper/ArticleWrapper';
+import ArticleWrapper from '~/components/common/ArticleWrapper/ArticleWrapper';
 
 const postCollector = new PostCollector('activities');
 const dynamicRouting = new DynamicRouting(postCollector);

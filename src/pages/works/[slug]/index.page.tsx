@@ -1,5 +1,5 @@
-import ArticleWrapper from '~/components/ArticleWrapper/ArticleWrapper';
-import { Page, PageMeta } from '~/components/Page/Page';
+import ArticleWrapper from '~/components/common/ArticleWrapper/ArticleWrapper';
+import { Page, PageMeta } from '~/components/common/Page/Page';
 import { DynamicRouting } from '~/lib/dynamic-routing';
 import { Post, PostCollector } from '~/lib/post-collector';
 

@@ -3,7 +3,8 @@ import { Canvas, MeshProps, Props, useFrame } from '@react-three/fiber';
 import React, { ReactNode, useRef, useState } from 'react';
 import * as THREE from 'three';
 
-import { Model } from './model';
+import { Model } from '../Models/model';
+
 import styles from './style.module.css';
 
 const Box = (props: any) => {
