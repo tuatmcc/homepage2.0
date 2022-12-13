@@ -37,7 +37,7 @@ yarn-error.log*
 next-env.d.ts
 
 # idea
-/.idea
+.idea
 
 # wiki
-/mcc-website.wiki
+*.wiki

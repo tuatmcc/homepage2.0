@@ -20,12 +20,6 @@ const CustomLink = ({ href = '', children = '', className = '' }: AutoLinkProps)
         {children}
       </a>
     );
-  } else if (href.match('#')) {
-    return (
-      <a href={href} className={`${styles.linkedHeading} ${className}}`}>
-        {children}
-      </a>
-    );
   } else {
     return (
       <Link href={href} className={`${styles.internalLink} ${className}}`}>

@@ -1,12 +1,11 @@
-import { FC, useState } from 'react';
-
 import Head from 'next/head';
 import Image from 'next/image';
-
-import HeaderTop from '~/components/HeaderTop/HeaderTop';
-import HomeCanvas from '~/components/HomeCanvas/HomeCanvas';
+import { FC, useState } from 'react';
 
 import styles from './style.module.css';
+
+import HeaderTop from '~/components/common/HeaderTop/HeaderTop';
+import HomeCanvas from '~/components/home/HomeCanvas/HomeCanvas';
 
 export type LandingPageProps = {};
 

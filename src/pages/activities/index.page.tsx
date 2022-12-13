@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { Page, PageMeta } from '../../components/Page/Page';
+import { Page, PageMeta } from '../../components/common/Page/Page';
 import { PostCollector, PostCollectorProps } from '../../lib/post-collector';
 
 const meta: PageMeta = {

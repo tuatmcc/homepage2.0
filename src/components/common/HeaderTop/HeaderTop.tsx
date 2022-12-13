@@ -1,14 +1,13 @@
-import React, { FC } from 'react';
-
 import Image from 'next/image';
 import Link from 'next/link';
-
-import { ROUTES } from '~/constants/routes';
+import React, { FC } from 'react';
 
 import FullScreenNavigation from '../FullScreenNavigation/FullScreenNavigation';
 import HumbergurIcon from '../HumbergurIcon/HumbergurIcon';
 
 import styles from './style.module.css';
+
+import { ROUTES } from '~/constants/routes';
 
 export type HeaderProps = {};
 
@@ -22,10 +21,10 @@ const HeaderTop: FC<HeaderProps> = () => {
   return (
     <header className={styles.header}>
       <FullScreenNavigation isOpened={isOpened} />
-      <a className={styles.brandLink} href={ROUTES.HOME.PATH}>
+      <Link className={styles.brandLink} href={ROUTES.HOME.PATH}>
         <Image alt="" src="/mcc-logo.svg" width={32} height={32} />
         <h1 className={styles.brandName}>MCC</h1>
-      </a>
+      </Link>
       <HumbergurIcon
         className={styles.menuIcon}
         as="button"

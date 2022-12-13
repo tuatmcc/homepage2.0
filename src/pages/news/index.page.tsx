@@ -1,4 +1,4 @@
-import { Page, PageMeta } from '../../components/Page/Page';
+import { Page, PageMeta } from '../../components/common/Page/Page';
 
 const meta: PageMeta = {
   title: 'お知らせ',

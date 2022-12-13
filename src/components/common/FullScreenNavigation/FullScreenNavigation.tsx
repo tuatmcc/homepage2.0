@@ -1,17 +1,16 @@
+import Link from 'next/link';
 import { FC } from 'react';
 
-import Link from 'next/link';
+import styles from './style.module.css';
 
 import { BASE_ROUTES_LIST } from '~/constants/routes';
-
-import styles from './style.module.css';
 
 export type FullScreenNavigationProps = {
   isOpened?: boolean;
   className?: string;
 };
 
-const FullScreenNavigation: FC<FullScreenNavigationProps> = ({ isOpened = true, className = '' }) => {
+const FullScreenNavigation: FC<FullScreenNavigationProps> = ({ isOpened = false, className = '' }) => {
   return (
     <div className={`${styles.nav} ${isOpened ? styles.open : styles.close}`}>
       <nav className={styles.navIn}>
