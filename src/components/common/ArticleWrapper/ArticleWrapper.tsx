@@ -4,14 +4,20 @@ import rehypeParse from 'rehype-parse';
 import rehypeReact, { Options as RehypeReactOptions } from 'rehype-react';
 import { unified } from 'unified';
 
+import Tag from '../Tag/Tag';
+import TagList from '../TagList/TagList';
+
 import styles from './style.module.css';
 
 import AutoLink, { AutoLinkProps } from '~/components/common/AutoLink/AutoLink';
 import Code from '~/components/common/Code/Code';
 import Del from '~/components/common/Del/Del';
 import Pre from '~/components/common/Pre/Pre';
+import { MetaData } from '~/components/types/meta';
 
 export type ArticleWrapperProps = {
+  meta: MetaData;
+  className?: string;
   children: string;
 };
 
@@ -21,7 +27,8 @@ export type ArticleWrapperProps = {
  * @returns
  */
 const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
-  const [article, setArticle] = useState<ReactNode>(null);
+  // HTMLをReactNodeに変換する
+  const [content, setContent] = useState<ReactNode>(null);
   useEffect(() => {
     const processor = unified()
       .use(rehypeParse, { fragment: true })
@@ -46,10 +53,29 @@ const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
       } as RehypeReactOptions)
       .processSync(props.children);
 
-    setArticle(processor.result);
+    setContent(processor.result);
   }, [props.children]);
 
-  return <div className={styles.article}>{article}</div>;
+  const { title, img, date, tags } = props.meta;
+  const tagList = tags && tags.map((tag) => <Tag key={tag}>{tag}</Tag>);
+  return (
+    <div className={`${styles.article} ${props.className}`}>
+      <h1 className={styles.title}>{title}</h1>
+      <Image
+        src="/mcc-design.jpg"
+        alt=""
+        width={800}
+        height={300}
+        className={styles.hero}
+        onError={(e) => {
+          e.currentTarget.hidden = true;
+        }}
+      />
+      <div className={styles.date}>{date}</div>
+      <TagList className={styles.tagList}>{tagList}</TagList>
+      <div className={styles.content}>{content}</div>
+    </div>
+  );
 };
 
 export default ArticleWrapper;

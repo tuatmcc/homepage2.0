@@ -1,64 +1,15 @@
-.header {
-  position: fixed;
-  width: var(--sidebar-width);
-  padding-top: calc(var(--side-header-height) / 2);
-
-  & .brandLink {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-
-    & .brandName {
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-size: 1.5em;
-      color: var(--color-mcc-primary);
-    }
-  }
-
-  & .menuIcon {
-    z-index: 100;
-    margin-right: 5px;
-  }
+.main {
+  padding: var(--navbar-height) 32px;
 
   @media screen and (max-width: 62em) {
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: var(--navbar-height);
-    padding-top: 0;
-    background-color: #fff;
-    box-shadow: 0 0 0.5em #00000050;
-
-    & .brandLink {
-      display: flex;
-      align-items: center;
-      height: inherit;
-
-      & .brandName {
-        margin: 0;
-      }
-    }
+    padding: var(--navbar-height) 10px;
   }
-}
-
-.main {
-  display: block;
 
   & .mainIn {
-    padding-left: var(--sidebar-width);
-    margin: 0 10em 0 2em;
-
-    @media screen and (max-width: 62em) {
-      padding-top: var(--navbar-height);
-      padding-left: 0;
-      margin: 0;
-    }
-
-    & .date {
-      font-family: 'Courier New', Courier, monospace;
-    }
+    max-width: 1000px;
+    margin: 80px auto;
+    background-color: var(--color-background);
+    box-shadow: 0 0 6px #00000080;
 
     & .mainVisual {
       position: relative;
@@ -93,12 +44,6 @@
 
     & .tagList {
       margin: 0 2em;
-    }
-
-    & .article {
-      margin: 0 1em;
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 1em;
     }
   }
 }

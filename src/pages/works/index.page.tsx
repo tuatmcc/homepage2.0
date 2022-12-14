@@ -1,15 +1,17 @@
 import Link from 'next/link';
 
-import { Page, PageMeta } from '../../components/common/Page/Page';
+import Page from '../../components/common/Page/Page';
 import { PostCollector, PostCollectorProps } from '../../lib/post-collector';
 
-const meta: PageMeta = {
+import { MetaData } from '~/components/types/meta';
+
+const meta: MetaData = {
   title: '作品',
   description: 'Works of TUATMCC',
 };
 
 // posts will be populated at build time by getStaticProps()
-const Works = ({ posts }: PostCollectorProps) => {
+const WorksPage = ({ posts }: PostCollectorProps) => {
   return (
     <Page meta={meta}>
       {posts.map((post) => (
@@ -24,4 +26,4 @@ const Works = ({ posts }: PostCollectorProps) => {
 // This function gets called at build time on server-side.
 export const getStaticProps = new PostCollector('works').getStaticProps;
 
-export default Works;
+export default WorksPage;

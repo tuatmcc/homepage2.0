@@ -1,3 +1,8 @@
+export type ROUTE = {
+  PATH: string;
+  LABEL: string;
+};
+
 export const ROUTES = {
   HOME: { PATH: '/home', LABEL: 'Home' },
   ABOUT: { PATH: '/about', LABEL: 'About' },

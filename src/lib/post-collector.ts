@@ -4,9 +4,11 @@ import path from 'path';
 import matter from 'gray-matter';
 import { GetStaticProps } from 'next';
 
+import { MetaData } from '~/components/types/meta';
+
 // 記事を取得するためのクラス。index.tsxで使う生このpostCollectorと、
 // [slug].tsxで使うdynamicRoutingというwrapperクラス用とで、2つの別インスタンスができてしまい、
-// 一部処理が重複しているのが気になる。余裕があれば直したいが、設計をちゃんと考えてから実装する必要がある。
+// 一部処理が重複しているのが気になる。余裕があれば直したいが、タグの処理などほかの設計をちゃんと考えてから実装する必要がある。
 
 /**
  * @param {string} slug - The slug of the post. This is the name of the markdown file without the extension.
@@ -14,7 +16,7 @@ import { GetStaticProps } from 'next';
  */
 export interface Post {
   slug: string;
-  frontmatter: { [key: string]: any };
+  frontmatter: MetaData;
   content: string;
 }
 
@@ -53,7 +55,7 @@ export class PostCollector {
     try {
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data, content } = matter(fileContents);
-      return { slug: slug, frontmatter: data, content };
+      return { slug: slug, frontmatter: data as MetaData, content };
     } catch (e) {
       console.error(e);
       return { slug: '/404', frontmatter: { title: 'Error' }, content: '' };

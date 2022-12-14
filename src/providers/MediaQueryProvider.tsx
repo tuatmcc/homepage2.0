@@ -22,7 +22,7 @@ const MediaQueryProvider: FC<MediaQueryProviderProps> = ({ children }) => {
     handleResize();
     addEventListener('load', handleResize);
     addEventListener('resize', handleResize);
-  }, []);
+  }, [isMobile]);
 
   return <MediaQueryContext.Provider value={{ isMobile }}>{children}</MediaQueryContext.Provider>;
 };
