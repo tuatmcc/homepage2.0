@@ -4,7 +4,7 @@ import { FC, useState } from 'react';
 
 import styles from './style.module.css';
 
-import HeaderTop from '~/components/common/HeaderPC/HeaderPC';
+import HeaderTop from '~/components/common/NavbarPC/NavbarPC';
 import HomeCanvas from '~/components/home/HomeCanvas/HomeCanvas';
 
 export type LandingPageProps = {};
