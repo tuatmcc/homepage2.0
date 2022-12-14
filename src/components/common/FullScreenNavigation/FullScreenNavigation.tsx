@@ -11,20 +11,20 @@ export type FullScreenNavigationProps = {
 };
 
 const FullScreenNavigation: FC<FullScreenNavigationProps> = ({ isOpened = false, className = '' }) => {
+  const links = BASE_ROUTES_LIST.map((path) => {
+    return (
+      <li key={path.LABEL} className={styles.list}>
+        <Link href={path.PATH} className={styles.link}>
+          {path.LABEL}
+        </Link>
+      </li>
+    );
+  });
+
   return (
     <div className={`${styles.nav} ${isOpened ? styles.open : styles.close}`}>
       <nav className={styles.navIn}>
-        <ul className={styles.linkList}>
-          {BASE_ROUTES_LIST.map((path) => {
-            return (
-              <li key={path.LABEL} className={styles.list}>
-                <Link href={path.PATH} className={styles.link}>
-                  {path.LABEL}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+        <ul className={styles.linkList}>{links}</ul>
       </nav>
     </div>
   );

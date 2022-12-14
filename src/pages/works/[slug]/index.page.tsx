@@ -1,20 +1,26 @@
+import { FC } from 'react';
+
 import ArticleWrapper from '~/components/common/ArticleWrapper/ArticleWrapper';
-import { Page, PageMeta } from '~/components/common/Page/Page';
+import Page from '~/components/common/Page/Page';
 import { DynamicRouting } from '~/lib/dynamic-routing';
 import { Post, PostCollector } from '~/lib/post-collector';
 
 const postCollector = new PostCollector('works');
 const dynamicRouting = new DynamicRouting(postCollector);
 
+type WorksPostPageProps = {
+  post: Post;
+};
+
 /**
  * works以下のマークダウンファイルへのパスはここに通されます。
  * @param param0
  * @returns
  */
-const WorksPost = ({ post }: { post: Post }) => {
+const WorksPost: FC<WorksPostPageProps> = ({ post }) => {
   return (
-    <Page meta={post.frontmatter as PageMeta}>
-      <ArticleWrapper>{post.content}</ArticleWrapper>
+    <Page meta={post.frontmatter}>
+      <ArticleWrapper meta={post.frontmatter}>{post.content}</ArticleWrapper>
     </Page>
   );
 };

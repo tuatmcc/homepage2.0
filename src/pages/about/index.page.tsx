@@ -1,5 +1,14 @@
-const About = () => {
-  return <></>;
+import { FC } from 'react';
+
+import Page from '~/components/common/Page/Page';
+
+const meta = {
+  title: 'About',
+  description: 'About of TUATMCC',
 };
 
-export default About;
+const AboutPage: FC = () => {
+  return <Page meta={meta}>a</Page>;
+};
+
+export default AboutPage;

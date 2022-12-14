@@ -1,19 +1,24 @@
 import Link from 'next/link';
+import { FC } from 'react';
 
-import { Page, PageMeta } from '../../components/common/Page/Page';
+import Page from '../../components/common/Page/Page';
 import { PostCollector, PostCollectorProps } from '../../lib/post-collector';
 
-const meta: PageMeta = {
+const meta = {
   title: '活動報告',
   description: 'Activities of TUATMCC',
 };
 
+type ActivitiesProps = {
+  posts: PostCollectorProps;
+};
+
 // posts will be populated at build time by getStaticProps()
-const Activities = ({ posts }: PostCollectorProps) => {
+const ActivitiesPage: FC<PostCollectorProps> = ({ posts }) => {
   return (
     <Page meta={meta}>
       {posts.map((post) => (
-        <div key={0}>
+        <div key={post.slug}>
           <Link href={`activities/${post.slug}`}>{post.slug}</Link>
         </div>
       ))}
@@ -24,4 +29,4 @@ const Activities = ({ posts }: PostCollectorProps) => {
 // This function gets called at build time on server-side.
 export const getStaticProps = new PostCollector('activities').getStaticProps;
 
-export default Activities;
+export default ActivitiesPage;

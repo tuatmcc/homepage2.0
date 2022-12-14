@@ -7,11 +7,12 @@
     display: block;
     text-align: center;
     text-decoration: none;
-
+    
     & .brandName {
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       font-size: 1.8rem;
       color: var(--color-mcc-primary);
+      text-shadow: 0 0 50px #fff;
     }
   }
 }
@@ -42,12 +43,11 @@
           font-weight: 700;
           color: var(--color-mcc-secondary);
           text-decoration: none;
-          transition: background-color 0.3s linear;
+          transition: background-color 0.2s linear;
 
           &:hover,
           &:focus {
             background-color: #fff;
-            box-shadow: 0 0 10px #dff;
           }
         }
       }
