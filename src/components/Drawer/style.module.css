@@ -1,0 +1,15 @@
+.drawer {
+  position: fixed;
+  top: 0;
+  bottom: var(--navbar-mobile-height);
+  left: 0;
+  width: 100%;
+  overflow-y: auto;
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+
+  &.open {
+    transform: translateX(0);
+  }
+}
