@@ -2,6 +2,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { FC, ReactNode, useContext, useState } from 'react';
 
+import HeaderMobile from '../HeaderMobile/HeaderMobile';
+import NavbarMobile from '../NavbarMobile/NavbarMobile';
 import Sidebar from '../Sidebar/Sidebar';
 import Tag from '../Tag/Tag';
 import TagList from '../TagList/TagList';
@@ -9,7 +11,7 @@ import TagList from '../TagList/TagList';
 import styles from './style.module.css';
 
 import FullScreenNavigation from '~/components/common/FullScreenNavigation/FullScreenNavigation';
-import HeaderPC from '~/components/common/HeaderPC/HeaderPC';
+import NavbarPC from '~/components/common/NavbarPC/NavbarPC';
 import { MetaData } from '~/components/types/meta';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
 
@@ -28,8 +30,6 @@ const Page: FC<PageProps> = ({ meta, children, isMdx = false }: PageProps) => {
   const { title, description, img, tags } = meta;
   const { isMobile } = useContext(MediaQueryContext);
 
-  const [isOpened, setIsOpened] = useState<boolean>(false);
-
   const tagElements = tags?.map((tag) => <Tag key={tag}>{`#${tag}`}</Tag>);
 
   return (
@@ -40,7 +40,8 @@ const Page: FC<PageProps> = ({ meta, children, isMdx = false }: PageProps) => {
         {img && <meta property="og:image" content={img} />}
       </Head>
 
-      <HeaderPC />
+      {isMobile && <HeaderMobile />}
+      {isMobile ? <NavbarMobile /> : <NavbarPC />}
 
       <main className={styles.main}>
         <div className={styles.mainIn}>{children}</div>
