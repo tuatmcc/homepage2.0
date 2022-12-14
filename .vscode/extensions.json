@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "csstools.postcss",
+    "stylelint.vscode-stylelint",
+    "dbaeumer.vscode-eslint",
+    "ecmel.vscode-html-css",
+  ],
+  "unwantedRecommendations": []
+}

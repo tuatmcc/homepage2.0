@@ -7,19 +7,19 @@ import styles from './style.module.css';
 import { BASE_ROUTES_LIST, ROUTES } from '~/constants/routes';
 
 const Sidebar: FC = () => {
+  const links = BASE_ROUTES_LIST.map((route) => (
+    <li key={route.LABEL} className={styles.list}>
+      <Link href={route.PATH} className={styles.link}>
+        {route.LABEL}
+      </Link>
+    </li>
+  ));
+
   return (
     <>
       <aside className={styles.sidebar}>
         <nav className={styles.sidebarIn}>
-          <ul className={styles.linkList}>
-            {BASE_ROUTES_LIST.map((route) => (
-              <li key={route.LABEL} className={styles.list}>
-                <Link href={route.PATH} className={styles.link}>
-                  {route.LABEL}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <ul className={styles.linkList}>{links}</ul>
         </nav>
       </aside>
       <header className={styles.header}>

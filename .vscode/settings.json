@@ -1,12 +1,11 @@
 {
-  "typescript.preferences.jsxAttributeCompletionStyle": "auto",
-  "typescript.format.enable": false,
-  "eslint.format.enable": true,
-  "prettier.enable": true,
-  "stylelint.enable": true,
   "eslint.enable": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
-  }
+  },
+  "files.associations": {
+    "*.css": "css",
+  },
+  "files.autoSave": "afterDelay",
 }
