@@ -10,7 +10,7 @@
     "lint": "eslint --fix **/*.tsx **/*.ts && next lint --fix && stylelint \"**/*.css\" --fix"
   },
   "dependencies": {
-    "@react-three/drei": "^9.46.5",
+    "@react-three/drei": "^9.46.7",
     "@react-three/fiber": "^8.9.1",
     "@react-three/postprocessing": "^2.7.0",
     "@types/node": "18.11.14",
