@@ -1,10 +1,13 @@
 .article {
-  width: 90%;
-  padding: 10px;
-  margin: auto;
+  padding: 5px;
+  margin: 0 32px;
+
+  @media screen and (max-width: 62em) {
+    margin: 0 5px;
+  }
 
   & .title {
-    margin: 1em 0;
+    margin: 48px 0;
     font-family: Sanchez, 'Noto Sans JP', sans-serif;
     font-size: 32px;
     font-weight: normal;

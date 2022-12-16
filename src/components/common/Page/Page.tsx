@@ -1,16 +1,12 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import { FC, ReactNode, useContext, useState } from 'react';
 
 import HeaderMobile from '../HeaderMobile/HeaderMobile';
 import NavbarMobile from '../NavbarMobile/NavbarMobile';
-import Sidebar from '../Sidebar/Sidebar';
 import Tag from '../Tag/Tag';
-import TagList from '../TagList/TagList';
 
 import styles from './style.module.css';
 
-import FullScreenNavigation from '~/components/common/FullScreenNavigation/FullScreenNavigation';
 import NavbarPC from '~/components/common/NavbarPC/NavbarPC';
 import { MetaData } from '~/components/types/meta';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
@@ -36,7 +32,13 @@ const Page: FC<PageProps> = ({ meta, children, isMdx = false }: PageProps) => {
     <>
       <Head>
         <title>{`${title} - TUATMCC`}</title>
-        {description && <meta name="description" content={description} />}
+        <meta property="og:site_name" content={title} />
+        {description && (
+          <>
+            <meta name="description" content={description} />
+            <meta property="og:description" content={description} />
+          </>
+        )}
         {img && <meta property="og:image" content={img} />}
       </Head>
 

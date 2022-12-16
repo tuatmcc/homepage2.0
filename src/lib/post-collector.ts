@@ -58,7 +58,7 @@ export class PostCollector {
       return { slug: slug, frontmatter: data as MetaData, content };
     } catch (e) {
       console.error(e);
-      return { slug: '/404', frontmatter: { title: 'Error' }, content: '' };
+      return { slug: '/404', frontmatter: { title: 'Page not found' }, content: '' };
     }
   };
 
