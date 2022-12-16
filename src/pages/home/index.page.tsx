@@ -1,32 +1,29 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import HeaderTop from '~/components/common/NavbarPC/NavbarPC';
-import HomeCanvas from '~/components/home/HomeCanvas/HomeCanvas';
+import Page from '~/components/common/Page/Page';
+import Art from '~/components/home/Art/Art';
 
-export type LandingPageProps = {};
-
-const LandingPage: FC<LandingPageProps> = () => {
+// 超絶簡易なランディングページ
+const LandingPage: FC = () => {
   return (
     <>
-      <Head>
-        <title>HOME - MCC</title>
-        <meta
-          lang="ja"
-          name="description"
-          content="東京農工大学公認サークルMCC(マイクロコンピュータクラブ)のホームページです"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <div className={styles.landingPage}>
-        <HomeCanvas />
-      </div>
-
-      <HeaderTop />
+      <Page
+        meta={{
+          title: 'Home',
+          description: '東京農工大学公認サークルMCC(マイクロコンピュータクラブ)のホームページです',
+        }}
+      >
+        <div className={styles.landingPage}>
+          <h1 className={styles.landingPage__text__title} hidden>
+            MCC
+          </h1>
+          <div className={styles.art}>
+            <Art />
+          </div>
+        </div>
+      </Page>
     </>
   );
 };

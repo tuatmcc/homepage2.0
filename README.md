@@ -1,8 +1,9 @@
 # 農工大マイクロコンピュータークラブのホームページ
 
-- 勝手に[mcc-website-test.vercel.app](https://mcc-website-forked.vercel.app)でデモを動かしてみたりしてます。コロコロ変わります。
-- `Next.js`で作成、`GitHub Pages`で公開
-- 何も知らない部員が見ても、理解できるようにしたい → [記録](https://github.com/tuatmcc/mcc-website/wiki)
+- 2022年11月、MCCのHPリニューアルが決定しました。
+- `Next.js`で作成、`GitHub Pages`で公開します。
+- [Figma](https://www.figma.com/file/XTfW4NDafbsoMBCu5lNGkr/MCC-HOME-PAGE?node-id=0%3A1&t=F2uR5Q5TRy6jUzh3-1)でデザインを考えてたりします。
+- 勝手に[mcc-website-test.test.app](https://mcc-website-forked.vercel.app)でデモを動かしてみたりしてます。コロコロ変わります。
 
 ## 記事の書き方
 
@@ -11,15 +12,16 @@
 ## 概要
 
 - Next.js で SSG を使って、静的サイトを作成しています。
-- マークダウンで記事を書くと、メタデータと HTML に変換されます。
-- カスタマイズ性の高い ChakraUI を使って、スタイルを適用しています。
+- マークダウンで記事を書きます。
+- `css-modules`と`postcss`でスタイルを書きます。
+- 凝った見た目は、`React Three Fiber(R3F)`で実装します。
 - `main`ブランチに push すると、GitHub Actions でビルドが走り、デプロイされます。
 
 ### キーワード
 
-`SSG`, `SPA`, `JAMStack`, `React`, ...
+`SSG`, `SPA`, `Jamstack`, `React`, ...
 
-気になったら調べてね。
+気になったら調べてね～
 
 ## 環境（2022.11 現在）
 
@@ -31,7 +33,7 @@
 
 - `VSCode`の使用を想定しています。
 - [ここ](https://github.com/tuatmcc/mcc-website/wiki/development-maintenance)を参照
-- 何かあれば Issue に。
+- 何かあれば Issue や Discord に。
 
 ## リニューアルにあたって
 
@@ -52,11 +54,11 @@
 
 - 阿部寛のようにはしない
 - レスポンシブ対応
-- プロジェクトから`CSS in JS`を撲滅し、`css-modules`を使う
 - `module.css`でスタイルを書く
 - svg で作ってアニメーションとか？
 - React Three Fiber で背景に 3D とか
 - 3D のために`React Three Fiber`をいれた。
+- 何も知らない部員が見ても、理解できるようにしたい → [記録](https://github.com/tuatmcc/mcc-website/wiki)
 
 ## 開発記録
 

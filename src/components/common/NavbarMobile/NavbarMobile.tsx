@@ -7,7 +7,7 @@ import MenuBurgerIcon from '../Icons/MenuBurgerIcon';
 
 import styles from './style.module.css';
 
-import Drawer from '~/components/Drawer/Drawer';
+import Drawer from '~/components/common/Drawer/Drawer';
 import BrowserIcon from '~/components/common/Icons/BrowserIcon';
 import HomeIcon from '~/components/common/Icons/HomeIcon';
 import InfoIcon from '~/components/common/Icons/InfoIcon';
@@ -31,7 +31,7 @@ const NavbarMobile: FC = () => {
           <Link href={ROUTES.ACTIVITIES.PATH} className={styles.link}>
             <BrowserIcon />
           </Link>
-          <Link href="hogehoge" className={styles.link}>
+          <Link href={ROUTES.SANDBOX.PATH} className={styles.link}>
             <EnvelopeIcon />
           </Link>
           <button className={styles.link} onClick={() => setIsOpened(!isOpened)} onBlur={() => setIsOpened(false)}>
