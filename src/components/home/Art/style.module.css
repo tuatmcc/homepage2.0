@@ -1,0 +1,46 @@
+.pathNoko {
+  stroke:#002480;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 0;
+  stroke-width: 0;
+  animation: hello 5s ease-in 0s;
+  @keyframes hello {
+    0% {
+      fill:transparent;
+      stroke-dashoffset: 2000;
+    }
+  
+    40% {
+      fill:transparent;
+      stroke-dashoffset: 2000;
+    }
+  
+    100% {
+      fill:#002480;
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+.pathMcc {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 0;
+  stroke-width: 1;
+  animation: mcc 5s ease-in-out 0s;
+
+  @keyframes mcc {
+    0% {
+      fill:transparent;
+      stroke-dashoffset: 2000;
+    }
+  
+    40% {
+      stroke-dashoffset: 2000;
+    }
+  
+    100% {
+      fill:#002480;
+      stroke-dashoffset: 0;
+    }
+  }
+}

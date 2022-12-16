@@ -6,8 +6,8 @@ import { PostCollector, PostCollectorProps } from '../../lib/post-collector';
 import { MetaData } from '~/components/types/meta';
 
 const meta: MetaData = {
-  title: '作品',
-  description: 'Works of TUATMCC',
+  title: 'Blog',
+  description: 'Blog of TUATMCC',
 };
 
 // posts will be populated at build time by getStaticProps()
@@ -16,7 +16,7 @@ const WorksPage = ({ posts }: PostCollectorProps) => {
     <Page meta={meta}>
       {posts.map((post) => (
         <div key={post.slug}>
-          <Link href={`works/${post.slug}`}>{post.slug}</Link>
+          <Link href={`blog/${post.slug}`}>{post.slug}</Link>
         </div>
       ))}
     </Page>
@@ -24,6 +24,6 @@ const WorksPage = ({ posts }: PostCollectorProps) => {
 };
 
 // This function gets called at build time on server-side.
-export const getStaticProps = new PostCollector('works').getStaticProps;
+export const getStaticProps = new PostCollector('blog').getStaticProps;
 
 export default WorksPage;

@@ -5,7 +5,7 @@ import Page from '~/components/common/Page/Page';
 import { DynamicRouting } from '~/lib/dynamic-routing';
 import { Post, PostCollector } from '~/lib/post-collector';
 
-const postCollector = new PostCollector('works');
+const postCollector = new PostCollector('blog');
 const dynamicRouting = new DynamicRouting(postCollector);
 
 type WorksPostPageProps = {
