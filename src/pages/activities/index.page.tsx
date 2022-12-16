@@ -17,6 +17,7 @@ type ActivitiesProps = {
 const ActivitiesPage: FC<PostCollectorProps> = ({ posts }) => {
   return (
     <Page meta={meta}>
+      <h1>活動報告</h1>
       {posts.map((post) => (
         <div key={post.slug}>
           <Link href={`activities/${post.slug}`}>{post.slug}</Link>

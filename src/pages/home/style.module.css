@@ -1,10 +1,74 @@
-.landingPage {
-  position: relative;
-  width: 100%;
+@use '~/styles/variables.scss' as *;
 
-  & .art {
+.landingPage {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100svh;
+  background-color: #fff;
+
+  .navToggle {
     position: absolute;
+    top: 0;
+    right: 0;
+    width: 5rem;
+    height: 100%;
+    background-color: #ffffff80;
+  }
+}
+
+.header {
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: var(navbar-height);
+  padding-top: 0;
+  background-color: #fff;
+  box-shadow: 0 0 0.5em #00000050;
+
+  .brandLink {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: inherit;
+    text-decoration: none;
+
+    .brandName {
+      margin: 0;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 1.5em;
+      color: var(--color-mcc-primary);
+    }
+  }
+
+  .menuIcon {
+    z-index: 100;
+    margin-right: 5px;
+  }
+
+  @include mq('lg') {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    margin: 0 auto;
+    height: var(navbar-height);
+    padding-top: 0;
+    background-color: #fff;
+    box-shadow: 0 0 0.5em #00000050;
+
+    .brandLink {
+      display: flex;
+      align-items: center;
+      width: 50%;
+      height: inherit;
+
+      .brandName {
+        margin: 0;
+      }
+    }
   }
 }

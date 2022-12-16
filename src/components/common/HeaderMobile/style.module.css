@@ -10,6 +10,8 @@
 
     & .title {
       font-family: Sanchez, sans-serif;
+      font-size: 40px;
+      font-weight: normal;
       color: var(--color-mcc-primary);
     }
   }

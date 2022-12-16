@@ -7,7 +7,7 @@
   justify-content: space-between;
   width: 100%;
   height: var(--navbar-height);
-  background: #f0f0f0;
+  background: var(--color-background);
   box-shadow: 0 0 6px #00000080;
   
   & .brandLink {

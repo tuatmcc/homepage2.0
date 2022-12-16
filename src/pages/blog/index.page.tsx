@@ -14,6 +14,7 @@ const meta: MetaData = {
 const WorksPage = ({ posts }: PostCollectorProps) => {
   return (
     <Page meta={meta}>
+      <h1>Blog</h1>
       {posts.map((post) => (
         <div key={post.slug}>
           <Link href={`blog/${post.slug}`}>{post.slug}</Link>

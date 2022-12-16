@@ -62,8 +62,8 @@ const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
     <div className={`${styles.article} ${props.className}`}>
       <h1 className={styles.title}>{title}</h1>
       <Image
-        src="/mcc-design.jpg"
-        alt=""
+        src={img ? img : '/mcc-design.jpg'}
+        alt="hero"
         width={800}
         height={300}
         className={styles.hero}

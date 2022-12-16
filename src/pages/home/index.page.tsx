@@ -1,29 +1,35 @@
-import { FC } from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import { FC, useContext, useState } from 'react';
 
 import styles from './style.module.css';
 
-import Page from '~/components/common/Page/Page';
-import Art from '~/components/home/Art/Art';
+import NavbarMobile from '~/components/common/NavbarMobile/NavbarMobile';
+import NavbarPC from '~/components/common/NavbarPC/NavbarPC';
+import HomeCanvas from '~/components/home/HomeCanvas/HomeCanvas';
+import { MediaQueryContext } from '~/providers/MediaQueryProvider';
 
-// 超絶簡易なランディングページ
-const LandingPage: FC = () => {
+export type LandingPageProps = {};
+
+const LandingPage: FC<LandingPageProps> = () => {
+  const { isMobile } = useContext(MediaQueryContext);
   return (
     <>
-      <Page
-        meta={{
-          title: 'Home',
-          description: '東京農工大学公認サークルMCC(マイクロコンピュータクラブ)のホームページです',
-        }}
-      >
-        <div className={styles.landingPage}>
-          <h1 className={styles.landingPage__text__title} hidden>
-            MCC
-          </h1>
-          <div className={styles.art}>
-            <Art />
-          </div>
-        </div>
-      </Page>
+      <Head>
+        <title>Home - MCC</title>
+        <meta
+          lang="ja"
+          name="description"
+          content="東京農工大学公認サークルMCC(マイクロコンピュータクラブ)のホームページです"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <div className={styles.landingPage}>
+        <HomeCanvas />
+      </div>
+
+      {isMobile ? <NavbarMobile /> : <NavbarPC />}
     </>
   );
 };
