@@ -1,11 +1,12 @@
 :root {
-  --color-background: #f4f4f4;
+  --color-background: #f6f5f5;
   --color-text-plain: #303030;
   --color-text-light: #606060;
-  --color-light: #cccc;
-  --color-mcc-primary: #08f;
-  --color-mcc-secondary: #0078AB;
-  --color-mcc-tertiary: #058;
+  --color-light: #f6f5f5;
+  --color-mcc-primary: #00B4D8;
+  --color-mcc-secondary: #126E82;
+  --color-mcc-tertiary: #90E0EF;
+  --color-mcc-quaternary: #CAF0F8;
   --color-link: #058;
   --navbar-height: 70px;
   --navbar-mobile-height: 50px;

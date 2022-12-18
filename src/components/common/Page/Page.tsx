@@ -44,10 +44,7 @@ const Page: FC<PageProps> = ({ meta, children, isMdx = false }: PageProps) => {
 
       {isMobile && <HeaderMobile />}
       {isMobile ? <NavbarMobile /> : <NavbarPC />}
-
-      <main className={styles.main}>
-        <div className={styles.mainIn}>{children}</div>
-      </main>
+      {children}
     </>
   );
 };

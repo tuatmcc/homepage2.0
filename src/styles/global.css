@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Sanchez&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Sanchez&family=JetBrains+Mono&display=swap');
 
 html,
 body {
@@ -8,5 +8,5 @@ body {
   margin: 0;
   font-family: 'Noto Sans JP', sans-serif;
   color: var(--color-text-plain);
-  background-color: var(--color-mcc-secondary);
+  background-color: var(--color-mcc-primary);
 }
