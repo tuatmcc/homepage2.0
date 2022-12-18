@@ -11,9 +11,11 @@ type DrawerProps = {
 
 const Drawer: FC<DrawerProps> = ({ isOpen }) => {
   const links = BASE_ROUTES_LIST.map((route) => (
-    <Link href={route.PATH} key={route.PATH} className={styles.link}>
-      {route.LABEL}
-    </Link>
+    <li key={route.PATH}>
+      <Link href={route.PATH} className={styles.link}>
+        {route.LABEL}
+      </Link>
+    </li>
   ));
 
   return (

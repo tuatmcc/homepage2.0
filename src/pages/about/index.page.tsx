@@ -8,7 +8,12 @@ const meta = {
 };
 
 const AboutPage: FC = () => {
-  return <Page meta={meta}>a</Page>;
+  return (
+    <Page meta={meta}>
+      <h1>MCCについて</h1>
+      <p>東京農工大学公認サークルの、マイクロコンピュータクラブです。</p>
+    </Page>
+  );
 };
 
 export default AboutPage;

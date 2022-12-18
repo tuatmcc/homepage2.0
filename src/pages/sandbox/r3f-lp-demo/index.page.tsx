@@ -6,17 +6,17 @@ import styles from './style.module.css';
 
 import NavbarMobile from '~/components/common/NavbarMobile/NavbarMobile';
 import NavbarPC from '~/components/common/NavbarPC/NavbarPC';
-import HomeCanvas from '~/components/home/HomeCanvas/HomeCanvas';
+import HomeCanvas from '~/components/sandbox/HomeCanvas/HomeCanvas';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
 
-export type LandingPageProps = {};
+export type SandboxPageProps = {};
 
-const LandingPage: FC<LandingPageProps> = () => {
+const SandboxPage: FC<SandboxPageProps> = () => {
   const { isMobile } = useContext(MediaQueryContext);
   return (
     <>
       <Head>
-        <title>Home - MCC</title>
+        <title>お砂場 - MCC</title>
         <meta
           lang="ja"
           name="description"
@@ -34,4 +34,4 @@ const LandingPage: FC<LandingPageProps> = () => {
   );
 };
 
-export default LandingPage;
+export default SandboxPage;
