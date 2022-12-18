@@ -1,37 +1,40 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import { FC, useContext, useState } from 'react';
+import { promises as fs } from 'fs';
 
-import styles from './style.module.css';
+import { GetStaticProps } from 'next';
+import Link from 'next/link';
+import { FC } from 'react';
 
-import NavbarMobile from '~/components/common/NavbarMobile/NavbarMobile';
-import NavbarPC from '~/components/common/NavbarPC/NavbarPC';
-import HomeCanvas from '~/components/sandbox/HomeCanvas/HomeCanvas';
-import { MediaQueryContext } from '~/providers/MediaQueryProvider';
+import Page from '~/components/common/Page/Page';
 
-export type SandboxPageProps = {};
+export type SandboxPageProps = {
+  paths: string[];
+};
 
-const SandboxPage: FC<SandboxPageProps> = () => {
-  const { isMobile } = useContext(MediaQueryContext);
+const SandboxPage: FC<SandboxPageProps> = ({ paths }) => {
   return (
-    <>
-      <Head>
-        <title>お砂場 - MCC</title>
-        <meta
-          lang="ja"
-          name="description"
-          content="東京農工大学公認サークルMCC(マイクロコンピュータクラブ)のホームページです"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <div className={styles.landingPage}>
-        <HomeCanvas />
-      </div>
-
-      {isMobile ? <NavbarMobile /> : <NavbarPC />}
-    </>
+    <Page meta={{ title: '砂場' }}>
+      <h1>お砂場</h1>
+      <p>いろいろなものを試す場所</p>
+      <ul>
+        {paths.map((path) => (
+          <li key={path}>
+            <Link href={path}>{path}</Link>
+          </li>
+        ))}
+      </ul>
+    </Page>
   );
 };
 
 export default SandboxPage;
+
+export const getStaticProps: GetStaticProps<SandboxPageProps> = async () => {
+  const paths = await fs.readdir('src/pages/sandbox', { withFileTypes: true });
+  const pathNames = paths.map((path) => `/sandbox/${path.name}`);
+  pathNames.splice(pathNames.indexOf('/sandbox/index.page.tsx'), 1);
+  return {
+    props: {
+      paths: await Promise.all(pathNames),
+    },
+  };
+};

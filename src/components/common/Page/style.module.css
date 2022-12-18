@@ -1,9 +1,5 @@
 .main {
-  padding: var(--navbar-height) 32px;
-
-  @media screen and (max-width: 62em) {
-    padding: var(--navbar-height) 10px;
-  }
+  padding: var(--navbar-height) 10px;
 
   & .mainIn {
     max-width: 1000px;
