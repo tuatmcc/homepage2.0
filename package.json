@@ -7,7 +7,7 @@
     "build": "next build",
     "export": "npm run build && next export",
     "start": "next start",
-    "lint": "eslint --fix **/*.tsx **/*.ts && next lint --fix && stylelint \"**/*.css\" --fix"
+    "lint": "next lint --fix && stylelint \"**/*.css\" --fix"
   },
   "dependencies": {
     "@react-three/drei": "^9.46.7",

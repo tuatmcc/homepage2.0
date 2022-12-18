@@ -33,7 +33,7 @@
       & .content {
         & p {
           margin: 0;
-          font-size: 1rem;
+          font-size: 16px;
           line-height: 1.5;
         }
         
@@ -90,8 +90,13 @@
             text-decoration: none;
           }
         }
+
+        & li {
+          margin: 0;
+          font-size: 16px;
+          line-height: 2;
+        }
       }
     }
-
   }
 }
