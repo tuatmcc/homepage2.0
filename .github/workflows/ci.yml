@@ -8,7 +8,7 @@ on:
 
 jobs:
   lint:
-    name: run lint:js
+    name: run lint
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -21,4 +21,4 @@ jobs:
       - name: npm ci
         run: npm ci
       - name: run lint
-        run: npm run lint -- --max-warnings=0
+        run: npm run lint
