@@ -3,8 +3,8 @@ import { FC, ReactNode } from 'react';
 import styles from './style.module.css';
 
 export type DelProps = {
-  children: ReactNode;
-  className?: string;
+	children: ReactNode;
+	className?: string;
 };
 
 /**
@@ -13,7 +13,7 @@ export type DelProps = {
  * @returns
  */
 const Del: FC<DelProps> = ({ children = '', className = '' }) => (
-  <span className={`${styles.del} ${className}`}>{children}</span>
+	<span className={`${styles.del} ${className}`}>{children}</span>
 );
 
 export default Del;
