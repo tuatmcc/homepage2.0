@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Page from '../../components/common/Page/Page';
 import { PostCollector, PostCollectorProps } from '../../lib/post-collector';
 
-import { MetaData } from '~/components/types/meta';
+import { MetaData } from '~/types/meta';
 
 const meta: MetaData = {
 	title: 'Blog',

@@ -13,7 +13,7 @@ import AutoLink, { AutoLinkProps } from '~/components/common/AutoLink/AutoLink';
 import Code from '~/components/common/Code/Code';
 import Del from '~/components/common/Del/Del';
 import Pre from '~/components/common/Pre/Pre';
-import { MetaData } from '~/components/types/meta';
+import { MetaData } from '~/types/meta';
 
 export type ArticleWrapperProps = {
 	meta: MetaData;
