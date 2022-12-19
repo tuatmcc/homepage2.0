@@ -7,11 +7,11 @@ import '~/styles/variables.css';
 import MediaQueryProvider from '~/providers/MediaQueryProvider';
 
 const App = ({ Component, pageProps }: AppProps) => {
-  return (
-    <MediaQueryProvider>
-      <Component {...pageProps} />
-    </MediaQueryProvider>
-  );
+	return (
+		<MediaQueryProvider>
+			<Component {...pageProps} />
+		</MediaQueryProvider>
+	);
 };
 
 export default App;

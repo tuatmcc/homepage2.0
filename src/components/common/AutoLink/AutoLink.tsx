@@ -3,9 +3,9 @@ import Link from 'next/link';
 import styles from './style.module.css';
 
 export interface AutoLinkProps {
-  href?: string;
-  children?: string;
-  className?: string;
+	href?: string;
+	children?: string;
+	className?: string;
 }
 
 /**
@@ -14,19 +14,19 @@ export interface AutoLinkProps {
  * @returns
  */
 const CustomLink = ({ href = '', children = '', className = '' }: AutoLinkProps) => {
-  if (href.startsWith('http')) {
-    return (
-      <a href={href} className={`${styles.externalLink} ${className}}`} target="_brank" rel="noreferror">
-        {children}
-      </a>
-    );
-  } else {
-    return (
-      <Link href={href} className={`${styles.internalLink} ${className}}`}>
-        {children}
-      </Link>
-    );
-  }
+	if (href.startsWith('http')) {
+		return (
+			<a href={href} className={`${styles.externalLink} ${className}}`} target="_brank" rel="noreferror">
+				{children}
+			</a>
+		);
+	} else {
+		return (
+			<Link href={href} className={`${styles.internalLink} ${className}}`}>
+				{children}
+			</Link>
+		);
+	}
 };
 
 export default CustomLink;

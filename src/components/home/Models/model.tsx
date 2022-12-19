@@ -8,27 +8,27 @@ import * as THREE from 'three';
 import { GLTF } from 'three-stdlib';
 
 type GLTFResult = GLTF & {
-  nodes: {
-    M: THREE.Mesh;
-    C1: THREE.Mesh;
-    C2: THREE.Mesh;
-  };
-  materials: {
-    M_mat: THREE.MeshStandardMaterial;
-    C1_mat: THREE.MeshStandardMaterial;
-    C2_mat: THREE.MeshStandardMaterial;
-  };
+	nodes: {
+		M: THREE.Mesh;
+		C1: THREE.Mesh;
+		C2: THREE.Mesh;
+	};
+	materials: {
+		M_mat: THREE.MeshStandardMaterial;
+		C1_mat: THREE.MeshStandardMaterial;
+		C2_mat: THREE.MeshStandardMaterial;
+	};
 };
 
 export function Model(props: JSX.IntrinsicElements['group']) {
-  const { nodes, materials } = useGLTF('/mcc-website.glb') as unknown as GLTFResult;
-  return (
-    <group {...props} dispose={null}>
-      <mesh castShadow receiveShadow geometry={nodes.M.geometry} material={materials.M_mat} />
-      <mesh castShadow receiveShadow geometry={nodes.C1.geometry} material={materials.C1_mat} />
-      <mesh castShadow receiveShadow geometry={nodes.C2.geometry} material={materials.C2_mat} />
-    </group>
-  );
+	const { nodes, materials } = useGLTF('/mcc-website.glb') as unknown as GLTFResult;
+	return (
+		<group {...props} dispose={null}>
+			<mesh castShadow receiveShadow geometry={nodes.M.geometry} material={materials.M_mat} />
+			<mesh castShadow receiveShadow geometry={nodes.C1.geometry} material={materials.C1_mat} />
+			<mesh castShadow receiveShadow geometry={nodes.C2.geometry} material={materials.C2_mat} />
+		</group>
+	);
 }
 
 useGLTF.preload('/mcc-website.glb');

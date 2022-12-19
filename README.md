@@ -1,6 +1,6 @@
 # 農工大マイクロコンピュータークラブのホームページ
 
-- 2022年11月、MCCのHPリニューアルが決定しました。
+- 2022 年 11 月、MCC の HP リニューアルが決定しました。
 - `Next.js`で作成、`GitHub Pages`で公開します。
 - [Figma](https://www.figma.com/file/XTfW4NDafbsoMBCu5lNGkr/MCC-HOME-PAGE?node-id=0%3A1&t=F2uR5Q5TRy6jUzh3-1)でデザインを考えてたりします。
 - 勝手に[mcc-website-test.test.app](https://mcc-website-forked.vercel.app)でデモを動かしてみたりしてます。コロコロ変わります。

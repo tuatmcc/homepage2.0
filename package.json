@@ -7,7 +7,8 @@
     "build": "next build",
     "export": "npm run build && next export",
     "start": "next start",
-    "lint": "next lint --fix && stylelint \"**/*.css\" --fix"
+    "lint": "next lint && stylelint src/**/*.css && rome check .",
+    "fix": "next lint --fix && stylelint src/**/*.css --fix && rome check . --apply-suggested && rome format . --write"
   },
   "dependencies": {
     "@react-three/drei": "^9.46.7",
@@ -23,10 +24,8 @@
     "classnames": "^2.3.2",
     "eslint": "8.29.0",
     "eslint-config-next": "^13.0.7",
-    "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.2",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-webpack-plugin": "^3.2.0",
@@ -37,7 +36,6 @@
     "postcss-loader": "^7.0.1",
     "postcss-nested": "^6.0.0",
     "postcss-normalize": "^10.0.1",
-    "prettier": "2.8.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "rehype": "^12.0.1",
@@ -55,6 +53,7 @@
     "remark-rehype": "^10.1.0",
     "remark-slug": "^7.0.1",
     "remark-toc": "^8.0.1",
+    "rome": "^11.0.0",
     "stylelint": "^14.16.0",
     "stylelint-config-prettier": "^9.0.4",
     "stylelint-config-recess-order": "^3.0.0",

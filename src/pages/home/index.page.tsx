@@ -12,26 +12,27 @@ import { MediaQueryContext } from '~/providers/MediaQueryProvider';
 export type LandingPageProps = {};
 
 const LandingPage: FC<LandingPageProps> = () => {
-  const { isMobile } = useContext(MediaQueryContext);
-  return (
-    <>
-      <Head>
-        <title>Home - MCC</title>
-        <meta
-          lang="ja"
-          name="description"
-          content="東京農工大学公認サークルMCC(マイクロコンピュータクラブ)のホームページです"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+	const { isMobile } = useContext(MediaQueryContext);
+	return (
+		<>
+			<Head>
+				<title>Home - MCC</title>
 
-      <div className={styles.landingPage}>
-        <HomeCanvas />
-      </div>
+				<meta
+					lang='ja'
+					name="description"
+					content="東京農工大学公認サークルMCC(マイクロコンピュータクラブ)のホームページです"
+				/>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
 
-      {isMobile ? <NavbarMobile /> : <NavbarPC />}
-    </>
-  );
+			<div className={styles.landingPage}>
+				<HomeCanvas />
+			</div>
+
+			{isMobile ? <NavbarMobile /> : <NavbarPC />}
+		</>
+	);
 };
 
 export default LandingPage;

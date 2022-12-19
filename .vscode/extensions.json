@@ -1,9 +1,11 @@
 {
   "recommendations": [
     "csstools.postcss",
-    "stylelint.vscode-stylelint",
+    "stylelint.vscode-stylelint", 
     "dbaeumer.vscode-eslint",
     "ecmel.vscode-html-css",
+    "esbenp.prettier-vscode",
+    "rome.rome",
   ],
   "unwantedRecommendations": []
 }

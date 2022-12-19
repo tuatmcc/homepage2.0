@@ -9,7 +9,7 @@ const postCollector = new PostCollector('blog');
 const dynamicRouting = new DynamicRouting(postCollector);
 
 type WorksPostPageProps = {
-  post: Post;
+	post: Post;
 };
 
 /**
@@ -18,11 +18,11 @@ type WorksPostPageProps = {
  * @returns
  */
 const WorksPost: FC<WorksPostPageProps> = ({ post }) => {
-  return (
-    <Page meta={post.frontmatter}>
-      <ArticleWrapper meta={post.frontmatter}>{post.content}</ArticleWrapper>
-    </Page>
-  );
+	return (
+		<Page meta={post.frontmatter}>
+			<ArticleWrapper meta={post.frontmatter}>{post.content}</ArticleWrapper>
+		</Page>
+	);
 };
 
 // アクセス可能なパスを用意する。ビルド時に実行される。
