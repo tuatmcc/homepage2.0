@@ -8,8 +8,8 @@ import Tag from '../Tag/Tag';
 import styles from './style.module.css';
 
 import NavbarPC from '~/components/common/NavbarPC/NavbarPC';
-import { MetaData } from '~/components/types/meta';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
+import { MetaData } from '~/types/meta';
 
 export type PageProps = {
 	meta: MetaData;

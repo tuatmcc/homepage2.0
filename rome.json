@@ -17,6 +17,10 @@
       },
       "performance": {
         "recommended": true
+      },
+      "a11y": {
+        "recommended": true,
+        "useKeyWithClickEvents": "warn"
       }
     },
     "ignore": [

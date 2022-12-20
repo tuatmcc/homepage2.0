@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 const MenuBurgerIcon: FC = () => (
 	<svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<g clip-path="url(#clip0_14_10)">
+		<g clipPath="url(#clip0_14_10)">
 			<path
 				d="M30.6667 15.1667H1.33333C0.596954 15.1667 0 15.7636 0 16.5C0 17.2364 0.596954 17.8333 1.33333 17.8333H30.6667C31.403 17.8333 32 17.2364 32 16.5C32 15.7636 31.403 15.1667 30.6667 15.1667Z"
 				fill="#3A6973"
