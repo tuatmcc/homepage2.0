@@ -1,0 +1,26 @@
+:root {
+  /* Brand Color */
+  --color-mcc-primary: #009DAE;
+  --color-mcc-secondary: #71DFE7;
+  --color-mcc-tertiary: #C2FFF9;
+  --color-mcc-quaternary: #FFE652;
+  
+  /* General Color */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-red: #f00;
+  --color-lignt-green: #0f0;
+  --color-dark-blue: #16283a;
+
+  /* Text Color */
+  --color-text-plain: #303030;
+  --color-text-light: #606060;
+  --color-light: #f6f5f5;
+  --color-background: #f6f4f4;
+
+  /* --color-background: #f6f5f5; */
+
+  /* Size */
+  --navbar-height: 70px;
+  --navbar-mobile-height: 50px;
+}

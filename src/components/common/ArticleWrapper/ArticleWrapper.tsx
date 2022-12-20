@@ -63,16 +63,18 @@ const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
 			<div className={styles.mainIn}>
 				<div className={`${styles.article} ${props.className}`}>
 					<h1 className={styles.title}>{title}</h1>
-					<Image
-						src={img ? img : '/mcc-design.jpg'}
-						alt="hero"
-						width={800}
-						height={300}
-						className={styles.hero}
-						onError={(e) => {
-							e.currentTarget.src = '/mcc-design.jpg';
-						}}
-					/>
+					{img && (
+						<Image
+							src={img ? img : '/mcc-design.jpg'}
+							alt="hero"
+							width={800}
+							height={300}
+							className={styles.hero}
+							onError={(e) => {
+								e.currentTarget.src = '/mcc-design.jpg';
+							}}
+						/>
+					)}
 					<div className={styles.date}>{date}</div>
 					<TagList className={styles.tagList}>{tagList}</TagList>
 					<div className={styles.content}>{content}</div>

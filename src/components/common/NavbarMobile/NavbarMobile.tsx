@@ -34,11 +34,11 @@ const NavbarMobile: FC = () => {
 						<BrowserIcon />
 						<span className={styles.label}>Activities</span>
 					</Link>
-					<Link href={ROUTES.SANDBOX.PATH} className={styles.link}>
+					<Link href={ROUTES.BLOG.PATH} className={styles.link}>
 						<StarIcon />
-						<span className={styles.label}>Sandbox</span>
+						<span className={styles.label}>Blog</span>
 					</Link>
-					<button className={styles.link} onClick={() => setIsOpened(!isOpened)} onBlur={() => setIsOpened(false)}>
+					<button className={styles.link} onClick={() => setIsOpened(!isOpened)}>
 						{isOpened ? <CloseIcon /> : <MenuBurgerIcon />}
 						<span className={styles.label}>Menu</span>
 					</button>
