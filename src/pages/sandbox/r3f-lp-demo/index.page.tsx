@@ -16,7 +16,7 @@ const SandboxPage: FC<SandboxPageProps> = () => {
 	return (
 		<>
 			<Head>
-				<title>お砂場 - MCC</title>
+				<title>R3F - MCC</title>
 				<meta
 					lang="ja"
 					name="description"

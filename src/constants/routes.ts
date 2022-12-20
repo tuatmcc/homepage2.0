@@ -15,6 +15,7 @@ export const ROUTES = {
   SANDBOX: { PATH: '/sandbox', LABEL: 'お砂場' },
 };
 
+/** ナビゲーションなどに使用するリスト。これをループ処理で使う */
 export const BASE_ROUTES_LIST = [ROUTES.HOME, ROUTES.ABOUT, ROUTES.ACTIVITIES, ROUTES.BLOG, ROUTES.SANDBOX];
 
 export const ACTIVITIES_ROUTES_LIST = [];

@@ -1,3 +1,8 @@
+/**
+ * ページのメタデータ型
+ * マークダウン記事のfrontmatterでも使用。
+ * OGPなどにも使用。
+ *  */
 export type MetaData = {
 	title: string;
 	description?: string;
