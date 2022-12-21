@@ -18,9 +18,9 @@ const NavbarMobile: FC = () => {
 	const [isOpened, setIsOpened] = useState<boolean>(false);
 
 	return (
-		<div className={styles.navbarMobile}>
-			<Drawer isOpen={isOpened} />
-			<nav className={styles.navbar}>
+		<nav>
+			<div className={styles.navbarMobile}>
+				<Drawer isOpen={isOpened} />
 				<ul className={styles.navIn}>
 					<Link href={ROUTES.HOME.PATH} className={styles.link}>
 						<HomeIcon />
@@ -43,8 +43,8 @@ const NavbarMobile: FC = () => {
 						<span className={styles.label}>Menu</span>
 					</button>
 				</ul>
-			</nav>
-		</div>
+			</div>
+		</nav>
 	);
 };
 

@@ -5,22 +5,30 @@
   --color-mcc-tertiary: #C2FFF9;
   --color-mcc-quaternary: #FFE652;
   
-  /* General Color */
-  --color-white: #fff;
-  --color-black: #000;
-  --color-red: #f00;
-  --color-lignt-green: #0f0;
-  --color-dark-blue: #16283a;
-
-  /* Text Color */
-  --color-text-plain: #303030;
-  --color-text-light: #606060;
-  --color-light: #f6f5f5;
+  /* Other Colors */
   --color-background: #f6f4f4;
+  --color-text-default: #24292f;
+  --color-text-muted: #57606a;
+  --color-text-subtle: #6e7781;
+  --color-code-text: #6f4612;
+  --color-code-background: #ffe682;
+  --color-codeblock-text: #fff;
+  --color-codeblock-background: #16283a;
+  --color-border-default: #d0d7de;
+  --color-border-muted: hsl(210deg 18% 87% / 100%);
+  --color-border-subtle: rgb(27 31 36 / 15%);
+  --color-marker-emphasis-plus: #24292f;
+  --color-marker-emphasis: #6e7781;
+  --color-marker-muted: rgb(175 184 193 / 20%);
+  --color-shadow-small: 0 1px 0 rgb(27 31 36 / 4%);
+  --color-shadow-medium: 0 3px 6px rgb(140 149 159 / 15%);
+  --color-shadow-large: 0 8px 24px rgb(140 149 159 / 20%);
+  --color-shadow-extra-large: 0 12px 28px rgb(140 149 159 / 30%);
+
 
   /* --color-background: #f6f5f5; */
 
   /* Size */
   --navbar-height: 70px;
-  --navbar-mobile-height: 50px;
+  --navbar-mobile-height: 60px;
 }

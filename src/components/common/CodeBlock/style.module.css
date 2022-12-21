@@ -1,0 +1,32 @@
+.codeBlock {
+  margin: 8px 0;
+
+  & .title {
+    width: auto;
+    padding: 2px 8px;
+    font-size: 14px;
+    color: var(--color-codeblock-text);
+    background-color: var(--color-codeblock-background);
+    border-radius: 4px;
+  }
+
+  & .pre {
+    padding: 16px;
+    margin: 0;
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', 'Noto Sans JP', monospace, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--color-codeblock-text);
+    background-color: var(--color-codeblock-background);
+    border-radius: 4px;
+  
+    & code {
+      padding: 0;
+      margin: 0;
+      color: inherit;
+      background-color: inherit;
+    }
+  }
+
+}

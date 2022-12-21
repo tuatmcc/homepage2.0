@@ -21,9 +21,7 @@ const Drawer: FC<DrawerProps> = ({ isOpen, className = '' }) => {
 
 	return (
 		<div className={`${styles.drawer} ${isOpen && styles.open} ${className}`}>
-			<nav className={styles.nav}>
-				<ul className={styles.navIn}>{links}</ul>
-			</nav>
+			<ul className={styles.navIn}>{links}</ul>
 		</div>
 	);
 };

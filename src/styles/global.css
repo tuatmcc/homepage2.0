@@ -9,6 +9,22 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Noto Sans JP', sans-serif;
-  color: var(--color-text-plain);
+  color: var(--color-text-default);
   background: var(--color-mcc-primary);
+}
+
+a {
+  color: var(--color-text-default);
+  text-decoration: none;
+}
+
+code {
+  padding: 1px 5px;
+  margin: 0 0.2em;
+  font-family: 'JetBrains Mono', 'Noto Sans JP', monospace, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-code-text);
+  background-color: var(--color-code-background);
+  border-radius: 5px;
 }
