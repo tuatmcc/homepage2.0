@@ -18,9 +18,9 @@ const NavbarMobile: FC = () => {
 	const [isOpened, setIsOpened] = useState<boolean>(false);
 
 	return (
-		<div className={styles.navbarMobile}>
-			<Drawer isOpen={isOpened} />
-			<nav className={styles.navbar}>
+		<nav>
+			<div className={styles.navbarMobile}>
+				<Drawer isOpen={isOpened} />
 				<ul className={styles.navIn}>
 					<Link href={ROUTES.HOME.PATH} className={styles.link}>
 						<HomeIcon />
@@ -34,17 +34,17 @@ const NavbarMobile: FC = () => {
 						<BrowserIcon />
 						<span className={styles.label}>Activities</span>
 					</Link>
-					<Link href={ROUTES.SANDBOX.PATH} className={styles.link}>
+					<Link href={ROUTES.BLOG.PATH} className={styles.link}>
 						<StarIcon />
-						<span className={styles.label}>Sandbox</span>
+						<span className={styles.label}>Blog</span>
 					</Link>
-					<button className={styles.link} onClick={() => setIsOpened(!isOpened)} onBlur={() => setIsOpened(false)}>
+					<button className={styles.link} onClick={() => setIsOpened(!isOpened)}>
 						{isOpened ? <CloseIcon /> : <MenuBurgerIcon />}
 						<span className={styles.label}>Menu</span>
 					</button>
 				</ul>
-			</nav>
-		</div>
+			</div>
+		</nav>
 	);
 };
 
