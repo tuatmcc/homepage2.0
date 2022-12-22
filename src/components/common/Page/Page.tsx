@@ -43,8 +43,8 @@ const Page: FC<PageProps> = ({ meta, children, isMdx = false }: PageProps) => {
 			</Head>
 
 			{isMobile && <HeaderMobile />}
-			{isMobile ? <NavbarMobile /> : <NavbarPC />}
 			{children}
+			{isMobile ? <NavbarMobile /> : <NavbarPC />}
 		</>
 	);
 };
