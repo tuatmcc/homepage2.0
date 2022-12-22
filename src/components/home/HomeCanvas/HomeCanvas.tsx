@@ -1,13 +1,13 @@
 import { Environment, Plane } from '@react-three/drei';
 import { Canvas, MeshProps, Props, useFrame } from '@react-three/fiber';
-import React, { ReactNode, useRef, useState } from 'react';
+import React, { FC, ReactNode, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 import { Model } from '../Models/model';
 
 import styles from './style.module.css';
 
-const Box = (props: any) => {
+const Box: FC<MeshProps> = (props) => {
 	const mesh = useRef<THREE.Mesh>(null!);
 	// This reference will give us direct access to the mesh
 	// Set up state for the hovered and active state
@@ -36,7 +36,7 @@ const Box = (props: any) => {
 	);
 };
 
-const MccModel = (props: any) => {
+const MccModel: FC<MeshProps> = (props) => {
 	const mesh = useRef<THREE.Mesh>(null!);
 	// This reference will give us direct access to the mesh
 	// Set up state for the hovered and active state

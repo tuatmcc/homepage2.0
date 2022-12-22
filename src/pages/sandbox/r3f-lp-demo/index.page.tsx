@@ -42,26 +42,26 @@ const Rig: FC<MeshProps> = ({ children }) => {
 	return <group ref={ref}>{children}</group>;
 };
 
-const Ground: FC<ReflectorProps & MaterialProps> = (props) => {
-	const [floor, normal] = useTexture([
-		'./SurfaceImperfections003_1K_var1.jpg',
-		'./SurfaceImperfections003_1K_Normal.jpg',
-	]);
-	return (
-		<Reflector resolution={1024} args={[8, 8]} {...props}>
-			{(Material, props) => (
-				<Material
-					color="#f0f0f0"
-					metalness={0}
-					roughnessMap={floor}
-					normalMap={normal}
-					normalScale={[2, 2]}
-					{...props}
-				/>
-			)}
-		</Reflector>
-	);
-};
+// const Ground: FC<ReflectorProps> = (props) => {
+// 	const [floor, normal] = useTexture([
+// 		'./SurfaceImperfections003_1K_var1.jpg',
+// 		'./SurfaceImperfections003_1K_Normal.jpg',
+// 	]);
+// 	return (
+// 		<Reflector resolution={1024} args={[8, 8]} {...props}>
+// 			{(Material, props) => (
+// 				<Material
+// 					color="#f0f0f0"
+// 					metalness={0}
+// 					roughnessMap={floor}
+// 					normalMap={normal}
+// 					normalScale={[2, 2]}
+// 					{...props}
+// 				/>
+// 			)}
+// 		</Reflector>
+// 	);
+// };
 
 export default function R3fTest() {
 	return (
@@ -77,14 +77,14 @@ export default function R3fTest() {
 							<Triangle color="cyan" scale={0.009} position={[2, 0, -2]} rotation={[0, 0, Math.PI / 3]} />
 							<Triangle color="orange" scale={0.009} position={[-2, 0, -2]} rotation={[0, 0, Math.PI / 3]} />
 							<Triangle color="white" scale={0.009} position={[0, 2, -10]} rotation={[0, 0, Math.PI / 3]} />
-							<Ground
+							{/* <Ground
 								mirror={1}
 								blur={[500, 100]}
 								mixBlur={12}
 								mixStrength={1.5}
 								rotation={[-Math.PI / 2, 0, Math.PI / 2]}
 								position-y={-0.8}
-							/>
+							/> */}
 						</Rig>
 						<EffectComposer multisampling={8}>
 							<Bloom kernelSize={3} luminanceThreshold={0} luminanceSmoothing={0.4} intensity={0.6} />

@@ -33,9 +33,7 @@
     "highlight.js": "^11.7.0",
     "next": "13.0.7",
     "postcss": "^8.4.20",
-    "postcss-loader": "^7.0.1",
     "postcss-nested": "^6.0.0",
-    "postcss-normalize": "^10.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "rehype": "^12.0.1",
@@ -63,7 +61,6 @@
     "stylelint-scss": "^4.3.0",
     "three": "^0.147.0",
     "typescript": "4.9.4",
-    "unified": "^10.1.2",
-    "webpack": "^5.67.0"
+    "unified": "^10.1.2"
   }
 }
