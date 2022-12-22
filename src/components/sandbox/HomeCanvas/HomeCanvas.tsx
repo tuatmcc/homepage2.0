@@ -22,7 +22,7 @@ const MccModel: FC<MeshProps> = (props) => {
 	});
 	// Return view, these are regular three.js elements expressed in JSX
 	return (
-		<mesh {...props} ref={mesh} scale={active ? 1.5 : 1}  castShadow>
+		<mesh {...props} ref={mesh} scale={active ? 1.5 : 1} castShadow>
 			<Model scale={2} rotation={[Math.PI / 2, 0, 0]} />
 		</mesh>
 	);

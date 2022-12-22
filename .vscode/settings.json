@@ -15,6 +15,9 @@
   "[javascriptreact]": {
     "editor.defaultFormatter": "rome.rome"
   },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {

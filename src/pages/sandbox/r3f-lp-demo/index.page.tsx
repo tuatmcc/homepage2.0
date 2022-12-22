@@ -9,9 +9,9 @@ import NavbarPC from '~/components/common/NavbarPC/NavbarPC';
 import HomeCanvas from '~/components/sandbox/HomeCanvas/HomeCanvas';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
 
-export type SandboxPageProps = {};
+export type RefPageProps = {};
 
-const SandboxPage: FC<SandboxPageProps> = () => {
+const R3fPage: FC<RefPageProps> = () => {
 	const { isMobile } = useContext(MediaQueryContext);
 	return (
 		<>
@@ -34,4 +34,4 @@ const SandboxPage: FC<SandboxPageProps> = () => {
 	);
 };
 
-export default SandboxPage;
+export default R3fPage;
