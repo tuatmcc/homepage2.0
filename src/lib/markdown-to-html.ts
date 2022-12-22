@@ -12,26 +12,28 @@ import remarkRehype from 'remark-rehype';
 import remarkToc from 'remark-toc';
 import { unified } from 'unified';
 
+const a = 1;
+
 /**
  * Parse markdown to html. This function must be used inside the getStaticProps function.
  * @param markdown
  * @returns
  */
 const markdownToHtml = async (markdown: string) => {
-  const html = await unified()
-    .use(remarkParse)
-    .use(remarkGfm)
-    .use(remarkGemoji)
-    .use(remarkToc, { heading: 'Index', tight: true })
-    .use(remarkRehype)
-    .use(rehypeKatex)
-    .use(rehypeHighlight, { ignoreMissing: true })
-    .use(rehypeSlug)
-    .use(rehypeAutoLinkHeadings, { behavior: 'wrap' })
-    .use(rehypeStringify)
-    .process(markdown);
+	const html = await unified()
+		.use(remarkParse)
+		.use(remarkGfm)
+		.use(remarkGemoji)
+		.use(remarkToc, { heading: 'Index', tight: true })
+		.use(remarkRehype)
+		.use(rehypeKatex)
+		.use(rehypeHighlight, { ignoreMissing: true })
+		.use(rehypeSlug)
+		.use(rehypeAutoLinkHeadings, { behavior: 'wrap' })
+		.use(rehypeStringify)
+		.process(markdown);
 
-  return html.toString();
+	return html.toString();
 };
 
 export default markdownToHtml;

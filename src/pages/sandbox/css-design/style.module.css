@@ -1,0 +1,62 @@
+.cssDesign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & .halfTone {
+    position: relative;
+    width: 90%;
+    height: 100%;
+    filter: contrast(3);
+
+    & .hero {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      content: '';
+      background-color: #fff;
+      background-image: radial-gradient(#000 10%, transparent 90%);
+      background-size: 8px 8px;
+      mix-blend-mode: screen;
+      animation-name: grad;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
+}
+
+@keyframes grad {
+  0% {
+    background-position: 0 0;
+    background-size: 5px 5px;
+  }
+
+  25% {
+    background-color: #ff0;
+  }
+
+  50% {
+    background-color: #0f0;
+    background-size: 10px 10px;
+  }
+
+  75% {
+    background-color: #0ff;
+  }
+
+  100% {
+    background-position: 0 0;
+    background-position: 320px 0;
+    background-size: 5px 5px;
+  }
+}

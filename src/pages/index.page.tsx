@@ -5,12 +5,12 @@ import { useEffect } from 'react';
 import { ROUTES } from '~/constants/routes';
 
 const IndexPage: NextPage = () => {
-  const router = useRouter();
+	const router = useRouter();
 
-  useEffect(() => {
-    router.replace(ROUTES.HOME.PATH);
-  });
-  return <div>Loading...</div>;
+	useEffect(() => {
+		router.replace(ROUTES.HOME.PATH);
+	});
+	return <div>Loading...</div>;
 };
 
 export default IndexPage;

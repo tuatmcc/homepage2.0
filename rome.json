@@ -1,0 +1,52 @@
+{
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "security": {
+        "recommended": true
+      },
+      "correctness": {
+        "recommended": true
+      },
+      "style": {
+        "recommended": true
+      },
+      "complexity": {
+        "recommended": true
+      },
+      "performance": {
+        "recommended": true
+      },
+      "a11y": {
+        "recommended": true,
+        "useKeyWithClickEvents": "warn"
+      }
+    },
+    "ignore": [
+      "node_modules",
+      "out",
+      ".next"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": true,
+    "ignore": [
+      "node_modules",
+      "out",
+      ".next"
+    ],
+    "indentSize": 2,
+    "lineWidth": 120,
+    "indentStyle": "tab"
+  },
+  "javascript": {
+    "formatter": {
+      "semicolons": "always",
+      "quoteProperties": "asNeeded",
+      "trailingComma": "all",
+      "quoteStyle": "single"
+    }
+  }
+}

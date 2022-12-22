@@ -4,7 +4,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { GetStaticProps } from 'next';
 
-import { MetaData } from '~/components/types/meta';
+import { MetaData } from '~/types/meta';
 
 // 記事を取得するためのクラス。index.tsxで使う生このpostCollectorと、
 // [slug].tsxで使うdynamicRoutingというwrapperクラス用とで、2つの別インスタンスができてしまい、
@@ -15,9 +15,9 @@ import { MetaData } from '~/components/types/meta';
  * @param frontmatter - The metadata of the post.
  */
 export interface Post {
-  slug: string;
-  frontmatter: MetaData;
-  content: string;
+	slug: string;
+	frontmatter: MetaData;
+	content: string;
 }
 
 /**
@@ -25,74 +25,74 @@ export interface Post {
  * @param filePath absolute path to the file
  */
 interface PostPath {
-  slug: string;
-  fullPath: string;
+	slug: string;
+	fullPath: string;
 }
 
 export interface PostCollectorProps {
-  posts: Post[];
+	posts: Post[];
 }
 
 export class PostCollector {
-  targetDir: string;
-  targetDirFullPath: string;
+	targetDir: string;
+	targetDirFullPath: string;
 
-  /**
-   * @param targetDir src/pages/targetDir
-   */
-  constructor(targetDir: string) {
-    this.targetDir = targetDir;
-    this.targetDirFullPath = path.join(process.cwd(), 'posts', targetDir);
-  }
+	/**
+	 * @param targetDir src/pages/targetDir
+	 */
+	constructor(targetDir: string) {
+		this.targetDir = targetDir;
+		this.targetDirFullPath = path.join(process.cwd(), 'posts', targetDir);
+	}
 
-  /**
-   * Collects all posts from the target directory
-   * @param slug src/pages/targetDir/slug.md
-   * @returns
-   */
-  getPostBySlug = (slug: string): Post => {
-    const fullPath = path.join(this.targetDirFullPath, `${slug}.md`);
-    try {
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
-      const { data, content } = matter(fileContents);
-      return { slug: slug, frontmatter: data as MetaData, content };
-    } catch (e) {
-      console.error(e);
-      return { slug: '/404', frontmatter: { title: 'Page not found' }, content: '' };
-    }
-  };
+	/**
+	 * Collects all posts from the target directory
+	 * @param slug src/pages/targetDir/slug.md
+	 * @returns
+	 */
+	getPostBySlug = (slug: string): Post => {
+		const fullPath = path.join(this.targetDirFullPath, `${slug}.md`);
+		try {
+			const fileContents = fs.readFileSync(fullPath, 'utf8');
+			const { data, content } = matter(fileContents);
+			return { slug: slug, frontmatter: data as MetaData, content };
+		} catch (e) {
+			console.error(e);
+			return { slug: '/404', frontmatter: { title: 'Page not found' }, content: '' };
+		}
+	};
 
-  /**
-   * Collects all markdown files from the target directory
-   */
-  getAllPostPaths = (): PostPath[] => {
-    const postNames = fs.readdirSync(this.targetDirFullPath);
-    const postPaths = postNames.map((postName) => {
-      return {
-        slug: postName.replace(/\.md$/, ''),
-        fullPath: `${this.targetDir}/${postName}`,
-      };
-    });
-    return postPaths;
-  };
+	/**
+	 * Collects all markdown files from the target directory
+	 */
+	getAllPostPaths = (): PostPath[] => {
+		const postNames = fs.readdirSync(this.targetDirFullPath);
+		const postPaths = postNames.map((postName) => {
+			return {
+				slug: postName.replace(/\.md$/, ''),
+				fullPath: `${this.targetDir}/${postName}`,
+			};
+		});
+		return postPaths;
+	};
 
-  getAllPosts = () => {
-    const postPaths = this.getAllPostPaths();
-    const posts = postPaths.map((postPath) => this.getPostBySlug(postPath.slug));
-    return posts;
-  };
+	getAllPosts = () => {
+		const postPaths = this.getAllPostPaths();
+		const posts = postPaths.map((postPath) => this.getPostBySlug(postPath.slug));
+		return posts;
+	};
 
-  /**
-   * 記事一覧ページのためのデータを作成する。
-   * @returns posts: { slug: string, frontmatter: { title: string, etc... } }[]
-   */
-  getStaticProps: GetStaticProps<{ posts: Post[] }> = async () => {
-    const postPaths = this.getAllPostPaths();
-    const posts = this.getAllPosts();
-    return {
-      props: {
-        posts: await Promise.all(posts),
-      },
-    };
-  };
+	/**
+	 * 記事一覧ページのためのデータを作成する。
+	 * @returns posts: { slug: string, frontmatter: { title: string, etc... } }[]
+	 */
+	getStaticProps: GetStaticProps<{ posts: Post[] }> = async () => {
+		const postPaths = this.getAllPostPaths();
+		const posts = this.getAllPosts();
+		return {
+			props: {
+				posts: await Promise.all(posts),
+			},
+		};
+	};
 }

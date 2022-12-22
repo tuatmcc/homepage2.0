@@ -8,13 +8,13 @@ import Tag from '../Tag/Tag';
 import styles from './style.module.css';
 
 import NavbarPC from '~/components/common/NavbarPC/NavbarPC';
-import { MetaData } from '~/components/types/meta';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
+import { MetaData } from '~/types/meta';
 
 export type PageProps = {
-  meta: MetaData;
-  children: ReactNode | ReactNode[];
-  isMdx?: boolean;
+	meta: MetaData;
+	children: ReactNode | ReactNode[];
+	isMdx?: boolean;
 };
 
 /**
@@ -23,30 +23,30 @@ export type PageProps = {
  * @returns
  */
 const Page: FC<PageProps> = ({ meta, children, isMdx = false }: PageProps) => {
-  const { title, description, img, tags } = meta;
-  const { isMobile } = useContext(MediaQueryContext);
+	const { title, description, img, tags } = meta;
+	const { isMobile } = useContext(MediaQueryContext);
 
-  const tagElements = tags?.map((tag) => <Tag key={tag}>{`#${tag}`}</Tag>);
+	const tagElements = tags?.map((tag) => <Tag key={tag}>{`#${tag}`}</Tag>);
 
-  return (
-    <>
-      <Head>
-        <title>{`${title} - TUATMCC`}</title>
-        <meta property="og:site_name" content={title} />
-        {description && (
-          <>
-            <meta name="description" content={description} />
-            <meta property="og:description" content={description} />
-          </>
-        )}
-        {img && <meta property="og:image" content={img} />}
-      </Head>
+	return (
+		<>
+			<Head>
+				<title>{`${title} - TUATMCC`}</title>
+				<meta property="og:site_name" content={title} />
+				{description && (
+					<>
+						<meta name="description" content={description} />
+						<meta property="og:description" content={description} />
+					</>
+				)}
+				{img && <meta property="og:image" content={img} />}
+			</Head>
 
-      {isMobile && <HeaderMobile />}
-      {isMobile ? <NavbarMobile /> : <NavbarPC />}
-      {children}
-    </>
-  );
+			{isMobile && <HeaderMobile />}
+			{isMobile ? <NavbarMobile /> : <NavbarPC />}
+			{children}
+		</>
+	);
 };
 
 export default Page;
