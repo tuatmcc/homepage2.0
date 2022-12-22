@@ -18,8 +18,42 @@ const Triangle: FC<TriangleProps> = ({ color, ...props }) => {
 	const [r] = useState(() => Math.random() * 10000);
 	useFrame((_) => (ref.current.position.y = -1.75 + Math.sin(_.clock.elapsedTime + r) / 10));
 	const {
-		paths: [path],
-	} = useLoader(SVGLoader, './triangle.svg'); // prettier-ignore
+		paths: [path1],
+	} = useLoader(SVGLoader, '/mcc-logo.svg'); // prettier-ignore
+	const geom1 = useMemo(() => SVGLoader.pointsToStroke(path1.subPaths[0].getPoints(), path1.userData?.style), []);
+	return (
+		<group ref={ref}>
+			<mesh geometry={geom1} {...props}>
+				<meshBasicMaterial color={color} toneMapped={false} />
+			</mesh>
+		</group>
+	);
+};
+
+const Triangle2: FC<TriangleProps> = ({ color, ...props }) => {
+	const ref = useRef<Group>(null!);
+	const [r] = useState(() => Math.random() * 10000);
+	useFrame((_) => (ref.current.position.y = -1.75 + Math.sin(_.clock.elapsedTime + r) / 10));
+	const {
+		paths: [, path],
+	} = useLoader(SVGLoader, '/mcc-logo.svg'); // prettier-ignore
+	const geom = useMemo(() => SVGLoader.pointsToStroke(path.subPaths[0].getPoints(), path.userData?.style), []);
+	return (
+		<group ref={ref}>
+			<mesh geometry={geom} {...props}>
+				<meshBasicMaterial color={color} toneMapped={false} />
+			</mesh>
+		</group>
+	);
+};
+
+const Triangle3: FC<TriangleProps> = ({ color, ...props }) => {
+	const ref = useRef<Group>(null!);
+	const [r] = useState(() => Math.random() * 10000);
+	useFrame((_) => (ref.current.position.y = -1.75 + Math.sin(_.clock.elapsedTime + r) / 10));
+	const {
+		paths: [, , path],
+	} = useLoader(SVGLoader, '/mcc-logo.svg'); // prettier-ignore
 	const geom = useMemo(() => SVGLoader.pointsToStroke(path.subPaths[0].getPoints(), path.userData?.style), []);
 	return (
 		<group ref={ref}>
@@ -42,53 +76,27 @@ const Rig: FC<MeshProps> = ({ children }) => {
 	return <group ref={ref}>{children}</group>;
 };
 
-// const Ground: FC<ReflectorProps> = (props) => {
-// 	const [floor, normal] = useTexture([
-// 		'./SurfaceImperfections003_1K_var1.jpg',
-// 		'./SurfaceImperfections003_1K_Normal.jpg',
-// 	]);
-// 	return (
-// 		<Reflector resolution={1024} args={[8, 8]} {...props}>
-// 			{(Material, props) => (
-// 				<Material
-// 					color="#f0f0f0"
-// 					metalness={0}
-// 					roughnessMap={floor}
-// 					normalMap={normal}
-// 					normalScale={[2, 2]}
-// 					{...props}
-// 				/>
-// 			)}
-// 		</Reflector>
-// 	);
-// };
-
-export default function R3fTest() {
+const R3fTest: FC = () => {
 	return (
 		<Page meta={{ title: 'R3f Test' }}>
 			<div className={styles.container}>
 				<Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 15] }} className={styles.canvas}>
-					<color attach="background" args={['black']} />
 					<ambientLight />
 					<OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
 					<Suspense fallback={null}>
 						<Rig>
-							<Triangle color="#ff2060" scale={0.009} rotation={[0, 0, Math.PI / 3]} />
-							<Triangle color="cyan" scale={0.009} position={[2, 0, -2]} rotation={[0, 0, Math.PI / 3]} />
+							<Triangle color="white" scale={0.009} rotation={[0, 0, Math.PI / 2]} />
+							<Triangle2 color="yellow" scale={0.009} position={[2, 0, -2]} rotation={[0, 0, Math.PI / 3]} />
 							<Triangle color="orange" scale={0.009} position={[-2, 0, -2]} rotation={[0, 0, Math.PI / 3]} />
-							<Triangle color="white" scale={0.009} position={[0, 2, -10]} rotation={[0, 0, Math.PI / 3]} />
-							{/* <Ground
-								mirror={1}
-								blur={[500, 100]}
-								mixBlur={12}
-								mixStrength={1.5}
-								rotation={[-Math.PI / 2, 0, Math.PI / 2]}
-								position-y={-0.8}
-							/> */}
+							<Triangle3 color="white" scale={0.009} position={[0, 2, -10]} rotation={[0, 0, Math.PI / 3]} />
+							<Triangle3 color="white" scale={0.009} rotation={[0, 0, Math.PI / 2]} />
+							<Triangle color="yellow" scale={0.009} position={[4, 0, -2]} rotation={[0, 0, Math.PI / 3]} />
+							<Triangle2 color="orange" scale={0.009} position={[-4, 0, -2]} rotation={[0, 0, Math.PI / 3]} />
+							<Triangle2 color="white" scale={0.009} position={[-2, 2, -10]} rotation={[0, 0, Math.PI / 3]} />
 						</Rig>
 						<EffectComposer multisampling={8}>
 							<Bloom kernelSize={3} luminanceThreshold={0} luminanceSmoothing={0.4} intensity={0.6} />
-							<Bloom /*kernelSize={KernelSize.HUGE}*/ luminanceThreshold={0} luminanceSmoothing={0} intensity={0.5} />
+							<Bloom kernelSize={5} luminanceThreshold={0} luminanceSmoothing={0} intensity={0.5} />
 						</EffectComposer>
 					</Suspense>
 					<CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} />
@@ -96,4 +104,6 @@ export default function R3fTest() {
 			</div>
 		</Page>
 	);
-}
+};
+
+export default R3fTest;
