@@ -56,7 +56,7 @@
           padding: 10px 0;
           font-family: Sanchez, sans-serif;
           font-weight: bold;
-          color: var(--color-text-light);
+          color: var(--color-text-subtle);
           text-decoration: none;
 
           &:hover {

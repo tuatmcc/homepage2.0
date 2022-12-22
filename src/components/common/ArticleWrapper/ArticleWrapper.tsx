@@ -10,9 +10,8 @@ import TagList from '../TagList/TagList';
 import styles from './style.module.css';
 
 import AutoLink, { AutoLinkProps } from '~/components/common/AutoLink/AutoLink';
-import Code from '~/components/common/Code/Code';
+import CodeBlock from '~/components/common/CodeBlock/CodeBlock';
 import Del from '~/components/common/Del/Del';
-import Pre from '~/components/common/Pre/Pre';
 import { MetaData } from '~/types/meta';
 
 export type ArticleWrapperProps = {
@@ -37,8 +36,7 @@ const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
 				components: {
 					a: ({ href, children }: AutoLinkProps) => <AutoLink href={href}>{children}</AutoLink>,
 					del: ({ children }) => <Del>{children}</Del>,
-					code: ({ children }) => <Code>{children}</Code>,
-					pre: ({ children }) => <Pre>{children}</Pre>,
+					pre: ({ children }) => <CodeBlock>{children}</CodeBlock>,
 					img: ({ src = '', alt = 'image' }) => (
 						<Image
 							src={src}
@@ -63,16 +61,18 @@ const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
 			<div className={styles.mainIn}>
 				<div className={`${styles.article} ${props.className}`}>
 					<h1 className={styles.title}>{title}</h1>
-					<Image
-						src={img ? img : '/mcc-design.jpg'}
-						alt="hero"
-						width={800}
-						height={300}
-						className={styles.hero}
-						onError={(e) => {
-							e.currentTarget.src = '/mcc-design.jpg';
-						}}
-					/>
+					{img && (
+						<Image
+							src={img ? img : '/mcc-design.jpg'}
+							alt="hero"
+							width={800}
+							height={300}
+							className={styles.hero}
+							onError={(e) => {
+								e.currentTarget.src = '/mcc-design.jpg';
+							}}
+						/>
+					)}
 					<div className={styles.date}>{date}</div>
 					<TagList className={styles.tagList}>{tagList}</TagList>
 					<div className={styles.content}>{content}</div>
