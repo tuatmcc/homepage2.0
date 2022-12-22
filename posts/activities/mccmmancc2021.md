@@ -1,7 +1,7 @@
 ---
 title: MCCMMANCC2021を行いました
 description: Learning how to use @nuxt/content to create a blog
-img: '/activities/mmcmmancc2021/mccmmancc2021.png'
+img: '/activities/mmcmmancc2021/mccmmancc2021.webp'
 tags: ['dev']
 date: 2021-12
 ---
