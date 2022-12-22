@@ -12,7 +12,7 @@ export const ROUTES = {
     LABEL: 'Discord Tutorial',
   },
   BLOG: { PATH: '/blog', LABEL: 'Blog' },
-  SANDBOX: { PATH: '/sandbox', LABEL: 'お砂場' },
+  SANDBOX: { PATH: '/sandbox', LABEL: 'SandBox' },
 };
 
 /** ナビゲーションなどに使用するリスト。これをループ処理で使う */
