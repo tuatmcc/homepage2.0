@@ -1,22 +1,21 @@
 .main {
-  padding: 0 5px;
-
   & .mainIn {
     max-width: 1000px;
-    margin: 80px auto;
+    margin: 32px auto 0;
     background-color: var(--color-background);
     box-shadow: 0 0 6px #00000080;
 
-    @media screen and (max-width: 62em) {
-      margin: 30px auto 80px;      
+    @media  screen and (max-width: 48em) {
+      margin: 32px 0 0;
     }
 
     & .article {
       padding: 5px;
       margin: 0 32px;
 
-      @media screen and (max-width: 62em) {
-        margin: 0 5px;
+      @media screen and (max-width: 48em) {
+        padding: 2px;
+        margin: 0 2px;
       }
 
       & .title {
@@ -36,9 +35,10 @@
 
       & .content {
         & p {
+          padding: 10px 2px;
           margin: 0;
           font-size: 16px;
-          line-height: 1.5;
+          line-height: 1.6;
         }
 
         & h1 {

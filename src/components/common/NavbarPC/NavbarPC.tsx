@@ -21,7 +21,7 @@ const NavbarPC: FC = () => {
 	});
 
 	return (
-		<header className={styles.header}>
+		<header>
 			<nav className={styles.navbar}>
 				<Link className={styles.brandLink} href={ROUTES.HOME.PATH}>
 					<Image alt="" src="/mcc-logo.svg" width={48} height={48} className={styles.brandLogo} />

@@ -16,7 +16,7 @@ export const MediaQueryContext = createContext({ isMobile: false }); // ここ�
 const MediaQueryProvider: FC<MediaQueryProviderProps> = ({ children }) => {
 	const [isMobile, setIsMobile] = useState<boolean>(false);
 	const handleResize = () => {
-		setIsMobile(matchMedia('screen and (max-width: 62em)').matches);
+		setIsMobile(matchMedia('screen and (max-width: 48em)').matches);
 	};
 	useEffect(() => {
 		handleResize();

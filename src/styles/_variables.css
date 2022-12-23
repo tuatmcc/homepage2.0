@@ -25,10 +25,11 @@
   --color-shadow-large: 0 8px 24px rgb(140 149 159 / 20%);
   --color-shadow-extra-large: 0 12px 28px rgb(140 149 159 / 30%);
 
-
-  /* --color-background: #f6f5f5; */
-
   /* Size */
-  --navbar-height: 70px;
+  --navbar-pc-height: 70px;
   --navbar-mobile-height: 60px;
+  --header-mobile-height: 80px;
+
+  /* Breakpoints */
+  --breakpoint-mobile: 48em;
 }

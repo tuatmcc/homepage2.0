@@ -1,11 +1,8 @@
-.main {
-  padding: var(--navbar-height) 10px;
+.container {
+  width: 100%;
+  padding: var(--navbar-pc-height) 0 0;
 
-  & .mainIn {
-    max-width: 1000px;
-    margin: 80px auto;
-    background-color: var(--color-background);
-    box-shadow: 0 0 6px #00000080;
+  @media screen and (max-width: 48em) {
+    padding: 0 0 var(--navbar-mobile-height);
   }
 }
-

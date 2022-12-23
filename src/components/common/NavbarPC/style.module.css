@@ -1,72 +1,67 @@
-.header {
-  position: relative;
-  height: var(--navbar-height);
-
-  & .navbar {
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: var(--navbar-height);
-    background: var(--color-background);
-    box-shadow: 0 0 6px #00000080;
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: var(--navbar-pc-height);
+  background: var(--color-background);
+  box-shadow: 0 0 6px #00000080;
   
-    & .brandLink {
+  & .brandLink {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    height: inherit;
+    text-decoration: none;
+    
+    & .brandLogo {
+      margin: 3px;
+    }
+    
+    & .brandName {
+      margin: 0;
+      font-family: Sanchez, sans-serif;
+      font-size: 48px;
+      font-weight: 400;
+      color: var(--color-mcc-primary);
+    }
+  }
+  
+  & .navIn {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 600px;
+    height: 50px;
+    padding: 20px 0 0;
+    margin: 0;
+    list-style: none;
+    
+    & .listItem {
       display: flex;
-      flex: 1;
+      flex: 0 1 auto;
       align-items: center;
       height: inherit;
-      text-decoration: none;
-    
-      & .brandLogo {
-        margin: 3px;
-      }
-    
-      & .brandName {
-        margin: 0;
-        font-family: Sanchez, sans-serif;
-        font-size: 48px;
-        font-weight: 400;
-        color: var(--color-mcc-primary);
-      }
-    }
-  
-    & .navIn {
-      display: flex;
-      flex: 1;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-around;
-      max-width: 600px;
-      height: 50px;
-      padding: 20px 0 0;
-      margin: 0;
-      list-style: none;
-    
-      & .listItem {
-        display: flex;
-        flex: 0 1 auto;
-        align-items: center;
-        height: inherit;
       
-        & .link {
-          padding: 10px 0;
-          font-family: Sanchez, sans-serif;
-          font-weight: bold;
-          color: var(--color-text-subtle);
-          text-decoration: none;
+      & .link {
+        padding: 10px 0;
+        font-family: Sanchez, sans-serif;
+        font-weight: bold;
+        color: var(--color-text-subtle);
+        text-decoration: none;
 
-          &:hover {
-            color: var(--color-mcc-primary);
+        &:hover {
+          color: var(--color-mcc-primary);
           
-          }
+        }
         
-          &.active {
-            border-top: 3px solid var(--color-mcc-primary);
-          }
+        &.active {
+          border-top: 3px solid var(--color-mcc-primary);
         }
       }
     }

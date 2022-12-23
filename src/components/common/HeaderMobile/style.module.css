@@ -1,12 +1,14 @@
 .header {
+  top: 0;
+  width: 100%;
+  height: auto;
+
   & .headerIn {
-    position: relative;
-    top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80px;
-    margin: 5px;
+    height: var(--header-mobile-height);
+    margin: 0 3px;
     background-color: var(--color-background);
 
     & .title {
