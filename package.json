@@ -11,6 +11,7 @@
     "fix": "next lint --fix && stylelint src/**/*.css --fix && rome check . --apply-suggested && rome format . --write"
   },
   "dependencies": {
+    "@react-three/cannon": "^6.5.0",
     "@react-three/drei": "^9.47.1",
     "@react-three/fiber": "^8.9.1",
     "@react-three/postprocessing": "^2.7.0",
