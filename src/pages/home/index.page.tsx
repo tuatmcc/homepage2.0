@@ -1,37 +1,24 @@
-import Head from 'next/head';
-import Image from 'next/image';
 import { FC, useContext, useState } from 'react';
 
 import styles from './style.module.css';
 
-import NavbarMobile from '~/components/common/NavbarMobile/NavbarMobile';
-import NavbarPC from '~/components/common/NavbarPC/NavbarPC';
-import HomeCanvas from '~/components/home/HomeCanvas/HomeCanvas';
-import { MediaQueryContext } from '~/providers/MediaQueryProvider';
+import Page from '~/components/common/Page/Page';
+import Text3d from '~/components/sandbox/Text3d/Text3d';
 
 export type LandingPageProps = {};
 
 const LandingPage: FC<LandingPageProps> = () => {
-	const { isMobile } = useContext(MediaQueryContext);
+	const meta = {
+		title: 'Home',
+		description: '東京農工大学公認サークルMCC(マイクロコンピュータクラブ)のホームページです',
+		img: '/mcc-logo.svg',
+	};
 	return (
-		<>
-			<Head>
-				<title>Home - MCC</title>
-
-				<meta
-					lang='ja'
-					name="description"
-					content="東京農工大学公認サークルMCC(マイクロコンピュータクラブ)のホームページです"
-				/>
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-
-			<div className={styles.landingPage}>
-				<HomeCanvas />
+		<Page meta={meta}>
+			<div className={styles.container}>
+				<Text3d />
 			</div>
-
-			{isMobile ? <NavbarMobile /> : <NavbarPC />}
-		</>
+		</Page>
 	);
 };
 
