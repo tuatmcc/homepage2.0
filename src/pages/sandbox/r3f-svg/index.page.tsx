@@ -20,7 +20,10 @@ const Triangle: FC<TriangleProps> = ({ color, ...props }) => {
 	const {
 		paths: [path1],
 	} = useLoader(SVGLoader, '/mcc-logo.svg'); // prettier-ignore
-	const geom1 = useMemo(() => SVGLoader.pointsToStroke(path1.subPaths[0].getPoints(), path1.userData?.style), []);
+	const geom1 = useMemo(
+		() => SVGLoader.pointsToStroke(path1.subPaths[0].getPoints(), path1.userData?.style),
+		[path1.subPaths, path1.userData?.style],
+	);
 	return (
 		<group ref={ref}>
 			<mesh geometry={geom1} {...props}>
@@ -37,7 +40,10 @@ const Triangle2: FC<TriangleProps> = ({ color, ...props }) => {
 	const {
 		paths: [, path],
 	} = useLoader(SVGLoader, '/mcc-logo.svg'); // prettier-ignore
-	const geom = useMemo(() => SVGLoader.pointsToStroke(path.subPaths[0].getPoints(), path.userData?.style), []);
+	const geom = useMemo(
+		() => SVGLoader.pointsToStroke(path.subPaths[0].getPoints(), path.userData?.style),
+		[path.subPaths, path.userData?.style],
+	);
 	return (
 		<group ref={ref}>
 			<mesh geometry={geom} {...props}>
@@ -54,7 +60,10 @@ const Triangle3: FC<TriangleProps> = ({ color, ...props }) => {
 	const {
 		paths: [, , path],
 	} = useLoader(SVGLoader, '/mcc-logo.svg'); // prettier-ignore
-	const geom = useMemo(() => SVGLoader.pointsToStroke(path.subPaths[0].getPoints(), path.userData?.style), []);
+	const geom = useMemo(
+		() => SVGLoader.pointsToStroke(path.subPaths[0].getPoints(), path.userData?.style),
+		[path.subPaths, path.userData?.style],
+	);
 	return (
 		<group ref={ref}>
 			<mesh geometry={geom} {...props}>

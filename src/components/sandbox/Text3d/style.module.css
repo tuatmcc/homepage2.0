@@ -1,0 +1,8 @@
+.canvas {
+  transition: all 1s ease-in-out;
+
+  &.folding {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
