@@ -1,29 +1,42 @@
 .container {
+  top: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
 
   & .topScreen {
+    position: absolute;
+    top: 0;
+    z-index: 100;
     width: 100%;
-    height: 100%;
+    height: 100svh;
     background-color: var(--color-mcc-primary);
     transition: all 0.5s ease-in-out;
+    transform: translateY(0);
   
     &.close {
-      transform: translateY(-100%);
+      transform: translateY(-120%);
     }
   }
 
   & .subScreen {
-    width: 100%;
-    height: 100%;
+    top: 0;
     opacity: 0;
     transition: all 0.5s ease-in-out;
-    transform: translateY(100%);
+    transform: translateY(50%);
   
     &.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    & .subScreenIn {
+      padding: var(--navbar-pc-height) 0 0 0;
+
+      @media screen and (max-width: 62em) {
+        padding: 0 0 var(--navbar-mobile-height) 0;
+      }
     }
   }
 }

@@ -1,8 +1,12 @@
 .navbarMobile {
-  position: fixed;
+  position: sticky;
   bottom: 0;
   z-index: 1;
   width: 100%;
+
+  &._sticky {
+    position: sticky;
+  }
 
   & .navIn {
     display: flex;
@@ -28,10 +32,11 @@
       background: transparent;
       border: none;
     }
-  
+    
     & .label {
       display: block;
       font-size: 12px;
+      font-weight: bold;
       line-height: 1;
       color: var(--color-mcc-primary);
       text-align: center;

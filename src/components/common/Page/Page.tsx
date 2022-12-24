@@ -25,9 +25,12 @@ const Page: FC<PageProps> = ({ meta, children }: PageProps) => {
 	const { isMobile } = useContext(MediaQueryContext);
 	return (
 		<MetaWrapper meta={meta}>
-			{isMobile && <HeaderMobile />}
-			<div className={styles.container}>{children}</div>
-			{isMobile ? <NavbarMobile /> : <NavbarPC />}
+			{!isMobile && <NavbarPC />}
+			<div className={styles.container}>
+				{isMobile && <HeaderMobile />}
+				{children}
+			</div>
+			{isMobile && <NavbarMobile />}
 		</MetaWrapper>
 	);
 };

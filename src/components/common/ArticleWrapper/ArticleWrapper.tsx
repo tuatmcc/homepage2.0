@@ -4,6 +4,7 @@ import rehypeParse from 'rehype-parse';
 import rehypeReact, { Options as RehypeReactOptions } from 'rehype-react';
 import { unified } from 'unified';
 
+import MiniLinkIcon from '../Icons/MiniLinkIcon';
 import Tag from '../Tag/Tag';
 import TagList from '../TagList/TagList';
 
@@ -46,7 +47,7 @@ const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
 							style={{ width: 'auto', height: 'auto', maxWidth: '100%' }}
 						/>
 					),
-					p: ({ children }) => <p className={styles.article}>{children}</p>,
+					minilinkicon: () => <MiniLinkIcon />,
 				},
 			} as RehypeReactOptions)
 			.processSync(props.children);

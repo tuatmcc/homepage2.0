@@ -32,4 +32,9 @@
 
   /* Breakpoints */
   --breakpoint-mobile: 48em;
+
+  /* Font */
+  /* stylelint-disable-next-line value-keyword-case */
+  --font-family-title: Arial, Helvetica,  sans-serif;
+  --font-family-body: 'Noto Sans JP', arial,  sans-serif;
 }

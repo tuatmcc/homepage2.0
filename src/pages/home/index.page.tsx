@@ -6,6 +6,7 @@ import HeaderMobile from '~/components/common/HeaderMobile/HeaderMobile';
 import MetaWrapper from '~/components/common/MetaWrapper/MetaWrapper';
 import NavbarMobile from '~/components/common/NavbarMobile/NavbarMobile';
 import NavbarPC from '~/components/common/NavbarPC/NavbarPC';
+import Page from '~/components/common/Page/Page';
 import Text3d from '~/components/sandbox/Text3d/Text3d';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
 
@@ -20,17 +21,20 @@ const LandingPage: FC<LandingPageProps> = () => {
 	const [isOpeningVisible, setIsOpeningVisible] = useState(true);
 	const { isMobile } = useContext(MediaQueryContext);
 	return (
-		<MetaWrapper meta={meta}>
+		<Page meta={meta}>
 			<div className={styles.container}>
+				<div className={`${styles.subScreen} ${isOpeningVisible ? '' : styles.visible}`}>
+					<div className={styles.subScreenIn}>
+						<h1>We Are MCC</h1>
+						<p>私たちは、東京農工大学マイクロ</p>
+						<p>コンピュータークラブです</p>
+					</div>
+				</div>
 				<div className={`${styles.topScreen} ${!isOpeningVisible ? styles.close : ''}`}>
 					<Text3d onNextButtonClick={() => setIsOpeningVisible(!isOpeningVisible)} />
 				</div>
-				<div className={`${styles.subScreen} ${isOpeningVisible ? '' : styles.visible}`}>
-					<h1>We Are </h1>
-					{isMobile ? <NavbarMobile /> : <NavbarPC />}
-				</div>
 			</div>
-		</MetaWrapper>
+		</Page>
 	);
 };
 

@@ -1,5 +1,3 @@
-import { join } from 'path';
-
 import rehypeAutoLinkHeadings from 'rehype-autolink-headings';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeKatex from 'rehype-katex';
@@ -11,8 +9,6 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import remarkToc from 'remark-toc';
 import { unified } from 'unified';
-
-const a = 1;
 
 /**
  * Parse markdown to html. This function must be used inside the getStaticProps function.
@@ -29,7 +25,11 @@ const markdownToHtml = async (markdown: string) => {
 		.use(rehypeKatex)
 		.use(rehypeHighlight, { ignoreMissing: true })
 		.use(rehypeSlug)
-		.use(rehypeAutoLinkHeadings, { behavior: 'wrap' })
+		.use(rehypeAutoLinkHeadings, {
+			behavior: 'append',
+			content: { type: 'element', tagName: 'minilinkicon', properties: { className: ['icon-link'] } },
+			// rome-ignore lint/suspicious/noExplicitAny: <explanation>
+		} as any)
 		.use(rehypeStringify)
 		.process(markdown);
 

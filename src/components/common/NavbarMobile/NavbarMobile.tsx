@@ -13,12 +13,14 @@ import HomeIcon from '~/components/common/Icons/HomeIcon';
 import InfoIcon from '~/components/common/Icons/InfoIcon';
 import { ROUTES } from '~/constants/routes';
 
-const NavbarMobile: FC = () => {
+type NavbarMobileProps = {};
+
+const NavbarMobile: FC<NavbarMobileProps> = () => {
 	// Drawerの開閉状態
 	const [isOpened, setIsOpened] = useState<boolean>(false);
 
 	return (
-		<nav>
+		<nav className={styles.navbarMobile}>
 			<div className={styles.navbarMobile}>
 				<Drawer isOpen={isOpened} />
 				<ul className={styles.navIn}>
