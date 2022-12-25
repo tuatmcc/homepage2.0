@@ -7,7 +7,7 @@ import StarIcon from '../Icons/StarIcon';
 
 import styles from './style.module.css';
 
-import Drawer from '~/components/common/Drawer/Drawer';
+import Drawer from '~/components/common/Drawer';
 import BrowserIcon from '~/components/common/Icons/BrowserIcon';
 import HomeIcon from '~/components/common/Icons/HomeIcon';
 import InfoIcon from '~/components/common/Icons/InfoIcon';

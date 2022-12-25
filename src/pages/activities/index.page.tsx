@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { FC } from 'react';
 
-import Page from '../../components/common/Page/Page';
+import Layout from '../../components/common/Layout';
 import { PostCollector, PostCollectorProps } from '../../lib/post-collector';
 
 import styles from './style.module.css';
@@ -18,14 +18,14 @@ type ActivitiesProps = {
 // posts will be populated at build time by getStaticProps()
 const ActivitiesPage: FC<PostCollectorProps> = ({ posts }) => {
 	return (
-		<Page meta={meta}>
+		<Layout meta={meta}>
 			<h1 className={styles.title}>活動報告</h1>
 			{posts.map((post) => (
 				<div key={post.slug}>
 					<Link href={`activities/${post.slug}`}>{post.slug}</Link>
 				</div>
 			))}
-		</Page>
+		</Layout>
 	);
 };
 

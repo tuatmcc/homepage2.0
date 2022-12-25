@@ -3,7 +3,7 @@ import { FC, useContext, useState } from 'react';
 import styles from './style.module.css';
 
 import HeaderMobile from '~/components/common/HeaderMobile/HeaderMobile';
-import MetaWrapper from '~/components/common/MetaWrapper/MetaWrapper';
+import Helmet from '~/components/common/MetaWrapper';
 import NavbarMobile from '~/components/common/NavbarMobile/NavbarMobile';
 import NavbarPC from '~/components/common/NavbarPC/NavbarPC';
 import Page from '~/components/common/Page/Page';

@@ -1,7 +1,7 @@
-import { createContext, FC, useEffect, useState } from 'react';
+import { createContext, FC, useEffect, useState, ReactNode, useCallback } from 'react';
 
 export type MediaQueryProviderProps = {
-	children: React.ReactNode;
+	children: ReactNode;
 };
 
 /**
@@ -15,14 +15,18 @@ export const MediaQueryContext = createContext({ isMobile: false }); // ここ�
  */
 const MediaQueryProvider: FC<MediaQueryProviderProps> = ({ children }) => {
 	const [isMobile, setIsMobile] = useState<boolean>(false);
-	const handleResize = () => {
+	const handleResize = useCallback(() => {
 		setIsMobile(matchMedia('screen and (max-width: 48em)').matches);
-	};
+	}, []);
 	useEffect(() => {
 		handleResize();
 		addEventListener('load', handleResize);
 		addEventListener('resize', handleResize);
-	}, [isMobile]);
+		return () => {
+			removeEventListener('load', handleResize);
+			removeEventListener('resize', handleResize);
+		};
+	}, [handleResize]);
 
 	return <MediaQueryContext.Provider value={{ isMobile }}>{children}</MediaQueryContext.Provider>;
 };

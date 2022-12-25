@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
-import Page from '~/components/common/Page/Page';
+import Layout from '~/components/common/Layout';
+import Helmet from '~/components/common/MetaWrapper';
 
 const meta = {
 	title: '404',
@@ -8,7 +9,12 @@ const meta = {
 };
 
 const NotFoundPage: FC = () => {
-	return <Page meta={meta}>404 Page Not Found</Page>;
+	return (
+		<>
+			<Helmet meta={meta} />
+			<Layout>404 Page Not Found</Layout>;
+		</>
+	);
 };
 
 export default NotFoundPage;

@@ -7,7 +7,9 @@
         "recommended": true
       },
       "correctness": {
-        "recommended": true
+        "recommended": true,
+        "noUndeclaredVariables": "error",
+        "noUnusedVariables": "error"
       },
       "style": {
         "recommended": true
@@ -21,22 +23,22 @@
       "a11y": {
         "recommended": true,
         "useKeyWithClickEvents": "warn"
+      },
+      "nursery": {
+        "recommended": true,
+        "noVar": "error",
+        "useCamelCase": "warn"
+      },
+      "suspicious": {
+        "recommended": true
       }
     },
-    "ignore": [
-      "node_modules",
-      "out",
-      ".next"
-    ]
+    "ignore": ["node_modules", "out", ".next"]
   },
   "formatter": {
     "enabled": true,
     "formatWithErrors": true,
-    "ignore": [
-      "node_modules",
-      "out",
-      ".next"
-    ],
+    "ignore": ["node_modules", "out", ".next"],
     "indentSize": 2,
     "lineWidth": 120,
     "indentStyle": "tab"

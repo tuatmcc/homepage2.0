@@ -1,18 +1,14 @@
-import Head from 'next/head';
-import { FC, ReactNode, useContext, useState } from 'react';
+import { FC, ReactNode, useContext } from 'react';
 
-import HeaderMobile from '../HeaderMobile/HeaderMobile';
-import MetaWrapper from '../MetaWrapper/MetaWrapper';
-import NavbarMobile from '../NavbarMobile/NavbarMobile';
+import HeaderMobile from '../HeaderMobile';
+import NavbarMobile from '../NavbarMobile';
 
 import styles from './style.module.css';
 
 import NavbarPC from '~/components/common/NavbarPC/NavbarPC';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
-import { MetaData } from '~/types/meta';
 
 export type PageProps = {
-	meta: MetaData;
 	children?: ReactNode | ReactNode[];
 };
 
@@ -21,18 +17,18 @@ export type PageProps = {
  * @param param0
  * @returns
  */
-const Page: FC<PageProps> = ({ meta, children }: PageProps) => {
+const Layout: FC<PageProps> = ({ children }) => {
 	const { isMobile } = useContext(MediaQueryContext);
 	return (
-		<MetaWrapper meta={meta}>
+		<>
 			{!isMobile && <NavbarPC />}
 			<div className={styles.container}>
 				{isMobile && <HeaderMobile />}
 				{children}
 			</div>
 			{isMobile && <NavbarMobile />}
-		</MetaWrapper>
+		</>
 	);
 };
 
-export default Page;
+export default Layout;

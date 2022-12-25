@@ -5,8 +5,8 @@ import rehypeReact, { Options as RehypeReactOptions } from 'rehype-react';
 import { unified } from 'unified';
 
 import MiniLinkIcon from '../Icons/MiniLinkIcon';
-import Tag from '../Tag/Tag';
-import TagList from '../TagList/TagList';
+import Tag from '../Tag';
+import TagList from '../TagList';
 
 import styles from './style.module.css';
 
