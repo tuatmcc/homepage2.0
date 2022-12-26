@@ -1,21 +1,23 @@
 import Link from 'next/link';
 import { FC, useState } from 'react';
 
-import CloseIcon from '../Icons/CloseIcon';
-import MenuBurgerIcon from '../Icons/MenuBurgerIcon';
-import StarIcon from '../Icons/StarIcon';
-
 import styles from './style.module.css';
 
-import Drawer from '~/components/common/Drawer';
-import BrowserIcon from '~/components/common/Icons/BrowserIcon';
-import HomeIcon from '~/components/common/Icons/HomeIcon';
-import InfoIcon from '~/components/common/Icons/InfoIcon';
+import { Drawer } from '~/components/common/Drawer';
+import { BrowserIcon } from '~/components/common/Icons/BrowserIcon';
+import { CloseIcon } from '~/components/common/Icons/CloseIcon';
+import { HomeIcon } from '~/components/common/Icons/HomeIcon';
+import { InfoIcon } from '~/components/common/Icons/InfoIcon';
+import { MenuBurgerIcon } from '~/components/common/Icons/MenuBurgerIcon';
+import { StarIcon } from '~/components/common/Icons/StarIcon';
 import { ROUTES } from '~/constants/routes';
 
-type NavbarMobileProps = {};
+type NavbarMobileProps = {
+	/** 未実装 */
+	onToggle?: () => void;
+};
 
-const NavbarMobile: FC<NavbarMobileProps> = () => {
+export const NavbarMobile: FC<NavbarMobileProps> = () => {
 	// Drawerの開閉状態
 	const [isOpened, setIsOpened] = useState<boolean>(false);
 
@@ -49,5 +51,3 @@ const NavbarMobile: FC<NavbarMobileProps> = () => {
 		</nav>
 	);
 };
-
-export default NavbarMobile;

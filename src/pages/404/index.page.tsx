@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import Layout from '~/components/common/Layout';
-import Helmet from '~/components/common/MetaWrapper';
+import { Helmet } from '~/components/common/Helmet';
+import { Layout } from '~/components/common/Layout';
 
 const meta = {
 	title: '404',

@@ -15,7 +15,7 @@ import { unified } from 'unified';
  * @param markdown
  * @returns
  */
-const markdownToHtml = async (markdown: string) => {
+export const markdownToHtml = async (markdown: string) => {
 	const html = await unified()
 		.use(remarkParse)
 		.use(remarkGfm)
@@ -35,5 +35,3 @@ const markdownToHtml = async (markdown: string) => {
 
 	return html.toString();
 };
-
-export default markdownToHtml;

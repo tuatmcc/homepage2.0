@@ -8,7 +8,7 @@ export type CodeBlockProps = {
 	className?: string;
 };
 
-const CodeBlock: FC<CodeBlockProps> = ({ children = '', className = '', title }) => {
+export const CodeBlock: FC<CodeBlockProps> = ({ children = '', className = '', title }) => {
 	return (
 		<div className={styles.codeBlock}>
 			{title && <span className={styles.title}>{title}</span>}
@@ -16,5 +16,3 @@ const CodeBlock: FC<CodeBlockProps> = ({ children = '', className = '', title })
 		</div>
 	);
 };
-
-export default CodeBlock;

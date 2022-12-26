@@ -4,25 +4,33 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { FC } from 'react';
 
-import Page from '~/components/common/Page/Page';
+import { Helmet } from '~/components/common/Helmet';
+import { Layout } from '~/components/common/Layout';
 
 export type SandboxPageProps = {
 	paths: string[];
 };
 
 const SandboxPage: FC<SandboxPageProps> = ({ paths }) => {
+	const meta = {
+		title: 'Gallery',
+		description: 'Gallery - where you can see webgl experiments',
+	};
 	return (
-		<Page meta={{ title: '砂場' }}>
-			<h1>お砂場</h1>
-			<p>いろいろなものを試す場所</p>
-			<ul>
-				{paths.map((path) => (
-					<li key={path}>
-						<Link href={path}>{path}</Link>
-					</li>
-				))}
-			</ul>
-		</Page>
+		<>
+			<Helmet meta={meta} />
+			<Layout>
+				<h1>お砂場</h1>
+				<p>いろいろなものを試す場所</p>
+				<ul>
+					{paths.map((path) => (
+						<li key={path}>
+							<Link href={path}>{path}</Link>
+						</li>
+					))}
+				</ul>
+			</Layout>
+		</>
 	);
 };
 

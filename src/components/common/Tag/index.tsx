@@ -7,8 +7,6 @@ export type TagProps = {
 	className?: string;
 };
 
-const Tag: FC<TagProps> = ({ children, className = '' }) => {
+export const Tag: FC<TagProps> = ({ children, className = '' }) => {
 	return <div className={`${styles.tag} ${className}`}>{children}</div>;
 };
-
-export default Tag;

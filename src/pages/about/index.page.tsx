@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
-import Page from '~/components/common/Page/Page';
+import { Helmet }  from '~/components/common/Helmet';
+import { Layout } from '~/components/common/Layout';
 
 const meta = {
   title: 'About',
@@ -9,10 +10,13 @@ const meta = {
 
 const AboutPage: FC = () => {
   return (
-    <Page meta={meta}>
+  <>
+    <Helmet meta={meta} />
+    <Layout>
       <h1>MCCについて</h1>
       <p>東京農工大学公認サークルの、マイクロコンピュータクラブです。</p>
-    </Page>
+    </Layout>
+  </>
   );
 };
 

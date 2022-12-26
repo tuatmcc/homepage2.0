@@ -36,8 +36,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# idea
+# editor
 .idea
+.vscode/tasks.json
 
 # wiki
 *.wiki

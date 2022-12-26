@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 
+// syntax highlight
 import 'highlight.js/styles/a11y-dark.css';
 
 import '~/styles/global.css';

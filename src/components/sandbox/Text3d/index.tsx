@@ -1,9 +1,7 @@
-import { Physics, Debug, usePlane, useCompoundBody } from '@react-three/cannon';
 import { Float, Center, OrbitControls, Text } from '@react-three/drei';
-import { Canvas, extend, useFrame } from '@react-three/fiber';
+import { Canvas, extend } from '@react-three/fiber';
 import { Bloom, EffectComposer } from '@react-three/postprocessing';
-import { FC, Suspense, useContext, useEffect, useRef, useState } from 'react';
-import { BoxGeometry, Mesh } from 'three';
+import { FC, Suspense, useContext } from 'react';
 import threeFontJson from 'three/examples/fonts/helvetiker_bold.typeface.json';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
@@ -35,7 +33,7 @@ const Button: FC<ButtonProps> = ({ onClick }) => {
 	);
 };
 
-const Text3d: FC<Text3dProps> = ({ onNextButtonClick }) => {
+export const Text3d: FC<Text3dProps> = ({ onNextButtonClick }) => {
 	const { isMobile } = useContext(MediaQueryContext);
 	const font = new FontLoader().parse(threeFontJson);
 
@@ -78,5 +76,3 @@ const Text3d: FC<Text3dProps> = ({ onNextButtonClick }) => {
 		</Canvas>
 	);
 };
-
-export default Text3d;

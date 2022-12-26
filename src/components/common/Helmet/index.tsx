@@ -7,7 +7,7 @@ export type HelmetProps = {
 	meta: MetaData;
 };
 
-const Helmet: FC<HelmetProps> = ({ meta }) => {
+export const Helmet: FC<HelmetProps> = ({ meta }) => {
 	const { title, description, img } = meta;
 
 	return (
@@ -24,5 +24,3 @@ const Helmet: FC<HelmetProps> = ({ meta }) => {
 		</Head>
 	);
 };
-
-export default Helmet;

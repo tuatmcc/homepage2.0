@@ -2,16 +2,24 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import Page from '~/components/common/Page/Page';
-import Text3d from '~/components/sandbox/Text3d/Text3d';
+import { Helmet } from '~/components/common/Helmet';
+import { Layout } from '~/components/common/Layout';
+import { Text3d } from '~/components/sandbox/Text3d';
 
 const Text3DPage: FC = () => {
+	const meta = {
+		title: 'Text3D',
+		description: 'Text3D',
+	};
 	return (
-		<Page meta={{ title: 'Text3D' }}>
-			<div className={styles.container}>
-				<Text3d />
-			</div>
-		</Page>
+		<>
+			<Helmet meta={meta} />
+			<Layout>
+				<div className={styles.container}>
+					<Text3d />
+				</div>
+			</Layout>
+		</>
 	);
 };
 

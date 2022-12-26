@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-const StarIcon: FC = () => (
+export const StarIcon: FC = () => (
 	<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<g clipPath="url(#clip0_60_21)">
 			<path
@@ -15,5 +15,3 @@ const StarIcon: FC = () => (
 		</defs>
 	</svg>
 );
-
-export default StarIcon;

@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-const HeaderMobile: FC = () => {
+export const HeaderMobile: FC = () => {
 	return (
 		<header className={styles.header}>
 			<div className={styles.headerIn}>
@@ -13,5 +13,3 @@ const HeaderMobile: FC = () => {
 		</header>
 	);
 };
-
-export default HeaderMobile;

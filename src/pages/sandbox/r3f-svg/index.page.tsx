@@ -1,15 +1,15 @@
-import { Reflector, CameraShake, OrbitControls, useTexture, ReflectorProps } from '@react-three/drei';
-import { Canvas, useThree, useFrame, useLoader, MeshProps, MaterialProps } from '@react-three/fiber';
+import { CameraShake, OrbitControls } from '@react-three/drei';
+import { Canvas, useThree, useFrame, useLoader, MeshProps } from '@react-three/fiber';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
-// import { KernelSize } from 'postprocessing';
 import { useState, useRef, Suspense, useMemo, FC } from 'react';
 import * as THREE from 'three';
-import { Group, Vector2 } from 'three';
+import { Group } from 'three';
 import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader';
 
 import styles from './style.module.css';
 
-import Page from '~/components/common/Page/Page';
+import { Helmet } from '~/components/common/Helmet';
+import { Layout } from '~/components/common/Layout';
 
 type TriangleProps = JSX.IntrinsicElements['group'] & { color: string } & MeshProps;
 
@@ -86,32 +86,40 @@ const Rig: FC<MeshProps> = ({ children }) => {
 };
 
 const R3fTest: FC = () => {
+	const meta = {
+		title: 'R3F Test',
+		description: 'R3F Test',
+		img: '/mcc-logo.svg',
+	};
 	return (
-		<Page meta={{ title: 'R3f Test' }}>
-			<div className={styles.container}>
-				<Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 15] }} className={styles.canvas}>
-					<ambientLight />
-					<OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
-					<Suspense fallback={null}>
-						<Rig>
-							<Triangle color="white" scale={0.009} rotation={[0, 0, Math.PI / 2]} />
-							<Triangle2 color="yellow" scale={0.009} position={[2, 0, -2]} rotation={[0, 0, Math.PI / 3]} />
-							<Triangle color="orange" scale={0.009} position={[-2, 0, -2]} rotation={[0, 0, Math.PI / 3]} />
-							<Triangle3 color="white" scale={0.009} position={[0, 2, -10]} rotation={[0, 0, Math.PI / 3]} />
-							<Triangle3 color="white" scale={0.009} rotation={[0, 0, Math.PI / 2]} />
-							<Triangle color="yellow" scale={0.009} position={[4, 0, -2]} rotation={[0, 0, Math.PI / 3]} />
-							<Triangle2 color="orange" scale={0.009} position={[-4, 0, -2]} rotation={[0, 0, Math.PI / 3]} />
-							<Triangle2 color="white" scale={0.009} position={[-2, 2, -10]} rotation={[0, 0, Math.PI / 3]} />
-						</Rig>
-						<EffectComposer multisampling={8}>
-							<Bloom kernelSize={3} luminanceThreshold={0} luminanceSmoothing={0.4} intensity={0.6} />
-							<Bloom kernelSize={5} luminanceThreshold={0} luminanceSmoothing={0} intensity={0.5} />
-						</EffectComposer>
-					</Suspense>
-					<CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} />
-				</Canvas>
-			</div>
-		</Page>
+		<>
+			<Helmet meta={meta} />
+			<Layout>
+				<div className={styles.container}>
+					<Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 15] }} className={styles.canvas}>
+						<ambientLight />
+						<OrbitControls enableZoom={false} enablePan={false} enableRotate={false} />
+						<Suspense fallback={null}>
+							<Rig>
+								<Triangle color="white" scale={0.009} rotation={[0, 0, Math.PI / 2]} />
+								<Triangle2 color="yellow" scale={0.009} position={[2, 0, -2]} rotation={[0, 0, Math.PI / 3]} />
+								<Triangle color="orange" scale={0.009} position={[-2, 0, -2]} rotation={[0, 0, Math.PI / 3]} />
+								<Triangle3 color="white" scale={0.009} position={[0, 2, -10]} rotation={[0, 0, Math.PI / 3]} />
+								<Triangle3 color="white" scale={0.009} rotation={[0, 0, Math.PI / 2]} />
+								<Triangle color="yellow" scale={0.009} position={[4, 0, -2]} rotation={[0, 0, Math.PI / 3]} />
+								<Triangle2 color="orange" scale={0.009} position={[-4, 0, -2]} rotation={[0, 0, Math.PI / 3]} />
+								<Triangle2 color="white" scale={0.009} position={[-2, 2, -10]} rotation={[0, 0, Math.PI / 3]} />
+							</Rig>
+							<EffectComposer multisampling={8}>
+								<Bloom kernelSize={3} luminanceThreshold={0} luminanceSmoothing={0.4} intensity={0.6} />
+								<Bloom kernelSize={5} luminanceThreshold={0} luminanceSmoothing={0} intensity={0.5} />
+							</EffectComposer>
+						</Suspense>
+						<CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} />
+					</Canvas>
+				</div>
+			</Layout>
+		</>
 	);
 };
 

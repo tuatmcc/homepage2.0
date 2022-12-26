@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-const CloseIcon: FC = () => (
+export const CloseIcon: FC = () => (
 	<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<g clipPath="url(#clip0_33_37)">
 			<path
@@ -15,5 +15,3 @@ const CloseIcon: FC = () => (
 		</defs>
 	</svg>
 );
-
-export default CloseIcon;

@@ -7,8 +7,6 @@ export type TagListProps = {
 	className?: string;
 };
 
-const TagList: FC<TagListProps> = ({ children = [], className = '' }) => (
+export const TagList: FC<TagListProps> = ({ children = [], className = '' }) => (
 	<div className={`${styles.tagList} ${className}`}>{children}</div>
 );
-
-export default TagList;
