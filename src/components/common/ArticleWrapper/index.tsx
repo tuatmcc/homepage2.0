@@ -4,14 +4,14 @@ import rehypeParse from 'rehype-parse';
 import rehypeReact, { Options as RehypeReactOptions } from 'rehype-react';
 import { unified } from 'unified';
 
-import Tag from '../Tag/Tag';
-import TagList from '../TagList/TagList';
-
 import styles from './style.module.css';
 
-import AutoLink, { AutoLinkProps } from '~/components/common/AutoLink/AutoLink';
-import CodeBlock from '~/components/common/CodeBlock/CodeBlock';
-import Del from '~/components/common/Del/Del';
+import { AutoLink, AutoLinkProps } from '~/components/common/AutoLink';
+import { CodeBlock } from '~/components/common/CodeBlock';
+import { Del } from '~/components/common/Del';
+import { MiniLinkIcon } from '~/components/common/Icons/MiniLinkIcon';
+import { Tag } from '~/components/common/Tag';
+import { TagList } from '~/components/common/TagList';
 import { MetaData } from '~/types/meta';
 
 export type ArticleWrapperProps = {
@@ -25,7 +25,7 @@ export type ArticleWrapperProps = {
  * @param props `{children: string}` html to be rendered as ReactNode
  * @returns
  */
-const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
+export const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
 	// HTMLをReactNodeに変換する
 	const [content, setContent] = useState<ReactNode>(null);
 	useEffect(() => {
@@ -46,7 +46,7 @@ const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
 							style={{ width: 'auto', height: 'auto', maxWidth: '100%' }}
 						/>
 					),
-					p: ({ children }) => <p className={styles.article}>{children}</p>,
+					minilinkicon: () => <MiniLinkIcon />,
 				},
 			} as RehypeReactOptions)
 			.processSync(props.children);
@@ -81,5 +81,3 @@ const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
 		</main>
 	);
 };
-
-export default ArticleWrapper;

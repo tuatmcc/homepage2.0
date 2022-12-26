@@ -7,7 +7,8 @@
         "recommended": true
       },
       "correctness": {
-        "recommended": true
+        "recommended": true,
+        "noUnusedVariables": "error"
       },
       "style": {
         "recommended": true
@@ -21,22 +22,20 @@
       "a11y": {
         "recommended": true,
         "useKeyWithClickEvents": "warn"
+      },
+      "nursery": {
+        "recommended": true,
+        "noVar": "error",
+        "useCamelCase": "warn"
+      },
+      "suspicious": {
+        "recommended": true
       }
-    },
-    "ignore": [
-      "node_modules",
-      "out",
-      ".next"
-    ]
+    }
   },
   "formatter": {
     "enabled": true,
     "formatWithErrors": true,
-    "ignore": [
-      "node_modules",
-      "out",
-      ".next"
-    ],
     "indentSize": 2,
     "lineWidth": 120,
     "indentStyle": "tab"
@@ -48,5 +47,8 @@
       "trailingComma": "all",
       "quoteStyle": "single"
     }
+  },
+  "files": {
+    "ignore": ["node_modules", "out", ".next"]
   }
 }

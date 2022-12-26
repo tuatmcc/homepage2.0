@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  min-height: calc(100svh - var(--navbar-pc-height));
+  padding: 0;
+  overflow: hidden;
+
+  @media screen and (max-width: 48em) {
+    min-height: calc(100svh - var(--navbar-mobile-height));
+    padding: 0;
+  }
+}

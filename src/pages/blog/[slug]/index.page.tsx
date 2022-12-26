@@ -1,7 +1,8 @@
 import { FC } from 'react';
 
-import ArticleWrapper from '~/components/common/ArticleWrapper/ArticleWrapper';
-import Page from '~/components/common/Page/Page';
+import { ArticleWrapper } from '~/components/common/ArticleWrapper';
+import { Helmet } from '~/components/common/Helmet';
+import { Layout } from '~/components/common/Layout';
 import { DynamicRouting } from '~/lib/dynamic-routing';
 import { Post, PostCollector } from '~/lib/post-collector';
 
@@ -19,9 +20,12 @@ type WorksPostPageProps = {
  */
 const WorksPost: FC<WorksPostPageProps> = ({ post }) => {
 	return (
-		<Page meta={post.frontmatter}>
-			<ArticleWrapper meta={post.frontmatter}>{post.content}</ArticleWrapper>
-		</Page>
+		<>
+			<Helmet meta={post.frontmatter} />
+			<Layout>
+				<ArticleWrapper meta={post.frontmatter}>{post.content}</ArticleWrapper>
+			</Layout>
+		</>
 	);
 };
 

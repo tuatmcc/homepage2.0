@@ -1,16 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Sanchez&family=JetBrains+Mono&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap');
 @import url('./_variables.css');
 
+/* stylelint-disable-next-line selector-id-pattern */
 html,
-body {
+body,
+#__next {
   top: 0;
   width: 100%;
+  min-height: 100svh;
   padding: 0;
   margin: 0;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: Arial, 'Noto Sans JP', sans-serif;
+  line-height: 1.6;
   color: var(--color-text-default);
   background: var(--color-mcc-primary);
+}
+
+p {
+  margin: 0;
 }
 
 a {
@@ -27,4 +34,9 @@ code {
   color: var(--color-code-text);
   background-color: var(--color-code-background);
   border-radius: 5px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
 }

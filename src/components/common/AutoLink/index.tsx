@@ -5,7 +5,6 @@ import styles from './style.module.css';
 export interface AutoLinkProps {
 	href?: string;
 	children?: string;
-	className?: string;
 }
 
 /**
@@ -13,20 +12,18 @@ export interface AutoLinkProps {
  * @param props href, children
  * @returns
  */
-const CustomLink = ({ href = '', children = '', className = '' }: AutoLinkProps) => {
+export const AutoLink = ({ href = '', children = '' }: AutoLinkProps) => {
 	if (href.startsWith('http')) {
 		return (
-			<a href={href} className={`${styles.externalLink} ${className}}`} target="_brank" rel="noreferror">
+			<a href={href} className={styles.externalLink} target="_brank" rel="noreferror">
 				{children}
 			</a>
 		);
 	} else {
 		return (
-			<Link href={href} className={`${styles.internalLink} ${className}}`}>
+			<Link href={href} className={styles.internalLink}>
 				{children}
 			</Link>
 		);
 	}
 };
-
-export default CustomLink;

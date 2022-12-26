@@ -1,29 +1,32 @@
 import Link from 'next/link';
 import { FC } from 'react';
 
-import Page from '../../components/common/Page/Page';
-import { PostCollector, PostCollectorProps } from '../../lib/post-collector';
+import styles from './style.module.css';
+
+import { Helmet } from '~/components/common/Helmet';
+import { Layout } from '~/components/common/Layout';
+import { PostCollector, PostCollectorProps } from '~/lib/post-collector';
 
 const meta = {
 	title: '活動報告',
 	description: 'Activities of TUATMCC',
-};
-
-type ActivitiesProps = {
-	posts: PostCollectorProps;
+	img: '/mcc-logo.svg',
 };
 
 // posts will be populated at build time by getStaticProps()
 const ActivitiesPage: FC<PostCollectorProps> = ({ posts }) => {
 	return (
-		<Page meta={meta}>
-			<h1>活動報告</h1>
-			{posts.map((post) => (
-				<div key={post.slug}>
-					<Link href={`activities/${post.slug}`}>{post.slug}</Link>
-				</div>
-			))}
-		</Page>
+		<>
+			<Helmet meta={meta} />
+			<Layout>
+				<h1 className={styles.title}>活動報告</h1>
+				{posts.map((post) => (
+					<div key={post.slug}>
+						<Link href={`activities/${post.slug}`}>{post.slug}</Link>
+					</div>
+				))}
+			</Layout>
+		</>
 	);
 };
 

@@ -12,8 +12,6 @@ export type DelProps = {
  * @param param0
  * @returns
  */
-const Del: FC<DelProps> = ({ children = '', className = '' }) => (
+export const Del: FC<DelProps> = ({ children = '', className = '' }) => (
 	<span className={`${styles.del} ${className}`}>{children}</span>
 );
-
-export default Del;

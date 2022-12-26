@@ -1,8 +1,8 @@
 .canvas {
-  transition: all 1s ease-in-out;
-
-  &.folding {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
 }
