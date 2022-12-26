@@ -11,17 +11,17 @@ type DrawerProps = {
 };
 
 export const Drawer: FC<DrawerProps> = ({ isOpen }) => {
-	const links = BASE_ROUTES_LIST.map((route) => (
-		<li key={route.PATH} className={styles.listItem}>
-			<Link href={route.PATH} className={styles.link}>
-				{route.LABEL}
-			</Link>
-		</li>
-	));
-
 	return (
 		<div className={classNames(styles.drawer, isOpen ? styles.open : '')}>
-			<ul className={styles.navIn}>{links}</ul>
+			<ul className={styles.navIn}>
+				{BASE_ROUTES_LIST.map((route) => (
+					<li key={route.PATH} className={styles.listItem}>
+						<Link href={route.PATH} className={styles.link}>
+							{route.LABEL}
+						</Link>
+					</li>
+				))}
+			</ul>
 		</div>
 	);
 };

@@ -21,7 +21,7 @@ export const Layout: FC<PageProps> = ({ children }) => {
 	return (
 		<>
 			{!isMobile && <NavbarPC />}
-			<div className={styles.container}>
+			<div className={styles.layout}>
 				{isMobile && <HeaderMobile />}
 				{children}
 			</div>

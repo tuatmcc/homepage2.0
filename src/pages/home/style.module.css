@@ -30,13 +30,5 @@
       opacity: 1;
       transform: translateY(0);
     }
-
-    & .subScreenIn {
-      padding: var(--navbar-pc-height) 0 0 0;
-
-      @media screen and (max-width: 62em) {
-        padding: 0 0 var(--navbar-mobile-height) 0;
-      }
-    }
   }
 }
