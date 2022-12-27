@@ -10,6 +10,7 @@ body,
   min-height: 100svh;
   padding: 0;
   margin: 0;
+  overflow: hidden;
   font-family: Arial, 'Noto Sans JP', sans-serif;
   line-height: 1.6;
   color: var(--color-text-default);

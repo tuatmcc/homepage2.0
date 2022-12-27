@@ -1,9 +1,11 @@
 .header {
+  position: relative;
   top: 0;
   width: 100%;
   height: auto;
 
   & .headerIn {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;

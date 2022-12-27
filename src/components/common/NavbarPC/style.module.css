@@ -1,6 +1,7 @@
 .header  {
   position: sticky;
   top: 0;
+  z-index: 5;
 
   & .navbar {
     z-index: 1;
@@ -11,6 +12,11 @@
     height: var(--navbar-pc-height);
     background: var(--color-background);
     border-bottom: 1px solid var(--color-border-default);
+
+    &._transparent {
+      background: transparent;
+      border-bottom: none;
+    }
     
     & .brandLink {
       display: flex;
