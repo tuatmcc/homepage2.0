@@ -8,7 +8,6 @@
     align-items: center;
     justify-content: center;
     height: var(--header-mobile-height);
-    margin: 0 3px;
     background-color: var(--color-background);
 
     & .title {

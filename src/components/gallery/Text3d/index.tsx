@@ -1,6 +1,6 @@
 import { Float, Center, OrbitControls, Text } from '@react-three/drei';
 import { Canvas, extend } from '@react-three/fiber';
-import { Bloom, EffectComposer } from '@react-three/postprocessing';
+// import { Bloom, EffectComposer } from '@react-three/postprocessing';
 import { FC, Suspense, useContext } from 'react';
 import threeFontJson from 'three/examples/fonts/helvetiker_bold.typeface.json';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
@@ -38,7 +38,7 @@ export const Text3d: FC<Text3dProps> = ({ onNextButtonClick }) => {
 	const font = new FontLoader().parse(threeFontJson);
 
 	return (
-		<Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, isMobile ? 10 : 5] }} className={styles.canvas}>
+		<Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, isMobile ? 8 : 5] }} className={styles.canvas}>
 			<directionalLight position={[0, 0, 5]} />
 			<Suspense fallback={null}>
 				<Float floatIntensity={3} speed={2}>
@@ -68,10 +68,10 @@ export const Text3d: FC<Text3dProps> = ({ onNextButtonClick }) => {
 					</Float>
 				</Center>
 			</Suspense>
-			<EffectComposer multisampling={8}>
+			{/* <EffectComposer multisampling={8}>
 				<Bloom kernelSize={3} luminanceThreshold={0} luminanceSmoothing={0.4} intensity={0.7} />
 				<Bloom kernelSize={5} luminanceThreshold={0} luminanceSmoothing={0} intensity={0.5} />
-			</EffectComposer>
+			</EffectComposer> */}
 			<OrbitControls enableZoom={false} />
 		</Canvas>
 	);

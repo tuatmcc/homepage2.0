@@ -4,7 +4,7 @@ import styles from './style.module.css';
 
 import { Helmet } from '~/components/common/Helmet';
 import { Layout } from '~/components/common/Layout';
-import { Text3d } from '~/components/sandbox/Text3d';
+import { Text3d } from '~/components/gallery/Text3d';
 
 const Text3DPage: FC = () => {
 	const meta = {

@@ -1,13 +1,11 @@
 .layout {
   width: 100%;
   min-height: calc(100svh - var(--navbar-pc-height));
-  padding: var(--navbar-pc-height) 0 0 0;
+  padding: 0;
   overflow: hidden;
 
   @media screen and (max-width: 48em) {
     min-height: calc(100svh - var(--navbar-mobile-height));
-    padding: 0;
-
-    /* したが隠れちゃう */
+    padding: 0 0 var(--navbar-mobile-height) 0;
   }
 }
