@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - 'develop'
+      - "develop"
   pull_request:
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 18.12.1
           cache: npm
-      - name: npm ci
-        run: npm ci
       - name: run lint
         run: npm run lint
+      - name: run typecheck
+        run: npm run build
