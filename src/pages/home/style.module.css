@@ -1,74 +1,34 @@
-@use '~/styles/variables.scss' as *;
-
-.landingPage {
-  position: absolute;
+.container {
   top: 0;
+  bottom: 0;
   width: 100%;
-  height: 100svh;
-  background-color: #fff;
+  height: 100%;
+  overflow: hidden;
 
-  .navToggle {
+  & .topScreen {
     position: absolute;
     top: 0;
-    right: 0;
-    width: 5rem;
-    height: 100%;
-    background-color: #ffffff80;
-  }
-}
-
-.header {
-  position: fixed;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: var(navbar-height);
-  padding-top: 0;
-  background-color: #fff;
-  box-shadow: 0 0 0.5em #00000050;
-
-  .brandLink {
-    display: flex;
-    align-items: center;
-    width: 50%;
-    height: inherit;
-    text-decoration: none;
-
-    .brandName {
-      margin: 0;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-size: 1.5em;
-      color: var(--color-mcc-primary);
+    z-index: 100;
+    width: 100%;
+    height: 100svh;
+    background-color: var(--color-mcc-primary);
+    transition: all 0.5s ease-in-out;
+    transform: translateY(0);
+  
+    &.close {
+      transform: translateY(-120%);
     }
   }
 
-  .menuIcon {
-    z-index: 100;
-    margin-right: 5px;
-  }
-
-  @include mq('lg') {
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: var(navbar-height);
-    padding-top: 0;
-    background-color: #fff;
-    box-shadow: 0 0 0.5em #00000050;
-
-    .brandLink {
-      display: flex;
-      align-items: center;
-      width: 50%;
-      height: inherit;
-
-      .brandName {
-        margin: 0;
-      }
+  & .subScreen {
+    top: 0;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(50%);
+  
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }

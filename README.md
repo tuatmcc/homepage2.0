@@ -3,11 +3,16 @@
 - 2022 年 11 月、MCC の HP リニューアルが決定しました。
 - `Next.js`で作成、`GitHub Pages`で公開します。
 - [Figma](https://www.figma.com/file/XTfW4NDafbsoMBCu5lNGkr/MCC-HOME-PAGE?node-id=0%3A1&t=F2uR5Q5TRy6jUzh3-1)でデザインを考えてたりします。
-- 勝手に[mcc-website-test.test.app](https://mcc-website-forked.vercel.app)でデモを動かしてみたりしてます。コロコロ変わります。
+- 勝手に[mcc-website-test.vercel.app](https://mcc-website-test.vercel.app)でデモを動かしてみたりしてます。コロコロ変わります。
 
 ## 記事の書き方
 
-- あとで
+- `develop`ブランチから`feature/tekitou`みたいなブランチを切って、そこで記事を書く。
+- `develop`ブランチにPRを出す。
+
+or
+
+- `main`ブランチから切ったほうがいよかったりするかな？
 
 ## 概要
 
@@ -32,7 +37,7 @@
 ## メンテの仕方
 
 - `VSCode`の使用を想定しています。
-- [ここ](https://github.com/tuatmcc/mcc-website/wiki/development-maintenance)を参照
+- [ここ](https://github.com/tuatmcc/mcc-website/wiki/%E9%96%8B%E7%99%BA%E3%83%BB%E3%83%A1%E3%83%B3%E3%83%86%E3%83%8A%E3%83%B3%E3%82%B9)を参照
 - 何かあれば Issue や Discord に。
 
 ## リニューアルにあたって
@@ -49,16 +54,6 @@
 - develop ブランチで開発・編集、master(main)にマージして自動デプロイ
 - `yarn`じゃなくて`npm`だけでパッケージ管理する。
 - `ESLint`や`Prettier`でフォーマットを統一する
-
-### 今のところの方針やアイデア（変わる可能性あり）
-
-- 阿部寛のようにはしない
-- レスポンシブ対応
-- `module.css`でスタイルを書く
-- svg で作ってアニメーションとか？
-- React Three Fiber で背景に 3D とか
-- 3D のために`React Three Fiber`をいれた。
-- 何も知らない部員が見ても、理解できるようにしたい → [記録](https://github.com/tuatmcc/mcc-website/wiki)
 
 ## 開発記録
 

@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 
-import markdownToHtml from './markdown-to-html';
+import { markdownToHtml} from './markdown-to-html';
 import { Post, PostCollector } from './post-collector';
 
 /**

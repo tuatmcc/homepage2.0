@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "plugins": [
       {
         "name": "typescript-plugin-css-modules"
@@ -9,7 +13,9 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": [
+        "src/*"
+      ]
     },
     "allowJs": true,
     "skipLibCheck": true,
@@ -22,8 +28,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "sourceMap": true
   },
-  "include": ["next-env.d.ts", "src", "postcss.config.js", "postcss.config.js"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "src",
+    "postcss.config.js",
+    "postcss.config.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

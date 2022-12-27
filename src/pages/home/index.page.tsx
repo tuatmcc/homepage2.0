@@ -1,36 +1,36 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import { FC, useContext, useState } from 'react';
+import { FC, useState } from 'react';
 
 import styles from './style.module.css';
 
-import NavbarMobile from '~/components/common/NavbarMobile/NavbarMobile';
-import NavbarPC from '~/components/common/NavbarPC/NavbarPC';
-import HomeCanvas from '~/components/home/HomeCanvas/HomeCanvas';
-import { MediaQueryContext } from '~/providers/MediaQueryProvider';
+import { Helmet } from '~/components/common/Helmet';
+import { Layout } from '~/components/common/Layout';
+import { Text3d } from '~/components/gallery/Text3d';
+import classNames from '~/utilities/classNames';
 
-export type LandingPageProps = {};
-
-const LandingPage: FC<LandingPageProps> = () => {
-	const { isMobile } = useContext(MediaQueryContext);
+const LandingPage: FC = () => {
+	const meta = {
+		title: 'Home',
+		description: '東京農工大学公認サークルMCC(マイクロコンピュータクラブ)のホームページです',
+		img: '/mcc-logo.svg',
+	};
+	const [isOpeningVisible, setIsOpeningVisible] = useState(true);
 	return (
 		<>
-			<Head>
-				<title>Home - MCC</title>
-
-				<meta
-					lang='ja'
-					name="description"
-					content="東京農工大学公認サークルMCC(マイクロコンピュータクラブ)のホームページです"
-				/>
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-
-			<div className={styles.landingPage}>
-				<HomeCanvas />
-			</div>
-
-			{isMobile ? <NavbarMobile /> : <NavbarPC />}
+			<Helmet meta={meta} />
+			<Layout>
+				<div className={styles.container}>
+					<div className={classNames(styles.subScreen, isOpeningVisible ? '' : styles.visible)}>
+						<div className={styles.subScreenIn}>
+							<h1>We Are MCC</h1>
+							<p>私たちは、東京農工大学マイクロ</p>
+							<p>コンピュータークラブです</p>
+						</div>
+					</div>
+					<div className={`${styles.topScreen} ${!isOpeningVisible ? styles.close : ''}`}>
+						<Text3d onNextButtonClick={() => setIsOpeningVisible(!isOpeningVisible)} />
+					</div>
+				</div>
+			</Layout>
 		</>
 	);
 };

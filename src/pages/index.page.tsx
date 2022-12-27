@@ -9,7 +9,7 @@ const IndexPage: NextPage = () => {
 
 	useEffect(() => {
 		router.replace(ROUTES.HOME.PATH);
-	});
+	}, [router]);
 	return <div>Loading...</div>;
 };
 

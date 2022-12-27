@@ -87,7 +87,7 @@ export class PostCollector {
 	 * @returns posts: { slug: string, frontmatter: { title: string, etc... } }[]
 	 */
 	getStaticProps: GetStaticProps<{ posts: Post[] }> = async () => {
-		const postPaths = this.getAllPostPaths();
+		const _postPaths = this.getAllPostPaths();
 		const posts = this.getAllPosts();
 		return {
 			props: {
