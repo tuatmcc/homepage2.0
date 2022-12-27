@@ -9,9 +9,9 @@ import styles from './style.module.css';
 import { AutoLink, AutoLinkProps } from '~/components/common/AutoLink';
 import { CodeBlock } from '~/components/common/CodeBlock';
 import { Del } from '~/components/common/Del';
-import { MiniLinkIcon } from '~/components/common/Icons/MiniLinkIcon';
 import { Tag } from '~/components/common/Tag';
 import { TagList } from '~/components/common/TagList';
+import { MiniLinkIcon } from '~/components/common/icons/MiniLinkIcon';
 import { MetaData } from '~/types/meta';
 
 export type ArticleWrapperProps = {

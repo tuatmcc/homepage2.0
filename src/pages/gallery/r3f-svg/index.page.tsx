@@ -1,6 +1,6 @@
 import { CameraShake, OrbitControls } from '@react-three/drei';
 import { Canvas, useThree, useFrame, useLoader, MeshProps } from '@react-three/fiber';
-import { EffectComposer, Bloom } from '@react-three/postprocessing';
+// import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { useState, useRef, Suspense, useMemo, FC } from 'react';
 import * as THREE from 'three';
 import { Group } from 'three';
@@ -110,10 +110,10 @@ const R3fTest: FC = () => {
 								<Triangle2 color="orange" scale={0.009} position={[-4, 0, -2]} rotation={[0, 0, Math.PI / 3]} />
 								<Triangle2 color="white" scale={0.009} position={[-2, 2, -10]} rotation={[0, 0, Math.PI / 3]} />
 							</Rig>
-							<EffectComposer multisampling={8}>
+							{/* <EffectComposer multisampling={8}>
 								<Bloom kernelSize={3} luminanceThreshold={0} luminanceSmoothing={0.4} intensity={0.6} />
 								<Bloom kernelSize={5} luminanceThreshold={0} luminanceSmoothing={0} intensity={0.5} />
-							</EffectComposer>
+							</EffectComposer> */}
 						</Suspense>
 						<CameraShake yawFrequency={0.2} pitchFrequency={0.2} rollFrequency={0.2} />
 					</Canvas>

@@ -11,7 +11,7 @@ export type SandboxPageProps = {
 	paths: string[];
 };
 
-const SandboxPage: FC<SandboxPageProps> = ({ paths }) => {
+const GalleryPage: FC<SandboxPageProps> = ({ paths }) => {
 	const meta = {
 		title: 'Gallery',
 		description: 'Gallery - where you can see webgl experiments',
@@ -20,7 +20,7 @@ const SandboxPage: FC<SandboxPageProps> = ({ paths }) => {
 		<>
 			<Helmet meta={meta} />
 			<Layout>
-				<h1>お砂場</h1>
+				<h1>Gallery</h1>
 				<p>いろいろなものを試す場所</p>
 				<ul>
 					{paths.map((path) => (
@@ -34,12 +34,12 @@ const SandboxPage: FC<SandboxPageProps> = ({ paths }) => {
 	);
 };
 
-export default SandboxPage;
+export default GalleryPage;
 
 export const getStaticProps: GetStaticProps<SandboxPageProps> = async () => {
-	const paths = await fs.readdir('src/pages/sandbox', { withFileTypes: true });
-	const pathNames = paths.map((path) => `/sandbox/${path.name}`);
-	pathNames.splice(pathNames.indexOf('/sandbox/index.page.tsx'), 1);
+	const paths = await fs.readdir('src/pages/gallery', { withFileTypes: true });
+	const pathNames = paths.map((path) => `/gallery/${path.name}`);
+	pathNames.splice(pathNames.indexOf('/gallery/index.page.tsx'), 1);
 	return {
 		props: {
 			paths: await Promise.all(pathNames),

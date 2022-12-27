@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - 'develop'
+      - "develop"
   pull_request:
 
 jobs:
@@ -22,3 +22,5 @@ jobs:
         run: npm ci
       - name: run lint
         run: npm run lint
+      - name: run typecheck
+        run: npm run build

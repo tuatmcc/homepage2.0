@@ -4,12 +4,12 @@ import { FC, useState } from 'react';
 import styles from './style.module.css';
 
 import { Drawer } from '~/components/common/Drawer';
-import { BrowserIcon } from '~/components/common/Icons/BrowserIcon';
-import { CloseIcon } from '~/components/common/Icons/CloseIcon';
-import { HomeIcon } from '~/components/common/Icons/HomeIcon';
-import { InfoIcon } from '~/components/common/Icons/InfoIcon';
-import { MenuBurgerIcon } from '~/components/common/Icons/MenuBurgerIcon';
-import { StarIcon } from '~/components/common/Icons/StarIcon';
+import { BrowserIcon } from '~/components/common/icons/BrowserIcon';
+import { CloseIcon } from '~/components/common/icons/CloseIcon';
+import { HomeIcon } from '~/components/common/icons/HomeIcon';
+import { InfoIcon } from '~/components/common/icons/InfoIcon';
+import { MenuBurgerIcon } from '~/components/common/icons/MenuBurgerIcon';
+import { StarIcon } from '~/components/common/icons/StarIcon';
 import { ROUTES } from '~/constants/routes';
 
 type NavbarMobileProps = {
