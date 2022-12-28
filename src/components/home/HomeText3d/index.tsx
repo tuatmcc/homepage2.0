@@ -22,7 +22,7 @@ const Rig: FC<RigProps> = ({ children }) => {
 		outer.current.position.y = MathUtils.lerp(outer.current.position.y, 0, 0.01);
 		inner.current.rotation.y = Math.cos(clock.getElapsedTime() / 8) * Math.PI;
 		inner.current.position.z = Math.sin(clock.getElapsedTime() / 2) * 16;
-		inner.current.position.y = 2 + Math.sin(clock.getElapsedTime()) * 3;
+		inner.current.position.y = 1 + Math.sin(clock.getElapsedTime()) * 3;
 	});
 	return (
 		<group position={[0, -100, 0]} ref={outer}>
@@ -53,7 +53,7 @@ const RandomText: FC = () => {
 	);
 };
 
-export const Text3d: FC<Text3dProps> = ({ onNextButtonClick }) => {
+export const HomeText3d: FC<Text3dProps> = ({ onNextButtonClick }) => {
 	const font = new FontLoader().parse(threeFontJson);
 
 	return (
@@ -61,28 +61,28 @@ export const Text3d: FC<Text3dProps> = ({ onNextButtonClick }) => {
 			<Suspense fallback={null}>
 				<directionalLight position={[0, 0, 5]} />
 				<Rig>
-						<Float floatIntensity={5} speed={3}>
-							<mesh position={[-20, 8, 0]}>
-								{/* @ts-ignore */}
-								<textGeometry args={['Micro', { font, size: 5, height: 1 }]} />
-								<meshPhysicalMaterial color='orange' />
-							</mesh>
-						</Float>
-						<Float floatIntensity={5} speed={3}>
-							<mesh position={[-16, 0, 0]}>
-								{/* @ts-ignore */}
-								<textGeometry args={['Computer', { font, size: 5, height: 1 }]} />
-								<meshPhysicalMaterial color='cyan' />
-							</mesh>
-						</Float>
-						<Float floatIntensity={5} speed={3}>
-							<mesh position={[2, -8, 0]}>
-								{/* @ts-ignore */}
-								<textGeometry args={['Club', { font, size: 5, height: 1 }]} />
-								<meshPhysicalMaterial color='yellowgreen' />
-							</mesh>
-						</Float>
-						<RandomText />
+					<Float floatIntensity={5} speed={3}>
+						<mesh position={[-20, 8, 0]}>
+							{/* @ts-ignore */}
+							<textGeometry args={['Micro', { font, size: 5, height: 1 }]} />
+							<meshPhysicalMaterial color='orange' />
+						</mesh>
+					</Float>
+					<Float floatIntensity={5} speed={3}>
+						<mesh position={[-16, 0, 0]}>
+							{/* @ts-ignore */}
+							<textGeometry args={['Computer', { font, size: 5, height: 1 }]} />
+							<meshPhysicalMaterial color='cyan' />
+						</mesh>
+					</Float>
+					<Float floatIntensity={5} speed={3}>
+						<mesh position={[2, -8, 0]}>
+							{/* @ts-ignore */}
+							<textGeometry args={['Club', { font, size: 5, height: 1 }]} />
+							<meshPhysicalMaterial color='yellowgreen' />
+						</mesh>
+					</Float>
+					<RandomText />
 				</Rig>
 			</Suspense>
 			{/* <EffectComposer multisampling={8}>

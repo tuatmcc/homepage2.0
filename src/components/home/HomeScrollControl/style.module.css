@@ -1,0 +1,35 @@
+.canvas {
+  width: 100%;
+  line-height: 1;
+  color: white;
+
+  & .introduction {
+    position: absolute;
+    top: 20vh;
+    left: 0.5em;
+    width: 90vw;
+    font-size: 40px;
+  }
+
+  & .name1 {
+    position: absolute;
+    top: 40vh;
+    left: 50vw;
+    width: 90vw;
+    font-size: 20vw;
+  }
+
+  & .heading2 {
+    position: absolute;
+    top: 80vh;
+    left: 60vw;
+    font-size: 15vw;
+  }
+
+  & .heading3 {
+    position: absolute;
+    top: 148vh;
+    left: 0.5vw;
+    font-size: 40vw;
+  }
+}
