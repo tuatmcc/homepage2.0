@@ -36,7 +36,7 @@
     "src",
     "postcss.config.js",
     "postcss.config.js"
-  ],
+, "helpers"  ],
   "exclude": [
     "node_modules"
   ]

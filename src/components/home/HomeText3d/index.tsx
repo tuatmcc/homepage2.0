@@ -20,12 +20,12 @@ const Rig: FC<RigProps> = ({ children }) => {
 	const inner = useRef<Group>(null!);
 	useFrame(({ clock }) => {
 		outer.current.position.y = MathUtils.lerp(outer.current.position.y, 0, 0.01);
-		inner.current.rotation.y = Math.cos(clock.getElapsedTime() / 8) * Math.PI;
+		inner.current.rotation.y = Math.sin(clock.getElapsedTime() / 8 + 5.5) * Math.PI;
 		inner.current.position.z = Math.sin(clock.getElapsedTime() / 2) * 16;
 		inner.current.position.y = 1 + Math.sin(clock.getElapsedTime()) * 3;
 	});
 	return (
-		<group position={[0, -100, 0]} ref={outer}>
+		<group position={[0, -50, 0]} ref={outer}>
 			<group ref={inner}>{children}</group>
 		</group>
 	);
@@ -57,7 +57,7 @@ export const HomeText3d: FC<Text3dProps> = ({ onNextButtonClick }) => {
 	const font = new FontLoader().parse(threeFontJson);
 
 	return (
-		<Canvas dpr={[1, 1.5]} camera={{ position: [0, 15, 30] }} className={styles.canvas} onClick={onNextButtonClick}>
+		<Canvas dpr={[1, 1.5]} camera={{ position: [0, 15, 24] }} className={styles.canvas} onClick={onNextButtonClick}>
 			<Suspense fallback={null}>
 				<directionalLight position={[0, 0, 5]} />
 				<Rig>

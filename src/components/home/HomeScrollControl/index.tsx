@@ -5,6 +5,7 @@ import { Group } from 'three';
 
 import styles from './style.module.css';
 
+import { PopUp } from '~/components/common/intersection-animations/PopUp';
 
 const Images: FC = () => {
 	const { width, height } = useThree((state) => state.viewport);
@@ -47,19 +48,27 @@ const Images: FC = () => {
 	);
 };
 
+
 export const HomeScrollControl: FC = () => {
 	return (
 		<Canvas gl={{ antialias: false }} dpr={[1, 1.5]} className={styles.canvas}>
 			<Suspense fallback={null}>
-				<ScrollControls damping={4} pages={3}>
+				<ScrollControls damping={4} pages={4}>
 					<Scroll>
 						<Images />
 					</Scroll>
 					<Scroll html>
-						<h1 className={styles.introduction}>私たちは、東京農工大学テック系サークル</h1>
-            <h1 className={styles.name1}>MCC</h1>
-						<h1 className={styles.heading2}>a new</h1>
-						<h1 className={styles.heading3}>World</h1>
+            <PopUp>
+						  <h1 className={styles.intro}>TUAT Tech Group</h1>
+            </PopUp>
+            <PopUp>
+              <h1 className={styles.name1}>MCC</h1>
+            </PopUp>
+            <h2 className={styles.name2}>私たちは、<br />東京農工大学<br />マイクロコンピュータークラブです。</h2>
+						<h1 className={styles.heading2}>new</h1>
+            <PopUp>
+						  <h1 className={styles.heading3}>World</h1>
+            </PopUp>
 					</Scroll>
 				</ScrollControls>
 				<Preload />
