@@ -11,6 +11,7 @@
 
 .list {
   display: flex;
+  flex-direction: column;
   gap: 16px;
   max-width: 1000px;
   margin: 16px auto;
@@ -21,7 +22,6 @@
   
   & .listItem {
     display: flex;
-    gap: 16px;
     background: linear-gradient(120deg, var(--color-mcc-primary), var(--color-mcc-secondary));
     border-radius: 16px;
     box-shadow: var(--color-shadow-large);
@@ -40,12 +40,15 @@
     }
 
     & .image {
+      width: 300px;
+      height: 160px;
       margin: 16px;
       border-radius: 12px;
       object-fit: cover;
       
       @media screen and (max-width: 62em) {
         width: auto;
+        margin-bottom: 0;
       }
     }
 

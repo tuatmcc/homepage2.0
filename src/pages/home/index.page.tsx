@@ -4,7 +4,8 @@ import styles from './style.module.css';
 
 import { Helmet } from '~/components/common/Helmet';
 import { Layout } from '~/components/common/Layout';
-import { Text3d } from '~/components/gallery/Text3d';
+import { HomeScrollControl } from '~/components/home/HomeScrollControl';
+import { HomeText3d } from '~/components/home/HomeText3d';
 import classNames from '~/utilities/classNames';
 
 const LandingPage: FC = () => {
@@ -17,17 +18,15 @@ const LandingPage: FC = () => {
 	return (
 		<>
 			<Helmet meta={meta} />
-			<Layout>
+			<Layout noMobileHeader>
 				<div className={styles.container}>
 					<div className={classNames(styles.subScreen, isOpeningVisible ? '' : styles.visible)}>
-						<div className={styles.subScreenIn}>
-							<h1>We Are MCC</h1>
-							<p>私たちは、東京農工大学マイクロ</p>
-							<p>コンピュータークラブです</p>
-						</div>
+						<HomeScrollControl />
 					</div>
+
 					<div className={`${styles.topScreen} ${!isOpeningVisible ? styles.close : ''}`}>
-						<Text3d onNextButtonClick={() => setIsOpeningVisible(!isOpeningVisible)} />
+						<HomeText3d onNextButtonClick={() => setIsOpeningVisible(!isOpeningVisible)} />
+						<div className={styles.direction}>Click Anywhere -</div>
 					</div>
 				</div>
 			</Layout>
