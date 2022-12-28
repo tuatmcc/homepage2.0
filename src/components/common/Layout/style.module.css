@@ -1,11 +1,25 @@
 .layout {
   width: 100%;
-  min-height: calc(100svh - var(--navbar-pc-height));
+  height: calc(100svh - var(--navbar-pc-height));
   padding: 0;
-  overflow: hidden;
+  margin: 0;
+  overflow: auto;
 
   @media screen and (max-width: 48em) {
-    min-height: calc(100svh - var(--navbar-mobile-height));
-    padding: 0 0 var(--navbar-mobile-height) 0;
+    height: calc(100svh - var(--navbar-mobile-height));
+    padding: 0;
+  }
+
+  &._noMobileHeader {
+    position: relative;
+    height: calc(100svh - var(--navbar-pc-height));
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    
+    @media screen and (max-width: 48em) {
+      height: calc(100vh - var(--navbar-mobile-height));
+      padding: 0;
+    }
   }
 }

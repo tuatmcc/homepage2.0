@@ -1,7 +1,7 @@
 ---
 title: 部室入室管理システム
-img: mcc-logo.svg
-date: 2022-3-16
+img: '/mcc-design.jpg'
+date: '2022-03-16'
 tags: [dev, web]
 ---
 
