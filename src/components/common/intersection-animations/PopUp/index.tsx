@@ -1,5 +1,5 @@
 import { useInView, animated } from '@react-spring/web';
-import { FC, ReactNode} from 'react';
+import { FC, ReactNode } from 'react';
 
 const buildInteractionObserverThreshold = (count = 100) => {
 	const threshold = [];
@@ -13,30 +13,30 @@ const buildInteractionObserverThreshold = (count = 100) => {
 	return threshold;
 };
 
-export const PopUp: FC<{children?: ReactNode}> = ({ children }) => {
+export const PopUp: FC<{ children?: ReactNode }> = ({ children }) => {
 	const [ref, springs] = useInView(
 		() => ({
 			from: {
-        transform: 'scaleY(0.1)',
+				transform: 'scaleY(0.1)',
 				opacity: 0,
 				y: 80,
 			},
 			to: {
-        transform: 'scaleY(1)',
+				transform: 'scaleY(1)',
 				opacity: 1,
 				y: 0,
 			},
-      config: {
-        mass: 1,
-        tension: 200,
-        friction: 20,
-      },
-      delay: 1000,
+			config: {
+				mass: 1,
+				tension: 200,
+				friction: 20,
+			},
+			delay: 1000,
 		}),
 		{
 			rootMargin: '-45% 0px -45% 0px',
 			amount: buildInteractionObserverThreshold(),
-      once: true,
+			once: true,
 		},
 	);
 
