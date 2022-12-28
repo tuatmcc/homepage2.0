@@ -33,7 +33,7 @@ const Images: FC = () => {
 	return (
 		<group ref={group}>
 			<ImageImpl position={[-2, 0, 0]} scale={[4, height]} url="/school-fes-2022-illustrace.webp" />
-			<ImageImpl position={[2, 0, 1]} scale={3} url="/random-programing-image-1.webp" />
+			<ImageImpl position={[2, 0, 1]} scale={3} url="/school-fes-2022-room.webp" />
 			<ImageImpl position={[-2.3, -height, 2]} scale={[1, 3]} url="/random-programing-image-1.webp" />
 			<ImageImpl position={[-0.6, -height, 3]} scale={[1, 2]} url="/random-programing-image-1.webp" />
 			<ImageImpl position={[0.75, -height, 3.5]} scale={1.5} url="/mcc-desktop-pc.webp" />

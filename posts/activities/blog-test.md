@@ -1,8 +1,8 @@
 ---
 title: ホームページをリニューアルしました
 description: ホームページをリニューアルしました
-img: /website-renewal/website-renewal.png
-date: 2023-2-3
+img: '/website-renewal/website-renewal.png'
+date: '2023-01-03'
 tags: [dev, web, nextjs]
 ---
 
