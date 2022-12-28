@@ -61,28 +61,28 @@ export const Text3d: FC<Text3dProps> = ({ onNextButtonClick }) => {
 			<Suspense fallback={null}>
 				<directionalLight position={[0, 0, 5]} />
 				<Rig>
-						<Float floatIntensity={5} speed={3}>
-							<mesh position={[-20, 8, 0]}>
-								{/* @ts-ignore */}
-								<textGeometry args={['Micro', { font, size: 5, height: 1 }]} />
-								<meshPhysicalMaterial color='orange' />
-							</mesh>
-						</Float>
-						<Float floatIntensity={5} speed={3}>
-							<mesh position={[-16, 0, 0]}>
-								{/* @ts-ignore */}
-								<textGeometry args={['Computer', { font, size: 5, height: 1 }]} />
-								<meshPhysicalMaterial color='cyan' />
-							</mesh>
-						</Float>
-						<Float floatIntensity={5} speed={3}>
-							<mesh position={[2, -8, 0]}>
-								{/* @ts-ignore */}
-								<textGeometry args={['Club', { font, size: 5, height: 1 }]} />
-								<meshPhysicalMaterial color='yellowgreen' />
-							</mesh>
-						</Float>
-						<RandomText />
+					<Float floatIntensity={5} speed={3}>
+						<mesh position={[-20, 8, 0]}>
+							{/* @ts-ignore */}
+							<textGeometry args={['Micro', { font, size: 5, height: 1 }]} />
+							<meshPhysicalMaterial color='orange' />
+						</mesh>
+					</Float>
+					<Float floatIntensity={5} speed={3}>
+						<mesh position={[-16, 0, 0]}>
+							{/* @ts-ignore */}
+							<textGeometry args={['Computer', { font, size: 5, height: 1 }]} />
+							<meshPhysicalMaterial color='cyan' />
+						</mesh>
+					</Float>
+					<Float floatIntensity={5} speed={3}>
+						<mesh position={[2, -8, 0]}>
+							{/* @ts-ignore */}
+							<textGeometry args={['Club', { font, size: 5, height: 1 }]} />
+							<meshPhysicalMaterial color='yellowgreen' />
+						</mesh>
+					</Float>
+					<RandomText />
 				</Rig>
 			</Suspense>
 			{/* <EffectComposer multisampling={8}>

@@ -14,7 +14,6 @@ export const ParallaxTest = () => {
 	return (
 		<div className={styles.parallaxTest}>
 			<Parallax ref={parallax} pages={3}>
-
 				<ParallaxLayer offset={0} speed={0.4} style={{ pointerEvents: 'none' }}>
 					<>
 						<Image alt='' src='/random-programing-image-1.webp' width={10} height={10} className={styles.image1} />
@@ -25,9 +24,9 @@ export const ParallaxTest = () => {
 					<Image alt='' src='/mcc-desktop-pc.webp' width={10} height={10} className={styles.image2} />
 				</ParallaxLayer>
 
-        <ParallaxLayer offset={1.3} speed={-0.3}>
-          <Image alt='' src='/school-fes-2022-room.webp' width={10} height={10} className={styles.image3} />
-        </ParallaxLayer>
+				<ParallaxLayer offset={1.3} speed={-0.3}>
+					<Image alt='' src='/school-fes-2022-room.webp' width={10} height={10} className={styles.image3} />
+				</ParallaxLayer>
 
 				<ParallaxLayer offset={1.5}>
 					<animated.h1 className={styles.name2}>私たちは、東京農工大学マイクロコンピュータークラブです。</animated.h1>

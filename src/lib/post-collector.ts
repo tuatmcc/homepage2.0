@@ -55,7 +55,7 @@ export class PostCollector {
 		try {
 			const fileContents = fs.readFileSync(fullPath, 'utf8');
 			const { data, content } = matter(fileContents);
-      data.date = data.date ? data.date : '';
+			data.date = data.date ? data.date : '';
 			return { slug: slug, frontmatter: data as MetaData, content };
 		} catch (e) {
 			console.error(e);
