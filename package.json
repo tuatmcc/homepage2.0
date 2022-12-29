@@ -14,7 +14,7 @@
     "@react-spring/parallax": "^9.6.1",
     "@react-spring/web": "^9.6.1",
     "@react-three/cannon": "^6.5.0",
-    "@react-three/drei": "^9.48.1",
+    "@react-three/drei": "^9.48.2",
     "@react-three/fiber": "^8.9.1",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
