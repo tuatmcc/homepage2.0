@@ -1,7 +1,6 @@
 import { Preload, ScrollControls, Scroll, useScroll, Image as ImageImpl } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { FC, Suspense, useRef } from 'react';
-import { Group } from 'three';
+import { FC, Suspense, useState } from 'react';
 
 import styles from './style.module.css';
 
@@ -10,44 +9,41 @@ import { PopUp } from '~/components/common/intersection-animations/PopUp';
 const Images: FC = () => {
 	const { width, height } = useThree((state) => state.viewport);
 	const data = useScroll();
-	const group = useRef<Group>(null!);
+	const [zoom, setZoom] = useState(new Array<number>(6).fill(1));
+
 	useFrame(() => {
-		if (group.current) {
-      {/** @ts-ignore */}
-			group.current.children[0].material.zoom = 1 + data.range(0, 1 / 3) / 3;
-      {/** @ts-ignore */}
-			group.current.children[1].material.zoom = 1 + data.range(0, 1 / 3) / 3;
-      {/** @ts-ignore */}
-			group.current.children[2].material.zoom = 1 + data.range(1.15 / 3, 1 / 3) / 3;
-      {/** @ts-ignore */}
-			group.current.children[3].material.zoom = 1 + data.range(1.15 / 3, 1 / 3) / 2;
-      {/** @ts-ignore */}
-			group.current.children[4].material.zoom = 1 + data.range(1.25 / 3, 1 / 3) / 1;
-      {/** @ts-ignore */}
-			group.current.children[5].material.zoom = 1 + data.range(1.8 / 3, 1 / 3) / 3;
-      {/** @ts-ignore */}
-			group.current.children[5].material.grayscale = 1 - data.range(1.6 / 3, 1 / 3);
-      {/** @ts-ignore */}
-			group.current.children[6].material.zoom = 1 + (1 - data.range(2 / 3, 1 / 3)) / 3;
-		}
+		setZoom([
+			1 + data.range(0, 1 / 3) / 3,
+			1 + data.range(1.25 / 3, 1 / 3) / 3,
+			1 + data.range(1.5 / 3, 1 / 3) / 3,
+			1 + data.range(1.15 / 3, 1 / 3) / 2,
+			1 + data.range(1.25 / 3, 1 / 3) / 1,
+			1 + data.range(1.8 / 3, 1 / 3) / 3,
+			1 + (1 - data.range(2 / 3, 1 / 3)) / 3,
+		]);
 	});
 	return (
-		<group ref={group}>
-			<ImageImpl position={[-2, 0, 0]} scale={[4, height]} url="/random-programing-image-1.webp" />
-			<ImageImpl position={[2, 0, 1]} scale={3} url="/school-fes-2022-illustrace.webp" />
-			<ImageImpl position={[-2.3, -height, 2]} scale={[1, 3]} url="/school-fes-2022-room.webp" />
-			<ImageImpl position={[-0.6, -height, 3]} scale={[1, 2]} url="/random-programing-image-1.webp" />
-			<ImageImpl position={[0.75, -height, 3.5]} scale={1.5} url="/mcc-desktop-pc.webp" />
-			<ImageImpl position={[0, -height * 1.5, 2.5]} scale={[1.5, 3]} url="/random-programing-image-1.webp" />
+		<group>
+			<ImageImpl position={[-2, 0, 0]} zoom={zoom[0]} scale={[4, height]} url="/random-programing-image-1.webp" />
+			<ImageImpl position={[2, 0, 1]} scale={3} zoom={zoom[1]} url="/school-fes-2022-illustrace.webp" />
+			<ImageImpl position={[-2.3, -height, 2]} scale={[1, 3]} zoom={zoom[2]} url="/school-fes-2022-room.webp" />
+			<ImageImpl position={[-0.6, -height, 3]} scale={[1, 2]} zoom={zoom[3]} url="/random-programing-image-1.webp" />
+			<ImageImpl position={[0.75, -height, 3.5]} scale={1.5} zoom={zoom[4]} url="/mcc-desktop-pc.webp" />
 			<ImageImpl
+				position={[0, -height * 1.5, 2.5]}
+				scale={[1.5, 3]}
+				zoom={zoom[5]}
+				url="/random-programing-image-1.webp"
+			/>
+			<ImageImpl
+				zoom={zoom[6]}
 				position={[0, -height * 2 - height / 4, 0]}
 				scale={[width, height]}
-				url="/random-programing-image-1.webp"
+				url="/random-tech-image-1.webp"
 			/>
 		</group>
 	);
 };
-
 
 export const HomeScrollControl: FC = () => {
 	return (
@@ -58,17 +54,21 @@ export const HomeScrollControl: FC = () => {
 						<Images />
 					</Scroll>
 					<Scroll html>
-            <PopUp>
-						  <h1 className={styles.intro}>TUAT Tech Group</h1>
-            </PopUp>
-            <PopUp>
-              <h1 className={styles.name1}>MCC</h1>
-            </PopUp>
-            <h2 className={styles.name2}>私たちは、<br />東京農工大学<br />マイクロコンピュータークラブです。</h2>
-						<h1 className={styles.heading2}>new</h1>
-            <PopUp>
-						  <h1 className={styles.heading3}>World</h1>
-            </PopUp>
+						<PopUp>
+							<h1 className={styles.intro}>TUAT Tech Group</h1>
+						</PopUp>
+						<PopUp>
+							<h1 className={styles.name1}>MCC</h1>
+						</PopUp>
+						<h2 className={styles.name2}>
+							私たちは、東京農工大学
+							<br />
+							マイクロコンピュータークラブ。
+						</h2>
+						<h1 className={styles.heading1}>Infomation</h1>
+						<PopUp>
+							<h1 className={styles.heading2}>Technology</h1>
+						</PopUp>
 					</Scroll>
 				</ScrollControls>
 				<Preload />
