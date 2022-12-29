@@ -42,13 +42,13 @@ const ActivitiesPage: FC<PostCollectorProps> = ({ posts }) => {
 											width={350}
 											height={200}
 											onError={(e) => {
-												e.currentTarget.src = '/mcc-design.jpg';
+												e.currentTarget.src = '/mcc-design.webp';
 											}}
 										/>
 									) : (
 										<Image
 											className={styles.image}
-											src="/mcc-design.jpg"
+											src="/mcc-design.webp"
 											alt={post.frontmatter.title}
 											width={350}
 											height={200}

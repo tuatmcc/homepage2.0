@@ -1,8 +1,9 @@
 ---
 title: 'Discord Bot チュートリアル'
+description: 'Discord Bot の開発チュートリアルを行いました。'
 date: '2022-03-16'
 tags: ['dev']
-img: '/random-programing-image-1.jpg'
+img: '/random-tech-image-1.webp'
 ---
 
 # Discord Bot チュートリアル
@@ -135,11 +136,11 @@ Bot をサーバーに追加していきます。最初にテスト用のサー�
 1. Discord にログインした状態で、Discord Developer Portal の[Application](https://discord.com/developers/applications/)ページに移動してください。
 2. 右上の`New Application`をクリックして、いい感じの名前をつけて`Create`してください。
 
-!['image](/activities/discord-bot-tutorial/create_app.png)
+![creat app](./create-app.webp)
 
 3. 左のメニューから`Bot`をクリックして、`Add Bot -> Yes, do it!`をクリックしてください。`A wild bot has appeared!`みたいなメッセージが表示されれば OK です。
 
-![image](/activities/discord-bot-tutorial/add_bot.png)
+![add bot](./add-bot.webp)
 
 ### Bot をサーバーに招待
 
@@ -149,7 +150,7 @@ Bot をサーバーに追加していきます。最初にテスト用のサー�
 2. `SCOPES`の中の`bot`, `applications.commands`にチェックを入れてください。
 3. `BOT PERMISSIONS`の中の`Send Messages`にチェックを入れてください。これにより、Bot にメッセージ送信権限が付与されます。他の権限が必要な場合は適宜チェックを増やしてください。
 
-![iamge](/activities/discord-bot-tutorial/permission.png)
+![permission](./permission.webp)
 
 4. 下の方にある`Generated URL`をコピーして、Web ブラウザに貼り付けてください。事前に作成したサーバーを選択して、「はい」などのボタンを押してください。
 5. Discord クライアント上で、サーバーに Bot が追加されたことを確認してください。
@@ -263,11 +264,11 @@ client.login(process.env.TOKEN);
 
 1. Discord アプリの設定画面を開き、「詳細設定」の「開発者モード」をオンにしておきます。
 
-![](/activities/discord-bot-tutorial/devmode.png)
+![dev mode](./dev-mode.webp)
 
 1. サーバーアイコン上で右クリックして、「ID をコピー」を選択します。サーバー ID がクリップボードにコピーされます。
 
-![](/activities/discord-bot-tutorial/copy_server_id.png')
+![copy server id](./copy-server-id.webp)
 
 `.env`に次の項目を追記してください。`<サーバーID>`は実際の値に置き換えてください。
 

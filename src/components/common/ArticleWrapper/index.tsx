@@ -63,14 +63,15 @@ export const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
 					<h1 className={styles.title}>{title}</h1>
 					{img && (
 						<Image
-							src={img ? img : '/mcc-design.jpg'}
+							src={img ? img : '/mcc-design.webp'}
 							alt="hero"
 							width={800}
 							height={300}
 							className={styles.hero}
 							onError={(e) => {
-								e.currentTarget.src = '/mcc-design.jpg';
+								e.currentTarget.src = '/mcc-design.webp';
 							}}
+							priority
 						/>
 					)}
 					<div className={styles.date}>{date}</div>
