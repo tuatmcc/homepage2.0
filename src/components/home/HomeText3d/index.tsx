@@ -1,6 +1,5 @@
 import { Float } from '@react-three/drei';
 import { Canvas, extend, useFrame } from '@react-three/fiber';
-// import { Bloom, EffectComposer } from '@react-three/postprocessing';
 import { FC, Suspense, useRef, ReactNode } from 'react';
 import { Group, MathUtils } from 'three';
 import threeFontJson from 'three/examples/fonts/helvetiker_bold.typeface.json';
@@ -40,8 +39,8 @@ const RandomText: FC = () => {
 	const random = ['M', 'I', 'C', 'R', 'O', 'C', 'O', 'M', 'P', 'U', 'T', 'E', 'R', 'C', 'L', 'U', 'B'];
 	return (
 		<>
-			{random.map((text) => (
-				<Float key={text} floatIntensity={5} speed={3}>
+			{random.map((text, index) => (
+				<Float key={text + index} floatIntensity={5} speed={3}>
 					<mesh position={[Math.random() * 50 - 25, Math.random() * 50 - 25, Math.random() * 50 - 25]}>
 						{/* @ts-ignore */}
 						<textGeometry args={[text, { font, size: 1, height: 1 }]} />
@@ -85,10 +84,6 @@ export const HomeText3d: FC<Text3dProps> = ({ onNextButtonClick }) => {
 					<RandomText />
 				</Rig>
 			</Suspense>
-			{/* <EffectComposer multisampling={8}>
-				<Bloom kernelSize={3} luminanceThreshold={0} luminanceSmoothing={0.4} intensity={0.7} />
-				<Bloom kernelSize={5} luminanceThreshold={0} luminanceSmoothing={0} intensity={0.5} />
-			</EffectComposer> */}
 		</Canvas>
 	);
 };

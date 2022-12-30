@@ -3,6 +3,9 @@
   line-height: 1;
   color: white;
 
+  /* background-image: url(/random-tech-image-2.webp); */
+  background-size: cover;
+
   & .intro {
     position: absolute;
     top: 20vh;
@@ -28,18 +31,48 @@
     line-height: 1.4;
   }
 
-  & .heading1 {
+  & .information {
     position: absolute;
-    top: 80vh;
+    top: 100vh;
     left: 60vw;
+    margin: 0;
     font-size: 15vw;
+    font-weight: bold;
   }
 
-  & .heading2 {
+  & .and {
     position: absolute;
-    top: 160vh;
+    top: 150vh;
     left: 0.5vw;
     margin: 0;
+    font-size: 40vw;
+    font-weight: bold;
+  }
+
+  & .technology {
+    position: absolute;
+    top: 250vh;
+    left: -5vw;
+    margin: 0;
     font-size: 20vw;
+    font-weight: bold;
+  }
+
+  & .catchCopy {
+    position: absolute;
+    top: 210vh;
+    left: 0.5vw;
+    width: 90vw;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+
+  & .twitter {
+    position: absolute;
+    top: 300vh;
+    left: 0.5vw;
+    width: 400px;
+    overflow: auto;
   }
 }

@@ -34,7 +34,7 @@ export const PopUp: FC<{ children?: ReactNode }> = ({ children }) => {
 			delay: 1000,
 		}),
 		{
-			rootMargin: '-45% 0px -45% 0px',
+			rootMargin: '0px 0px 0px 0px',
 			amount: buildInteractionObserverThreshold(),
 			once: true,
 		},
