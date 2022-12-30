@@ -1,7 +1,7 @@
 ---
 title: ホームページをリニューアルしました
 description: ホームページをリニューアルしました
-img: '/website-renewal/website-renewal.png'
+img: './mcc-website-screenshot.webp'
 date: '2023-01-03'
 tags: [dev, web, nextjs]
 ---

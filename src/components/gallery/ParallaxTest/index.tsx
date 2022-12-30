@@ -16,7 +16,7 @@ export const ParallaxTest = () => {
 			<Parallax ref={parallax} pages={3}>
 				<ParallaxLayer offset={0} speed={0.4} style={{ pointerEvents: 'none' }}>
 					<>
-						<Image alt='' src='/random-programing-image-1.webp' width={10} height={10} className={styles.image1} />
+						<Image alt='' src='/random-tech-image-3.webp' width={10} height={10} className={styles.image1} />
 					</>
 				</ParallaxLayer>
 
@@ -25,7 +25,7 @@ export const ParallaxTest = () => {
 				</ParallaxLayer>
 
 				<ParallaxLayer offset={1.3} speed={-0.3}>
-					<Image alt='' src='/school-fes-2022-room.webp' width={10} height={10} className={styles.image3} />
+					<Image alt='' src='/noko-fes-2022-room.webp' width={10} height={10} className={styles.image3} />
 				</ParallaxLayer>
 
 				<ParallaxLayer offset={1.5}>

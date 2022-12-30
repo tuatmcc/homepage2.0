@@ -42,7 +42,7 @@ export class PostCollector {
 	 */
 	constructor(targetDir: string) {
 		this.targetDir = targetDir;
-		this.targetDirFullPath = path.join(process.cwd(), 'posts', targetDir);
+		this.targetDirFullPath = path.join(process.cwd(), 'public', targetDir);
 	}
 
 	/**
@@ -51,11 +51,16 @@ export class PostCollector {
 	 * @returns
 	 */
 	getPostBySlug = (slug: string): Post => {
-		const fullPath = path.join(this.targetDirFullPath, `${slug}.md`);
+		const fullPath = path.join(this.targetDirFullPath, slug, 'index.md');
 		try {
 			const fileContents = fs.readFileSync(fullPath, 'utf8');
-			const { data, content } = matter(fileContents);
+			const { data, content } = matter(fileContents) as unknown as { data: MetaData; content: string };
 			data.date = data.date ? data.date : '';
+			if (data.img?.startsWith('./')) {
+				data.img = `/${this.targetDir}/${slug}/${data.img}`;
+			} else if (data.img === undefined) {
+				data.img = '/mcc-design.webp';
+			}
 			return { slug: slug, frontmatter: data as MetaData, content };
 		} catch (e) {
 			console.error(e);
@@ -70,7 +75,7 @@ export class PostCollector {
 		const postNames = fs.readdirSync(this.targetDirFullPath);
 		const postPaths = postNames.map((postName) => {
 			return {
-				slug: postName.replace(/\.md$/, ''),
+				slug: postName.replace(/index\.md$/, ''),
 				fullPath: `${this.targetDir}/${postName}`,
 			};
 		});

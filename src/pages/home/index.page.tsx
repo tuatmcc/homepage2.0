@@ -26,7 +26,7 @@ const LandingPage: FC = () => {
 
 					<div className={`${styles.topScreen} ${!isOpeningVisible ? styles.close : ''}`}>
 						<HomeText3d onNextButtonClick={() => setIsOpeningVisible(!isOpeningVisible)} />
-						<div className={styles.direction}>Click Anywhere -</div>
+						<div className={styles.direction}>Click Anywhere ⸺</div>
 					</div>
 				</div>
 			</Layout>
