@@ -8,20 +8,24 @@ import classNames from '~/utilities/classNames';
 
 type DrawerProps = {
 	isOpen: boolean;
+  onOutFocus: () => void;
 };
 
-export const Drawer: FC<DrawerProps> = ({ isOpen }) => {
+export const Drawer: FC<DrawerProps> = ({ isOpen, onOutFocus }) => {
 	return (
-		<div className={classNames(styles.drawer, isOpen ? styles.open : '')}>
-			<ul className={styles.navIn}>
-				{BASE_ROUTES_LIST.map((route) => (
-					<li key={route.PATH} className={styles.listItem}>
-						<Link href={route.PATH} className={styles.link}>
-							{route.LABEL}
-						</Link>
-					</li>
-				))}
-			</ul>
-		</div>
+		<>
+			<button className={classNames(styles.overlay, isOpen ? styles._open : '')} onClick={onOutFocus} />
+			<div className={classNames(styles.drawer, isOpen ? styles._open : '')}>
+				<ul className={styles.navIn}>
+					{BASE_ROUTES_LIST.map((route) => (
+						<li key={route.PATH} className={styles.listItem}>
+							<Link href={route.PATH} className={styles.link}>
+								{route.LABEL}
+							</Link>
+						</li>
+					))}
+				</ul>
+			</div>
+		</>
 	);
 };

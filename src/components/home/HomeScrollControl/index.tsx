@@ -43,61 +43,61 @@ const Images: FC = () => {
 
 const Html: FC = () => {
 	const data = useScroll();
-	const [style, setStyles] = useState(new Array<{ opacity: number }>(4));
+	const vH = window.innerHeight; // viewport height
+	const [opacities, setOpacities] = useState<number[]>([]);
 	useFrame(() => {
-		setStyles([
-			{
-				opacity: data.range(0.01 / pageCount, 0.1 / pageCount),
-			},
-			{
-				opacity: data.range(0.5 / pageCount, 0.7 / pageCount),
-			},
-			{
-				opacity: data.range(1 / pageCount, 0.5 / pageCount) * 0.5,
-			},
-			{
-				opacity: data.range(1.8 / pageCount, 1.3 / pageCount) * 0.5,
-			},
-			{
-				opacity: data.range(2.5 / pageCount, 2 / pageCount) * 0.5,
-			},
+		setOpacities([
+			data.range(0.01 / pageCount, 0.1 / pageCount),
+			data.range(0.5 / pageCount, 0.7 / pageCount),
+			data.range(1 / pageCount, 0.5 / pageCount) * 0.5,
+			data.range(1.8 / pageCount, 1.3 / pageCount) * 0.5,
+			data.range(2.5 / pageCount, 2 / pageCount) * 0.5,
 		]);
 	});
+	// コントロールと見やすさのため仕方なく、styleを直接書いている
 	return (
 		<>
-			<h1 className={styles.intro}>TUAT Tech Group</h1>
-			<h1 className={styles.name1} style={style[0]}>
+			<h1 className={styles.intro} style={{ top: vH * 0.2 }}>
+				TUAT Tech Group
+			</h1>
+			<h1 className={styles.mcc} style={{ top: vH * 0.5, opacity: opacities[0] }}>
 				MCC
 			</h1>
-			<h2 className={styles.name2} style={style[1]}>
+			<h2 className={styles.name2} style={{ top: vH, opacity: opacities[1] }}>
 				私たちは、東京農工大学
 				<br />
 				マイクロコンピュータークラブです。
 			</h2>
-			<p className={styles.information} style={style[2]}>
+			<p className={styles.information} style={{ top: vH * 1.2, opacity: opacities[2] }}>
 				Infomation
 			</p>
-			<p className={styles.and} style={style[3]}>
+			<p className={styles.and} style={{ top: vH * 1.5, opacity: opacities[3] }}>
 				&
 			</p>
-			<p className={styles.technology} style={style[4]}>
+			<p className={styles.technology} style={{ top: vH * 2.7, opacity: opacities[4] }}>
 				Technology
 			</p>
-			<p className={styles.catchCopy}>
+			<p className={styles.catchCopy} style={{ top: vH * 1.9 }}>
 				<span>部員たちの興味は様々。</span>
-				<span>プログラミング、グラフィック、ハードウェア...</span>
+				<span>プログラミング、グラフィック、ハードウェア......</span>
 				<span>それぞれの興味を持つ部員が集まり、交流を重ねることで、お互いの視野を広げる。</span>
 				<span>それが、私たちTUATMCCです。</span>
 			</p>
 			<div className={styles.card1}>
-				<Link href="/about" className={styles.aboutLink}>MCCについてもっとよく知る →</Link>
+				<Link href="/about" className={styles.aboutLink}>
+					MCCについてもっとよく知る →
+				</Link>
 			</div>
-      <div className={styles.card2}>
-        <Link href="/activities" className={styles.activitiesLink}>MCCの活動報告 →</Link>
-      </div>
-      <div className={styles.card3}>
-        <Link href="/contact" className={styles.blogLink}>MCCのブログ →</Link>
-      </div>
+			<div className={styles.card2}>
+				<Link href="/activities" className={styles.activitiesLink}>
+					MCCの活動報告 →
+				</Link>
+			</div>
+			<div className={styles.card3}>
+				<Link href="/contact" className={styles.blogLink}>
+					MCCのブログ →
+				</Link>
+			</div>
 		</>
 	);
 };

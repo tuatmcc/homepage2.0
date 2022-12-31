@@ -23,7 +23,7 @@ export const NavbarMobile: FC<NavbarMobileProps> = () => {
 
 	return (
 		<nav>
-			<Drawer isOpen={isOpened} />
+			<Drawer isOpen={isOpened} onOutFocus={() => setIsOpened(false)} />
 			<div className={styles.navbarMobile}>
 				<div className={styles.navIn}>
 					<Link href={ROUTES.HOME.PATH} className={styles.link}>
