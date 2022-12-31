@@ -88,7 +88,7 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 			<h1 className={styles.mcc} style={{ top: vH * 0.5, opacity: opacities[0] }}>
 				MCC
 			</h1>
-			<button className={styles.downArrow} style={{ top: vH, opacity: opacities[1] }} />
+			<button className={styles.downArrow} style={{ top: vH * 0.9, opacity: opacities[1] }} />
 			<h2 className={styles.name2} style={{ top: vH, opacity: opacities[2] }}>
 				私たちは、東京農工大学
 				<br />
