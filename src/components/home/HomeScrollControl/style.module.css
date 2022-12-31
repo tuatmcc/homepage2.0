@@ -21,23 +21,26 @@
     width: 90vw;
     margin: 0;
     font-size: 20vw;
+    font-weight: 800;
   }
 
   & .name2 {
     position: absolute;
     top: 100vh;
     width: 100vw;
+    margin: 0;
     font-size: 24px;
     line-height: 1.4;
   }
 
   & .information {
     position: absolute;
-    top: 100vh;
-    left: 60vw;
+    top: 120vh;
+    left: 40vw;
     margin: 0;
     font-size: 15vw;
     font-weight: bold;
+    opacity: 0.5;
   }
 
   & .and {
@@ -45,13 +48,13 @@
     top: 150vh;
     left: 0.5vw;
     margin: 0;
-    font-size: 40vw;
+    font-size: 50vmin;
     font-weight: bold;
   }
 
   & .technology {
     position: absolute;
-    top: 250vh;
+    top: 270vh;
     left: -5vw;
     margin: 0;
     font-size: 20vw;
@@ -62,17 +65,56 @@
     position: absolute;
     top: 210vh;
     left: 0.5vw;
-    width: 90vw;
+    width: 95vw;
     font-size: 24px;
     font-weight: bold;
     line-height: 1.5;
+
+    & > span {
+      display: block;
+      margin-bottom: 0.5em;
+    }
   }
 
-  & .twitter {
+  & .card1 {
     position: absolute;
-    top: 300vh;
-    left: 0.5vw;
-    width: 400px;
-    overflow: auto;
+    top: 320vh;
+    left: 2vw;
+    width: 96vw;
+    font-size: 24px;
+    line-height: 2;
+    background: rgb(0 0 0 / 50%);
+
+    & .aboutLink {
+      color: white;
+    }
+  }
+
+  & .card2 {
+    position: absolute;
+    top: 330vh;
+    left: 2vw;
+    width: 96vw;
+    font-size: 24px;
+    line-height: 2;
+    background: rgb(0 0 0 / 50%);
+
+    & .activitiesLink {
+      color: white;
+    }
+  }
+
+  & .card3 {
+    position: absolute;
+    top: 340vh;
+    left: 2vw;
+    width: 96vw;
+    font-size: 24px;
+    line-height: 2;
+    background: rgb(0 0 0 / 50%);
+
+    & .blogLink {
+      color: white;
+    }
   }
 }

@@ -1,8 +1,11 @@
 import { Preload, ScrollControls, Scroll, useScroll, Image as ImageImpl } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { FC, Suspense, useEffect, useState } from 'react';
+import Link from 'next/link';
+import { FC, Suspense, useState } from 'react';
 
 import styles from './style.module.css';
+
+const pageCount = 4;
 
 const Images: FC = () => {
 	const { width, height } = useThree((state) => state.viewport);
@@ -30,7 +33,7 @@ const Images: FC = () => {
 			<ImageImpl position={[0, -height * 1.5, 2.5]} scale={[2, 3]} zoom={zoom[5]} url="/random-tech-image-3.webp" />
 			<ImageImpl
 				zoom={zoom[6]}
-				position={[0, -height * 2 - height / 4, 0]}
+				position={[0, -height * 2 - height / 1, 0]}
 				scale={[width, height]}
 				url="/random-tech-image-1.webp"
 			/>
@@ -44,29 +47,22 @@ const Html: FC = () => {
 	useFrame(() => {
 		setStyles([
 			{
-				opacity: data.range(0.001, 0.05),
+				opacity: data.range(0.01 / pageCount, 0.1 / pageCount),
 			},
 			{
-				opacity: data.range(0.5 / 4, 0.5 / 3),
+				opacity: data.range(0.5 / pageCount, 0.7 / pageCount),
 			},
 			{
-				opacity: data.range(1 / 4, 0.5 / 4) * 0.5,
+				opacity: data.range(1 / pageCount, 0.5 / pageCount) * 0.5,
 			},
 			{
-				opacity: data.range(1.8 / 4, 1.3 / 4) * 0.5,
+				opacity: data.range(1.8 / pageCount, 1.3 / pageCount) * 0.5,
 			},
 			{
-				opacity: data.range(2.5 / 4, 2 / 4) * 0.5,
+				opacity: data.range(2.5 / pageCount, 2 / pageCount) * 0.5,
 			},
 		]);
 	});
-	// add twitter script
-	useEffect(() => {
-		const script = document.createElement('script');
-		script.src = 'https://platform.twitter.com/widgets.js';
-		script.async = true;
-		document.body.appendChild(script);
-	}, []);
 	return (
 		<>
 			<h1 className={styles.intro}>TUAT Tech Group</h1>
@@ -88,22 +84,19 @@ const Html: FC = () => {
 				Technology
 			</p>
 			<p className={styles.catchCopy}>
-        技術を追求し、より良い世界を目指す。
-				<br />
-				視野を広げ、新しいことに挑戦し、自分の可能性を広げる。
-				<br />
-        面白いことをすることで、人生を豊かにする。
-				<br />
-				それが私たちの目指す姿です。
-
+				<span>部員たちの興味は様々。</span>
+				<span>プログラミング、グラフィック、ハードウェア...</span>
+				<span>それぞれの興味を持つ部員が集まり、交流を重ねることで、お互いの視野を広げる。</span>
+				<span>それが、私たちTUATMCCです。</span>
 			</p>
-			{/* <div className={styles.twitter}>
-				<a className='twitter-timeline' href="https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw">
-					Tweets by TUATMCC
-				</a>
-			</div> */}
-      <div className={styles.cards}>
-        a
+			<div className={styles.card1}>
+				<Link href="/about" className={styles.aboutLink}>MCCについてもっとよく知る →</Link>
+			</div>
+      <div className={styles.card2}>
+        <Link href="/activities" className={styles.activitiesLink}>MCCの活動報告 →</Link>
+      </div>
+      <div className={styles.card3}>
+        <Link href="/contact" className={styles.blogLink}>MCCのブログ →</Link>
       </div>
 		</>
 	);
@@ -113,7 +106,7 @@ export const HomeScrollControl: FC = () => {
 	return (
 		<Canvas gl={{ antialias: false }} dpr={[1, 1.5]} className={styles.canvas}>
 			<Suspense fallback={null}>
-				<ScrollControls damping={4} pages={4}>
+				<ScrollControls damping={4} pages={pageCount}>
 					<Scroll>
 						<Images />
 					</Scroll>

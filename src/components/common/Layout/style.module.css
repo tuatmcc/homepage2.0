@@ -1,5 +1,5 @@
 .layout {
-  width: 100%;
+  width: 100vw;
   height: calc(100svh - var(--navbar-pc-height));
   padding: 0;
   margin: 0;
@@ -10,6 +10,13 @@
     padding: 0;
   }
 
+  @media screen and (max-width: 48em) and (orientation: landscape) {
+    width: calc(100svw - var(--navbar-mobile-height));
+    height: 100svh;
+    padding: 0;
+    
+  }
+
   &._noMobileHeader {
     position: relative;
     height: calc(100svh - var(--navbar-pc-height));
@@ -18,7 +25,13 @@
     overflow: auto;
     
     @media screen and (max-width: 48em) {
-      height: calc(100vh - var(--navbar-mobile-height));
+      height: calc(100svh - var(--navbar-mobile-height));
+      padding: 0;
+    }
+
+    @media screen and (max-width: 48em) and (orientation: landscape) {
+      width: calc(100svw - var(--navbar-mobile-height));
+      height: 100svh;
       padding: 0;
     }
   }

@@ -1,14 +1,19 @@
 .drawer {
   position: fixed;
+  top: 200px;
   bottom: var(--navbar-mobile-height);
-  z-index: -1;
-  width: 100%;
-  max-height: 500px;
+  z-index: 1;
+  width: 100vw;
   overflow-y: auto;
   background-color: var(--color-background);
   box-shadow: var(--color-shadow-medium);
   transition: transform 0.3s ease-in-out;
   transform: translateY(120%);
+
+  @media  screen and (max-width: 48em) and (orientation: landscape) {
+    top: 0;
+    bottom: 0;
+  }
 
   &.open {
     transform: translateY(0);
