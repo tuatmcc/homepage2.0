@@ -25,7 +25,7 @@
     position: absolute;
     width: 100vw;
     margin: 0;
-    font-size: 24px;
+    font-size: min(24px, 6vw);
     line-height: 1.4;
   }
 
@@ -92,7 +92,7 @@
     font-weight: bold;
     line-height: 1.5;
 
-    & > span {
+    & .sentence {
       display: block;
       margin-bottom: 0.5em;
     }
@@ -105,8 +105,8 @@
     display: flex;
     gap: 16px;
     align-items: flex-start;
-    justify-content: space-around;
-    width: 100svw;
+    justify-content: space-evenly;
+    width: 96svw;
     height: 40svh;
 
     & .cards {
@@ -120,8 +120,8 @@
       max-width: 600px;
 
       & .cardItem {
-        padding: 0.5em;
-        margin: 0 0.5em;
+        padding: 8px;
+        margin: 0 8px;
         background: rgb(0 0 0 / 50%);
         
         & .cardLink {
@@ -131,21 +131,33 @@
           color: white;
         }
       }
+
+      & .socials {
+        display: flex;
+        gap: 16px;
+        padding: 8px;
+        margin: 0 8px;
+      }
     }
   
     & .twitterWrapper {
       position: relative;
       flex: 1;
-      max-width: 500px;
+      max-width: 600px;
       height: 40svh;
       overflow: auto;
       font-size: 12px;
-    
-      > div {
+      
+      
+      & > div {
         width: 100%;
         height: 60svh;
         font-size: 12px;
         border: none;
+      }
+
+      &::-webkit-scrollbar {
+        width: 2px;
       }
     }
   }

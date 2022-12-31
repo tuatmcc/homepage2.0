@@ -24,15 +24,15 @@ const Images: FC = () => {
 		<group>
 			<ImageImpl position={[-2, 0, 0]} zoom={zoom[0]} scale={[4, height]} url="/noko-fes-2022-illustrace.webp" />
 			<ImageImpl position={[2, 0, 1]} zoom={zoom[1]} scale={3} url="/noko-fes-2022-room.webp" />
-			<ImageImpl position={[-2.3, -height, 2]} zoom={zoom[2]} scale={[1, 3]} url="/random-tech-image-3.webp" />
-			<ImageImpl position={[-0.6, -height, 3]} zoom={zoom[3]} scale={[1, 2]} url="/random-tech-image-3.webp" />
+			<ImageImpl position={[-2.3, -height, 2]} zoom={zoom[2]} scale={[1, 3]} url="/abstract-tech-image-3.webp" />
+			<ImageImpl position={[-0.6, -height, 3]} zoom={zoom[3]} scale={[1, 2]} url="/abstract-tech-image-3.webp" />
 			<ImageImpl position={[0.75, -height, 3.5]} zoom={zoom[4]} scale={1.5} url="/mcc-desktop-pc.webp" />
-			<ImageImpl position={[0, -height * 1.5, 2.5]} zoom={zoom[5]} scale={[1.5, 3]} url="/random-tech-image-3.webp" />
+			<ImageImpl position={[0, -height * 1.5, 2.5]} zoom={zoom[5]} scale={[1.5, 3]} url="/abstract-tech-image-3.webp" />
 			<ImageImpl
 				zoom={zoom[6]}
 				position={[0, -height * 2 - height / 4, 0]}
 				scale={[width, height]}
-				url="/random-tech-image-3.webp"
+				url="/abstract-tech-image-3.webp"
 			/>
 		</group>
 	);

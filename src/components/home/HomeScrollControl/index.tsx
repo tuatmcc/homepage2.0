@@ -5,6 +5,8 @@ import { FC, Suspense, useContext, useEffect, useState } from 'react';
 
 import styles from './style.module.css';
 
+import { GitHubIcon } from '~/components/common/icons/GitHubIcon';
+import { TwitterIcon } from '~/components/common/icons/TwitterIcon';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
 import classNames from '~/utilities/classNames';
 import { getCssCustomProperty } from '~/utilities/getCssCustomProperty';
@@ -29,17 +31,17 @@ const Images: FC = () => {
 	});
 	return (
 		<group>
-			<ImageImpl position={[-2, 0, 0]} zoom={zoom[0]} scale={[4, height]} url="/random-tech-image-3.webp" />
+			<ImageImpl position={[-2, 0, 0]} zoom={zoom[0]} scale={[4, height]} url="/abstract-tech-image-3.webp" />
 			<ImageImpl position={[2, 0, 1]} scale={3} zoom={zoom[1]} url="/noko-fes-2022-illustrace.webp" />
 			<ImageImpl position={[-2.3, -height, 2]} scale={[1, 3]} zoom={zoom[2]} url="/noko-fes-2022-room.webp" />
-			<ImageImpl position={[-0.6, -height, 3]} scale={[1, 2]} zoom={zoom[3]} url="/random-tech-image-3.webp" />
+			<ImageImpl position={[-0.6, -height, 3]} scale={[1, 2]} zoom={zoom[3]} url="/abstract-tech-image-3.webp" />
 			<ImageImpl position={[0.75, -height, 3.5]} scale={1.5} zoom={zoom[4]} url="/mcc-desktop-pc.webp" />
-			<ImageImpl position={[0, -height * 1.5, 2.5]} scale={[2, 3]} zoom={zoom[5]} url="/random-tech-image-3.webp" />
+			<ImageImpl position={[0, -height * 1.5, 2.5]} scale={[2, 3]} zoom={zoom[5]} url="/abstract-tech-image-5.webp" />
 			<ImageImpl
 				zoom={zoom[6]}
 				position={[0, -height * (pageCount - 1), 0]}
 				scale={[width, height]}
-				url="/random-tech-image-1.webp"
+				url="/abstract-tech-image-1.webp"
 			/>
 		</group>
 	);
@@ -56,12 +58,12 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 	const [vH, setVH] = useState<number>(window.innerHeight); // viewport height
 	const [opacities, setOpacities] = useState<number[]>([]);
 	useEffect(() => {
-    if (isMobile && orientation === 'portrait') {
-      const offset: number = +getCssCustomProperty('--navbar-mobile-height').replace('px', '');
-      setVH(window.innerHeight - offset);
-    } else if (!isMobile) {
-      const offset: number = +getCssCustomProperty('--navbar-pc-height').replace('px', '');
-      setVH(window.innerHeight - offset);
+		if (isMobile && orientation === 'portrait') {
+			const offset: number = +getCssCustomProperty('--navbar-mobile-height').replace('px', '');
+			setVH(window.innerHeight - offset);
+		} else if (!isMobile) {
+			const offset: number = +getCssCustomProperty('--navbar-pc-height').replace('px', '');
+			setVH(window.innerHeight - offset);
 		} else {
 			setVH(window.innerHeight);
 		}
@@ -74,7 +76,7 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 			data.range(1.2 / pageCount, 0.8 / pageCount) * 0.5,
 			data.range(1.8 / pageCount, 1.5 / pageCount) * 0.5,
 			data.range(2.5 / pageCount, 1.5 / pageCount) * 0.5,
-      data.range(1.2 / pageCount, 0.5 / pageCount),
+			data.range(1.4 / pageCount, 0.5 / pageCount),
 		]);
 	});
 	// コントロールと見やすさのため仕方なく、styleを直接書いている
@@ -86,7 +88,7 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 			<h1 className={styles.mcc} style={{ top: vH * 0.5, opacity: opacities[0] }}>
 				MCC
 			</h1>
-			<button className={styles.downArrow} style={{ top: vH * 0.9, opacity: opacities[1] }} />
+			<button className={styles.downArrow} style={{ top: vH, opacity: opacities[1] }} />
 			<h2 className={styles.name2} style={{ top: vH, opacity: opacities[2] }}>
 				私たちは、東京農工大学
 				<br />
@@ -102,10 +104,12 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 				Technology
 			</p>
 			<p className={styles.catchCopy} style={{ top: vH * 1.8, opacity: opacities[6] }}>
-				<span>部員たちの興味は様々です。</span>
-				<span>プログラミング、グラフィック、ハードウェア......</span>
-				<span>それぞれの興味を持つ部員が集まり、交流を重ねることで、お互いの視野を広げる、</span>
-				<span>それが、私たちTUATMCCです。</span>
+				<span className={styles.sentence}>部員たちの興味は様々です。</span>
+				<span className={styles.sentence}>プログラミング、グラフィック、ハードウェア......</span>
+				<span className={styles.sentence}>
+					それぞれの興味を持つ部員が集まり、交流を重ねることで、お互いの視野を広げる、
+				</span>
+				<span className={styles.sentence}>それが、私たちTUATMCCです。</span>
 			</p>
 			<div className={styles.bottms} style={{ top: vH * 2.95 }}>
 				<div className={styles.cards}>
@@ -123,6 +127,14 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 						<Link href="/contact" className={styles.cardLink}>
 							ブログ →
 						</Link>
+					</div>
+					<div className={styles.socials}>
+						<a href="https://twitter.com/TUATMCC" target="_blank" rel="noopener noreferrer">
+							<TwitterIcon />
+						</a>
+						<a href="https://github.com/tuatmcc" target="_blank" rel="noopener noreferrer">
+							<GitHubIcon />
+						</a>
 					</div>
 				</div>
 				{!isMobile && (

@@ -8,7 +8,7 @@ import classNames from '~/utilities/classNames';
 
 type DrawerProps = {
 	isOpen: boolean;
-  onOutFocus: () => void;
+	onOutFocus: () => void;
 };
 
 export const Drawer: FC<DrawerProps> = ({ isOpen, onOutFocus }) => {
