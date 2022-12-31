@@ -6,6 +6,10 @@
 .externalLink {
   color: #05f;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .linkedHeading {

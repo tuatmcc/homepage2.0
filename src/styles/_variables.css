@@ -1,5 +1,5 @@
 :root {
-  /* Brand Color */
+  /* Brand Colors */
   --color-mcc-primary: #009DAE;
   --color-mcc-secondary: #71DFE7;
   --color-mcc-tertiary: #C2FFF9;
@@ -10,6 +10,7 @@
   --color-text-default: #24292f;
   --color-text-muted: #57606a;
   --color-text-subtle: #6e7781;
+  --color-text-white: #fff;
   --color-code-text: #6f4612;
   --color-code-background: #ffe682;
   --color-codeblock-text: #fff;
@@ -22,7 +23,7 @@
   --color-marker-muted: rgb(175 184 193 / 20%);
   --color-shadow-small: 0 1px 0 rgb(27 31 36 / 4%);
   --color-shadow-medium: 0 3px 6px rgb(140 149 159 / 15%);
-  --color-shadow-large: 0 8px 24px rgb(140 149 159 / 20%);
+  --color-shadow-large: 0 0 24px rgb(10 90 100 / 20%);
   --color-shadow-extra-large: 0 12px 28px rgb(140 149 159 / 30%);
 
   /* Size */

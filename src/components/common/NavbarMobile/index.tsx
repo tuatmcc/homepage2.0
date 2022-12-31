@@ -22,10 +22,10 @@ export const NavbarMobile: FC<NavbarMobileProps> = () => {
 	const [isOpened, setIsOpened] = useState<boolean>(false);
 
 	return (
-		<nav className={styles.navbarMobile}>
+		<nav>
+			<Drawer isOpen={isOpened} onOutFocus={() => setIsOpened(false)} />
 			<div className={styles.navbarMobile}>
-				<Drawer isOpen={isOpened} />
-				<ul className={styles.navIn}>
+				<div className={styles.navIn}>
 					<Link href={ROUTES.HOME.PATH} className={styles.link}>
 						<HomeIcon />
 						<span className={styles.label}>Home</span>
@@ -46,7 +46,7 @@ export const NavbarMobile: FC<NavbarMobileProps> = () => {
 						{isOpened ? <CloseIcon /> : <MenuBurgerIcon />}
 						<span className={styles.label}>Menu</span>
 					</button>
-				</ul>
+				</div>
 			</div>
 		</nav>
 	);

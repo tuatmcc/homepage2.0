@@ -1,0 +1,26 @@
+.canvas {
+  width: 100%;
+  line-height: 1;
+  color: white;
+
+  & .heading1 {
+    position: absolute;
+    top: 60vh;
+    left: 0.5em;
+    font-size: 40px;
+  }
+
+  & .heading2 {
+    position: absolute;
+    top: 80vh;
+    left: 60vw;
+    font-size: 15vw;
+  }
+
+  & .heading3 {
+    position: absolute;
+    top: 148vh;
+    left: 0.5vw;
+    font-size: 40vw;
+  }
+}

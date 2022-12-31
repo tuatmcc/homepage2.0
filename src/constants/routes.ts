@@ -12,10 +12,10 @@ export const ROUTES = {
     LABEL: 'Discord Tutorial',
   },
   BLOG: { PATH: '/blog', LABEL: 'Blog' },
-  SANDBOX: { PATH: '/gallery', LABEL: 'Gallery' },
+  GALLERY: { PATH: '/gallery', LABEL: 'Gallery' },
 };
 
 /** ナビゲーションなどに使用するリスト。これをループ処理で使う */
-export const BASE_ROUTES_LIST = [ROUTES.HOME, ROUTES.ABOUT, ROUTES.ACTIVITIES, ROUTES.BLOG, ROUTES.SANDBOX];
+export const BASE_ROUTES_LIST = [ROUTES.HOME, ROUTES.ABOUT, ROUTES.ACTIVITIES, ROUTES.BLOG, ROUTES.GALLERY];
 
 export const ACTIVITIES_ROUTES_LIST = [];

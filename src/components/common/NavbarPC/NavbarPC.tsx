@@ -6,8 +6,13 @@ import React, { FC } from 'react';
 import styles from './style.module.css';
 
 import { BASE_ROUTES_LIST, ROUTES } from '~/constants/routes';
+import classNames from '~/utilities/classNames';
 
-export const NavbarPC: FC = () => {
+type NavbarPCProps = {
+	transparent?: boolean;
+};
+
+export const NavbarPC: FC<NavbarPCProps> = ({ transparent }) => {
 	const pathname = useRouter().pathname.match(/\/.+?(\/|$)/)?.[0].replace(/\/$/, '');
 	const links = BASE_ROUTES_LIST.map((route) => {
 		const isActive = route.PATH === pathname ? true : false;
@@ -22,7 +27,7 @@ export const NavbarPC: FC = () => {
 
 	return (
 		<header className={styles.header}>
-			<nav className={styles.navbar}>
+			<nav className={classNames(styles.navbar, transparent ? styles._transparent : '')}>
 				<Link className={styles.brandLink} href={ROUTES.HOME.PATH}>
 					<Image alt="" src="/mcc-logo.svg" width={48} height={48} className={styles.brandLogo} />
 					<h1 className={styles.brandName}>MCC</h1>
