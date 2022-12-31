@@ -4,7 +4,6 @@
     padding: 32px 0;
     margin: 32px auto;
     background-color: var(--color-background);
-    box-shadow: 0 0 6px #00000080;
 
     @media  screen and (max-width: 48em) {
       margin: 32px 0 0;
