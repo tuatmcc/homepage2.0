@@ -1,8 +1,17 @@
 import { Preload, ScrollControls, Scroll, useScroll, Image as ImageImpl } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { FC, Suspense, useEffect, useState } from 'react';
+import Link from 'next/link';
+import { FC, Suspense, useContext, useEffect, useState } from 'react';
 
 import styles from './style.module.css';
+
+import { GitHubIcon } from '~/components/common/icons/GitHubIcon';
+import { TwitterIcon } from '~/components/common/icons/TwitterIcon';
+import { MediaQueryContext } from '~/providers/MediaQueryProvider';
+import classNames from '~/utilities/classNames';
+import { getCssCustomProperty } from '~/utilities/getCssCustomProperty';
+
+const pageCount = 3.5;
 
 const Images: FC = () => {
 	const { width, height } = useThree((state) => state.viewport);
@@ -22,103 +31,147 @@ const Images: FC = () => {
 	});
 	return (
 		<group>
-			<ImageImpl position={[-2, 0, 0]} zoom={zoom[0]} scale={[4, height]} url="/random-tech-image-3.webp" />
+			<ImageImpl position={[-2, 0, 0]} zoom={zoom[0]} scale={[4, height]} url="/abstract-tech-image-3.webp" />
 			<ImageImpl position={[2, 0, 1]} scale={3} zoom={zoom[1]} url="/noko-fes-2022-illustrace.webp" />
 			<ImageImpl position={[-2.3, -height, 2]} scale={[1, 3]} zoom={zoom[2]} url="/noko-fes-2022-room.webp" />
-			<ImageImpl position={[-0.6, -height, 3]} scale={[1, 2]} zoom={zoom[3]} url="/random-tech-image-3.webp" />
+			<ImageImpl position={[-0.6, -height, 3]} scale={[1, 2]} zoom={zoom[3]} url="/abstract-tech-image-3.webp" />
 			<ImageImpl position={[0.75, -height, 3.5]} scale={1.5} zoom={zoom[4]} url="/mcc-desktop-pc.webp" />
-			<ImageImpl position={[0, -height * 1.5, 2.5]} scale={[2, 3]} zoom={zoom[5]} url="/random-tech-image-3.webp" />
+			<ImageImpl position={[0, -height * 1.5, 2.5]} scale={[2, 3]} zoom={zoom[5]} url="/abstract-tech-image-5.webp" />
 			<ImageImpl
 				zoom={zoom[6]}
-				position={[0, -height * 2 - height / 4, 0]}
+				position={[0, -height * (pageCount - 1), 0]}
 				scale={[width, height]}
-				url="/random-tech-image-1.webp"
+				url="/abstract-tech-image-1.webp"
 			/>
 		</group>
 	);
 };
-
-const Html: FC = () => {
+type HtmlProps = {
+	mediaQuery: {
+		isMobile: boolean;
+		orientation: 'portrait' | 'landscape';
+	};
+};
+const Html: FC<HtmlProps> = ({ mediaQuery }) => {
+	const { isMobile, orientation } = mediaQuery;
 	const data = useScroll();
-	const [style, setStyles] = useState(new Array<{ opacity: number }>(4));
+	const [vH, setVH] = useState<number>(window.innerHeight); // viewport height
+	const [opacities, setOpacities] = useState<number[]>([]);
+	useEffect(() => {
+		if (isMobile && orientation === 'portrait') {
+			const offset: number = +getCssCustomProperty('--navbar-mobile-height').replace('px', '');
+			setVH(window.innerHeight - offset);
+		} else if (!isMobile) {
+			const offset: number = +getCssCustomProperty('--navbar-pc-height').replace('px', '');
+			setVH(window.innerHeight - offset);
+		} else {
+			setVH(window.innerHeight);
+		}
+	}, [isMobile, orientation]);
 	useFrame(() => {
-		setStyles([
-			{
-				opacity: data.range(0.001, 0.05),
-			},
-			{
-				opacity: data.range(0.5 / 4, 0.5 / 3),
-			},
-			{
-				opacity: data.range(1 / 4, 0.5 / 4) * 0.5,
-			},
-			{
-				opacity: data.range(1.8 / 4, 1.3 / 4) * 0.5,
-			},
-			{
-				opacity: data.range(2.5 / 4, 2 / 4) * 0.5,
-			},
+		setOpacities([
+			data.range(0.01 / pageCount, 0.1 / pageCount),
+			1 - data.range(0.01 / pageCount, 0),
+			data.range(0.5 / pageCount, 0.2 / pageCount),
+			data.range(1.2 / pageCount, 0.8 / pageCount) * 0.5,
+			data.range(1.8 / pageCount, 1.5 / pageCount) * 0.5,
+			data.range(2.5 / pageCount, 1.5 / pageCount) * 0.5,
+			data.range(1.4 / pageCount, 0.5 / pageCount),
 		]);
 	});
-	// add twitter script
-	useEffect(() => {
-		const script = document.createElement('script');
-		script.src = 'https://platform.twitter.com/widgets.js';
-		script.async = true;
-		document.body.appendChild(script);
-	}, []);
+	// コントロールと見やすさのため仕方なく、styleを直接書いている
 	return (
 		<>
-			<h1 className={styles.intro}>TUAT Tech Group</h1>
-			<h1 className={styles.name1} style={style[0]}>
+			<h1 className={styles.intro} style={{ top: vH * 0.2 }}>
+				TUAT Tech Group
+			</h1>
+			<h1 className={styles.mcc} style={{ top: vH * 0.5, opacity: opacities[0] }}>
 				MCC
 			</h1>
-			<h2 className={styles.name2} style={style[1]}>
+			<button className={styles.downArrow} style={{ top: vH * 0.9, opacity: opacities[1] }} />
+			<h2 className={styles.name2} style={{ top: vH * 1.1, opacity: opacities[2] }}>
 				私たちは、東京農工大学
 				<br />
 				マイクロコンピュータークラブです。
 			</h2>
-			<p className={styles.information} style={style[2]}>
+			<p className={styles.information} style={{ top: vH * 1.5, opacity: opacities[3] }}>
 				Infomation
 			</p>
-			<p className={styles.and} style={style[3]}>
+			<p className={styles.and} style={{ top: vH * 2, opacity: opacities[4] }}>
 				&
 			</p>
-			<p className={styles.technology} style={style[4]}>
+			<p className={styles.technology} style={{ top: vH * 2.5, opacity: opacities[5] }}>
 				Technology
 			</p>
-			<p className={styles.catchCopy}>
-        技術を追求し、より良い世界を目指す。
-				<br />
-				視野を広げ、新しいことに挑戦し、自分の可能性を広げる。
-				<br />
-        面白いことをすることで、人生を豊かにする。
-				<br />
-				それが私たちの目指す姿です。
-
+			<p className={styles.catchCopy} style={{ top: vH * 1.8, opacity: opacities[6] }}>
+				<span className={styles.sentence}>部員たちの興味は様々です。</span>
+				<span className={styles.sentence}>プログラミング、グラフィック、ハードウェア......</span>
+				<span className={styles.sentence}>
+					それぞれの興味を持つ部員が集まり、交流を重ねることで、お互いの視野を広げる、
+				</span>
+				<span className={styles.sentence}>それが、私たちTUATMCCです。</span>
 			</p>
-			{/* <div className={styles.twitter}>
-				<a className='twitter-timeline' href="https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw">
-					Tweets by TUATMCC
-				</a>
-			</div> */}
-      <div className={styles.cards}>
-        a
-      </div>
+			<div className={styles.bottms} style={{ top: vH * 2.95 }}>
+				<div className={styles.cards}>
+					<div className={styles.cardItem}>
+						<Link href="/about" className={styles.cardLink}>
+							もっとMCCを知る →
+						</Link>
+					</div>
+					<div className={styles.cardItem}>
+						<Link href="/activities" className={styles.cardLink}>
+							活動報告 →
+						</Link>
+					</div>
+					<div className={styles.cardItem}>
+						<Link href="/contact" className={styles.cardLink}>
+							ブログ →
+						</Link>
+					</div>
+					<div className={styles.socials}>
+						<a href="https://twitter.com/TUATMCC" target="_blank" rel="noopener noreferrer">
+							<TwitterIcon />
+						</a>
+						<a href="https://github.com/tuatmcc" target="_blank" rel="noopener noreferrer">
+							<GitHubIcon />
+						</a>
+					</div>
+				</div>
+				{!isMobile && (
+					<div className={styles.twitterWrapper}>
+						<a
+							className={classNames('twitter-timeline', styles.twitterTimeLine)}
+							href="https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw&lang=en"
+						>
+							Tweets by TUATMCC
+						</a>
+					</div>
+				)}
+			</div>
 		</>
 	);
 };
 
 export const HomeScrollControl: FC = () => {
+	const mediaQuery = useContext(MediaQueryContext);
+	useEffect(() => {
+		const script = document.createElement('script');
+		script.src = 'https://platform.twitter.com/widgets.js';
+		script.async = true;
+		document.body.appendChild(script);
+		return () => {
+			document.body.removeChild(script);
+		};
+	});
 	return (
 		<Canvas gl={{ antialias: false }} dpr={[1, 1.5]} className={styles.canvas}>
 			<Suspense fallback={null}>
-				<ScrollControls damping={4} pages={4}>
+				<ScrollControls damping={4} pages={pageCount}>
 					<Scroll>
 						<Images />
 					</Scroll>
 					<Scroll html>
-						<Html />
+						<Html mediaQuery={mediaQuery} />
 					</Scroll>
 				</ScrollControls>
 				<Preload />

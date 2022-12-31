@@ -1,16 +1,22 @@
 .drawer {
   position: fixed;
+  top: calc(100svh - 400px);
   bottom: var(--navbar-mobile-height);
-  z-index: -1;
-  width: 100%;
-  max-height: 500px;
+  z-index: 1;
+  width: 100vw;
   overflow-y: auto;
   background-color: var(--color-background);
   box-shadow: var(--color-shadow-medium);
   transition: transform 0.3s ease-in-out;
   transform: translateY(120%);
 
-  &.open {
+  @media  screen and (max-width: 48em) and (orientation: landscape) {
+    top: 0;
+    bottom: 0;
+    width: calc(100vw - var(--navbar-mobile-height));
+  }
+
+  &._open {
     transform: translateY(0);
   }
 
@@ -50,4 +56,24 @@
       }
     }
   }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: var(--navbar-mobile-height);
+  z-index: 1;
+  width: 100vw;
+  height: 0;
+  overflow-y: auto;
+  background: linear-gradient(var(--color-mcc-primary), var(--color-mcc-secondary));
+  box-shadow: var(--color-shadow-medium);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out;
+  
+  &._open {
+    height: 100svh;
+    opacity: 0.8;
+  }
+  
 }

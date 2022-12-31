@@ -4,9 +4,7 @@
   margin: 16px auto;
   color: var(--color-mcc-quaternary);
   text-align: center;
-  background: linear-gradient(120deg, var(--color-mcc-primary), var(--color-mcc-secondary));
   border-radius: 16px;
-  box-shadow: var(--color-shadow-large);
 }
 
 .list {
@@ -22,41 +20,47 @@
   
   & .listItem {
     display: flex;
+    gap: 16px;
+    padding: 16px;
     background: linear-gradient(120deg, var(--color-mcc-primary), var(--color-mcc-secondary));
     border-radius: 16px;
     box-shadow: var(--color-shadow-large);
-
-    
-    @media screen and (max-width: 62em) {
-      flex-direction: column;
-    }
     
     &._reverse {
       flex-direction: row-reverse;
-
-      @media screen and (max-width: 62em) {
-        flex-direction: column;
-      }
     }
 
     & .image {
       width: 300px;
       height: 160px;
-      margin: 16px;
       border-radius: 12px;
       object-fit: cover;
       
-      @media screen and (max-width: 62em) {
-        width: auto;
-        margin-bottom: 0;
+      @media screen and (max-width: 48em) {
+        width: 40px;
+        height: 40px;
       }
     }
 
     & .text {
-      padding: 16px;
-
       & .title {
-        color: var(--color-text-white) ;
+        color: var(--color-text-white);
+
+        @media screen and (max-width: 48em) {
+          margin: 0;
+          font-size: 16px;
+          font-weight: normal;
+        }
+      }
+
+      & .description {
+        font-size: 16px;
+        line-height: 1.5;
+        color: var(--color-text-default);
+
+        @media screen and (max-width: 48em) {
+          font-size: 12px;
+        }
       }
     }
   }
