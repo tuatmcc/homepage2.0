@@ -6,9 +6,10 @@ import { FC, Suspense, useContext, useEffect, useState } from 'react';
 import styles from './style.module.css';
 
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
+import classNames from '~/utilities/classNames';
 import { getCssCustomProperty } from '~/utilities/getCssCustomProperty';
 
-const pageCount = 4;
+const pageCount = 3.5;
 
 const Images: FC = () => {
 	const { width, height } = useThree((state) => state.viewport);
@@ -36,7 +37,7 @@ const Images: FC = () => {
 			<ImageImpl position={[0, -height * 1.5, 2.5]} scale={[2, 3]} zoom={zoom[5]} url="/random-tech-image-3.webp" />
 			<ImageImpl
 				zoom={zoom[6]}
-				position={[0, -height * 2 - height / 1, 0]}
+				position={[0, -height * (pageCount - 1), 0]}
 				scale={[width, height]}
 				url="/random-tech-image-1.webp"
 			/>
@@ -54,22 +55,26 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 	const data = useScroll();
 	const [vH, setVH] = useState<number>(window.innerHeight); // viewport height
 	const [opacities, setOpacities] = useState<number[]>([]);
-	const offset: number = +getCssCustomProperty('--navbar-mobile-height').replace('px', '');
 	useEffect(() => {
-		if (isMobile && orientation === 'portrait') {
-			setVH(window.innerHeight - offset);
+    if (isMobile && orientation === 'portrait') {
+      const offset: number = +getCssCustomProperty('--navbar-mobile-height').replace('px', '');
+      setVH(window.innerHeight - offset);
+    } else if (!isMobile) {
+      const offset: number = +getCssCustomProperty('--navbar-pc-height').replace('px', '');
+      setVH(window.innerHeight - offset);
 		} else {
 			setVH(window.innerHeight);
 		}
-	}, [isMobile, offset, orientation]);
+	}, [isMobile, orientation]);
 	useFrame(() => {
 		setOpacities([
 			data.range(0.01 / pageCount, 0.1 / pageCount),
 			1 - data.range(0.01 / pageCount, 0),
 			data.range(0.5 / pageCount, 0.2 / pageCount),
-			data.range(1 / pageCount, 0.5 / pageCount) * 0.5,
-			data.range(1.8 / pageCount, 1.3 / pageCount) * 0.5,
-			data.range(2.5 / pageCount, 2 / pageCount) * 0.5,
+			data.range(1.2 / pageCount, 0.8 / pageCount) * 0.5,
+			data.range(1.8 / pageCount, 1.5 / pageCount) * 0.5,
+			data.range(2.5 / pageCount, 1.5 / pageCount) * 0.5,
+      data.range(1.2 / pageCount, 0.5 / pageCount),
 		]);
 	});
 	// コントロールと見やすさのため仕方なく、styleを直接書いている
@@ -81,41 +86,55 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 			<h1 className={styles.mcc} style={{ top: vH * 0.5, opacity: opacities[0] }}>
 				MCC
 			</h1>
-			<button className={styles.downArrow} style={{ top: vH * 0.8, opacity: opacities[1] }} />
+			<button className={styles.downArrow} style={{ top: vH * 0.9, opacity: opacities[1] }} />
 			<h2 className={styles.name2} style={{ top: vH, opacity: opacities[2] }}>
 				私たちは、東京農工大学
 				<br />
 				マイクロコンピュータークラブです。
 			</h2>
-			<p className={styles.information} style={{ top: vH * 1.2, opacity: opacities[3] }}>
+			<p className={styles.information} style={{ top: vH * 1.5, opacity: opacities[3] }}>
 				Infomation
 			</p>
-			<p className={styles.and} style={{ top: vH * 1.5, opacity: opacities[4] }}>
+			<p className={styles.and} style={{ top: vH * 2, opacity: opacities[4] }}>
 				&
 			</p>
-			<p className={styles.technology} style={{ top: vH * 2.7, opacity: opacities[5] }}>
+			<p className={styles.technology} style={{ top: vH * 2.5, opacity: opacities[5] }}>
 				Technology
 			</p>
-			<p className={styles.catchCopy} style={{ top: vH * 1.9 }}>
-				<span>部員たちの興味は様々。</span>
+			<p className={styles.catchCopy} style={{ top: vH * 1.8, opacity: opacities[6] }}>
+				<span>部員たちの興味は様々です。</span>
 				<span>プログラミング、グラフィック、ハードウェア......</span>
-				<span>それぞれの興味を持つ部員が集まり、交流を重ねることで、お互いの視野を広げる。</span>
+				<span>それぞれの興味を持つ部員が集まり、交流を重ねることで、お互いの視野を広げる、</span>
 				<span>それが、私たちTUATMCCです。</span>
 			</p>
-			<div className={styles.card1} style={{ top: vH * 3.1 }}>
-				<Link href="/about" className={styles.aboutLink}>
-					MCCについてもっとよく知る →
-				</Link>
-			</div>
-			<div className={styles.card2}>
-				<Link href="/activities" className={styles.activitiesLink}>
-					MCCの活動報告 →
-				</Link>
-			</div>
-			<div className={styles.card3}>
-				<Link href="/contact" className={styles.blogLink}>
-					MCCのブログ →
-				</Link>
+			<div className={styles.bottms} style={{ top: vH * 2.95 }}>
+				<div className={styles.cards}>
+					<div className={styles.cardItem}>
+						<Link href="/about" className={styles.cardLink}>
+							もっとMCCを知る →
+						</Link>
+					</div>
+					<div className={styles.cardItem}>
+						<Link href="/activities" className={styles.cardLink}>
+							活動報告 →
+						</Link>
+					</div>
+					<div className={styles.cardItem}>
+						<Link href="/contact" className={styles.cardLink}>
+							ブログ →
+						</Link>
+					</div>
+				</div>
+				{!isMobile && (
+					<div className={styles.twitterWrapper}>
+						<a
+							className={classNames('twitter-timeline', styles.twitterTimeLine)}
+							href="https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw"
+						>
+							Tweets by TUATMCC
+						</a>
+					</div>
+				)}
 			</div>
 		</>
 	);
@@ -123,6 +142,15 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 
 export const HomeScrollControl: FC = () => {
 	const mediaQuery = useContext(MediaQueryContext);
+	useEffect(() => {
+		const script = document.createElement('script');
+		script.src = 'https://platform.twitter.com/widgets.js';
+		script.async = true;
+		document.body.appendChild(script);
+		return () => {
+			document.body.removeChild(script);
+		};
+	});
 	return (
 		<Canvas gl={{ antialias: false }} dpr={[1, 1.5]} className={styles.canvas}>
 			<Suspense fallback={null}>

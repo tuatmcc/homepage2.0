@@ -31,7 +31,7 @@
 
   & .downArrow {
     position: absolute;
-    left: 50vw;
+    left: calc(50svw - 10px);
     width: 0;
     height: 0;
     padding: 0;
@@ -57,28 +57,30 @@
 
   & .information {
     position: absolute;
-    left: 40vw;
+    left: 30vw;
     margin: 0;
-    font-size: 15vw;
+    font-size: 20vw;
     font-weight: bold;
+    pointer-events: none;
     opacity: 0.5;
   }
 
   & .and {
     position: absolute;
-    left: 0.5vw;
+    left: 20vw;
     margin: 0;
     font-size: 50vmin;
     font-weight: bold;
+    pointer-events: none;
   }
 
   & .technology {
     position: absolute;
-    top: 270vh;
     left: -5vw;
     margin: 0;
     font-size: 20vw;
     font-weight: bold;
+    pointer-events: none;
   }
 
   & .catchCopy {
@@ -95,46 +97,57 @@
       margin-bottom: 0.5em;
     }
   }
-
-  & .card1 {
+  
+  & .bottms {
     position: absolute;
-    top: 320vh;
-    left: 2vw;
-    width: 96vw;
-    font-size: 24px;
-    line-height: 2;
-    background: rgb(0 0 0 / 50%);
+    bottom: 0;
+    left: 0;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 100svw;
+    height: 40svh;
 
-    & .aboutLink {
-      color: white;
+    & .cards {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      align-items: stretch;
+      justify-content: center;
+      max-width: 600px;
+
+      & .cardItem {
+        padding: 0.5em;
+        margin: 0 0.5em;
+        background: rgb(0 0 0 / 50%);
+        
+        & .cardLink {
+          font-size: min(24px, 6vw);
+          font-weight: bold;
+          line-height: 2;
+          color: white;
+        }
+      }
     }
-  }
-
-  & .card2 {
-    position: absolute;
-    top: 330vh;
-    left: 2vw;
-    width: 96vw;
-    font-size: 24px;
-    line-height: 2;
-    background: rgb(0 0 0 / 50%);
-
-    & .activitiesLink {
-      color: white;
-    }
-  }
-
-  & .card3 {
-    position: absolute;
-    top: 340vh;
-    left: 2vw;
-    width: 96vw;
-    font-size: 24px;
-    line-height: 2;
-    background: rgb(0 0 0 / 50%);
-
-    & .blogLink {
-      color: white;
+  
+    & .twitterWrapper {
+      position: relative;
+      flex: 1;
+      max-width: 500px;
+      height: 40svh;
+      overflow: auto;
+      font-size: 12px;
+    
+      > div {
+        width: 100%;
+        height: 60svh;
+        font-size: 12px;
+        border: none;
+      }
     }
   }
 }
+
