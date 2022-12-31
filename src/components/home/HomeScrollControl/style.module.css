@@ -2,8 +2,7 @@
   width: 100%;
   line-height: 1;
   color: white;
-
-  /* background-image: url(/random-tech-image-2.webp); */
+  background-image: url('/tuat-gate.webp');
   background-size: cover;
 
   & .intro {
@@ -28,6 +27,32 @@
     margin: 0;
     font-size: 24px;
     line-height: 1.4;
+  }
+
+  & .downArrow {
+    position: absolute;
+    left: 50vw;
+    width: 0;
+    height: 0;
+    padding: 0;
+    border-top: 20px solid white;
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+    animation: down-arrow 1s infinite;
+  }
+
+  @keyframes down-arrow {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    50% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(-100%);
+    }
   }
 
   & .information {

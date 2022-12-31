@@ -1,9 +1,12 @@
 import { Preload, ScrollControls, Scroll, useScroll, Image as ImageImpl } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import Link from 'next/link';
-import { FC, Suspense, useState } from 'react';
+import { FC, Suspense, useContext, useEffect, useState } from 'react';
 
 import styles from './style.module.css';
+
+import { MediaQueryContext } from '~/providers/MediaQueryProvider';
+import { getCssCustomProperty } from '~/utilities/getCssCustomProperty';
 
 const pageCount = 4;
 
@@ -40,15 +43,30 @@ const Images: FC = () => {
 		</group>
 	);
 };
-
-const Html: FC = () => {
+type HtmlProps = {
+	mediaQuery: {
+		isMobile: boolean;
+		orientation: 'portrait' | 'landscape';
+	};
+};
+const Html: FC<HtmlProps> = ({ mediaQuery }) => {
+	const { isMobile, orientation } = mediaQuery;
 	const data = useScroll();
-	const vH = window.innerHeight; // viewport height
+	const [vH, setVH] = useState<number>(window.innerHeight); // viewport height
 	const [opacities, setOpacities] = useState<number[]>([]);
+	const offset: number = +getCssCustomProperty('--navbar-mobile-height').replace('px', '');
+	useEffect(() => {
+		if (isMobile && orientation === 'portrait') {
+			setVH(window.innerHeight - offset);
+		} else {
+			setVH(window.innerHeight);
+		}
+	}, [isMobile, offset, orientation]);
 	useFrame(() => {
 		setOpacities([
 			data.range(0.01 / pageCount, 0.1 / pageCount),
-			data.range(0.5 / pageCount, 0.7 / pageCount),
+			1 - data.range(0.01 / pageCount, 0),
+			data.range(0.5 / pageCount, 0.2 / pageCount),
 			data.range(1 / pageCount, 0.5 / pageCount) * 0.5,
 			data.range(1.8 / pageCount, 1.3 / pageCount) * 0.5,
 			data.range(2.5 / pageCount, 2 / pageCount) * 0.5,
@@ -63,18 +81,19 @@ const Html: FC = () => {
 			<h1 className={styles.mcc} style={{ top: vH * 0.5, opacity: opacities[0] }}>
 				MCC
 			</h1>
-			<h2 className={styles.name2} style={{ top: vH, opacity: opacities[1] }}>
+			<button className={styles.downArrow} style={{ top: vH * 0.8, opacity: opacities[1] }} />
+			<h2 className={styles.name2} style={{ top: vH, opacity: opacities[2] }}>
 				私たちは、東京農工大学
 				<br />
 				マイクロコンピュータークラブです。
 			</h2>
-			<p className={styles.information} style={{ top: vH * 1.2, opacity: opacities[2] }}>
+			<p className={styles.information} style={{ top: vH * 1.2, opacity: opacities[3] }}>
 				Infomation
 			</p>
-			<p className={styles.and} style={{ top: vH * 1.5, opacity: opacities[3] }}>
+			<p className={styles.and} style={{ top: vH * 1.5, opacity: opacities[4] }}>
 				&
 			</p>
-			<p className={styles.technology} style={{ top: vH * 2.7, opacity: opacities[4] }}>
+			<p className={styles.technology} style={{ top: vH * 2.7, opacity: opacities[5] }}>
 				Technology
 			</p>
 			<p className={styles.catchCopy} style={{ top: vH * 1.9 }}>
@@ -83,7 +102,7 @@ const Html: FC = () => {
 				<span>それぞれの興味を持つ部員が集まり、交流を重ねることで、お互いの視野を広げる。</span>
 				<span>それが、私たちTUATMCCです。</span>
 			</p>
-			<div className={styles.card1}>
+			<div className={styles.card1} style={{ top: vH * 3.1 }}>
 				<Link href="/about" className={styles.aboutLink}>
 					MCCについてもっとよく知る →
 				</Link>
@@ -103,6 +122,7 @@ const Html: FC = () => {
 };
 
 export const HomeScrollControl: FC = () => {
+	const mediaQuery = useContext(MediaQueryContext);
 	return (
 		<Canvas gl={{ antialias: false }} dpr={[1, 1.5]} className={styles.canvas}>
 			<Suspense fallback={null}>
@@ -111,7 +131,7 @@ export const HomeScrollControl: FC = () => {
 						<Images />
 					</Scroll>
 					<Scroll html>
-						<Html />
+						<Html mediaQuery={mediaQuery} />
 					</Scroll>
 				</ScrollControls>
 				<Preload />
