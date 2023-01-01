@@ -12,6 +12,7 @@ export const Helmet: FC<HelmetProps> = ({ meta }) => {
 
 	return (
 		<Head>
+			<link rel="icon" href="/mcc-logo.svg" />
 			<title>{`${title} - TUATMCC`}</title>
 			<meta property="og:site_name" content={title} />
 			{description && (

@@ -14,15 +14,15 @@
     background: linear-gradient(var(--color-mcc-primary), var(--color-mcc-secondary));
     transition: all 0.5s ease-in-out;
     transform: translateY(0);
-  
+
     &.close {
       transform: translateY(-120%);
     }
 
     & .direction {
       position: absolute;
-      top: 2vh;
-      left: 2vw;
+      top: 2svh;
+      left: 2svw;
       font-size: 32px;
       font-weight: normal;
       color: var(--color-text-white);
@@ -36,7 +36,7 @@
     opacity: 0;
     transition: all 0.5s ease-in-out;
     transform: translateY(60%);
-  
+
     &.visible {
       opacity: 1;
       transform: translateY(0);

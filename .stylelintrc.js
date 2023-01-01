@@ -1,6 +1,6 @@
 module.exports = {
-	extends: ['stylelint-config-standard', 'stylelint-config-prettier', 'stylelint-config-recess-order'],
-	plugins: ['stylelint-scss', 'stylelint-order', 'stylelint-declaration-strict-value'],
+	extends: ['stylelint-config-standard', 'stylelint-config-recess-order'],
+	plugins: ['stylelint-order', 'stylelint-declaration-strict-value'],
 	rules: {
 		'string-quotes': 'single',
 		indentation: 2,
@@ -10,7 +10,7 @@ module.exports = {
 		'declaration-block-trailing-semicolon': null,
 		'no-descending-specificity': null,
 		'no-empty-source': null,
-		'no-eol-whitespace': null,
+		'no-eol-whitespace': true,
 		'no-extra-semicolons': true,
 		'no-invalid-double-slash-comments': null,
 		'no-missing-end-of-source-newline': true,

@@ -9,7 +9,7 @@
     top: 0;
     right: 0;
     width: var(--navbar-mobile-height);
-    height: 100vh;
+    height: 100svh;
   }
 
   &._sticky {
@@ -34,14 +34,14 @@
       right: 0;
       flex-direction: column;
       width: var(--navbar-mobile-height);
-      height: 100vh;
+      height: 100svh;
     }
 
     & .link {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 40px;
+      width: 44px;
       padding: 0;
       color: var(--color-mcc-primary);
       text-decoration: none;
@@ -49,7 +49,7 @@
       background: transparent;
       border: none;
     }
-    
+
     & .label {
       display: block;
       font-size: 12px;
@@ -59,5 +59,4 @@
       text-align: center;
     }
   }
-
 }

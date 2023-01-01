@@ -8,22 +8,22 @@
   & .intro {
     position: absolute;
     left: 0.5em;
-    width: 90vw;
+    width: 90svw;
     font-size: 44px;
   }
 
   & .mcc {
     position: absolute;
-    left: 40vw;
-    width: 90vw;
+    left: 40svw;
+    width: 90svw;
     margin: 0;
-    font-size: 20vw;
+    font-size: 20svw;
     font-weight: 800;
   }
 
   & .name2 {
     position: absolute;
-    width: 100vw;
+    width: 100svw;
     margin: 0;
     font-size: min(24px, 6vw);
     line-height: 1.4;
@@ -57,9 +57,9 @@
 
   & .information {
     position: absolute;
-    left: 30vw;
+    left: 30svw;
     margin: 0;
-    font-size: 20vw;
+    font-size: 20svw;
     font-weight: bold;
     pointer-events: none;
     opacity: 0.5;
@@ -67,7 +67,7 @@
 
   & .and {
     position: absolute;
-    left: 20vw;
+    left: 20svw;
     margin: 0;
     font-size: 50vmin;
     font-weight: bold;
@@ -76,18 +76,18 @@
 
   & .technology {
     position: absolute;
-    left: -5vw;
+    left: -5svw;
     margin: 0;
-    font-size: 20vw;
+    font-size: 20svw;
     font-weight: bold;
     pointer-events: none;
   }
 
   & .catchCopy {
     position: absolute;
-    top: 210vh;
-    left: 0.5vw;
-    width: 95vw;
+    top: 210svh;
+    left: 0.5svw;
+    width: 95svw;
     font-size: min(24px, 6vw);
     font-weight: bold;
     line-height: 1.5;
@@ -97,49 +97,50 @@
       margin-bottom: 0.5em;
     }
   }
-  
+
   & .bottms {
     position: absolute;
     bottom: 0;
     left: 0;
     display: flex;
-    gap: 16px;
     align-items: flex-start;
-    justify-content: space-evenly;
-    width: 96svw;
-    height: 40svh;
+    justify-content: space-around;
+    width: 98svw;
 
     & .cards {
       display: flex;
       flex: 1;
       flex-direction: column;
-      gap: 16px;
-      align-items: center;
       align-items: stretch;
-      justify-content: center;
+      justify-content: space-between;
       max-width: 600px;
+      height: 100%;
 
       & .cardItem {
+        display: block;
         padding: 8px;
         margin: 0 8px;
+        font-size: min(24px, 6vw);
+        font-weight: bold;
+        line-height: 2;
+        color: white;
         background: rgb(0 0 0 / 50%);
-        
-        & .cardLink {
-          font-size: min(24px, 6vw);
-          font-weight: bold;
-          line-height: 2;
-          color: white;
+
+        &:hover {
+          text-decoration: underline;
+          background: rgb(0 0 0 / 70%);
         }
       }
 
       & .socials {
         display: flex;
         gap: 16px;
+        align-self: flex-end;
         padding: 8px;
         margin: 0 8px;
       }
     }
-  
+
     & .twitterWrapper {
       position: relative;
       flex: 1;
@@ -147,8 +148,7 @@
       height: 40svh;
       overflow: auto;
       font-size: 12px;
-      
-      
+
       & > div {
         width: 100%;
         height: 60svh;
@@ -162,4 +162,3 @@
     }
   }
 }
-
