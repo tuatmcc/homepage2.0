@@ -35,7 +35,5 @@
   --breakpoint-mobile: 48em;
 
   /* Font */
-  /* stylelint-disable-next-line value-keyword-case */
-  --font-family-title: Arial, Helvetica, sans-serif;
-  --font-family-body: 'Noto Sans JP', arial, sans-serif;
+  --font-family-tag: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
 }

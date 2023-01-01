@@ -15,9 +15,9 @@
   margin: 16px auto;
 
   @media screen and (max-width: 62em) {
-    margin: 16px 5px;    
+    margin: 16px 5px;
   }
-  
+
   & .listItem {
     display: flex;
     gap: 16px;
@@ -25,7 +25,7 @@
     background: linear-gradient(120deg, var(--color-mcc-primary), var(--color-mcc-secondary));
     border-radius: 16px;
     box-shadow: var(--color-shadow-large);
-    
+
     &._reverse {
       flex-direction: row-reverse;
     }
@@ -35,7 +35,7 @@
       height: 160px;
       border-radius: 12px;
       object-fit: cover;
-      
+
       @media screen and (max-width: 48em) {
         width: 40px;
         height: 40px;
@@ -43,6 +43,10 @@
     }
 
     & .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
       & .title {
         color: var(--color-text-white);
 

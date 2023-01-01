@@ -2,22 +2,16 @@ import { FC, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { Helmet } from '~/components/common/Helmet';
 import { Layout } from '~/components/common/Layout';
 import { HomeScrollControl } from '~/components/home/HomeScrollControl';
 import { HomeText3d } from '~/components/home/HomeText3d';
 import classNames from '~/utilities/classNames';
 
-const LandingPage: FC = () => {
-	const meta = {
-		title: 'Home',
-		description: '東京農工大学公認サークルMCC(マイクロコンピュータクラブ)のホームページです',
-		img: '/mcc-logo.svg',
-	};
+// 状態管理、コンポーネント管理が本当にひどすぎる。ベストプラクティスを調べなければ。
+const HomePageComponent: FC = () => {
 	const [isOpeningVisible, setIsOpeningVisible] = useState(true);
 	return (
 		<>
-			<Helmet meta={meta} />
 			<Layout noMobileHeader>
 				<div className={styles.container}>
 					<div className={classNames(styles.subScreen, isOpeningVisible ? '' : styles.visible)}>
@@ -34,4 +28,4 @@ const LandingPage: FC = () => {
 	);
 };
 
-export default LandingPage;
+export default HomePageComponent;
