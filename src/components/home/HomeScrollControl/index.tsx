@@ -111,7 +111,7 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 				</span>
 				<span className={styles.sentence}>それが、私たちTUATMCCです。</span>
 			</p>
-			<div className={styles.bottms} style={{ top: vH * 2.95 }}>
+			<div className={styles.bottms} style={{ top: vH * 2.95, bottom: vH * 3.5 }}>
 				<div className={styles.cards}>
 					<div className={styles.cardItem}>
 						<Link href="/about" className={styles.cardLink}>
