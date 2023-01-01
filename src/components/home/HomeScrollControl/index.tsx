@@ -111,23 +111,17 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 				</span>
 				<span className={styles.sentence}>それが、私たちTUATMCCです。</span>
 			</p>
-			<div className={styles.bottms} style={{ top: vH * 2.95, bottom: vH * 3.5 }}>
+			<div className={styles.bottms} style={{ top: vH * 2.8, height: vH * (3 - 2.5) }}>
 				<div className={styles.cards}>
-					<div className={styles.cardItem}>
-						<Link href="/about" className={styles.cardLink}>
-							もっとMCCを知る →
-						</Link>
-					</div>
-					<div className={styles.cardItem}>
-						<Link href="/activities" className={styles.cardLink}>
-							活動報告 →
-						</Link>
-					</div>
-					<div className={styles.cardItem}>
-						<Link href="/contact" className={styles.cardLink}>
-							ブログ →
-						</Link>
-					</div>
+					<Link href="/about" className={styles.cardItem}>
+						もっとMCCを知る →
+					</Link>
+					<Link href="/activities" className={styles.cardItem}>
+						活動報告 →
+					</Link>
+					<Link href="/contact" className={styles.cardItem}>
+						ブログ →
+					</Link>
 					<div className={styles.socials}>
 						<a href="https://twitter.com/TUATMCC" target="_blank" rel="noopener noreferrer">
 							<TwitterIcon />
