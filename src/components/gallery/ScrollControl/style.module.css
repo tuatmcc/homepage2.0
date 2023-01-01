@@ -5,22 +5,22 @@
 
   & .heading1 {
     position: absolute;
-    top: 60vh;
+    top: 60svh;
     left: 0.5em;
     font-size: 40px;
   }
 
   & .heading2 {
     position: absolute;
-    top: 80vh;
-    left: 60vw;
-    font-size: 15vw;
+    top: 80svh;
+    left: 60svw;
+    font-size: 15svw;
   }
 
   & .heading3 {
     position: absolute;
-    top: 148vh;
-    left: 0.5vw;
-    font-size: 40vw;
+    top: 148svh;
+    left: 0.5svw;
+    font-size: 40svw;
   }
 }

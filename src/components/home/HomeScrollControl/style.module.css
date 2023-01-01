@@ -8,22 +8,22 @@
   & .intro {
     position: absolute;
     left: 0.5em;
-    width: 90vw;
+    width: 90svw;
     font-size: 44px;
   }
 
   & .mcc {
     position: absolute;
-    left: 40vw;
-    width: 90vw;
+    left: 40svw;
+    width: 90svw;
     margin: 0;
-    font-size: 20vw;
+    font-size: 20svw;
     font-weight: 800;
   }
 
   & .name2 {
     position: absolute;
-    width: 100vw;
+    width: 100svw;
     margin: 0;
     font-size: min(24px, 6vw);
     line-height: 1.4;
@@ -57,9 +57,9 @@
 
   & .information {
     position: absolute;
-    left: 30vw;
+    left: 30svw;
     margin: 0;
-    font-size: 20vw;
+    font-size: 20svw;
     font-weight: bold;
     pointer-events: none;
     opacity: 0.5;
@@ -67,7 +67,7 @@
 
   & .and {
     position: absolute;
-    left: 20vw;
+    left: 20svw;
     margin: 0;
     font-size: 50vmin;
     font-weight: bold;
@@ -76,18 +76,18 @@
 
   & .technology {
     position: absolute;
-    left: -5vw;
+    left: -5svw;
     margin: 0;
-    font-size: 20vw;
+    font-size: 20svw;
     font-weight: bold;
     pointer-events: none;
   }
 
   & .catchCopy {
     position: absolute;
-    top: 210vh;
-    left: 0.5vw;
-    width: 95vw;
+    top: 210svh;
+    left: 0.5svw;
+    width: 95svw;
     font-size: min(24px, 6vw);
     font-weight: bold;
     line-height: 1.5;
