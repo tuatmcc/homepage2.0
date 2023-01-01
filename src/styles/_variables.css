@@ -1,10 +1,10 @@
 :root {
   /* Brand Colors */
-  --color-mcc-primary: #009DAE;
-  --color-mcc-secondary: #71DFE7;
-  --color-mcc-tertiary: #C2FFF9;
-  --color-mcc-quaternary: #FFE652;
-  
+  --color-mcc-primary: #009dae;
+  --color-mcc-secondary: #71dfe7;
+  --color-mcc-tertiary: #c2fff9;
+  --color-mcc-quaternary: #ffe652;
+
   /* Other Colors */
   --color-background: #f6f4f4;
   --color-text-default: #24292f;
@@ -36,6 +36,6 @@
 
   /* Font */
   /* stylelint-disable-next-line value-keyword-case */
-  --font-family-title: Arial, Helvetica,  sans-serif;
-  --font-family-body: 'Noto Sans JP', arial,  sans-serif;
+  --font-family-title: Arial, Helvetica, sans-serif;
+  --font-family-body: 'Noto Sans JP', arial, sans-serif;
 }
