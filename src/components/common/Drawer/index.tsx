@@ -14,7 +14,11 @@ type DrawerProps = {
 export const Drawer: FC<DrawerProps> = ({ isOpen, onOutFocus }) => {
 	return (
 		<>
-			<button className={classNames(styles.overlay, isOpen ? styles._open : '')} onClick={onOutFocus} />
+			<button
+				className={classNames(styles.overlay, isOpen ? styles._open : '')}
+				onClick={onOutFocus}
+				value='drawer colser'
+			/>
 			<div className={classNames(styles.drawer, isOpen ? styles._open : '')}>
 				<ul className={styles.navIn}>
 					{BASE_ROUTES_LIST.map((route) => (
