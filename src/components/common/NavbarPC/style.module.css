@@ -1,4 +1,4 @@
-.header  {
+.header {
   position: sticky;
   top: 0;
   z-index: 5;
@@ -17,7 +17,7 @@
       background: transparent;
       border-bottom: none;
     }
-    
+
     & .brandLink {
       display: flex;
       flex: 1;
@@ -25,11 +25,11 @@
       height: inherit;
       font-family: var(--font-family-title);
       text-decoration: none;
-      
+
       & .brandLogo {
         margin: 3px;
       }
-      
+
       & .brandName {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
@@ -38,7 +38,7 @@
         color: var(--color-mcc-primary);
       }
     }
-    
+
     & .navIn {
       display: flex;
       flex: 1;
@@ -50,29 +50,28 @@
       padding: 20px 0 0;
       margin: 0;
       list-style: none;
-      
+
       & .listItem {
         display: flex;
         flex: 0 1 auto;
         align-items: center;
         height: inherit;
-        
+
         & .link {
           padding: 10px 0;
           font-weight: bold;
           color: var(--color-text-subtle);
           text-decoration: none;
-          
+
           &:hover {
             color: var(--color-mcc-primary);
-            
           }
-          
+
           &.active {
             border-top: 3px solid var(--color-mcc-primary);
           }
         }
       }
     }
-  }  
+  }
 }
