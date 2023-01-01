@@ -4,7 +4,7 @@ export type ROUTE = {
 };
 
 export const ROUTES = {
-  HOME: { PATH: '/home', LABEL: 'Home' },
+  HOME: { PATH: '/', LABEL: 'Home' },
   ABOUT: { PATH: '/about', LABEL: 'AboutUs' },
   ACTIVITIES: { PATH: '/activities', LABEL: 'Activities' },
   ACTIVITIES_DISCORD_TUTORIAL: {
