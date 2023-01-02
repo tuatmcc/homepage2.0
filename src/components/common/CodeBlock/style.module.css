@@ -1,4 +1,5 @@
 .codeBlock {
+  position: relative;
   margin: 8px 0;
 
   & .title {
@@ -8,6 +9,22 @@
     color: var(--color-codeblock-text);
     background-color: var(--color-codeblock-background);
     border-radius: 4px;
+  }
+
+  & .copyButton {
+    /* fix copy button to left top of the parent element */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48px;
+    height: 24px;
+    padding: 0;
+    margin: 8px;
+    cursor: pointer;
+    background-color: var(--color-text-white);
+    border: none;
+    border-radius: 4px;
+    outline: none;
   }
 
   & .pre {
