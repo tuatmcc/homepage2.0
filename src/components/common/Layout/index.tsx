@@ -1,16 +1,15 @@
-import { FC, ReactNode, useContext } from 'react';
+import { FC, ReactNode, useContext, useEffect, useState } from 'react';
+
+import { Navbar } from '../Navbar';
 
 import styles from './style.module.css';
 
-import { HeaderMobile }  from '~/components/common/HeaderMobile';
-import { NavbarMobile } from '~/components/common/NavbarMobile';
-import { NavbarPC } from '~/components/common/NavbarPC/NavbarPC';
-import { MediaQueryContext } from '~/providers/MediaQueryProvider';
 import classNames from '~/utilities/classNames';
 
 export type PageProps = {
 	children?: ReactNode | ReactNode[];
   noMobileHeader?: boolean;
+  navbarTheme?: 'auto' | 'light' | 'transparent';
 };
 
 /**
@@ -18,16 +17,28 @@ export type PageProps = {
  * @param param0
  * @returns
  */
-export const Layout: FC<PageProps> = ({ children, noMobileHeader = false }) => {
-	const { isMobile } = useContext(MediaQueryContext);
+export const Layout: FC<PageProps> = ({ children, noMobileHeader = false, navbarTheme = 'auto' }) => {
+  const [positionalNavbarTheme, setNavbarTheme] = useState<'light' | 'transparent'>('transparent');
+	useEffect(() => {
+    if (navbarTheme !== 'auto') return;
+
+		addEventListener('scroll', () => {
+			const scrollY = window.scrollY;
+			if (scrollY > window.innerHeight * 0.6) {
+				setNavbarTheme('light');
+			} else {
+				setNavbarTheme('transparent');
+			}
+		});
+
+		return () => removeEventListener('scroll', () => {});
+	}, [navbarTheme]);
 	return (
 		<>
-			{!isMobile && <NavbarPC />}
-			<div className={classNames(styles.layout, noMobileHeader ? styles._stack : '')}>
-				{isMobile && !noMobileHeader && <HeaderMobile />}
+    <Navbar theme={navbarTheme !== 'auto' ? navbarTheme : positionalNavbarTheme} />
+			<div className={classNames(styles.layout)}>
 				{children}
 			</div>
-			{isMobile && <NavbarMobile />}
 		</>
 	);
 };

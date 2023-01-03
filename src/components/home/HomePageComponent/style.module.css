@@ -2,7 +2,7 @@
   top: 0;
   bottom: 0;
   width: 100%;
-  height: 100%;
+  height: 100svh;
   overflow: hidden;
 
   & .topScreen {
@@ -16,6 +16,7 @@
     transform: translateY(0);
 
     &.close {
+      opacity: 0.5;
       transform: translateY(-120%);
     }
 
@@ -31,8 +32,12 @@
 
   & .subScreen {
     top: 0;
-    height: 100%;
+    width: 100%;
+    height: 100svh;
+    overflow: hidden;
     background: linear-gradient(var(--color-mcc-secondary), var(--color-mcc-primary));
+    background-image: url('/tuat-gate.webp');
+    background-size: cover;
     opacity: 0;
     transition: all 0.5s ease-in-out;
     transform: translateY(60%);

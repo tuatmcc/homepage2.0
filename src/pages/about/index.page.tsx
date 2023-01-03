@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { FC } from 'react';
 
 import styles from './style.module.css';
@@ -18,6 +19,11 @@ const AboutPage: FC = () => {
   <>
     <Helmet meta={meta} />
     <Layout>
+      <header>
+        <div className={styles.headerContent}>
+      <Image src="/mcc-logo.svg" alt="MCC Logo" width={200} height={200} />
+        </div>
+      </header>
       <div className={styles.about}>
       <h1 className={styles.pageTitle}>MCCについて</h1>
       <p className={styles.brief}>IT系サークル。東京農工大学マイクロコンピュータクラブ(TUATMCC)です。</p>

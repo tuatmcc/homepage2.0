@@ -9,7 +9,6 @@ import { GitHubIcon } from '~/components/common/icons/GitHubIcon';
 import { TwitterIcon } from '~/components/common/icons/TwitterIcon';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
 import classNames from '~/utilities/classNames';
-import { getCssCustomProperty } from '~/utilities/getCssCustomProperty';
 
 const pageCount = 3.5;
 
@@ -46,28 +45,20 @@ const Images: FC = () => {
 		</group>
 	);
 };
+
 type HtmlProps = {
 	mediaQuery: {
 		isMobile: boolean;
 		orientation: 'portrait' | 'landscape';
 	};
 };
+
 const Html: FC<HtmlProps> = ({ mediaQuery }) => {
-	const { isMobile, orientation } = mediaQuery;
+	const { isMobile } = mediaQuery;
 	const data = useScroll();
-	const [vH, setVH] = useState<number>(window.innerHeight); // viewport height
+	const vH = window.innerHeight; // viewport height
 	const [opacities, setOpacities] = useState<number[]>([]);
-	useEffect(() => {
-		if (isMobile && orientation === 'portrait') {
-			const offset: number = +getCssCustomProperty('--navbar-mobile-height').replace('px', '');
-			setVH(window.innerHeight - offset);
-		} else if (!isMobile) {
-			const offset: number = +getCssCustomProperty('--navbar-pc-height').replace('px', '');
-			setVH(window.innerHeight - offset);
-		} else {
-			setVH(window.innerHeight);
-		}
-	}, [isMobile, orientation]);
+
 	useFrame(() => {
 		setOpacities([
 			data.range(0.01 / pageCount, 0.1 / pageCount),
@@ -92,7 +83,9 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 			<h2 className={styles.name2} style={{ top: vH * 1.1, opacity: opacities[2] }}>
 				私たちは、東京農工大学
 				<br />
-				マイクロコンピュータークラブです。
+				マイクロコンピュータークラブ、
+        <br />
+        TUATMCCです。
 			</h2>
 			<p className={styles.information} style={{ top: vH * 1.5, opacity: opacities[3] }}>
 				Infomation

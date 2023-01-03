@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { Layout } from '~/components/common/Layout';
+import { Navbar } from '~/components/common/Navbar';
 import { HomeScrollControl } from '~/components/home/HomeScrollControl';
 import { HomeText3d } from '~/components/home/HomeText3d';
 import classNames from '~/utilities/classNames';
@@ -12,18 +12,17 @@ const HomePageComponent: FC = () => {
 	const [isOpeningVisible, setIsOpeningVisible] = useState(true);
 	return (
 		<>
-			<Layout noMobileHeader>
-				<div className={styles.container}>
-					<div className={classNames(styles.subScreen, isOpeningVisible ? '' : styles.visible)}>
-						<HomeScrollControl />
-					</div>
-
-					<div className={`${styles.topScreen} ${!isOpeningVisible ? styles.close : ''}`}>
-						<HomeText3d onNextButtonClick={() => setIsOpeningVisible(!isOpeningVisible)} />
-						<div className={styles.direction}>Click Anywhere ⸺</div>
-					</div>
+			<Navbar theme='transparent' />
+			<div className={styles.container}>
+				<div className={classNames(styles.subScreen, isOpeningVisible ? '' : styles.visible)}>
+					<HomeScrollControl />
 				</div>
-			</Layout>
+
+				<div className={`${styles.topScreen} ${!isOpeningVisible ? styles.close : ''}`}>
+					<HomeText3d onNextButtonClick={() => setIsOpeningVisible(!isOpeningVisible)} />
+					<div className={styles.direction}>Click Anywhere ⸺</div>
+				</div>
+			</div>
 		</>
 	);
 };
