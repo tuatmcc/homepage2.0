@@ -9,10 +9,10 @@ import classNames from '~/utilities/classNames';
 
 type NavbarProps = {
 	theme: 'light' | 'transparent';
-	showBrandName?: boolean;
+	noBrand?: boolean;
 };
 
-export const Navbar: FC<NavbarProps> = ({ theme = 'transparent', showBrandName = true }) => {
+export const Navbar: FC<NavbarProps> = ({ theme = 'transparent', noBrand = false }) => {
 	const themeClass = theme === 'light' ? styles._light : styles._transparent;
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -20,8 +20,12 @@ export const Navbar: FC<NavbarProps> = ({ theme = 'transparent', showBrandName =
 		<>
 			<div className={classNames(styles.navbar, themeClass)}>
 				<Link href={ROUTES.HOME.PATH} className={classNames(styles.brand, themeClass)}>
-					<MccLogo />
-					{showBrandName && <span className={classNames(styles.brandText, themeClass)}>MCC</span>}
+					{!noBrand && (
+						<>
+							<MccLogo />
+							<span className={classNames(styles.brandText, themeClass)}>MCC</span>
+						</>
+					)}
 				</Link>
 				<button
 					className={classNames(styles.hamburgerMenu, themeClass, isDrawerOpen ? styles._active : '')}

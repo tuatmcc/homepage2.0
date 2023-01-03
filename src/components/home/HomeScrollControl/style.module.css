@@ -5,6 +5,12 @@
   line-height: 1;
   color: white;
 
+  & > * {
+    &::-webkit-scrollbar-track {
+      background-color: #fff !important;
+    }
+  }
+
   & .intro {
     position: absolute;
     left: 0.5em;
@@ -19,6 +25,22 @@
     margin: 0;
     font-size: 20svw;
     font-weight: 800;
+    opacity: 1;
+    animation: mcc 8s linear;
+
+    @keyframes mcc {
+      0% {
+        opacity: 0;
+      }
+
+      80% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
   }
 
   & .name2 {
@@ -31,7 +53,7 @@
 
   & .downArrow {
     position: absolute;
-    left: calc(50svw - 10px);
+    left: 10svw;
     width: 0;
     height: 0;
     padding: 0;

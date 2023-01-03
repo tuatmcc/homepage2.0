@@ -1,0 +1,32 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background-color: #ccc;
+
+  & .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--color-mcc-brand);
+  }
+
+  & .socials {
+    display: flex;
+    gap: 16px;
+    padding: 8px;
+    margin: 0 8px;
+  }
+
+  & .copyRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #333;
+  }
+}

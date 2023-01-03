@@ -45,7 +45,7 @@ const Images: FC = () => {
 export const HomeTest: FC = () => {
 	return (
 		<>
-			<Navbar theme='transparent' showBrandName />
+			<Navbar theme='transparent' noBrand />
 			<div className={styles.canvasContainer}>
 				<Canvas gl={{ antialias: false }} dpr={[1, 1.5]}>
 					<Suspense fallback={null}>
