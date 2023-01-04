@@ -112,7 +112,7 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 					<Link href="/activities" className={styles.cardItem}>
 						活動報告 →
 					</Link>
-					<Link href="/contact" className={styles.cardItem}>
+					<Link href="/blog" className={styles.cardItem}>
 						ブログ →
 					</Link>
 					<div className={styles.socials}>

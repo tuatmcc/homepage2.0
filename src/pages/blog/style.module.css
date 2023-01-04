@@ -19,7 +19,8 @@
     font-family: var(--font-family-orbitron);
     font-size: 32px;
     font-weight: bold;
-    color: var(--color-mcc-quaternary);
+    color: white;
+    text-shadow: 0 0 16px var(--color-mcc-quaternary);
     letter-spacing: 0.1em;
   }
 
