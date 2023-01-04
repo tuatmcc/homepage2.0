@@ -11,7 +11,7 @@ import { TagList } from '~/components/common/TagList';
 import { PostCollector, PostCollectorProps } from '~/lib/post-collector';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
 import { MetaData } from '~/types/meta';
-import classNames from '~/utilities/classNames';
+import classNames from '~/utils/classNames';
 
 const meta: MetaData = {
 	title: 'Blog',

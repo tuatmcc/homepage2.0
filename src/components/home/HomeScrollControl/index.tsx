@@ -8,7 +8,7 @@ import styles from './style.module.css';
 import { GitHubIcon } from '~/components/common/icons/GitHubIcon';
 import { TwitterIcon } from '~/components/common/icons/TwitterIcon';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
-import classNames from '~/utilities/classNames';
+import classNames from '~/utils/classNames';
 
 const pageAmout = 3.5;
 
