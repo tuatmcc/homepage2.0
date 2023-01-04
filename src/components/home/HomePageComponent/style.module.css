@@ -2,44 +2,54 @@
   top: 0;
   bottom: 0;
   width: 100%;
-  height: 100%;
+  height: 100svh;
   overflow: hidden;
+  background-image: url('/tuat-gate.webp');
+  background-size: cover;
 
   & .topScreen {
     position: absolute;
     top: 0;
-    z-index: 100;
     width: 100%;
     height: 100svh;
-    background: linear-gradient(var(--color-mcc-primary), var(--color-mcc-secondary));
-    transition: all 0.5s ease-in-out;
-    transform: translateY(0);
+    opacity: 0.5;
+    animation: top-screen 6s linear;
 
-    &.close {
-      transform: translateY(-120%);
-    }
+    @keyframes top-screen {
+      0% {
+        background: #06c9;
+        opacity: 1;
+      }
 
-    & .direction {
-      position: absolute;
-      top: 2svh;
-      left: 2svw;
-      font-size: 32px;
-      font-weight: normal;
-      color: var(--color-text-white);
+      80% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0.5;
+      }
     }
   }
 
   & .subScreen {
     top: 0;
-    height: 100%;
-    background: linear-gradient(var(--color-mcc-secondary), var(--color-mcc-primary));
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-    transform: translateY(60%);
+    width: 100%;
+    height: 100svh;
+    overflow: hidden;
+    animation: sub-screen 6s linear;
 
-    &.visible {
-      opacity: 1;
-      transform: translateY(0);
+    @keyframes sub-screen {
+      0% {
+        opacity: 0;
+      }
+
+      80% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
     }
   }
 }

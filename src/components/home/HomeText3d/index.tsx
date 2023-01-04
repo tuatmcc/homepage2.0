@@ -19,7 +19,7 @@ const Rig: FC<RigProps> = ({ children }) => {
 	const inner = useRef<Group>(null!);
 	useFrame(({ clock }) => {
 		outer.current.position.y = MathUtils.lerp(outer.current.position.y, 0, 0.01);
-		inner.current.rotation.y = Math.sin(clock.getElapsedTime() / 8 + 5.5) * Math.PI;
+		inner.current.rotation.y = (Math.sin(clock.getElapsedTime() / 8 + 5.5) * Math.PI) / 2;
 		inner.current.position.z = Math.sin(clock.getElapsedTime() / 2) * 16;
 		inner.current.position.y = 1 + Math.sin(clock.getElapsedTime()) * 3;
 	});
@@ -64,7 +64,7 @@ export const HomeText3d: FC<Text3dProps> = ({ onNextButtonClick }) => {
 						<mesh position={[-20, 8, 0]}>
 							{/* @ts-ignore */}
 							<textGeometry args={['Micro', { font, size: 5, height: 1 }]} />
-							<meshPhysicalMaterial color='orange' />
+							<meshPhysicalMaterial color='peacock' />
 						</mesh>
 					</Float>
 					<Float floatIntensity={5} speed={3}>

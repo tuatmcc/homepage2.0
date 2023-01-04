@@ -57,28 +57,34 @@ export const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
 	const { title, img, date, tags } = props.meta;
 	const tagList = tags?.map((tag) => <Tag key={tag}>{tag}</Tag>);
 	return (
-		<main className={styles.main}>
-			<div className={styles.mainIn}>
-				<div className={`${styles.article} ${props.className}`}>
+		<>
+			<header>
+				<div className={styles.headerContent}>
+					<Image
+						src={img ? img : '/tuat-gate.webp'}
+						alt="hero"
+						width={800}
+						height={300}
+						className={styles.heroImage}
+						onError={(e) => {
+							e.currentTarget.src = '/tuat-gate.webp';
+						}}
+						priority
+					/>
+					<div className={styles.heroImageOverlay} />
 					<h1 className={styles.title}>{title}</h1>
-					{img && (
-						<Image
-							src={img ? img : '/mcc-design.webp'}
-							alt="hero"
-							width={800}
-							height={300}
-							className={styles.hero}
-							onError={(e) => {
-								e.currentTarget.src = '/mcc-design.webp';
-							}}
-							priority
-						/>
-					)}
-					<div className={styles.date}>{date}</div>
-					<TagList className={styles.tagList}>{tagList}</TagList>
-					<div className={styles.content}>{content}</div>
 				</div>
-			</div>
-		</main>
+			</header>
+
+			<main>
+				<div className={styles.mainContent}>
+					<div className={styles.article}>
+						<div className={styles.date}>{date}</div>
+						<TagList className={styles.tagList}>{tagList}</TagList>
+						<div className={styles.content}>{content}</div>
+					</div>
+				</div>
+			</main>
+		</>
 	);
 };

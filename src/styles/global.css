@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Orbitron&display=swap');
 @import url('./_variables.css');
 
 /* stylelint-disable-next-line selector-id-pattern */
@@ -7,14 +7,16 @@ body,
 #__next {
   top: 0;
   width: 100%;
-  min-height: 100svh;
   padding: 0;
   margin: 0;
-  overflow: hidden;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--color-text-default);
-  background: var(--color-mcc-primary);
+  background: transparent;
   text-size-adjust: none;
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 }
 
 p {

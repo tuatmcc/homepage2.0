@@ -9,9 +9,8 @@ import { GitHubIcon } from '~/components/common/icons/GitHubIcon';
 import { TwitterIcon } from '~/components/common/icons/TwitterIcon';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
 import classNames from '~/utilities/classNames';
-import { getCssCustomProperty } from '~/utilities/getCssCustomProperty';
 
-const pageCount = 3.5;
+const pageAmout = 3.5;
 
 const Images: FC = () => {
 	const { width, height } = useThree((state) => state.viewport);
@@ -39,44 +38,36 @@ const Images: FC = () => {
 			<ImageImpl position={[0, -height * 1.5, 2.5]} scale={[2, 3]} zoom={zoom[5]} url="/abstract-tech-image-5.webp" />
 			<ImageImpl
 				zoom={zoom[6]}
-				position={[0, -height * (pageCount - 1), 0]}
+				position={[0, -height * (pageAmout - 1), 0]}
 				scale={[width, height]}
 				url="/abstract-tech-image-1.webp"
 			/>
 		</group>
 	);
 };
+
 type HtmlProps = {
 	mediaQuery: {
 		isMobile: boolean;
 		orientation: 'portrait' | 'landscape';
 	};
 };
+
 const Html: FC<HtmlProps> = ({ mediaQuery }) => {
-	const { isMobile, orientation } = mediaQuery;
+	const { isMobile } = mediaQuery;
 	const data = useScroll();
-	const [vH, setVH] = useState<number>(window.innerHeight); // viewport height
+	const vH = window.innerHeight; // viewport height
 	const [opacities, setOpacities] = useState<number[]>([]);
-	useEffect(() => {
-		if (isMobile && orientation === 'portrait') {
-			const offset: number = +getCssCustomProperty('--navbar-mobile-height').replace('px', '');
-			setVH(window.innerHeight - offset);
-		} else if (!isMobile) {
-			const offset: number = +getCssCustomProperty('--navbar-pc-height').replace('px', '');
-			setVH(window.innerHeight - offset);
-		} else {
-			setVH(window.innerHeight);
-		}
-	}, [isMobile, orientation]);
+
 	useFrame(() => {
 		setOpacities([
-			data.range(0.01 / pageCount, 0.1 / pageCount),
-			1 - data.range(0.01 / pageCount, 0),
-			data.range(0.5 / pageCount, 0.2 / pageCount),
-			data.range(1.2 / pageCount, 0.8 / pageCount) * 0.5,
-			data.range(1.8 / pageCount, 1.5 / pageCount) * 0.5,
-			data.range(2.5 / pageCount, 1.5 / pageCount) * 0.5,
-			data.range(1.4 / pageCount, 0.5 / pageCount),
+			data.range(0.01 / pageAmout, 0.1 / pageAmout),
+			1 - data.range(0.01 / pageAmout, 0),
+			data.range(0.5 / pageAmout, 0.2 / pageAmout),
+			data.range(1.2 / pageAmout, 0.8 / pageAmout) * 0.5,
+			data.range(1.8 / pageAmout, 1.5 / pageAmout) * 0.5,
+			data.range(2.5 / pageAmout, 1.5 / pageAmout) * 0.5,
+			data.range(1.4 / pageAmout, 0.5 / pageAmout),
 		]);
 	});
 	// コントロールと見やすさのため仕方なく、styleを直接書いている
@@ -85,14 +76,16 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 			<h1 className={styles.intro} style={{ top: vH * 0.2 }}>
 				TUAT Tech Group
 			</h1>
-			<h1 className={styles.mcc} style={{ top: vH * 0.5, opacity: opacities[0] }}>
+			<h1 className={styles.mcc} style={{ top: vH * 0.5 }}>
 				MCC
 			</h1>
 			<div className={styles.downArrow} style={{ top: vH * 0.9, opacity: opacities[1] }} />
 			<h2 className={styles.name2} style={{ top: vH * 1.1, opacity: opacities[2] }}>
 				私たちは、東京農工大学
 				<br />
-				マイクロコンピュータークラブです。
+				マイクロコンピュータークラブ、
+				<br />
+				TUATMCCです。
 			</h2>
 			<p className={styles.information} style={{ top: vH * 1.5, opacity: opacities[3] }}>
 				Infomation
@@ -104,12 +97,12 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 				Technology
 			</p>
 			<p className={styles.catchCopy} style={{ top: vH * 1.8, opacity: opacities[6] }}>
-				<span className={styles.sentence}>部員たちの興味は様々です。</span>
-				<span className={styles.sentence}>プログラミング、グラフィック、ハードウェア......</span>
-				<span className={styles.sentence}>
-					それぞれの興味を持つ部員が集まり、交流を重ねることで、お互いの視野を広げる、
-				</span>
-				<span className={styles.sentence}>それが、私たちTUATMCCです。</span>
+				<span className={styles.sentence}>技術を探求する部員が集結するMCC。</span>
+				<span className={styles.sentence}>プログラミング、グラフィックデザイン、ハードウェアなど、</span>
+				<span className={styles.sentence}>様々な興味を持つ部員たちが交流を重ね、</span>
+				<span className={styles.sentence}>新しい視野を開拓する。</span>
+				<span className={styles.sentence}>MCCで、あなたも技術を探求しませんか？</span>
+				by ChatGPT
 			</p>
 			<div className={styles.bottms} style={{ top: vH * 2.8, height: vH * (3 - 2.5) }}>
 				<div className={styles.cards}>
@@ -160,7 +153,7 @@ export const HomeScrollControl: FC = () => {
 	return (
 		<Canvas gl={{ antialias: false }} dpr={[1, 1.5]} className={styles.canvas}>
 			<Suspense fallback={null}>
-				<ScrollControls damping={4} pages={pageCount}>
+				<ScrollControls damping={4} pages={pageAmout}>
 					<Scroll>
 						<Images />
 					</Scroll>
