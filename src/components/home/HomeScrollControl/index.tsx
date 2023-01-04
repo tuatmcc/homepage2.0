@@ -116,10 +116,10 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 						ブログ →
 					</Link>
 					<div className={styles.socials}>
-						<a href="https://twitter.com/TUATMCC" target="_blank" rel="noopener noreferrer">
+						<a href="https://twitter.com/TUATMCC" target="_blank" rel="noopener noreferrer" aria-label='twitter link'>
 							<TwitterIcon />
 						</a>
-						<a href="https://github.com/tuatmcc" target="_blank" rel="noopener noreferrer">
+						<a href="https://github.com/tuatmcc" target="_blank" rel="noopener noreferrer" aria-label='github link'>
 							<GitHubIcon />
 						</a>
 					</div>
@@ -146,10 +146,7 @@ export const HomeScrollControl: FC = () => {
 		script.src = 'https://platform.twitter.com/widgets.js';
 		script.async = true;
 		document.body.appendChild(script);
-		return () => {
-			document.body.removeChild(script);
-		};
-	});
+	}, []);
 	return (
 		<Canvas gl={{ antialias: false }} dpr={[1, 1.5]} className={styles.canvas}>
 			<Suspense fallback={null}>

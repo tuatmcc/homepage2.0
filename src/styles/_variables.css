@@ -37,5 +37,6 @@
   --breakpoint-mobile: 48em;
 
   /* Font */
-  --font-family-tag: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
+  --font-family-gill-sans: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
+  --font-family-orbitron: 'Orbitron', 'Arial', 'Helvetica', snas-serif;
 }

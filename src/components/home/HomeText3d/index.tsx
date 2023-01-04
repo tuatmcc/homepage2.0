@@ -64,7 +64,7 @@ export const HomeText3d: FC<Text3dProps> = ({ onNextButtonClick }) => {
 						<mesh position={[-20, 8, 0]}>
 							{/* @ts-ignore */}
 							<textGeometry args={['Micro', { font, size: 5, height: 1 }]} />
-							<meshPhysicalMaterial color='peacock' />
+							<meshPhysicalMaterial color='green' />
 						</mesh>
 					</Float>
 					<Float floatIntensity={5} speed={3}>

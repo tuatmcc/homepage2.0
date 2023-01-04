@@ -1,10 +1,11 @@
 import Link from 'next/link';
-import { FC, useState } from 'react';
+import { FC, useContext, useState } from 'react';
 
 import styles from './style.module.css';
 
 import { MccLogo } from '~/components/common/icons/MccLogo';
 import { ROUTES, BASE_ROUTES_LIST } from '~/constants/routes';
+import { MediaQueryContext } from '~/providers/MediaQueryProvider';
 import classNames from '~/utils/classNames';
 
 type NavbarProps = {
@@ -13,6 +14,7 @@ type NavbarProps = {
 };
 
 export const Navbar: FC<NavbarProps> = ({ noBrand = false }) => {
+	const { isMobile } = useContext(MediaQueryContext);
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
 	return (
@@ -21,7 +23,7 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false }) => {
 				<Link href={ROUTES.HOME.PATH} className={classNames(styles.brand)}>
 					{!noBrand && (
 						<>
-							<MccLogo />
+							{isMobile ? <MccLogo size={32} /> : <MccLogo size={56} />}
 							<span className={classNames(styles.brandText)}>MCC</span>
 						</>
 					)}
@@ -29,6 +31,7 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false }) => {
 				<button
 					className={classNames(styles.hamburgerMenu, isDrawerOpen ? styles._active : '')}
 					onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+					aria-label='menu toggler'
 				>
 					<span className={classNames(styles.hamburgerMenuLine1, isDrawerOpen ? styles._active : '')} />
 					<span className={classNames(styles.hamburgerMenuLine2, isDrawerOpen ? styles._active : '')} />
@@ -37,7 +40,7 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false }) => {
 				<button
 					className={classNames(styles.drawerBlur, isDrawerOpen ? styles._active : '')}
 					onClick={() => setIsDrawerOpen(false)}
-					value='drawerCloser'
+					aria-label='drawer-closre'
 				/>
 				<div className={classNames(styles.drawer, isDrawerOpen ? styles._active : '')}>
 					<nav>

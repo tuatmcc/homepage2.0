@@ -4,8 +4,11 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { FC } from 'react';
 
+import styles from './style.module.css';
+
+import { Footer } from '~/components/common/Footer';
 import { Helmet } from '~/components/common/Helmet';
-import { Layout } from '~/components/common/Layout';
+import { Navbar } from '~/components/common/Navbar';
 
 export type SandboxPageProps = {
 	paths: string[];
@@ -19,17 +22,30 @@ const GalleryPage: FC<SandboxPageProps> = ({ paths }) => {
 	return (
 		<>
 			<Helmet meta={meta} />
-			<Layout>
-				<h1>Gallery</h1>
-				<p>いろいろなものを試す場所</p>
-				<ul>
-					{paths.map((path) => (
-						<li key={path}>
-							<Link href={path}>{path}</Link>
-						</li>
-					))}
-				</ul>
-			</Layout>
+			<div className={styles.background} />
+			<Navbar theme='auto' />
+			<header>
+				<div className={styles.headerContent}>
+					<h1 className={styles.headerTitle}>Gallery</h1>
+					<h2 className={styles.headerSubTitle}>デザイン・試作置き場</h2>
+				</div>
+			</header>
+
+			<main>
+				<div className={styles.mainContent}>
+					<ul className={styles.list}>
+						{paths.map((path) => (
+							<li key={path} className={styles.listItem}>
+								<Link href={path} className={styles.link}>
+									{path}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</div>
+			</main>
+
+			<Footer semitransparent />
 		</>
 	);
 };

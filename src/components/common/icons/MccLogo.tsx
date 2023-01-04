@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-export const MccLogo: FC = () => (
-	<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const MccLogo: FC<{size?: number}> = ({ size = '64' }) => (
+	<svg width={size} height={size} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path
 			d="M31.9999 32L25.0717 28L22.7524 34.6192L18.1435 45.1667L13.5148 29.2442L11.2153 20L4.28711 16V23.875V27.8125V31.75V35.6875V39.625V47.5L11.2153 51.625V43.7188V41.125L12.0698 44.2236L14.6794 53.6875L18.1435 55.75L21.6076 57.8125L24.1943 51.3878L25.0717 49.2083V51.9062V59.875L31.9999 64V56V48V40V32Z"
 			fill="#0099FF"
