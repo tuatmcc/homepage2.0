@@ -8,7 +8,7 @@ import styles from './style.module.css';
 import { GitHubIcon } from '~/components/common/icons/GitHubIcon';
 import { TwitterIcon } from '~/components/common/icons/TwitterIcon';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
-import classNames from '~/utilities/classNames';
+import classNames from '~/utils/classNames';
 
 const pageAmout = 3.5;
 
@@ -112,14 +112,14 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 					<Link href="/activities" className={styles.cardItem}>
 						活動報告 →
 					</Link>
-					<Link href="/contact" className={styles.cardItem}>
+					<Link href="/blog" className={styles.cardItem}>
 						ブログ →
 					</Link>
 					<div className={styles.socials}>
-						<a href="https://twitter.com/TUATMCC" target="_blank" rel="noopener noreferrer">
+						<a href="https://twitter.com/TUATMCC" target="_blank" rel="noopener noreferrer" aria-label='twitter link'>
 							<TwitterIcon />
 						</a>
-						<a href="https://github.com/tuatmcc" target="_blank" rel="noopener noreferrer">
+						<a href="https://github.com/tuatmcc" target="_blank" rel="noopener noreferrer" aria-label='github link'>
 							<GitHubIcon />
 						</a>
 					</div>
@@ -146,10 +146,7 @@ export const HomeScrollControl: FC = () => {
 		script.src = 'https://platform.twitter.com/widgets.js';
 		script.async = true;
 		document.body.appendChild(script);
-		return () => {
-			document.body.removeChild(script);
-		};
-	});
+	}, []);
 	return (
 		<Canvas gl={{ antialias: false }} dpr={[1, 1.5]} className={styles.canvas}>
 			<Suspense fallback={null}>

@@ -1,10 +1,35 @@
-.pageTitle {
-  max-width: 1000px;
-  padding: 16px 0;
-  margin: 16px auto;
-  color: var(--color-mcc-quaternary);
-  text-align: center;
-  border-radius: 16px;
+.background {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  background-image: url('/tuat-gate.webp');
+  background-size: cover;
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100svh;
+
+  & .headerTitle {
+    font-family: var(--font-family-orbitron);
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 16px var(--color-mcc-quaternary);
+    letter-spacing: 0.1em;
+  }
+
+  & .headerSubTitle {
+    font-size: 24px;
+    font-weight: normal;
+    color: white;
+  }
 }
 
 .list {

@@ -11,12 +11,13 @@ body,
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--color-text-default);
+  cursor: url('/cursor.svg'), auto;
   background: transparent;
   text-size-adjust: none;
+}
 
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
+* {
+  -webkit-font-smoothing: antialiased;
 }
 
 p {
@@ -42,4 +43,23 @@ code {
 button {
   background-color: transparent;
   border: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+  background: transparent;
+
+  @media screen and (max-width: 48em) {
+    width: 5px;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-mcc-primary);
+  border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }

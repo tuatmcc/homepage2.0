@@ -4,14 +4,15 @@ import { useContext } from 'react';
 
 import styles from './style.module.css';
 
+import { Footer } from '~/components/common/Footer';
 import { Helmet } from '~/components/common/Helmet';
-import { Layout } from '~/components/common/Layout';
+import { Navbar } from '~/components/common/Navbar';
 import { Tag } from '~/components/common/Tag';
 import { TagList } from '~/components/common/TagList';
 import { PostCollector, PostCollectorProps } from '~/lib/post-collector';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
 import { MetaData } from '~/types/meta';
-import classNames from '~/utilities/classNames';
+import classNames from '~/utils/classNames';
 
 const meta: MetaData = {
 	title: 'Blog',
@@ -25,9 +26,16 @@ const WorksPage = ({ posts }: PostCollectorProps) => {
 	return (
 		<>
 			<Helmet meta={meta} />
-			<Layout>
-				<div className={styles.activities}>
-					<h1 className={styles.pageTitle}>Blog</h1>
+			<Navbar theme="auto" />
+			<div className={styles.background} />
+			<header>
+				<div className={styles.headerContent}>
+					<h1 className={styles.headerTitle}>Blog</h1>
+					<h2 className={styles.headerSubTitle}>ブログ</h2>
+				</div>
+			</header>
+			<main>
+				<div className={styles.mainContent}>
 					<div className={styles.list}>
 						{posts.map((post, index) => {
 							return (
@@ -76,7 +84,9 @@ const WorksPage = ({ posts }: PostCollectorProps) => {
 						})}
 					</div>
 				</div>
-			</Layout>
+			</main>
+
+			<Footer semitransparent />
 		</>
 	);
 };

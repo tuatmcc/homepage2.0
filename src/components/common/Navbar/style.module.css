@@ -12,14 +12,9 @@
   justify-content: space-between;
   width: 100%;
   height: var(--navbar-pc-height);
-  background-color: var(--color-background-theme-light);
-  box-shadow: var(--color-shadow-large);
+  background-color: transparent;
+  box-shadow: none;
   transition: background-color 0.5s ease-in-out;
-
-  &._transparent {
-    background-color: var(--color-background-theme-transparent);
-    box-shadow: none;
-  }
 
   @media screen and (max-width: 48em) {
     height: var(--navbar-mobile-height);
@@ -35,17 +30,13 @@
     font-size: 64px;
     font-weight: bold;
     line-height: 1;
-    color: var(--color-theme-light);
-    text-shadow: 0 0 8px #0006;
+    color: white;
+    text-shadow: var(--color-shadow-dark);
     letter-spacing: 0.05em;
     transition: color 1s ease-in-out;
 
-    &._transparent {
-      color: var(--color-theme-transparent);
-    }
-
     @media screen and (max-width: 48em) {
-      scale: 0.8;
+      font-size: 32px;
     }
   }
 
@@ -69,14 +60,9 @@
       display: block;
       width: 48px;
       height: 4px;
-      background-color: var(--color-mcc-brand);
-      box-shadow: 0 0 8px #0006;
+      background-color: white;
+      box-shadow: var(--color-shadow-dark);
       transition: all 0.2s ease-in-out;
-
-      &._transparent,
-      &._active {
-        background-color: var(--color-theme-transparent);
-      }
     }
 
     & .hamburgerMenuLine2 {
@@ -85,14 +71,9 @@
       display: block;
       width: 48px;
       height: 4px;
-      background-color: var(--color-mcc-brand);
-      box-shadow: 0 0 8px #0006;
+      background-color: white;
+      box-shadow: var(--color-shadow-dark);
       transition: all 0.2s ease-in-out;
-
-      &._transparent,
-      &._active {
-        background-color: var(--color-theme-transparent);
-      }
     }
 
     & .hamburgerMenuLine3 {
@@ -101,28 +82,26 @@
       display: block;
       width: 48px;
       height: 4px;
-      background-color: var(--color-mcc-brand);
-      box-shadow: 0 0 8px #0006;
+      background-color: white;
+      box-shadow: var(--color-shadow-dark);
       transition: all 0.2s ease-in-out;
-
-      &._transparent,
-      &._active {
-        background-color: var(--color-theme-transparent);
-      }
     }
 
     &._active {
       & .hamburgerMenuLine1 {
         top: 22px;
+        background-color: var(--color-theme-transparent);
         transform: rotate(45deg);
       }
 
       & .hamburgerMenuLine2 {
+        background-color: var(--color-theme-transparent);
         transform: scaleX(0);
       }
 
       & .hamburgerMenuLine3 {
         bottom: 22px;
+        background-color: var(--color-theme-transparent);
         transform: rotate(-45deg);
       }
     }
@@ -135,18 +114,16 @@
     width: 80%;
     max-width: 500px;
     height: auto;
+    max-height: 100svh;
     padding: var(--navbar-pc-height) 0 0 0;
+    overflow-y: auto;
     letter-spacing: 0.4em;
     background: transparent;
     transition: transform 0.2s ease-in-out;
     transform: translateX(100%);
 
-    &._open {
+    &._active {
       transform: translateX(0);
-    }
-
-    &._transparent {
-      background: var(--color-background-theme-transparent);
     }
 
     & .drawerContent {
@@ -196,16 +173,16 @@
     top: 0;
     left: 0;
     display: block;
-    width: 100%;
+    width: 200%;
     height: 100svh;
-    background-color: #000;
+    background: linear-gradient(90deg, transparent 0%, #000 50%, #aaa);
     opacity: 0;
-    transition: opacity 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     transform: translateX(100%);
 
-    &._open {
-      opacity: 0.6;
-      transform: translateX(0);
+    &._active {
+      opacity: 0.8;
+      transform: translateX(-50%);
     }
   }
 }

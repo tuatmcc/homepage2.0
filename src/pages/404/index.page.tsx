@@ -1,7 +1,10 @@
 import { FC } from 'react';
 
+import styles from './style.module.css';
+
+import { Footer } from '~/components/common/Footer';
 import { Helmet } from '~/components/common/Helmet';
-import { Layout } from '~/components/common/Layout';
+import { Navbar } from '~/components/common/Navbar';
 
 const meta = {
 	title: '404',
@@ -12,7 +15,15 @@ const NotFoundPage: FC = () => {
 	return (
 		<>
 			<Helmet meta={meta} />
-			<Layout>404 Page Not Found</Layout>;
+			<Navbar theme='auto' />
+			<div className={styles.background} />
+			<main>
+				<div className={styles.mainContent}>
+					<h1 className={styles.title}>404</h1>
+					<h2 className={styles.subTitle}>Page not Found</h2>
+				</div>
+			</main>
+			<Footer semitransparent />
 		</>
 	);
 };

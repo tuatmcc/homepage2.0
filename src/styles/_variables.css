@@ -26,6 +26,7 @@
   --color-shadow-medium: 0 3px 6px rgb(140 149 159 / 15%);
   --color-shadow-large: 0 0 24px rgb(10 90 100 / 20%);
   --color-shadow-extra-large: 0 12px 28px rgb(140 149 159 / 30%);
+  --color-shadow-dark: 0 0 16px rgb(27 31 36 / 60%);
 
   /* Size */
   --navbar-pc-height: 70px;
@@ -36,5 +37,6 @@
   --breakpoint-mobile: 48em;
 
   /* Font */
-  --font-family-tag: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
+  --font-family-gill-sans: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
+  --font-family-orbitron: 'Orbitron', 'Arial', 'Helvetica', snas-serif;
 }

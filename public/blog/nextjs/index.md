@@ -1,12 +1,14 @@
 ---
-title: 'rehype, remarkによるマークダウン変換テスト'
-date: '2022'
+title: '記事の書き方'
+date: '2022-01-05'
 tags: ['web', 'dev']
 ---
 
-# マークダウンテスト h1 タグです
+# 記事の書き方
 
-## h2 です。実は各見出しタグにはリンクがついています
+基本的なマークダウンの書き方は [Markdown記法 チートシート - Qiita](https://qiita.com/Qiita/items/c686397e4a0f4f11683d) を参考にしてください。
+
+## h2です
 
 ### h3 です。ちなみに HTML は一切認識されません。無視されます
 
@@ -30,6 +32,8 @@ _強調(イタリック)_ **強調(太字)** ~~打消し(del ではなく css �
 
 ![画像](https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png)
 
+表
+
 | title                                   | date | tags     |
 | --------------------------------------- | ---- | -------- |
 | MCC の Web サイトをリニューアルしました | 2022 | web, dev |
@@ -37,9 +41,11 @@ _強調(イタリック)_ **強調(太字)** ~~打消し(del ではなく css �
 
 > 引用です
 
+## コード
+
 `これはインラインコードです`
 
-```python
+```python:main.py
 # pythonです。highlight.jsを使用しています
 print('1+1は2です' if 1 + 1 == 2 else '1+1は2ではありません')
 ```

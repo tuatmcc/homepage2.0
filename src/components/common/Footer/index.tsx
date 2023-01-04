@@ -6,17 +6,27 @@ import { TwitterIcon } from '../icons/TwitterIcon';
 
 import styles from './style.module.css';
 
-export const Footer: FC = () => {
+import classNames from '~/utils/classNames';
+
+type FotterProps = {
+	semitransparent?: boolean;
+};
+
+export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
 	return (
-		<footer className={styles.footer}>
-			<div className={styles.container}>
+		<footer>
+			<div className={classNames(styles.footerContent, semitransparent ? styles._semitransparent : '')}>
 				<div className={styles.logo}>
-					<MccLogo />
+					<MccLogo size={32} />
 					MCC
 				</div>
 				<div className={styles.socials}>
-					<GitHubIcon />
-					<TwitterIcon />
+					<a href="https://twitter.com/TUATMCC" target="_blank" rel="noopener noreferrer" aria-label='twitter link'>
+						<TwitterIcon />
+					</a>
+					<a href="https://github.com/tuatmcc" target="_blank" rel="noopener noreferrer" aria-label='github link'>
+						<GitHubIcon />
+					</a>
 				</div>
 				<div className={styles.copyRight}>©2023 東京農工大学マイクロコンピュータークラブ</div>
 			</div>

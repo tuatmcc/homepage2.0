@@ -4,13 +4,14 @@ import { FC, useContext } from 'react';
 
 import styles from './style.module.css';
 
+import { Footer } from '~/components/common/Footer';
 import { Helmet } from '~/components/common/Helmet';
-import { Layout } from '~/components/common/Layout';
+import { Navbar } from '~/components/common/Navbar';
 import { Tag } from '~/components/common/Tag';
 import { TagList } from '~/components/common/TagList';
 import { PostCollector, PostCollectorProps } from '~/lib/post-collector';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
-import classNames from '~/utilities/classNames';
+import classNames from '~/utils/classNames';
 
 const meta = {
 	title: '活動報告',
@@ -25,12 +26,19 @@ const ActivitiesPage: FC<PostCollectorProps> = ({ posts }) => {
 	return (
 		<>
 			<Helmet meta={meta} />
-			<Layout>
-				<div className={styles.activities}>
-					<h1 className={styles.pageTitle}>活動報告</h1>
-					<div className={styles.list}>
-						{posts.map((post, index) => {
-							return (
+			<Navbar theme='auto' />
+			<div className={styles.background} />
+			<header>
+				<div className={styles.headerContent}>
+					<h1 className={styles.headerTitle}>Activites</h1>
+					<h2 className={styles.headerSubTitle}>活動報告</h2>
+				</div>
+			</header>
+			<div className={styles.activities}>
+				<div className={styles.list}>
+					{posts.map((post, index) => {
+						return (
+							<div key={post.slug}>
 								<Link
 									href={`activities/${post.slug}`}
 									key={post.slug}
@@ -72,11 +80,12 @@ const ActivitiesPage: FC<PostCollectorProps> = ({ posts }) => {
 										)}
 									</div>
 								</Link>
-							);
-						})}
-					</div>
+							</div>
+						);
+					})}
 				</div>
-			</Layout>
+			</div>
+			<Footer semitransparent/>
 		</>
 	);
 };

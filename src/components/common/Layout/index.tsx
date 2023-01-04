@@ -4,7 +4,7 @@ import { Navbar } from '../Navbar';
 
 import styles from './style.module.css';
 
-import classNames from '~/utilities/classNames';
+import classNames from '~/utils/classNames';
 
 export type PageProps = {
 	children?: ReactNode | ReactNode[];

@@ -1,55 +1,57 @@
 import Link from 'next/link';
-import { FC, useState } from 'react';
+import { FC, useContext, useState } from 'react';
 
 import styles from './style.module.css';
 
 import { MccLogo } from '~/components/common/icons/MccLogo';
 import { ROUTES, BASE_ROUTES_LIST } from '~/constants/routes';
-import classNames from '~/utilities/classNames';
+import { MediaQueryContext } from '~/providers/MediaQueryProvider';
+import classNames from '~/utils/classNames';
 
 type NavbarProps = {
-	theme: 'light' | 'transparent';
+	theme: 'auto' | 'light' | 'transparent';
 	noBrand?: boolean;
 };
 
-export const Navbar: FC<NavbarProps> = ({ theme = 'transparent', noBrand = false }) => {
-	const themeClass = theme === 'light' ? styles._light : styles._transparent;
+export const Navbar: FC<NavbarProps> = ({ noBrand = false }) => {
+	const { isMobile } = useContext(MediaQueryContext);
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
 	return (
 		<>
-			<div className={classNames(styles.navbar, themeClass)}>
-				<Link href={ROUTES.HOME.PATH} className={classNames(styles.brand, themeClass)}>
+			<div className={classNames(styles.navbar)}>
+				<Link href={ROUTES.HOME.PATH} className={classNames(styles.brand)}>
 					{!noBrand && (
 						<>
-							<MccLogo />
-							<span className={classNames(styles.brandText, themeClass)}>MCC</span>
+							{isMobile ? <MccLogo size={32} /> : <MccLogo size={56} />}
+							<span className={classNames(styles.brandText)}>MCC</span>
 						</>
 					)}
 				</Link>
 				<button
-					className={classNames(styles.hamburgerMenu, themeClass, isDrawerOpen ? styles._active : '')}
+					className={classNames(styles.hamburgerMenu, isDrawerOpen ? styles._active : '')}
 					onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+					aria-label='menu toggler'
 				>
-					<span className={classNames(styles.hamburgerMenuLine1, themeClass, isDrawerOpen ? styles._active : '')} />
-					<span className={classNames(styles.hamburgerMenuLine2, themeClass, isDrawerOpen ? styles._active : '')} />
-					<span className={classNames(styles.hamburgerMenuLine3, themeClass, isDrawerOpen ? styles._active : '')} />
+					<span className={classNames(styles.hamburgerMenuLine1, isDrawerOpen ? styles._active : '')} />
+					<span className={classNames(styles.hamburgerMenuLine2, isDrawerOpen ? styles._active : '')} />
+					<span className={classNames(styles.hamburgerMenuLine3, isDrawerOpen ? styles._active : '')} />
 				</button>
 				<button
-					className={classNames(styles.drawerBlur, isDrawerOpen ? styles._open : '')}
+					className={classNames(styles.drawerBlur, isDrawerOpen ? styles._active : '')}
 					onClick={() => setIsDrawerOpen(false)}
-					value='drawerCloser'
+					aria-label='drawer-closre'
 				/>
-				<div className={classNames(styles.drawer, themeClass, isDrawerOpen ? styles._open : '')}>
+				<div className={classNames(styles.drawer, isDrawerOpen ? styles._active : '')}>
 					<nav>
 						<div className={styles.drawerContent}>
 							{BASE_ROUTES_LIST.map((route, index) => (
 								<div
 									key={route.PATH}
-									className={classNames(styles.drawerContentItem, themeClass, styles._open)}
+									className={classNames(styles.drawerContentItem)}
 									style={{ transitionDuration: index.toString() }}
 								>
-									<Link href={route.PATH} className={classNames(styles.linkItem, themeClass)}>
+									<Link href={route.PATH} className={classNames(styles.linkItem)}>
 										{route.LABEL}
 									</Link>
 								</div>

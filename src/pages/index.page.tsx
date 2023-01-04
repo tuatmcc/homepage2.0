@@ -13,6 +13,7 @@ const IndexPage: FC = () => {
 	return (
 		<>
 			<Helmet meta={meta} />
+
 			<HomePageComponent />
 		</>
 	);
