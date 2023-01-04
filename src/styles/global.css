@@ -16,6 +16,10 @@ body,
   text-size-adjust: none;
 }
 
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
 p {
   margin: 0;
 }
