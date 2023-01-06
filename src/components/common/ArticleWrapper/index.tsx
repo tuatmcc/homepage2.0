@@ -1,10 +1,11 @@
 import Image from 'next/image';
-import { createElement, FC, ReactNode, useEffect, useState } from 'react';
+import { createElement, FC, HTMLAttributes, ReactNode, useEffect, useState } from 'react';
 import rehypeParse from 'rehype-parse';
 import rehypeReact, { Options as RehypeReactOptions } from 'rehype-react';
 import { unified } from 'unified';
 
 import styles from './style.module.css';
+import 'highlight.js/styles/a11y-dark.css';
 
 import { AutoLink, AutoLinkProps } from '~/components/common/AutoLink';
 import { CodeBlock } from '~/components/common/CodeBlock';
@@ -16,7 +17,6 @@ import { MetaData } from '~/types/meta';
 
 export type ArticleWrapperProps = {
 	meta: MetaData;
-	className?: string;
 	children: string;
 };
 
@@ -46,6 +46,23 @@ export const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
 							style={{ width: 'auto', height: 'auto', maxWidth: '100%' }}
 						/>
 					),
+					div: (props) => {
+						if (Object.hasOwn(props, 'data-language')) {
+							return (
+								<div className={styles.codeblockTitle} {...props}>
+									{props.children}
+								</div>
+							);
+						} else if (Object.hasOwn(props, 'data-rehype-pretty-code-fragment')) {
+							return (
+								<div className={styles.codeblockFragment} {...props}>
+									{props.children}
+								</div>
+							);
+						} else {
+							return <div {...props}>{props.children}</div>;
+						}
+					},
 					minilinkicon: () => <MiniLinkIcon />,
 				},
 			} as RehypeReactOptions)

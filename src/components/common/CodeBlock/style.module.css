@@ -1,14 +1,14 @@
 .codeBlock {
   position: relative;
-  margin: 8px 0;
+  margin: 0 0 8px;
 
-  & .title {
+  & .codeBlockTitle {
     width: auto;
     padding: 2px 8px;
     font-size: 14px;
     color: var(--color-codeblock-text);
     background-color: var(--color-codeblock-background);
-    border-radius: 4px;
+    border-radius: 0 0 4px 4px;
   }
 
   & .copyButton {

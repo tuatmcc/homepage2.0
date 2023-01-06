@@ -62,8 +62,7 @@
 
     & .content {
       & p {
-        padding: 10px 2px;
-        margin: 0;
+        margin: 8px 0;
         font-size: 16px;
         line-height: 1.6;
       }
@@ -89,6 +88,23 @@
       & li {
         margin: 0;
         line-height: 2;
+      }
+
+      & .codeblockFragment {
+        position: relative;
+        margin: 0 0 8px;
+
+        & .codeblockTitle {
+          position: relative;
+          top: 8px;
+          display: inline-block;
+          padding: 4px 16px 10px;
+          font-size: 14px;
+          color: #ccc;
+          line-gap-override: 0;
+          background: var(--color-codeblock-title-background);
+          border-radius: 4px 4px 0 0;
+        }
       }
     }
   }
