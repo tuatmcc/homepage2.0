@@ -21,6 +21,6 @@ jobs:
       - name: npm ci
         run: npm ci
       - name: run lint
-        run: npm run lint
+        run: npx turbo lint
       - name: run typecheck
-        run: npm run build
+        run: npx turbo build
