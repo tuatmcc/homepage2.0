@@ -14,16 +14,14 @@ const changeButtonText = (button: HTMLButtonElement) => {
 };
 
 type CodeBlockProps = {
-	title?: string;
 	children: ReactNode | ReactNode[];
 	className?: string;
 };
 
-export const CodeBlock: FC<CodeBlockProps> = ({ children = '', className = '', title }) => {
+export const CodeBlock: FC<CodeBlockProps> = ({ children = '', className = '' }) => {
 	const id = `codeblock${Math.random().toString()}`;
 	return (
 		<div className={styles.codeBlock}>
-			{title && <span className={styles.title}>{title}</span>}
 			<button
 				className={styles.copyButton}
 				onClick={(event) => {

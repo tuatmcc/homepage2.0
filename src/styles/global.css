@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Orbitron&family=Noto+Sans+JP:wght@400;700&display=swap');
 @import url('./_variables.css');
 
 /* stylelint-disable-next-line selector-id-pattern */
@@ -9,15 +9,11 @@ body,
   width: 100%;
   padding: 0;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, 'Noto Sans JP', Helvetica, sans-serif;
   color: var(--color-text-default);
-  cursor: url('/cursor.svg'), auto;
   background: transparent;
   text-size-adjust: none;
-}
-
-* {
-  -webkit-font-smoothing: antialiased;
+  scroll-snap-type: y mandatory;
 }
 
 p {

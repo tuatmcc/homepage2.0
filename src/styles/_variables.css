@@ -16,6 +16,7 @@
   --color-code-background: #ffe682;
   --color-codeblock-text: #fff;
   --color-codeblock-background: #16283a;
+  --color-codeblock-title-background: #0d1e2f;
   --color-border-default: #d0d7de;
   --color-border-muted: hsl(210deg 18% 87% / 100%);
   --color-border-subtle: rgb(27 31 36 / 15%);
@@ -37,6 +38,6 @@
   --breakpoint-mobile: 48em;
 
   /* Font */
-  --font-family-gill-sans: 'Gill Sans', 'Gill Sans MT', calibri, 'Trebuchet MS', sans-serif;
-  --font-family-orbitron: 'Orbitron', 'Arial', 'Helvetica', snas-serif;
+  --font-family-gill-sans: 'Gill Sans', 'Noto Sans JP', calibri, 'Trebuchet MS', sans-serif;
+  --font-family-orbitron: 'Orbitron', 'Noto Sans JP', 'Arial', 'Helvetica', snas-serif;
 }
