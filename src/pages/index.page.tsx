@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { Helmet } from '~/components/common/Helmet';
-import HomePageComponent from '~/components/home/HomePageComponent';
+import { Helmet } from '~/components/common/helmet';
+import HomePageComponent from '~/components/home/home-page-component';
 
 const meta = {
 	title: 'Home',

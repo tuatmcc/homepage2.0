@@ -2,9 +2,9 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { Footer } from '~/components/common/Footer';
-import { Helmet } from '~/components/common/Helmet';
-import { Navbar } from '~/components/common/Navbar';
+import { Footer } from '~/components/common/footer';
+import { Helmet } from '~/components/common/helmet';
+import { Navbar } from '~/components/common/navbar';
 
 const meta = {
 	title: '404',

@@ -31,7 +31,7 @@ const Rig: FC<RigProps> = ({ children }) => {
 	);
 };
 
-type Text3dProps = {
+type R3fText3dProps = {
 	onNextButtonClick?: () => void;
 };
 
@@ -53,7 +53,7 @@ const RandomText: FC = () => {
 	);
 };
 
-export const Text3d: FC<Text3dProps> = ({ onNextButtonClick }) => {
+export const R3fText3d: FC<R3fText3dProps> = ({ onNextButtonClick }) => {
 	const font = new FontLoader().parse(threeFontJson);
 
 	return (

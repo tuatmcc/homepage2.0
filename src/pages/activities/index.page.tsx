@@ -4,11 +4,11 @@ import { FC, useContext } from 'react';
 
 import styles from './style.module.css';
 
-import { Footer } from '~/components/common/Footer';
-import { Helmet } from '~/components/common/Helmet';
-import { Navbar } from '~/components/common/Navbar';
-import { Tag } from '~/components/common/Tag';
-import { TagList } from '~/components/common/TagList';
+import { Footer } from '~/components/common/footer';
+import { Helmet } from '~/components/common/helmet';
+import { Navbar } from '~/components/common/navbar';
+import { Tag } from '~/components/common/tag';
+import { TagList } from '~/components/common/tag/tag-list';
 import { PostCollector, PostCollectorProps } from '~/lib/post-collector';
 import { MediaQueryContext } from '~/providers/MediaQueryProvider';
 import classNames from '~/utils/classNames';

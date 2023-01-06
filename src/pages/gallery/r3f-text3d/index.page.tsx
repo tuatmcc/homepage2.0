@@ -2,9 +2,9 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { Helmet } from '~/components/common/Helmet';
+import { Helmet } from '~/components/common/helmet';
 import { Layout } from '~/components/common/Layout';
-import { Text3d } from '~/components/gallery/Text3d';
+import { R3fText3d } from '~/components/gallery/r3f-';
 
 const Text3DPage: FC = () => {
 	const meta = {
@@ -16,7 +16,7 @@ const Text3DPage: FC = () => {
 			<Helmet meta={meta} />
 			<Layout>
 				<div className={styles.container}>
-					<Text3d />
+					<R3fText3d />
 				</div>
 			</Layout>
 		</>

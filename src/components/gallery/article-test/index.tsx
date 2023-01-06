@@ -3,7 +3,7 @@ import { FC, useEffect, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { Navbar } from '~/components/common/Navbar';
+import { Navbar } from '~/components/common/navbar';
 
 export const ArticleTest: FC = () => {
 	const [navbarTheme, setNavbarTheme] = useState<'light' | 'transparent'>('transparent');

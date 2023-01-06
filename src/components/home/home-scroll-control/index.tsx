@@ -5,9 +5,9 @@ import { FC, Suspense, useContext, useEffect, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { GitHubIcon } from '~/components/common/icons/GitHubIcon';
-import { TwitterIcon } from '~/components/common/icons/TwitterIcon';
-import { MediaQueryContext } from '~/providers/MediaQueryProvider';
+import { GitHubIcon } from '~/components/common/icons/github-icon';
+import { TwitterIcon } from '~/components/common/icons/twitter-icon';
+import { MediaQueryContext } from '~/providers/media-query-context-provider';
 import classNames from '~/utils/classNames';
 
 const pageAmout = 3.5;

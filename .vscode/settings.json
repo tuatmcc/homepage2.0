@@ -1,7 +1,7 @@
 {
-  "files.autoSave": "afterDelay",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.associations": {
-    "*.css": "css",
+    "*/**.css": "css",
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "rome.rome"
@@ -19,8 +19,10 @@
     "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": false,
+    "source.fixAll.rome": true,
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   }
 }
