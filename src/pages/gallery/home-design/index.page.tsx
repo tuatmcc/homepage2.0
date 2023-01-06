@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import { Helmet } from '~/components/common/helmet';
-import { R3fScrollControll } from '~/components/gallery/home-test';
+import { R3fScrollControl } from '~/components/gallery/r3f-scroll-control';
 
 const meta = {
 	title: 'New Home Design',
@@ -13,7 +13,7 @@ const NewHomeDesignPage: FC = () => {
 	return (
 		<>
 			<Helmet meta={meta} />
-			<R3fScrollControll />
+			<R3fScrollControl />
 		</>
 	);
 };

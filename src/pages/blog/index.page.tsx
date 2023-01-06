@@ -10,7 +10,7 @@ import { Navbar } from '~/components/common/navbar';
 import { Tag } from '~/components/common/tag';
 import { TagList } from '~/components/common/tag/tag-list';
 import { PostCollector, PostCollectorProps } from '~/lib/post-collector';
-import { MediaQueryContext } from '~/providers/MediaQueryProvider';
+import { MediaQueryContext } from '~/providers/media-query-context-provider';
 import { MetaData } from '~/types/meta';
 import classNames from '~/utils/classNames';
 

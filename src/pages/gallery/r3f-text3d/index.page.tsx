@@ -3,8 +3,8 @@ import { FC } from 'react';
 import styles from './style.module.css';
 
 import { Helmet } from '~/components/common/helmet';
-import { Layout } from '~/components/common/Layout';
-import { R3fText3d } from '~/components/gallery/r3f-';
+import { Navbar } from '~/components/common/navbar';
+import { R3fText3d } from '~/components/gallery/r3f-text-3d';
 
 const Text3DPage: FC = () => {
 	const meta = {
@@ -14,11 +14,10 @@ const Text3DPage: FC = () => {
 	return (
 		<>
 			<Helmet meta={meta} />
-			<Layout>
-				<div className={styles.container}>
-					<R3fText3d />
-				</div>
-			</Layout>
+			<Navbar theme='auto' />
+			<div className={styles.container}>
+				<R3fText3d />
+			</div>
 		</>
 	);
 };
