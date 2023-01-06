@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { Helmet } from '~/components/common/Helmet';
-import { ArticleTest } from '~/components/gallery/ArticleTest';
+import { Helmet } from '~/components/common/helmet';
+import { ArticleTest } from '~/components/gallery/article-test';
 
 const meta = {
 	title: 'New Design',

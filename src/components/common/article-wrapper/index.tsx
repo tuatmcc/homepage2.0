@@ -7,12 +7,12 @@ import { unified } from 'unified';
 import styles from './style.module.css';
 import 'highlight.js/styles/a11y-dark.css';
 
-import { AutoLink, AutoLinkProps } from '~/components/common/AutoLink';
-import { CodeBlock } from '~/components/common/CodeBlock';
-import { Del } from '~/components/common/Del';
-import { Tag } from '~/components/common/Tag';
-import { TagList } from '~/components/common/TagList';
-import { MiniLinkIcon } from '~/components/common/icons/MiniLinkIcon';
+import { AutoLink, AutoLinkProps } from '~/components/common/auto-link';
+import { CodeBlock } from '~/components/common/code-block';
+import { Del } from '~/components/common/del';
+import { MiniLinkIcon } from '~/components/common/icons/mini-link-icon';
+import { Tag } from '~/components/common/tag';
+import { TagList } from '~/components/common/tag/tag-list';
 import { MetaData } from '~/types/meta';
 
 export type ArticleWrapperProps = {

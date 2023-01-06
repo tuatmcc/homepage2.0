@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import { GitHubIcon } from '../icons/GitHubIcon';
-import { MccLogo } from '../icons/MccLogo';
-import { TwitterIcon } from '../icons/TwitterIcon';
+import { GitHubIcon } from '../icons/github-icon';
+import { MccLogo } from '../icons/mcc-logo';
+import { TwitterIcon } from '../icons/twitter-icon';
 
 import styles from './style.module.css';
 

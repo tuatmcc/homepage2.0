@@ -3,9 +3,9 @@ import { FC, useContext, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { MccLogo } from '~/components/common/icons/MccLogo';
+import { MccLogo } from '~/components/common/icons/mcc-logo';
 import { ROUTES, BASE_ROUTES_LIST } from '~/constants/routes';
-import { MediaQueryContext } from '~/providers/MediaQueryProvider';
+import { MediaQueryContext } from '~/providers/media-query-context-provider';
 import classNames from '~/utils/classNames';
 
 type NavbarProps = {

@@ -4,7 +4,7 @@ import { FC, Suspense, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { Navbar } from '~/components/common/Navbar';
+import { Navbar } from '~/components/common/navbar';
 
 const pageAmount = 3.5;
 
@@ -42,7 +42,7 @@ const Images: FC = () => {
 	);
 };
 
-export const HomeTest: FC = () => {
+export const R3fScrollControl: FC = () => {
 	return (
 		<>
 			<Navbar theme='transparent' noBrand />
