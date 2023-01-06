@@ -48,14 +48,22 @@ export const ArticleWrapper: FC<ArticleWrapperProps> = (props) => {
 					),
 					div: (props) => {
 						if (Object.hasOwn(props, 'data-language')) {
-							return <div className={styles.codeblockTitle} {...props}>{props.children}</div>;
-            } else if (Object.hasOwn(props, 'data-rehype-pretty-code-fragment')) {
-              return <div className={styles.codeblockFragment} {...props}>{props.children}</div>;
+							return (
+								<div className={styles.codeblockTitle} {...props}>
+									{props.children}
+								</div>
+							);
+						} else if (Object.hasOwn(props, 'data-rehype-pretty-code-fragment')) {
+							return (
+								<div className={styles.codeblockFragment} {...props}>
+									{props.children}
+								</div>
+							);
 						} else {
-              return <div {...props}>{props.children}</div>
-            }
+							return <div {...props}>{props.children}</div>;
+						}
 					},
-					minilinkicon: () => <MiniLinkIcon />
+					minilinkicon: () => <MiniLinkIcon />,
 				},
 			} as RehypeReactOptions)
 			.processSync(props.children);

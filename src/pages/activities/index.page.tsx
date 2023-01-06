@@ -85,7 +85,7 @@ const ActivitiesPage: FC<PostCollectorProps> = ({ posts }) => {
 					})}
 				</div>
 			</div>
-			<Footer semitransparent/>
+			<Footer semitransparent />
 		</>
 	);
 };
