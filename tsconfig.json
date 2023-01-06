@@ -26,7 +26,8 @@
     "incremental": true,
   },
   "include": [
-    "src"
+    "src",
+    "next.config.js"
   ],
   "exclude": [
     "node_modules"
