@@ -1,4 +1,5 @@
 import { motion, useScroll, useSpring, useTransform, MotionValue } from 'framer-motion';
+import Image from 'next/image';
 import { FC, useRef } from 'react';
 
 import styles from './style.module.css';
@@ -15,7 +16,7 @@ const ParallaxImage: FC<{ src: string }> = ({ src }) => {
 	return (
 		<section className={styles.layer}>
 			<div className={styles.layerContent} ref={ref}>
-				<img src={src} alt="A London skyscraper" className={styles.image} />
+				<Image src={src} alt="A London skyscraper" className={styles.image} width={300} height={400} />
 			</div>
 			<motion.h2 style={{ y }}>{`#00${src}`}</motion.h2>
 		</section>

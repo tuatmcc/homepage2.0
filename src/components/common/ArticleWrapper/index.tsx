@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { createElement, FC, HTMLAttributes, ReactNode, useEffect, useState } from 'react';
+import { createElement, FC, ReactNode, useEffect, useState } from 'react';
 import rehypeParse from 'rehype-parse';
 import rehypeReact, { Options as RehypeReactOptions } from 'rehype-react';
 import { unified } from 'unified';
