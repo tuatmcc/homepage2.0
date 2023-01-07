@@ -122,6 +122,14 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 						<a href="https://github.com/tuatmcc" target="_blank" rel="noopener noreferrer" aria-label='github link'>
 							<GitHubIcon />
 						</a>
+						<a
+							href="https://twitter.com/tuatkyopro"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label='twitter link'
+						>
+							<TwitterIcon />
+						</a>
 					</div>
 				</div>
 				{!isMobile && (

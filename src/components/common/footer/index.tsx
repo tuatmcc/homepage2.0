@@ -24,6 +24,9 @@ export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
 					<a href="https://twitter.com/TUATMCC" target="_blank" rel="noopener noreferrer" aria-label='twitter link'>
 						<TwitterIcon />
 					</a>
+					<a href="https://twitter.com/tuatkyopro" target="_blank" rel="noopener noreferrer" aria-label='twitter link'>
+						<TwitterIcon />
+					</a>
 					<a href="https://github.com/tuatmcc" target="_blank" rel="noopener noreferrer" aria-label='github link'>
 						<GitHubIcon />
 					</a>

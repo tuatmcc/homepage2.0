@@ -4,132 +4,215 @@ date: "2022-01-05"
 tags: ["web", "dev"]
 ---
 
-# 記事の書き方
+# 手順
 
-基本的なマークダウンの書き方は [Markdown 記法 チートシート - Qiita](https://qiita.com/Qiita/items/c686397e4a0f4f11683d) を参考にしてください。
+`public/activities`に活動報告の記事を、`public/blog`にその他のマークダウン記事(なんでも)を置いてください。
+記事のフォルダを作成し、その中にマークダウンを置いてください。ファイル名は`index.md`にしてください。
 
-マークダウンを HTML に変換した後、React に変換してからレンダリングされます。
+記事の先頭に以下のように記述します。
 
-ちなみに HTML は一切認識されません。無視されます
-
-# 注意点
-
-### コードブロック
-
-以下のように書きます。
-
-````
-```python title="blog.py"
-print('Hello World')
-```
-````
-
-```python title="blog.py"
-print('Hello World')
+```markdown title="bocchi-the-rock/index.md"
+---
+title: "ぼっち・ざ・ろっくを鑑賞しました"
+description: "ぼっち・ざ・ろっくをみた"
+img: "./bocchi-the-rock.webp"
+date: "2023-01-03"
+tags: [dev, web, nextjs]
+author: "Goto Hitori"
+---
 ```
 
-# 見本
+`title`は必須です。`date`も記事並べ替えのために書いてください。
 
-見出しの右にはリンクがつきます。いずれ目次を作ったときとか、ページ内リンクに対応可。
+なんらかのブランチからプルリクエストをお願いします。GitHub 上からでもかまいません。この辺はいずれ整えたいですね...
 
-# h1 見出し１
+画像を埋め込む際は、`./記事からの相対パス`か`/publicからのパス`, `外部URL`でお願いします。
 
-## h2 見出し２
+```
+![logo](/mcc-logo.svg)
+```
 
-### h3 見出し３
+![logo](/mcc-logo.svg)
 
-#### h4
+# マークダウンの書き方
 
-##### h5
+## 見出し
 
-###### h6
+見出しの右にはリンクがつきます。目次(未実装)とか、ページ内リンクに対応できます。
 
-- リスト 1
-- リスト 2
-- リスト 3
-  - リスト 3-1
-  - リスト 3-2
-    - リスト 3-2-1
-    - リスト 3-2-2
+```markdown
+# これは h1 の見出しです
 
-1. リスト 1
-2. リスト 2
-3. リスト 3
+## これは h2 の見出しです
+
+### h3~は文字サイズが徐々に小さくなるだけです。h6 まで
+```
+
+# これは h1 の見出しです
+
+## これは h2 の見出しです
+
+### h3~は文字サイズが徐々に小さくなるだけです。h6 まで
+
+## リスト
+
+箇条書きには`-`, `+`, `-`, `*`などが使えます。箇条書きの方はネストできます。
+
+```markdown
+- リスト１
+- リスト２
+  - リスト 2-1
+  - リスト 2-2
+
+1. 番号付きリスト 1
+2. 番号付きリスト 2
+```
+
+- リスト１
+- リスト２
+  - リスト 2-1
+  - リスト 2-2
+
+1. 番号付きリスト 1
+2. 番号付きリスト 2
+
+## チェックボックス
+
+```markdown
+- [ ] チェックボックス 1
+- [x] チェックボックス 2
+```
 
 - [ ] チェックボックス 1
 - [x] チェックボックス 2
 
-_強調(イタリック、english only?)_ **強調(太字)** ~~打消し(del ではなく css の装飾)~~
+## 斜体・強調・打消し
+
+`*`,`**`は`_`,`__`と置き換えられます
+
+```markdown
+_Italic 斜体です_
+
+**強調**
+
+~~打消し線（css の装飾）~~
+```
+
+_Italic 斜体_
+
+**強調**
+
+~~打消し線（css の装飾）~~
+
+## リンク
+
+```markdown
+[外部リンク](https://www.google.com)
+
+[内部リンク](/gallery)
+
+生のリンク: <https://google.com>
+```
 
 [外部リンク](https://www.google.com)
 
 [内部リンク](/gallery)
 
-生のリンク`<https://google.com>`と書く
+生のリンク: <https://google.com>
 
-<https://google.com>
+## 画像
+
+画像形式はなんでもいいですが、是非新しくて軽い`webp`に変換しましょう！
+
+```markdown
+外部 URL
+![画像](https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png)
+
+内部 URL その１
+![logo](/mcc-logo.svg)
+
+内部 URL その２
+![bocchi](./bocchi.webp)
+```
+
+外部 URL
+![画像](https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png)
+
+内部 URL その１
+![logo](/mcc-logo.svg)
+
+内部 URL その２
+![bocchi](./bocchi.webp)
+
+## 脚注
+
+```markdown
+脚注[^1]
+
+[^1]: 脚注です
+```
 
 脚注[^1]
 
 [^1]: 脚注です
 
-画像
+## 表
 
-![画像](https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png)
+スタイル当て忘れました
 
-表
+```markdown
+| title        | date | tags     |
+| ------------ | ---- | -------- |
+| こんにちは   | 2022 | web, dev |
+| これは表です | 2022 | web, dev |
+```
 
-| title                                   | date | tags     |
-| --------------------------------------- | ---- | -------- |
-| MCC の Web サイトをリニューアルしました | 2022 | web, dev |
-| これは表です                            | 2022 | web, dev |
-| スタイル忘れました                      | 2022 | web, dev |
+| title        | date | tags     |
+| ------------ | ---- | -------- |
+| こんにちは   | 2022 | web, dev |
+| これは表です | 2022 | web, dev |
+
+## 引用
+
+```markdown
+> 引用です。スタイル当て忘れました。
+```
 
 > 引用です。スタイル当て忘れました。
 
+## インラインコード
+
 `これはインラインコードです` `Font は JetBrains Monoを使用`
 
-python
+## コードブロック
 
-```python :main.py
-# コードブロックです。右上のボタンでコピーできます。
-# pythonです。highlight.jsを使用しています
-print('1+1は2です' if 1 + 1 == 2 else '1+1は2ではありません')
+タイトルはあってもなくてもいけます。
+
+````markdown title="markdown"
+```python title="blog.py"
+print('Hello World')
+```
+````
+
+```python title="blog.py"
+print('Hello World')
 ```
 
-diff
+````markdown title="markdown"
+```diff
+- これは削除です
++ これは追加です
+```
+````
 
 ```diff
-// diffも普通につかえるです。
 - これは削除です
 + これは追加です
 ```
 
-diff_cpp
+## 数式
 
-```diff_cpp title="main.cpp"
-// diff_○○には対応してません。
-- for (int i = 0; i < 10; i++) {
--   cout << i << endl;
-- }
-+ for (int i = 0; i < 10; i++) cout << i << endl;
-```
-
-TypeScriptReact
-
-```tsx title="App.tsx"
-const App: FC<Props> = ({ children }) => {
-  return (
-    <div>
-      <h1>Hello World</h1>
-      <p>これはtsxです</p>
-      <p>{children}</p>
-    </div>
-  );
-};
-```
-
-数式
+KaTex を使用しています。
 
 ```math
 $$
@@ -141,9 +224,9 @@ $$
 L = \frac{1}{2} \rho v^2 S C_L
 $$
 
-emoji
+## emoji
 
-```
+```markdown
 :smile: :+1: :tada: :rocket: :metal:
 ```
 

@@ -8,7 +8,7 @@
 ## 記事の書き方
 
 - `develop`ブランチから`feature/tekitou`みたいなブランチを切って、そこで記事を書く。
-- `develop`ブランチにPRを出す。
+- `develop`ブランチに PR を出す。
 
 or
 
@@ -22,38 +22,31 @@ or
 - 凝った見た目は、`React Three Fiber(R3F)`で実装します。
 - `main`ブランチに push すると、GitHub Actions でビルドが走り、デプロイされます。
 
-### キーワード
-
-`SSG`, `SPA`, `Jamstack`, `React`, ...
-
-気になったら調べてね～
-
-## 環境（2022.11 現在）
+## 環境（2023.1 現在）
 
 - Node.js: v18.12.1
-- Next.js: v13
-- TypeScript: v4.9.3
+- NPM: v8.19.2
+- Next.js: v13.1.1
+- TypeScript: v4.9.4
 
 ## メンテの仕方
 
 - `VSCode`の使用を想定しています。
 - [ここ](https://github.com/tuatmcc/mcc-website/wiki/%E9%96%8B%E7%99%BA%E3%83%BB%E3%83%A1%E3%83%B3%E3%83%86%E3%83%8A%E3%83%B3%E3%82%B9)を参照
-- 何かあれば Issue や Discord に。
+- 何かあれば Issue や Discord で。
 
-## リニューアルにあたって
+## 押しポイント
 
-### 引継ぎではなしたこと
-
-- レンタルサーバーは解約したので、ドメインだけ取り続けている状態
-- ~~誰がドメイン管理しているんだろう...？~~ 解決
-- リニューアルに際し、GitHub リポジトリは新しくつくる。
-- フレームワークは Nuxt ではなく Next を使う。
-- 記事の更新は、当面はプロジェクトをクローンしてマークダウンで追加。
-- いずれ Micro CMS のようなヘッドレス CMS を導入したいけど、アカウント管理・引継ぎが面倒かな。
-- GitHub Actions で CD/CI を実装する。
-- develop ブランチで開発・編集、master(main)にマージして自動デプロイ
-- `yarn`じゃなくて`npm`だけでパッケージ管理する。
-- `ESLint`や`Prettier`でフォーマットを統一する
+- デザイン
+- マークダウン記事のカスタマイズ変換
+- 開発が盛んな最新のフレームワーク・ライブラリの導入
+  - `Next.js v13` 使用 (オールインワン過ぎてこれ無しじゃ生きていけない・Rust製コンパイラ)
+  - `turborepo` の導入（Rust&Go 製のビルドツール・爆速で快適）
+  - `ROME` の導入 (Rust 製の linter・formatter・爆速)
+  - `React-Three-Fiber` の利用
+- `postcss`,`css-modules`の使用
+  - `sass`はcssの皮をかぶった別物（過激）
+  - cssフレームワークは甘え（過激）
 
 ## 開発記録
 
