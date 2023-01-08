@@ -58,7 +58,7 @@ $ ip link
 `/etc/systemd/network/25-wireless.network`を編集し，次のように書きます．
 **以下，`wlp2s0`は自分の無線ネットワークインターフェイス名に置き換えてください．**
 Arch Wikiでいうと[ここ](https://wiki.archlinux.jp/index.php/Systemd-networkd#.E7.84.A1.E7.B7.9A.E3.82.A2.E3.83.80.E3.83.97.E3.82.BF)です．
-```title="25-wireless.network"
+```systemd title="25-wireless.network"
 [Match]
 Name=wlp2s0
 
@@ -75,7 +75,7 @@ $ sudo systemctl enable --now systemd-networkd
 [当該記事](https://wiki.archlinux.jp/index.php/Wpa_supplicant#wpa_cli_.E3.81.A7.E6.8E.A5.E7.B6.9A.E3.81.99.E3.82.8B)を見ながらやっていきましょう．
 接続にはwpa_cliを使用します(他のでもいいと思います)．
 `/etc/wpa_supplicant/wpa_supplicant-wlp2s0.conf`を編集し，次のように書きます．
-```title="wpa_supplicant-wlp2s0.conf"
+```systemd title="wpa_supplicant-wlp2s0.conf"
 ctrl_interface=/run/wpa_supplicant
 update_config=1
 ```
@@ -110,7 +110,7 @@ $ sudo wpa_cli
 `/etc/wpa_supplicant/wpa_supplicant-wlp2s0.conf`にtuatnet用の設定を追加しましょう．
 次の内容を追記します．
 Arch Wikiの[この部分](https://wiki.archlinux.jp/index.php/Wpa_supplicant#802.1x.2Fradius)です．
-```title="wpa_supplicant-wlp2s0.conf"
+```systemd title="wpa_supplicant-wlp2s0.conf"
 network={
     ssid="tuatnet"
     key_mgmt=WPA-EAP
