@@ -1,9 +1,8 @@
 import { FC } from 'react';
 
-import { Helmet } from '~/components/common/helmet';
-import { Navbar } from '~/components/common/navbar';
-import { FramerPrallaxPrototype } from '~/components/gallery/framer-parallax';
-import { MetaData } from '~/types/meta';
+import { FramerPrallaxPrototype } from '~/features/gallery/framer-parallax';
+import { SEO, MetaData } from '~/features/seo';
+import { Navbar } from '~/features/ui/Navbar';
 
 const meta: MetaData = {
 	title: 'Framer Prallax',
@@ -13,7 +12,7 @@ const meta: MetaData = {
 const FramerParallax: FC = () => {
 	return (
 		<>
-			<Helmet meta={meta} />
+			<SEO meta={meta} />
 			<Navbar theme='auto' />
 			<FramerPrallaxPrototype />
 		</>

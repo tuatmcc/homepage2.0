@@ -16,10 +16,6 @@ body,
   scroll-snap-type: y mandatory;
 }
 
-p {
-  margin: 0;
-}
-
 a {
   color: var(--color-text-default);
   text-decoration: none;

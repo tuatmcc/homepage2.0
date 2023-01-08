@@ -2,11 +2,10 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { AutoLink } from '~/components/common/auto-link';
-import { Del } from '~/components/common/del';
-import { Footer } from '~/components/common/footer';
-import { Helmet }  from '~/components/common/helmet';
-import { Navbar } from '~/components/common/navbar';
+import { SEO }  from '~/features/seo';
+import { Del ,  TextLink } from '~/features/ui/Elements';
+import { Footer } from '~/features/ui/Footer';
+import { Navbar } from '~/features/ui/Navbar';
 import classNames from '~/utils/classNames';
 
 const meta = {
@@ -18,7 +17,7 @@ const meta = {
 const AboutPage: FC = () => {
   return (
   <>
-    <Helmet meta={meta} />
+    <SEO meta={meta} />
     <Navbar theme='auto' />
     <header>
       <div className={styles.headerContainer}>
@@ -66,7 +65,7 @@ const AboutPage: FC = () => {
         MCC では新入部員を随時募集してます。 お問合せ、入部希望者は以下からご連絡ください。
         </p>
         <ul>
-          <li>TwitterDM: <AutoLink href="https://twitter.com/tuatmcc" >@tuatmcc</AutoLink></li>
+          <li>TwitterDM: <TextLink href="https://twitter.com/tuatmcc" >@tuatmcc</TextLink></li>
         </ul>
         </div>
         </div>

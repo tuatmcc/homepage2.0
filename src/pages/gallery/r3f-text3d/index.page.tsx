@@ -2,9 +2,9 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { Helmet } from '~/components/common/helmet';
-import { Navbar } from '~/components/common/navbar';
-import { R3fText3d } from '~/components/gallery/r3f-text-3d';
+import { R3fText3d } from '~/features/gallery/r3f-text-3d';
+import { SEO } from '~/features/seo';
+import { Navbar } from '~/features/ui/Navbar';
 
 const Text3DPage: FC = () => {
 	const meta = {
@@ -13,7 +13,7 @@ const Text3DPage: FC = () => {
 	};
 	return (
 		<>
-			<Helmet meta={meta} />
+			<SEO meta={meta} />
 			<Navbar theme='auto' />
 			<div className={styles.container}>
 				<R3fText3d />

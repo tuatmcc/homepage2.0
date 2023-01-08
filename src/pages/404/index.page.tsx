@@ -2,9 +2,9 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { Footer } from '~/components/common/footer';
-import { Helmet } from '~/components/common/helmet';
-import { Navbar } from '~/components/common/navbar';
+import { SEO } from '~/features/seo';
+import { Footer } from '~/features/ui/Footer';
+import { Navbar } from '~/features/ui/Navbar';
 
 const meta = {
 	title: '404',
@@ -14,7 +14,7 @@ const meta = {
 const NotFoundPage: FC = () => {
 	return (
 		<>
-			<Helmet meta={meta} />
+			<SEO meta={meta} />
 			<Navbar theme='auto' />
 			<div className={styles.background} />
 			<main>

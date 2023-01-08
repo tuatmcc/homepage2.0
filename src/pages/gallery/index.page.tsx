@@ -6,9 +6,9 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { Footer } from '~/components/common/footer';
-import { Helmet } from '~/components/common/helmet';
-import { Navbar } from '~/components/common/navbar';
+import { SEO } from '~/features/seo';
+import { Footer } from '~/features/ui/Footer';
+import { Navbar } from '~/features/ui/Navbar';
 
 export type SandboxPageProps = {
 	paths: string[];
@@ -21,7 +21,7 @@ const GalleryPage: FC<SandboxPageProps> = ({ paths }) => {
 	};
 	return (
 		<>
-			<Helmet meta={meta} />
+			<SEO meta={meta} />
 			<div className={styles.background} />
 			<Navbar theme='auto' />
 			<header>

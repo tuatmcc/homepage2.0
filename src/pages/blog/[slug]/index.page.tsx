@@ -1,10 +1,10 @@
 import { FC } from 'react';
 
-import { ArticleWrapper } from '~/components/common/article-wrapper';
-import { Helmet } from '~/components/common/helmet';
-import { Navbar } from '~/components/common/navbar';
-import { DynamicRouting } from '~/lib/dynamic-routing';
-import { Post, PostCollector } from '~/lib/post-collector';
+import { ArticleWrapper } from '~/features/markdown/components/ArticleWrapper';
+import { Post, PostCollector } from '~/features/markdown/post-collector';
+import { SEO } from '~/features/seo';
+import { Navbar } from '~/features/ui/Navbar';
+import { DynamicRouting } from '~/routes/dynamic-routing';
 
 const postCollector = new PostCollector('blog');
 const dynamicRouting = new DynamicRouting(postCollector);
@@ -21,9 +21,9 @@ type WorksPostPageProps = {
 const WorksPost: FC<WorksPostPageProps> = ({ post }) => {
 	return (
 		<>
-			<Helmet meta={post.frontmatter} />
+			<SEO meta={post.frontmatter} />
 			<Navbar theme='auto' />
-			<ArticleWrapper meta={post.frontmatter}>{post.content}</ArticleWrapper>
+			<ArticleWrapper {...post.frontmatter} contentHtml={post.content} />
 		</>
 	);
 };

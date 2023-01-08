@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 
 import '~/styles/global.css';
-import MediaQueryProvider from '~/providers/media-query-context-provider';
+import { MediaQueryProvider } from '~/features/media-query';
 
 const App = ({ Component, pageProps }: AppProps) => {
 	return (

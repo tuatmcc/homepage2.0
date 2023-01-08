@@ -4,13 +4,12 @@ import { FC, useContext } from 'react';
 
 import styles from './style.module.css';
 
-import { Footer } from '~/components/common/footer';
-import { Helmet } from '~/components/common/helmet';
-import { Navbar } from '~/components/common/navbar';
-import { Tag } from '~/components/common/tag';
-import { TagList } from '~/components/common/tag/tag-list';
-import { PostCollector, PostCollectorProps } from '~/lib/post-collector';
-import { MediaQueryContext } from '~/providers/media-query-context-provider';
+import { PostCollector, PostCollectorProps } from '~/features/markdown/post-collector';
+import { MediaQueryContext } from '~/features/media-query';
+import { SEO } from '~/features/seo';
+import { Footer } from '~/features/ui/Footer';
+import { Navbar } from '~/features/ui/Navbar';
+import { Tag, TagList } from '~/features/ui/Tag';
 import classNames from '~/utils/classNames';
 
 const meta = {
@@ -25,7 +24,7 @@ const ActivitiesPage: FC<PostCollectorProps> = ({ posts }) => {
 	posts.sort((a, b) => ((a.frontmatter?.date || 1) < (b.frontmatter?.date || 1) ? 1 : -1));
 	return (
 		<>
-			<Helmet meta={meta} />
+			<SEO meta={meta} />
 			<Navbar theme='auto' />
 			<div className={styles.background} />
 			<header>
