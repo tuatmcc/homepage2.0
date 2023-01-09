@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { Helmet } from '~/components/common/helmet';
-import { ArticleTest } from '~/components/gallery/article-test';
+import { ArticleTest } from '~/features/gallery/article-test';
+import { SEO } from '~/features/seo';
 
 const meta = {
 	title: 'New Design',
@@ -12,7 +12,7 @@ const meta = {
 const NewDesignPage: FC = () => {
 	return (
 		<>
-			<Helmet meta={meta} />
+			<SEO meta={meta} />
 			<ArticleTest />
 		</>
 	);

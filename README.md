@@ -41,9 +41,8 @@ or
 - マークダウン記事のカスタマイズ変換
 - 開発が盛んな最新のフレームワーク・ライブラリの導入
   - `Next.js v13` 使用 (オールインワン過ぎてこれ無しじゃ生きていけない・Rust製コンパイラ)
-  - `turborepo` の導入（Rust&Go 製のビルドツール・爆速で快適）
   - `ROME` の導入 (Rust 製の linter・formatter・爆速)
-  - `React-Three-Fiber` の利用
+  - WebGLライブラリ `React-Three-Fiber` の利用
 - `postcss`,`css-modules`の使用
   - `sass`はcssの皮をかぶった別物（過激）
   - cssフレームワークは甘え（過激）

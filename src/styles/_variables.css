@@ -8,7 +8,7 @@
 
   /* Other Colors */
   --color-background: #f6f4f4;
-  --color-text-default: #24292f;
+  --color-text-default: #444;
   --color-text-muted: #57606a;
   --color-text-subtle: #6e7781;
   --color-text-white: #fff;
@@ -17,6 +17,8 @@
   --color-codeblock-text: #fff;
   --color-codeblock-background: #16283a;
   --color-codeblock-title-background: #0d1e2f;
+  --color-blockquote-border: #999;
+  --color-table-head-background: #ddd;
   --color-border-default: #d0d7de;
   --color-border-muted: hsl(210deg 18% 87% / 100%);
   --color-border-subtle: rgb(27 31 36 / 15%);
@@ -40,4 +42,5 @@
   /* Font */
   --font-family-gill-sans: 'Gill Sans', 'Noto Sans JP', calibri, 'Trebuchet MS', sans-serif;
   --font-family-orbitron: 'Orbitron', 'Noto Sans JP', 'Arial', 'Helvetica', snas-serif;
+  --font-family-jetbrains-mono: 'JetBrains Mono', 'Noto Sans JP', 'Arial', monospace;
 }

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { Helmet } from '~/components/common/helmet';
-import { R3fScrollControl } from '~/components/gallery/r3f-scroll-control';
+import { R3fScrollControl } from '~/features/gallery/r3f-scroll-control';
+import { SEO } from '~/features/seo';
 
 const meta = {
 	title: 'New Home Design',
@@ -12,7 +12,7 @@ const meta = {
 const NewHomeDesignPage: FC = () => {
 	return (
 		<>
-			<Helmet meta={meta} />
+			<SEO meta={meta} />
 			<R3fScrollControl />
 		</>
 	);

@@ -1,0 +1,137 @@
+.articleContent {
+  & p {
+    font-size: 16px;
+    line-height: 2;
+  }
+
+  & h1 {
+    padding: 2px 10px 0;
+    margin: 48px 0;
+    font-size: 24px;
+    line-height: 1.6;
+    border-bottom: 2px solid var(--color-mcc-primary);
+    border-left: 5px solid var(--color-mcc-primary);
+  }
+
+  & h2 {
+    padding: 2px;
+    margin: 32px 0;
+    font-size: 1.4rem;
+    border-bottom: 2px solid var(--color-mcc-primary);
+  }
+
+  & ul,
+  & ol {
+    padding-left: 32px;
+  }
+
+  & blockquote {
+    padding-left: 12px;
+    font-style: italic;
+    border-left: solid 4px var(--color-blockquote-border);
+  }
+
+  & li {
+    margin: 0;
+    line-height: 2;
+  }
+
+  & table {
+    overflow: auto;
+
+    & thead {
+      & tr {
+        background: var(--color-table-head-background);
+
+        & th {
+          padding: 4px 8px;
+        }
+      }
+    }
+
+    & tbody {
+      & tr {
+        & td {
+          padding: 4px 8px;
+        }
+      }
+    }
+  }
+
+  & code {
+    overflow-wrap: break-word;
+  }
+
+  & pre {
+    position: relative;
+    padding: 16px;
+    overflow: auto;
+    font-family: var(--font-family-jetbrains-mono);
+    background-color: var(--color-codeblock-background);
+    border-radius: 4px;
+
+    & button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 4px 8px;
+      margin: 8px;
+      cursor: pointer;
+      background: white;
+      border-radius: 2px;
+    }
+
+    & code {
+      color: white;
+      background: inherit;
+    }
+  }
+
+  & section[data-footnotes] {
+    & h2 {
+      height: 0;
+      overflow: hidden;
+    }
+  }
+
+  & div[data-rehype-pretty-code-fragment] {
+    position: relative;
+    margin: 32px 0;
+
+    & div[data-rehype-pretty-code-title] {
+      position: relative;
+      bottom: -4px;
+      display: inline-block;
+      padding: 4px 16px 10px;
+      font-size: 14px;
+      color: #ccc;
+      overflow-wrap: break-word;
+      line-gap-override: 0;
+      background: var(--color-codeblock-title-background);
+      border-radius: 4px 4px 0 0;
+    }
+
+    & pre {
+      position: relative;
+      padding: 16px;
+      margin: 0;
+      overflow: auto;
+      font-family: var(--font-family-jetbrains-mono);
+      background-color: var(--color-codeblock-background);
+      border-radius: 4px;
+
+      & button {
+        position: absolute;
+        padding: 4px 8px;
+        margin: 8px;
+        cursor: pointer;
+        background: white;
+        border-radius: 2px;
+      }
+
+      & code {
+        background: inherit;
+      }
+    }
+  }
+}

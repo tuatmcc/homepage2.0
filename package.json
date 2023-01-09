@@ -9,7 +9,7 @@
     "export": "npm run build && next export",
     "start": "next start",
     "lint": "next lint && stylelint src/**/*.css && rome check . && rome format .",
-    "fix": "next lint --fix && stylelint src/**/*.css --fix && rome check . --apply-suggested && rome format . --write"
+    "format": "next lint --fix && stylelint src/**/*.css --fix && rome check . --apply-suggested && rome format . --write"
   },
   "dependencies": {
     "@react-three/cannon": "^6.5.2",
@@ -63,7 +63,6 @@
     "stylelint-order": "^6.0.1",
     "stylelint-scss": "^4.3.0",
     "three": "^0.148.0",
-    "turbo": "^1.6.3",
     "typescript": "4.9.4",
     "unified": "^10.1.2"
   }

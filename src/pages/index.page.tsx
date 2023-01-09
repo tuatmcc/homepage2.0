@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { Helmet } from '~/components/common/helmet';
-import HomePageComponent from '~/components/home/home-page-component';
+import HomePageComponent from '~/features/home/home-page-component';
+import { SEO } from '~/features/seo';
 
 const meta = {
 	title: 'Home',
@@ -12,7 +12,7 @@ const meta = {
 const IndexPage: FC = () => {
 	return (
 		<>
-			<Helmet meta={meta} />
+			<SEO meta={meta} />
 
 			<HomePageComponent />
 		</>

@@ -23,6 +23,7 @@
     "source.fixAll": false,
     "source.fixAll.rome": true,
     "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
+    "source.fixAll.stylelint": true,
+    "source.organizeImports": false
   }
 }
