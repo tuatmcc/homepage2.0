@@ -1,9 +1,9 @@
 import { FC } from 'react';
 
-import { Navbar } from '~/features/components/Navbar';
-import { SEO } from '~/features/components/SEO';
+import { SEO } from '~/features/SEO';
 import { ArticleWrapper } from '~/features/markdown/components/ArticleWrapper';
 import { Post, PostCollector } from '~/features/markdown/post-collector';
+import { Navbar } from '~/features/ui/Navbar';
 import { DynamicRouting } from '~/routes/dynamic-routing';
 
 const postCollector = new PostCollector('blog');

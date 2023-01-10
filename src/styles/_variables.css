@@ -34,7 +34,7 @@
   /* Size */
   --navbar-pc-height: 70px;
   --navbar-mobile-height: 60px;
-  --header-height: min(100svh, 500px);
+  --header-height: 100svh;
 
   /* Breakpoints */
   --breakpoint-mobile: 48em;

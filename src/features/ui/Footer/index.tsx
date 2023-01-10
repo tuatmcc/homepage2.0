@@ -29,7 +29,7 @@ export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
 						className={styles.socialLink}
 					>
 						<TwitterIcon />
-            MCC
+						MCC
 					</a>
 					<a
 						href="https://twitter.com/tuatkyopro"
@@ -39,7 +39,7 @@ export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
 						className={styles.socialLink}
 					>
 						<TwitterIcon />
-            競プロ
+						競プロ
 					</a>
 					<a
 						href="https://github.com/tuatmcc"
@@ -49,7 +49,6 @@ export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
 						className={styles.socialLink}
 					>
 						<GitHubIcon />
-            GitHub
 					</a>
 				</div>
 				<div className={styles.copyRight}>©2023 東京農工大学マイクロコンピュータークラブ</div>

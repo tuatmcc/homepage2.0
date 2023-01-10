@@ -5,8 +5,8 @@ import { FC, Suspense, useContext, useEffect, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { GitHubIcon, TwitterIcon } from '~/features/components/Svg';
 import { MediaQueryContext } from '~/features/media-query';
+import { GitHubIcon, TwitterIcon } from '~/features/ui/Svg';
 import classNames from '~/utils/classNames';
 
 const pageAmout = 3.5;
@@ -143,7 +143,6 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 							className={styles.socialLink}
 						>
 							<GitHubIcon />
-							GitHub
 						</a>
 					</div>
 				</div>
