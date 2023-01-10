@@ -6,7 +6,7 @@ import { SEO } from '~/features/seo';
 import { Navbar } from '~/features/ui/Navbar';
 import { DynamicRouting } from '~/routes/dynamic-routing';
 
-const postCollector = new PostCollector('activities');
+const postCollector = new PostCollector('news');
 const dynamicRouting = new DynamicRouting(postCollector);
 
 const NewsPost: NextPage<{ post: Post }> = ({ post }) => {
