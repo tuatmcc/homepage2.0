@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
+import { SEO } from '~/features/components/SEO';
 import HomePageComponent from '~/features/home/home-page-component';
-import { SEO } from '~/features/seo';
 
 const meta = {
 	title: 'Home',

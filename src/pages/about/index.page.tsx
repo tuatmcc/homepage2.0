@@ -2,13 +2,14 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { SEO }  from '~/features/seo';
-import { Del ,  TextLink } from '~/features/ui/Elements';
-import { Footer } from '~/features/ui/Footer';
-import { Navbar } from '~/features/ui/Navbar';
+import { Del ,  TextLink } from '~/features/components/Elements';
+import { Footer } from '~/features/components/Footer';
+import { Navbar } from '~/features/components/Navbar';
+import { SEO }  from '~/features/components/SEO';
+import { MetaData } from '~/types/meta';
 import classNames from '~/utils/classNames';
 
-const meta = {
+const meta: MetaData = {
   title: 'About',
   description: 'About of TUATMCC',
   img: '/mcc-logo.svg',

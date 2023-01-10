@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { FC } from 'react';
 
-import { MetaData } from './types';
+import { MetaData } from '~/types/meta';
 
 type SEOProps = {
 	meta: MetaData;

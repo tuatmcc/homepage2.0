@@ -6,8 +6,8 @@ import { HtmlParser } from '../HtmlParser';
 
 import styles from './style.module.css';
 
-import { MetaData } from '~/features/seo';
-import { Tag, TagList } from '~/features/ui/Tag';
+import { Tag, TagList } from '~/features/components/Tag';
+import { MetaData } from '~/types/meta';
 
 export const ArticleWrapper: FC<MetaData & { contentHtml: string }> = ({
 	title,

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
+import { SEO } from '~/features/components/SEO';
 import { ArticleTest } from '~/features/gallery/article-test';
-import { SEO } from '~/features/seo';
 
 const meta = {
 	title: 'New Design',

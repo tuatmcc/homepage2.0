@@ -2,11 +2,11 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
+import { Navbar } from '~/features/components/Navbar';
 import { HomeScrollControl } from '~/features/home/home-scroll-control';
 import { HomeText3d } from '~/features/home/home-text-3d';
-import { Navbar } from '~/features/ui/Navbar';
 
-// 状態管理、コンポーネント管理が本当にひどすぎる。ベストプラクティスを調べなければ。
+// コンポーネント管理が本当にひどすぎる。
 const HomePageComponent: FC = () => {
 	return (
 		<>
