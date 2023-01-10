@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { NextPage } from 'next';
 
 import { ArticleWrapper } from '~/features/markdown/components/ArticleWrapper';
 import { Post, PostCollector } from '~/features/markdown/post-collector';
@@ -6,19 +6,10 @@ import { SEO } from '~/features/seo';
 import { Navbar } from '~/features/ui/Navbar';
 import { DynamicRouting } from '~/routes/dynamic-routing';
 
-const postCollector = new PostCollector('activities');
+const postCollector = new PostCollector('news');
 const dynamicRouting = new DynamicRouting(postCollector);
 
-type ActivitiesPostPageProps = {
-	post: Post;
-};
-
-/**
- * works以下のマークダウンファイルへのパスはここに通されます。
- * @param param0
- * @returns
- */
-const ActivitiesPost: FC<ActivitiesPostPageProps> = ({ post }) => {
+const NewsPost: NextPage<{ post: Post }> = ({ post }) => {
 	return (
 		<>
 			<SEO meta={post.frontmatter} />
@@ -34,4 +25,4 @@ export const getStaticPaths = dynamicRouting.getStaticPaths;
 // パスに対応するコンテンツ(HTML)を用意する。ビルド時に実行される。
 export const getStaticProps = dynamicRouting.getStaticProps;
 
-export default ActivitiesPost;
+export default NewsPost;

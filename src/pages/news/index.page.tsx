@@ -13,13 +13,13 @@ import { Tag, TagList } from '~/features/ui/Tag';
 import classNames from '~/utils/classNames';
 
 const meta = {
-	title: '活動報告',
-	description: 'Activities of TUATMCC',
+	title: 'お知らせ',
+	description: 'News of TUATMCC',
 	img: '/mcc-logo.svg',
 };
 
 // posts will be populated at build time by getStaticProps()
-const ActivitiesPage: FC<PostCollectorProps> = ({ posts }) => {
+const NewsPage: FC<PostCollectorProps> = ({ posts }) => {
 	const { isMobile } = useContext(MediaQueryContext);
 	posts.sort((a, b) => ((a.frontmatter?.date || 1) < (b.frontmatter?.date || 1) ? 1 : -1));
 	return (
@@ -29,8 +29,8 @@ const ActivitiesPage: FC<PostCollectorProps> = ({ posts }) => {
 			<div className={styles.background} />
 			<header>
 				<div className={styles.headerContent}>
-					<h1 className={styles.headerTitle}>Activites</h1>
-					<h2 className={styles.headerSubTitle}>活動報告</h2>
+					<h1 className={styles.headerTitle}>News</h1>
+					<h2 className={styles.headerSubTitle}>お知らせ</h2>
 				</div>
 			</header>
 			<div className={styles.activities}>
@@ -39,7 +39,7 @@ const ActivitiesPage: FC<PostCollectorProps> = ({ posts }) => {
 						return (
 							<div key={post.slug}>
 								<Link
-									href={`activities/${post.slug}`}
+									href={`news/${post.slug}`}
 									key={post.slug}
 									className={classNames(styles.listItem, !isMobile && index % 2 === 1 ? styles._reverse : '')}
 								>
@@ -90,6 +90,6 @@ const ActivitiesPage: FC<PostCollectorProps> = ({ posts }) => {
 };
 
 // This function gets called at build time on server-side.
-export const getStaticProps = new PostCollector('activities').getStaticProps;
+export const getStaticProps = new PostCollector('news').getStaticProps;
 
-export default ActivitiesPage;
+export default NewsPage;
