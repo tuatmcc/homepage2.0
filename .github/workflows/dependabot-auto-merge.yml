@@ -1,5 +1,5 @@
 name: Depenedabot auto-merge
-on: pull_requesst_target
+on: pull_request_target
 
 permissions:
   pull-request: write
