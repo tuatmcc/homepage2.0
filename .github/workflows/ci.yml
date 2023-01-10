@@ -22,5 +22,5 @@ jobs:
         run: npm ci
       - name: run lint
         run: npx turbo lint
-      - name: run typecheck
+      - name: run build
         run: npx turbo build
