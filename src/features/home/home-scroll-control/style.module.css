@@ -45,10 +45,15 @@
 
   & .name2 {
     position: absolute;
+    left: 1vw;
     width: 100svw;
     margin: 0;
     font-size: min(24px, 6vw);
-    line-height: 1.4;
+    line-height: 2;
+
+    & .name2space {
+      letter-spacing: 0.1em;
+    }
   }
 
   & .downArrow {

@@ -6,6 +6,7 @@ import { HtmlParser } from '../HtmlParser';
 
 import styles from './style.module.css';
 
+import { Footer } from '~/features/components/Footer';
 import { Tag, TagList } from '~/features/components/Tag';
 import { MetaData } from '~/types/meta';
 
@@ -52,6 +53,8 @@ export const ArticleWrapper: FC<MetaData & { contentHtml: string }> = ({
 					<HtmlParser contentHtml={contentHtml} />
 				</div>
 			</main>
+
+			<Footer />
 		</>
 	);
 };

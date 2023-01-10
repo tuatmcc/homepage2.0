@@ -84,7 +84,7 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 				<br />
 				マイクロコンピュータークラブ、
 				<br />
-				MCCです。
+				<span className={styles.name2space}>MCC</span>です。
 			</h2>
 			<p className={styles.information} style={{ top: vH * 1.5, opacity: opacities[3] }}>
 				Infomation

@@ -73,7 +73,7 @@ const NewsPage: FC<PostCollectorProps> = ({ posts }) => {
 												))}
 											</TagList>
 										)}
-										{post.frontmatter.date && <div>{post.frontmatter.date}</div>}
+										{post.frontmatter.date && <div className={styles.date}>{post.frontmatter.date}</div>}
 										{post.frontmatter.description && (
 											<p className={styles.description}>{post.frontmatter.description}</p>
 										)}

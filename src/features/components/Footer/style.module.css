@@ -26,6 +26,19 @@
     display: flex;
     gap: 16px;
     justify-content: center;
+
+    & .socialLink {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: cnter;
+      justify-content: center;
+      font-family: var(--font-family-orbitron);
+      font-size: 12px;
+      color: white;
+      text-align: center;
+      letter-spacing: 0.1em;
+    }
   }
 
   & .copyRight {
