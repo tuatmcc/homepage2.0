@@ -1,63 +1,67 @@
 .headerContent {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 100svh;
+  height: var(--header-height);
 
   & .heroImage {
     position: absolute;
+    top: 0;
+    z-index: -1;
     width: 100%;
-    height: 100svh;
+    height: var(--header-height);
     object-fit: cover;
-    filter: linear-gradient(rgb(0 0 0 / 50%), rgb(0 0 0 / 50%));
   }
 
   & .heroImageOverlay {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
     width: 100%;
-    height: 100svh;
-    background: linear-gradient(var(--color-mcc-primary), var(--color-mcc-brand));
-    opacity: 0.5;
+    height: var(--header-height);
+    background: linear-gradient(rgb(255 255 255 /50%), var(--color-mcc-primary));
+    opacity: 1;
   }
 
   & .title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     width: 100%;
     font-size: 32px;
     font-weight: bold;
     color: #fff;
     text-align: center;
-    transform: translate(-50%, -50%);
+  }
+
+  & .info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: cener;
+
+    & .date {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: white;
+    }
+
+    & .author {
+      display: flex;
+      align-items: center;
+      color: white;
+    }
   }
 }
 
 .mainContent {
-  & .article {
-    max-width: 800px;
-    padding: 32px 0;
-    padding: 0;
-    margin: 32px auto;
-    margin: 0 5%;
+  max-width: 900px;
+  padding: 48px 8px;
+  margin: auto;
 
-    @media screen and (max-width: 48em) {
-      padding: 0;
-      margin: 0 3%;
-    }
-
-    & .title {
-      margin: 48px 0;
-      font-size: 32px;
-      font-weight: normal;
-      text-align: center;
-    }
-
-    & .hero {
-      width: 100%;
-      height: 100svh;
-      object-fit: cover;
-    }
+  @media screen and (max-width: 48em) {
+    width: 92vw
   }
 }
