@@ -21,14 +21,35 @@ export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
 					MCC
 				</div>
 				<div className={styles.socials}>
-					<a href="https://twitter.com/TUATMCC" target="_blank" rel="noopener noreferrer" aria-label='twitter link'>
+					<a
+						href="https://twitter.com/TUATMCC"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label='twitter link'
+						className={styles.socialLink}
+					>
 						<TwitterIcon />
+            MCC
 					</a>
-					<a href="https://twitter.com/tuatkyopro" target="_blank" rel="noopener noreferrer" aria-label='twitter link'>
+					<a
+						href="https://twitter.com/tuatkyopro"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label='twitter link'
+						className={styles.socialLink}
+					>
 						<TwitterIcon />
+            競プロ
 					</a>
-					<a href="https://github.com/tuatmcc" target="_blank" rel="noopener noreferrer" aria-label='github link'>
+					<a
+						href="https://github.com/tuatmcc"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label='github link'
+						className={styles.socialLink}
+					>
 						<GitHubIcon />
+            GitHub
 					</a>
 				</div>
 				<div className={styles.copyRight}>©2023 東京農工大学マイクロコンピュータークラブ</div>

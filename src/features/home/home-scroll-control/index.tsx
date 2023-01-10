@@ -5,8 +5,8 @@ import { FC, Suspense, useContext, useEffect, useState } from 'react';
 
 import styles from './style.module.css';
 
+import { GitHubIcon, TwitterIcon } from '~/features/components/Svg';
 import { MediaQueryContext } from '~/features/media-query';
-import { GitHubIcon, TwitterIcon } from '~/features/ui/Svg';
 import classNames from '~/utils/classNames';
 
 const pageAmout = 3.5;
@@ -84,7 +84,7 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 				<br />
 				マイクロコンピュータークラブ、
 				<br />
-				TUATMCCです。
+				<span className={styles.name2space}>MCC</span>です。
 			</h2>
 			<p className={styles.information} style={{ top: vH * 1.5, opacity: opacities[3] }}>
 				Infomation
@@ -115,19 +115,35 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 						ブログ →
 					</Link>
 					<div className={styles.socials}>
-						<a href="https://twitter.com/TUATMCC" target="_blank" rel="noopener noreferrer" aria-label='twitter link'>
+						<a
+							href="https://twitter.com/TUATMCC"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label='twitter link'
+							className={styles.socialLink}
+						>
 							<TwitterIcon />
-						</a>
-						<a href="https://github.com/tuatmcc" target="_blank" rel="noopener noreferrer" aria-label='github link'>
-							<GitHubIcon />
+							MCC
 						</a>
 						<a
 							href="https://twitter.com/tuatkyopro"
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label='twitter link'
+							className={styles.socialLink}
 						>
 							<TwitterIcon />
+							競プロ
+						</a>
+						<a
+							href="https://github.com/tuatmcc"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label='github link'
+							className={styles.socialLink}
+						>
+							<GitHubIcon />
+							GitHub
 						</a>
 					</div>
 				</div>

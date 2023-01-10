@@ -2,11 +2,12 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { SEO } from '~/features/seo';
-import { Footer } from '~/features/ui/Footer';
-import { Navbar } from '~/features/ui/Navbar';
+import { Footer } from '~/features/components/Footer';
+import { Navbar } from '~/features/components/Navbar';
+import { SEO } from '~/features/components/SEO';
+import { MetaData } from '~/types/meta';
 
-const meta = {
+const meta: MetaData = {
 	title: '404',
 	description: '404 Page Not Found',
 };

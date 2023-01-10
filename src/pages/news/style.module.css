@@ -46,16 +46,17 @@
     display: flex;
     gap: 16px;
     padding: 16px;
+    color: white;
     background-color: #fff3;
     border: solid 1px #fff3;
     border-radius: 16px;
     box-shadow: var(--color-shadow-large);
-    backdrop-filter: blur(5px);
     transition: all 0.2s ease-in-out;
+    backdrop-filter: blur(4px);
 
     &:hover {
       background-color: #fff6;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(20px);
     }
 
     &._reverse {
@@ -89,10 +90,18 @@
         }
       }
 
+      & .date {
+        font-size: 16px;
+
+        @media screen and (max-width: 48em) {
+          font-size: 12px;
+        }
+      }
+
       & .description {
         font-size: 16px;
         line-height: 1.5;
-        color: var(--color-text-default);
+        color: white;
 
         @media screen and (max-width: 48em) {
           font-size: 12px;

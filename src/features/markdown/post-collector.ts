@@ -4,7 +4,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { GetStaticProps } from 'next';
 
-import { MetaData } from '~/features/seo';
+import { MetaData } from '~/types/meta';
 
 // 記事を取得するためのクラス。index.tsxで使う生このpostCollectorと、
 // [slug].tsxで使うdynamicRoutingというwrapperクラス用とで、2つの別インスタンスができてしまい、

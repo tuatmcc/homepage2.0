@@ -6,9 +6,9 @@ import { unified } from 'unified';
 
 import styles from './style.module.css';
 
-import { MetaData } from '~/features/seo';
-import { TextLink, TextLinkProps } from '~/features/ui/Elements';
-import { MiniLinkIcon } from '~/features/ui/Svg';
+import { TextLink, TextLinkProps } from '~/features/components/Elements';
+import { MiniLinkIcon } from '~/features/components/Svg';
+import { MetaData } from '~/types/meta';
 
 export type ArticleWrapperProps = {
 	meta: MetaData;

@@ -4,7 +4,7 @@ import { FC, Suspense, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { Navbar } from '~/features/ui/Navbar';
+import { Navbar } from '~/features/components/Navbar';
 
 const pageAmount = 3.5;
 

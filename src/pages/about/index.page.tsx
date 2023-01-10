@@ -2,13 +2,15 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { SEO }  from '~/features/seo';
-import { Del ,  TextLink } from '~/features/ui/Elements';
-import { Footer } from '~/features/ui/Footer';
-import { Navbar } from '~/features/ui/Navbar';
+import { Del ,  TextLink } from '~/features/components/Elements';
+import { Footer } from '~/features/components/Footer';
+import { Navbar } from '~/features/components/Navbar';
+import { SEO }  from '~/features/components/SEO';
+import { UrlAnimation } from '~/features/url-animations';
+import { MetaData } from '~/types/meta';
 import classNames from '~/utils/classNames';
 
-const meta = {
+const meta: MetaData = {
   title: 'About',
   description: 'About of TUATMCC',
   img: '/mcc-logo.svg',
@@ -19,6 +21,7 @@ const AboutPage: FC = () => {
   <>
     <SEO meta={meta} />
     <Navbar theme='auto' />
+    <UrlAnimation />
     <header>
       <div className={styles.headerContainer}>
         <div className={styles.headerContent}>
@@ -26,7 +29,7 @@ const AboutPage: FC = () => {
             <h1 className={styles.pageTitle}>What is MCC?</h1>
             <h2 className={styles.pageSubTitle}>
                 {'MCCについて'.split('').map((x, i) => (
-                  <span key={x+i} className={classNames(styles.anim)} style={{ animationDelay: `${0.8 + i* 0.1}s` }}>{x}</span>
+                  <span key={x+i} className={classNames(styles.anim)} style={{ animationDelay: `${0.6 + i* 0.1}s` }}>{x}</span>
                   ))}
             </h2>
           </div>
@@ -39,10 +42,10 @@ const AboutPage: FC = () => {
         <h2>MCCとは</h2>
         <div className={styles.brief}>
           <p>
-          東京農工大学マイクロコンピュータクラブ(TUATMCC)の愛称。
+          東京農工大学の公認サークル「マイクロコンピュータクラブ」の頭文字をとったものです。
           </p>
           <p>
-          IT系の、大学公認サークルです。
+          IT系サークルです。
           </p>
           </div>
         <h2>活動内容</h2>

@@ -3,8 +3,8 @@ import { FC, useContext, useState } from 'react';
 
 import styles from './style.module.css';
 
+import { MccLogo } from '~/features/components/Svg';
 import { MediaQueryContext } from '~/features/media-query';
-import { MccLogo } from '~/features/ui/Svg';
 import { ROUTES, BASE_ROUTES_LIST } from '~/routes/base';
 import classNames from '~/utils/classNames';
 

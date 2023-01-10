@@ -4,12 +4,12 @@ import { FC, useContext } from 'react';
 
 import styles from './style.module.css';
 
+import { Footer } from '~/features/components/Footer';
+import { Navbar } from '~/features/components/Navbar';
+import { SEO } from '~/features/components/SEO';
+import { Tag, TagList } from '~/features/components/Tag';
 import { PostCollector, PostCollectorProps } from '~/features/markdown/post-collector';
 import { MediaQueryContext } from '~/features/media-query';
-import { SEO } from '~/features/seo';
-import { Footer } from '~/features/ui/Footer';
-import { Navbar } from '~/features/ui/Navbar';
-import { Tag, TagList } from '~/features/ui/Tag';
 import classNames from '~/utils/classNames';
 
 const meta = {
@@ -73,7 +73,7 @@ const NewsPage: FC<PostCollectorProps> = ({ posts }) => {
 												))}
 											</TagList>
 										)}
-										{post.frontmatter.date && <div>{post.frontmatter.date}</div>}
+										{post.frontmatter.date && <div className={styles.date}>{post.frontmatter.date}</div>}
 										{post.frontmatter.description && (
 											<p className={styles.description}>{post.frontmatter.description}</p>
 										)}
