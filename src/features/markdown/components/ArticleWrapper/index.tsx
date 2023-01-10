@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { FC } from 'react';
 
 import { HtmlParser } from '../HtmlParser';
@@ -8,7 +9,14 @@ import styles from './style.module.css';
 import { MetaData } from '~/features/seo';
 import { Tag, TagList } from '~/features/ui/Tag';
 
-export const ArticleWrapper: FC<MetaData & { contentHtml: string }> = ({ title, img, date, tags, contentHtml }) => {
+export const ArticleWrapper: FC<MetaData & { contentHtml: string }> = ({
+	title,
+	img,
+	date,
+	tags,
+	author,
+	contentHtml,
+}) => {
 	const tagList = tags?.map((tag) => <Tag key={tag}>{tag}</Tag>);
 	return (
 		<>
@@ -27,16 +35,21 @@ export const ArticleWrapper: FC<MetaData & { contentHtml: string }> = ({ title, 
 					/>
 					<div className={styles.heroImageOverlay} />
 					<h1 className={styles.title}>{title}</h1>
+					<div className={styles.info}>
+						{author && (
+							<Link href={`/member/${author}`} className={styles.author}>
+								@{author}
+							</Link>
+						)}
+						<div className={styles.date}>{date}</div>
+						<TagList className={styles.tagList}>{tagList}</TagList>
+					</div>
 				</div>
 			</header>
 
 			<main>
 				<div className={styles.mainContent}>
-					<div className={styles.article}>
-						<div className={styles.date}>{date}</div>
-						<TagList className={styles.tagList}>{tagList}</TagList>
-						<HtmlParser contentHtml={contentHtml} />
-					</div>
+					<HtmlParser contentHtml={contentHtml} />
 				</div>
 			</main>
 		</>
