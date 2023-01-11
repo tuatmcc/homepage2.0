@@ -98,6 +98,23 @@
         }
       }
 
+      & .tagList {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 8px;
+
+        & .tag {
+          padding: 2px 8px;
+          font-family: var(--font-family-gill-sans);
+          font-size: 16px;
+          color: var(--color-text-default);
+          background-color: var(--color-mcc-tertiary);
+          border-radius: 12px;
+          box-shadow: var(--color-shadow-large);
+        }
+      }
+
       & .description {
         font-size: 16px;
         line-height: 1.5;
