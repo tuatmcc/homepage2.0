@@ -53,7 +53,6 @@ export const ArticleWrapper: FC<MetaData & { contentHtml: string }> = ({
 					<HtmlParser contentHtml={contentHtml} />
 				</div>
 			</main>
-
 			<Footer />
 		</>
 	);

@@ -25,7 +25,7 @@ const WorksPage = ({ posts }: PostCollectorProps) => {
 	return (
 		<>
 			<SEO meta={meta} />
-			<Navbar theme="auto" />
+			<Navbar theme='auto' />
 			<div className={styles.background} />
 			<header>
 				<div className={styles.headerContent}>

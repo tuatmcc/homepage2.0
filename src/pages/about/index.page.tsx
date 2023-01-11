@@ -20,7 +20,7 @@ const AboutPage: FC = () => {
   return (
   <>
     <SEO meta={meta} />
-    <Navbar theme='auto' />
+    <Navbar />
     <UrlAnimation />
     <header>
       <div className={styles.headerContainer}>

@@ -17,7 +17,7 @@ const HomePage: NextPage = () => {
 	return (
 		<>
 			<SEO meta={meta} />
-			<Navbar theme='white' noBrand />
+			<Navbar noBrand />
 			<div className={styles.container}>
 				<div className={styles.topScreen}>
 					<HomeText3d />

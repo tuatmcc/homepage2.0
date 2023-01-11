@@ -14,7 +14,7 @@ const FramerParallax: FC = () => {
 	return (
 		<>
 			<SEO meta={meta} />
-			<Navbar theme='auto' />
+			<Navbar />
 			<FramerPrallaxPrototype />
 		</>
 	);

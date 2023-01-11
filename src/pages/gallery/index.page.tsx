@@ -23,7 +23,7 @@ const GalleryPage: FC<SandboxPageProps> = ({ paths }) => {
 		<>
 			<SEO meta={meta} />
 			<div className={styles.background} />
-			<Navbar theme='auto' />
+			<Navbar />
 			<header>
 				<div className={styles.headerContent}>
 					<h1 className={styles.headerTitle}>Gallery</h1>

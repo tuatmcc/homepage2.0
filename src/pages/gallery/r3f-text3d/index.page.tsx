@@ -14,7 +14,7 @@ const Text3DPage: FC = () => {
 	return (
 		<>
 			<SEO meta={meta} />
-			<Navbar theme='auto' />
+			<Navbar />
 			<div className={styles.container}>
 				<R3fText3d />
 			</div>

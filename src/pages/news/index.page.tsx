@@ -25,7 +25,7 @@ const NewsPage: FC<PostCollectorProps> = ({ posts }) => {
 	return (
 		<>
 			<SEO meta={meta} />
-			<Navbar theme='auto' />
+			<Navbar />
 			<div className={styles.background} />
 			<header>
 				<div className={styles.headerContent}>

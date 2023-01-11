@@ -16,7 +16,7 @@ const NotFoundPage: FC = () => {
 	return (
 		<>
 			<SEO meta={meta} />
-			<Navbar theme='auto' />
+			<Navbar />
 			<div className={styles.background} />
 			<main>
 				<div className={styles.mainContent}>
