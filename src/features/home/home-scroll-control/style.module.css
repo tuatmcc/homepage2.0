@@ -4,12 +4,7 @@
   font-family: var(--font-family-orbitron);
   line-height: 1;
   color: white;
-
-  & > * {
-    &::-webkit-scrollbar-track {
-      background-color: #fff !important;
-    }
-  }
+  scroll-behavior: auto;
 
   & .intro {
     position: absolute;
