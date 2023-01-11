@@ -56,6 +56,7 @@ export const getStaticProps: GetStaticProps<SandboxPageProps> = async () => {
 	const paths = await fs.readdir('src/pages/gallery', { withFileTypes: true });
 	const pathNames = paths.map((path) => `/gallery/${path.name}`);
 	pathNames.splice(pathNames.indexOf('/gallery/index.page.tsx'), 1);
+	pathNames.splice(pathNames.indexOf('/gallery/style.module.css'), 1);
 	return {
 		props: {
 			paths: await Promise.all(pathNames),
