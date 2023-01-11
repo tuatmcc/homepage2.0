@@ -3,7 +3,6 @@ import { NextPage } from 'next';
 import { SEO } from '~/features/SEO';
 import { ArticleWrapper } from '~/features/markdown/components/ArticleWrapper';
 import { Post, PostCollector } from '~/features/markdown/post-collector';
-import { Footer } from '~/features/ui/Footer';
 import { Navbar } from '~/features/ui/Navbar';
 import { DynamicRouting } from '~/routes/dynamic-routing';
 
@@ -16,7 +15,6 @@ const NewsPost: NextPage<{ post: Post }> = ({ post }) => {
 			<SEO meta={post.frontmatter} />
 			<Navbar theme='auto' />
 			<ArticleWrapper {...post.frontmatter} contentHtml={post.content} />
-			<Footer />
 		</>
 	);
 };
