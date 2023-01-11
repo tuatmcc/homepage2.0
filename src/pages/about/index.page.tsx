@@ -2,11 +2,11 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { Del ,  TextLink } from '~/features/components/Elements';
-import { Footer } from '~/features/components/Footer';
-import { Navbar } from '~/features/components/Navbar';
-import { SEO }  from '~/features/components/SEO';
-import { UrlAnimation } from '~/features/url-animations';
+import { SEO }  from '~/features/SEO';
+import { UrlAnimation } from '~/features/UrlAnimation';
+import { Del ,  TextLink } from '~/features/ui/Elements';
+import { Footer } from '~/features/ui/Footer';
+import { Navbar } from '~/features/ui/Navbar';
 import { MetaData } from '~/types/meta';
 import classNames from '~/utils/classNames';
 
@@ -20,7 +20,7 @@ const AboutPage: FC = () => {
   return (
   <>
     <SEO meta={meta} />
-    <Navbar theme='auto' />
+    <Navbar />
     <UrlAnimation />
     <header>
       <div className={styles.headerContainer}>

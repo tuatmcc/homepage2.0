@@ -6,8 +6,8 @@ import { unified } from 'unified';
 
 import styles from './style.module.css';
 
-import { TextLink, TextLinkProps } from '~/features/components/Elements';
-import { MiniLinkIcon } from '~/features/components/Svg';
+import { TextLink, TextLinkProps } from '~/features/ui/Elements';
+import { MiniLinkIcon } from '~/features/ui/Svg';
 import { MetaData } from '~/types/meta';
 
 export type ArticleWrapperProps = {

@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import { Navbar } from '~/features/components/Navbar';
-import { SEO } from '~/features/components/SEO';
+import { SEO } from '~/features/SEO';
 import { FramerPrallaxPrototype } from '~/features/gallery/framer-parallax';
+import { Navbar } from '~/features/ui/Navbar';
 import { MetaData } from '~/types/meta';
 
 const meta: MetaData = {
@@ -14,7 +14,7 @@ const FramerParallax: FC = () => {
 	return (
 		<>
 			<SEO meta={meta} />
-			<Navbar theme='auto' />
+			<Navbar />
 			<FramerPrallaxPrototype />
 		</>
 	);

@@ -9,7 +9,8 @@
     "export": "npm run build && next export",
     "start": "next start",
     "lint": "next lint && stylelint src/**/*.css && rome check . && rome format .",
-    "format": "next lint --fix && stylelint src/**/*.css --fix && rome check . --apply-suggested && rome format . --write"
+    "format": "next lint --fix && stylelint src/**/*.css --fix && rome check . --apply-suggested && rome format . --write",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@react-three/cannon": "^6.5.2",

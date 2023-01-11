@@ -4,7 +4,7 @@ import { FC, Suspense, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { Navbar } from '~/features/components/Navbar';
+import { Navbar } from '~/features/ui/Navbar';
 
 const pageAmount = 3.5;
 
@@ -45,7 +45,7 @@ const Images: FC = () => {
 export const R3fScrollControl: FC = () => {
 	return (
 		<>
-			<Navbar theme='transparent' noBrand />
+			<Navbar theme='white' noBrand />
 			<div className={styles.canvasContainer}>
 				<Canvas gl={{ antialias: false }} dpr={[1, 1.5]}>
 					<Suspense fallback={null}>

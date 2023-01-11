@@ -3,17 +3,17 @@ import { FC, useEffect, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { Navbar } from '~/features/components/Navbar';
+import { Navbar } from '~/features/ui/Navbar';
 
 export const ArticleTest: FC = () => {
-	const [navbarTheme, setNavbarTheme] = useState<'light' | 'transparent'>('transparent');
+	const [navbarTheme, setNavbarTheme] = useState<'white' | 'blue'>('blue');
 	useEffect(() => {
 		addEventListener('scroll', () => {
 			const scrollY = window.scrollY;
 			if (scrollY > window.innerHeight * 0.6) {
-				setNavbarTheme('light');
+				setNavbarTheme('white');
 			} else {
-				setNavbarTheme('transparent');
+				setNavbarTheme('blue');
 			}
 		});
 

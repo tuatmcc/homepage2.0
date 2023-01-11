@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { SEO } from '~/features/components/SEO';
+import { SEO } from '~/features/SEO';
 import { R3fScrollControl } from '~/features/gallery/r3f-scroll-control';
 
 const meta = {

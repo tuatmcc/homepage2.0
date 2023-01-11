@@ -2,9 +2,9 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { Footer } from '~/features/components/Footer';
-import { Navbar } from '~/features/components/Navbar';
-import { SEO } from '~/features/components/SEO';
+import { SEO } from '~/features/SEO';
+import { Footer } from '~/features/ui/Footer';
+import { Navbar } from '~/features/ui/Navbar';
 import { MetaData } from '~/types/meta';
 
 const meta: MetaData = {
@@ -16,7 +16,7 @@ const NotFoundPage: FC = () => {
 	return (
 		<>
 			<SEO meta={meta} />
-			<Navbar theme='auto' />
+			<Navbar />
 			<div className={styles.background} />
 			<main>
 				<div className={styles.mainContent}>

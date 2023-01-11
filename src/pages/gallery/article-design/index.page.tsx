@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { SEO } from '~/features/components/SEO';
+import { SEO } from '~/features/SEO';
 import { ArticleTest } from '~/features/gallery/article-test';
 
 const meta = {

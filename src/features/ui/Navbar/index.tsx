@@ -1,26 +1,38 @@
 import Link from 'next/link';
-import { FC, useContext, useState } from 'react';
+import { FC, useContext, useEffect, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { MccLogo } from '~/features/components/Svg';
 import { MediaQueryContext } from '~/features/media-query';
+import { MccLogo } from '~/features/ui/Svg';
 import { ROUTES, BASE_ROUTES_LIST } from '~/routes/base';
 import classNames from '~/utils/classNames';
 
 type NavbarProps = {
-	theme: 'auto' | 'light' | 'transparent';
-	noBrand?: boolean;
+  noBrand?: boolean;
+	theme?: 'auto' | 'blue' | 'white';
 };
 
-export const Navbar: FC<NavbarProps> = ({ noBrand = false }) => {
+export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) => {
 	const { isMobile } = useContext(MediaQueryContext);
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+	const [color, setColor] = useState<string>('');
+
+	useEffect(() => {
+		if (theme !== 'auto') return;
+		window.addEventListener('scroll', () => {
+			if (window.scrollY >= window.innerHeight) {
+				setColor(styles._blue);
+			} else {
+				setColor('');
+			}
+		});
+	}, [theme]);
 
 	return (
 		<>
 			<div className={classNames(styles.navbar)}>
-				<Link href={ROUTES.HOME.PATH} className={classNames(styles.brand)}>
+				<Link href={ROUTES.HOME.PATH} className={classNames(styles.brand, color)}>
 					{!noBrand && (
 						<>
 							{isMobile ? <MccLogo width={32} height={32} /> : <MccLogo width={56} height={56} />}
@@ -29,7 +41,7 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false }) => {
 					)}
 				</Link>
 				<button
-					className={classNames(styles.hamburgerMenu, isDrawerOpen ? styles._active : '')}
+					className={classNames(styles.hamburgerMenu, isDrawerOpen ? styles._active : '', color)}
 					onClick={() => setIsDrawerOpen(!isDrawerOpen)}
 					aria-label='menu toggler'
 				>
