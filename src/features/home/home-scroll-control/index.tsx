@@ -101,7 +101,6 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 				<span className={styles.sentence}>様々な興味を持つ部員たちが交流を重ね、</span>
 				<span className={styles.sentence}>新しい視野を開拓する。</span>
 				<span className={styles.sentence}>MCCで、あなたも技術を探求しませんか？</span>
-				by ChatGPT
 			</p>
 			<div className={styles.bottms} style={{ top: vH * 2.8, height: vH * (3 - 2.5) }}>
 				<div className={styles.cards}>
@@ -172,7 +171,7 @@ export const HomeScrollControl: FC = () => {
 	return (
 		<Canvas gl={{ antialias: false }} dpr={[1, 1.5]} className={styles.canvas}>
 			<Suspense fallback={null}>
-				<ScrollControls damping={4} pages={pageAmout}>
+				<ScrollControls damping={0.5} pages={pageAmout}>
 					<Scroll>
 						<Images />
 					</Scroll>
