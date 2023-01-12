@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 
 import { SEO } from '~/features/SEO';
-import { MomentumScroll } from '~/features/gallery/MomentumScroll';
+import { MomentumScrollWidthImage } from '~/features/gallery/MomentumScrollWidthImage';
 import { Navbar } from '~/features/ui/Navbar';
 import { MetaData } from '~/types/meta';
 
@@ -14,8 +14,8 @@ const MomentumScrollPage: NextPage = () => {
 	return (
 		<>
 			<SEO meta={meta} />
-			<Navbar />
-			<MomentumScroll />
+			<Navbar noBrand />
+			<MomentumScrollWidthImage />
 		</>
 	);
 };
