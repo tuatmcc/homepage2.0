@@ -9,8 +9,8 @@ const useParallax = (value: MotionValue<number>, distance: number) => {
 	return useTransform(value, [-1, 1], [-distance, distance]);
 };
 
-const useZoom = (value: MotionValue<number>, zoom: number) => {
-	return useTransform(value, [-1, 1], [1 - zoom, 1 + zoom]);
+const useZoom = (value: MotionValue<number>, zoom: number, zoomRange?: [number, number]) => {
+	return useTransform(value, [-1, 1], zoomRange ? zoomRange : [1 - zoom, 1 + zoom]);
 };
 
 const useVH = () => {
@@ -22,13 +22,12 @@ const useVH = () => {
 };
 
 type LayerProps = {
-	scrollProgressY?: MotionValue<number>;
+	scrollYProgress: MotionValue<number>;
+	vH?: number;
 };
 
-const Layer1: FC<LayerProps> = () => {
-	const ref = useRef(null);
+const Layer1: FC<LayerProps> = ({ scrollYProgress }) => {
 	const vh = useVH();
-	const { scrollYProgress } = useScroll({ target: ref });
 	const y = useParallax(scrollYProgress, vh * 1.5);
 	const zoomImage1 = useZoom(scrollYProgress, 1);
 	const zoomTitle = useZoom(scrollYProgress, -1);
@@ -46,45 +45,52 @@ const Layer1: FC<LayerProps> = () => {
 	);
 };
 
-const Layer2: FC<LayerProps> = () => {
-	const ref = useRef(null);
-	const { scrollYProgress } = useScroll({ target: ref });
-	const y = useParallax(scrollYProgress, 300);
-	const zoom = useZoom(scrollYProgress, 2);
+const Layer2: FC<LayerProps> = ({ scrollYProgress }) => {
+	const y = useParallax(scrollYProgress, -1000);
+	const zoom = useZoom(scrollYProgress, 1);
 
 	return (
 		<section className={styles.layer2}>
-			<div className={styles.subTitle}>私たちは、東京農工大学マイクロコンピュータークラブ</div>
-			<motion.h1 className={styles.title} style={{ y }}>
-				MCC
-			</motion.h1>
-			<div className={styles.img1}>
+			<div className={styles.subTitle}>私たちは、東京農工大学マイクロコンピュータークラブです。</div>
+			<motion.h1 className={styles.title}>MCC</motion.h1>
+			<motion.div className={styles.img1} style={{ y }}>
 				<motion.img src='/noko-fes-2022-illustrace.webp' style={{ zoom }} />
-			</div>
+			</motion.div>
+		</section>
+	);
+};
+
+const Layer4: FC<LayerProps> = ({ scrollYProgress }) => {
+	const zoom = useZoom(scrollYProgress, 1, [6, 1.5]);
+
+	return (
+		<section className={styles.layer4}>
+			<div className={styles.subTitle}>私たちは、東京農工大学マイクロコンピュータークラブ</div>
+			<motion.h1 className={styles.title}>MCC</motion.h1>
+			<motion.div className={styles.img1}>
+				<motion.img src='/abstract-tech-image-1.webp' style={{ zoom }} />
+			</motion.div>
 		</section>
 	);
 };
 
 export const MomentumScrollWidthImage: FC = () => {
-	const { currentY } = useMomentumScroll(0.1);
+	const { currentY } = useMomentumScroll(0.06);
+	const ref = useRef(null);
+	const { scrollYProgress } = useScroll({ target: ref });
+
 	return (
 		<div className={styles.main}>
 			<MomentumScroll pageHeight={'400vh'} currentY={currentY}>
-				<Layer1 />
+				<Layer1 scrollYProgress={scrollYProgress} />
 
-				<Layer2 />
-
-				<section className={styles.section}>
-					<h1>hello</h1>
-				</section>
+				<Layer2 scrollYProgress={scrollYProgress} />
 
 				<section className={styles.section}>
 					<h1>hello</h1>
 				</section>
 
-				<section className={styles.section}>
-					<h1>hello</h1>
-				</section>
+				<Layer4 scrollYProgress={scrollYProgress} />
 			</MomentumScroll>
 		</div>
 	);
