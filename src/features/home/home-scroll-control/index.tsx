@@ -108,8 +108,6 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 					<Link href={ROUTES.ABOUT.PATH} className={styles.cardItem}>
 						もっとMCCを知る →
 					</Link>
-					<Link href="/news" className={styles.cardItem}>
-						活動報告 →
 					<Link href={ROUTES.NEWS.PATH} className={styles.cardItem}>
 						お知らせ →
 					</Link>
