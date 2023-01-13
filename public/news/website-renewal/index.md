@@ -1,32 +1,41 @@
 ---
 title: ホームページをリニューアルしました
 description: ホームページをリニューアルしました
-img: './mcc-website-screenshot.webp'
-date: '2023-01-03'
+img: "./mcc-website-screenshot.webp"
+date: "2023-01-13"
 tags: [dev, web, nextjs]
+author: "おかず"
 ---
+
+MCC のホームページをリニューアルしたのでご報告
 
 # ホームページをリニューアルしました
 
-## なぜリニューアルしたの？
+## 旧ホームページの状況
 
-- 旧サイトは Nuxt.js で作成されていたのに加え、デザインが割と死んでいるため
+![old website](./old-website-screenshot.webp)
 
-## どういうシステム？
+> 古典的な WEB サイトを、現代のフロントエンド・フレームワークを駆使して書き直すコンセプトです。 古臭そうな見た目をしてる割に、がっつりレスポンシブ・SPA で動きます。
 
-- Next.js で作成
-- デザインは紆余曲折ののち CSS-Modules で作成
-- 記事データは Markdown で管理
-- unified のプラグインを詰めまくって markdown -> html -> react に変換
-- eslint, prettier, stylelint でガッチガチにコードを管理
-- GitHub Actions で CI/CD
+とのこと。(中身は Nuxt2 でした)
 
-## 今後の展望
+## 新しいホームページ
 
-- デザインをもっと良くする。React Three Fiber で超かっこよくするんじゃ～
-- ブログの記事をもっと増やす
+2022 年 11 月下旬、文化祭も終わり落ち着き始めたころ、制作を開始しました。
+
+とにかく見た目を頑張った！
+
+![new website](./new-website-screenshot.webp)
+
+## 今後
+
+- 各ページのデザインをもっと良くする。
+- 記事をもっと増やす
+- 記事を追加しやすいシステムにする
+
+書くことないな...
 
 ## その他
 
-- このサイトは GitHub で公開しています。[こちら](https://github.com/tuatmcc/mcc-website)
-- wiki も書いてます。
+- ソースコードは[こちら](https://github.com/tuatmcc/mcc-website)
+- 技術的な話はブログの方に書く予定です
