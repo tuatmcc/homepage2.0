@@ -3,7 +3,7 @@
   top: -1;
   z-index: -1;
   width: 100%;
-  height: 110vh;
+  height: 100vh;
   background-image: url('/tuat-gate-filtered.webp');
   background-size: cover;
 }
