@@ -1,13 +1,14 @@
 :root {
   /* Brand Colors */
-  --color-mcc-primary: #009DAE;
-  --color-mcc-secondary: #71DFE7;
-  --color-mcc-tertiary: #C2FFF9;
-  --color-mcc-quaternary: #FFE652;
-  
+  --color-mcc-primary: #009dae;
+  --color-mcc-secondary: #71dfe7;
+  --color-mcc-tertiary: #c2fff9;
+  --color-mcc-quaternary: #ffe652;
+  --color-mcc-brand: #06c;
+
   /* Other Colors */
   --color-background: #f6f4f4;
-  --color-text-default: #24292f;
+  --color-text-default: #444;
   --color-text-muted: #57606a;
   --color-text-subtle: #6e7781;
   --color-text-white: #fff;
@@ -15,6 +16,9 @@
   --color-code-background: #ffe682;
   --color-codeblock-text: #fff;
   --color-codeblock-background: #16283a;
+  --color-codeblock-title-background: #0d1e2f;
+  --color-blockquote-border: #999;
+  --color-table-head-background: #ddd;
   --color-border-default: #d0d7de;
   --color-border-muted: hsl(210deg 18% 87% / 100%);
   --color-border-subtle: rgb(27 31 36 / 15%);
@@ -25,17 +29,18 @@
   --color-shadow-medium: 0 3px 6px rgb(140 149 159 / 15%);
   --color-shadow-large: 0 0 24px rgb(10 90 100 / 20%);
   --color-shadow-extra-large: 0 12px 28px rgb(140 149 159 / 30%);
+  --color-shadow-dark: 0 0 16px rgb(27 31 36 / 60%);
 
   /* Size */
   --navbar-pc-height: 70px;
   --navbar-mobile-height: 60px;
-  --header-mobile-height: 80px;
+  --header-height: 100svh;
 
   /* Breakpoints */
   --breakpoint-mobile: 48em;
 
   /* Font */
-  /* stylelint-disable-next-line value-keyword-case */
-  --font-family-title: Arial, Helvetica,  sans-serif;
-  --font-family-body: 'Noto Sans JP', arial,  sans-serif;
+  --font-family-gill-sans: 'Gill Sans', 'Noto Sans JP', calibri, 'Trebuchet MS', sans-serif;
+  --font-family-orbitron: 'Orbitron', 'Noto Sans JP', 'Arial', 'Helvetica', snas-serif;
+  --font-family-jetbrains-mono: 'JetBrains Mono', 'Noto Sans JP', 'Arial', monospace;
 }

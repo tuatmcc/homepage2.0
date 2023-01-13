@@ -4,8 +4,11 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { FC } from 'react';
 
-import { Helmet } from '~/components/common/Helmet';
-import { Layout } from '~/components/common/Layout';
+import styles from './style.module.css';
+
+import { SEO } from '~/features/SEO';
+import { Footer } from '~/features/ui/Footer';
+import { Navbar } from '~/features/ui/Navbar';
 
 export type SandboxPageProps = {
 	paths: string[];
@@ -18,18 +21,31 @@ const GalleryPage: FC<SandboxPageProps> = ({ paths }) => {
 	};
 	return (
 		<>
-			<Helmet meta={meta} />
-			<Layout>
-				<h1>Gallery</h1>
-				<p>いろいろなものを試す場所</p>
-				<ul>
-					{paths.map((path) => (
-						<li key={path}>
-							<Link href={path}>{path}</Link>
-						</li>
-					))}
-				</ul>
-			</Layout>
+			<SEO meta={meta} />
+			<div className={styles.background} />
+			<Navbar />
+			<header>
+				<div className={styles.headerContent}>
+					<h1 className={styles.headerTitle}>Gallery</h1>
+					<h2 className={styles.headerSubTitle}>デザイン・試作置き場</h2>
+				</div>
+			</header>
+
+			<main>
+				<div className={styles.mainContent}>
+					<ul className={styles.list}>
+						{paths.map((path) => (
+							<li key={path} className={styles.listItem}>
+								<Link href={path} className={styles.link}>
+									{path}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</div>
+			</main>
+
+			<Footer semitransparent />
 		</>
 	);
 };
@@ -40,6 +56,7 @@ export const getStaticProps: GetStaticProps<SandboxPageProps> = async () => {
 	const paths = await fs.readdir('src/pages/gallery', { withFileTypes: true });
 	const pathNames = paths.map((path) => `/gallery/${path.name}`);
 	pathNames.splice(pathNames.indexOf('/gallery/index.page.tsx'), 1);
+	pathNames.splice(pathNames.indexOf('/gallery/style.module.css'), 1);
 	return {
 		props: {
 			paths: await Promise.all(pathNames),

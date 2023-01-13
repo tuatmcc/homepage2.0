@@ -1,15 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
-    ],
-    "plugins": [
-      {
-        "name": "typescript-plugin-css-modules"
-      }
     ],
     "baseUrl": ".",
     "paths": {
@@ -31,11 +26,9 @@
     "incremental": true,
   },
   "include": [
-    "next-env.d.ts",
     "src",
-    "postcss.config.js",
-    "postcss.config.js"
-, "helpers"  ],
+    "next.config.js"
+  ],
   "exclude": [
     "node_modules"
   ]

@@ -3,6 +3,10 @@
     "enabled": true,
     "rules": {
       "recommended": true,
+      "a11y": {
+        "recommended": true,
+        "useKeyWithClickEvents": "warn"
+      },
       "security": {
         "recommended": true
       },
@@ -19,17 +23,13 @@
       "performance": {
         "recommended": true
       },
-      "a11y": {
-        "recommended": true,
-        "useKeyWithClickEvents": "warn"
+      "suspicious": {
+        "recommended": true
       },
       "nursery": {
         "recommended": true,
         "noVar": "error",
-        "useCamelCase": "warn"
-      },
-      "suspicious": {
-        "recommended": true
+        "useCamelCase": "error"
       }
     }
   },
@@ -49,6 +49,6 @@
     }
   },
   "files": {
-    "ignore": ["node_modules", "out", ".next"]
+    "ignore": ["node_modules", "out", ".next", "dist"]
   }
 }

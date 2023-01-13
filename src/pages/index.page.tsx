@@ -1,16 +1,33 @@
 import { NextPage } from 'next';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 
-import { ROUTES } from '~/constants/routes';
+import styles from './style.module.css';
 
-const IndexPage: NextPage = () => {
-	const router = useRouter();
+import { SEO } from '~/features/SEO';
+import { HomeScrollControl } from '~/features/home/home-scroll-control';
+import { HomeText3d } from '~/features/home/home-text-3d';
+import { Navbar } from '~/features/ui/Navbar';
 
-	useEffect(() => {
-		router.replace(ROUTES.HOME.PATH);
-	}, [router]);
-	return <div>Loading...</div>;
+const meta = {
+	title: 'Home',
+	description: '東京農工大学マイクロコンピュータークラブ(TUATMCC)の公式ホームページです。',
+	img: '/mcc-logo.svg',
 };
 
-export default IndexPage;
+const HomePage: NextPage = () => {
+	return (
+		<>
+			<SEO meta={meta} />
+			<Navbar noBrand />
+			<div className={styles.container}>
+				<div className={styles.topScreen}>
+					<HomeText3d />
+				</div>
+				<div className={styles.subScreen}>
+					<HomeScrollControl />
+				</div>
+			</div>
+		</>
+	);
+};
+
+export default HomePage;

@@ -1,81 +1,233 @@
 ---
-title: 'rehype, remarkによるマークダウン変換テスト'
-date: '2022'
-tags: ['web', 'dev']
+title: "記事の書き方"
+date: "2022-01-05"
+tags: ["web", "dev"]
 ---
 
-# マークダウンテスト h1 タグです
+# 手順
 
-## h2 です。実は各見出しタグにはリンクがついています
+`public/activities`に活動報告の記事を、`public/blog`にその他のマークダウン記事(なんでも)を置いてください。
+記事のフォルダを作成し、その中にマークダウンを置いてください。ファイル名は`index.md`にしてください。
 
-### h3 です。ちなみに HTML は一切認識されません。無視されます
+記事の先頭に以下のように記述します。
 
-マークダウンを HTML に変換した後、React に変換してからレンダリングされます。
+```markdown title="bocchi-the-rock/index.md"
+---
+title: "ぼっち・ざ・ろっくを鑑賞しました"
+description: "ぼっち・ざ・ろっくをみた"
+img: "./bocchi-the-rock.webp"
+date: "2023-01-03"
+tags: [dev, web, nextjs]
+author: "Goto Hitori"
+---
+```
 
-- リスト 1
-- リスト 2
-- リスト 3
+`title`は必須です。`date`も記事並べ替えのために書いてください。
 
-1. リスト 1
-2. リスト 2
-3. リスト 3
+なんらかのブランチからプルリクエストをお願いします。GitHub 上からでもかまいません。この辺はいずれ整えたいですね...
 
-_強調(イタリック)_ **強調(太字)** ~~打消し(del ではなく css の装飾)~~
+画像を埋め込む際は、`./記事からの相対パス`か`/publicからのパス`, `外部URL`でお願いします。
+
+```
+![logo](/mcc-logo.svg)
+```
+
+![logo](/mcc-logo.svg)
+
+# マークダウンの書き方
+
+## 見出し
+
+見出しの右にはリンクがつきます。目次(未実装)とか、ページ内リンクに対応できます。
+
+```markdown
+# これは h1 の見出しです
+
+## これは h2 の見出しです
+
+### h3~は文字サイズが徐々に小さくなるだけです。h6 まで
+```
+
+# これは h1 の見出しです
+
+## これは h2 の見出しです
+
+### h3~は文字サイズが徐々に小さくなるだけです。h6 まで
+
+## リスト
+
+箇条書きには`-`, `+`, `*`などが使えます。箇条書きの方はネストできます。
+
+```markdown
+- リスト１
+- リスト２
+  - リスト 2-1
+  - リスト 2-2
+
+1. 番号付きリスト 1
+2. 番号付きリスト 2
+```
+
+- リスト１
+- リスト２
+  - リスト 2-1
+  - リスト 2-2
+
+1. 番号付きリスト 1
+2. 番号付きリスト 2
+
+## チェックボックス
+
+```markdown
+- [ ] チェックボックス 1
+- [x] チェックボックス 2
+```
+
+- [ ] チェックボックス 1
+- [x] チェックボックス 2
+
+## 斜体・強調・打消し
+
+`*`,`**`は`_`,`__`と置き換えられます
+
+```markdown
+_Italic 斜体です_
+
+**強調**
+
+~~打消し線（css の装飾）~~
+```
+
+_Italic 斜体_
+
+**強調**
+
+~~打消し線（css の装飾）~~
+
+## リンク
+
+```markdown
+[外部リンク](https://www.google.com)
+
+[内部リンク](/gallery)
+
+生のリンク: <https://google.com>
+```
 
 [外部リンク](https://www.google.com)
 
-[内部リンク](/)
+[内部リンク](/gallery)
 
-画像
+生のリンク: <https://google.com>
 
+## 画像
+
+画像形式はなんでもいいですが、是非新しくて軽い`webp`に変換しましょう！
+
+```markdown
+外部 URL
 ![画像](https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png)
 
-| title                                   | date | tags     |
-| --------------------------------------- | ---- | -------- |
-| MCC の Web サイトをリニューアルしました | 2022 | web, dev |
-| これは表です                            | 2022 | web, dev |
+内部 URL その１
+![logo](/mcc-logo.svg)
 
-> 引用です
-
-`これはインラインコードです`
-
-```python
-# pythonです。highlight.jsを使用しています
-print('1+1は2です' if 1 + 1 == 2 else '1+1は2ではありません')
+内部 URL その２
+![bocchi](./bocchi.webp)
 ```
 
+外部 URL
+![画像](https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png)
+
+内部 URL その１
+![logo](/mcc-logo.svg)
+
+内部 URL その２
+![bocchi](./bocchi.webp)
+
+## 脚注
+
+```markdown
+脚注[^1]
+
+[^1]: 脚注です
+```
+
+脚注[^1]
+
+[^1]: 脚注です
+
+## 表
+
+スタイル当て忘れました
+
+```markdown
+| title        | date | tags     |
+| ------------ | ---- | -------- |
+| こんにちは   | 2022 | web, dev |
+| これは表です | 2022 | web, dev |
+```
+
+| title        | date | tags     |
+| ------------ | ---- | -------- |
+| こんにちは   | 2022 | web, dev |
+| これは表です | 2022 | web, dev |
+
+## 引用
+
+```markdown
+> 引用です。スタイル当て忘れました。
+```
+
+> 引用です。スタイル当て忘れました。
+
+## インラインコード
+
+`これはインラインコードです` `Font は JetBrains Monoを使用`
+
+## コードブロック
+
+タイトルはあってもなくてもいけます。
+
+````markdown title="markdown"
+```python title="blog.py"
+print('Hello World')
+```
+````
+
+```python title="blog.py"
+print('Hello World')
+```
+
+````markdown title="markdown"
 ```diff
-diffです
+- これは削除です
++ これは追加です
+```
+````
+
+```diff
 - これは削除です
 + これは追加です
 ```
 
-```diff_cpp
-diff_cppです。diff_○○には対応してません
-- for (int i = 0; i < 10; i++) {
--   cout << i << endl;
-- }
-+ for (int i = 0; i < 10; i++) cout << i << endl;
+## 数式
+
+KaTex を使用しています。
+
+```math
+$$
+L = \frac{1}{2} \rho v^2 S C_L
+$$
 ```
 
-```tsx
-// tsxにも対応してるっぽい！
-const App: FC<Props> = ({ children }) => {
-  return (
-    <div>
-      <h1>Hello World</h1>
-      <p>これはtsxです</p>
-      <p>{children}</p>
-    </div>
-  );
-};
+$$
+L = \frac{1}{2} \rho v^2 S C_L
+$$
+
+## emoji
+
+```markdown
+:smile: :+1: :tada: :rocket: :metal:
 ```
 
-数式。対応させたはずなのに...
-
-$$\\frac{1}{2} = \\frac{1}{2}$$
-
-:::note
-これは note です
-今のところ対応予定はありません
-:::
+:smile: :+1: :tada: :rocket: :metal:

@@ -1,0 +1,90 @@
+.main {
+  font-family: var(--font-family-orbitron);
+  color: white;
+  letter-spacing: 0.2em;
+
+  &::before {
+    position: fixed;
+    display: bleck;
+    width: 100%;
+    height: 100vh;
+    content: '';
+    background-image: url('/tuat-gate.webp');
+    background-size: cover;
+  }
+
+  & section {
+    position: relative;
+    height: 100svh;
+
+    & > * {
+      position: absolute;
+      padding: 0;
+      margin: 0;
+      line-height: 1;
+    }
+  }
+
+  & .layer1 {
+    & .subTitle {
+      top: 30vh;
+      font-size: max(3vw, 32px);
+      color: white;
+    }
+
+    & .title {
+      right: 0;
+      bottom: 0;
+      font-size: 30vw;
+      color: white;
+    }
+
+    & .img1 {
+      top: 20svh;
+      left: 60vw;
+      z-index: -1;
+      width: 300px;
+      height: 40svh;
+      overflow: hidden;
+
+      & img {
+        height: 40svh;
+      }
+    }
+  }
+
+  & .layer2 {
+    & .subTitle {
+      bottom: 20vh;
+      font-size: 32px;
+    }
+
+    & .img1 {
+      top: 50vh;
+      left: 10vw;
+      z-index: -1;
+      width: 200px;
+      height: 60vh;
+      overflow: hidden;
+
+      & img {
+        height: 60vh;
+      }
+    }
+  }
+
+  & .layer4 {
+    & .img1 {
+      top: 0;
+      width: 100%;
+      height: 100svh;
+      overflow: hidden;
+
+      & img {
+        width: 100%;
+        height: 100svh;
+        object-fit: cover;
+      }
+    }
+  }
+}

@@ -1,10 +1,7 @@
 import type { AppProps } from 'next/app';
 
-// syntax highlight
-import 'highlight.js/styles/a11y-dark.css';
-
 import '~/styles/global.css';
-import MediaQueryProvider from '~/providers/MediaQueryProvider';
+import { MediaQueryProvider } from '~/features/media-query';
 
 const App = ({ Component, pageProps }: AppProps) => {
 	return (

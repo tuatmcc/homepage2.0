@@ -1,0 +1,55 @@
+.container {
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  background-image: url('/tuat-gate.webp');
+  background-size: cover;
+
+  & .topScreen {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100svh;
+    opacity: 0.5;
+    animation: top-screen 6s linear;
+
+    @keyframes top-screen {
+      0% {
+        background: #06c9;
+        opacity: 1;
+      }
+
+      80% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  & .subScreen {
+    top: 0;
+    width: 100%;
+    height: 100svh;
+    overflow: hidden;
+    animation: sub-screen 6s linear;
+
+    @keyframes sub-screen {
+      0% {
+        opacity: 0;
+      }
+
+      80% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
