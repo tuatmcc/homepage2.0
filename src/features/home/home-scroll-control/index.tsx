@@ -7,6 +7,7 @@ import styles from './style.module.css';
 
 import { MediaQueryContext } from '~/features/media-query';
 import { GitHubIcon, TwitterIcon } from '~/features/ui/Svg';
+import { ROUTES } from '~/routes/base';
 import classNames from '~/utils/classNames';
 
 const pageAmout = 3.5;
@@ -104,13 +105,13 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 			</p>
 			<div className={styles.bottms} style={{ top: vH * 2.8, height: vH * (3 - 2.5) }}>
 				<div className={styles.cards}>
-					<Link href="/about" className={styles.cardItem}>
+					<Link href={ROUTES.ABOUT.PATH} className={styles.cardItem}>
 						もっとMCCを知る →
 					</Link>
-					<Link href="/news" className={styles.cardItem}>
-						活動報告 →
+					<Link href={ROUTES.NEWS.PATH} className={styles.cardItem}>
+						お知らせ →
 					</Link>
-					<Link href="/blog" className={styles.cardItem}>
+					<Link href={ROUTES.BLOG.PATH} className={styles.cardItem}>
 						ブログ →
 					</Link>
 					<div className={styles.socials}>
