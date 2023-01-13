@@ -52,12 +52,14 @@ export const HtmlParser: FC<{ contentHtml: string }> = ({ contentHtml }) => {
 					pre: ({ children, ...props }) => {
 						const id = `code${Math.random()}`;
 						return (
-							<pre id={id} {...props}>
-								<button type='button' onClick={(e) => copyCode(e.currentTarget, id)}>
-									Copy
-								</button>
-								{children}
-							</pre>
+							<div>
+								<pre id={id} {...props}>
+									<button type='button' onClick={(e) => copyCode(e.currentTarget, id)}>
+										Copy
+									</button>
+									{children}
+								</pre>
+							</div>
 						);
 					},
 				},

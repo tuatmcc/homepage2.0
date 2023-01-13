@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { NextPage } from 'next';
 
 import styles from './style.module.css';
 
@@ -12,7 +12,7 @@ const meta: MetaData = {
 	description: '404 Page Not Found',
 };
 
-const NotFoundPage: FC = () => {
+const NotFoundPage: NextPage = () => {
 	return (
 		<>
 			<SEO meta={meta} />

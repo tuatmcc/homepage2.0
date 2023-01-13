@@ -24,7 +24,7 @@ const Rig: FC<RigProps> = ({ children }) => {
 		inner.current.position.y = 1 + Math.sin(clock.getElapsedTime()) * 3;
 	});
 	return (
-		<group position={[0, -50, 0]} ref={outer}>
+		<group position={[0, -30, 0]} ref={outer}>
 			<group ref={inner}>{children}</group>
 		</group>
 	);
