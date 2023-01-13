@@ -24,13 +24,13 @@ export const ArticleWrapper: FC<MetaData & { contentHtml: string }> = ({
 			<header>
 				<div className={styles.headerContent}>
 					<Image
-						src={img ? img : '/tuat-gate.webp'}
+						src={img ? img : '/tuat-gate-filtered.webp'}
 						alt="hero"
 						width={800}
 						height={300}
 						className={styles.heroImage}
 						onError={(e) => {
-							e.currentTarget.src = '/tuat-gate.webp';
+							e.currentTarget.src = '/tuat-gate-filtered.webp';
 						}}
 						priority
 					/>

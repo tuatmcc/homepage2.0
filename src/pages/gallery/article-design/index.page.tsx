@@ -6,7 +6,7 @@ import { ArticleTest } from '~/features/gallery/article-test';
 const meta = {
 	title: 'New Design',
 	description: 'New Design',
-	img: '/tuat-gate.webp',
+	img: '/tuat-gate-filtered.webp',
 };
 
 const NewDesignPage: FC = () => {

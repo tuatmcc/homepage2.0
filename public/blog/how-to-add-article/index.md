@@ -2,6 +2,7 @@
 title: "記事の書き方"
 date: "2022-01-05"
 tags: ["web", "dev"]
+img: "/abstract-tech-image-4.webp"
 ---
 
 # 手順
