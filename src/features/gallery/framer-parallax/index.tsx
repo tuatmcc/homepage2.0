@@ -34,7 +34,7 @@ export const FramerPrallaxPrototype: FC = () => {
 	return (
 		<>
 			{[
-				'/tuat-gate.webp',
+				'/tuat-gate-filtered.webp',
 				'/abstract-tech-image-1.webp',
 				'/abstract-tech-image-4.webp',
 				'/abstract-tech-image-5.webp',

@@ -1,4 +1,8 @@
 .articleContent {
+  & div {
+    position: relative;
+  }
+
   & p {
     font-size: 16px;
     line-height: 2;
@@ -38,6 +42,7 @@
 
   & table {
     overflow: auto;
+    background-color: var(--color-background);
 
     & thead {
       & tr {
@@ -53,6 +58,7 @@
       & tr {
         & td {
           padding: 4px 8px;
+          background-color: white;
         }
       }
     }
@@ -62,8 +68,7 @@
     overflow-wrap: break-word;
   }
 
-  & pre {
-    position: relative;
+  & div > pre {
     padding: 16px;
     overflow: auto;
     font-family: var(--font-family-jetbrains-mono);
@@ -112,7 +117,6 @@
     }
 
     & pre {
-      position: relative;
       padding: 16px;
       margin: 0;
       overflow: auto;
@@ -122,6 +126,7 @@
 
       & button {
         position: absolute;
+        top: 0;
         padding: 4px 8px;
         margin: 8px;
         cursor: pointer;

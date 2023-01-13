@@ -4,7 +4,7 @@
   z-index: -1;
   width: 100%;
   height: 110vh;
-  background-image: url('/tuat-gate.webp');
+  background-image: url('/tuat-gate-filtered.webp');
   background-size: cover;
 }
 
@@ -52,11 +52,11 @@
     border-radius: 16px;
     box-shadow: var(--color-shadow-large);
     transition: all 0.2s ease-in-out;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(20px);
 
     &:hover {
       background-color: #fff6;
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(4px);
     }
 
     &._reverse {

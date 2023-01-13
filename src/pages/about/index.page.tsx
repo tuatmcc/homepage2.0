@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import { NextPage } from 'next';
 
 import styles from './style.module.css';
 
 import { SEO }  from '~/features/SEO';
 import { UrlAnimation } from '~/features/UrlAnimation';
-import { Del ,  TextLink } from '~/features/ui/Elements';
+import {  TextLink } from '~/features/ui/Elements';
 import { Footer } from '~/features/ui/Footer';
 import { Navbar } from '~/features/ui/Navbar';
 import { MetaData } from '~/types/meta';
@@ -16,7 +16,7 @@ const meta: MetaData = {
   img: '/mcc-logo.svg',
 };
 
-const AboutPage: FC = () => {
+const AboutPage: NextPage = () => {
   return (
   <>
     <SEO meta={meta} />
@@ -42,10 +42,10 @@ const AboutPage: FC = () => {
         <h2>MCCとは</h2>
         <div className={styles.brief}>
           <p>
-          東京農工大学の公認サークル「マイクロコンピュータクラブ」の頭文字をとったものです。
+          東京農工大学の公認サークル「マイクロコンピュータクラブ」の頭文字から来ています。
           </p>
           <p>
-          IT系サークルです。
+          IT系の活動をしているサークルです。
           </p>
           </div>
         <h2>活動内容</h2>
@@ -55,9 +55,6 @@ const AboutPage: FC = () => {
           <span className={styles.em}>作品展示・部内講習会</span>
           の実施といった活動を行なっています。
           競技プログラミング部門では、プログラミングコンテストへの参加を主体に活動しています。
-        </p>
-        <p>
-          <Del>昨年度から部室に GPU 搭載のデスクトップ PC を設置し、新たな製作物への挑戦も可能になりました。</Del>
         </p>
         <h2>活動場所</h2>
         <p>工学部小金井キャンパス・サークル棟</p>

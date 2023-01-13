@@ -21,7 +21,7 @@
     font-size: 20svw;
     font-weight: 800;
     opacity: 1;
-    animation: mcc 7s linear;
+    animation: mcc 5s linear;
 
     @keyframes mcc {
       0% {

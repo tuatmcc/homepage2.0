@@ -24,7 +24,7 @@ export const ArticleTest: FC = () => {
 			<Navbar theme={navbarTheme} />
 
 			<header>
-				<Image alt="test" src="/tuat-gate.webp" className={styles.heroImage} width={640} height={480} />
+				<Image alt="test" src="/tuat-gate-filtered.webp" className={styles.heroImage} width={640} height={480} />
 				<div className={styles.hero}>
 					<h1 className={styles.heroText}>ココに記事のタイトル</h1>
 					<div className={styles.date}>2021-01-01</div>
