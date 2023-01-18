@@ -120,7 +120,7 @@
     width: 80%;
     max-width: 500px;
     height: auto;
-    max-height: 100vh;
+    max-height: calc(100vh - var(--navbar-pc-height));
     padding: var(--navbar-pc-height) 0 0 0;
     overflow-y: auto;
     letter-spacing: 0.4em;
