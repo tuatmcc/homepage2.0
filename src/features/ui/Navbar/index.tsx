@@ -54,6 +54,7 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) =>
 					onClick={() => setIsDrawerOpen(false)}
 					aria-label='drawer-closre'
 				/>
+        
 				<div className={classNames(styles.drawer, isDrawerOpen ? styles._active : '')}>
 					<nav>
 						<div className={styles.drawerContent}>
