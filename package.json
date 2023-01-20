@@ -10,9 +10,11 @@
     "start": "next start",
     "lint": "next lint && stylelint src/**/*.css && rome check . && rome format .",
     "format": "next lint --fix && stylelint src/**/*.css --fix && rome check . --apply-suggested && rome format . --write",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "analyze-bundle": "ANALYZE=true next build"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^13.1.2",
     "@react-three/cannon": "^6.5.2",
     "@react-three/drei": "^9.53.0",
     "@react-three/fiber": "^8.10.0",
