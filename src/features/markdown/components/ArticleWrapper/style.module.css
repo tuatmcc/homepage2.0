@@ -61,7 +61,7 @@
   padding: 48px 8px;
   margin: auto;
 
-  @media screen and (max-width: 48em) {
+  @media (--bp-sm) {
     width: 92vw
   }
 }

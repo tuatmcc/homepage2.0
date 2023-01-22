@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Orbitron&family=Noto+Sans+JP:wght@400;700&display=swap');
 @import url('./_variables.css');
+@import url('./_media.css');
 
 /* stylelint-disable-next-line selector-id-pattern */
 html,
@@ -42,7 +43,7 @@ button {
   height: 5px;
   background: transparent;
 
-  @media screen and (max-width: 48em) {
+  @media (--bp-sm) {
     width: 5px;
   }
 }

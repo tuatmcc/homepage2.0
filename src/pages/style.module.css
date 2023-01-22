@@ -14,23 +14,6 @@
     height: 100svh;
     opacity: 0.5;
     animation: top-screen 5s linear;
-
-    @keyframes top-screen {
-      0% {
-        background-color: white;
-        background-position-y: 0;
-        opacity: 1;
-      }
-
-      75% {
-        background-color: #06c6;
-        opacity: 1;
-      }
-
-      100% {
-        opacity: 0.5;
-      }
-    }
   }
 
   & .subScreen {
@@ -39,19 +22,36 @@
     height: 100svh;
     overflow: hidden;
     animation: sub-screen 5s linear;
+  }
+}
 
-    @keyframes sub-screen {
-      0% {
-        opacity: 0;
-      }
+@keyframes top-screen {
+  0% {
+    background-color: white;
+    background-position-y: 0;
+    opacity: 1;
+  }
 
-      80% {
-        opacity: 0;
-      }
+  75% {
+    background-color: #06c6;
+    opacity: 1;
+  }
 
-      100% {
-        opacity: 1;
-      }
-    }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes sub-screen {
+  0% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
