@@ -16,7 +16,7 @@
   "dependencies": {
     "@next/bundle-analyzer": "^13.1.2",
     "@react-three/cannon": "^6.5.2",
-    "@react-three/drei": "^9.53.2",
+    "@react-three/drei": "^9.54.2",
     "@react-three/fiber": "^8.10.1",
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
