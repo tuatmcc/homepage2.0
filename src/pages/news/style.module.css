@@ -5,6 +5,7 @@
   width: 100%;
   height: 100vh;
   background-image: url('/tuat-gate-filtered.webp');
+  background-position-x: center;
   background-size: cover;
 }
 
@@ -38,7 +39,7 @@
   max-width: 1000px;
   margin: 16px auto;
 
-  @media screen and (max-width: 62em) {
+  @media (--bp-sm) {
     margin: 16px 5px;
   }
 
@@ -69,7 +70,7 @@
       border-radius: 12px;
       object-fit: cover;
 
-      @media screen and (max-width: 48em) {
+      @media (--bp-sm) {
         width: 40px;
         height: 40px;
       }
@@ -83,7 +84,7 @@
       & .title {
         color: var(--color-text-white);
 
-        @media screen and (max-width: 48em) {
+        @media (--bp-sm) {
           margin: 0;
           font-size: 16px;
           font-weight: normal;
@@ -93,7 +94,7 @@
       & .date {
         font-size: 16px;
 
-        @media screen and (max-width: 48em) {
+        @media (--bp-sm) {
           font-size: 12px;
         }
       }
@@ -120,7 +121,7 @@
         line-height: 1.5;
         color: white;
 
-        @media screen and (max-width: 48em) {
+        @media (--bp-sm) {
           font-size: 12px;
         }
       }

@@ -81,8 +81,8 @@
       right: 0;
       padding: 4px 8px;
       margin: 8px;
+      color: white;
       cursor: pointer;
-      background: white;
       border-radius: 2px;
     }
 
@@ -129,8 +129,8 @@
         top: 0;
         padding: 4px 8px;
         margin: 8px;
+        color: white;
         cursor: pointer;
-        background: white;
         border-radius: 2px;
       }
 

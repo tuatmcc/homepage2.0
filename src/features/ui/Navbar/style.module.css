@@ -16,7 +16,7 @@
   box-shadow: none;
   transition: background-color 0.5s ease-in-out;
 
-  @media screen and (max-width: 48em) {
+  @media (--bp-sm) {
     height: var(--navbar-mobile-height);
   }
 
@@ -35,7 +35,7 @@
     filter: drop-shadow(var(--color-shadow-dark));
     transition: color 0.2s ease-in-out;
 
-    @media screen and (max-width: 48em) {
+    @media (--bp-sm) {
       font-size: 32px;
     }
 
@@ -54,7 +54,7 @@
     margin: 8px;
     cursor: pointer;
 
-    @media screen and (max-width: 48em) {
+    @media (--bp-sm) {
       transform: scale(0.75);
     }
 
@@ -120,7 +120,7 @@
     width: 80%;
     max-width: 500px;
     height: auto;
-    max-height: 100vh;
+    max-height: calc(100vh - var(--navbar-pc-height));
     padding: var(--navbar-pc-height) 0 0 0;
     overflow-y: auto;
     letter-spacing: 0.4em;

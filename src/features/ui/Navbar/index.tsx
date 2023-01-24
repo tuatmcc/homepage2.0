@@ -9,7 +9,7 @@ import { ROUTES, BASE_ROUTES_LIST } from '~/routes/base';
 import classNames from '~/utils/classNames';
 
 type NavbarProps = {
-  noBrand?: boolean;
+	noBrand?: boolean;
 	theme?: 'auto' | 'blue' | 'white';
 };
 
@@ -54,6 +54,7 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) =>
 					onClick={() => setIsDrawerOpen(false)}
 					aria-label='drawer-closre'
 				/>
+
 				<div className={classNames(styles.drawer, isDrawerOpen ? styles._active : '')}>
 					<nav>
 						<div className={styles.drawerContent}>
