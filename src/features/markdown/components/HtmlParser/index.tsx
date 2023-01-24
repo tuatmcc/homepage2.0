@@ -41,6 +41,7 @@ export const HtmlParser: FC<{ contentHtml: string }> = ({ contentHtml }) => {
 	// HTMLをReactNodeに変換する
 	const [content, setContent] = useState<ReactNode>(null);
 
+	// rome-ignore lint/nursery/useExhaustiveDependencies: why?
 	useEffect(() => {
 		const processor = unified()
 			.use(rehypeParse, { fragment: true })
