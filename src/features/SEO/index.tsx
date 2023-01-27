@@ -13,7 +13,9 @@ export const SEO: FC<SEOProps> = ({ meta }) => {
 
 	return (
 		<Head>
-			<link rel="icon" href="/mcc-logo.svg" />
+			<link rel="shortcut icon" href="/favicon.ico" type='image/x-icon' />
+			<link rel="apple-touch-icon" href='/apple-touch-icon.png' sizes='180x180' />
+			<link rel="android-touch-icon" href='/android-touch-icon.png' sizes='192x192' />
 
 			<title>{`${title} - TUATMCC`}</title>
 			<meta name="description" content={description} />
