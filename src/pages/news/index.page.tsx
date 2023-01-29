@@ -9,9 +9,10 @@ import { PostCollector, PostCollectorProps } from '~/features/markdown/post-coll
 import { MediaQueryContext } from '~/features/media-query';
 import { Footer } from '~/features/ui/Footer';
 import { Navbar } from '~/features/ui/Navbar';
+import { MetaData } from '~/types/meta';
 import classNames from '~/utils/classNames';
 
-const meta = {
+const meta: MetaData = {
 	title: 'お知らせ',
 	description: 'News of TUATMCC',
 	img: '/mcc-logo.svg',
