@@ -5,11 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap",
+    "postBuild": "next-sitemap",
     "export": "npm run build && next export",
     "start": "next start",
     "lint": "next lint && stylelint src/**/*.css && rome check . && rome format .",
-    "format": "next lint --fix && stylelint src/**/*.css --fix && rome check . --apply-suggested && rome format . --write",
+    "lint:fix": "next lint --fix && stylelint src/**/*.css --fix && rome check . --apply-suggested && rome format . --write",
     "typecheck": "tsc --noEmit",
     "analyze-bundle": "ANALYZE=true next build"
   },
@@ -31,7 +31,6 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.1",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "eslint-webpack-plugin": "^3.2.0",
     "framer-motion": "^8.5.4",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.7.0",
