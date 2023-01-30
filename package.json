@@ -14,7 +14,7 @@
     "analyze-bundle": "ANALYZE=true next build"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^13.1.5",
+    "@next/bundle-analyzer": "^13.1.6",
     "@react-three/cannon": "^6.5.2",
     "@react-three/drei": "^9.56.4",
     "@react-three/fiber": "^8.10.1",
