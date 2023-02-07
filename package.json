@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "postBuild": "next-sitemap",
-    "export": "npm run build && next export",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint && stylelint src/**/*.css && rome check . && rome format .",
     "lint:fix": "next lint --fix && stylelint src/**/*.css --fix && rome check . --apply-suggested && rome format . --write",
