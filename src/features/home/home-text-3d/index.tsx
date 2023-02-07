@@ -44,7 +44,7 @@ const RandomText: FC = () => {
 					<mesh position={[Math.random() * 50 - 25, Math.random() * 50 - 25, Math.random() * 50 - 25]}>
 						{/* @ts-ignore */}
 						<textGeometry args={[text, { font, size: 1, height: 1 }]} />
-						<meshPhysicalMaterial color='orange' />
+						<meshPhysicalMaterial color="orange" />
 					</mesh>
 				</Float>
 			))}
@@ -64,21 +64,21 @@ export const HomeText3d: FC<Text3dProps> = ({ onNextButtonClick }) => {
 						<mesh position={[-20, 8, 0]}>
 							{/* @ts-ignore */}
 							<textGeometry args={['Micro', { font, size: 5, height: 1 }]} />
-							<meshPhysicalMaterial color='green' />
+							<meshPhysicalMaterial color="green" />
 						</mesh>
 					</Float>
 					<Float floatIntensity={5} speed={3}>
 						<mesh position={[-16, 0, 0]}>
 							{/* @ts-ignore */}
 							<textGeometry args={['Computer', { font, size: 5, height: 1 }]} />
-							<meshPhysicalMaterial color='cyan' />
+							<meshPhysicalMaterial color="cyan" />
 						</mesh>
 					</Float>
 					<Float floatIntensity={5} speed={3}>
 						<mesh position={[2, -8, 0]}>
 							{/* @ts-ignore */}
 							<textGeometry args={['Club', { font, size: 5, height: 1 }]} />
-							<meshPhysicalMaterial color='yellowgreen' />
+							<meshPhysicalMaterial color="yellowgreen" />
 						</mesh>
 					</Float>
 					<RandomText />

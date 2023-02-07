@@ -45,7 +45,7 @@ const Images: FC = () => {
 export const R3fScrollControl: FC = () => {
 	return (
 		<>
-			<Navbar theme='white' noBrand />
+			<Navbar theme="white" noBrand />
 			<div className={styles.canvasContainer}>
 				<Canvas gl={{ antialias: false }} dpr={[1, 1.5]}>
 					<Suspense fallback={null}>

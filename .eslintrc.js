@@ -4,6 +4,7 @@ module.exports = {
 	extends: ['next/core-web-vitals', 'plugin:import/warnings', 'plugin:react-hooks/recommended'],
 	plugins: ['import'],
 	rules: {
+		'jsx-quotes': ['warn', 'prefer-double'],
 		'import/order': [
 			'error',
 			{

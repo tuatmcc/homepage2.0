@@ -28,7 +28,7 @@ const Pre: FC<HTMLProps<HTMLPreElement>> = ({ children, ...props }) => {
 	return (
 		<div>
 			<pre ref={ref} {...props}>
-				<button type='button' onClick={copyCode} aria-label='copy'>
+				<button type="button" onClick={copyCode} aria-label="copy">
 					{copyButtonContent}
 				</button>
 				{children}

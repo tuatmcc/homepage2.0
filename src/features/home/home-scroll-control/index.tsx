@@ -119,7 +119,7 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 							href="https://twitter.com/TUATMCC"
 							target="_blank"
 							rel="noopener noreferrer"
-							aria-label='twitter link'
+							aria-label="twitter link"
 							className={styles.socialLink}
 						>
 							<TwitterIcon />
@@ -129,7 +129,7 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 							href="https://twitter.com/tuatkyopro"
 							target="_blank"
 							rel="noopener noreferrer"
-							aria-label='twitter link'
+							aria-label="twitter link"
 							className={styles.socialLink}
 						>
 							<TwitterIcon />
@@ -139,7 +139,7 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 							href="https://github.com/tuatmcc"
 							target="_blank"
 							rel="noopener noreferrer"
-							aria-label='github link'
+							aria-label="github link"
 							className={styles.socialLink}
 						>
 							<GitHubIcon />
