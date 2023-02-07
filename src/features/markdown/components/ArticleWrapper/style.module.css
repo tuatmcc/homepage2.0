@@ -1,3 +1,5 @@
+@custom-media --bp-sm (max-width: 780px);
+
 .headerContent {
   position: relative;
   display: flex;
