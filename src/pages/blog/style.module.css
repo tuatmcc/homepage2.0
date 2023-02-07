@@ -1,3 +1,5 @@
+@custom-media --bp-sm (max-width: 780px);
+
 .background {
   position: fixed;
   top: 0;
