@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postBuild": "next-sitemap",
+    "postbuild": "next-sitemap",
     "export": "next export",
     "start": "next start",
     "lint": "next lint && stylelint src/**/*.css && rome check . && rome format .",
