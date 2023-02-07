@@ -43,7 +43,7 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) =>
 				<button
 					className={classNames(styles.hamburgerMenu, isDrawerOpen ? styles._active : '', color)}
 					onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-					aria-label='menu toggler'
+					aria-label="menu toggler"
 				>
 					<span className={classNames(styles.hamburgerMenuLine1, isDrawerOpen ? styles._active : '')} />
 					<span className={classNames(styles.hamburgerMenuLine2, isDrawerOpen ? styles._active : '')} />
@@ -52,7 +52,7 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) =>
 				<button
 					className={classNames(styles.drawerBlur, isDrawerOpen ? styles._active : '')}
 					onClick={() => setIsDrawerOpen(false)}
-					aria-label='drawer-closre'
+					aria-label="drawer-closre"
 				/>
 
 				<div className={classNames(styles.drawer, isDrawerOpen ? styles._active : '')}>

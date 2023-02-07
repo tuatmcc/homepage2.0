@@ -9,16 +9,18 @@ import styles from './style.module.css';
 import { SEO } from '~/features/SEO';
 import { Footer } from '~/features/ui/Footer';
 import { Navbar } from '~/features/ui/Navbar';
+import { MetaData } from '~/types/meta';
 
 export type SandboxPageProps = {
 	paths: string[];
 };
 
+const meta: MetaData = {
+	title: 'Gallery',
+	description: 'Gallery - where you can see webgl experiments',
+};
+
 const GalleryPage: FC<SandboxPageProps> = ({ paths }) => {
-	const meta = {
-		title: 'Gallery',
-		description: 'Gallery - where you can see webgl experiments',
-	};
 	return (
 		<>
 			<SEO meta={meta} />

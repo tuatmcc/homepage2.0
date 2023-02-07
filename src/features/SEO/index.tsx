@@ -13,16 +13,18 @@ export const SEO: FC<SEOProps> = ({ meta }) => {
 
 	return (
 		<Head>
-			<link rel="icon" href="/mcc-logo.svg" />
+			<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+			<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+			<link rel="android-touch-icon" href="/android-touch-icon.png" sizes="192x192" />
 
-			<title>{`${title} - TUATMCC`}</title>
+			<title>{`${title} - MCC`}</title>
 			<meta name="description" content={description} />
 
-			<meta property='og:type' content='website' />
+			<meta property="og:type" content="website" />
 			<meta property="og:title" content={title} />
-			<meta property="og:site_name" content={title} />
 			<meta property="og:description" content={description} />
-			{img && <meta property="og:image" content={img} />}
+			<meta property="og:site_name" content="MCC" />
+			<meta property="og:image" content={img?.match(/(\.jpg|\.jpeg|\.png|\.webp)$/) ? img : '/mcc-design.webp'} />
 		</Head>
 	);
 };

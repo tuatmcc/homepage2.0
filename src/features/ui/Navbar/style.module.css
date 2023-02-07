@@ -1,9 +1,6 @@
-.navbar {
-  --color-theme-light: #06c;
-  --color-theme-transparent: #fff;
-  --color-background-theme-light: #fff;
-  --color-background-theme-transparent: transparent;
+@custom-media --bp-sm (max-width: 780px);
 
+.navbar {
   position: fixed;
   top: 0;
   z-index: 100;
@@ -93,20 +90,20 @@
     &._active {
       & .hamburgerMenuLine1 {
         top: 22px;
-        background-color: var(--color-theme-transparent);
+        background-color: white;
         box-shadow: 0 0 8px #9ff;
         transform: rotate(45deg);
       }
 
       & .hamburgerMenuLine2 {
-        background-color: var(--color-theme-transparent);
+        background-color: white;
         box-shadow: 0 0 8px #9ff;
         transform: scaleX(0);
       }
 
       & .hamburgerMenuLine3 {
         bottom: 22px;
-        background-color: var(--color-theme-transparent);
+        background-color: white;
         box-shadow: 0 0 8px #9ff;
         transform: rotate(-45deg);
       }
@@ -146,7 +143,7 @@
         font-size: 24px;
         font-weight: bold;
         line-height: 3;
-        color: var(--color-theme-transparent);
+        color: white;
         text-shadow: 0 0 8px #9ff;
         background:
           linear-gradient(

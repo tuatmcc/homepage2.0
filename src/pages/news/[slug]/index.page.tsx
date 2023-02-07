@@ -13,7 +13,7 @@ const NewsPost: NextPage<{ post: Post }> = ({ post }) => {
 	return (
 		<>
 			<SEO meta={post.frontmatter} />
-			<Navbar theme='auto' />
+			<Navbar theme="auto" />
 			<ArticleWrapper {...post.frontmatter} contentHtml={post.content} />
 		</>
 	);

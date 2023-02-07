@@ -39,7 +39,7 @@ const Layer1: FC<LayerProps> = ({ scrollYProgress }) => {
 				MCC
 			</motion.h1>
 			<div className={styles.img1}>
-				<motion.img src='/noko-fes-2022-illustrace.webp' style={{ zoom: zoomImage1 }} />
+				<motion.img src="/noko-fes-2022-illustrace.webp" style={{ zoom: zoomImage1 }} />
 			</div>
 		</section>
 	);
@@ -54,7 +54,7 @@ const Layer2: FC<LayerProps> = ({ scrollYProgress }) => {
 			<div className={styles.subTitle}>私たちは、東京農工大学マイクロコンピュータークラブです。</div>
 			<motion.h1 className={styles.title}>MCC</motion.h1>
 			<motion.div className={styles.img1} style={{ y }}>
-				<motion.img src='/noko-fes-2022-illustrace.webp' style={{ zoom }} />
+				<motion.img src="/noko-fes-2022-illustrace.webp" style={{ zoom }} />
 			</motion.div>
 		</section>
 	);
@@ -68,7 +68,7 @@ const Layer4: FC<LayerProps> = ({ scrollYProgress }) => {
 			<div className={styles.subTitle}>私たちは、東京農工大学マイクロコンピュータークラブ</div>
 			<motion.h1 className={styles.title}>MCC</motion.h1>
 			<motion.div className={styles.img1}>
-				<motion.img src='/abstract-tech-image-1.webp' style={{ zoom }} />
+				<motion.img src="/abstract-tech-image-1.webp" style={{ zoom }} />
 			</motion.div>
 		</section>
 	);
