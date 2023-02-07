@@ -1,10 +1,9 @@
 name: CI
 
 on:
-  push:
-    branches:
-      - "develop"
   pull_request:
+
+  workflow_dispatch:
 
 jobs:
   lint:
@@ -16,11 +15,11 @@ jobs:
       - name: setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18.12.1
+          node-version: 18.13.0
           cache: npm
       - name: npm ci
         run: npm ci
       - name: run lint
-        run: npx turbo lint
-      - name: run build
-        run: npx turbo build
+        run: npm run lint
+      - name: run typecheck
+        run: npm run typecheck

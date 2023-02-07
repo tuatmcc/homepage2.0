@@ -6,7 +6,7 @@ const CustomDocument: FC = () => {
 		<Html lang="ja">
 			<Head>
 				<link
-					href='https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Orbitron&family=Noto+Sans+JP:wght@400;700&display=swap'
+					href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Orbitron&family=Noto+Sans+JP:wght@400;700&display=swap"
 					rel="stylesheet"
 				/>
 			</Head>
