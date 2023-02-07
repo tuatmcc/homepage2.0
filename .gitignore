@@ -43,6 +43,7 @@ next-env.d.ts
 
 # sitemap
 sitemap*.xml
+robot.txt
 
 # wiki
 *.wiki
