@@ -41,5 +41,8 @@ next-env.d.ts
 .idea
 .vscode/tasks.json
 
+# sitemap
+sitemap*.xml
+
 # wiki
 *.wiki
