@@ -18,7 +18,7 @@
     "@react-three/cannon": "^6.5.2",
     "@react-three/drei": "^9.56.18",
     "@react-three/fiber": "^8.10.1",
-    "@types/node": "18.11.18",
+    "@types/node": "18.13.0",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
     "@types/three": "^0.149.0",
