@@ -17,7 +17,7 @@ export const SEO: FC<SEOProps> = ({ meta }) => {
 			<link rel="apple-touch-icon" href='/apple-touch-icon.png' sizes='180x180' />
 			<link rel="android-touch-icon" href='/android-touch-icon.png' sizes='192x192' />
 
-			<title>{`${title} - TUATMCC`}</title>
+			<title>{`${title} - MCC`}</title>
 			<meta name="description" content={description} />
 
 			<meta property='og:type' content='website' />

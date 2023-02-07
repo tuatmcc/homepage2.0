@@ -9,7 +9,7 @@ import { Navbar } from '~/features/ui/Navbar';
 import { MetaData } from '~/types/meta';
 
 const meta: MetaData = {
-	title: 'Home',
+	title: '農工大MCC',
 	description: '東京農工大学マイクロコンピュータークラブ(TUATMCC)の公式ホームページです。',
 	img: '/mcc-design.webp',
 };
