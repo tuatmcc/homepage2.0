@@ -9,6 +9,7 @@ import styles from './style.module.css';
 import { SEO } from '~/features/SEO';
 import { Footer } from '~/features/ui/Footer';
 import { Navbar } from '~/features/ui/Navbar';
+import { PageTransition } from '~/features/ui/PageTransition';
 import { MetaData } from '~/types/meta';
 
 export type SandboxPageProps = {
@@ -24,30 +25,32 @@ const GalleryPage: FC<SandboxPageProps> = ({ paths }) => {
 	return (
 		<>
 			<SEO meta={meta} />
-			<div className={styles.background} />
 			<Navbar />
-			<header>
-				<div className={styles.headerContent}>
-					<h1 className={styles.headerTitle}>Gallery</h1>
-					<h2 className={styles.headerSubTitle}>デザイン・試作置き場</h2>
-				</div>
-			</header>
+			<PageTransition>
+				<div className={styles.background} />
+				<header>
+					<div className={styles.headerContent}>
+						<h1 className={styles.headerTitle}>Gallery</h1>
+						<h2 className={styles.headerSubTitle}>デザイン・試作置き場</h2>
+					</div>
+				</header>
 
-			<main>
-				<div className={styles.mainContent}>
-					<ul className={styles.list}>
-						{paths.map((path) => (
-							<li key={path} className={styles.listItem}>
-								<Link href={path} className={styles.link}>
-									{path}
-								</Link>
-							</li>
-						))}
-					</ul>
-				</div>
-			</main>
+				<main>
+					<div className={styles.mainContent}>
+						<ul className={styles.list}>
+							{paths.map((path) => (
+								<li key={path} className={styles.listItem}>
+									<Link href={path} className={styles.link}>
+										{path}
+									</Link>
+								</li>
+							))}
+						</ul>
+					</div>
+				</main>
 
-			<Footer semitransparent />
+				<Footer semitransparent />
+			</PageTransition>
 		</>
 	);
 };

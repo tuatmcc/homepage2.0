@@ -1,11 +1,11 @@
 import { Preload, ScrollControls, Scroll, useScroll, Image as ImageImpl } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import Link from 'next/link';
-import { FC, Suspense, useContext, useEffect, useState } from 'react';
+import { FC, Suspense, useEffect, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { MediaQueryContext } from '~/features/media-query';
+import { useMediaQuery } from '~/features/MediaQuery';
 import { GitHubIcon, TwitterIcon } from '~/features/ui/Svg';
 import { ROUTES } from '~/routes/base';
 import classNames from '~/utils/classNames';
@@ -162,7 +162,7 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 };
 
 export const HomeScrollControl: FC = () => {
-	const mediaQuery = useContext(MediaQueryContext);
+	const mediaQuery = useMediaQuery();
 	useEffect(() => {
 		const script = document.createElement('script');
 		script.src = 'https://platform.twitter.com/widgets.js';

@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 
 export const UrlAnimation: FC = () => {
-	const sentence = '-We-are-Micro-Computer-Club!!-Welcome!!';
+	const sentence = '-We-are-Micro-Computer-Club!!-Welcome-to-our-homepage!!';
 	const [count, setCount] = useState<number>(1);
 	useEffect(() => {
 		if (count >= sentence.length) return;
