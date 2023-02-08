@@ -3,6 +3,7 @@ import { NextPage } from 'next';
 import { SEO } from '~/features/SEO';
 import { MomentumScrollWidthImage } from '~/features/gallery/MomentumScrollWidthImage';
 import { Navbar } from '~/features/ui/Navbar';
+import { PageTransition } from '~/features/ui/PageTransition';
 import { MetaData } from '~/types/meta';
 
 const meta: MetaData = {
@@ -15,7 +16,9 @@ const MomentumScrollPage: NextPage = () => {
 		<>
 			<SEO meta={meta} />
 			<Navbar noBrand />
-			<MomentumScrollWidthImage />
+			<PageTransition>
+				<MomentumScrollWidthImage />
+			</PageTransition>
 		</>
 	);
 };

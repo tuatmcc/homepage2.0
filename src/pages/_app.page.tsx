@@ -1,12 +1,23 @@
-import type { AppProps } from 'next/app';
+import { AnimatePresence } from 'framer-motion';
+import { AppProps } from 'next/app';
+
+import { MediaQueryProvider } from '~/features/MediaQuery';
+import { NavDrawerContextProvider } from '~/features/ui/Navbar';
+import { usePageTransitionFix } from '~/utils/fix-page-transition';
 
 import '~/styles/global.css';
-import { MediaQueryProvider } from '~/features/media-query';
 
 const App = ({ Component, pageProps }: AppProps) => {
+	// これをしないと、最適化されすぎたNext.jsがcssを速くはがしてしまい、遷移がチラつく
+	usePageTransitionFix();
+
 	return (
 		<MediaQueryProvider>
-			<Component {...pageProps} />
+			<AnimatePresence mode="wait">
+				<NavDrawerContextProvider>
+					<Component {...pageProps} />
+				</NavDrawerContextProvider>
+			</AnimatePresence>
 		</MediaQueryProvider>
 	);
 };

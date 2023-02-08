@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import { SEO } from '~/features/SEO';
 import { R3fScrollControl } from '~/features/gallery/r3f-scroll-control';
+import { PageTransition } from '~/features/ui/PageTransition';
 import { MetaData } from '~/types/meta';
 
 const meta: MetaData = {
@@ -14,7 +15,9 @@ const NewHomeDesignPage: FC = () => {
 	return (
 		<>
 			<SEO meta={meta} />
-			<R3fScrollControl />
+			<PageTransition>
+				<R3fScrollControl />
+			</PageTransition>
 		</>
 	);
 };
