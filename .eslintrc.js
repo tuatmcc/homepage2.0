@@ -11,7 +11,7 @@ module.exports = {
 				groups: ['builtin', 'external', 'parent', 'sibling', 'index', 'object', 'type'],
 				pathGroups: [
 					{
-						pattern: 'react, next/router',
+						pattern: 'react, next/*',
 						group: 'builtin',
 						position: 'before',
 					},

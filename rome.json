@@ -4,8 +4,7 @@
     "rules": {
       "recommended": true,
       "a11y": {
-        "recommended": true,
-        "useKeyWithClickEvents": "warn"
+        "recommended": true
       },
       "security": {
         "recommended": true
