@@ -4,6 +4,7 @@ import { SEO } from '~/features/SEO';
 import { ArticleWrapper } from '~/features/markdown/components/ArticleWrapper';
 import { Post, PostCollector } from '~/features/markdown/post-collector';
 import { Navbar } from '~/features/ui/Navbar';
+import { PageTransition } from '~/features/ui/PageTransition';
 import { DynamicRouting } from '~/routes/dynamic-routing';
 
 const postCollector = new PostCollector('blog');
@@ -23,7 +24,9 @@ const WorksPost: FC<WorksPostPageProps> = ({ post }) => {
 		<>
 			<SEO meta={post.frontmatter} />
 			<Navbar theme="auto" />
-			<ArticleWrapper {...post.frontmatter} contentHtml={post.content} />
+			<PageTransition>
+				<ArticleWrapper {...post.frontmatter} contentHtml={post.content} />
+			</PageTransition>
 		</>
 	);
 };

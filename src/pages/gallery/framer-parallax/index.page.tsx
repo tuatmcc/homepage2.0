@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { SEO } from '~/features/SEO';
 import { FramerPrallaxPrototype } from '~/features/gallery/framer-parallax';
 import { Navbar } from '~/features/ui/Navbar';
+import { PageTransition } from '~/features/ui/PageTransition';
 import { MetaData } from '~/types/meta';
 
 const meta: MetaData = {
@@ -15,7 +16,9 @@ const FramerParallax: FC = () => {
 		<>
 			<SEO meta={meta} />
 			<Navbar />
-			<FramerPrallaxPrototype />
+			<PageTransition>
+				<FramerPrallaxPrototype />
+			</PageTransition>
 		</>
 	);
 };

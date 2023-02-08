@@ -1,4 +1,5 @@
-import { NextPage } from 'next';
+import { motion } from 'framer-motion';
+import { FC } from 'react';
 
 import styles from './style.module.css';
 
@@ -7,6 +8,7 @@ import { UrlAnimation } from '~/features/UrlAnimation';
 import {  TextLink } from '~/features/ui/Elements';
 import { Footer } from '~/features/ui/Footer';
 import { Navbar } from '~/features/ui/Navbar';
+import { PageTransition } from '~/features/ui/PageTransition';
 import { MetaData } from '~/types/meta';
 import classNames from '~/utils/classNames';
 
@@ -16,12 +18,14 @@ const meta: MetaData = {
   img: '/mcc-logo.svg',
 };
 
-const AboutPage: NextPage = () => {
+const AboutPage: FC = () => {
   return (
   <>
     <SEO meta={meta} />
     <Navbar />
     <UrlAnimation />
+    <PageTransition>
+
     <header>
       <div className={styles.headerContainer}>
         <div className={styles.headerContent}>
@@ -71,6 +75,7 @@ const AboutPage: NextPage = () => {
         </div>
     </main>
     <Footer />
+    </PageTransition>
   </>
   );
 };
