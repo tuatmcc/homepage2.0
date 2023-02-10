@@ -6,7 +6,7 @@
 
 ## 記事の書き方
 
-このリポジトリの Wiki or <https://www.tuatmcc.com/blog/how-to-add-article> 参照
+このリポジトリの Wiki or <https://www.tuatmcc.com/blog/how-to-add-article/> 参照
 
 ## メンテの仕方
 
@@ -16,18 +16,18 @@
 
 ## 環境（2023.2 現在）
 
-- Node.js: v18.13.0
-- NPM: v9.3.1
-- Next.js: v13.1.5
-- TypeScript: v4.9.4
-- volta: v1.1.0
+- `Node.js`: v18.13.0
+- `NPM`: v9.3.1
+- `Next.js`: v13.1.5
+- `TypeScript`: v4.9.4
+- `volta`: v1.1.0
 
 ## 主なスタック
 
 - `TypeScript`
 - `Next.js`: React フレームワーク・静的サイトジェネレーター
 - `React`: JavaScript フレームワーク・ライブラリ
-- `CSS-Modules`, `Postcss`: CSS
+- `CSS-Modules`, `Postcss`: CSSライブラリ
 - `React Three Fiber`, `three.js`: WebGL ライブラリ
 - `Framer Motion`: アニメーションライブラリ
 - `unified`, `remark`, `rehype`: Markdown <-> Html
