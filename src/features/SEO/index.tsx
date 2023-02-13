@@ -30,6 +30,7 @@ export const SEO: FC<SEOProps> = ({ meta }) => {
       <meta name="twitter:site" content="@TUATMCC" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:img" content={img} />
 		</Head>
 	);
 };
