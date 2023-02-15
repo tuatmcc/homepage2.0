@@ -5,6 +5,7 @@ module.exports = {
 	plugins: ['import'],
 	rules: {
 		'jsx-quotes': ['warn', 'prefer-double'],
+		'linebreak-style': ['error', 'unix'],
 		'import/order': [
 			'error',
 			{
