@@ -1,5 +1,6 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.endOfLine": "lf",
   "files.associations": {
     "*/**.css": "css",
   },
@@ -12,9 +13,6 @@
   "[javascript]": {
     "editor.defaultFormatter": "rome.rome"
   },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "rome.rome"
-  },
   "[css]": {
     "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
@@ -25,5 +23,5 @@
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true,
     "source.organizeImports": false
-  }
+  },
 }

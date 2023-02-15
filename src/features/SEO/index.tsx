@@ -27,9 +27,9 @@ export const SEO: FC<SEOProps> = ({ meta }) => {
 			<meta property="og:image" content={img?.match(/(\.jpg|\.jpeg|\.png|\.webp)$/) ? img : '/mcc-design.webp'} />
 
 			<meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@TUATMCC" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+			<meta name="twitter:site" content="@TUATMCC" />
+			<meta name="twitter:title" content={title} />
+			<meta name="twitter:description" content={description} />
 		</Head>
 	);
 };
