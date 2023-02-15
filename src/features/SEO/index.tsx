@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { FC } from 'react';
 
 import { MetaData } from '~/types/meta';
@@ -8,8 +9,10 @@ type SEOProps = {
 };
 
 export const SEO: FC<SEOProps> = ({ meta }) => {
-	const { title, img } = meta;
+	const { title } = meta;
 	const description = meta.description || title;
+	const img = meta.img?.match(/(\.jpg|\.jpeg|\.png|\.webp)$/) ? meta.img : '/mcc-design.webp';
+	const router = useRouter();
 
 	return (
 		<Head>
@@ -24,7 +27,20 @@ export const SEO: FC<SEOProps> = ({ meta }) => {
 			<meta property="og:title" content={title} />
 			<meta property="og:description" content={description} />
 			<meta property="og:site_name" content="MCC" />
-			<meta property="og:image" content={img?.match(/(\.jpg|\.jpeg|\.png|\.webp)$/) ? img : '/mcc-design.webp'} />
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@TUATMCC" />
+			<meta name="twitter:title" content={title} />
+			<meta name="twitter:description" content={description} />
+			<meta
+				name="twitter:image"
+				content={
+					img.startsWith('https')
+						? img
+						: img.startsWith('/')
+						? `https://www.tuatmcc.com${img}`
+						: `https://www.tuatmcc.com${router.asPath}${img.replace(/^./, '')}`
+				}
+			/>
 		</Head>
 	);
 };

@@ -2,11 +2,11 @@
 
 `Next.js`を React フレームワーク・静的サイトジェネレーターとして用いて、GitHub Pages でホストします。
 
-<https://tuatmcc.com>
+<https://www.tuatmcc.com>
 
 ## 記事の書き方
 
-このリポジトリの Wiki or <https://mcc-website-test.vercel.com> 参照
+このリポジトリの Wiki or <https://www.tuatmcc.com/blog/how-to-add-article/> 参照
 
 ## メンテの仕方
 
@@ -16,18 +16,18 @@
 
 ## 環境（2023.2 現在）
 
-- Node.js: v18.13.0
-- NPM: v9.3.1
-- Next.js: v13.1.5
-- TypeScript: v4.9.4
-- volta: v1.1.0
+- `Node.js`: v18.13.0
+- `NPM`: v9.3.1
+- `Next.js`: v13.1.5
+- `TypeScript`: v4.9.4
+- `volta`: v1.1.0
 
 ## 主なスタック
 
 - `TypeScript`
 - `Next.js`: React フレームワーク・静的サイトジェネレーター
 - `React`: JavaScript フレームワーク・ライブラリ
-- `CSS-Modules`, `Postcss`: CSS
+- `CSS-Modules`, `Postcss`: CSSライブラリ
 - `React Three Fiber`, `three.js`: WebGL ライブラリ
 - `Framer Motion`: アニメーションライブラリ
 - `unified`, `remark`, `rehype`: Markdown <-> Html
@@ -50,4 +50,4 @@
 - 2022 年 11 月、MCC の HP リニューアルが決定しました。
 - [このリポジトリの wiki](https://github.com/tuatmcc/mcc-website/wiki)にドキュメント的なものを書いています。
 - `Figma`というソフトで[デザイン案](https://www.figma.com/file/XTfW4NDafbsoMBCu5lNGkr/MCC-HOME-PAGE?node-id=0%3A1&t=F2uR5Q5TRy6jUzh3-1)を作成したり。
-- プライベートな垢で勝手に<mcc-website-test.vercel.app>でデモを動かしてみたりしてます。コロコロ変わります。
+- プライベートな垢で勝手に<https://mcc-website-test.vercel.app>でデモを動かしてみたりしてます。コロコロ変わります。
