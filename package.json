@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "bash ./src/prebuild.sh",
     "build": "next build",
     "postbuild": "next-sitemap",
     "export": "next export",
@@ -58,6 +59,7 @@
     "remark-toc": "^8.0.1",
     "rome": "^11.0.0",
     "shiki": "^0.14.1",
+    "simple-git": "^3.16.1",
     "stylelint": "^14.16.0",
     "stylelint-config-recess-order": "^3.1.0",
     "stylelint-config-standard": "^29.0.0",
