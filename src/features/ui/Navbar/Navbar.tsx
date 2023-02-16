@@ -34,6 +34,10 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) =>
 		});
 	}, [theme]);
 
+	useEffect(() => {
+		document.documentElement.style.overflowY = isNavDrawerOpen ? 'hidden' : 'auto';
+	}, [isNavDrawerOpen]);
+
 	router.events?.on('routeChangeStart', () => setNavDrawerState(false));
 
 	return (

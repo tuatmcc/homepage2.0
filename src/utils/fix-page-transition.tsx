@@ -31,7 +31,6 @@ export const usePageTransitionFix = () => {
 
 	useEffect(() => {
 		const asPath = Router.router?.asPath;
-		Router.router?.push(asPath || '');
-		// ? Use replace() instead of push()?
+		Router.router?.replace(asPath || '');
 	}, []);
 };

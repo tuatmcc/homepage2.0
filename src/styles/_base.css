@@ -11,6 +11,7 @@ body,
   background: transparent;
   text-size-adjust: none;
   scroll-snap-type: y mandatory;
+  scrollbar-gutter: stable;
 }
 
 a {
@@ -35,7 +36,7 @@ button {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: var(--scrollbar-width);
   height: 5px;
   background: transparent;
 
