@@ -2,17 +2,19 @@
 
 `Next.js`を React フレームワーク・静的サイトジェネレーターとして用いて、GitHub Pages でホストします。
 
-<https://www.tuatmcc.com>
+- ホームページ: <https://www.tuatmcc.com>
+- 記事データベース: <https://github.com/tuatumcc/markdown-articles>
 
 ## 記事の書き方
 
-このリポジトリの Wiki or <https://www.tuatmcc.com/blog/how-to-add-article/> 参照
+記事データベースのリポジトリのメインブランチを更新します。
+
+詳しくは、このリポジトリの <https://www.tuatmcc.com/blog/how-to-add-article/> を見てください。
 
 ## メンテの仕方
 
-- `VSCode`の使用を想定しています。
 - [ここ](https://github.com/tuatmcc/mcc-website/wiki/%E9%96%8B%E7%99%BA%E3%83%BB%E3%83%A1%E3%83%B3%E3%83%86%E3%83%8A%E3%83%B3%E3%82%B9)を参照
-- 何かあれば Issue や Discord で。
+- 何かあれば Issue や Discord でお願いします。
 
 ## 環境（2023.2 現在）
 
@@ -20,7 +22,7 @@
 - `NPM`: v9.3.1
 - `Next.js`: v13.1.5
 - `TypeScript`: v4.9.4
-- `volta`: v1.1.0
+- `Volta`: v1.1.0
 
 ## 主なスタック
 
@@ -37,13 +39,19 @@
 ## 押しポイント
 
 - デザイン
-- マークダウン記事のカスタマイズ変換
-- 開発が盛んな最新のフレームワーク・ライブラリの導入
+- マークダウンによる記事の管理
+  - 誰でも記事の更新がしやすい
+  - `Markdown` → `HTML` → `React Component` の変換
+  - GitHub内で完結する疑似的なヘッドレスCMS
+- 現代のフレームワーク・ライブラリの導入
   - `Next.js v13` 使用 (オールインワン)
-  - `ROME` の導入 (Rust 製の爆速 linter・formatter)
   - WebGL ライブラリ `React-Three-Fiber` の利用
 - `postcss`,`css-modules`の使用
   - 高い保守性・安定性
+  - きれいなディレクトリ構造
+- リンター・フォーマッターの導入
+  - 一定の書き方を強制することで、コードの質が保たれる
+  - `Rome`: Rust製のlinter/formatterで、`Prettier`等に比べ高速
 
 ## その他
 
