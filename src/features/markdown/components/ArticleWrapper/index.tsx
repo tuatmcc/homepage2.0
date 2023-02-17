@@ -16,7 +16,7 @@ export const ArticleWrapper: FC<{ meta: MetaData; contentHtml: string; group: st
 	group,
 	slug,
 }) => {
-	const { title, description, img, tags, author, date } = meta;
+	const { title, img, tags, author, date } = meta;
 	const tagList = tags?.map((tag) => <Tag key={tag}>{tag}</Tag>);
 	return (
 		<>

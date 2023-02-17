@@ -1,4 +1,3 @@
-import { error } from 'console';
 import { readdirSync, readFileSync } from 'fs';
 
 import matter from 'gray-matter';
