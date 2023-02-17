@@ -1,3 +1,4 @@
+import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
@@ -6,7 +7,7 @@ import styles from './style.module.css';
 
 import { useMediaQuery } from '~/features/MediaQuery';
 import { SEO } from '~/features/SEO';
-import { PostCollector, PostCollectorProps } from '~/features/markdown/post-collector';
+import { Article, Collector } from '~/features/markdown/collector';
 import { Footer } from '~/features/ui/Footer';
 import { Navbar } from '~/features/ui/Navbar';
 import { PageTransition } from '~/features/ui/PageTransition';
@@ -14,15 +15,13 @@ import { MetaData } from '~/types/meta';
 import classNames from '~/utils/classNames';
 
 const meta: MetaData = {
-	title: 'お知らせ',
-	description: 'MCCからのお知らせ一覧です',
-	img: '/mcc-logo.svg',
+	title: 'News',
+	description: '農工大公認サークルMCCからのお知らせ一覧です',
 };
 
-// posts will be populated at build time by getStaticProps()
-const NewsPage: FC<PostCollectorProps> = ({ posts }) => {
+const NewsListPage: FC<{ articles: Article[] }> = ({ articles }) => {
 	const { isMobile } = useMediaQuery();
-	posts.sort((a, b) => ((a.frontmatter?.date || 1) < (b.frontmatter?.date || 1) ? 1 : -1));
+	articles.sort((a, b) => ((a.meta?.date || 1) < (b.meta?.date || 1) ? 1 : -1));
 	return (
 		<>
 			<SEO meta={meta} />
@@ -31,26 +30,26 @@ const NewsPage: FC<PostCollectorProps> = ({ posts }) => {
 				<div className={styles.background} />
 				<header>
 					<div className={styles.headerContent}>
-						<h1 className={styles.headerTitle}>News</h1>
+						<h1 className={styles.headerTitle}>NEWS</h1>
 						<h2 className={styles.headerSubTitle}>お知らせ</h2>
 					</div>
 				</header>
-				<div className={styles.activities}>
-					<div className={styles.list}>
-						{posts.map((post, index) => {
-							return (
-								<div key={post.slug}>
+				<main>
+					<div className={styles.mainContent}>
+						<div className={styles.list}>
+							{articles.map((article, index) => {
+								return (
 									<Link
-										href={`news/${post.slug}`}
-										key={post.slug}
+										href={`${article.targetPath}`}
+										key={article.slug}
 										className={classNames(styles.listItem, !isMobile && index % 2 === 1 ? styles._reverse : '')}
 									>
 										{!isMobile &&
-											(post.frontmatter.img ? (
+											(article.meta.img ? (
 												<Image
 													className={styles.image}
-													src={post.frontmatter.img}
-													alt={post.frontmatter.title}
+													src={article.meta.img}
+													alt={article.meta.title}
 													width={350}
 													height={200}
 													onError={(e) => {
@@ -61,33 +60,32 @@ const NewsPage: FC<PostCollectorProps> = ({ posts }) => {
 												<Image
 													className={styles.image}
 													src="/mcc-design.webp"
-													alt={post.frontmatter.title}
+													alt={article.meta.title}
 													width={350}
 													height={200}
 												/>
 											))}
 										<div className={styles.text}>
-											<h2 className={styles.title}>{post.frontmatter.title}</h2>
-											{post.frontmatter.tags && !isMobile && (
+											<h2 className={styles.title}>{article.meta.title}</h2>
+											{article.meta.tags && !isMobile && (
 												<div className={styles.tagList}>
-													{post.frontmatter.tags.map((tag) => (
+													{article.meta.tags.map((tag) => (
 														<div className={styles.tag} key={tag}>
 															{tag}
 														</div>
 													))}
 												</div>
 											)}
-											{post.frontmatter.date && <div className={styles.date}>{post.frontmatter.date}</div>}
-											{post.frontmatter.description && (
-												<p className={styles.description}>{post.frontmatter.description}</p>
-											)}
+											{article.meta.date && <div className={styles.date}>{article.meta.date}</div>}
+											{article.meta.description && <p className={styles.description}>{article.meta.description}</p>}
 										</div>
 									</Link>
-								</div>
-							);
-						})}
+								);
+							})}
+						</div>
 					</div>
-				</div>
+				</main>
+
 				<Footer semitransparent />
 			</PageTransition>
 		</>
@@ -95,6 +93,13 @@ const NewsPage: FC<PostCollectorProps> = ({ posts }) => {
 };
 
 // This function gets called at build time on server-side.
-export const getStaticProps = new PostCollector('news').getStaticProps;
+export const getStaticProps: GetStaticProps<{ articles: Article[] }> = () => {
+	const articles = Collector('news').getAll();
+	return {
+		props: {
+			articles,
+		},
+	};
+};
 
-export default NewsPage;
+export default NewsListPage;

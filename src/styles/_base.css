@@ -13,6 +13,10 @@ body,
   scroll-snap-type: y mandatory;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 a {
   color: var(--color-text-default);
   text-decoration: none;
@@ -35,7 +39,7 @@ button {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: var(--scrollbar-width);
   height: 5px;
   background: transparent;
 

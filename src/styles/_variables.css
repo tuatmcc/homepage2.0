@@ -1,5 +1,7 @@
 :root {
   /* Brand Colors */
+
+  /* TODO: 絞る・整理する */
   --color-mcc-primary: #009dae;
   --color-mcc-secondary: #71dfe7;
   --color-mcc-tertiary: #c2fff9;
@@ -35,11 +37,9 @@
   --navbar-pc-height: 70px;
   --navbar-mobile-height: 60px;
   --header-height: 100svh;
+  --scrollbar-width: 10px;
 
-  /* Breakpoints */
-  --breakpoint-mobile: 48em;
-
-  /* Font */
+  /* Fonts */
   --font-family-gill-sans: 'Gill Sans', 'Noto Sans JP', calibri, 'Trebuchet MS', sans-serif;
   --font-family-orbitron: 'Orbitron', 'Noto Sans JP', 'Arial', 'Helvetica', snas-serif;
   --font-family-jetbrains-mono: 'JetBrains Mono', 'Noto Sans JP', 'Arial', monospace;

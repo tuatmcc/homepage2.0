@@ -10,6 +10,7 @@ import { TextLink, TextLinkProps } from '~/features/ui/Elements';
 import { MiniLinkIcon } from '~/features/ui/Svg';
 import { CopyIcon } from '~/features/ui/Svg/CopyIcon';
 import { MetaData } from '~/types/meta';
+import { imgsrc } from '~/utils/imgsrc';
 
 export type ArticleWrapperProps = {
 	meta: MetaData;
@@ -37,9 +38,9 @@ const Pre: FC<HTMLProps<HTMLPreElement>> = ({ children, ...props }) => {
 	);
 };
 
-export const HtmlParser: FC<{ contentHtml: string }> = ({ contentHtml }) => {
+export const HtmlParser: FC<{ contentHtml: string; group: string; slug: string }> = ({ contentHtml, group, slug }) => {
 	// HTMLをReactNodeに変換する
-	const [content, setContent] = useState<ReactNode>(null);
+	const [content, setContent] = useState<ReactNode>(contentHtml);
 
 	// rome-ignore lint/nursery/useExhaustiveDependencies: why?
 	useEffect(() => {
@@ -51,7 +52,7 @@ export const HtmlParser: FC<{ contentHtml: string }> = ({ contentHtml }) => {
 					a: ({ href, children }: TextLinkProps) => <TextLink href={href}>{children}</TextLink>,
 					img: ({ src = '', alt = 'image' }) => (
 						<Image
-							src={src}
+							src={imgsrc(src, group, slug)}
 							alt={alt}
 							width={640}
 							height={480}
@@ -67,7 +68,7 @@ export const HtmlParser: FC<{ contentHtml: string }> = ({ contentHtml }) => {
 			.processSync(contentHtml);
 
 		setContent(processor.result);
-	}, [contentHtml]);
+	}, [contentHtml, group, slug]);
 
 	return <div className={styles.articleContent}>{content}</div>;
 };
