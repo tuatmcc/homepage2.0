@@ -6,24 +6,12 @@ import { GetStaticProps } from 'next';
 
 import { MetaData } from '~/types/meta';
 
-// 記事を取得するためのクラス。index.tsxで使う生このpostCollectorと、
-// [slug].tsxで使うdynamicRoutingというwrapperクラス用とで、2つの別インスタンスができてしまい、
-// 一部処理が重複しているのが気になる。余裕があれば直したいが、タグの処理などほかの設計をちゃんと考えてから実装する必要がある。
-
-/**
- * @param {string} slug - The slug of the post. This is the name of the markdown file without the extension.
- * @param frontmatter - The metadata of the post.
- */
 export interface Post {
 	slug: string;
 	frontmatter: MetaData;
 	content: string;
 }
 
-/**
- * @param slug filename without the extension
- * @param filePath absolute path to the file
- */
 interface PostPath {
 	slug: string;
 	fullPath: string;
