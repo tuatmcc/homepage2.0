@@ -29,6 +29,11 @@ const dummyArticle: Article = {
 	meta: { title: 'Error' },
 };
 
+type CollectorMethods = {
+	get(slug: string): Article;
+	getAll(): Article[];
+};
+
 export const Collector = (group: 'blog' | 'news') => {
 	try {
 		const slugs = readdirSync(`${articlesDirName}/${group}`);
@@ -37,7 +42,7 @@ export const Collector = (group: 'blog' | 'news') => {
 			const { data, content } = matter(file);
 			const meta = data as MetaData;
 			const markdown = content as string;
-      // サムネ画像のURLを
+			// サムネ画像のURLを
 			if (meta.img) meta.img = imgsrc(meta.img, group, slug);
 
 			return {
@@ -52,7 +57,7 @@ export const Collector = (group: 'blog' | 'news') => {
 			};
 		});
 
-		return {
+		const methods: CollectorMethods = {
 			getAll() {
 				return articles;
 			},
@@ -63,20 +68,24 @@ export const Collector = (group: 'blog' | 'news') => {
 				if (target) {
 					return target;
 				} else {
-          console.error('Something went wrong while generating articles')
+					console.error('Something went wrong while generating articles');
 					return dummyArticle;
 				}
 			},
 		};
+		return methods;
 	} catch (e) {
 		console.error(e);
-		return {
-			getall() {
+		const methods: CollectorMethods = {
+			getAll() {
 				return [dummyArticle];
 			},
-			get(_slug: string) {
+			get(slug: string) {
+				slug;
 				return dummyArticle;
 			},
 		};
+
+		return methods;
 	}
 };
