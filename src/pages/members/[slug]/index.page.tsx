@@ -1,14 +1,13 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+import {GetStaticPaths, GetStaticProps} from 'next';
 import { FC } from 'react';
+import {Article, Collector} from '~/features/markdown/collector';
+import {ArticleWrapper} from '~/features/markdown/components/ArticleWrapper';
+import {SEO} from '~/features/SEO';
 
-import { SEO } from '~/features/SEO';
-import { Article, Collector } from '~/features/markdown/collector';
-import { ArticleWrapper } from '~/features/markdown/components/ArticleWrapper';
-import { markdownToHtml } from '~/features/markdown/markdown-to-html';
 import { Navbar } from '~/features/ui/Navbar';
-import { PageTransition } from '~/features/ui/PageTransition';
+import {PageTransition} from '~/features/ui/PageTransition';
 
-const NewsArticlePage: FC<{ article: Article }> = ({ article }) => {
+const MemberPage: FC<{ article: Article }> = ({ article }) => {
 	return (
 		<>
 			<SEO meta={article.meta} />
@@ -20,7 +19,7 @@ const NewsArticlePage: FC<{ article: Article }> = ({ article }) => {
 	);
 };
 
-const collector = Collector('news');
+const collector = Collector('members');
 
 // アクセス可能なパスを用意する。ビルド時に実行される。
 export const getStaticPaths: GetStaticPaths = () => {
@@ -49,4 +48,4 @@ export const getStaticProps: GetStaticProps<{ article: Article }> = (context) =>
 	};
 };
 
-export default NewsArticlePage;
+export default MemberPage;

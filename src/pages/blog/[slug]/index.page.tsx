@@ -40,11 +40,8 @@ export const getStaticPaths: GetStaticPaths = () => {
 };
 
 // パスに対応するコンテンツ(HTML)を用意する。ビルド時に実行される。
-export const getStaticProps: GetStaticProps<{ article: Article }> = async (context) => {
+export const getStaticProps: GetStaticProps<{ article: Article }> = (context) => {
 	const article: Article = collector.get(context.params?.slug as string);
-	article.html = await markdownToHtml(article.markdown);
-	article.markdown = '';
-
 	return {
 		props: {
 			article: article,
