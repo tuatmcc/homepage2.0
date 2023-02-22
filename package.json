@@ -63,7 +63,7 @@
     "stylelint": "^14.16.0",
     "stylelint-config-recess-order": "^3.1.0",
     "stylelint-config-standard": "^29.0.0",
-    "stylelint-declaration-strict-value": "^1.9.1",
+    "stylelint-declaration-strict-value": "^1.9.2",
     "stylelint-order": "^6.0.2",
     "stylelint-scss": "^4.4.0",
     "three": "^0.149.0",
