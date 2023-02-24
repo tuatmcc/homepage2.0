@@ -33,8 +33,8 @@ const rcpOptions: Partial<Options> = {
  * @param markdown
  * @returns
  */
-export const markdownToHtml = (markdown: string) => {
-	const html = unified()
+export const markdownToHtml = async (markdown: string) => {
+	const html = await unified()
 		.use(remarkParse)
 		.use(remarkGfm)
 		.use(remarkGemoji)

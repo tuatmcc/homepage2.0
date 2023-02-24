@@ -59,7 +59,6 @@ export const Collector = (group: Group) => {
 				article.markdown = content as string;
 
 				if (article.meta.img) article.meta.img = imgsrc(article.meta.img, group, slug);
-				article.html = markdownToHtml(article.markdown);
 
         articles.push(article);
 			}
