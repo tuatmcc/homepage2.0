@@ -44,7 +44,6 @@ export const getStaticProps: GetStaticProps<{ article: Article }> = async (conte
 	const article: Article = collector.get(context.params?.slug as string);
 	article.html = await markdownToHtml(article.markdown);
 	article.markdown = '';
-
 	return {
 		props: {
 			article: article,

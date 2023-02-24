@@ -1,6 +1,5 @@
 import rehypeAutoLinkHeadings from 'rehype-autolink-headings';
 import rehypeDocument from 'rehype-document';
-// import rehypeHighlight from 'rehype-highlight';
 import rehypeKatex from 'rehype-katex';
 import rehypePrettyCode, { Options } from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
@@ -37,7 +36,6 @@ const rcpOptions: Partial<Options> = {
 export const markdownToHtml = async (markdown: string) => {
 	const html = await unified()
 		.use(remarkParse)
-
 		.use(remarkGfm)
 		.use(remarkGemoji)
 		.use(remarkMath)
