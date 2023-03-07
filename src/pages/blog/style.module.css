@@ -12,11 +12,15 @@
 
 .headerContent {
   display: flex;
+  margin: 80px auto;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100svh;
+  width: 90%;
+  height: 400px;
+  padding: 32px 16px;
+  backdrop-filter: blur(32px);
+  box-shadow: 0 0 16px white;
 
   & .headerTitle {
     font-family: var(--font-family-orbitron);
@@ -28,7 +32,7 @@
   }
 
   & .headerSubTitle {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: normal;
     color: white;
   }
@@ -36,47 +40,49 @@
 
 .list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
-  max-width: 1000px;
   margin: 16px auto;
+  padding: 16px;
+  width: 90%;
+  box-shadow: 0 0 16px white;
+  background-color: #fff3;
+  backdrop-filter: blur(32px);
 
   @media (--bp-sm) {
-    margin: 16px 5px;
+    padding: 8px;
   }
 
   & .listItem {
     display: flex;
     gap: 16px;
-    padding: 16px;
+    width: 45%;
+    height: 100px;
     color: white;
-    background-color: #fff3;
-    border: solid 1px #fff3;
-    border-radius: 16px;
-    box-shadow: var(--color-shadow-large);
-    transition: all 0.2s ease-in-out;
-    backdrop-filter: blur(12px);
+    transition: background-color 0.1s ease-in-out;
+    border: solid 1px transparent;
+    padding: 8px;
+
+    @media (--bp-sm) {
+      width: 100%;
+      height: auto;
+    } 
 
     &:hover {
-      background-color: #fff6;
-      backdrop-filter: blur(4px);
-    }
-
-    &._reverse {
-      flex-direction: row-reverse;
+      background-color: #fff3;
+      backdrop-filter: blur(32px);
+      box-shadow: 0 0 16px var(--color-mcc-quaternary);
+      border: solid 1px var(--color-mcc-quaternary);
     }
 
     & .image {
-      width: 300px;
-      height: 160px;
-      border-radius: 12px;
+      width: 100px;
+      height: 100px;
       object-fit: cover;
-      box-shadow: var(--color-shadow-extra-large);
-
-      @media (--bp-sm) {
-        width: 40px;
-        height: 40px;
-      }
+      margin-left: 8px;
+      border-radius: 8px;
     }
 
     & .text {
@@ -86,20 +92,16 @@
 
       & .title {
         color: var(--color-text-white);
+        font-size: 20px;
+        margin: 0;
 
         @media (--bp-sm) {
-          margin: 0;
           font-size: 16px;
-          font-weight: normal;
         }
       }
 
       & .date {
-        font-size: 16px;
-
-        @media (--bp-sm) {
-          font-size: 12px;
-        }
+        font-size: 14px;
       }
 
       & .tagList {
@@ -112,20 +114,17 @@
           padding: 2px 8px;
           font-family: var(--font-family-gill-sans);
           font-size: 16px;
-          color: var(--color-text-default);
-          background-color: var(--color-mcc-tertiary);
-          border-radius: 12px;
-          box-shadow: var(--color-shadow-large);
+          color: white;
+          box-shadow: 0 0 4px white;
+          background-color: #fff3;
+          backdrop-filter: blur(64px);
         }
       }
 
       & .description {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1.5;
-
-        @media (--bp-sm) {
-          font-size: 12px;
-        }
+        color: #ccc;
       }
     }
   }
