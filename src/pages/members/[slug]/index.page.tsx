@@ -8,7 +8,7 @@ import { markdownToHtml } from '~/features/markdown/markdown-to-html';
 import { Navbar } from '~/features/ui/Navbar';
 import { PageTransition } from '~/features/ui/PageTransition';
 
-const BlogArticlePage: FC<{ article: Article }> = ({ article }) => {
+const MemberPage: FC<{ article: Article }> = ({ article }) => {
 	return (
 		<>
 			<SEO meta={article.meta} />
@@ -20,7 +20,7 @@ const BlogArticlePage: FC<{ article: Article }> = ({ article }) => {
 	);
 };
 
-const collector = Collector('blog');
+const collector = Collector('members');
 
 // アクセス可能なパスを用意する。ビルド時に実行される。
 export const getStaticPaths: GetStaticPaths = () => {
@@ -51,4 +51,4 @@ export const getStaticProps: GetStaticProps<{ article: Article }> = async (conte
 	};
 };
 
-export default BlogArticlePage;
+export default MemberPage;

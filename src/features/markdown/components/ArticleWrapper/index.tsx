@@ -37,7 +37,7 @@ export const ArticleWrapper: FC<{ meta: MetaData; contentHtml: string; group: st
 					<h1 className={styles.title}>{title}</h1>
 					<div className={styles.info}>
 						{author && (
-							<Link href={`/member/${author}`} className={styles.author}>
+							<Link href={`/members/${author}`} className={styles.author}>
 								@{author}
 							</Link>
 						)}
