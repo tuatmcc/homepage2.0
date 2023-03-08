@@ -6,21 +6,26 @@
   z-index: -1;
   width: 100%;
   height: 100vh;
-  background-image: url('/abstract-tech-image-6.webp');
+  background-color: var(--color-mcc-primary);
   background-size: cover;
 }
 
 .headerContent {
   display: flex;
-  margin: 80px auto;
+  margin: calc(var(--navbar-pc-height) + 20px) auto 32px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 90%;
-  height: 400px;
-  padding: 32px 16px;
-  backdrop-filter: blur(32px);
+  max-width: 1000px;
+  padding: 16px 16px;
+  gap: 4px;
+  backdrop-filter: blur(16px);
   box-shadow: 0 0 16px white;
+  background-color: #fff3;
+
+  @media (--bp-sm) {
+    margin-top: calc(var(--navbar-mobile-height) + 10px);
+  }
 
   & .headerTitle {
     font-family: var(--font-family-orbitron);
@@ -28,47 +33,42 @@
     font-weight: bold;
     color: white;
     text-shadow: 0 0 16px var(--color-mcc-quaternary);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.14em;
+    margin: 0;
   }
 
   & .headerSubTitle {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: normal;
     color: white;
+    margin: 0;
   }
 }
 
 .list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
   gap: 16px;
   margin: 16px auto;
   padding: 16px;
-  width: 90%;
+  max-width: 1000px;
+  grid-template-columns: repeat(2, 1fr);
   box-shadow: 0 0 16px white;
   background-color: #fff3;
   backdrop-filter: blur(32px);
 
   @media (--bp-sm) {
+    grid-template-columns: repeat(1, 1fr);
     padding: 8px;
   }
 
   & .listItem {
     display: flex;
+    align-items: center;
     gap: 16px;
-    width: 45%;
-    height: 100px;
     color: white;
     transition: background-color 0.1s ease-in-out;
     border: solid 1px transparent;
     padding: 8px;
-
-    @media (--bp-sm) {
-      width: 100%;
-      height: auto;
-    } 
 
     &:hover {
       background-color: #fff3;
@@ -81,14 +81,20 @@
       width: 100px;
       height: 100px;
       object-fit: cover;
-      margin-left: 8px;
       border-radius: 8px;
+      box-shadow: 0 0 16px #0003;
+
+      @media (--bp-sm) {
+        width: 64px;
+        height: 64px;
+      }
     }
 
     & .text {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      gap: 8px;
 
       & .title {
         color: var(--color-text-white);
@@ -100,32 +106,17 @@
         }
       }
 
-      & .date {
-        font-size: 14px;
-      }
-
-      & .tagList {
+      & .details {
         display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        padding: 8px;
-
-        & .tag {
-          padding: 2px 8px;
-          font-family: var(--font-family-gill-sans);
-          font-size: 16px;
-          color: white;
-          box-shadow: 0 0 4px white;
-          background-color: #fff3;
-          backdrop-filter: blur(64px);
-        }
-      }
-
-      & .description {
+        justify-content: space-between;
         font-size: 14px;
-        line-height: 1.5;
-        color: #ccc;
+        color: #eee;
+
+        & .author {
+          padding-right: 12px;
+        }
       }
     }
   }
 }
+

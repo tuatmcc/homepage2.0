@@ -5,7 +5,6 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { useMediaQuery } from '~/features/MediaQuery';
 import { SEO } from '~/features/SEO';
 import { Article, Collector } from '~/features/markdown/collector';
 import { Footer } from '~/features/ui/Footer';
@@ -26,7 +25,7 @@ const BlogListPage: FC<{ articles: Article[] }> = ({ articles }) => {
 			<SEO meta={meta} />
 			<Navbar />
 			<PageTransition>
-				<div className={styles.background} />
+				<Image alt="" src="/abstract-tech-image-6.webp" width={300} height={600} className={styles.background} />
 				<header>
 					<div className={styles.headerContent}>
 						<h1 className={styles.headerTitle}>Blog</h1>
@@ -61,7 +60,10 @@ const BlogListPage: FC<{ articles: Article[] }> = ({ articles }) => {
 										)}
 										<div className={styles.text}>
 											<h2 className={styles.title}>{article.meta.title}</h2>
-											{article.meta.date && <div className={styles.date}>{article.meta.date}</div>}
+											<div className={styles.details}>
+												{article.meta.date && <div className={styles.date}>{article.meta.date}</div>}
+												{article.meta.author && <div className={styles.author}>@{article.meta.author}</div>}
+											</div>
 										</div>
 									</Link>
 								);
