@@ -13,10 +13,6 @@ body,
   scroll-snap-type: y mandatory;
 }
 
-html {
-  scrollbar-gutter: stable;
-}
-
 a {
   color: var(--color-text-default);
   text-decoration: none;
