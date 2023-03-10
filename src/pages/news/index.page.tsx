@@ -6,7 +6,7 @@ import { FC } from 'react';
 import styles from './style.module.css';
 
 import { SEO } from '~/features/SEO';
-import { Article, Collector } from '~/features/markdown/collector';
+import { Article, Collector } from '~/features/markdown-content/collector';
 import { Footer } from '~/features/ui/Footer';
 import { Navbar } from '~/features/ui/Navbar';
 import { PageTransition } from '~/features/ui/PageTransition';

@@ -83,7 +83,7 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 			<h2 className={styles.name2} style={{ top: vH * 1.1, opacity: opacities[2] }}>
 				私たちは、東京農工大学
 				<br />
-				マイクロコンピュータークラブ、
+				マイクロコンピュータークラブ
 				<br />
 				<span className={styles.name2space}>MCC</span>です。
 			</h2>

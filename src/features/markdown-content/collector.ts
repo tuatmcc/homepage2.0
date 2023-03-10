@@ -50,7 +50,7 @@ export const Collector = (group: Group) => {
 			article.group = group;
 			article.slug = slug;
 
-			if (files.indexOf('index.md') !== 1) {
+			if (files.indexOf('index.md') !== -1) {
 				const file = readFileSync(`${articlesDirName}/${group}/${slug}/index.md`);
 				const { data, content } = matter(file);
 				article.meta = data as MetaData;

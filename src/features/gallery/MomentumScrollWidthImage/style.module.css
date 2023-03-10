@@ -37,6 +37,7 @@
       bottom: 0;
       font-size: 30vw;
       color: white;
+      mix-blend-mode: overlay;
     }
 
     & .img1 {
