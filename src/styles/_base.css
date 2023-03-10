@@ -11,6 +11,7 @@ body,
   background: transparent;
   text-size-adjust: none;
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 a {
