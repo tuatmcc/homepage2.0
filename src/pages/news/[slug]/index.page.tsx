@@ -2,9 +2,9 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { FC } from 'react';
 
 import { SEO } from '~/features/SEO';
-import { Article, Collector } from '~/features/markdown/collector';
-import { ArticleWrapper } from '~/features/markdown/components/ArticleWrapper';
-import { markdownToHtml } from '~/features/markdown/markdown-to-html';
+import { Article, Collector } from '~/features/markdown-content/collector';
+import { ArticleWrapper } from '~/features/markdown-content/components/ArticleWrapper';
+import { markdownToHtml } from '~/features/markdown-content/markdown-to-html';
 import { Navbar } from '~/features/ui/Navbar';
 import { PageTransition } from '~/features/ui/PageTransition';
 
