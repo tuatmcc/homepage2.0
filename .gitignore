@@ -13,7 +13,6 @@
 /.next/
 /out/
 /docs/
-/content/
 
 # production
 /build
