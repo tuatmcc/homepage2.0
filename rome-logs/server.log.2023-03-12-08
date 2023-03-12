@@ -1,0 +1,6 @@
+├─┐rome_lsp::handlers::text_document::did_close{params=DidCloseTextDocumentParams { text_document: TextDocumentIdentifier { uri: Url { scheme: "file", cannot_be_a_base: false, username: "", password: None, host: None, port: None, path: "/home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx", query: None, fragment: None } } }}
+├─┘
+├─┐rome_lsp::handlers::text_document::did_close{params=DidCloseTextDocumentParams { text_document: TextDocumentIdentifier { uri: Url { scheme: "file", cannot_be_a_base: false, username: "", password: None, host: None, port: None, path: "/home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx", query: None, fragment: None } } }}
+├─┘
+INFO rome_cli::commands::daemon Received shutdown signal
+┘
