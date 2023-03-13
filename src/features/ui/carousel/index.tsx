@@ -9,12 +9,11 @@ export type CarouselProps = {
 
 export const Carousel: FC<CarouselProps> = ({ components }) => {
 	return (
-		<>
+		<div className={styles.carousel}>
+      <div className={styles.leftArrow} />
 			{components.map((component, index) => (
-				<section key={`${index}`}>
-					<div className={styles.slide}>{component}</div>
-				</section>
+				<div key={`${index}`} className={styles.slide}>{component}</div>
 			))}
-		</>
+		</div>
 	);
 };

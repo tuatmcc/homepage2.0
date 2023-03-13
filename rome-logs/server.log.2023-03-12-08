@@ -4,3 +4,916 @@
 ├─┘
 INFO rome_cli::commands::daemon Received shutdown signal
 ┘
+┐rome_cli::commands::daemon::Running Server{pid=24863}
+├─┐rome_lsp::server::initialize{params=InitializeParams { process_id: Some(24814), root_path: Some("/home/kaz/src/mcc/mcc-website"), root_uri: Some(Url { scheme: "file", cannot_be_a_base: false, username: "", password: None, host: None, port: None, path: "/home/kaz/src/mcc/mcc-website", query: None, fragment: None }), initialization_options: None, capabilities: ClientCapabilities { workspace: Some(WorkspaceClientCapabilities { apply_edit: Some(true), workspace_edit: Some(WorkspaceEditClientCapabilities { document_changes: Some(true), resource_operations: Some([Create, Rename, Delete]), failure_handling: Some(Undo), normalizes_line_endings: Some(true), change_annotation_support: Some(ChangeAnnotationWorkspaceEditClientCapabilities { groups_on_label: Some(false) }) }), did_change_configuration: Some(DynamicRegistrationClientCapabilities { dynamic_registration: Some(true) }), did_change_watched_files: Some(DynamicRegistrationClientCapabilities { dynamic_registration: Some(true) }), symbol: Some(WorkspaceSymbolClientCapabilities { dynamic_registration: Some(true), symbol_kind: Some(SymbolKindCapability { value_set: Some([File, Module, Namespace, Package, Class, Method, Property, Field, Constructor, Enum, Interface, Function, Variable, Constant, String, Number, Boolean, Array, Object, Key, Null, EnumMember, Struct, Event, Operator, TypeParameter]) }), tag_support: Some(TagSupport { value_set: [Deprecated] }) }), execute_command: Some(DynamicRegistrationClientCapabilities { dynamic_registration: Some(true) }), workspace_folders: Some(true), configuration: Some(true), semantic_tokens: Some(SemanticTokensWorkspaceClientCapabilities { refresh_support: Some(true) }), code_lens: Some(CodeLensWorkspaceClientCapabilities { refresh_support: Some(true) }), file_operations: Some(WorkspaceFileOperationsClientCapabilities { dynamic_registration: Some(true), did_create: Some(true), will_create: Some(true), did_rename: Some(true), will_rename: Some(true), did_delete: Some(true), will_delete: Some(true) }) }), text_document: Some(TextDocumentClientCapabilities { synchronization: Some(TextDocumentSyncClientCapabilities { dynamic_registration: Some(true), will_save: Some(true), will_save_wait_until: Some(true), did_save: Some(true) }), completion: Some(CompletionClientCapabilities { dynamic_registration: Some(true), completion_item: Some(CompletionItemCapability { snippet_support: Some(true), commit_characters_support: Some(true), documentation_format: Some([Markdown, PlainText]), deprecated_support: Some(true), preselect_support: Some(true), tag_support: Some(TagSupport { value_set: [Deprecated] }), insert_replace_support: Some(true), resolve_support: Some(CompletionItemCapabilityResolveSupport { properties: ["documentation", "detail", "additionalTextEdits"] }), insert_text_mode_support: Some(InsertTextModeSupport { value_set: [AsIs, AdjustIndentation] }) }), completion_item_kind: Some(CompletionItemKindCapability { value_set: Some([Text, Method, Function, Constructor, Field, Variable, Class, Interface, Module, Property, Unit, Value, Enum, Keyword, Snippet, Color, File, Reference, Folder, EnumMember, Constant, Struct, Event, Operator, TypeParameter]) }), context_support: Some(true) }), hover: Some(HoverClientCapabilities { dynamic_registration: Some(true), content_format: Some([Markdown, PlainText]) }), signature_help: Some(SignatureHelpClientCapabilities { dynamic_registration: Some(true), signature_information: Some(SignatureInformationSettings { documentation_format: Some([Markdown, PlainText]), parameter_information: Some(ParameterInformationSettings { label_offset_support: Some(true) }), active_parameter_support: Some(true) }), context_support: Some(true) }), references: Some(DynamicRegistrationClientCapabilities { dynamic_registration: Some(true) }), document_highlight: Some(DynamicRegistrationClientCapabilities { dynamic_registration: Some(true) }), document_symbol: Some(DocumentSymbolClientCapabilities { dynamic_registration: Some(true), symbol_kind: Some(SymbolKindCapability { value_set: Some([File, Module, Namespace, Package, Class, Method, Property, Field, Constructor, Enum, Interface, Function, Variable, Constant, String, Number, Boolean, Array, Object, Key, Null, EnumMember, Struct, Event, Operator, TypeParameter]) }), hierarchical_document_symbol_support: Some(true), tag_support: Some(TagSupport { value_set: [Deprecated] }) }), formatting: Some(DynamicRegistrationClientCapabilities { dynamic_registration: Some(true) }), range_formatting: Some(DynamicRegistrationClientCapabilities { dynamic_registration: Some(true) }), on_type_formatting: Some(DynamicRegistrationClientCapabilities { dynamic_registration: Some(true) }), declaration: Some(GotoCapability { dynamic_registration: Some(true), link_support: Some(true) }), definition: Some(GotoCapability { dynamic_registration: Some(true), link_support: Some(true) }), type_definition: Some(GotoCapability { dynamic_registration: Some(true), link_support: Some(true) }), implementation: Some(GotoCapability { dynamic_registration: Some(true), link_support: Some(true) }), code_action: Some(CodeActionClientCapabilities { dynamic_registration: Some(true), code_action_literal_support: Some(CodeActionLiteralSupport { code_action_kind: CodeActionKindLiteralSupport { value_set: ["", "quickfix", "refactor", "refactor.extract", "refactor.inline", "refactor.rewrite", "source", "source.organizeImports"] } }), is_preferred_support: Some(true), disabled_support: Some(true), data_support: Some(true), resolve_support: Some(CodeActionCapabilityResolveSupport { properties: ["edit"] }), honors_change_annotations: Some(false) }), code_lens: Some(DynamicRegistrationClientCapabilities { dynamic_registration: Some(true) }), document_link: Some(DocumentLinkClientCapabilities { dynamic_registration: Some(true), tooltip_support: Some(true) }), color_provider: Some(DynamicRegistrationClientCapabilities { dynamic_registration: Some(true) }), rename: Some(RenameClientCapabilities { dynamic_registration: Some(true), prepare_support: Some(true), prepare_support_default_behavior: Some(Identifier), honors_change_annotations: Some(true) }), publish_diagnostics: Some(PublishDiagnosticsClientCapabilities { related_information: Some(true), tag_support: Some(TagSupport { value_set: [Unnecessary, Deprecated] }), version_support: Some(true), code_description_support: Some(true), data_support: Some(true) }), folding_range: Some(FoldingRangeClientCapabilities { dynamic_registration: Some(true), range_limit: Some(5000), line_folding_only: Some(true) }), selection_range: Some(SelectionRangeClientCapabilities { dynamic_registration: Some(true) }), linked_editing_range: Some(DynamicRegistrationClientCapabilities { dynamic_registration: Some(true) }), call_hierarchy: Some(DynamicRegistrationClientCapabilities { dynamic_registration: Some(true) }), semantic_tokens: Some(SemanticTokensClientCapabilities { dynamic_registration: Some(true), requests: SemanticTokensClientCapabilitiesRequests { range: Some(true), full: Some(Delta { delta: Some(true) }) }, token_types: [SemanticTokenType("namespace"), SemanticTokenType("type"), SemanticTokenType("class"), SemanticTokenType("enum"), SemanticTokenType("interface"), SemanticTokenType("struct"), SemanticTokenType("typeParameter"), SemanticTokenType("parameter"), SemanticTokenType("variable"), SemanticTokenType("property"), SemanticTokenType("enumMember"), SemanticTokenType("event"), SemanticTokenType("function"), SemanticTokenType("method"), SemanticTokenType("macro"), SemanticTokenType("keyword"), SemanticTokenType("modifier"), SemanticTokenType("comment"), SemanticTokenType("string"), SemanticTokenType("number"), SemanticTokenType("regexp"), SemanticTokenType("decorator"), SemanticTokenType("operator")], token_modifiers: [SemanticTokenModifier("declaration"), SemanticTokenModifier("definition"), SemanticTokenModifier("readonly"), SemanticTokenModifier("static"), SemanticTokenModifier("deprecated"), SemanticTokenModifier("abstract"), SemanticTokenModifier("async"), SemanticTokenModifier("modification"), SemanticTokenModifier("documentation"), SemanticTokenModifier("defaultLibrary")], formats: [TokenFormat("relative")], overlapping_token_support: Some(false), multiline_token_support: Some(false) }), moniker: None }), window: Some(WindowClientCapabilities { work_done_progress: Some(true), show_message: Some(ShowMessageRequestClientCapabilities { message_action_item: Some(MessageActionItemCapabilities { additional_properties_support: Some(true) }) }), show_document: Some(ShowDocumentClientCapabilities { support: true }) }), general: Some(GeneralClientCapabilities { regular_expressions: Some(RegularExpressionsClientCapabilities { engine: "ECMAScript", version: Some("ES2020") }), markdown: Some(MarkdownClientCapabilities { parser: "marked", version: Some("4.0.10") }) }), experimental: None }, trace: Some(Off), workspace_folders: Some([WorkspaceFolder { uri: Url { scheme: "file", cannot_be_a_base: false, username: "", password: None, host: None, port: None, path: "/home/kaz/src/mcc/mcc-website", query: None, fragment: None }, name: "mcc-website" }]), client_info: Some(ClientInfo { name: "coc.nvim", version: Some("0.0.82") }), locale: Some("C") }}
+│ ├─0ms INFO rome_lsp::server Starting Rome Language Server...
+├─┘
+├─┐rome_lsp::server::initialized{params=InitializedParams}
+│ ├─0ms INFO rome_lsp::server Attempting to load the configuration from 'rome.json' file
+│ ├─0ms INFO rome_service::configuration Attempting to load the configuration file at path "/home/kaz/src/mcc/mcc-website/rome.json"
+│ ├─┐rome_fs::fs::os::OsFileSystem::open_with_options{path="/home/kaz/src/mcc/mcc-website/rome.json", options=OpenOptions { read: true, write: false, truncate: false, create: false, create_new: false }}
+│ ├─┘
+│ ├─┐rome_fs::fs::os::OsFile::read_to_string{}
+│ ├─┘
+│ ├─0ms INFO rome_lsp::session Configuration found, and it is valid!
+├─┐rome_lsp::handlers::text_document::did_open{params=DidOpenTextDocumentParams { text_document: TextDocumentItem { uri: Url { scheme: "file", cannot_be_a_base: false, username: "", password: None, host: None, port: None, path: "/home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx", query: None, fragment: None }, language_id: "typescriptreact", version: 1, text: "import { FC, ReactNode } from 'react';\n\nimport styles from './style.module.css';\n\nexport type CarouselProps = {\n\tcomponents: ReactNode[];\n\tinterval?: number;\n};\n\nexport const Carousel: FC<CarouselProps> = ({ components }) => {\n\treturn (\n\t\t<>\n\t\t\t{components.map((component, index) => (\n\t\t\t\t<section key={`${index}`}>\n\t\t\t\t\t<div className={styles.slide}>{component}</div>\n\t\t\t\t</section>\n\t\t\t))}\n\t\t</>\n\t);\n};\n" } }}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+│ ├─┐rome_lsp::session::update_workspace_settings{}
+│ │ ├─┐rome_service::workspace::server::update_settings{params=UpdateSettingsParams { configuration: Configuration { schema: None, files: Some(FilesConfiguration { max_size: None, ignore: Some({"node_modules", "out", ".next", "dist"}) }), formatter: Some(FormatterConfiguration { enabled: true, format_with_errors: true, indent_style: Tab, indent_size: 2, line_width: LineWidth(120), ignore: None }), linter: Some(LinterConfiguration { enabled: true, rules: Some(Rules { recommended: Some(true), a11y: Some(A11y { recommended: Some(true), rules: {} }), complexity: Some(Complexity { recommended: Some(true), rules: {} }), correctness: Some(Correctness { recommended: Some(true), rules: {"noUnusedVariables": Plain(Error)} }), nursery: Some(Nursery { recommended: Some(true), rules: {"noVar": Plain(Error), "useCamelCase": Plain(Error)} }), performance: Some(Performance { recommended: Some(true), rules: {} }), security: Some(Security { recommended: Some(true), rules: {} }), style: Some(Style { recommended: Some(true), rules: {} }), suspicious: Some(Suspicious { recommended: Some(true), rules: {} }) }), ignore: None }), javascript: Some(JavascriptConfiguration { formatter: Some(JavascriptFormatter { quote_style: Single, quote_properties: AsNeeded, trailing_comma: All, semicolons: Always }), globals: None }) } }}
+│ │ │ ├─┐rome_service::settings::merge_with_configuration{configuration=Configuration { schema: None, files: Some(FilesConfiguration { max_size: None, ignore: Some({"node_modules", "out", ".next", "dist"}) }), formatter: Some(FormatterConfiguration { enabled: true, format_with_errors: true, indent_style: Tab, indent_size: 2, line_width: LineWidth(120), ignore: None }), linter: Some(LinterConfiguration { enabled: true, rules: Some(Rules { recommended: Some(true), a11y: Some(A11y { recommended: Some(true), rules: {} }), complexity: Some(Complexity { recommended: Some(true), rules: {} }), correctness: Some(Correctness { recommended: Some(true), rules: {"noUnusedVariables": Plain(Error)} }), nursery: Some(Nursery { recommended: Some(true), rules: {"noVar": Plain(Error), "useCamelCase": Plain(Error)} }), performance: Some(Performance { recommended: Some(true), rules: {} }), security: Some(Security { recommended: Some(true), rules: {} }), style: Some(Style { recommended: Some(true), rules: {} }), suspicious: Some(Suspicious { recommended: Some(true), rules: {} }) }), ignore: None }), javascript: Some(JavascriptConfiguration { formatter: Some(JavascriptFormatter { quote_style: Single, quote_properties: AsNeeded, trailing_comma: All, semicolons: Always }), globals: None }) }}
+│ │ │ ├─┘
+│ │ ├─┘
+│ ├─┘
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=2}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─382221ms WARN tower_lsp Got a textDocument/didSave notification, but it is not implemented
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=3}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=4}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=5}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=6}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=7}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=8}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=9}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=10}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=11}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=12}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=13}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=14}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=15}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=16}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=17}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=18}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=19}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=20}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=21}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=22}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=23}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=24}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=25}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=26}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─410961ms WARN tower_lsp Got a textDocument/didSave notification, but it is not implemented
+├─┐rome_lsp::handlers::text_document::did_close{params=DidCloseTextDocumentParams { text_document: TextDocumentIdentifier { uri: Url { scheme: "file", cannot_be_a_base: false, username: "", password: None, host: None, port: None, path: "/home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx", query: None, fragment: None } } }}
+├─┘
+├─┐rome_lsp::handlers::text_document::did_open{params=DidOpenTextDocumentParams { text_document: TextDocumentItem { uri: Url { scheme: "file", cannot_be_a_base: false, username: "", password: None, host: None, port: None, path: "/home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx", query: None, fragment: None }, language_id: "typescriptreact", version: 1, text: "import { FC, ReactNode } from 'react';\n\nimport styles from './style.module.css';\n\nexport type CarouselProps = {\n\tcomponents: ReactNode[];\n\tinterval?: number;\n};\n\nexport const Carousel: FC<CarouselProps> = ({ components }) => {\n\treturn (\n\t\t<>\n\t\t\t{components.map((component, index) => (\n\t\t\t\t<section key={`${index}`}>\n\t\t\t\t\t<div className={styles.slide}>{component}</div>\n\t\t\t\t</section>\n\t\t\t))}\n\t\t</>\n\t);\n};\n" } }}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_open{params=DidOpenTextDocumentParams { text_document: TextDocumentItem { uri: Url { scheme: "file", cannot_be_a_base: false, username: "", password: None, host: None, port: None, path: "/home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx", query: None, fragment: None }, language_id: "typescriptreact", version: 1, text: "import { Carousel, CarouselProps } from '.';\n\nimport type { Story } from '@ladle/react';\n\nconst args: CarouselProps = {\n\tcomponents: [<div key={1}>Slide 1</div>, <div key={2}>Slide 2</div>, <div key={3}>Slide 3</div>],\n};\n\nexport const CarouselStory: Story = () => <Carousel {...args} />;\n" } }}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(1)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=2}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=3}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=4}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=5}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=6}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=7}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=8}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─1ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─1ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=9}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=10}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=11}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=12}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=13}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─1ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─1ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─1ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=14}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=15}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=16}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=17}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=18}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=19}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=20}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=21}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=22}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=23}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=24}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@273..278), parent_range: Some((273, 278)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=25}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=26}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=27}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=28}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=29}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=30}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=31}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=32}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=33}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=34}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=35}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─4ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=36}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=37}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=38}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=39}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=40}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=41}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=42}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=43}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=44}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─594182ms WARN tower_lsp Got a textDocument/didSave notification, but it is not implemented
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=45}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─4ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─599390ms WARN tower_lsp Got a textDocument/didSave notification, but it is not implemented
+├─600487ms WARN tower_lsp Got a textDocument/didSave notification, but it is not implemented
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=46}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─4ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─604219ms WARN tower_lsp Got a textDocument/didSave notification, but it is not implemented
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=47}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─4ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─4ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─4ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@304..309), parent_range: Some((304, 309)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=48}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─1ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─1ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─1ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@304..309), parent_range: Some((304, 309)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=49}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─1ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─1ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─1ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@304..309), parent_range: Some((304, 309)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=50}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─1ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─1ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─1ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@304..309), parent_range: Some((304, 309)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=51}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─1ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─1ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@304..309), parent_range: Some((304, 309)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=52}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@304..309), parent_range: Some((304, 309)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=53}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@304..309), parent_range: Some((304, 309)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=54}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@304..309), parent_range: Some((304, 309)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=55}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@304..309), parent_range: Some((304, 309)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=56}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 29, parent: Some(JSX_EXPRESSION_ATTRIBUTE_VALUE@330..335), parent_range: Some((330, 335)), new_node_slot: 1, new_node: Some(Node(JS_STRING_LITERAL_EXPRESSION@0..2)) }]
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@304..309), parent_range: Some((304, 309)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=57}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 29, parent: Some(JSX_EXPRESSION_ATTRIBUTE_VALUE@330..336), parent_range: Some((330, 336)), new_node_slot: 1, new_node: Some(Node(JS_STRING_LITERAL_EXPRESSION@0..3)) }]
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@304..309), parent_range: Some((304, 309)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=58}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@304..309), parent_range: Some((304, 309)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=59}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 24, parent: Some(JS_FORMAL_PARAMETER@304..309), parent_range: Some((304, 309)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..6)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=60}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─621644ms WARN tower_lsp Got a textDocument/didSave notification, but it is not implemented
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=61}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─735532ms WARN tower_lsp Got a textDocument/didSave notification, but it is not implemented
+├─837232ms WARN tower_lsp Got a textDocument/didSave notification, but it is not implemented
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx, version=2}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(1)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx, version=3}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(1)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 20, parent: Some(JS_REFERENCE_IDENTIFIER@201..205), parent_range: Some((201, 205)), new_node_slot: 0, new_node: Some(Token(IDENT@0..5 "_args" [] [])) }, CommitChange { parent_depth: 6, parent: Some(JS_VARIABLE_DECLARATOR@96..211), parent_range: Some((96, 211)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..5)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx, version=4}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(1)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 20, parent: Some(JS_REFERENCE_IDENTIFIER@200..204), parent_range: Some((200, 204)), new_node_slot: 0, new_node: Some(Token(IDENT@0..5 "_args" [] [])) }, CommitChange { parent_depth: 6, parent: Some(JS_VARIABLE_DECLARATOR@96..210), parent_range: Some((96, 210)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..5)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx, version=5}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(1)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 20, parent: Some(JS_REFERENCE_IDENTIFIER@199..203), parent_range: Some((199, 203)), new_node_slot: 0, new_node: Some(Token(IDENT@0..5 "_args" [] [])) }, CommitChange { parent_depth: 6, parent: Some(JS_VARIABLE_DECLARATOR@96..209), parent_range: Some((96, 209)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..5)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx, version=6}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(1)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx, version=7}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(1)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx, version=8}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(1)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx, version=9}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(1)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx, version=10}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(1)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx, version=11}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(1)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ │ ├─0ms DEBUG rome_rowan::ast::batch  changes [CommitChange { parent_depth: 19, parent: Some(JS_REFERENCE_IDENTIFIER@229..233), parent_range: Some((229, 233)), new_node_slot: 0, new_node: Some(Token(IDENT@0..5 "_args" [] [])) }, CommitChange { parent_depth: 6, parent: Some(JS_VARIABLE_DECLARATOR@96..238), parent_range: Some((96, 238)), new_node_slot: 0, new_node: Some(Node(JS_IDENTIFIER_BINDING@0..5)) }]
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx, version=12}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(1)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─948248ms WARN tower_lsp Got a textDocument/didSave notification, but it is not implemented
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=62}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=63}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=64}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=65}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=66}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=67}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=68}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=69}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=70}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=71}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=72}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=73}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=74}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=75}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=76}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=77}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=78}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=79}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ │ ├─4ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx, version=80}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(0)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─1194802ms WARN tower_lsp Got a textDocument/didSave notification, but it is not implemented

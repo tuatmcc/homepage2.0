@@ -1,0 +1,843 @@
+├─┐rome_lsp::handlers::text_document::did_open{params=DidOpenTextDocumentParams { text_document: TextDocumentItem { uri: Url { scheme: "file", cannot_be_a_base: false, username: "", password: None, host: None, port: None, path: "/home/kaz/src/mcc/mcc-website/vite.config.ts", query: None, fragment: None }, language_id: "typescript", version: 1, text: "\n" } }}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=2}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=3}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=4}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=5}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=6}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=7}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=8}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=9}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=10}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=11}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=12}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=13}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=14}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=15}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=16}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=17}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=18}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=19}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=20}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=21}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=22}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=23}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=24}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=25}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=26}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=27}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=28}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=29}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=30}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=31}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=32}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=33}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=34}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=35}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=36}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=37}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=38}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=39}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=40}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=41}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=42}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=43}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=44}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=45}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=46}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=47}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=48}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=49}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=50}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=51}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=52}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=53}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=54}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=55}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=56}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=57}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=58}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=59}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=60}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=61}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=62}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=63}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=64}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=65}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=66}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=67}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=68}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=69}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=70}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=71}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=72}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=73}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=74}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=75}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=76}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=77}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=78}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=79}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=80}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=81}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=82}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=83}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=84}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=85}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=86}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=87}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=88}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=89}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=90}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=91}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=92}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=93}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=94}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=95}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=96}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=97}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=98}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=99}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=100}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=101}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=102}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=103}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=104}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=105}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=106}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=107}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=108}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=109}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=110}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=111}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=112}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=113}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=114}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=115}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=116}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=117}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=118}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ │ ├─0ms DEBUG rome_rowan::ast::batch pushing change...
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=119}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=120}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=121}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─2581148ms WARN tower_lsp Got a textDocument/didSave notification, but it is not implemented
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=122}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=123}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=124}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=125}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=126}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=127}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=128}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=129}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=130}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=131}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=132}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=133}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=134}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=135}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─┐rome_lsp::handlers::text_document::did_change{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts, version=136}
+│ ├─┐rome_lsp::session::update_diagnostics{url=file:///home/kaz/src/mcc/mcc-website/vite.config.ts}
+│ │ ├─┐rome_js_parser::parse::parse{file_id=FileId(2)}
+│ │ ├─┘
+│ ├─┘
+├─┘
+├─2595732ms WARN tower_lsp Got a textDocument/didSave notification, but it is not implemented
+├─3011234ms WARN tower_lsp Got a textDocument/didSave notification, but it is not implemented
+├─┐rome_lsp::handlers::text_document::did_close{params=DidCloseTextDocumentParams { text_document: TextDocumentIdentifier { uri: Url { scheme: "file", cannot_be_a_base: false, username: "", password: None, host: None, port: None, path: "/home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.tsx", query: None, fragment: None } } }}
+├─┘
+├─┐rome_lsp::handlers::text_document::did_close{params=DidCloseTextDocumentParams { text_document: TextDocumentIdentifier { uri: Url { scheme: "file", cannot_be_a_base: false, username: "", password: None, host: None, port: None, path: "/home/kaz/src/mcc/mcc-website/src/features/ui/carousel/index.stories.tsx", query: None, fragment: None } } }}
+├─┘
+├─┐rome_lsp::handlers::text_document::did_close{params=DidCloseTextDocumentParams { text_document: TextDocumentIdentifier { uri: Url { scheme: "file", cannot_be_a_base: false, username: "", password: None, host: None, port: None, path: "/home/kaz/src/mcc/mcc-website/vite.config.ts", query: None, fragment: None } } }}
+├─┘
+┘
+INFO rome_cli::commands::daemon Received shutdown signal
