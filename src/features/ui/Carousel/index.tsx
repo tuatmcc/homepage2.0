@@ -8,12 +8,10 @@ import classNames from '~/utils/classNames';
 
 export type CarouselProps = {
 	components: ReactNode[];
-	height?: string;
+	displayDuration?: number;
 };
 
-export const Carousel: FC<CarouselProps> = ({ components, height }) => {
-	const transitionDuration = 1;
-	const displayDuration = 5;
+export const Carousel: FC<CarouselProps> = ({ components, displayDuration = 8 }) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [displayTimeout, setDisplayTimeout] = useState<NodeJS.Timeout>();
 	const clampIndex = useCallback((index: number, length: number) => {
@@ -35,10 +33,10 @@ export const Carousel: FC<CarouselProps> = ({ components, height }) => {
 		setDisplayTimeout(timeout);
 
 		return () => clearTimeout(timeout);
-	}, [currentIndex, components.length, clampIndex]);
+	}, [currentIndex, components.length, clampIndex, displayDuration]);
 
 	return (
-		<div className={styles.carousel} style={{ height: height }}>
+		<div className={styles.carousel}>
 			<div className={styles.container}>
 				{components.map((component, index) =>
 					index === currentIndex ? (

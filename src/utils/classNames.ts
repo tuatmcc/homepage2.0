@@ -3,7 +3,8 @@
  * @param classNames
  * @returns
  */
-const classNames = (...classNames: string[]) => {
+const classNames = (...classNames: (string | false)[]) => {
+	classNames = classNames.filter((className) => className);
 	return classNames.join(' ');
 };
 
