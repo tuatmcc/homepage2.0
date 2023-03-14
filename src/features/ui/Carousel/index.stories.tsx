@@ -14,7 +14,6 @@ const args: CarouselProps = {
 			Slide 3
 		</div>,
 	],
-	height: '500px',
 };
 
 export const CarouselStory: Story = () => <Carousel {...args} />;
