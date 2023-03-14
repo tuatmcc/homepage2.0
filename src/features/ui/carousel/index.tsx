@@ -10,10 +10,14 @@ export type CarouselProps = {
 export const Carousel: FC<CarouselProps> = ({ components }) => {
 	return (
 		<div className={styles.carousel}>
-      <div className={styles.leftArrow} />
-			{components.map((component, index) => (
-				<div key={`${index}`} className={styles.slide}>{component}</div>
-			))}
+			<div className={styles.container}>
+				<div className={styles.leftArrow} />
+				{components.map((component, index) => (
+					<div key={`${index}`} className={styles.slide}>
+						{component}
+					</div>
+				))}
+			</div>
 		</div>
 	);
 };

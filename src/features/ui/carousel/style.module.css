@@ -6,17 +6,21 @@
   border: solid 1px #ccc;
   display: flex;
 
-  & .leftArrow {
+  & .container {
+   & .leftArrow {
+    display: block;
     position: absolute;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
     z-index: 1;
     cursor: pointer;
+    background: #000;
   }
 
-  & .slide {
-    width: 100vw;
-    height: 100%;
+    & .slide {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
