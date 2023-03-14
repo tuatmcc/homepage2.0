@@ -4,6 +4,7 @@ import styles from './style.module.css';
 
 import { LeftArrow } from '~/features/ui/Svg/LeftArrow';
 import { RightArrow } from '~/features/ui/Svg/RightArrow';
+import classNames from '~/utils/classNames';
 
 export type CarouselProps = {
 	components: ReactNode[];
@@ -11,68 +12,56 @@ export type CarouselProps = {
 };
 
 export const Carousel: FC<CarouselProps> = ({ components, height }) => {
-	const transitionDuration = 0.5;
+	const transitionDuration = 1;
 	const displayDuration = 5;
-	const [index, setIndex] = useState(0);
-	const [opacity, setOpacity] = useState<0 | 1>(1);
-	const [currentSlide, setCurrentSlide] = useState<ReactNode>(<div className={styles.slide}>{components[0]}</div>);
-	const [allTimeouts, setAllTimeouts] = useState<NodeJS.Timeout[]>([]);
-
+	const [currentIndex, setCurrentIndex] = useState(0);
 	const clampIndex = useCallback((index: number, length: number) => {
 		return index < 0 ? length - 1 : index >= length ? 0 : index;
 	}, []);
 
 	const changeSlide = useCallback(
-		(direction: -1 | 1) => {
-			allTimeouts.forEach((timeout) => clearTimeout(timeout));
-			setOpacity(0);
-			const transitionTimeout = setTimeout(() => {
-				setIndex((prev) => clampIndex(prev + direction, components.length));
-				setOpacity(1);
-			}, transitionDuration * 1000);
-
-			const displayTimeout = setTimeout(() => {
-				changeSlide(1);
-			}, (transitionDuration + displayDuration) * 1000);
-			setAllTimeouts([transitionTimeout, displayTimeout]);
-
-			return () => {
-				clearTimeout(transitionTimeout);
-				clearTimeout(displayTimeout);
-			};
+		(direction: 1 | -1) => {
+			setCurrentIndex((prevIndex) => clampIndex(prevIndex + direction, components.length));
 		},
-		[components, clampIndex, allTimeouts],
+		[components.length, clampIndex],
 	);
 
 	useEffect(() => {
-		setCurrentSlide(components[index]);
-	}, [index, components]);
+		const timeout = setTimeout(() => {
+			setCurrentIndex(clampIndex(currentIndex + 1, components.length));
+		}, (transitionDuration + displayDuration) * 1000);
 
-	useEffect(() => {
-		const displayTimeout = setTimeout(() => {
-			changeSlide(1);
-		}, displayDuration * 1000);
-
-		return () => clearTimeout(displayTimeout);
-	}, []);
+		return () => clearTimeout(timeout);
+	}, [currentIndex, components.length, clampIndex]);
 
 	return (
 		<div className={styles.carousel} style={{ height: height }}>
+			<div className={styles.container}>
+				{components.map((component, index) =>
+					index === currentIndex ? (
+						<div key={`${component?.toString()}-${index}`} className={classNames(styles.slide, styles._visible)}>
+							{component}
+						</div>
+					) : (
+						<div key={`${component?.toString()}-${index}`} className={classNames(styles.slide, styles._hidden)}>
+							{component}
+						</div>
+					),
+				)}
+			</div>
+
 			<button
 				className={styles.leftArrow}
+				aria-label="Previous slide"
 				onClick={() => {
 					changeSlide(-1);
 				}}
 			>
 				<LeftArrow />
 			</button>
-			<div className={styles.container}>
-				<div className={styles.slide} style={{ transitionDuration: `${transitionDuration}s`, opacity: opacity }}>
-					{currentSlide}
-				</div>
-			</div>
 			<button
 				className={styles.rightArrow}
+				aria-label="Next slide"
 				onClick={() => {
 					changeSlide(1);
 				}}
