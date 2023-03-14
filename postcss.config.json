@@ -9,6 +9,7 @@
           "custom-media-queries": true
         }
       }
-    ]
+    ],
+    "postcss-nesting"
   ]
 }

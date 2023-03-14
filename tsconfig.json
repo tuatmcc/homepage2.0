@@ -28,7 +28,7 @@
     "types": [
       "node",
       "react",
-      "react-dom",
+      "react-dom"
     ]
   },
   "include": [

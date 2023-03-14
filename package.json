@@ -12,9 +12,11 @@
     "lint": "next lint && stylelint src/**/*.css && rome check . && rome format .",
     "lint:fix": "next lint --fix && stylelint src/**/*.css --fix && rome check . --apply-suggested && rome format . --write",
     "typecheck": "tsc --noEmit",
-    "analyze-bundle": "ANALYZE=true next build"
+    "analyze": "ANALYZE=true next build",
+    "ladle": "ladle serve"
   },
   "dependencies": {
+    "@ladle/react": "^2.10.1",
     "@next/bundle-analyzer": "^13.2.4",
     "@react-three/cannon": "^6.5.2",
     "@react-three/drei": "^9.57.2",
@@ -37,6 +39,7 @@
     "next": "13.2.4",
     "next-sitemap": "^4.0.5",
     "postcss": "^8.4.21",
+    "postcss-import": "^15.1.0",
     "postcss-preset-env": "^8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
