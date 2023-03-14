@@ -15,21 +15,24 @@ export const Carousel: FC<CarouselProps> = ({ components, height }) => {
 	const transitionDuration = 1;
 	const displayDuration = 5;
 	const [currentIndex, setCurrentIndex] = useState(0);
+	const [displayTimeout, setDisplayTimeout] = useState<NodeJS.Timeout>();
 	const clampIndex = useCallback((index: number, length: number) => {
 		return index < 0 ? length - 1 : index >= length ? 0 : index;
 	}, []);
 
 	const changeSlide = useCallback(
 		(direction: 1 | -1) => {
+			clearTimeout(displayTimeout);
 			setCurrentIndex((prevIndex) => clampIndex(prevIndex + direction, components.length));
 		},
-		[components.length, clampIndex],
+		[components.length, clampIndex, displayTimeout],
 	);
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
 			setCurrentIndex(clampIndex(currentIndex + 1, components.length));
-		}, (transitionDuration + displayDuration) * 1000);
+		}, displayDuration * 1000);
+		setDisplayTimeout(timeout);
 
 		return () => clearTimeout(timeout);
 	}, [currentIndex, components.length, clampIndex]);
