@@ -1,3 +1,5 @@
+@custom-media --bp-sm (max-width: 780px);
+
 :root {
   /* Brand Colors */
 
@@ -36,6 +38,12 @@
   /* Size */
   --navbar-pc-height: 70px;
   --navbar-mobile-height: 60px;
+  --navbar-height: var(--navbar-pc-height);
+
+  @media (--bp-sm) {
+    --navbar-height: var(--navbar-mobile-height);
+  }
+
   --header-height: 100svh;
   --scrollbar-width: 10px;
 

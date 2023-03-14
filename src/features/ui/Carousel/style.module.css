@@ -1,0 +1,53 @@
+.carousel {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  & .leftArrow {
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  & .rightArrow {
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  & .container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    & .slide {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      transition: opacity 0.5s ease-in-out;
+
+      &._visible {
+        opacity: 1;
+      }
+
+      &._hidden {
+        opacity: 0;
+      }
+    }
+  }
+}
