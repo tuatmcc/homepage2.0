@@ -2,10 +2,10 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { SEO } from '~/features/SEO';
-import { R3fText3d } from '~/features/gallery/r3f-text-3d';
-import { Navbar } from '~/features/ui/Navbar';
-import { PageTransition } from '~/features/ui/PageTransition';
+import { SEO } from '~/components/SEO';
+import { R3fText3d } from '~/components/gallery/r3f-text-3d';
+import { Navbar } from '~/components/ui/Navbar';
+import { PageTransition } from '~/components/ui/PageTransition';
 
 const Text3DPage: FC = () => {
 	const meta = {

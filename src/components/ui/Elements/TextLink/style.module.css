@@ -1,0 +1,25 @@
+.internalLink {
+  color: #05f;
+  text-decoration: none;
+  word-wrap: break-word;
+}
+
+.externalLink {
+  color: #05f;
+  text-decoration: none;
+  word-wrap: break-word;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.linkedHeading {
+  color: #002;
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
+    text-decoration: inherit;
+  }
+}

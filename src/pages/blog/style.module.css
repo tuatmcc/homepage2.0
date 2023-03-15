@@ -12,48 +12,48 @@
 
 .headerContent {
   display: flex;
-  margin: calc(var(--navbar-pc-height) + 20px) auto 32px;
   flex-direction: column;
+  gap: 4px;
   align-items: center;
   justify-content: center;
   max-width: 1000px;
-  padding: 16px 16px;
-  gap: 4px;
-  backdrop-filter: blur(16px);
-  box-shadow: 0 0 16px white;
+  padding: 16px;
+  margin: calc(var(--navbar-height) + 20px) auto 32px;
   background-color: #fff3;
+  box-shadow: 0 0 16px white;
+  backdrop-filter: blur(16px);
 
   @media (--bp-sm) {
-    margin-top: calc(var(--navbar-mobile-height) + 10px);
+    margin-top: calc(var(--navbar-height) + 10px);
   }
 
   & .headerTitle {
+    margin: 0;
     font-family: var(--font-family-orbitron);
     font-size: 32px;
     font-weight: bold;
     color: white;
     text-shadow: 0 0 16px var(--color-mcc-quaternary);
     letter-spacing: 0.14em;
-    margin: 0;
   }
 
   & .headerSubTitle {
+    margin: 0;
     font-size: 16px;
     font-weight: normal;
     color: white;
-    margin: 0;
   }
 }
 
 .list {
   display: grid;
-  gap: 16px;
-  margin: 16px auto;
-  padding: 16px;
-  max-width: 1000px;
   grid-template-columns: repeat(2, 1fr);
-  box-shadow: 0 0 16px white;
+  gap: 16px;
+  max-width: 1000px;
+  padding: 16px;
+  margin: 16px auto;
   background-color: #fff3;
+  box-shadow: 0 0 16px white;
   backdrop-filter: blur(32px);
 
   @media (--bp-sm) {
@@ -63,18 +63,18 @@
 
   & .listItem {
     display: flex;
-    align-items: center;
     gap: 16px;
-    color: white;
-    transition: background-color 0.1s ease-in-out;
-    border: solid 1px transparent;
+    align-items: center;
     padding: 8px;
+    color: white;
+    border: solid 1px transparent;
+    transition: background-color 0.1s ease-in-out;
 
     &:hover {
       background-color: #fff3;
-      backdrop-filter: blur(32px);
-      box-shadow: 0 0 16px var(--color-mcc-quaternary);
       border: solid 1px var(--color-mcc-quaternary);
+      box-shadow: 0 0 16px var(--color-mcc-quaternary);
+      backdrop-filter: blur(32px);
     }
 
     & .image {
@@ -93,13 +93,13 @@
     & .text {
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
       gap: 8px;
+      justify-content: space-around;
 
       & .title {
-        color: var(--color-text-white);
-        font-size: 20px;
         margin: 0;
+        font-size: 20px;
+        color: var(--color-text-white);
 
         @media (--bp-sm) {
           font-size: 16px;
@@ -119,4 +119,3 @@
     }
   }
 }
-

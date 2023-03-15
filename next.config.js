@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	reactStrictMode: true,
-	productionBrowserSourceMaps: true,
 	swcMinify: true,
 	pageExtensions: ['page.tsx'],
 	images: {
@@ -11,7 +10,6 @@ const nextConfig = {
 		ignoreDuringBuilds: true,
 		dirs: ['src'],
 	},
-	trailingSlash: true,
 };
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({

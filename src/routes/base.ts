@@ -8,6 +8,7 @@ export const ROUTES = {
   ABOUT: { PATH: '/about', LABEL: 'AboutUs' },
   NEWS: { PATH: '/news', LABEL: 'News' },
   BLOG: { PATH: '/blog', LABEL: 'Blog' },
+  MEMBERS: { PATH: '/members', LABEL: 'Members' },
   GALLERY: { PATH: '/gallery', LABEL: 'Gallery' },
 };
 

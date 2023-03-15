@@ -5,13 +5,13 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { SEO } from '~/features/SEO';
-import { Article, Collector } from '~/features/markdown-content/collector';
-import { Footer } from '~/features/ui/Footer';
-import { Navbar } from '~/features/ui/Navbar';
-import { PageTransition } from '~/features/ui/PageTransition';
+import { SEO } from '~/components/SEO';
+import { Article, Collector } from '~/components/markdown-content/collector';
+import { Footer } from '~/components/ui/Footer';
+import { Navbar } from '~/components/ui/Navbar';
+import { PageTransition } from '~/components/ui/PageTransition';
 import { MetaData } from '~/types/meta';
-import classNames from '~/utils/classNames';
+import { classNames } from '~/utils/classNames';
 
 const meta: MetaData = {
 	title: 'News',
@@ -44,7 +44,11 @@ const NewsListPage: FC<{ articles: Article[] }> = ({ articles }) => {
 						<div className={styles.list}>
 							{articles.map((article, _index) => {
 								return (
-									<Link href={`${article.targetPath}`} key={article.slug} className={classNames(styles.listItem)}>
+									<Link
+										href={`${article.targetPath}`}
+										key={article.slug}
+										className={classNames(styles.listItem)}
+									>
 										{article.meta.img ? (
 											<Image
 												className={styles.image}
@@ -68,8 +72,12 @@ const NewsListPage: FC<{ articles: Article[] }> = ({ articles }) => {
 										<div className={styles.text}>
 											<h2 className={styles.title}>{article.meta.title}</h2>
 											<div className={styles.details}>
-												{article.meta.date && <div className={styles.date}>{article.meta.date}</div>}
-												{article.meta.author && <div className={styles.description}>@ {article.meta.author}</div>}
+												{article.meta.date && (
+													<div className={styles.date}>{article.meta.date}</div>
+												)}
+												{article.meta.author && (
+													<div className={styles.description}>@ {article.meta.author}</div>
+												)}
 											</div>
 										</div>
 									</Link>

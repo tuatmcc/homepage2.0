@@ -5,12 +5,12 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { useMediaQuery } from '~/features/MediaQuery';
-import { SEO } from '~/features/SEO';
-import { Article, Collector } from '~/features/markdown-content/collector';
-import { Footer } from '~/features/ui/Footer';
-import { Navbar } from '~/features/ui/Navbar';
-import { PageTransition } from '~/features/ui/PageTransition';
+import { useMediaQuery } from '~/components/MediaQuery';
+import { SEO } from '~/components/SEO';
+import { Article, Collector } from '~/components/markdown-content/collector';
+import { Footer } from '~/components/ui/Footer';
+import { Navbar } from '~/components/ui/Navbar';
+import { PageTransition } from '~/components/ui/PageTransition';
 import { MetaData } from '~/types/meta';
 // import classNames from '~/utils/classNames';
 
@@ -73,7 +73,9 @@ const MembersListPage: FC<{ articles: Article[] }> = ({ articles }) => {
 												</div>
 											)}
 											{article.meta.date && <div className={styles.date}>{article.meta.date}</div>}
-											{article.meta.description && <p className={styles.description}>{article.meta.description}</p>}
+											{article.meta.description && (
+												<p className={styles.description}>{article.meta.description}</p>
+											)}
 										</div>
 									</Link>
 								);
