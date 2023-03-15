@@ -6,10 +6,10 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { SEO } from '~/features/SEO';
-import { Footer } from '~/features/ui/Footer';
-import { Navbar } from '~/features/ui/Navbar';
-import { PageTransition } from '~/features/ui/PageTransition';
+import { SEO } from '~/components/SEO';
+import { Footer } from '~/components/ui/Footer';
+import { Navbar } from '~/components/ui/Navbar';
+import { PageTransition } from '~/components/ui/PageTransition';
 import { MetaData } from '~/types/meta';
 
 export type SandboxPageProps = {

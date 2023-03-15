@@ -2,11 +2,11 @@ import { NextPage } from 'next';
 
 import styles from './style.module.css';
 
-import { SEO } from '~/features/SEO';
-import { HomeScrollControl } from '~/features/home/home-scroll-control';
-import { HomeText3d } from '~/features/home/home-text-3d';
-import { Navbar } from '~/features/ui/Navbar';
-import { PageTransition } from '~/features/ui/PageTransition';
+import { SEO } from '~/components/SEO';
+import { HomeScrollControl } from '~/components/home/home-scroll-control';
+import { HomeText3d } from '~/components/home/home-text-3d';
+import { Navbar } from '~/components/ui/Navbar';
+import { PageTransition } from '~/components/ui/PageTransition';
 import { MetaData } from '~/types/meta';
 
 const meta: MetaData = {

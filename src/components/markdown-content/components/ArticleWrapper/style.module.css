@@ -41,7 +41,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    align-items: cener;
+    align-items: center;
+    justify-content: center;
 
     & .date {
       display: flex;

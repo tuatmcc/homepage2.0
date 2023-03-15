@@ -3,7 +3,7 @@ import { FC, useEffect, useRef, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { MomentumScroll, useMomentumScroll } from '~/features/MomentumScroll';
+import { MomentumScroll, useMomentumScroll } from '~/components/MomentumScroll';
 
 const useParallax = (value: MotionValue<number>, distance: number) => {
 	return useTransform(value, [-1, 1], [-distance, distance]);

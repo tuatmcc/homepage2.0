@@ -5,10 +5,10 @@ import { FC, Suspense, useEffect, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { useMediaQuery } from '~/features/MediaQuery';
-import { GitHubIcon, TwitterIcon } from '~/features/ui/Svg';
+import { useMediaQuery } from '~/components/MediaQuery';
+import { GitHubIcon, TwitterIcon } from '~/components/ui/Svg';
 import { ROUTES } from '~/routes/base';
-import classNames from '~/utils/classNames';
+import { classNames } from '~/utils/classNames';
 
 const pageAmout = 3.5;
 

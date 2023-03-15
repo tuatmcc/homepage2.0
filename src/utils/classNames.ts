@@ -1,11 +1,8 @@
 /**
  * A simple utility function to join class names together.
- * @param classNames
- * @returns
+ * @example classNames(styles.button, isDisabled && styles.disabled)
  */
-const classNames = (...classNames: (string | false)[]) => {
+export const classNames = (...classNames: (string | false)[]) => {
 	classNames = classNames.filter((className) => className);
 	return classNames.join(' ');
 };
-
-export default classNames;

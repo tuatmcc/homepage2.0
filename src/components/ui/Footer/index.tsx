@@ -6,7 +6,7 @@ import { TwitterIcon } from '../Svg/TwitterIcon';
 
 import styles from './style.module.css';
 
-import classNames from '~/utils/classNames';
+import { classNames } from '~/utils/classNames';
 
 type FotterProps = {
 	semitransparent?: boolean;

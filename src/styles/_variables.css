@@ -36,19 +36,26 @@
   --color-shadow-dark: 0 0 16px rgb(27 31 36 / 60%);
 
   /* Size */
-  --navbar-pc-height: 70px;
-  --navbar-mobile-height: 60px;
-  --navbar-height: var(--navbar-pc-height);
-
-  @media (--bp-sm) {
-    --navbar-height: var(--navbar-mobile-height);
-  }
-
+  --navbar-height: 70px;
+  --navbar-logo-size: 56px;
   --header-height: 100svh;
   --scrollbar-width: 10px;
 
-  /* Fonts */
-  --font-family-gill-sans: 'Gill Sans', 'Noto Sans JP', calibri, 'Trebuchet MS', sans-serif;
-  --font-family-orbitron: 'Orbitron', 'Noto Sans JP', 'Arial', 'Helvetica', snas-serif;
-  --font-family-jetbrains-mono: 'JetBrains Mono', 'Noto Sans JP', 'Arial', monospace;
+  /* Font Size */
+  --font-size-navbar: 64px;
+
+  /* Mobile */
+  @media (--bp-sm) {
+    /* Size */
+    --navbar-height: 60px;
+    --navbar-logo-size: 32px;
+
+    /* Font Size */
+    --font-size-navbar: 32px;
+  }
+
+  /* Fonts Family */
+  --font-family-gill-sans: 'Gill Sans', 'Noto Sans JP', sans-serif;
+  --font-family-orbitron: 'Orbitron', 'Noto Sans JP', sans-serif;
+  --font-family-jetbrains-mono: 'JetBrains Mono', 'Noto Sans JP', monospace;
 }
