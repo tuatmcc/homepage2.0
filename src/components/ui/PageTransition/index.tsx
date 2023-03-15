@@ -1,13 +1,11 @@
 import { motion } from 'framer-motion';
 import { FC, ReactNode } from 'react';
 
-import styles from './style.module.css';
-
 export const PageTransition: FC<{ children: ReactNode }> = ({ children }) => {
 	return (
 		<>
 			<motion.div
-				className={styles.background}
+				style={{ position: 'fixed', top: 0, zIndex: -1, width: '100%', height: '100vh', overflow: 'hidden', backgroundColor: 'var(--color-mcc-primary)', backgroundSize: 'cover' }}
 				initial={{ opacity: 1 }}
 				animate={{ opacity: 0 }}
 				exit={{ opacity: 1 }}

@@ -1,12 +1,12 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { FC } from 'react';
 
-import { SEO } from '~/features/SEO';
-import { Article, Collector } from '~/features/markdown-content/collector';
-import { ArticleWrapper } from '~/features/markdown-content/components/ArticleWrapper';
-import { markdownToHtml } from '~/features/markdown-content/markdown-to-html';
-import { Navbar } from '~/features/ui/Navbar';
-import { PageTransition } from '~/features/ui/PageTransition';
+import { SEO } from '~/components/SEO';
+import { Article, Collector } from '~/components/markdown-content/collector';
+import { ArticleWrapper } from '~/components/markdown-content/components/ArticleWrapper';
+import { markdownToHtml } from '~/components/markdown-content/markdown-to-html';
+import { Navbar } from '~/components/ui/Navbar';
+import { PageTransition } from '~/components/ui/PageTransition';
 
 const BlogArticlePage: FC<{ article: Article }> = ({ article }) => {
 	return (

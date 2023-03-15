@@ -18,13 +18,13 @@
   justify-content: center;
   max-width: 1000px;
   padding: 16px;
-  margin: calc(var(--navbar-pc-height) + 20px) auto 32px;
+  margin: calc(var(--navbar-height) + 20px) auto 32px;
   background-color: #fff3;
   box-shadow: 0 0 16px white;
   backdrop-filter: blur(16px);
 
   @media (--bp-sm) {
-    margin-top: calc(var(--navbar-mobile-height) + 10px);
+    margin-top: calc(var(--navbar-height) + 10px);
   }
 
   & .headerTitle {

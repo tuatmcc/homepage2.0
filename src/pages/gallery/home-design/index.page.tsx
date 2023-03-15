@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import { SEO } from '~/features/SEO';
-import { R3fScrollControl } from '~/features/gallery/r3f-scroll-control';
-import { PageTransition } from '~/features/ui/PageTransition';
+import { SEO } from '~/components/SEO';
+import { R3fScrollControl } from '~/components/gallery/r3f-scroll-control';
+import { PageTransition } from '~/components/ui/PageTransition';
 import { MetaData } from '~/types/meta';
 
 const meta: MetaData = {

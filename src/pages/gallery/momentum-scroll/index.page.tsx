@@ -1,9 +1,9 @@
 import { NextPage } from 'next';
 
-import { SEO } from '~/features/SEO';
-import { MomentumScrollWidthImage } from '~/features/gallery/MomentumScrollWidthImage';
-import { Navbar } from '~/features/ui/Navbar';
-import { PageTransition } from '~/features/ui/PageTransition';
+import { SEO } from '~/components/SEO';
+import { MomentumScrollWidthImage } from '~/components/gallery/MomentumScrollWidthImage';
+import { Navbar } from '~/components/ui/Navbar';
+import { PageTransition } from '~/components/ui/PageTransition';
 import { MetaData } from '~/types/meta';
 
 const meta: MetaData = {

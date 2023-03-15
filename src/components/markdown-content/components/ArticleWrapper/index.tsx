@@ -6,8 +6,8 @@ import { HtmlParser } from '../HtmlParser';
 
 import styles from './style.module.css';
 
-import { Footer } from '~/features/ui/Footer';
-import { Tag, TagList } from '~/features/ui/Tag';
+import { Footer } from '~/components/ui/Footer';
+import { Tag, TagList } from '~/components/ui/Tag';
 import { MetaData } from '~/types/meta';
 
 export const ArticleWrapper: FC<{

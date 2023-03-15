@@ -8,14 +8,10 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: var(--navbar-pc-height);
+  height: var(--navbar-height);
   background-color: transparent;
   box-shadow: none;
   transition: background-color 0.5s ease-in-out;
-
-  @media (--bp-sm) {
-    height: var(--navbar-mobile-height);
-  }
 
   & .brand {
     display: flex;
@@ -23,17 +19,19 @@
     align-items: center;
     height: 100%;
     padding: 0 8px;
-    font-family: Orbitron, sans-serif;
-    font-size: 64px;
+    font-family: var(--font-family-orbitron);
+    font-size: var(--font-size-navbar);
     font-weight: bold;
     line-height: 1;
     color: white;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
     filter: drop-shadow(var(--color-shadow-dark));
     transition: color 0.2s ease-in-out;
 
-    @media (--bp-sm) {
-      font-size: 32px;
+    & .brandLogo {
+      display: flex;
+      width: var(--navbar-logo-size);
+      height: var(--navbar-logo-size);
     }
 
     &._blue {
@@ -117,8 +115,8 @@
     width: 80%;
     max-width: 500px;
     height: auto;
-    max-height: calc(100vh - var(--navbar-pc-height));
-    padding: var(--navbar-pc-height) 0 0 0;
+    max-height: calc(100vh - var(--navbar-height));
+    padding: var(--navbar-height) 0 0 0;
     overflow-y: auto;
     letter-spacing: 0.4em;
     background: transparent;

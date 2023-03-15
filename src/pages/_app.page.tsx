@@ -1,8 +1,8 @@
 import { AnimatePresence } from 'framer-motion';
 import { AppProps } from 'next/app';
 
-import { MediaQueryProvider } from '~/features/MediaQuery';
-import { NavDrawerContextProvider } from '~/features/ui/Navbar';
+import { MediaQueryProvider } from '~/components/MediaQuery';
+import { NavDrawerContextProvider } from '~/components/ui/Navbar';
 import { usePageTransitionFix } from '~/utils/fix-page-transition';
 
 import '~/styles/global.css';

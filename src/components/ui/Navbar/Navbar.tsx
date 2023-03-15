@@ -7,10 +7,9 @@ import { FC, useEffect, useState } from 'react';
 import { useNavDrawer } from './hook';
 import styles from './style.module.css';
 
-import { useMediaQuery } from '~/features/MediaQuery';
-import { MccLogo } from '~/features/ui/Svg';
+import { MccLogo } from '~/components/ui/Svg';
 import { ROUTES, BASE_ROUTES_LIST } from '~/routes/base';
-import classNames from '~/utils/classNames';
+import { classNames } from '~/utils/classNames';
 
 type NavbarProps = {
 	noBrand?: boolean;
@@ -18,7 +17,6 @@ type NavbarProps = {
 };
 
 export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) => {
-	const { isMobile } = useMediaQuery();
 	const { isNavDrawerOpen, setNavDrawerState } = useNavDrawer();
 	const [color, setColor] = useState<string>('');
 	const router = useRouter();
@@ -39,16 +37,18 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) =>
 	return (
 		<>
 			<div className={classNames(styles.navbar)}>
-				{noBrand ? (
-					<div />
-				) : (
+        <div>
+				{!noBrand && (
 					<>
 						<Link href={ROUTES.HOME.PATH} className={classNames(styles.brand, color)}>
-							{isMobile ? <MccLogo width={32} height={32} /> : <MccLogo width={56} height={56} />}
+              <div className={styles.brandLogo}>
+                <MccLogo />
+              </div>
 							<span className={classNames(styles.brandText)}>MCC</span>
 						</Link>
 					</>
 				)}
+        </div>
 				<button
 					className={classNames(styles.hamburgerMenu, isNavDrawerOpen ? styles._active : '', color)}
 					onClick={() => setNavDrawerState(!isNavDrawerOpen)}
