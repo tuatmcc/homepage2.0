@@ -37,12 +37,32 @@ type R3fText3dProps = {
 
 const RandomText: FC = () => {
 	const font = new FontLoader().parse(threeFontJson);
-	const random = ['M', 'I', 'C', 'R', 'O', 'C', 'O', 'M', 'P', 'U', 'T', 'E', 'R', 'C', 'L', 'U', 'B'];
+	const random = [
+		'M',
+		'I',
+		'C',
+		'R',
+		'O',
+		'C',
+		'O',
+		'M',
+		'P',
+		'U',
+		'T',
+		'E',
+		'R',
+		'C',
+		'L',
+		'U',
+		'B',
+	];
 	return (
 		<>
 			{random.map((text) => (
 				<Float key={text} floatIntensity={5} speed={3}>
-					<mesh position={[Math.random() * 50 - 25, Math.random() * 50 - 25, Math.random() * 50 - 25]}>
+					<mesh
+						position={[Math.random() * 50 - 25, Math.random() * 50 - 25, Math.random() * 50 - 25]}
+					>
 						{/* @ts-ignore */}
 						<textGeometry args={[text, { font, size: 1, height: 1 }]} />
 						<meshPhysicalMaterial color="orange" />
@@ -57,7 +77,12 @@ export const R3fText3d: FC<R3fText3dProps> = ({ onNextButtonClick }) => {
 	const font = new FontLoader().parse(threeFontJson);
 
 	return (
-		<Canvas dpr={[1, 1.5]} camera={{ position: [0, 15, 30] }} className={styles.canvas} onClick={onNextButtonClick}>
+		<Canvas
+			dpr={[1, 1.5]}
+			camera={{ position: [0, 15, 30] }}
+			className={styles.canvas}
+			onClick={onNextButtonClick}
+		>
 			<Suspense fallback={null}>
 				<directionalLight position={[0, 0, 5]} />
 				<Rig>

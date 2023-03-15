@@ -54,9 +54,15 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) =>
 					onClick={() => setNavDrawerState(!isNavDrawerOpen)}
 					aria-label="menu toggler"
 				>
-					<span className={classNames(styles.hamburgerMenuLine1, isNavDrawerOpen ? styles._active : '')} />
-					<span className={classNames(styles.hamburgerMenuLine2, isNavDrawerOpen ? styles._active : '')} />
-					<span className={classNames(styles.hamburgerMenuLine3, isNavDrawerOpen ? styles._active : '')} />
+					<span
+						className={classNames(styles.hamburgerMenuLine1, isNavDrawerOpen ? styles._active : '')}
+					/>
+					<span
+						className={classNames(styles.hamburgerMenuLine2, isNavDrawerOpen ? styles._active : '')}
+					/>
+					<span
+						className={classNames(styles.hamburgerMenuLine3, isNavDrawerOpen ? styles._active : '')}
+					/>
 				</button>
 				<button
 					className={classNames(styles.drawerBlur, isNavDrawerOpen ? styles._active : '')}
@@ -70,7 +76,10 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) =>
 							{BASE_ROUTES_LIST.map((route, index) => (
 								<div
 									key={route.PATH}
-									className={classNames(styles.drawerContentItem, isNavDrawerOpen ? styles._active : '')}
+									className={classNames(
+										styles.drawerContentItem,
+										isNavDrawerOpen ? styles._active : '',
+									)}
 									style={{ transitionDelay: `${index * 0.08}s` }}
 								>
 									<Link href={route.PATH} className={classNames(styles.linkItem)}>

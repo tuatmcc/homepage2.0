@@ -9,6 +9,8 @@ export const NavDrawerContextProvider: FC<{ children: ReactNode }> = ({ children
 	const [isNavDrawerOpen, setIsNavDrawerOpen] = useState<boolean>(false);
 	const setNavDrawerState = useCallback((bool: boolean) => setIsNavDrawerOpen(bool), []);
 	return (
-		<NavDrawerContext.Provider value={{ isNavDrawerOpen, setNavDrawerState }}>{children}</NavDrawerContext.Provider>
+		<NavDrawerContext.Provider value={{ isNavDrawerOpen, setNavDrawerState }}>
+			{children}
+		</NavDrawerContext.Provider>
 	);
 };

@@ -10,12 +10,12 @@ import { Footer } from '~/features/ui/Footer';
 import { Tag, TagList } from '~/features/ui/Tag';
 import { MetaData } from '~/types/meta';
 
-export const ArticleWrapper: FC<{ meta: MetaData; contentHtml: string; group: string; slug: string }> = ({
-	meta,
-	contentHtml,
-	group,
-	slug,
-}) => {
+export const ArticleWrapper: FC<{
+	meta: MetaData;
+	contentHtml: string;
+	group: string;
+	slug: string;
+}> = ({ meta, contentHtml, group, slug }) => {
 	const { title, img, tags, author, date } = meta;
 	const tagList = tags?.map((tag) => <Tag key={tag}>{tag}</Tag>);
 	return (

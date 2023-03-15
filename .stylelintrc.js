@@ -1,21 +1,18 @@
 module.exports = {
-	extends: ['stylelint-config-standard', 'stylelint-config-recess-order'],
-	plugins: ['stylelint-order', 'stylelint-declaration-strict-value'],
+	extends: ['stylelint-config-recess-order', 'stylelint-config-standard'],
+	plugins: ['stylelint-declaration-strict-value'],
 	rules: {
 		'string-quotes': 'single',
 		indentation: 2,
-		'at-rule-no-unknown': null,
+		'selector-class-pattern': '^([_]?)[a-z][a-zA-Z0-9]+$|^#__next$', // lowerCamelCase or _lowerCamelCase
+		'max-nesting-depth': 5, // I would like to lower this in the future
+		'font-weight-notation': 'named-where-possible',
+		'at-rule-no-unknown': true,
 		'property-no-unknown': true,
-		'order/properties-alphabetical-order': null,
-		'declaration-block-trailing-semicolon': null,
-		'no-descending-specificity': null,
-		'no-empty-source': null,
-		'no-eol-whitespace': true,
-		'no-extra-semicolons': true,
-		'no-invalid-double-slash-comments': null,
-		'no-missing-end-of-source-newline': true,
+		'declaration-no-important': true,
+		'no-empty-source': true,
 		'no-unknown-animations': true,
-		'selector-class-pattern': '^([_]?)[a-z][a-zA-Z0-9]+$', // lowerCamelCase or _lowerCamelCase
 	},
-	ignoreFiles: ['node_modules/**/*', 'public/**/*', 'out/**/*', '.next/**/*'],
+	reportNeedlessDisables: true,
+	reportInvalidScopeDisables: true,
 };

@@ -64,6 +64,6 @@
   margin: auto;
 
   @media (--bp-sm) {
-    width: 92vw
+    width: 92vw;
   }
 }

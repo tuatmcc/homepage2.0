@@ -55,12 +55,16 @@
       transform: scale(0.75);
     }
 
-    &._blue {
-      & .hamburgerMenuLine1,
-      & .hamburgerMenuLine2,
-      & .hamburgerMenuLine3 {
-        background-color: var(--color-mcc-brand);
-      }
+    & .hamburgerMenuLine1 {
+      top: 4px;
+    }
+
+    & .hamburgerMenuLine2 {
+      top: 22px;
+    }
+
+    & .hamburgerMenuLine3 {
+      bottom: 4px;
     }
 
     & .hamburgerMenuLine1,
@@ -75,16 +79,12 @@
       transition: all 0.2s ease-in-out;
     }
 
-    & .hamburgerMenuLine1 {
-      top: 4px;
-    }
-
-    & .hamburgerMenuLine2 {
-      top: 22px;
-    }
-
-    & .hamburgerMenuLine3 {
-      bottom: 4px;
+    &._blue {
+      & .hamburgerMenuLine1,
+      & .hamburgerMenuLine2,
+      & .hamburgerMenuLine3 {
+        background-color: var(--color-mcc-brand);
+      }
     }
 
     &._active {

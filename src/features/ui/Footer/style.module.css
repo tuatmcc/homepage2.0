@@ -7,7 +7,7 @@
   background: #ccc;
 
   &._semitransparent {
-    background: linear-gradient(transparent, #ccc)
+    background: linear-gradient(transparent, #ccc);
   }
 
   & .logo {
