@@ -16,7 +16,13 @@ const ParallaxImage: FC<{ src: string }> = ({ src }) => {
 	return (
 		<section className={styles.layer}>
 			<div className={styles.layerContent} ref={ref}>
-				<Image src={src} alt="A London skyscraper" className={styles.image} width={300} height={400} />
+				<Image
+					src={src}
+					alt="A London skyscraper"
+					className={styles.image}
+					width={300}
+					height={400}
+				/>
 			</div>
 			<motion.h2 style={{ y }}>{`#00${src}`}</motion.h2>
 		</section>

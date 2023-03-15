@@ -14,7 +14,12 @@ const MemberPage: FC<{ article: Article }> = ({ article }) => {
 			<SEO meta={article.meta} />
 			<Navbar theme="auto" />
 			<PageTransition>
-				<ArticleWrapper meta={article.meta} contentHtml={article.html} group={article.group} slug={article.slug} />
+				<ArticleWrapper
+					meta={article.meta}
+					contentHtml={article.html}
+					group={article.group}
+					slug={article.slug}
+				/>
 			</PageTransition>
 		</>
 	);

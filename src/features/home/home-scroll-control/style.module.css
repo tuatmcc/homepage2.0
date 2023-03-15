@@ -20,18 +20,19 @@
     margin: 0;
     font-size: 20svw;
     font-weight: medium;
+    background-image:
+      linear-gradient(
+        10deg,
+        #fff0,
+        #eeee,
+        #fffd,
+        #fffe,
+        #ffff
+      );
+    background-clip: text;
     opacity: 1;
     animation: mcc 5s linear;
-    background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(
-      10deg,
-      #fff0,
-      #eeee,
-      #fffd,
-      #fffe,
-      #ffff
-    );
 
     @keyframes mcc {
       0% {

@@ -40,11 +40,17 @@ export const Carousel: FC<CarouselProps> = ({ components, displayDuration = 8 })
 			<div className={styles.container}>
 				{components.map((component, index) =>
 					index === currentIndex ? (
-						<div key={`${component?.toString()}-${index}`} className={classNames(styles.slide, styles._visible)}>
+						<div
+							key={`${component?.toString()}-${index}`}
+							className={classNames(styles.slide, styles._visible)}
+						>
 							{component}
 						</div>
 					) : (
-						<div key={`${component?.toString()}-${index}`} className={classNames(styles.slide, styles._hidden)}>
+						<div
+							key={`${component?.toString()}-${index}`}
+							className={classNames(styles.slide, styles._hidden)}
+						>
 							{component}
 						</div>
 					),

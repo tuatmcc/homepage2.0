@@ -49,7 +49,11 @@ export const markdownToHtml = async (markdown: string) => {
 		.use(rehypeSlug)
 		.use(rehypeAutoLinkHeadings, {
 			behavior: 'append',
-			content: { type: 'element', tagName: 'minilinkicon', properties: { className: ['icon-link'] } },
+			content: {
+				type: 'element',
+				tagName: 'minilinkicon',
+				properties: { className: ['icon-link'] },
+			},
 			// rome-ignore lint/suspicious/noExplicitAny: <explanation>
 		} as any)
 		.use(rehypeStringify)

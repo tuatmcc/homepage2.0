@@ -51,7 +51,9 @@ const Layer2: FC<LayerProps> = ({ scrollYProgress }) => {
 
 	return (
 		<section className={styles.layer2}>
-			<div className={styles.subTitle}>私たちは、東京農工大学マイクロコンピュータークラブです。</div>
+			<div className={styles.subTitle}>
+				私たちは、東京農工大学マイクロコンピュータークラブです。
+			</div>
 			<motion.h1 className={styles.title}>MCC</motion.h1>
 			<motion.div className={styles.img1} style={{ y }}>
 				<motion.img src="/noko-fes-2022-illustrace.webp" style={{ zoom }} />

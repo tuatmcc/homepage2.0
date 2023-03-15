@@ -30,12 +30,42 @@ const Images: FC = () => {
 	});
 	return (
 		<group>
-			<ImageImpl position={[-2, 0, 0]} zoom={zoom[0]} scale={[4, height]} url="/abstract-tech-image-3.webp" />
-			<ImageImpl position={[2, 0, 1]} scale={3} zoom={zoom[1]} url="/noko-fes-2022-illustrace.webp" />
-			<ImageImpl position={[-2.3, -height, 2]} scale={[1, 3]} zoom={zoom[2]} url="/noko-fes-2022-room.webp" />
-			<ImageImpl position={[-0.6, -height, 3]} scale={[1, 2]} zoom={zoom[3]} url="/abstract-tech-image-3.webp" />
-			<ImageImpl position={[0.75, -height, 3.5]} scale={1.5} zoom={zoom[4]} url="/mcc-desktop-pc.webp" />
-			<ImageImpl position={[0, -height * 1.5, 2.5]} scale={[2, 3]} zoom={zoom[5]} url="/abstract-tech-image-5.webp" />
+			<ImageImpl
+				position={[-2, 0, 0]}
+				zoom={zoom[0]}
+				scale={[4, height]}
+				url="/abstract-tech-image-3.webp"
+			/>
+			<ImageImpl
+				position={[2, 0, 1]}
+				scale={3}
+				zoom={zoom[1]}
+				url="/noko-fes-2022-illustrace.webp"
+			/>
+			<ImageImpl
+				position={[-2.3, -height, 2]}
+				scale={[1, 3]}
+				zoom={zoom[2]}
+				url="/noko-fes-2022-room.webp"
+			/>
+			<ImageImpl
+				position={[-0.6, -height, 3]}
+				scale={[1, 2]}
+				zoom={zoom[3]}
+				url="/abstract-tech-image-3.webp"
+			/>
+			<ImageImpl
+				position={[0.75, -height, 3.5]}
+				scale={1.5}
+				zoom={zoom[4]}
+				url="/mcc-desktop-pc.webp"
+			/>
+			<ImageImpl
+				position={[0, -height * 1.5, 2.5]}
+				scale={[2, 3]}
+				zoom={zoom[5]}
+				url="/abstract-tech-image-5.webp"
+			/>
 			<ImageImpl
 				zoom={zoom[6]}
 				position={[0, -height * (pageAmout - 1), 0]}
@@ -98,7 +128,9 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 			</p>
 			<p className={styles.catchCopy} style={{ top: vH * 1.8, opacity: opacities[6] }}>
 				<span className={styles.sentence}>技術を探求する部員が集結するMCC。</span>
-				<span className={styles.sentence}>プログラミング、グラフィックデザイン、ハードウェアなど、</span>
+				<span className={styles.sentence}>
+					プログラミング、グラフィックデザイン、ハードウェアなど、
+				</span>
 				<span className={styles.sentence}>様々な興味を持つ部員たちが交流を重ね、</span>
 				<span className={styles.sentence}>新しい視野を開拓する。</span>
 				<span className={styles.sentence}>MCCで、あなたも技術を探求しませんか？</span>

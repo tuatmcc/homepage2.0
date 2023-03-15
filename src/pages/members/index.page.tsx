@@ -73,7 +73,9 @@ const MembersListPage: FC<{ articles: Article[] }> = ({ articles }) => {
 												</div>
 											)}
 											{article.meta.date && <div className={styles.date}>{article.meta.date}</div>}
-											{article.meta.description && <p className={styles.description}>{article.meta.description}</p>}
+											{article.meta.description && (
+												<p className={styles.description}>{article.meta.description}</p>
+											)}
 										</div>
 									</Link>
 								);

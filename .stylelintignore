@@ -1,0 +1,14 @@
+node_modules/
+.*/
+
+.next/
+out/
+dist/
+
+content/
+public/
+
+**/*.sh
+**/*.js
+**/*.ts
+**/*.tsx

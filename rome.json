@@ -36,7 +36,7 @@
     "enabled": true,
     "formatWithErrors": true,
     "indentSize": 2,
-    "lineWidth": 120,
+    "lineWidth": 100,
     "indentStyle": "tab"
   },
   "javascript": {

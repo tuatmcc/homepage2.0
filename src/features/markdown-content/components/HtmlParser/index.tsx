@@ -1,5 +1,14 @@
 import Image from 'next/image';
-import { createElement, FC, ReactNode, useEffect, useState, useCallback, HTMLProps, useRef } from 'react';
+import {
+	createElement,
+	FC,
+	ReactNode,
+	useEffect,
+	useState,
+	useCallback,
+	HTMLProps,
+	useRef,
+} from 'react';
 import rehypeParse from 'rehype-parse';
 import rehypeReact, { Options as RehypeReactOptions } from 'rehype-react';
 import { unified } from 'unified';
@@ -38,7 +47,11 @@ const Pre: FC<HTMLProps<HTMLPreElement>> = ({ children, ...props }) => {
 	);
 };
 
-export const HtmlParser: FC<{ contentHtml: string; group: string; slug: string }> = ({ contentHtml, group, slug }) => {
+export const HtmlParser: FC<{ contentHtml: string; group: string; slug: string }> = ({
+	contentHtml,
+	group,
+	slug,
+}) => {
 	// HTMLをReactNodeに変換する
 	const [content, setContent] = useState<ReactNode>(contentHtml);
 

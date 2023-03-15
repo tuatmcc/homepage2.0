@@ -15,7 +15,9 @@ type FotterProps = {
 export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
 	return (
 		<footer>
-			<div className={classNames(styles.footerContent, semitransparent ? styles._semitransparent : '')}>
+			<div
+				className={classNames(styles.footerContent, semitransparent ? styles._semitransparent : '')}
+			>
 				<div className={styles.logo}>
 					<MccLogo width={32} height={32} />
 					MCC

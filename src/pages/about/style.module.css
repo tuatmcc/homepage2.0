@@ -1,6 +1,5 @@
 @custom-media --bp-sm (max-width: 780px);
 
-
 .headerContainer {
   position: relative;
   top: 0;
@@ -33,7 +32,7 @@
       & .pageSubTitle {
         width: 100%;
         font-size: 16px;
-        font-weight: 400;
+        font-weight: normal;
         color: white;
         text-align: center;
         letter-spacing: 0.1em;
@@ -60,9 +59,9 @@
   & .mainSection {
     position: relative;
     display: flex;
+    gap: 16px;
     align-items: center;
     height: 100vh;
-    gap: 16px;
 
     @media (--bp-sm) {
       flex-direction: column;
@@ -83,23 +82,22 @@
 
     & .carousel {
       position: relative;
+      flex: 1;
       width: 100%;
+      height: 60%;
       overflow: hidden;
       border-radius: 8px;
-      flex: 1;
-      height: 60%;
-      position: relative;
 
       @media (--bp-sm) {
-        height: 300px;
         width: 100%;
+        height: 300px;
       }
 
       & .carouselItem {
         position: relative;
+        display: flex;
         width: 100%;
         height: 100%;
-        display: flex;
 
         & > img {
           width: 100%;
