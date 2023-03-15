@@ -13,7 +13,7 @@
 
 ## メンテの仕方
 
-- [ここ](https://github.com/tuatmcc/mcc-website/wiki/%E9%96%8B%E7%99%BA%E3%83%BB%E3%83%A1%E3%83%B3%E3%83%86%E3%83%8A%E3%83%B3%E3%82%B9)を参照
+- [ここ](https://github.com/tuatmcc/homepage2.0/wiki/%E9%96%8B%E7%99%BA%E3%83%BB%E3%83%A1%E3%83%B3%E3%83%86%E3%83%8A%E3%83%B3%E3%82%B9)を参照
 - 何かあれば Issue や Discord にお願いします。
 - 人員募集中！
 
