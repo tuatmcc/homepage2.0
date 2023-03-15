@@ -1,4 +1,7 @@
-![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/tuatmcc/mcc-website/nextjs.yml?branch=main)
+[![GitHub Workflow CI Status](https://img.shields.io/github/actions/workflow/status/tuatmcc/homepage2.0/ci.yml?label=ci&style=flat-square)](https://github.com/tuatmcc/homepage2.0/actions/workflows/ci.yml)
+[![GitHub Workflow Build Status](https://img.shields.io/github/actions/workflow/status/tuatmcc/homepage2.0/nextjs.yml?&style=flat-square)](https://github.com/tuatmcc/homepage2.0/actions/workflows/nextjs.yml)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/tuatmcc/homepage2.0?style=flat-square)](https://github.com/tuatmcc/homepage2.0)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/tuatmcc/homepage2.0?style=flat-square)](https://github.com/tuatmcc/homepage2.0/commits)
 
 # MCC のホームページ
 
@@ -54,6 +57,6 @@
 ## その他
 
 - 2022 年 11 月、MCC の HP リニューアルが決定しました。
-- [このリポジトリの wiki](https://github.com/tuatmcc/mcc-website/wiki)にドキュメント的なものを書いています。
+- [このリポジトリの wiki](https://github.com/tuatmcc/homepage2.0/wiki)にドキュメント的なものを書いています。
 - Figmaで[デザイン案](https://www.figma.com/file/XTfW4NDafbsoMBCu5lNGkr/MCC-HOME-PAGE?node-id=0%3A1&t=F2uR5Q5TRy6jUzh3-1)を作成したり。
 - プライベートなVercel垢で勝手に<https://mcc-website-test.vercel.app>でデモを動かしてみたりしてます。コロコロ変わります。
