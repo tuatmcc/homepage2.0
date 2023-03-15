@@ -49,7 +49,7 @@
     /* Size */
     --navbar-height: 60px;
     --navbar-logo-size: 32px;
-    
+
     /* Font Size */
     --font-size-navbar: 32px;
   }
@@ -59,4 +59,3 @@
   --font-family-orbitron: 'Orbitron', 'Noto Sans JP', sans-serif;
   --font-family-jetbrains-mono: 'JetBrains Mono', 'Noto Sans JP', monospace;
 }
-

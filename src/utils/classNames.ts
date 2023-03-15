@@ -6,4 +6,3 @@ export const classNames = (...classNames: (string | false)[]) => {
 	classNames = classNames.filter((className) => className);
 	return classNames.join(' ');
 };
-

@@ -37,18 +37,18 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) =>
 	return (
 		<>
 			<div className={classNames(styles.navbar)}>
-        <div>
-				{!noBrand && (
-					<>
-						<Link href={ROUTES.HOME.PATH} className={classNames(styles.brand, color)}>
-              <div className={styles.brandLogo}>
-                <MccLogo />
-              </div>
-							<span className={classNames(styles.brandText)}>MCC</span>
-						</Link>
-					</>
-				)}
-        </div>
+				<div>
+					{!noBrand && (
+						<>
+							<Link href={ROUTES.HOME.PATH} className={classNames(styles.brand, color)}>
+								<div className={styles.brandLogo}>
+									<MccLogo />
+								</div>
+								<span className={classNames(styles.brandText)}>MCC</span>
+							</Link>
+						</>
+					)}
+				</div>
 				<button
 					className={classNames(styles.hamburgerMenu, isNavDrawerOpen ? styles._active : '', color)}
 					onClick={() => setNavDrawerState(!isNavDrawerOpen)}
