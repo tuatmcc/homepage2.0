@@ -3,7 +3,7 @@
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/tuatmcc/homepage2.0?style=flat-square)](https://github.com/tuatmcc/homepage2.0)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/tuatmcc/homepage2.0?style=flat-square)](https://github.com/tuatmcc/homepage2.0/commits)
 
-# MCC のホームページ
+# HOMEPAGE2.0
 
 `Next.js`を React フレームワーク・静的サイトジェネレーターとして用いて、GitHub Pages でホストします。
 
