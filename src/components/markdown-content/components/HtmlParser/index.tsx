@@ -34,7 +34,7 @@ const Pre: FC<HTMLProps<HTMLPreElement>> = ({ children, ...props }) => {
 		setCopyButtonContent('Copied!');
 		const timeout = setTimeout(() => setCopyButtonContent(<CopyIcon />), 1000);
 
-    return () => clearTimeout(timeout);
+		return () => clearTimeout(timeout);
 	}, []);
 
 	return (

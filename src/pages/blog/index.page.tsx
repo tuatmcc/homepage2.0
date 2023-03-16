@@ -44,11 +44,7 @@ const BlogListPage: FC<{ articles: Article[] }> = ({ articles }) => {
 						<div className={styles.list}>
 							{articles.map((article, _index) => {
 								return (
-									<Link
-										href={article.targetPath}
-										key={article.slug}
-										className={styles.listItem}
-									>
+									<Link href={article.targetPath} key={article.slug} className={styles.listItem}>
 										<Image
 											className={styles.image}
 											src={article.meta.img || '/images/mcc-design.webp'}
