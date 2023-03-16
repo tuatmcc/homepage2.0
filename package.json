@@ -33,7 +33,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "framer-motion": "^10.3.2",
+    "framer-motion": "^10.5.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.7.0",
     "next": "13.2.4",
