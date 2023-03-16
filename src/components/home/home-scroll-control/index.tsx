@@ -34,43 +34,43 @@ const Images: FC = () => {
 				position={[-2, 0, 0]}
 				zoom={zoom[0]}
 				scale={[4, height]}
-				url="/abstract-tech-image-3.webp"
+				url="/images/abstract-tech-image-3.webp"
 			/>
 			<ImageImpl
 				position={[2, 0, 1]}
 				scale={3}
 				zoom={zoom[1]}
-				url="/noko-fes-2022-illustrace.webp"
+				url="/images/noko-fes-2022-illustrace.webp"
 			/>
 			<ImageImpl
 				position={[-2.3, -height, 2]}
 				scale={[1, 3]}
 				zoom={zoom[2]}
-				url="/noko-fes-2022-room.webp"
+				url="/images/noko-fes-2022-room.webp"
 			/>
 			<ImageImpl
 				position={[-0.6, -height, 3]}
 				scale={[1, 2]}
 				zoom={zoom[3]}
-				url="/abstract-tech-image-3.webp"
+				url="/images/abstract-tech-image-3.webp"
 			/>
 			<ImageImpl
 				position={[0.75, -height, 3.5]}
 				scale={1.5}
 				zoom={zoom[4]}
-				url="/mcc-desktop-pc.webp"
+				url="/images/mcc-desktop-pc.webp"
 			/>
 			<ImageImpl
 				position={[0, -height * 1.5, 2.5]}
 				scale={[2, 3]}
 				zoom={zoom[5]}
-				url="/abstract-tech-image-5.webp"
+				url="/images/abstract-tech-image-5.webp"
 			/>
 			<ImageImpl
 				zoom={zoom[6]}
 				position={[0, -height * (pageAmout - 1), 0]}
 				scale={[width, height]}
-				url="/abstract-tech-image-1.webp"
+				url="/images/abstract-tech-image-1.webp"
 			/>
 		</group>
 	);

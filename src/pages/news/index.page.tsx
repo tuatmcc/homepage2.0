@@ -26,7 +26,7 @@ const NewsListPage: FC<{ articles: Article[] }> = ({ articles }) => {
 			<Navbar />
 			<PageTransition>
 				<Image
-					src="/abstract-tech-image-4.webp"
+					src="/images/abstract-tech-image-4.webp"
 					width={300}
 					height={600}
 					alt=""
@@ -45,30 +45,21 @@ const NewsListPage: FC<{ articles: Article[] }> = ({ articles }) => {
 							{articles.map((article, _index) => {
 								return (
 									<Link
-										href={`${article.targetPath}`}
+										href={article.targetPath}
 										key={article.slug}
 										className={classNames(styles.listItem)}
 									>
-										{article.meta.img ? (
-											<Image
-												className={styles.image}
-												src={article.meta.img}
-												alt={article.meta.title}
-												width={350}
-												height={200}
-												onError={(e) => {
-													e.currentTarget.src = '/mcc-design.webp';
-												}}
-											/>
-										) : (
-											<Image
-												className={styles.image}
-												src="/mcc-design.webp"
-												alt={article.meta.title}
-												width={350}
-												height={200}
-											/>
-										)}
+										<Image
+											className={styles.image}
+											src={article.meta.img || '/images/mcc-design.webp'}
+											alt={article.meta.title}
+											role="presentation"
+											width={350}
+											height={200}
+											onError={(e) => {
+												e.currentTarget.src = '/images/mcc-design.webp';
+											}}
+										/>
 										<div className={styles.text}>
 											<h2 className={styles.title}>{article.meta.title}</h2>
 											<div className={styles.details}>

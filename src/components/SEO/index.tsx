@@ -11,7 +11,9 @@ type SEOProps = {
 export const SEO: FC<SEOProps> = ({ meta }) => {
 	const { title } = meta;
 	const description = meta.description || title;
-	const img = meta.img?.match(/(\.jpg|\.jpeg|\.png|\.webp)$/) ? meta.img : '/mcc-design.webp';
+	const img = meta.img?.match(/(\.jpg|\.jpeg|\.png|\.webp)$/)
+		? meta.img
+		: '/images/mcc-design.webp';
 	const router = useRouter();
 
 	return (
@@ -28,7 +30,7 @@ export const SEO: FC<SEOProps> = ({ meta }) => {
 			<meta property="og:description" content={description} />
 			<meta property="og:site_name" content="MCC" />
 			<meta name="twitter:card" content="summary_large_image" />
-			<meta name="twitter:site" content="@TUATMCC" />
+			<meta name="twitter:site" content="@tuatmcc.com" />
 			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={description} />
 			<meta

@@ -10,7 +10,7 @@ export type TextLinkProps = {
 export const TextLink = ({ href = '', children = '' }: TextLinkProps) => {
 	if (href.startsWith('http')) {
 		return (
-			<a href={href} className={styles.externalLink} target="_brank" rel="noreferror">
+			<a href={href} className={styles.externalLink} target="_brank" rel="noopener noreferrer">
 				{children}
 			</a>
 		);

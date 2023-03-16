@@ -15,7 +15,7 @@ import { classNames } from '~/utils/classNames';
 const meta: MetaData = {
   title: 'About Us',
   description: 'About MCC',
-  img: '/mcc-logo.svg',
+  img: '/images/mcc-logo.svg',
 };
 
 const AboutPage: FC = () => {
@@ -24,7 +24,7 @@ const AboutPage: FC = () => {
   useEffect(() => {
       const timeout = setTimeout(() => {
         ref.current?.scrollIntoView({ behavior: 'smooth' });
-    }, 2000);
+    }, 1500);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -72,13 +72,13 @@ const AboutPage: FC = () => {
         <div className={styles.carousel}>
           <Carousel components={[
             <div key="a" className={styles.carouselItem}>
-              <Image src="/abstract-tech-image-4.webp" alt="MCC" width={300} height={300} />
+              <Image src="/images/abstract-tech-image-4.webp" alt="MCC" width={300} height={300} />
             </div>,
             <div key="b" className={styles.carouselItem}>
-              <Image src="/abstract-tech-image-5.webp" alt="MCC" width={300} height={300} />
+              <Image src="/images/abstract-tech-image-5.webp" alt="MCC" width={300} height={300} />
             </div>,
             <div key="c" className={styles.carouselItem}>
-              <Image src="/abstract-tech-image-6.webp" alt="MCC" width={300} height={300} />
+              <Image src="/images/abstract-tech-image-6.webp" alt="MCC" width={300} height={300} />
             </div>,
           ]} />
         </div>

@@ -12,7 +12,6 @@ import { Footer } from '~/components/ui/Footer';
 import { Navbar } from '~/components/ui/Navbar';
 import { PageTransition } from '~/components/ui/PageTransition';
 import { MetaData } from '~/types/meta';
-// import classNames from '~/utils/classNames';
 
 const meta: MetaData = {
 	title: 'Members',
@@ -39,7 +38,7 @@ const MembersListPage: FC<{ articles: Article[] }> = ({ articles }) => {
 						<div className={styles.list}>
 							{articles.map((article) => {
 								return (
-									<Link href={`${article.targetPath}`} key={article.slug}>
+									<Link href={article.targetPath} key={article.slug}>
 										{!isMobile &&
 											(article.meta.img ? (
 												<Image
@@ -49,13 +48,13 @@ const MembersListPage: FC<{ articles: Article[] }> = ({ articles }) => {
 													width={350}
 													height={200}
 													onError={(e) => {
-														e.currentTarget.src = '/mcc-design.webp';
+														e.currentTarget.src = '/images/mcc-design.webp';
 													}}
 												/>
 											) : (
 												<Image
 													className={styles.image}
-													src="/mcc-design.webp"
+													src="/images/mcc-design.webp"
 													alt={article.meta.title}
 													width={128}
 													height={128}

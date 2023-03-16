@@ -23,15 +23,14 @@ export const ArticleWrapper: FC<{
 			<header>
 				<div className={styles.headerContent}>
 					<Image
-						src={img ? img : '/tuat-gate-filtered.webp'}
-						alt="hero"
+						src={img || '/images/tuat-gate-filtered.webp'}
+						alt="hero image"
 						width={800}
 						height={300}
 						className={styles.heroImage}
 						onError={(e) => {
-							e.currentTarget.src = '/tuat-gate-filtered.webp';
+							e.currentTarget.src = '/images/tuat-gate-filtered.webp';
 						}}
-						priority
 					/>
 					<div className={styles.heroImageOverlay} />
 					<h1 className={styles.title}>{title}</h1>

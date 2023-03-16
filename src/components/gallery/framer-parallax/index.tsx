@@ -40,10 +40,10 @@ export const FramerPrallaxPrototype: FC = () => {
 	return (
 		<>
 			{[
-				'/tuat-gate-filtered.webp',
-				'/abstract-tech-image-1.webp',
-				'/abstract-tech-image-4.webp',
-				'/abstract-tech-image-5.webp',
+				'/images/tuat-gate-filtered.webp',
+				'/images/abstract-tech-image-1.webp',
+				'/images/abstract-tech-image-4.webp',
+				'/images/abstract-tech-image-5.webp',
 			].map((src) => (
 				<ParallaxImage key={src.toString()} src={src} />
 			))}

@@ -3,7 +3,7 @@
 .navbar {
   position: fixed;
   top: 0;
-  z-index: 100;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,7 +22,6 @@
     font-family: var(--font-family-orbitron);
     font-size: var(--font-size-navbar);
     font-weight: bold;
-    line-height: 1;
     color: white;
     letter-spacing: 0.1em;
     filter: drop-shadow(var(--color-shadow-dark));
@@ -182,7 +181,7 @@
     left: 0;
     display: block;
     width: 100%;
-    height: 110vh;
+    height: 100vh;
     background: linear-gradient(90deg, #011 20%, #999);
     opacity: 0;
     transition: opacity 0.2s ease-in-out;

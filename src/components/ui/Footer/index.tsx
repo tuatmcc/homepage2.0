@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FC } from 'react';
 
 import { GitHubIcon } from '../Svg/GithubIcon';
@@ -6,6 +7,7 @@ import { TwitterIcon } from '../Svg/TwitterIcon';
 
 import styles from './style.module.css';
 
+import { ROUTES } from '~/routes/base';
 import { classNames } from '~/utils/classNames';
 
 type FotterProps = {
@@ -15,13 +17,11 @@ type FotterProps = {
 export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
 	return (
 		<footer>
-			<div
-				className={classNames(styles.footerContent, semitransparent ? styles._semitransparent : '')}
-			>
-				<div className={styles.logo}>
+			<div className={classNames(styles.footerContent, semitransparent && styles._semitransparent)}>
+				<Link href={ROUTES.HOME.PATH} className={styles.mccLogo}>
 					<MccLogo width={32} height={32} />
 					MCC
-				</div>
+				</Link>
 				<div className={styles.socials}>
 					<a
 						href="https://twitter.com/TUATMCC"
@@ -30,7 +30,7 @@ export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
 						aria-label="twitter link"
 						className={styles.socialLink}
 					>
-						<TwitterIcon />
+						<TwitterIcon width={32} height={32} />
 						MCC
 					</a>
 					<a
@@ -40,7 +40,7 @@ export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
 						aria-label="twitter link"
 						className={styles.socialLink}
 					>
-						<TwitterIcon />
+						<TwitterIcon width={32} height={32} />
 						競プロ
 					</a>
 					<a
@@ -50,7 +50,8 @@ export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
 						aria-label="github link"
 						className={styles.socialLink}
 					>
-						<GitHubIcon />
+						<GitHubIcon width={32} height={32} />
+						GitHub
 					</a>
 				</div>
 				<div className={styles.copyRight}>©2023 東京農工大学マイクロコンピュータークラブ</div>

@@ -12,7 +12,7 @@ import { MetaData } from '~/types/meta';
 const meta: MetaData = {
 	title: '農工大MCC',
 	description: '東京農工大学マイクロコンピュータークラブ(MCC)の公式ホームページです。',
-	img: '/mcc-design.webp',
+	img: '/images/mcc-design.webp',
 };
 
 const HomePage: NextPage = () => {

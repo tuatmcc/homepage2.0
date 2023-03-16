@@ -8,7 +8,7 @@ import { MetaData } from '~/types/meta';
 const meta: MetaData = {
 	title: 'New Home Design',
 	description: 'New Home Design',
-	img: '/noko-fes-2022-illustrace.webp',
+	img: '/images/noko-fes-2022-illustrace.webp',
 };
 
 const NewHomeDesignPage: FC = () => {

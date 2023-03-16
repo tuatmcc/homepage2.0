@@ -32,7 +32,9 @@ const Pre: FC<HTMLProps<HTMLPreElement>> = ({ children, ...props }) => {
 	const copyCode = useCallback(() => {
 		navigator.clipboard.writeText(ref.current?.innerText || '');
 		setCopyButtonContent('Copied!');
-		setInterval(() => setCopyButtonContent(<CopyIcon />), 1000);
+		const timeout = setTimeout(() => setCopyButtonContent(<CopyIcon />), 1000);
+
+    return () => clearTimeout(timeout);
 	}, []);
 
 	return (
