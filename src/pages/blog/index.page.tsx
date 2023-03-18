@@ -11,7 +11,6 @@ import { Footer } from '~/components/ui/Footer';
 import { Navbar } from '~/components/ui/Navbar';
 import { PageTransition } from '~/components/ui/PageTransition';
 import { MetaData } from '~/types/meta';
-import { classNames } from '~/utils/classNames';
 
 const meta: MetaData = {
 	title: 'Blog',

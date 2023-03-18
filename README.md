@@ -22,7 +22,7 @@
 - `Node.js`: v18.13.0
 - `NPM`: v9.3.1
 - `Next.js`: v13.2.4
-- `TypeScript`: v4.9.5
+- `TypeScript`: v5.0.2
 - `Volta`: v1.1.0 or `nodenv`
 
 ## 主なスタック

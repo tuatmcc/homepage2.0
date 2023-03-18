@@ -18,14 +18,10 @@
   justify-content: center;
   max-width: 1000px;
   padding: 16px;
-  margin: calc(var(--navbar-height) + 20px) auto 32px;
+  margin: calc(var(--navbar-height) + 10px) auto 32px;
   background-color: #fff3;
   box-shadow: 0 0 16px white;
   backdrop-filter: blur(16px);
-
-  @media (--bp-sm) {
-    margin-top: calc(var(--navbar-height) + 10px);
-  }
 
   & .headerTitle {
     margin: 0;
@@ -70,11 +66,20 @@
     border: solid 1px transparent;
     transition: background-color 0.1s ease-in-out;
 
-    &:hover {
+    &:focus {
       background-color: #fff3;
       border: solid 1px var(--color-mcc-quaternary);
       box-shadow: 0 0 16px var(--color-mcc-quaternary);
       backdrop-filter: blur(32px);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: #fff3;
+        border: solid 1px var(--color-mcc-quaternary);
+        box-shadow: 0 0 16px var(--color-mcc-quaternary);
+        backdrop-filter: blur(32px);
+      }
     }
 
     & .image {
