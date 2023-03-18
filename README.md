@@ -59,4 +59,4 @@
 - 2022 年 11 月、MCC の HP リニューアルが決定しました。
 - [このリポジトリの wiki](https://github.com/tuatmcc/homepage2.0/wiki)にドキュメント的なものを書いています。
 - Figmaで[デザイン案](https://www.figma.com/file/XTfW4NDafbsoMBCu5lNGkr/MCC-HOME-PAGE?node-id=0%3A1&t=F2uR5Q5TRy6jUzh3-1)を作成したり。
-- プライベートなVercel垢で勝手に<https://mcc-website-test.vercel.app>でデモを動かしてみたりしてます。コロコロ変わります。
+- プライベートなVercel垢で勝手に<https://mcc-homepage-test.vercel.app>でデモを動かしてみたりしてます。コロコロ変わります。
