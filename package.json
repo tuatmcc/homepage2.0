@@ -37,7 +37,7 @@
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.7.0",
     "next": "13.2.4",
-    "next-sitemap": "^4.0.5",
+    "next-sitemap": "^4.0.6",
     "postcss": "^8.4.21",
     "postcss-import": "^15.1.0",
     "postcss-preset-env": "^8.0.1",
