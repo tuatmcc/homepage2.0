@@ -2,7 +2,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.endOfLine": "lf",
   "files.associations": {
-    "*/**.css": "css",
+    "*/**.css": "css"
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "rome.rome"
@@ -24,4 +24,6 @@
     "source.fixAll.stylelint": true,
     "source.organizeImports": false
   },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

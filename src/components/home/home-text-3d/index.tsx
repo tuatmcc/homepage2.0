@@ -1,3 +1,5 @@
+'use client';
+
 import { Float } from '@react-three/drei';
 import { Canvas, extend, useFrame } from '@react-three/fiber';
 import { FC, Suspense, useRef, ReactNode } from 'react';

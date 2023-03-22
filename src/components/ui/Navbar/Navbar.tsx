@@ -1,10 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { FC, useEffect, useState } from 'react';
 
-import { useNavDrawer } from './hook';
 import styles from './style.module.css';
 
 import { MccLogo } from '~/components/ui/Svg';
@@ -17,9 +15,8 @@ type NavbarProps = {
 };
 
 export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) => {
-	const { isNavDrawerOpen, setNavDrawerState } = useNavDrawer();
+	const [isNavDrawerOpen, setNavDrawerState] = useState<boolean>(false);
 	const [color, setColor] = useState<string>('');
-	const router = useRouter();
 
 	useEffect(() => {
 		if (theme !== 'auto') return;
@@ -35,8 +32,6 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) =>
 
 		return () => window.removeEventListener('scroll', changeColorByScroll);
 	}, [theme]);
-
-	router.events?.on('routeChangeStart', () => setNavDrawerState(false));
 
 	return (
 		<>

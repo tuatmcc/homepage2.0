@@ -38,6 +38,7 @@
       color: white;
       text-align: center;
       letter-spacing: 0.1em;
+      min-width: 64px;
     }
   }
 

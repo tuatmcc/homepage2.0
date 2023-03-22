@@ -1,3 +1,5 @@
+'use client';
+
 import { Scroll, Image as ImageImpl, ScrollControls, useScroll } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { FC, Suspense, useState } from 'react';

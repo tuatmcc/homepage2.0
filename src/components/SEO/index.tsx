@@ -1,5 +1,7 @@
+'use client';
+
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { FC } from 'react';
 
 import { MetaData } from '~/types/meta';
@@ -14,7 +16,8 @@ export const SEO: FC<SEOProps> = ({ meta }) => {
 	const img = meta.img?.match(/(\.jpg|\.jpeg|\.png|\.webp)$/)
 		? meta.img
 		: '/images/mcc-design.webp';
-	const router = useRouter();
+
+	const pathname = usePathname();
 
 	return (
 		<Head>
@@ -40,7 +43,7 @@ export const SEO: FC<SEOProps> = ({ meta }) => {
 						? img
 						: img.startsWith('/')
 						? `https://www.tuatmcc.com${img}`
-						: `https://www.tuatmcc.com${router.asPath}${img.replace(/^./, '')}`
+						: `https://www.tuatmcc.com${pathname}${img.replace(/^./, '')}`
 				}
 			/>
 		</Head>
