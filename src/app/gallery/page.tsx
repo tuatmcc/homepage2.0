@@ -1,5 +1,6 @@
 'use client';
 
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -7,7 +8,6 @@ import styles from './style.module.css';
 
 import { Footer } from '~/components/ui/Footer';
 import { Navbar } from '~/components/ui/Navbar';
-import { Metadata } from 'next';
 
 export const metadata: Metadata = {
 	title: 'Gallery',
@@ -15,36 +15,34 @@ export const metadata: Metadata = {
 };
 
 const GalleryPage: FC = () => {
-  const paths = [
-    '/gallery/framer-parallax',
-  ];
+	const paths = ['/gallery/framer-parallax'];
 
 	return (
 		<>
 			<Navbar />
-				<div className={styles.background} />
-				<header>
-					<div className={styles.headerContent}>
-						<h1 className={styles.headerTitle}>Gallery</h1>
-						<h2 className={styles.headerSubTitle}>デザイン・試作置き場</h2>
-					</div>
-				</header>
+			<div className={styles.background} />
+			<header>
+				<div className={styles.headerContent}>
+					<h1 className={styles.headerTitle}>Gallery</h1>
+					<h2 className={styles.headerSubTitle}>デザイン・試作置き場</h2>
+				</div>
+			</header>
 
-				<main>
-					<div className={styles.mainContent}>
-						<ul className={styles.list}>
-							{paths.map((path) => (
-								<li key={path} className={styles.listItem}>
-									<Link href={path} className={styles.link}>
-										{path}
-									</Link>
-								</li>
-							))}
-						</ul>
-					</div>
-				</main>
+			<main>
+				<div className={styles.mainContent}>
+					<ul className={styles.list}>
+						{paths.map((path) => (
+							<li key={path} className={styles.listItem}>
+								<Link href={path} className={styles.link}>
+									{path}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</div>
+			</main>
 
-				<Footer semitransparent />
+			<Footer semitransparent />
 		</>
 	);
 };

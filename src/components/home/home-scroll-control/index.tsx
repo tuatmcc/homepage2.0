@@ -77,7 +77,6 @@ const Images: FC = () => {
 	);
 };
 
-
 const Html: FC = () => {
 	const data = useScroll();
 	const vH = window.innerHeight; // viewport height
@@ -172,14 +171,14 @@ const Html: FC = () => {
 						</a>
 					</div>
 				</div>
-					<div className={styles.twitterWrapper}>
-						<a
-							className={classNames('twitter-timeline', styles.twitterTimeLine)}
-							href="https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw&lang=en"
-						>
-							Tweets by TUATMCC
-						</a>
-					</div>
+				<div className={styles.twitterWrapper}>
+					<a
+						className={classNames('twitter-timeline', styles.twitterTimeLine)}
+						href="https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw&lang=en"
+					>
+						Tweets by TUATMCC
+					</a>
+				</div>
 			</div>
 		</>
 	);

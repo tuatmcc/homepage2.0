@@ -3,15 +3,15 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { Navbar } from '~/components/ui/Navbar';
 import { TextLink } from '~/components/ui/Elements';
 import { Footer } from '~/components/ui/Footer';
+import { Navbar } from '~/components/ui/Navbar';
 import { classNames } from '~/utils/classNames';
 
 const AboutPage: FC = () => {
   return (
   <>
-    <Navbar theme='auto'/>
+    <Navbar theme="auto"/>
     <header>
       <div className={styles.headerContainer}>
         <div className={styles.headerContent}>

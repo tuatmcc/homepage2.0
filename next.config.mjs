@@ -4,7 +4,7 @@ import { withContentlayer } from 'next-contentlayer';
 const nextConfig = {
 	experimental: {
 		appDir: true,
-    scrollRestoration: true,
+		scrollRestoration: true,
 	},
 	reactStrictMode: true,
 	swcMinify: true,
