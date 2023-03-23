@@ -7,7 +7,7 @@ specifiers:
   '@react-three/cannon': ^6.5.2
   '@react-three/drei': ^9.57.3
   '@react-three/fiber': ^8.12.0
-  '@types/node': 18.15.3
+  '@types/node': 18.15.5
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   '@types/three': ^0.149.0
@@ -60,12 +60,12 @@ specifiers:
   unified: ^10.1.2
 
 dependencies:
-  '@ladle/react': 2.10.1_mhw7aabiqe7kxgaun2tthl3xwi
+  '@ladle/react': 2.10.1_upu6bo37m22ysjvcd5grswg5iy
   '@next/bundle-analyzer': 13.2.4
   '@react-three/cannon': 6.5.2_feosojqo4xr55yh7464jxbxv7u
   '@react-three/drei': 9.58.2_u3iila23zl7kxrjj2wxuc6ojr4
   '@react-three/fiber': 8.12.0_73epb4osyabtjyiaeamriercbi
-  '@types/node': 18.15.3
+  '@types/node': 18.15.5
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
   '@types/three': 0.149.0
@@ -1092,7 +1092,7 @@ packages:
     engines: {node: ^8.13.0 || >=10.10.0}
     dependencies:
       '@grpc/proto-loader': 0.7.5
-      '@types/node': 18.15.3
+      '@types/node': 18.15.5
     dev: false
 
   /@grpc/proto-loader/0.6.13:
@@ -1195,7 +1195,7 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /@ladle/react/2.10.1_mhw7aabiqe7kxgaun2tthl3xwi:
+  /@ladle/react/2.10.1_upu6bo37m22ysjvcd5grswg5iy:
     resolution: {integrity: sha512-p4hyB+nPu6TALoSNqhX5bo53CnZl8qoftlsAd0qYd5u1VT44WM2E3LGpowPz4LBHHjqZvshflCOFUOpTL5tH1Q==}
     engines: {node: '>=16.0.0'}
     hasBin: true
@@ -1240,7 +1240,7 @@ packages:
       remark-gfm: 3.0.1
       source-map: 0.7.4
       vfile: 5.3.7
-      vite: 4.2.1_@types+node@18.15.3
+      vite: 4.2.1_@types+node@18.15.5
       vite-tsconfig-paths: 4.0.7_bi7wsi5xkno72wnymskyicz4pu
     transitivePeerDependencies:
       - '@types/node'
@@ -2039,8 +2039,8 @@ packages:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: false
 
-  /@types/node/18.15.3:
-    resolution: {integrity: sha512-p6ua9zBxz5otCmbpb5D3U4B5Nanw6Pk3PPyX05xnxbB/fRv71N7CPmORg7uAD5P70T0xmx1pzAx/FUfa5X+3cw==}
+  /@types/node/18.15.5:
+    resolution: {integrity: sha512-Ark2WDjjZO7GmvsyFFf81MXuGTA/d6oP38anyxWOL6EREyBKAxKoFHwBhaZxCfLRLpO8JgVXwqOwSwa7jRcjew==}
     dev: false
 
   /@types/normalize-package-data/2.4.1:
@@ -2264,7 +2264,7 @@ packages:
       vite: ^4
     dependencies:
       '@swc/core': 1.3.42
-      vite: 4.2.1_@types+node@18.15.3
+      vite: 4.2.1_@types+node@18.15.5
     dev: false
 
   /@vitejs/plugin-react/3.1.0_vite@4.2.1:
@@ -2278,7 +2278,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.21.3
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.2.1_@types+node@18.15.3
+      vite: 4.2.1_@types+node@18.15.5
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -6442,7 +6442,7 @@ packages:
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
       '@types/long': 4.0.2
-      '@types/node': 18.15.3
+      '@types/node': 18.15.5
       long: 4.0.0
     dev: false
 
@@ -6461,7 +6461,7 @@ packages:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 18.15.3
+      '@types/node': 18.15.5
       long: 5.2.1
     dev: false
 
@@ -7842,13 +7842,13 @@ packages:
       debug: 4.3.4
       globrex: 0.1.2
       tsconfck: 2.1.0_typescript@5.0.2
-      vite: 4.2.1_@types+node@18.15.3
+      vite: 4.2.1_@types+node@18.15.5
     transitivePeerDependencies:
       - supports-color
       - typescript
     dev: false
 
-  /vite/4.2.1_@types+node@18.15.3:
+  /vite/4.2.1_@types+node@18.15.5:
     resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -7873,7 +7873,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 18.15.3
+      '@types/node': 18.15.5
       esbuild: 0.17.12
       postcss: 8.4.21
       resolve: 1.22.1
