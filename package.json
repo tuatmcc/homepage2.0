@@ -17,6 +17,11 @@
     "ladle": "ladle serve",
     "contentlayer": "contentlayer build"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css}": [
+      "pnpm lint:fix"
+    ]
+  },
   "dependencies": {
     "@ladle/react": "^2.10.2",
     "@next/bundle-analyzer": "^13.2.4",
@@ -39,6 +44,8 @@
     "framer-motion": "^10.8.5",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.7.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.0",
     "next": "13.2.5-canary.13",
     "next-contentlayer": "^0.3.0",
     "next-sitemap": "^4.0.6",

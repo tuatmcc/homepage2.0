@@ -44,7 +44,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: run ci
-        run: pnpm run ci
+      - name: run lint
+        run: pnpm run lint
       - name: run typecheck
         run: pnpm run typecheck
