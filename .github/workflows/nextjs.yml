@@ -52,10 +52,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build with Next.js
-        run: pnpm run build
-        # postBuild will be automatically run after this
+        run: pnpm production
       - name: Static HTML export with Next.js
-        run: pnpm run export
+        run: pnpm export
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

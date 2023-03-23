@@ -7,6 +7,7 @@
     "prebuild": "bash ./src/prebuild.sh && contentlayer build",
     "build": "next build",
     "postbuild": "next-sitemap",
+    "export": "next export",
     "production": "pnpm prebuild && pnpm build && pnpm postbuild",
     "start": "next start",
     "lint": "next lint && rome ci . && stylelint './src/**/*.css'",
