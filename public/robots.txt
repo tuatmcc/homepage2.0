@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://tuatmcc.com
+Host: https://www.tuatmcc.com
 
 # Sitemaps
-Sitemap: https://tuatmcc.com/sitemap.xml
+Sitemap: https://www.tuatmcc.com/sitemap.xml

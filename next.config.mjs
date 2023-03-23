@@ -1,10 +1,12 @@
-import { withContentlayer } from 'next-contentlayer';
+// Because Contentlayer is not yet compatible with static export, I decided to use separately by npm-scripts.
+// import { withContentlayer } from 'next-contentlayer';
+import bundleAnalyzer from '@next/bundle-analyzer';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	output: 'export',
 	experimental: {
 		appDir: true,
-		scrollRestoration: true,
 	},
 	reactStrictMode: true,
 	swcMinify: true,
@@ -13,12 +15,11 @@ const nextConfig = {
 	},
 	eslint: {
 		ignoreDuringBuilds: true,
-		dirs: ['src'],
 	},
 };
 
-// const withBundleAnalyzer = require('@next/bundle-analyzer')({
-// 	enabled: process.env.ANALYZE === 'true',
-// });
+const withBundleAnalyzer = bundleAnalyzer({
+	enabled: process.env.ANALYZE === 'true',
+});
 
-export default withContentlayer(nextConfig);
+export default withBundleAnalyzer(nextConfig);

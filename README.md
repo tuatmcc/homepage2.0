@@ -20,10 +20,10 @@
 ## 環境（2023.3 現在）
 
 - `Node.js`: v18.13.0
-- `NPM`: v9.3.1
+- `PNPM`: v7.30.0
 - `Next.js`: v13.2.4
 - `TypeScript`: v5.0.2
-- `Volta`: v1.1.0 or `nodenv`
+- `Volta`: v1.1.1 or `nodenv`
 
 ## 主なスタック
 
@@ -34,7 +34,8 @@
 - `ladle`: コンポーネント開発用ライブラリ 
 - `React Three Fiber`, `three.js`: WebGL ライブラリ
 - `Framer Motion`: アニメーションライブラリ
-- `unified`, `remark`, `rehype`: Markdown <-> Html
+- `Contentlayer`: Markdown -> HTML
+- `unified`, `remark`, `rehype`: Markdown -> HTML -> React
 - `ESLint`, `Rome`, `Stylelint`: Linter, Formatter
 - `GitHub Actions`: CI/CD
 
@@ -47,9 +48,9 @@
   - `Markdown` → `HTML` → `React Component` の変換
   - 本体リポジトリへのコミット無し！
 - イマドキなフレームワーク・ライブラリの使用
-  - フレームワーク `Next.js` 使用
+  - フレームワーク `Next.js` の `appDir` 使用
   - WebGL ライブラリ `React-Three-Fiber` の利用
-  - `PostCSS` により時代の先を行くCSSを使える
+  - `PostCSS` により未来のCSSを先取り
 - リンター・フォーマッターの使用
   - コーディングルールにより、コードの質を高める
   - `Rome`: Rust製のlinter/formatterで、`Prettier`等に比べ高速

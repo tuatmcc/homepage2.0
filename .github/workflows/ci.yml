@@ -16,10 +16,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.13.0
-          cache: npm
-      - name: npm ci
-        run: npm ci
+          cache: pnpm
+      - name: pnpm ci
+        run: pnpm ci
       - name: run lint
-        run: npm run lint
+        run: pnpm run lint
       - name: run typecheck
-        run: npm run typecheck
+        run: pnpm run typecheck

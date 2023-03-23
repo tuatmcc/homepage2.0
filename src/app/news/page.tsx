@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
@@ -33,7 +31,7 @@ const NewsListPage: FC = () => {
 			/>
 			<header>
 				<div className={styles.headerContent}>
-					<h1 className={styles.headerTitle}>News</h1>
+					<h1 className={styles.headerTitle}>NEWS</h1>
 					<h2 className={styles.headerSubTitle}>ブログ</h2>
 				</div>
 			</header>
@@ -49,9 +47,9 @@ const NewsListPage: FC = () => {
 										alt={post.title}
 										width={350}
 										height={200}
-										onError={(e) => {
-											e.currentTarget.src = '/images/mcc-design.webp';
-										}}
+										//										onError={(e) => {
+										//											e.currentTarget.src = '/images/mcc-design.webp';
+										//										}}
 									/>
 									<div className={styles.text}>
 										<h2 className={styles.title}>{post.title}</h2>

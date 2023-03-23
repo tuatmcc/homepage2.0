@@ -7,7 +7,7 @@ import '~/styles/global.css';
 export const metadata: Metadata = {
   title: {
     default: 'MCC - 東京農工大学マイクロコンピュータークラブ',
-    template: '%s | MCC - 東京農工大学マイクロコンピュータークラブ',
+    template: '%s - MCC',
   },
   description: 'MCCは、IT系の活動を行っている、東京農工大学の公認サークルです。',
   openGraph: {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     creator: '@TUATMCC',
     title: {
-      default: '東京農工大学マイクロコンピュータークラブ',
+      default: 'MCC - 東京農工大学マイクロコンピュータークラブ',
       template: '%s'
     },
     site: 'https://www.tuatmcc.com',

@@ -46,10 +46,10 @@ const AboutPage: FC = () => {
           競技プログラミング部門では、<span className={styles.em}><b>プログラミングコンテストへの参加</b></span>を主体に活動しています。
           </p>
           </div>
-        <div className={styles.gallary}>
-          <Image className={styles.gallaryItem} src="/ogp.png" alt="MCC" width={300} height={300} />
-          <Image className={styles.gallaryItem} src="/images/noko-fes-2022-illustrace.webp" alt="MCC" width={300} height={300} />
-          <Image className={styles.gallaryItem} src="/images/noko-fes-2022-room.webp" alt="MCC" width={300} height={300} />
+        <div className={styles.gallery}>
+          <Image className={styles.galleryItem} src="/ogp.png" alt="MCC" width={300} height={300} />
+          <Image className={styles.galleryItem} src="/images/noko-fes-2022-illustrace.webp" alt="MCC" width={300} height={300} />
+          <Image className={styles.galleryItem} src="/images/noko-fes-2022-room.webp" alt="MCC" width={300} height={300} />
         </div>
         </section>
 

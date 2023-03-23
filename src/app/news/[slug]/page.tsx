@@ -1,5 +1,3 @@
-'use client';
-
 import { FC } from 'react';
 
 import type { Metadata } from 'next';
@@ -56,12 +54,8 @@ const NewsArticlePage: FC<{ params: { slug: string } }> = ({ params }) => {
 	);
 };
 
-export const generateStaticParams = () => {
-	const slug = allNews.map((post) => post.slug);
-	return {
-		slug,
-		fallback: false,
-	};
+export const generateStaticParams = async () => {
+	return allNews.map((post) => post.slug);
 };
 
 export default NewsArticlePage;

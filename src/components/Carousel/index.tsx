@@ -1,3 +1,5 @@
+'use client';
+
 import { FC, ReactNode, useState, useCallback, useEffect } from 'react';
 
 import styles from './style.module.css';

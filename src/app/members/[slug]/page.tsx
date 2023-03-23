@@ -1,5 +1,3 @@
-'use client';
-
 import { FC } from 'react';
 
 import type { Metadata } from 'next';
@@ -57,11 +55,7 @@ const MemberProfilePage: FC<{ params: { slug: string } }> = ({ params }) => {
 };
 
 export const generateStaticParams = () => {
-	const slug = allMembers.map((post) => post.slug);
-	return {
-		slug,
-		fallback: false,
-	};
+	return allMembers.map((post) => post.slug);
 };
 
 export default MemberProfilePage;

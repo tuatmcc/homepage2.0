@@ -1,12 +1,9 @@
-import { NextPage } from 'next';
+import { NextPage, Metadata } from 'next';
 
-import { SEO } from '~/components/SEO';
 import { MomentumScrollWidthImage } from '~/components/gallery/MomentumScrollWidthImage';
 import { Navbar } from '~/components/ui/Navbar';
-import { PageTransition } from '~/components/ui/PageTransition';
-import { MetaData } from '~/types/meta';
 
-const meta: MetaData = {
+export const metadata: Metadata = {
 	title: 'Momentum Scroll',
 	description: 'momentum scroll',
 };
@@ -14,11 +11,8 @@ const meta: MetaData = {
 const MomentumScrollPage: NextPage = () => {
 	return (
 		<>
-			<SEO meta={meta} />
 			<Navbar noBrand />
-			<PageTransition>
-				<MomentumScrollWidthImage />
-			</PageTransition>
+			<MomentumScrollWidthImage />
 		</>
 	);
 };

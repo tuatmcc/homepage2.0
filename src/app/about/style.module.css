@@ -68,7 +68,7 @@
     }
   }
 
-  & .gallary {
+  & .gallery {
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -76,7 +76,7 @@
     align-items: center;
     justify-content: center;
 
-    & .gallaryItem {
+    & .galleryItem {
       position: relative;
       min-width: 40%;
       max-width: 1000px;

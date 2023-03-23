@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
@@ -12,7 +10,7 @@ import { allMembers } from 'contentlayer/generated';
 import { Footer } from '~/components/ui/Footer';
 import { Navbar } from '~/components/ui/Navbar';
 
-export const meta: Metadata = {
+export const metadata: Metadata = {
 	title: 'Members',
 	description: '農工大公認サークルMCCのブログ記事の一覧です',
 };
@@ -48,9 +46,9 @@ const MemberListPage: FC = () => {
 										alt={post.title}
 										width={350}
 										height={200}
-										onError={(e) => {
-											e.currentTarget.src = '/images/mcc-design.webp';
-										}}
+										//										onError={(e) => {
+										//											e.currentTarget.src = '/images/mcc-design.webp';
+										//										}}
 									/>
 									<div className={styles.text}>
 										<h2 className={styles.title}>{post.title}</h2>

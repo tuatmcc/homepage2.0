@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
@@ -12,7 +10,7 @@ import { allBlogs } from 'contentlayer/generated';
 import { Footer } from '~/components/ui/Footer';
 import { Navbar } from '~/components/ui/Navbar';
 
-export const meta: Metadata = {
+export const metadata: Metadata = {
 	title: 'Blog',
 	description: '農工大公認サークルMCCのブログ記事の一覧です',
 };
@@ -21,7 +19,7 @@ const BlogListPage: FC = () => {
 	allBlogs.sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
 	return (
 		<>
-			<Navbar />
+			<Navbar theme="auto" />
 			<Image
 				alt=""
 				src="/images/abstract-tech-image-6.webp"
@@ -32,8 +30,8 @@ const BlogListPage: FC = () => {
 			/>
 			<header>
 				<div className={styles.headerContent}>
-					<h1 className={styles.headerTitle}>Blog</h1>
-					<h2 className={styles.headerSubTitle}>ブログ</h2>
+					<h1 className={styles.headerTitle}>BLOG</h1>
+					<h2 className={styles.headerSubTitle}>MCC部員が書いた、技術ブログ・ポエム一覧です</h2>
 				</div>
 			</header>
 			<main>
@@ -44,13 +42,11 @@ const BlogListPage: FC = () => {
 								<Link href={post.rootPath} key={post.rootPath} className={styles.listItem}>
 									<Image
 										className={styles.image}
-										src={post.img || '/images/mcc-design.webp'}
+										src={post.img || '/ogp.png'}
 										alt={post.title}
 										width={350}
 										height={200}
-										onError={(e) => {
-											e.currentTarget.src = '/images/mcc-design.webp';
-										}}
+										// TODO: fallback
 									/>
 									<div className={styles.text}>
 										<h2 className={styles.title}>{post.title}</h2>
