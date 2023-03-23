@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint-fomrmat-typecheck:
+  ci:
     runs-on: ubuntu-latest
 
     steps:
@@ -44,7 +44,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: run lint
-        run: pnpm run lint
+      - name: run ci
+        run: pnpm run ci
       - name: run typecheck
         run: pnpm run typecheck
