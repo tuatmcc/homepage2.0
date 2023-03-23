@@ -1,3 +1,5 @@
+'use client';
+
 import { Preload, ScrollControls, Scroll, useScroll, Image as ImageImpl } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import Link from 'next/link';
@@ -5,7 +7,6 @@ import { FC, Suspense, useEffect, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { useMediaQuery } from '~/components/MediaQuery';
 import { GitHubIcon, TwitterIcon } from '~/components/ui/Svg';
 import { ROUTES } from '~/routes/base';
 import { classNames } from '~/utils/classNames';
@@ -34,57 +35,49 @@ const Images: FC = () => {
 				position={[-2, 0, 0]}
 				zoom={zoom[0]}
 				scale={[4, height]}
-				url="/abstract-tech-image-3.webp"
+				url="/images/abstract-tech-image-3.webp"
 			/>
 			<ImageImpl
 				position={[2, 0, 1]}
 				scale={3}
 				zoom={zoom[1]}
-				url="/noko-fes-2022-illustrace.webp"
+				url="/images/noko-fes-2022-illustrace.webp"
 			/>
 			<ImageImpl
 				position={[-2.3, -height, 2]}
 				scale={[1, 3]}
 				zoom={zoom[2]}
-				url="/noko-fes-2022-room.webp"
+				url="/images/noko-fes-2022-room.webp"
 			/>
 			<ImageImpl
 				position={[-0.6, -height, 3]}
 				scale={[1, 2]}
 				zoom={zoom[3]}
-				url="/abstract-tech-image-3.webp"
+				url="/images/abstract-tech-image-3.webp"
 			/>
 			<ImageImpl
 				position={[0.75, -height, 3.5]}
 				scale={1.5}
 				zoom={zoom[4]}
-				url="/mcc-desktop-pc.webp"
+				url="/images/mcc-desktop-pc.webp"
 			/>
 			<ImageImpl
 				position={[0, -height * 1.5, 2.5]}
 				scale={[2, 3]}
 				zoom={zoom[5]}
-				url="/abstract-tech-image-5.webp"
+				url="/images/abstract-tech-image-5.webp"
 			/>
 			<ImageImpl
 				zoom={zoom[6]}
 				position={[0, -height * (pageAmout - 1), 0]}
 				scale={[width, height]}
-				url="/abstract-tech-image-1.webp"
+				url="/images/abstract-tech-image-1.webp"
 			/>
 		</group>
 	);
 };
 
-type HtmlProps = {
-	mediaQuery: {
-		isMobile: boolean;
-		orientation: 'portrait' | 'landscape';
-	};
-};
-
-const Html: FC<HtmlProps> = ({ mediaQuery }) => {
-	const { isMobile } = mediaQuery;
+const Html: FC = () => {
 	const data = useScroll();
 	const vH = window.innerHeight; // viewport height
 	const [opacities, setOpacities] = useState<number[]>([]);
@@ -178,23 +171,20 @@ const Html: FC<HtmlProps> = ({ mediaQuery }) => {
 						</a>
 					</div>
 				</div>
-				{!isMobile && (
-					<div className={styles.twitterWrapper}>
-						<a
-							className={classNames('twitter-timeline', styles.twitterTimeLine)}
-							href="https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw&lang=en"
-						>
-							Tweets by TUATMCC
-						</a>
-					</div>
-				)}
+				<div className={styles.twitterWrapper}>
+					<a
+						className={classNames('twitter-timeline', styles.twitterTimeLine)}
+						href="https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw&lang=en"
+					>
+						Tweets by TUATMCC
+					</a>
+				</div>
 			</div>
 		</>
 	);
 };
 
 export const HomeScrollControl: FC = () => {
-	const mediaQuery = useMediaQuery();
 	useEffect(() => {
 		const script = document.createElement('script');
 		script.src = 'https://platform.twitter.com/widgets.js';
@@ -209,7 +199,7 @@ export const HomeScrollControl: FC = () => {
 						<Images />
 					</Scroll>
 					<Scroll html>
-						<Html mediaQuery={mediaQuery} />
+						<Html />
 					</Scroll>
 				</ScrollControls>
 				<Preload />

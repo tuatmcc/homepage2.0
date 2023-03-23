@@ -22,7 +22,7 @@ a {
 code {
   padding: 1px 5px;
   margin: 0 0.2em;
-  font-family: 'JetBrains Mono', 'Noto Sans JP', monospace, sans-serif;
+  font-family: var(--font-family-jetbrains-mono);
   font-size: 14px;
   line-height: 1.5;
   color: var(--color-code-text);

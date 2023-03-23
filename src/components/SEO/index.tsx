@@ -1,5 +1,7 @@
+'use client';
+
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { FC } from 'react';
 
 import { MetaData } from '~/types/meta';
@@ -11,8 +13,11 @@ type SEOProps = {
 export const SEO: FC<SEOProps> = ({ meta }) => {
 	const { title } = meta;
 	const description = meta.description || title;
-	const img = meta.img?.match(/(\.jpg|\.jpeg|\.png|\.webp)$/) ? meta.img : '/mcc-design.webp';
-	const router = useRouter();
+	const img = meta.img?.match(/(\.jpg|\.jpeg|\.png|\.webp)$/)
+		? meta.img
+		: '/images/mcc-design.webp';
+
+	const pathname = usePathname();
 
 	return (
 		<Head>
@@ -28,7 +33,7 @@ export const SEO: FC<SEOProps> = ({ meta }) => {
 			<meta property="og:description" content={description} />
 			<meta property="og:site_name" content="MCC" />
 			<meta name="twitter:card" content="summary_large_image" />
-			<meta name="twitter:site" content="@TUATMCC" />
+			<meta name="twitter:site" content="@tuatmcc.com" />
 			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={description} />
 			<meta
@@ -38,7 +43,7 @@ export const SEO: FC<SEOProps> = ({ meta }) => {
 						? img
 						: img.startsWith('/')
 						? `https://www.tuatmcc.com${img}`
-						: `https://www.tuatmcc.com${router.asPath}${img.replace(/^./, '')}`
+						: `https://www.tuatmcc.com${pathname}${img.replace(/^./, '')}`
 				}
 			/>
 		</Head>

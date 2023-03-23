@@ -21,6 +21,7 @@
   --color-codeblock-text: #fff;
   --color-codeblock-background: #16283a;
   --color-codeblock-title-background: #0d1e2f;
+  --color-footer-background: #ccc;
   --color-blockquote-border: #999;
   --color-table-head-background: #ddd;
   --color-border-default: #d0d7de;
@@ -55,7 +56,8 @@
   }
 
   /* Fonts Family */
+  --font-family-noto-sans-jp: 'Noto Sans JP', sans-serif;
   --font-family-gill-sans: 'Gill Sans', 'Noto Sans JP', sans-serif;
-  --font-family-orbitron: 'Orbitron', 'Noto Sans JP', sans-serif;
+  --font-family-orbitron: 'Orbitron', 'Noto Sans JP', monospace;
   --font-family-jetbrains-mono: 'JetBrains Mono', 'Noto Sans JP', monospace;
 }
