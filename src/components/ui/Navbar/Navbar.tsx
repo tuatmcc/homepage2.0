@@ -1,10 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { FC, useEffect, useState } from 'react';
 
-import { useNavDrawer } from './hook';
 import styles from './style.module.css';
 
 import { MccLogo } from '~/components/ui/Svg';
@@ -17,22 +15,23 @@ type NavbarProps = {
 };
 
 export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) => {
-	const { isNavDrawerOpen, setNavDrawerState } = useNavDrawer();
+	const [isNavDrawerOpen, setNavDrawerState] = useState<boolean>(false);
 	const [color, setColor] = useState<string>('');
-	const router = useRouter();
 
 	useEffect(() => {
 		if (theme !== 'auto') return;
-		window.addEventListener('scroll', () => {
+		const changeColorByScroll = () => {
 			if (window.scrollY >= window.innerHeight) {
 				setColor(styles._blue);
 			} else {
 				setColor('');
 			}
-		});
-	}, [theme]);
+		};
 
-	router.events?.on('routeChangeStart', () => setNavDrawerState(false));
+		window.addEventListener('scroll', changeColorByScroll);
+
+		return () => window.removeEventListener('scroll', changeColorByScroll);
+	}, [theme]);
 
 	return (
 		<>
@@ -44,50 +43,50 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) =>
 								<div className={styles.brandLogo}>
 									<MccLogo />
 								</div>
-								<span className={classNames(styles.brandText)}>MCC</span>
+								<span className={styles.brandText}>MCC</span>
 							</Link>
 						</>
 					)}
 				</div>
 				<button
-					className={classNames(styles.hamburgerMenu, isNavDrawerOpen ? styles._active : '', color)}
+					className={classNames(styles.hamburgerMenu, isNavDrawerOpen && styles._active, color)}
 					onClick={() => setNavDrawerState(!isNavDrawerOpen)}
 					aria-label="menu toggler"
 				>
 					<span
-						className={classNames(styles.hamburgerMenuLine1, isNavDrawerOpen ? styles._active : '')}
+						className={classNames(styles.hamburgerMenuLine1, isNavDrawerOpen && styles._active)}
 					/>
 					<span
-						className={classNames(styles.hamburgerMenuLine2, isNavDrawerOpen ? styles._active : '')}
+						className={classNames(styles.hamburgerMenuLine2, isNavDrawerOpen && styles._active)}
 					/>
 					<span
-						className={classNames(styles.hamburgerMenuLine3, isNavDrawerOpen ? styles._active : '')}
+						className={classNames(styles.hamburgerMenuLine3, isNavDrawerOpen && styles._active)}
 					/>
 				</button>
 				<button
-					className={classNames(styles.drawerBlur, isNavDrawerOpen ? styles._active : '')}
+					className={classNames(styles.drawerBlur, isNavDrawerOpen && styles._active)}
 					onClick={() => setNavDrawerState(false)}
 					aria-label="drawer-closre"
 				/>
 
-				<div className={classNames(styles.drawer, isNavDrawerOpen ? styles._active : '')}>
+				<div className={classNames(styles.drawer, isNavDrawerOpen && styles._active)}>
 					<nav>
-						<div className={styles.drawerContent}>
+						<ul className={styles.drawerContent}>
 							{BASE_ROUTES_LIST.map((route, index) => (
-								<div
+								<li
 									key={route.PATH}
 									className={classNames(
 										styles.drawerContentItem,
-										isNavDrawerOpen ? styles._active : '',
+										isNavDrawerOpen && styles._active,
 									)}
 									style={{ transitionDelay: `${index * 0.08}s` }}
 								>
 									<Link href={route.PATH} className={classNames(styles.linkItem)}>
 										{route.LABEL}
 									</Link>
-								</div>
+								</li>
 							))}
-						</div>
+						</ul>
 					</nav>
 				</div>
 			</div>

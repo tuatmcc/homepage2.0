@@ -48,6 +48,6 @@
     }
   },
   "files": {
-    "ignore": ["node_modules", "out", ".next", "dist"]
+    "ignore": ["node_modules", "out", ".next", "dist", ".contentlayer"]
   }
 }

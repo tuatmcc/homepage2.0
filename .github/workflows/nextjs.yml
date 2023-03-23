@@ -30,7 +30,26 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18"
-          cache: "npm"
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
       - name: Setup Pages
         uses: actions/configure-pages@v2
         with:
@@ -50,12 +69,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
-        run: npm ci
+        run: pnpm i
       - name: Build with Next.js
-        run: npm run build
-        # postBuild will be automatically run after this
+        run: pnpm production
       - name: Static HTML export with Next.js
-        run: npm run export
+        run: pnpm export
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
