@@ -21,7 +21,7 @@
 
 - `Node.js`: v18.13.0
 - `PNPM`: v7.30.0
-- `Next.js`: v13.2.4
+- `Next.js`: v13.2.5-canary.15
 - `TypeScript`: v5.0.2
 - `Volta`: v1.1.1 or `nodenv`
 

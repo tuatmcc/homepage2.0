@@ -1,10 +1,11 @@
-// import bundleAnalyzer from '@next/bundle-analyzer';
 // Because Contentlayer is not yet compatible with static export, I decided to use separately by npm-scripts.
 // import { withContentlayer } from 'next-contentlayer';
 // import { createContentlayerPlugin } from 'next-contentlayer';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  productionBrowserSourceMaps: true,
 	experimental: {
 		appDir: true,
 	},
@@ -17,9 +18,5 @@ const nextConfig = {
 		ignoreDuringBuilds: true,
 	},
 };
-
-// const withBundleAnalyzer = bundleAnalyzer({
-//	enabled: process.env.ANALYZE === 'true',
-//});
 
 export default nextConfig;
