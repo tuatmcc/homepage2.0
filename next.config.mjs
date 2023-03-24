@@ -4,8 +4,7 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  productionBrowserSourceMaps: true,
+	output: 'export',
 	experimental: {
 		appDir: true,
 	},
