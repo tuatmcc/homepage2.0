@@ -1,2 +1,2 @@
-npx next-sitemap
 npx next build
+npx next-sitemap

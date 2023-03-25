@@ -2,10 +2,10 @@ import { Metadata } from 'next';
 
 import styles from './style.module.css';
 
+import { Navbar } from '~/components/Navbar';
 import { Footer } from '~/components/ui/Footer';
-import { Navbar } from '~/components/ui/Navbar';
 
-const _metadata: Metadata = {
+export const metadata: Metadata = {
 	title: '404',
 	description: '404 Page Not Found',
 };

@@ -3,8 +3,8 @@ import { FC } from 'react';
 import type { Metadata } from 'next';
 
 import { allBlogs } from 'contentlayer/generated';
+import { Navbar } from '~/components/Navbar';
 import { ArticleWrapper } from '~/components/md/components/ArticleWrapper';
-import { Navbar } from '~/components/ui/Navbar';
 import { parseOgImage } from '~/utils/parseOgImage';
 
 const documentType = 'blog';
@@ -38,15 +38,13 @@ const BlogArticlePage: FC<{ params: { slug: string } }> = ({ params }) => {
 		<>
 			<Navbar theme="auto" />
 			<ArticleWrapper
-				meta={{
-					title: post?.title ?? '',
-					date: post?.date ?? '',
-					description: post?.description ?? '',
-					tags: post?.tags ?? [],
-					author: post?.author ?? '',
-					img: post?.img ?? '',
-				}}
-				contentHtml={post?.body.html ?? ''}
+				title={post?.title ?? ''}
+				date={post?.date ?? ''}
+				description={post?.description ?? ''}
+				tags={post?.tags ?? []}
+				author={post?.author ?? ''}
+				img={post?.img ?? ''}
+				html={post?.body.html ?? ''}
 				group="blog"
 				slug={post?.slug ?? ''}
 			/>

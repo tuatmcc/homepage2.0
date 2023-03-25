@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -7,8 +6,9 @@ import styles from './style.module.css';
 import type { Metadata } from 'next';
 
 import { allMembers } from 'contentlayer/generated';
+import { Navbar } from '~/components/Navbar';
+import { BaseImage } from '~/components/ui/BaseImage';
 import { Footer } from '~/components/ui/Footer';
-import { Navbar } from '~/components/ui/Navbar';
 
 export const metadata: Metadata = {
 	title: 'Members',
@@ -20,13 +20,14 @@ const MemberListPage: FC = () => {
 	return (
 		<>
 			<Navbar />
-			<Image
+			<BaseImage
 				alt=""
 				src="/images/abstract-tech-image-6.webp"
 				width={1920}
 				height={1280}
 				role="presentation"
 				className={styles.background}
+				fallback
 			/>
 			<header>
 				<div className={styles.headerContent}>
@@ -40,15 +41,13 @@ const MemberListPage: FC = () => {
 						{allMembers.map((post, _index) => {
 							return (
 								<Link href={post.rootPath} key={post.rootPath} className={styles.listItem}>
-									<Image
+									<BaseImage
 										className={styles.image}
 										src={post.img || '/images/mcc-design.webp'}
 										alt={post.title}
 										width={350}
 										height={200}
-										//										onError={(e) => {
-										//											e.currentTarget.src = '/images/mcc-design.webp';
-										//										}}
+										fallback
 									/>
 									<div className={styles.text}>
 										<h2 className={styles.title}>{post.title}</h2>

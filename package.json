@@ -47,7 +47,7 @@
     "highlight.js": "^11.7.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
-    "next": "13.2.5-canary.15",
+    "next": "13.2.5-canary.18",
     "next-contentlayer": "^0.3.0",
     "next-sitemap": "^4.0.6",
     "postcss": "^8.4.21",
