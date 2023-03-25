@@ -3,9 +3,9 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { TextLink } from '~/components/ui/Elements';
+import { Navbar } from '~/components/Navbar';
 import { Footer } from '~/components/ui/Footer';
-import { Navbar } from '~/components/ui/Navbar';
+import { TextLink } from '~/components/ui/TextLink';
 import { classNames } from '~/utils/classNames';
 
 const AboutPage: FC = () => {

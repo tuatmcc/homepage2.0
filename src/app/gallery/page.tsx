@@ -4,8 +4,8 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
+import { Navbar } from '~/components/Navbar';
 import { Footer } from '~/components/ui/Footer';
-import { Navbar } from '~/components/ui/Navbar';
 
 export const metadata: Metadata = {
 	title: 'Gallery',

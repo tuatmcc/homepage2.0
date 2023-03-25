@@ -1,16 +1,15 @@
-import Image from 'next/image';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import { FC } from 'react';
 
 import styles from './style.module.css';
 
 import { allNews } from 'contentlayer/generated';
-import { SEO } from '~/components/SEO';
+import { Navbar } from '~/components/Navbar';
+import { BaseImage } from '~/components/ui/BaseImage';
 import { Footer } from '~/components/ui/Footer';
-import { Navbar } from '~/components/ui/Navbar';
-import { MetaData } from '~/types/meta';
 
-const meta: MetaData = {
+export const metadata: Metadata = {
 	title: 'NEWS',
 	description: '農工大公認サークルMCCのブログ記事の一覧です',
 };
@@ -19,15 +18,15 @@ const NewsListPage: FC = () => {
 	allNews.sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
 	return (
 		<>
-			<SEO meta={meta} />
 			<Navbar />
-			<Image
+			<BaseImage
 				alt=""
 				src="/images/abstract-tech-image-6.webp"
 				width={1920}
 				height={1280}
 				role="presentation"
 				className={styles.background}
+				fallback
 			/>
 			<header>
 				<div className={styles.headerContent}>
@@ -41,15 +40,13 @@ const NewsListPage: FC = () => {
 						{allNews.map((post, _index) => {
 							return (
 								<Link href={post.rootPath} key={post.rootPath} className={styles.listItem}>
-									<Image
+									<BaseImage
 										className={styles.image}
-										src={post.img || '/images/mcc-design.webp'}
+										src={post.img || '/images/wordmark.svg'}
 										alt={post.title}
 										width={350}
 										height={200}
-										//										onError={(e) => {
-										//											e.currentTarget.src = '/images/mcc-design.webp';
-										//										}}
+										fallback
 									/>
 									<div className={styles.text}>
 										<h2 className={styles.title}>{post.title}</h2>
