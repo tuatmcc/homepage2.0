@@ -5,7 +5,7 @@ import { FC, useEffect, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { MccLogo } from '~/components/ui/Svg';
+import { Logo } from '~/components/ui/Svg/Logo';
 import { ROUTES, BASE_ROUTES_LIST } from '~/routes/base';
 import { classNames } from '~/utils/classNames';
 
@@ -41,7 +41,7 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) =>
 						<>
 							<Link href={ROUTES.HOME.PATH} className={classNames(styles.brand, color)}>
 								<div className={styles.brandLogo}>
-									<MccLogo />
+									<Logo />
 								</div>
 								<span className={styles.brandText}>MCC</span>
 							</Link>

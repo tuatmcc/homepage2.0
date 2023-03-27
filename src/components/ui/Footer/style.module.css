@@ -10,7 +10,7 @@
     background: linear-gradient(transparent, var(--color-footer-background));
   }
 
-  & .mccLogo {
+  & .wordmarkLogo {
     display: flex;
     gap: 4px;
     align-items: center;

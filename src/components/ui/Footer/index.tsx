@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { FC } from 'react';
 
 import { GitHubIcon } from '../Svg/GithubIcon';
-import { MccLogo } from '../Svg/MccLogo';
 import { TwitterIcon } from '../Svg/TwitterIcon';
+import { WordmarkLogo } from '../Svg/WordmarkLogo';
 
 import styles from './style.module.css';
 
@@ -18,9 +18,8 @@ export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
 	return (
 		<footer>
 			<div className={classNames(styles.footerContent, semitransparent && styles._semitransparent)}>
-				<Link href={ROUTES.HOME.PATH} className={styles.mccLogo}>
-					<MccLogo width={32} height={32} />
-					MCC
+				<Link href={ROUTES.HOME.PATH} className={styles.wordmarkLogo}>
+					<WordmarkLogo size={32} />
 				</Link>
 				<div className={styles.socials}>
 					<a
