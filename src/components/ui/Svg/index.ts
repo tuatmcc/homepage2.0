@@ -7,6 +7,6 @@ export * from './HamburgerMenuIcon';
 export * from './HomeIcon';
 export * from './InfoIcon';
 export * from './LinkIcon';
-export * from './MccLogo';
+export * from './Logo';
 export * from './StarIcon';
 export * from './TwitterIcon';

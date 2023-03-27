@@ -29,7 +29,7 @@ export const ArticleWrapper: FC<{
 			<header>
 				<div className={styles.headerContent}>
 					<BaseImage
-						src={img || '/ogp.png'}
+						src={img || '/images/wordmark-logo-image.svg'}
 						alt="hero image"
 						role="presentation"
 						width={800}

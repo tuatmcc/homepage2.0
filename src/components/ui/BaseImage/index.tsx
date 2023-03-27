@@ -7,7 +7,7 @@ export type BaseImageProps = ComponentProps<typeof NextImage> & {
 	fallback?: string | true;
 };
 
-const defaultFallback = '/images/wordmark.png';
+const defaultFallback = '/images/wordmark-logo-image.png';
 
 /**
  * A wrapper around Next.js' Image component that adds a fallback image.
