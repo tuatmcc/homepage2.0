@@ -21,14 +21,14 @@ const NewsListPage: FC = () => {
 			<Navbar />
 			<BaseImage
 				alt=""
-				src="/images/abstract-tech-image-6.webp"
+				src="/images/abstract-tech-image-4.webp"
 				width={1920}
 				height={1280}
 				role="presentation"
 				className={styles.background}
 				fallback
 			/>
-			<header>
+			<header className={styles.header}>
 				<div className={styles.headerContent}>
 					<h1 className={styles.headerTitle}>NEWS</h1>
 					<h2 className={styles.headerSubTitle}>ブログ</h2>
@@ -51,7 +51,9 @@ const NewsListPage: FC = () => {
 									<div className={styles.text}>
 										<h2 className={styles.title}>{post.title}</h2>
 										<div className={styles.details}>
-											{post.date && <div className={styles.date}>{post.date}</div>}
+											{post.date && (
+												<div className={styles.date}>{post.date.replace(/T.+/, '')}</div>
+											)}
 											{post.author && <div className={styles.author}>@ {post.author}</div>}
 										</div>
 									</div>

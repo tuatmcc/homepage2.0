@@ -1,4 +1,36 @@
+@custom-media --bp-sm (max-width: 780px);
+
 .header {
   width: 100%;
   height: 200px;
+  padding: calc(var(--navbar-height) * 1.5) 0;
+
+  & .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 0 32px #fff;
+    backdrop-filter: blur(32px);
+
+    @media (--bp-sm) {
+      backdrop-filter: none;
+      box-shadow: none;
+    }
+
+    & .title {
+      font-family: var(--font-family-orbitron);
+      font-size: 32px;
+      color: #fff;
+      letter-spacing: 0.1em;
+    }
+
+    & .subtitle {
+      color: #fff;
+    }
+  }
 }

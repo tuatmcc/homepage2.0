@@ -18,9 +18,7 @@ const AboutPage: FC = () => {
           <div className={styles.headerText}>
             <h1 className={styles.pageTitle}>What is MCC?</h1>
             <h2 className={styles.pageSubTitle}>
-                {'MCCについて'.split('').map((x, i) => (
-                  <span key={x+i} className={classNames(styles.anim)} style={{ animationDelay: `${0.6 + i* 0.1}s` }}>{x}</span>
-              ))}
+                MCCについて
             </h2>
           </div>
         </div>
@@ -46,11 +44,6 @@ const AboutPage: FC = () => {
           競技プログラミング部門では、<span className={styles.em}><b>プログラミングコンテストへの参加</b></span>を主体に活動しています。
           </p>
           </div>
-        <div className={styles.gallery}>
-          <Image className={styles.galleryItem} src="/ogp.png" alt="MCC" width={300} height={300} />
-          <Image className={styles.galleryItem} src="/images/noko-fes-2022-illustrace.webp" alt="MCC" width={300} height={300} />
-          <Image className={styles.galleryItem} src="/images/noko-fes-2022-room.webp" alt="MCC" width={300} height={300} />
-        </div>
         </section>
 
         <h2>活動場所</h2>
@@ -65,6 +58,11 @@ const AboutPage: FC = () => {
         <ul>
           <li>TwitterDM: <TextLink href="https://twitter.com/tuatmcc" >@tuatmcc</TextLink></li>
         </ul>
+        <div className={styles.gallery}>
+          <Image className={styles.galleryItem} src="/images/wordmark-logo-image.png" alt="MCC" width={300} height={300} />
+          <Image className={styles.galleryItem} src="/images/noko-fes-2022-illustrace.webp" alt="MCC" width={300} height={300} />
+          <Image className={styles.galleryItem} src="/images/noko-fes-2022-room.webp" alt="MCC" width={300} height={300} />
+        </div>
         </div>
       </main>
       <Footer />
