@@ -5,13 +5,12 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import Link from 'next/link';
 import { FC, Suspense, useEffect, useState } from 'react';
 
-import {RecentNews} from '../RecentNews';
+import { RecentNews } from '../RecentNews';
 
 import styles from './style.module.css';
 
 import { GitHubIcon, TwitterIcon } from '~/components/ui/Svg';
 import { ROUTES } from '~/routes/base';
-import { classNames } from '~/utils/classNames';
 
 const pageAmout = 3.5;
 
