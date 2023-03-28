@@ -88,6 +88,7 @@
     "npm": "9.3.1"
   },
   "optionalDependencies": {
-    "@next/env": "^13.2.4"
+    "@next/env": "^13.2.4",
+    "vite": "^4.2.1"
   }
 }

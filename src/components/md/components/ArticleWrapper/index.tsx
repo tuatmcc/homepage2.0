@@ -45,7 +45,7 @@ export const ArticleWrapper: FC<{
 								@{author}
 							</Link>
 						)}
-						<div className={styles.date}>{date}</div>
+						<div className={styles.date}>{date.replace(/T.+/, '')}</div>
 						<TagList className={styles.tagList}>{tagList}</TagList>
 					</div>
 				</div>

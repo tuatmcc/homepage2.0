@@ -1,7 +1,8 @@
 // This is the config file for @ladle/react to work with postcss-nesting
-import { defineConfig } from 'vite';
 import path from 'path';
+
 import postcssPresetEnv from 'postcss-preset-env';
+import { defineConfig } from 'vite';
 
 import './src/styles/global.css';
 

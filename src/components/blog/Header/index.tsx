@@ -4,7 +4,7 @@ export const BlogHeader = () => (
 	<header className={styles.header}>
 		<div className={styles.container}>
 			<h1 className={styles.title}>BLOG</h1>
-			<h2 className={styles.subTitle}>MCC部員が書いた、技術ブログ・ポエム一覧です</h2>
+			<p className={styles.subtitle}>MCC部員が書いた、技術ブログ・ポエム一覧です</p>
 		</div>
 	</header>
 );

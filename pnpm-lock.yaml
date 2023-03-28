@@ -60,6 +60,7 @@ specifiers:
   three: ^0.150.1
   typescript: 5.0.2
   unified: ^10.1.2
+  vite: ^4.2.1
 
 dependencies:
   '@ladle/react': 2.10.2_upu6bo37m22ysjvcd5grswg5iy
@@ -123,6 +124,7 @@ dependencies:
 
 optionalDependencies:
   '@next/env': 13.2.4
+  vite: 4.2.1_@types+node@18.15.5
 
 packages:
 
@@ -1322,6 +1324,7 @@ packages:
 
   /@next/env/13.2.4:
     resolution: {integrity: sha512-+Mq3TtpkeeKFZanPturjcXt+KHfKYnLlX6jMLyCrmpq6OOs4i1GqBOAauSkii9QeKCMTYzGppar21JU57b/GEA==}
+    requiresBuild: true
     dev: false
 
   /@next/env/13.2.5-canary.18:

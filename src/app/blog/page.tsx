@@ -30,8 +30,10 @@ const BlogListPage: FC = () => {
 				fallback
 			/>
 			<header className={styles.header}>
-				<h1 className={styles.headerTitle}>BLOG</h1>
-				<h2 className={styles.headerSubTitle}>MCC部員が書いた、技術ブログ・ポエム一覧です</h2>
+				<div className={styles.headerContent}>
+					<h1 className={styles.headerTitle}>BLOG</h1>
+					<h2 className={styles.headerSubTitle}>MCCのブログ・ポエム一覧です</h2>
+				</div>
 			</header>
 			<main>
 				<div className={styles.mainContent}>
@@ -50,8 +52,10 @@ const BlogListPage: FC = () => {
 									<div className={styles.text}>
 										<h2 className={styles.title}>{post.title}</h2>
 										<div className={styles.details}>
-											{post.date && <div className={styles.date}>{post.date}</div>}
-											{post.author && <div className={styles.author}>@ {post.author}</div>}
+											{post.date && (
+												<div className={styles.date}>{post.date.replace(/T.+/, '')}</div>
+											)}
+											{post.author && <div className={styles.author}>@{post.author}</div>}
 										</div>
 									</div>
 								</Link>

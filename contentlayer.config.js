@@ -70,6 +70,7 @@ const rpcOptions = {
 export default makeSource({
 	contentDirPath: 'content',
 	documentTypes: [Blog, News, Members],
+	date: (date) => date._raw.date,
 	markdown: {
 		remarkPlugins: [remarkGfm, remarkGemoji, remarkMath, [remarkToc, { heading: '', tight: true }]],
 		rehypePlugins: [

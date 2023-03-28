@@ -55,7 +55,6 @@ export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
 				</div>
 				<div className={styles.copyRight}>©2023 東京農工大学マイクロコンピュータークラブ</div>
 			</div>
-			<div className={styles.copyRight}>©2023 東京農工大学マイクロコンピュータークラブ</div>
 		</footer>
 	);
 };
