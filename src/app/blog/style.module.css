@@ -10,7 +10,7 @@
   object-fit: cover;
 }
 
-.headerContent {
+.header {
   display: flex;
   flex-direction: column;
   gap: 8px;

@@ -17,7 +17,7 @@ type FotterProps = {
 export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
 	return (
 		<footer>
-			<div className={classNames(styles.footerContent, semitransparent && styles._semitransparent)}>
+			<div className={classNames(styles.footer, semitransparent && styles._semitransparent)}>
 				<Link href={ROUTES.HOME.PATH} className={styles.wordmarkLogo}>
 					<WordmarkLogo size={32} />
 				</Link>
@@ -55,6 +55,7 @@ export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
 				</div>
 				<div className={styles.copyRight}>©2023 東京農工大学マイクロコンピュータークラブ</div>
 			</div>
+			<div className={styles.copyRight}>©2023 東京農工大学マイクロコンピュータークラブ</div>
 		</footer>
 	);
 };

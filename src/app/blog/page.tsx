@@ -29,11 +29,9 @@ const BlogListPage: FC = () => {
 				className={styles.background}
 				fallback
 			/>
-			<header>
-				<div className={styles.headerContent}>
-					<h1 className={styles.headerTitle}>BLOG</h1>
-					<h2 className={styles.headerSubTitle}>MCC部員が書いた、技術ブログ・ポエム一覧です</h2>
-				</div>
+			<header className={styles.header}>
+				<h1 className={styles.headerTitle}>BLOG</h1>
+				<h2 className={styles.headerSubTitle}>MCC部員が書いた、技術ブログ・ポエム一覧です</h2>
 			</header>
 			<main>
 				<div className={styles.mainContent}>

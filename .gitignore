@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-.turbo
+/.turbo
 
 # testing
 /coverage
@@ -45,6 +45,7 @@ next-env.d.ts
 # sitemap
 sitemap*.xml
 robot.txt
+robots.txt
 
 # contentlayer
 .contentlayer/generated/*/*
