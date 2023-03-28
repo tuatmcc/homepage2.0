@@ -53,7 +53,7 @@ const NewsArticlePage: FC<{ params: { slug: string } }> = ({ params }) => {
 };
 
 export const generateStaticParams = async () => {
-	return allNews.map((post) => post.slug);
+	return allNews.map((post) => ({ slug: post.slug }));
 };
 
 export default NewsArticlePage;

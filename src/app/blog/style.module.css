@@ -10,15 +10,16 @@
   object-fit: cover;
 }
 
-.headerContent {
+.header {
   display: flex;
   flex-direction: column;
   gap: 8px;
   align-items: center;
   justify-content: center;
   max-width: 1000px;
+  padding: calc(var(--navbar-height) + 10px) 0 0;
   padding: 16px;
-  margin: calc(var(--navbar-height) + 10px) auto 32px;
+  margin: 0 auto 32px;
   background-color: #fff3;
   box-shadow: 0 0 16px white;
   backdrop-filter: blur(16px);

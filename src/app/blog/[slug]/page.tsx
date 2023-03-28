@@ -53,7 +53,7 @@ const BlogArticlePage: FC<{ params: { slug: string } }> = ({ params }) => {
 };
 
 export const generateStaticParams = async () => {
-	return allBlogs.map((post) => post.slug);
+	return allBlogs.map((post) => ({ slug: post.slug }));
 };
 
 export default BlogArticlePage;

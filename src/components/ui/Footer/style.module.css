@@ -1,4 +1,6 @@
-.footerContent {
+.footer {
+  position: relative;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   gap: 32px;
