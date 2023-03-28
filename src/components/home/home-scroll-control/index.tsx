@@ -5,6 +5,8 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import Link from 'next/link';
 import { FC, Suspense, useEffect, useState } from 'react';
 
+import {RecentNews} from '../RecentNews';
+
 import styles from './style.module.css';
 
 import { GitHubIcon, TwitterIcon } from '~/components/ui/Svg';
@@ -171,14 +173,7 @@ const Html: FC = () => {
 						</a>
 					</div>
 				</div>
-				<div className={styles.twitterWrapper}>
-					<a
-						className={classNames('twitter-timeline', styles.twitterTimeLine)}
-						href="https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw&lang=en"
-					>
-						Tweets by TUATMCC
-					</a>
-				</div>
+				<RecentNews />
 			</div>
 		</>
 	);
