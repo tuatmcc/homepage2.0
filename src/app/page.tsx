@@ -2,9 +2,9 @@ import { NextPage } from 'next';
 
 import styles from './style.module.css';
 
+import { Navbar } from '~/components/Navbar';
 import { HomeScrollControl } from '~/components/home/home-scroll-control';
 import { HomeText3d } from '~/components/home/home-text-3d';
-import { Navbar } from '~/components/ui/Navbar';
 
 const HomePage: NextPage = () => {
 	return (

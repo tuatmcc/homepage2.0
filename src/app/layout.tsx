@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: 'MCC',
     images: [
       {
-        url: 'https://www.tuatmcc.com/ogp.png',
+        url: 'https://www.tuatmcc.com/images/wordmark-logo-image.png',
         width: 1200,
         height: 630,
       }
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     images: [
       {
-        url: 'https://www.tuatmcc.com/ogp.png',
+        url: 'https://www.tuatmcc.com/images/wordmark-logo-image.png',
         width: 1200,
         height: 630,
       }

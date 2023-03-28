@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import {
 	createElement,
 	FC,
@@ -17,20 +16,20 @@ import { unified } from 'unified';
 
 import styles from './style.module.css';
 
-import { TextLink, TextLinkProps } from '~/components/ui/Elements';
+import { BaseImage } from '~/components/ui/BaseImage';
 import { MiniLinkIcon } from '~/components/ui/Svg';
 import { CopyIcon } from '~/components/ui/Svg/CopyIcon';
-import { MetaData } from '~/types/meta';
+import { TextLink, TextLinkProps } from '~/components/ui/TextLink';
 import { imgsrc } from '~/utils/imgsrc';
 
 export type ArticleWrapperProps = {
-	meta: MetaData;
 	children: string;
 };
 
 const Pre: FC<HTMLProps<HTMLPreElement>> = ({ children, ...props }) => {
 	const [copyButtonContent, setCopyButtonContent] = useState<ReactNode>(<CopyIcon />);
 	const ref = useRef<HTMLPreElement>(null);
+
 	const copyCode = useCallback(() => {
 		navigator.clipboard.writeText(ref.current?.innerText || '');
 		setCopyButtonContent('Copied!');
@@ -51,13 +50,13 @@ const Pre: FC<HTMLProps<HTMLPreElement>> = ({ children, ...props }) => {
 	);
 };
 
-export const HtmlParser: FC<{ contentHtml: string; group: string; slug: string }> = ({
-	contentHtml,
+export const HtmlParser: FC<{ html: string; group: string; slug: string }> = ({
+	html,
 	group,
 	slug,
 }) => {
 	// HTMLをReactNodeに変換する
-	const [content, setContent] = useState<ReactNode>(contentHtml);
+	const [content, setContent] = useState<ReactNode>(html);
 
 	// rome-ignore lint/nursery/useExhaustiveDependencies: why?
 	useEffect(() => {
@@ -68,7 +67,7 @@ export const HtmlParser: FC<{ contentHtml: string; group: string; slug: string }
 				components: {
 					a: ({ href, children }: TextLinkProps) => <TextLink href={href}>{children}</TextLink>,
 					img: ({ src = '', alt = 'image' }) => (
-						<Image
+						<BaseImage
 							src={imgsrc(src, group, slug)}
 							alt={alt}
 							width={640}
@@ -82,10 +81,10 @@ export const HtmlParser: FC<{ contentHtml: string; group: string; slug: string }
 					},
 				},
 			} as RehypeReactOptions)
-			.processSync(contentHtml);
+			.processSync(html);
 
 		setContent(processor.result);
-	}, [contentHtml, group, slug]);
+	}, [html, group, slug]);
 
 	return <div className={styles.articleContent}>{content}</div>;
 };

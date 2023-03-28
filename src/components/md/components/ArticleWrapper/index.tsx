@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { IsoDateTimeString } from 'contentlayer/core';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -8,31 +8,34 @@ import { HtmlParser } from '../HtmlParser';
 
 import styles from './style.module.css';
 
+import { BaseImage } from '~/components/ui/BaseImage';
 import { Footer } from '~/components/ui/Footer';
 import { Tag, TagList } from '~/components/ui/Tag';
-import { MetaData } from '~/types/meta';
 
 export const ArticleWrapper: FC<{
-	meta: MetaData;
-	contentHtml: string;
-	group: string;
+	title: string;
+	description?: string | undefined;
+	date: IsoDateTimeString;
+	img?: string | undefined;
+	tags?: string[] | undefined;
+	author?: string | undefined;
 	slug: string;
-}> = ({ meta, contentHtml, group, slug }) => {
-	const { title, img, tags, author, date } = meta;
+	html: string;
+	group: string;
+}> = ({ title, date, img, tags, author, slug, html, group }) => {
 	const tagList = tags?.map((tag) => <Tag key={tag}>{tag}</Tag>);
 	return (
 		<>
 			<header>
 				<div className={styles.headerContent}>
-					<Image
-						src={img || '/images/tuat-gate-filtered.webp'}
+					<BaseImage
+						src={img || '/images/wordmark-logo-image.svg'}
 						alt="hero image"
+						role="presentation"
 						width={800}
 						height={300}
 						className={styles.heroImage}
-						onError={(e) => {
-							e.currentTarget.src = '/images/tuat-gate-filtered.webp';
-						}}
+						fallback
 					/>
 					<div className={styles.heroImageOverlay} />
 					<h1 className={styles.title}>{title}</h1>
@@ -50,7 +53,7 @@ export const ArticleWrapper: FC<{
 
 			<main>
 				<div className={styles.mainContent}>
-					<HtmlParser contentHtml={contentHtml} group={group} slug={slug} />
+					<HtmlParser html={html} group={group} slug={slug} />
 				</div>
 			</main>
 			<Footer />

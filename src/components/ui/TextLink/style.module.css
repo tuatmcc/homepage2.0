@@ -1,13 +1,8 @@
-.internalLink {
-  color: #05f;
-  text-decoration: none;
-  word-wrap: break-word;
-}
-
+.internalLink,
 .externalLink {
   color: #05f;
   text-decoration: none;
-  word-wrap: break-word;
+  word-break: break-word;
 
   &:hover {
     text-decoration: underline;

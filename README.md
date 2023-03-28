@@ -13,7 +13,7 @@
 
 ## メンテの仕方
 
-- [ここ](https://github.com/tuatmcc/homepage2.0/wiki/%E9%96%8B%E7%99%BA%E3%83%BB%E3%83%A1%E3%83%B3%E3%83%86%E3%83%8A%E3%83%B3%E3%82%B9)を参照
+- [ここ](https:www.tuatmcc.com/homepage-development)を参照
 - 何かあれば Issue や Discord にお願いします。
 - 人員募集中！
 
@@ -21,7 +21,7 @@
 
 - `Node.js`: v18.13.0
 - `PNPM`: v7.30.0
-- `Next.js`: v13.2.4
+- `Next.js`: v13.2.5-canary.15
 - `TypeScript`: v5.0.2
 - `Volta`: v1.1.1 or `nodenv`
 

@@ -1,20 +1,18 @@
-import { NextPage, Metadata } from 'next';
+import { Metadata } from 'next';
 
+import { Navbar } from '~/components/Navbar';
 import { MomentumScrollWidthImage } from '~/components/gallery/MomentumScrollWidthImage';
-import { Navbar } from '~/components/ui/Navbar';
 
 export const metadata: Metadata = {
 	title: 'Momentum Scroll',
 	description: 'momentum scroll',
 };
 
-const MomentumScrollPage: NextPage = () => {
+export default function momentumScrollPage() {
 	return (
 		<>
 			<Navbar noBrand />
 			<MomentumScrollWidthImage />
 		</>
 	);
-};
-
-export default MomentumScrollPage;
+}

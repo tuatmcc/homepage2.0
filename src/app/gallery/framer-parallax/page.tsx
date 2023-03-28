@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
+import { Navbar } from '~/components/Navbar';
 import { FramerPrallaxPrototype } from '~/components/gallery/framer-parallax';
-import { Navbar } from '~/components/ui/Navbar';
 
 export const metadata: Metadata = {
 	title: 'Framer Prallax',

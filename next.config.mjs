@@ -1,6 +1,6 @@
 // Because Contentlayer is not yet compatible with static export, I decided to use separately by npm-scripts.
 // import { withContentlayer } from 'next-contentlayer';
-import bundleAnalyzer from '@next/bundle-analyzer';
+// import { createContentlayerPlugin } from 'next-contentlayer';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -18,8 +18,4 @@ const nextConfig = {
 	},
 };
 
-const withBundleAnalyzer = bundleAnalyzer({
-	enabled: process.env.ANALYZE === 'true',
-});
-
-export default withBundleAnalyzer(nextConfig);
+export default nextConfig;
