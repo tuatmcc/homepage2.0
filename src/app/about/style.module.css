@@ -49,15 +49,17 @@
   }
 }
 
-.mainContainer {
-  position: relative;
-  max-width: 1000px;
-  padding: 0 32px 32px;
-  margin: 0 auto 32px;
-  color: var(--color-text-default);
+.main {
+  & .mainContent {
+    position: relative;
+    max-width: 1000px;
+    padding: 0 32px 32px;
+    margin: 0 auto 32px;
+    color: var(--color-text-default);
 
-  & .introductionText {
-    flex: 1;
+    & > section {
+      margin: 32px 0 48px;
+    }
 
     & .brief {
       margin: 0 0 32px;
@@ -66,22 +68,37 @@
     & .activities {
       line-height: 1.5;
     }
+
+    & .twitterLink {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--color-mcc-brand);
+    }
+
+    & .gallery {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      align-items: center;
+      justify-content: center;
+
+      & .galleryItem {
+        position: relative;
+        min-width: 40%;
+        max-width: 1000px;
+        height: 100%;
+      }
+    }
   }
 
-  & .gallery {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    align-items: center;
-    justify-content: center;
-
-    & .galleryItem {
-      position: relative;
-      min-width: 40%;
-      max-width: 1000px;
-      height: 100%;
-    }
+  & .twitterFeed {
+    max-width: 600px;
+    padding: 0 4px;
+    margin: 0 auto;
   }
 }
 
