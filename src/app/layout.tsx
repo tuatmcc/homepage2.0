@@ -1,8 +1,31 @@
+import { Orbitron, Noto_Sans_JP, JetBrains_Mono } from 'next/font/google';
 import { FC, ReactNode } from 'react';
 
 import type { Metadata } from 'next';
 
 import '~/styles/global.css';
+import {classNames} from '~/utils/classNames';
+
+const orbitron = Orbitron({
+  variable: '--font-family-orbitron',
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+const notoSansJP = Noto_Sans_JP({
+  variable: '--font-family-noto-sans-jp',
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  variable: '--font-family-jetbrains-mono',
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -59,13 +82,9 @@ const RootLayout: FC<{ children: ReactNode }> = ({
   return (
     <html lang="ja">
       <head>
-      <link
-					href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Orbitron&family=Noto+Sans+JP:wght@400;700&display=swap"
-					rel="stylesheet"
-				/>
         <meta charSet="utf-8" />
-        </head>
-      <body>{children}</body>
+      </head>
+      <body className={classNames(orbitron.variable, notoSansJP.variable, jetBrainsMono.variable)}>{children}</body>
     </html>
   )
 }
