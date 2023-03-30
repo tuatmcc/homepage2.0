@@ -1,6 +1,6 @@
 'use client';
 
-import { Preload, ScrollControls, Scroll, useScroll, Image as ImageImpl } from '@react-three/drei';
+import { Image as ImageImpl, Preload, Scroll, ScrollControls, useScroll } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import Link from 'next/link';
 import { FC, Suspense, useEffect, useState } from 'react';
