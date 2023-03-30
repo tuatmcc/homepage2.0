@@ -56,11 +56,11 @@ const AboutPage: FC = () => {
         <section>
         <h2>部員募集</h2>
         <p className={styles.description}>
-        MCC では新入部員を随時募集してます。 お問合せ、入部希望者は以下DMからご連絡ください。
+        MCC では新入部員を随時募集してます。 お問合せ、入部希望者は以下ご連絡ください。
         </p>
-          <a className={styles.twitterLink} href="https://twitter.com/tuatmcc" >
-          <TwitterIcon size={24} color="#1DA1F2" />
-            @tuatmcc</a>
+          <a href="https://twitter.com/messages/compose?recipient_id=227598819"
+            className="twitter-dm-button" data-screen-name="@TUATMCC" data-size="large">
+            Message @tuatmcc</a>
         </section>
 
         <section>
@@ -75,6 +75,7 @@ const AboutPage: FC = () => {
 
         <section>
           <div className={styles.twitterFeed}>
+          <h2 className={styles.heading2}>Twitter</h2>
             <TwitterTimeline />
           </div>
         </section>
