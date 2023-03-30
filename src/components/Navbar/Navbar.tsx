@@ -6,7 +6,7 @@ import { FC, useEffect, useState } from 'react';
 import styles from './style.module.css';
 
 import { Logo } from '~/components/ui/Svg/Logo';
-import { ROUTES, BASE_ROUTES_LIST } from '~/routes/base';
+import { BASE_ROUTES_LIST, ROUTES } from '~/routes/base';
 import { classNames } from '~/utils/classNames';
 
 type NavbarProps = {
