@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, MotionValue, useScroll, useTransform } from 'framer-motion';
+import { MotionValue, motion, useScroll, useTransform } from 'framer-motion';
 import { FC, useEffect, useRef, useState } from 'react';
 
 import styles from './style.module.css';

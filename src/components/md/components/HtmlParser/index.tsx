@@ -1,14 +1,14 @@
 'use client';
 
 import {
-	createElement,
 	FC,
-	ReactNode,
-	useEffect,
-	useState,
-	useCallback,
 	HTMLProps,
+	ReactNode,
+	createElement,
+	useCallback,
+	useEffect,
 	useRef,
+	useState,
 } from 'react';
 import rehypeParse from 'rehype-parse';
 import rehypeReact, { Options as RehypeReactOptions } from 'rehype-react';
@@ -16,11 +16,11 @@ import { unified } from 'unified';
 
 import styles from './style.module.css';
 
-import { BaseImage } from '~/components/ui/BaseImage';
+import { BasicImage } from '~/components/ui/BasicImage';
 import { MiniLinkIcon } from '~/components/ui/Svg';
 import { CopyIcon } from '~/components/ui/Svg/CopyIcon';
 import { TextLink, TextLinkProps } from '~/components/ui/TextLink';
-import { imgsrc } from '~/utils/imgsrc';
+import { parseImageSrc } from '~/utils/parseImageSrc';
 
 export type ArticleWrapperProps = {
 	children: string;
@@ -58,7 +58,6 @@ export const HtmlParser: FC<{ html: string; group: string; slug: string }> = ({
 	// HTMLをReactNodeに変換する
 	const [content, setContent] = useState<ReactNode>(html);
 
-	// rome-ignore lint/nursery/useExhaustiveDependencies: why?
 	useEffect(() => {
 		const processor = unified()
 			.use(rehypeParse, { fragment: true })
@@ -67,8 +66,8 @@ export const HtmlParser: FC<{ html: string; group: string; slug: string }> = ({
 				components: {
 					a: ({ href, children }: TextLinkProps) => <TextLink href={href}>{children}</TextLink>,
 					img: ({ src = '', alt = 'image' }) => (
-						<BaseImage
-							src={imgsrc(src, group, slug)}
+						<BasicImage
+							src={parseImageSrc(src, group, slug)}
 							alt={alt}
 							width={640}
 							height={480}

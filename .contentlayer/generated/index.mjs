@@ -11,3 +11,5 @@ import allMembers from './Members/_index.json' assert { type: 'json' }
 export { allBlogs, allNews, allMembers }
 
 export const allDocuments = [...allBlogs, ...allNews, ...allMembers]
+
+

@@ -3,7 +3,7 @@
 import NextImage from 'next/image';
 import { ComponentProps } from 'react';
 
-export type BaseImageProps = ComponentProps<typeof NextImage> & {
+export type BasicImageProps = ComponentProps<typeof NextImage> & {
 	fallback?: string | true;
 };
 
@@ -19,7 +19,7 @@ const defaultFallback = '/images/wordmark-logo-image.png';
  * <Image src="/images/wordmark.svg" width={100} height={100} fallback="https://via.placeholder.com/100" />
  * <Image src="/images/wordmark.svg" width={100} height={100} fallback />
  */
-export const BaseImage = ({ fallback, ...props }: BaseImageProps) => {
+export const BasicImage = ({ fallback, ...props }: BasicImageProps) => {
 	if (fallback === true) {
 		return <NextImage onError={(e) => (e.currentTarget.src = defaultFallback)} {...props} />;
 	} else if (fallback) {

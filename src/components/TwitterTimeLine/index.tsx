@@ -2,6 +2,10 @@
 
 import { useEffect } from 'react';
 
+import styles from './style.module.css';
+
+import { classNames } from '~/utils/classNames';
+
 export const TwitterTimeline = () => {
 	useEffect(() => {
 		const script = document.createElement('script');
@@ -17,10 +21,15 @@ export const TwitterTimeline = () => {
 	return (
 		<div id="twitter-timeline">
 			<a
-				className="twitter-timeline"
+				className={classNames('twitter-timeline', styles.twitterTimeline)}
 				href="https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw"
-				aria-label="Tweets By TUATMCC"
-			/>
+				data-height="500"
+				data-chrome="nofooter noheader noborders"
+				lang="en"
+			>
+				Loading Tweets...
+				<span className={styles.spinnerBorder} role="status" />
+			</a>
 		</div>
 	);
 };

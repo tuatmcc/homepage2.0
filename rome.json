@@ -1,53 +1,37 @@
 {
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true,
-      "a11y": {
-        "recommended": true
-      },
-      "security": {
-        "recommended": true
-      },
-      "correctness": {
-        "recommended": true,
-        "noUnusedVariables": "error"
-      },
-      "style": {
-        "recommended": true
-      },
-      "complexity": {
-        "recommended": true
-      },
-      "performance": {
-        "recommended": true
-      },
-      "suspicious": {
-        "recommended": true
-      },
-      "nursery": {
-        "recommended": true,
-        "noVar": "error",
-        "useCamelCase": "error"
-      }
-    }
-  },
-  "formatter": {
-    "enabled": true,
-    "formatWithErrors": true,
-    "indentSize": 2,
-    "lineWidth": 100,
-    "indentStyle": "tab"
-  },
-  "javascript": {
-    "formatter": {
-      "semicolons": "always",
-      "quoteProperties": "asNeeded",
-      "trailingComma": "all",
-      "quoteStyle": "single"
-    }
-  },
-  "files": {
-    "ignore": ["node_modules", "out", ".next", "dist", ".contentlayer"]
-  }
+	"$schema": "./node_modules/rome/configuration_schema.json",
+	"linter": {
+		"rules": {
+			"recommended": true,
+			"complexity": {
+				"noUselessFragments": "warn"
+			},
+			"correctness": {
+				"noUnusedVariables": "warn"
+			},
+			"style": {
+				"noNonNullAssertion": "warn"
+			}
+		}
+	},
+	"formatter": {
+		"formatWithErrors": true,
+		"indentSize": 2,
+		"lineWidth": 100,
+		"indentStyle": "tab"
+	},
+	"javascript": {
+		"formatter": {
+			"semicolons": "always",
+			"quoteProperties": "asNeeded",
+			"trailingComma": "all",
+			"quoteStyle": "single"
+		}
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"files": {
+		"ignore": ["node_modules", "out", ".next", "dist", ".contentlayer", ".vscode"]
+	}
 }

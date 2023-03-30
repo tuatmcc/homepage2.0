@@ -1,7 +1,7 @@
 // eslint は、主にimport の順番を整理する目的で使用し、lintとformatの基本機能は、romeで行う
 module.exports = {
 	root: true,
-	extends: ['next/core-web-vitals', 'plugin:import/warnings', 'plugin:react-hooks/recommended'],
+	extends: ['next/core-web-vitals', 'plugin:import/warnings'],
 	plugins: ['import'],
 	rules: {
 		'jsx-quotes': ['warn', 'prefer-double'],

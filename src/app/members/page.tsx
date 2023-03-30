@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 
 import { allMembers } from 'contentlayer/generated';
 import { Navbar } from '~/components/Navbar';
-import { BaseImage } from '~/components/ui/BaseImage';
+import { BasicImage } from '~/components/ui/BasicImage';
 import { Footer } from '~/components/ui/Footer';
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ const MemberListPage: FC = () => {
 	return (
 		<>
 			<Navbar />
-			<BaseImage
+			<BasicImage
 				alt=""
 				src="/images/abstract-tech-image-6.webp"
 				width={1920}
@@ -41,7 +41,7 @@ const MemberListPage: FC = () => {
 						{allMembers.map((post, _index) => {
 							return (
 								<Link href={post.rootPath} key={post.rootPath} className={styles.listItem}>
-									<BaseImage
+									<BasicImage
 										className={styles.image}
 										src={post.img || '/images/mcc-design.webp'}
 										alt={post.title}

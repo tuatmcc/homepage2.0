@@ -45,7 +45,7 @@ const NewsArticlePage: FC<{ params: { slug: string } }> = ({ params }) => {
 				author={post?.author ?? ''}
 				img={post?.img ?? ''}
 				html={post?.body.html ?? ''}
-				group="blog"
+				group="news"
 				slug={post?.slug ?? ''}
 			/>
 		</>

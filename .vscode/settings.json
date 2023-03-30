@@ -1,12 +1,9 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.endOfLine": "lf",
   "files.associations": {
     "*/**.css": "css"
   },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "rome.rome"
-  },
+  "[typescriptreact]": { "editor.defaultFormatter": "rome.rome" },
   "[typescript]": {
     "editor.defaultFormatter": "rome.rome"
   },
@@ -16,13 +13,15 @@
   "[css]": {
     "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
+  "files.autoSave": "afterDelay",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": false,
     "source.fixAll.rome": true,
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true,
-    "source.organizeImports": false
+    "source.organizeImports": false,
+    "source.organizeImports.rome": true
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true
