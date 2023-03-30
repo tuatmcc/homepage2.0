@@ -5,6 +5,7 @@ import { ComponentProps } from 'react';
 
 export type BasicImageProps = ComponentProps<typeof NextImage> & {
 	fallback?: string | true;
+	fadeIn?: string | true;
 };
 
 const defaultFallback = '/images/wordmark-logo-image.png';
@@ -19,11 +20,24 @@ const defaultFallback = '/images/wordmark-logo-image.png';
  * <Image src="/images/wordmark.svg" width={100} height={100} fallback="https://via.placeholder.com/100" />
  * <Image src="/images/wordmark.svg" width={100} height={100} fallback />
  */
-export const BasicImage = ({ fallback, ...props }: BasicImageProps) => {
-	if (fallback === true) {
-		return <NextImage onError={(e) => (e.currentTarget.src = defaultFallback)} {...props} />;
-	} else if (fallback) {
-		return <NextImage onError={(e) => (e.currentTarget.src = fallback)} {...props} />;
+export const BasicImage = ({ fallback, fadeIn, ...props }: BasicImageProps) => {
+	const onError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+		if (fallback === true) {
+			e.currentTarget.src = defaultFallback;
+		} else if (fallback) {
+			e.currentTarget.src = fallback;
+		}
+	};
+	const onLoad = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+		e.currentTarget.style.opacity = '1';
+	};
+	const style = {
+		opacity: '0',
+		transition: 'opacity 0.3s ease-in-out',
+		...(props.style || {}),
+	};
+	if (fallback || fadeIn) {
+		return <NextImage onError={onError} onLoad={onLoad} style={style} {...props} />;
 	} else {
 		return <NextImage {...props} />;
 	}
