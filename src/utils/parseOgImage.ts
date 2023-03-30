@@ -5,10 +5,9 @@
  *   @example parseImage('./images/1.jpg', 'blog') => https://raw.githubusercontent.com/tuatmcc/homepage2.0/main/blog/images/1.jpg
  *   @example parseImage('/images/1.jpg') => https://www.tuatmcc.com/images/1.jpg
  * */
-export const parseOgImage = (src: string, group: 'blog' | 'news' | 'members' | '' = '') => {
-	const baseURL = 'https://raw.githubusercontent.com/tuatmcc/homepage2.0/main';
-	if (src.startsWith('/')) return src.replace(/^\//, 'https://www.tuatmcc.com/');
-	else if (src.startsWith('./') && group) return src.replace(/^\.\//, `/${baseURL}/${group}`);
-	else if (src.startsWith('http')) return src;
-	else return 'https://www.tuatmcc.com/images/mcc-design.webp';
+export const parseOgImage = (src: string, rootPath: string) => {
+	const baseURL = 'https://raw.githubusercontent.com/tuatmcc/hp-md-content/main';
+	if (src.startsWith('http')) return src;
+	else if (src.startsWith('./') && rootPath) return `${baseURL}/${rootPath}${src.slice(1)}`;
+	else return 'https://www.tuatmcc.com/images/wordmark-logo-image.webp';
 };

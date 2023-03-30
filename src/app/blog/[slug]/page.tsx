@@ -43,7 +43,7 @@ const BlogArticlePage: FC<{ params: { slug: string } }> = ({ params }) => {
 				description={post?.description ?? ''}
 				tags={post?.tags ?? []}
 				author={post?.author ?? ''}
-				img={post?.img ?? ''}
+				img={parseOgImage(post?.img || '', documentType) ?? ''}
 				html={post?.body.html ?? ''}
 				group="blog"
 				slug={post?.slug ?? ''}
