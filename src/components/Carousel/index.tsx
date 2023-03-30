@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, ReactNode, useState, useCallback, useEffect } from 'react';
+import { FC, ReactNode, useCallback, useEffect, useState } from 'react';
 
 import styles from './style.module.css';
 
