@@ -9,6 +9,13 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import remarkToc from 'remark-toc';
 
+const parseOgImage = (src, rootPath) => {
+	const remoteBase = 'https://raw.githubusercontent.com/tuatmcc/hp-md-content/main';
+	if (src.startsWith('http')) return src;
+	else if (src.startsWith('./')) return `${remoteBase}/${rootPath}/${src.slice(2)}`;
+	else return 'https://www.tuatmcc.com/images/wordmark-logo-image.png';
+};
+
 const generate = (documentType) =>
 	defineDocumentType(() => ({
 		name: documentType.charAt(0).toUpperCase() + documentType.slice(1),
@@ -27,6 +34,7 @@ const generate = (documentType) =>
 			},
 			img: {
 				type: 'string',
+				resolve: (doc) => parseOgImage(doc._raw.img, doc._raw.flattenedPath),
 			},
 			tags: {
 				type: 'list',
@@ -70,7 +78,6 @@ const rpcOptions = {
 export default makeSource({
 	contentDirPath: 'content',
 	documentTypes: [Blog, News, Members],
-	date: (date) => date._raw.date,
 	markdown: {
 		remarkPlugins: [remarkGfm, remarkGemoji, remarkMath, [remarkToc, { heading: '', tight: true }]],
 		rehypePlugins: [
