@@ -1,4 +1,4 @@
-import React, { FC, ComponentPropsWithoutRef } from 'react';
+import React, { ComponentPropsWithoutRef, FC } from 'react';
 
 const UnoptimizedImage: FC<ComponentPropsWithoutRef<'img'> & { alt: string; src: string }> = ({
 	src,

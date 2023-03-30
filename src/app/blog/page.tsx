@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 
 import { allBlogs } from 'contentlayer/generated';
 import { Navbar } from '~/components/Navbar';
-import { BaseImage } from '~/components/ui/BaseImage';
+import { BasicImage } from '~/components/ui/BasicImage';
 import { Footer } from '~/components/ui/Footer';
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ const BlogListPage: FC = () => {
 	return (
 		<>
 			<Navbar theme="auto" />
-			<BaseImage
+			<BasicImage
 				alt=""
 				src="/images/abstract-tech-image-6.webp"
 				width={1920}
@@ -41,7 +41,7 @@ const BlogListPage: FC = () => {
 						{allBlogs.map((post, _index) => {
 							return (
 								<Link href={post.rootPath} key={post.rootPath} className={styles.listItem}>
-									<BaseImage
+									<BasicImage
 										className={styles.image}
 										src={post.img || '/images/wordmark-logo-image.png'}
 										alt={post.title}
@@ -50,7 +50,7 @@ const BlogListPage: FC = () => {
 										fallback
 									/>
 									<div className={styles.text}>
-										<h2 className={styles.title}>{post.title}</h2>
+										<h2 className={styles.title}>{post.title}</h2>blog
 										<div className={styles.details}>
 											{post.date && (
 												<div className={styles.date}>{post.date.replace(/T.+/, '')}</div>

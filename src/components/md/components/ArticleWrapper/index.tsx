@@ -8,7 +8,7 @@ import { HtmlParser } from '../HtmlParser';
 
 import styles from './style.module.css';
 
-import { BaseImage } from '~/components/ui/BaseImage';
+import { BasicImage } from '~/components/ui/BasicImage';
 import { Footer } from '~/components/ui/Footer';
 import { Tag, TagList } from '~/components/ui/Tag';
 
@@ -28,7 +28,7 @@ export const ArticleWrapper: FC<{
 		<>
 			<header>
 				<div className={styles.headerContent}>
-					<BaseImage
+					<BasicImage
 						src={img || '/images/wordmark-logo-image.svg'}
 						alt="hero image"
 						role="presentation"

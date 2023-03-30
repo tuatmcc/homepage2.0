@@ -6,7 +6,7 @@ import styles from './style.module.css';
 
 import { allNews } from 'contentlayer/generated';
 import { Navbar } from '~/components/Navbar';
-import { BaseImage } from '~/components/ui/BaseImage';
+import { BasicImage } from '~/components/ui/BasicImage';
 import { Footer } from '~/components/ui/Footer';
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ const NewsListPage: FC = () => {
 	return (
 		<>
 			<Navbar />
-			<BaseImage
+			<BasicImage
 				alt=""
 				src="/images/abstract-tech-image-4.webp"
 				width={1920}
@@ -40,7 +40,7 @@ const NewsListPage: FC = () => {
 						{allNews.map((post, _index) => {
 							return (
 								<Link href={post.rootPath} key={post.rootPath} className={styles.listItem}>
-									<BaseImage
+									<BasicImage
 										className={styles.image}
 										src={post.img || '/images/wordmark.svg'}
 										alt={post.title}
