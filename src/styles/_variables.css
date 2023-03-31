@@ -41,23 +41,14 @@
   --navbar-logo-size: 56px;
   --header-height: 100svh;
   --scrollbar-width: 10px;
-
-  /* Font Size */
-  --font-size-navbar: 64px;
+  --font-size-navbar: 48px;
 
   /* Mobile */
   @media (--bp-sm) {
-    /* Size */
     --navbar-height: 60px;
     --navbar-logo-size: 32px;
-
-    /* Font Size */
     --font-size-navbar: 32px;
   }
 
-  /* Fonts Family */
-  --font-family-noto-sans-jp: 'Noto Sans JP', sans-serif;
-  --font-family-gill-sans: 'Gill Sans', 'Noto Sans JP', sans-serif;
-  --font-family-orbitron: 'Orbitron', 'Noto Sans JP', monospace;
-  --font-family-jetbrains-mono: 'JetBrains Mono', 'Noto Sans JP', monospace;
+  /* Font Family is defined in layout.tsx */
 }
