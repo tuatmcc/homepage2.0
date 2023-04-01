@@ -4,7 +4,7 @@ const defaultFontSize = 64;
 const defalutColor = '#0066CC';
 
 export const WordmarkLogo = ({ size, color = defalutColor }: IconProps) => {
-	const width = size ? (255 * size) / defaultFontSize : '100%';
+	const width = size ? (255 * size) / defaultFontSize : undefined;
 	const height = size ? size : '100%';
 	return (
 		<svg
