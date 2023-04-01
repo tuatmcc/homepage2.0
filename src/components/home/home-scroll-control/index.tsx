@@ -2,15 +2,11 @@
 
 import { Image as ImageImpl, Preload, Scroll, ScrollControls, useScroll } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import Link from 'next/link';
 import { FC, Suspense, useEffect, useState } from 'react';
 
 import { RecentNews } from '../RecentNews';
 
 import styles from './style.module.css';
-
-import { GitHubIcon, TwitterIcon } from '~/components/ui/Svg';
-import { ROUTES } from '~/routes/base';
 
 const pageAmout = 3.5;
 
@@ -129,49 +125,7 @@ const Html: FC = () => {
 				<span className={styles.sentence}>新しい視野を開拓する。</span>
 				<span className={styles.sentence}>MCCで、あなたも技術を探求しませんか？</span>
 			</p>
-			<div className={styles.bottms} style={{ top: vH * 2.8, height: vH * (3 - 2.5) }}>
-				<div className={styles.cards}>
-					<Link href={ROUTES.ABOUT.PATH} className={styles.cardItem}>
-						もっとMCCを知る →
-					</Link>
-					<Link href={ROUTES.NEWS.PATH} className={styles.cardItem}>
-						お知らせ →
-					</Link>
-					<Link href={ROUTES.BLOG.PATH} className={styles.cardItem}>
-						ブログ →
-					</Link>
-					<div className={styles.socials}>
-						<a
-							href="https://twitter.com/TUATMCC"
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label="twitter link"
-							className={styles.socialLink}
-						>
-							<TwitterIcon />
-							MCC
-						</a>
-						<a
-							href="https://twitter.com/tuatkyopro"
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label="twitter link"
-							className={styles.socialLink}
-						>
-							<TwitterIcon />
-							競プロ
-						</a>
-						<a
-							href="https://github.com/tuatmcc"
-							target="_blank"
-							rel="noopener noreferrer"
-							aria-label="github link"
-							className={styles.socialLink}
-						>
-							<GitHubIcon />
-						</a>
-					</div>
-				</div>
+			<div className={styles.bottms} style={{ top: vH * 2.6, height: vH * (3 - 2.5) }}>
 				<RecentNews />
 			</div>
 		</>
