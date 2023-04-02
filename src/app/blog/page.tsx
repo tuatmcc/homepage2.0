@@ -32,7 +32,7 @@ const BlogListPage: FC = () => {
 			<header className={styles.header}>
 				<div className={styles.headerContent}>
 					<h1 className={styles.headerTitle}>BLOG</h1>
-					<h2 className={styles.headerSubTitle}>MCCのブログ・ポエム一覧です</h2>
+					<h2 className={styles.headerSubTitle}>MCC部員が書いたブログ・ポエム</h2>
 				</div>
 			</header>
 			<main>
@@ -50,7 +50,7 @@ const BlogListPage: FC = () => {
 										fallback
 									/>
 									<div className={styles.text}>
-										<h2 className={styles.title}>{post.title}</h2>blog
+										<h2 className={styles.title}>{post.title}</h2>
 										<div className={styles.details}>
 											{post.date && (
 												<div className={styles.date}>{post.date.replace(/T.+/, '')}</div>

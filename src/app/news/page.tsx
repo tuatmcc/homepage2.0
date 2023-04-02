@@ -31,7 +31,7 @@ const NewsListPage: FC = () => {
 			<header className={styles.header}>
 				<div className={styles.headerContent}>
 					<h1 className={styles.headerTitle}>NEWS</h1>
-					<h2 className={styles.headerSubTitle}>ブログ</h2>
+					<h2 className={styles.headerSubTitle}>MCCからのお知らせ</h2>
 				</div>
 			</header>
 			<main>
@@ -42,7 +42,7 @@ const NewsListPage: FC = () => {
 								<Link href={post.rootPath} key={post.rootPath} className={styles.listItem}>
 									<BasicImage
 										className={styles.image}
-										src={post.img || '/images/wordmark.svg'}
+										src={post.img || '/images/wordmark-logo-image.svg'}
 										alt={post.title}
 										width={350}
 										height={200}
