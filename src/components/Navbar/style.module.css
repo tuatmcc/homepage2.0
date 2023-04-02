@@ -140,7 +140,7 @@
         align-items: center;
         justify-content: flex-start;
         padding: 0;
-        font-family: Orbitron, sans-serif;
+        font-family: var(--font-family-orbitron);
         font-size: 24px;
         font-weight: bold;
         line-height: 3;
