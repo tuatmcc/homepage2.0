@@ -27,7 +27,7 @@
     "@ladle/react": "^2.10.2",
     "@next/bundle-analyzer": "^13.2.4",
     "@react-three/cannon": "^6.5.2",
-    "@react-three/drei": "^9.61.3",
+    "@react-three/drei": "^9.61.4",
     "@react-three/fiber": "^8.12.0",
     "@types/node": "18.15.5",
     "@types/react": "18.0.28",
@@ -44,7 +44,7 @@
     "framer-motion": "^10.10.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
-    "next": "13.2.5-canary.25",
+    "next": "13.2.5-canary.27",
     "next-contentlayer": "^0.3.1",
     "next-sitemap": "^4.0.6",
     "postcss": "^8.4.21",
@@ -79,8 +79,7 @@
     "unified": "^10.1.2"
   },
   "volta": {
-    "node": "18.13.0",
-    "npm": "9.3.1"
+    "node": "18.15.0"
   },
   "optionalDependencies": {
     "@next/env": "^13.2.4",
