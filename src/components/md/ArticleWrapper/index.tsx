@@ -1,7 +1,3 @@
-'use client';
-
-import { IsoDateTimeString } from 'contentlayer/core';
-import Link from 'next/link';
 import { FC } from 'react';
 
 import { HtmlParser } from '../HtmlParser';
@@ -9,20 +5,21 @@ import { HtmlParser } from '../HtmlParser';
 import styles from './style.module.css';
 
 import { BasicImage } from '~/components/ui/BasicImage';
+import { BasicLink } from '~/components/ui/BasicLink';
 import { Footer } from '~/components/ui/Footer';
 import { Tag, TagList } from '~/components/ui/Tag';
 
 export const ArticleWrapper: FC<{
 	title: string;
 	description?: string | undefined;
-	date: IsoDateTimeString;
 	img?: string | undefined;
 	tags?: string[] | undefined;
 	author?: string | undefined;
 	slug: string;
+	dateStr: string;
 	html: string;
 	group: string;
-}> = ({ title, date, img, tags, author, slug, html, group }) => {
+}> = ({ title, dateStr, img, tags, author, slug, html, group }) => {
 	const tagList = tags?.map((tag) => <Tag key={tag}>{tag}</Tag>);
 	return (
 		<>
@@ -41,11 +38,11 @@ export const ArticleWrapper: FC<{
 					<h1 className={styles.title}>{title}</h1>
 					<div className={styles.info}>
 						{author && (
-							<Link href={`/members/${author}`} className={styles.author}>
+							<BasicLink href={`/members/${author}`} className={styles.author}>
 								@{author}
-							</Link>
+							</BasicLink>
 						)}
-						<div className={styles.date}>{date.replace(/T.+/, '')}</div>
+						<div className={styles.date}>{dateStr}</div>
 						<TagList className={styles.tagList}>{tagList}</TagList>
 					</div>
 				</div>
@@ -53,7 +50,7 @@ export const ArticleWrapper: FC<{
 
 			<main>
 				<div className={styles.mainContent}>
-					<HtmlParser html={html} group={group} slug={slug} />
+					<HtmlParser html={html} documentType={group} slug={slug} />
 				</div>
 			</main>
 			<Footer />

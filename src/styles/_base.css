@@ -1,38 +1,13 @@
-html,
 body {
-  position: relative;
   top: 0;
   width: 100%;
   min-height: 100%;
-  padding: 0;
-  margin: 0;
-  font-family: Arial, 'Noto Sans JP', Helvetica, sans-serif;
-  color: var(--color-text-default);
-  background: transparent;
-  text-size-adjust: none;
+  font-family: var(--font-family-noto-sans-jp);
+  color: var(--color-gray-800);
+  background-color: var(--color-gray-100);
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-}
-
-a {
-  color: var(--color-text-default);
-  text-decoration: none;
-}
-
-code {
-  padding: 1px 5px;
-  margin: 0 0.2em;
-  font-family: var(--font-family-jetbrains-mono);
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--color-code-text);
-  background-color: var(--color-code-background);
-  border-radius: 5px;
-}
-
-button {
-  background-color: transparent;
-  border: none;
+  scrollbar-gutter: stable;
 }
 
 ::-webkit-scrollbar {
@@ -46,7 +21,7 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-mcc-primary);
+  background: var(--mcc-color-3);
   border-radius: 1ex;
 }
 

@@ -7,7 +7,7 @@ import styles from './style.module.css';
 import { BasicLink } from '~/components/ui/BasicLink';
 import { TwitterIcon } from '~/components/ui/Svg';
 import { WordmarkLogo } from '~/components/ui/Svg/WordmarkLogo';
-import { BASE_ROUTES_LIST, ROUTES } from '~/routes/base';
+import { BASE_ROUTES_LIST, ROUTES } from '~/constants/routes';
 import { classNames } from '~/utils/classNames';
 
 type NavbarProps = {
@@ -56,7 +56,6 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) =>
 
 	useEffect(() => {
 		document.body.style.overflow = isNavDrawerOpen ? 'hidden' : 'auto';
-		document.body.style.scrollbarGutter = isNavDrawerOpen ? 'none' : 'auto';
 	}, [isNavDrawerOpen]);
 
 	return (

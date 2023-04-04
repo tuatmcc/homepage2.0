@@ -23,6 +23,7 @@ export type Blog = {
   body: Markdown
   slug: string
   rootPath: string
+  dateStr: string
 }
 
 export type Members = {
@@ -40,6 +41,7 @@ export type Members = {
   body: Markdown
   slug: string
   rootPath: string
+  dateStr: string
 }
 
 export type News = {
@@ -57,6 +59,7 @@ export type News = {
   body: Markdown
   slug: string
   rootPath: string
+  dateStr: string
 }  
 
 /** Nested types */
