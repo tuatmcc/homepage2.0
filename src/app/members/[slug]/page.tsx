@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 
 import { allMembers } from 'contentlayer/generated';
 import { Navbar } from '~/components/Navbar';
-import { ArticleWrapper } from '~/components/md/components/ArticleWrapper';
+import { ArticleWrapper } from '~/components/md/ArticleWrapper';
 import { parseOgImage } from '~/utils/parseOgImage';
 
 const documentType = 'members';
@@ -39,7 +39,7 @@ const MemberProfilePage: FC<{ params: { slug: string } }> = ({ params }) => {
 			<Navbar theme="auto" />
 			<ArticleWrapper
 				title={post?.title ?? ''}
-				date={post?.date ?? ''}
+				dateStr={post?.dateStr ?? ''}
 				description={post?.description ?? ''}
 				tags={post?.tags ?? []}
 				author={post?.author ?? ''}

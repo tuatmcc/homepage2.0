@@ -14,7 +14,7 @@
   transition: all 0.5s ease-in-out;
 
   &._white {
-    background-color: white;
+    background-color: var(--color-gray-100);
     box-shadow: 0 0 4px #0003;
   }
 
