@@ -4,6 +4,7 @@
   width: 100%;
   height: 100svh;
   font-family: var(--font-family-orbitron);
+  font-weight: bold;
   line-height: 1;
   color: white;
   scroll-behavior: auto;

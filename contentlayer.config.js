@@ -53,6 +53,10 @@ const generate = (documentType) =>
 				type: 'string',
 				resolve: (doc) => doc._raw.flattenedPath,
 			},
+			dateStr: {
+				type: 'string',
+				resolve: (doc) => doc.date.replace(/T.*/, ''),
+			},
 		},
 	}));
 

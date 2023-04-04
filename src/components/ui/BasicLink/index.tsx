@@ -19,7 +19,7 @@ export type BasicLinkProps = ComponentPropsWithRef<'a'> & {
  * <BasicLink href="/about">About</BasicLink>
  */
 export const BasicLink = ({ children, href, ...props }: BasicLinkProps) => {
-	if (href.startsWith('/'))
+	if (href.startsWith('/') || href.startsWith('#') || !href.includes('://'))
 		return (
 			<NextLink href={href} {...props}>
 				{children}
@@ -27,7 +27,7 @@ export const BasicLink = ({ children, href, ...props }: BasicLinkProps) => {
 		);
 	else
 		return (
-			<a href={href} {...props}>
+			<a href={href} target="_blank" rel="noopener noreferrer" {...props}>
 				{children}
 			</a>
 		);

@@ -20,48 +20,42 @@ const BlogListPage: FC = () => {
 	return (
 		<>
 			<Navbar theme="auto" />
-			<BasicImage
-				alt=""
-				src="/images/abstract-tech-image-6.webp"
-				width={1920}
-				height={1280}
-				role="presentation"
-				className={styles.background}
-				fallback
-			/>
+			<div className={styles.background} />
 			<header className={styles.header}>
 				<div className={styles.headerContent}>
-					<h1 className={styles.headerTitle}>BLOG</h1>
+					<h1 className={styles.headerTitle}>Blog</h1>
 					<h2 className={styles.headerSubTitle}>MCC部員が書いたブログ・ポエム</h2>
 				</div>
 			</header>
-			<main>
+			<main className={styles.main}>
 				<div className={styles.mainContent}>
-					<div className={styles.list}>
+					<ul className={styles.list}>
 						{allBlogs.map((post, _index) => {
 							return (
-								<Link href={post.rootPath} key={post.rootPath} className={styles.listItem}>
-									<BasicImage
-										className={styles.image}
-										src={post.img || '/images/wordmark-logo-image.png'}
-										alt={post.title}
-										width={350}
-										height={200}
-										fallback
-									/>
-									<div className={styles.text}>
-										<h2 className={styles.title}>{post.title}</h2>
-										<div className={styles.details}>
-											{post.date && (
-												<div className={styles.date}>{post.date.replace(/T.+/, '')}</div>
-											)}
-											{post.author && <div className={styles.author}>@{post.author}</div>}
+								<li className={styles.listItem} key={post.rootPath}>
+									<Link href={post.rootPath} className={styles.link}>
+										<BasicImage
+											className={styles.image}
+											src={post.img || '/images/wordmark-logo-image.png'}
+											alt={post.title}
+											width={100}
+											height={100}
+											fallback
+										/>
+										<div className={styles.text}>
+											<h2 className={styles.title}>{post.title}</h2>
+											<div className={styles.details}>
+												{post.date && (
+													<div className={styles.date}>{post.date.replace(/T.+/, '')}</div>
+												)}
+												{post.author && <div className={styles.author}>@{post.author}</div>}
+											</div>
 										</div>
-									</div>
-								</Link>
+									</Link>
+								</li>
 							);
 						})}
-					</div>
+					</ul>
 				</div>
 			</main>
 
