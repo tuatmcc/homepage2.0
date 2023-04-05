@@ -19,7 +19,7 @@ const defaultFallback = '/images/wordmark-logo-image.png';
  * <Image src="/images/wordmark.svg" width={100} height={100} fallback="https://via.placeholder.com/100" />
  * <Image src="/images/wordmark.svg" width={100} height={100} fallback />
  */
-export const BasicImage = ({ fallback, style, ...props }: BasicImageProps) => {
+export const BasicImage = ({ fallback, style, loading, ...props }: BasicImageProps) => {
 	const onError = (e: SyntheticEvent<HTMLImageElement, Event>) => {
 		if (fallback === true) {
 			e.currentTarget.src = defaultFallback;
@@ -37,6 +37,7 @@ export const BasicImage = ({ fallback, style, ...props }: BasicImageProps) => {
 				transition: 'opacity 0.2s',
 				...style,
 			}}
+			loading={loading ?? 'lazy'}
 			{...props}
 		/>
 	);
