@@ -7,6 +7,7 @@ const nextConfig = {
 	output: 'export',
 	experimental: {
 		appDir: true,
+		scrollRestoration: true,
 	},
 	reactStrictMode: true,
 	swcMinify: true,

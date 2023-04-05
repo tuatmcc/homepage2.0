@@ -3,6 +3,7 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
+import {BackToTop} from '~/components/BackToTop';
 import { Navbar } from '~/components/Navbar';
 import {TwitterTimeline} from '~/components/TwitterTimeLine';
 import {BasicLink} from '~/components/ui/BasicLink';
@@ -86,16 +87,18 @@ const AboutPage: FC = () => {
           <Image className={styles.galleryItem} src="/images/noko-fes-2022-room.webp" alt="MCC" width={300} height={300} />
         </div>
         </section>
-        </div>
 
         <section>
-          <div className={styles.twitterFeed}>
           <h2 className={styles.heading2}>Twitter</h2>
+          <div className={styles.twitterFeed}>
           <TwitterTimeline />
           </div>
         </section>
+        </div>
       </main>
+
       <Footer />
+      <BackToTop />
     </>
   );
 };

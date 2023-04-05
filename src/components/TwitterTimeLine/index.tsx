@@ -24,7 +24,7 @@ export const TwitterTimeline = () => {
 				className={classNames('twitter-timeline', styles.twitterTimeline)}
 				href="https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw"
 				data-height="500"
-				data-chrome="nofooter noheader noborders"
+				data-chrome="nofooter noheader noborders transparent"
 				lang="en"
 			>
 				Loading Tweets...
