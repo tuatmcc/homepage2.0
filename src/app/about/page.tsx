@@ -8,14 +8,14 @@ import {TwitterTimeline} from '~/components/TwitterTimeLine';
 import {BasicLink} from '~/components/ui/BasicLink';
 import { Footer } from '~/components/ui/Footer';
 import {TwitterIcon} from '~/components/ui/Svg';
-import {classNames} from '~/utils/classNames';
+import {DiscordIcon} from '~/components/ui/Svg/DiscordIcon';
 
 const AboutPage: FC = () => {
   return (
   <>
     <Navbar theme="auto"/>
     <header className={styles.header}>
-        <div className={styles.headerContent}>
+      <div className={styles.headerContent}>
             <h1 className={styles.pageTitle}>What is MCC?</h1>
             <h2 className={styles.pageSubTitle}>
                 MCCについて
@@ -58,11 +58,23 @@ const AboutPage: FC = () => {
         <p className={styles.p}>
         MCC では新入部員を随時募集してます。 お問合せ、入部希望者は以下よりご連絡ください。
         </p>
-          <BasicLink href="https://twitter.com/messages/compose?recipient_id=227598819&text=はじめまして！○科に所属の○年です！MCCに入部したいです！"
+           <BasicLink href="https://twitter.com/messages/compose?recipient_id=227598819&text=はじめまして！○科に所属の○年です！MCCに入部したいです！"
             className={styles.twitterDmButton}
             data-screen-name="@TUATMCC"
             data-size="large">
-            Message @tuatmcc
+              <TwitterIcon color="#1DA1F2" size={24} />
+            MCC
+          </BasicLink>
+          <BasicLink href="https://twitter.com/messages/compose?recipient_id=1449066255776825344&text=はじめまして！○科に所属の○年です！MCCに入部したいです！"
+            className={styles.twitterDmButton}
+            data-screen-name="@TUATKYOPRO"
+            data-size="large">
+              <TwitterIcon color="#1DA1F2" size={24} />
+              Kyopro
+          </BasicLink>
+          <BasicLink href="https://discord.gg/mrEsx3w27E" className={styles.discordButton}>
+              <DiscordIcon size={24} />
+            Discord
           </BasicLink>
         </section>
 
