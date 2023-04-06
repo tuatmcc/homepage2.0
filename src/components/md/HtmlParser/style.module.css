@@ -41,7 +41,14 @@
   & ul,
   & ol {
     padding-left: 32px;
-    list-style: normal;
+  }
+
+  & ul {
+    list-style: disc;
+  }
+
+  & ol {
+    list-style: decimal;
   }
 
   & blockquote {
@@ -57,14 +64,17 @@
 
   & table {
     overflow: auto;
+    border-collapse: collapse;
     background-color: var(--color-background);
 
     & thead {
       & tr {
-        background: var(--color-table-head-background);
+        background: var(--color-gray-300);
 
         & th {
           padding: 4px 8px;
+          font-weight: bold;
+          text-align: left;
         }
       }
     }
@@ -73,7 +83,7 @@
       & tr {
         & td {
           padding: 4px 8px;
-          background-color: white;
+          background-color: var(--color-gray-0);
         }
       }
     }
@@ -104,13 +114,12 @@
       right: 0;
       padding: 4px 8px;
       margin: 8px;
-      color: white;
-      cursor: pointer;
+      color: var(--color-gray-0);
       border-radius: 2px;
     }
 
     & code {
-      color: white;
+      color: inherit;
       background: inherit;
     }
   }

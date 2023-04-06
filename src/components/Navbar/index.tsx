@@ -44,8 +44,10 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) =>
 		const changeColorByScroll = () => {
 			if (window.scrollY >= window.innerHeight) {
 				setOpaque(true);
+				// set scrollbar-gutter: stable to html element
 			} else {
 				setOpaque(false);
+				window.document.documentElement.style.scrollbarGutter = 'auto';
 			}
 		};
 
@@ -56,6 +58,7 @@ export const Navbar: FC<NavbarProps> = ({ noBrand = false, theme = 'white' }) =>
 
 	useEffect(() => {
 		document.body.style.overflow = isNavDrawerOpen ? 'hidden' : 'auto';
+		document.documentElement.style.scrollbarGutter = isNavDrawerOpen ? 'stable' : 'auto';
 	}, [isNavDrawerOpen]);
 
 	return (
