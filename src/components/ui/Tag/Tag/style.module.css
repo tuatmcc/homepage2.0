@@ -1,8 +1,9 @@
 .tag {
   padding: 4px 8px;
-  font-family: var(--font-family-tag);
-  font-size: 1rem;
-  color: #000;
-  background-color: var(--color-mcc-quaternary);
+  font-family: var(--font-family-noto-sans-jp);
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-gray-700);
+  background-color: var(--mcc-color-6);
   border-radius: 4px;
 }
