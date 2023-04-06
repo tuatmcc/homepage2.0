@@ -1,6 +1,4 @@
 html {
-  scroll-behavior: smooth;
-  scrollbar-gutter: stable;
   scroll-snap-type: y mandatory;
 }
 
