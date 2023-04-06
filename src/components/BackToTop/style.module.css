@@ -1,0 +1,19 @@
+.backToTop {
+  position: fixed;
+  right: 20px;
+  bottom: 32px;
+  color: var(--color-gray-800);
+  background: var(--color-gray-100);
+  border-radius: 40%;
+  box-shadow: var(--shadow-neumorphism);
+  transition: all 0.2s ease-in-out;
+
+  &._hidden {
+    display: none;
+  }
+
+  &:hover {
+    background: var(--color-gray-200);
+    box-shadow: var(--shadow-neumorphism-hover);
+  }
+}

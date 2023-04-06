@@ -12,7 +12,7 @@
 }
 
 .header {
-  padding: calc(var(--navbar-height) * 1.2) 5% 32px;
+  padding: 16px 5% 32px;
 
   & .headerContent {
     display: flex;
@@ -39,19 +39,27 @@
       }
     }
 
-    & .headerSubTitle {
-      margin: 0;
-      overflow: hidden;
-      font-size: 16px;
-      font-weight: normal;
-      text-align: center;
-      letter-spacing: 0.1em;
-      white-space: nowrap;
-      animation: typing 4s steps(80, end);
+    & .typeWriterContainer {
+      display: inline-block;
+      margin: 0 auto;
 
-      &::after {
-        content: '|';
-        animation: blink-caret 0.75s step-end infinite;
+      & .headerSubTitle {
+        position: relative;
+        overflow: hidden;
+        font-size: 16px;
+        font-weight: normal;
+        text-align: center;
+        letter-spacing: 0.1em;
+        white-space: nowrap;
+        animation: typing 3s steps(21, end) forwards;
+
+        &::after {
+          position: absolute;
+          right: -4px;
+          display: inline-block;
+          content: '|';
+          animation: blink-caret 0.75s step-end infinite;
+        }
       }
     }
   }
@@ -154,6 +162,7 @@
 @keyframes blink-caret {
   0%,
   100% {
+    color: transparent;
     background-color: transparent;
   }
 

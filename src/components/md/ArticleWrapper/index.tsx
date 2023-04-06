@@ -4,6 +4,7 @@ import { HtmlParser } from '../HtmlParser';
 
 import styles from './style.module.css';
 
+import { BackToTop } from '~/components/BackToTop';
 import { BasicImage } from '~/components/ui/BasicImage';
 import { BasicLink } from '~/components/ui/BasicLink';
 import { Footer } from '~/components/ui/Footer';
@@ -23,18 +24,19 @@ export const ArticleWrapper: FC<{
 	const tagList = tags?.map((tag) => <Tag key={tag}>{tag}</Tag>);
 	return (
 		<>
-			<header>
+			<BasicImage
+				src={img || '/images/wordmark-logo-image.svg'}
+				alt="hero image"
+				role="presentation"
+				width={800}
+				height={300}
+				className={styles.heroImage}
+				fallback
+			/>
+			<div className={styles.heroImageOverlay} />
+
+			<header className={styles.header}>
 				<div className={styles.headerContent}>
-					<BasicImage
-						src={img || '/images/wordmark-logo-image.svg'}
-						alt="hero image"
-						role="presentation"
-						width={800}
-						height={300}
-						className={styles.heroImage}
-						fallback
-					/>
-					<div className={styles.heroImageOverlay} />
 					<h1 className={styles.title}>{title}</h1>
 					<div className={styles.info}>
 						{author && (
@@ -51,9 +53,14 @@ export const ArticleWrapper: FC<{
 			<main>
 				<div className={styles.mainContent}>
 					<HtmlParser html={html} documentType={group} slug={slug} />
+					<BasicLink href={`/${group}#top`} className={styles.backLink}>
+						← 記事一覧に戻る
+					</BasicLink>
 				</div>
 			</main>
 			<Footer />
+
+			<BackToTop />
 		</>
 	);
 };

@@ -24,9 +24,12 @@ const BlogListPage: FC = () => {
 			<header className={styles.header}>
 				<div className={styles.headerContent}>
 					<h1 className={styles.headerTitle}>Blog</h1>
-					<h2 className={styles.headerSubTitle}>MCC部員が書いたブログ・ポエム</h2>
+					<div className={styles.typeWriterContainer}>
+						<h2 className={styles.headerSubTitle}>MCC部員が書いたブログ・ポエム</h2>
+					</div>
 				</div>
 			</header>
+
 			<main className={styles.main}>
 				<div className={styles.mainContent}>
 					<ul className={styles.list}>
