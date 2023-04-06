@@ -15,6 +15,7 @@ const AboutPage: FC = () => {
   return (
   <>
     <Navbar theme="auto"/>
+    <div className={styles.background} />
     <header className={styles.header}>
       <div className={styles.headerContent}>
             <h1 className={styles.pageTitle}>What is MCC?</h1>

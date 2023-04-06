@@ -1,7 +1,7 @@
 @custom-media --bp-sm (max-width: 780px);
 
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 1;
   display: flex;
@@ -15,7 +15,7 @@
 
   &._white {
     background-color: var(--color-gray-100);
-    box-shadow: 0 0 4px #0003;
+    box-shadow: var(--shadow-neumorphism);
   }
 
   & .brand {
@@ -115,7 +115,7 @@
     width: 80%;
     max-width: 500px;
     height: auto;
-    max-height: calc(100vh - var(--navbar-height));
+    max-height: calc(100vh);
     padding: var(--navbar-height) 0 0 0;
     overflow-y: auto;
     letter-spacing: 0.4em;

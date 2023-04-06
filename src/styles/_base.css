@@ -1,3 +1,9 @@
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  scroll-snap-type: y mandatory;
+}
+
 body {
   top: 0;
   width: 100%;
@@ -5,9 +11,6 @@ body {
   font-family: var(--font-family-noto-sans-jp);
   color: var(--color-gray-800);
   background-color: var(--color-gray-100);
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  scrollbar-gutter: stable;
 }
 
 ::-webkit-scrollbar {

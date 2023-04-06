@@ -12,7 +12,7 @@
 }
 
 .header {
-  padding: calc(var(--navbar-height) * 1.2) 5% 32px;
+  padding: 16px 5% 32px;
 
   & .headerContent {
     display: flex;
