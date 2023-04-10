@@ -34,7 +34,6 @@ const generate = (documentType) =>
 			},
 			img: {
 				type: 'string',
-				resolve: (doc) => parseOgImage(doc._raw.img, doc._raw.flattenedPath),
 			},
 			tags: {
 				type: 'list',
@@ -45,6 +44,11 @@ const generate = (documentType) =>
 			},
 		},
 		computedFields: {
+			img: {
+				type: 'string',
+				resolve: (doc) =>
+					doc._raw.img ? parseOgImage(doc._raw.img, doc._raw.flattenedPath) : null,
+			},
 			slug: {
 				type: 'string',
 				resolve: (doc) => doc._raw.flattenedPath.replace(`${documentType}/`, ''),

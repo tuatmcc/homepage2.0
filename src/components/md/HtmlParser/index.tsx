@@ -11,7 +11,7 @@ import styles from './style.module.css';
 import { BasicImage } from '~/components/ui/BasicImage';
 import { BasicLink, BasicLinkProps } from '~/components/ui/BasicLink';
 import { MiniLinkIcon } from '~/components/ui/Svg';
-import { parseImageSrc } from '~/utils/parseImageSrc';
+import { parseImageSrc } from '~/libs/parseImageSrc';
 
 export type ArticleWrapperProps = {
 	children: string;

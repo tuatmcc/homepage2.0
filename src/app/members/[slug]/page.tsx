@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 import { allMembers } from 'contentlayer/generated';
 import { Navbar } from '~/components/Navbar';
 import { ArticleWrapper } from '~/components/md/ArticleWrapper';
-import { parseOgImage } from '~/utils/parseOgImage';
+import { parseOgImage } from '~/libs/parseOgImage';
 
 const documentType = 'members';
 

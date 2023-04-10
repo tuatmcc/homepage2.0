@@ -8,7 +8,7 @@ import { BasicLink } from '~/components/ui/BasicLink';
 import { TwitterIcon } from '~/components/ui/Svg';
 import { WordmarkLogo } from '~/components/ui/Svg/WordmarkLogo';
 import { BASE_ROUTES_LIST, ROUTES } from '~/constants/routes';
-import { classNames } from '~/utils/classNames';
+import { classNames } from '~/libs/classNames';
 
 type NavbarProps = {
 	noBrand?: boolean;

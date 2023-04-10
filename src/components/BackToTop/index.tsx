@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from 'react';
 
 import styles from './style.module.css';
 
-import { classNames } from '~/utils/classNames';
+import { classNames } from '~/libs/classNames';
 
 export const BackToTop: FC = () => {
 	const [isHidden, setIsHidden] = useState<boolean>(true);
