@@ -6,6 +6,7 @@ import styles from './style.module.css';
 import {BackToTop} from '~/components/BackToTop';
 import { Navbar } from '~/components/Navbar';
 import {TwitterTimeline} from '~/components/TwitterTimeLine';
+import { BasicImage } from '~/components/ui/BasicImage';
 import {BasicLink} from '~/components/ui/BasicLink';
 import { Footer } from '~/components/ui/Footer';
 import {TwitterIcon} from '~/components/ui/Svg';
@@ -20,7 +21,7 @@ const AboutPage: FC = () => {
       <div className={styles.headerContent}>
             <h1 className={styles.pageTitle}>What is MCC?</h1>
             <h2 className={styles.pageSubTitle}>
-                MCCについて
+              MCCについて
             </h2>
           </div>
     </header>
@@ -31,28 +32,32 @@ const AboutPage: FC = () => {
         <section>
           <h2>MCCとは</h2>
             <p className={styles.p}>
-            東京農工大学の公認サークル「マイクロコンピュータクラブ」の頭文字から来ており、
+              東京農工大学の公認サークル「マイクロコンピュータクラブ」の頭文字から来ており、
             ITに関する活動を行うサークルです。
             </p>
             <p className={styles.p}>
-            マイクロコンピューターという名前がついていますが、マイコンを使った活動を主にしているわけではなく、
-            一般的なPCを使った活動全般を行っています。
+              マイクロコンピューターという名前がついていますが、マイコンを使った活動を主にしているわけではなく、
+              一般的なPCを使った活動全般を行っています。
             </p>
         </section>
 
         <section>
           <h2>活動内容</h2>
           <p className={styles.p}>
-          定期的に行われるミーティングを通して、部員それぞれの情報機器使用・プログラミング能力などを向上させ、
-          その活動を元に<span className={styles.em}><b>学園祭での作品展示・部内講習会</b></span>
-          の実施といった活動を行なっています。
-          競技プログラミング部門では、<span className={styles.em}><b>プログラミングコンテストへの参加</b></span>を主体に活動しています。
+            定期的に行われるミーティングを通して、部員それぞれの情報機器使用・プログラミング能力などを向上させ、
+            その活動を元に<span className={styles.em}><b>学園祭での作品展示・部内講習会</b></span>
+            の実施といった活動を行なっています。
+            競技プログラミング部門では、<span className={styles.em}><b>プログラミングコンテストへの参加</b></span>を主体に活動しています。
           </p>
         </section>
 
         <section>
         <h2>活動場所</h2>
-        <p className={styles.p}>工学部小金井キャンパス・サークル棟</p>
+        <p className={styles.p}>工学部小金井キャンパス・サークルB棟2階　MCC部室</p>
+        <div className={styles.imageContainer}>
+          <BasicImage className={styles.image} src="/images/campas-map.webp" alt="campas map" width={900} height={1200} />
+          <BasicImage className={styles.image} src="/images/club-building-b.webp" alt="campas map" width={900} height={1200} />
+        </div>
         </section>
 
         <section>

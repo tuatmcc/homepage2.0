@@ -94,6 +94,31 @@
         line-height: 2;
       }
 
+      & .imageContainer {
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+
+        & .image {
+          flex: 1;
+          width: 40%;
+          height: auto;
+          border-radius: 8px;
+          object-fit: contain;
+        }
+
+        @media (--bp-sm) {
+          flex-direction: column;
+
+          & .image {
+            width: 100%;
+          }
+        }
+      }
+
       & .twitterDmButton {
         display: inline-flex;
         gap: 4px;
