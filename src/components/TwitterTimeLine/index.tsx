@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 import styles from './style.module.css';
 
-import { classNames } from '~/utils/classNames';
+import { classNames } from '~/libs/classNames';
 
 export const TwitterTimeline = () => {
 	useEffect(() => {

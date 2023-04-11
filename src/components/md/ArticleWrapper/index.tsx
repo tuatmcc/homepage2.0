@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { HtmlParser } from '../HtmlParser';
 
 import styles from './style.module.css';
+import { Post } from './types';
 
 import { BackToTop } from '~/components/BackToTop';
 import { BasicImage } from '~/components/ui/BasicImage';
@@ -10,17 +11,16 @@ import { BasicLink } from '~/components/ui/BasicLink';
 import { Footer } from '~/components/ui/Footer';
 import { Tag, TagList } from '~/components/ui/Tag';
 
-export const ArticleWrapper: FC<{
-	title: string;
-	description?: string | undefined;
-	img?: string | undefined;
-	tags?: string[] | undefined;
-	author?: string | undefined;
-	slug: string;
-	dateStr: string;
-	html: string;
-	group: string;
-}> = ({ title, dateStr, img, tags, author, slug, html, group }) => {
+export const ArticleWrapper: FC<Post> = ({
+	title,
+	dateStr,
+	img,
+	tags,
+	author,
+	slug,
+	body,
+	documentType,
+}) => {
 	const tagList = tags?.map((tag) => <Tag key={tag}>{tag}</Tag>);
 	return (
 		<>
@@ -52,8 +52,8 @@ export const ArticleWrapper: FC<{
 
 			<main>
 				<div className={styles.mainContent}>
-					<HtmlParser html={html} documentType={group} slug={slug} />
-					<BasicLink href={`/${group}#top`} className={styles.backLink}>
+					<HtmlParser html={body.html} documentType={documentType} slug={slug} />
+					<BasicLink href={`/${documentType}#top`} className={styles.backLink}>
 						← 記事一覧に戻る
 					</BasicLink>
 				</div>
