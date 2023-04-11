@@ -9,11 +9,15 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import remarkToc from 'remark-toc';
 
+const defaultImage = 'https://www.tuatmcc.com/images/wordmark-logo-image.png';
+
 const parseOgImage = (src, rootPath) => {
 	const remoteBase = 'https://raw.githubusercontent.com/tuatmcc/hp-md-content/main';
-	if (src.startsWith('http')) return src;
+	console.log(src);
+	if (!src) return defaultImage;
+	else if (src.startsWith('http')) return src;
 	else if (src.startsWith('./')) return `${remoteBase}/${rootPath}/${src.slice(2)}`;
-	else return 'https://www.tuatmcc.com/images/wordmark-logo-image.png';
+	else return defaultImage;
 };
 
 const generate = (documentType) =>
@@ -34,6 +38,7 @@ const generate = (documentType) =>
 			},
 			img: {
 				type: 'string',
+				resolve: (doc) => encodeURI(parseOgImage(doc._raw.img, doc._raw.flattenedPath)),
 			},
 			tags: {
 				type: 'list',
@@ -44,11 +49,6 @@ const generate = (documentType) =>
 			},
 		},
 		computedFields: {
-			img: {
-				type: 'string',
-				resolve: (doc) =>
-					doc._raw.img ? parseOgImage(doc._raw.img, doc._raw.flattenedPath) : null,
-			},
 			slug: {
 				type: 'string',
 				resolve: (doc) => doc._raw.flattenedPath.replace(`${documentType}/`, ''),
@@ -102,7 +102,6 @@ export default makeSource({
 				rehypeAutoLinkHeadings,
 				{
 					behavior: 'append',
-					className: ['anchor'],
 				},
 			],
 		],

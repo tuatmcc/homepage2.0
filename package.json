@@ -24,8 +24,8 @@
     ]
   },
   "dependencies": {
-    "@ladle/react": "^2.10.2",
-    "@next/bundle-analyzer": "^13.2.4",
+    "@ladle/react": "^2.11.0",
+    "@next/bundle-analyzer": "^13.3.0",
     "@react-three/cannon": "^6.5.2",
     "@react-three/drei": "^9.64.0",
     "@react-three/fiber": "^8.12.0",
@@ -37,16 +37,16 @@
     "@typescript-eslint/parser": "^5.57.1",
     "contentlayer": "^0.3.1",
     "eslint": "8.36.0",
-    "eslint-config-next": "^13.2.4",
+    "eslint-config-next": "^13.3.0",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
-    "framer-motion": "^10.10.0",
+    "framer-motion": "^10.11.2",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.0",
-    "next": "13.2.5-canary.31",
+    "lint-staged": "^13.2.1",
+    "next": "13.3.0",
     "next-contentlayer": "^0.3.1",
-    "next-sitemap": "^4.0.6",
+    "next-sitemap": "^4.0.7",
     "normalize.css": "^8.0.1",
     "postcss": "^8.4.21",
     "postcss-preset-env": "^8.3.0",
@@ -83,7 +83,7 @@
     "node": "18.15.0"
   },
   "optionalDependencies": {
-    "@next/env": "^13.2.4",
+    "@next/env": "^13.3.0",
     "vite": "^4.2.1"
   }
 }

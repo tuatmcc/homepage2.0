@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { FC } from 'react';
 
 import type { Metadata } from 'next';
@@ -34,22 +35,16 @@ export const generateMetadata = async ({
 
 const NewsArticlePage: FC<{ params: { slug: string } }> = ({ params }) => {
 	const post = allNews.find((x) => x.slug === params.slug);
-	return (
-		<>
-			<Navbar theme="auto" />
-			<ArticleWrapper
-				title={post?.title ?? ''}
-				dateStr={post?.dateStr ?? ''}
-				description={post?.description ?? ''}
-				tags={post?.tags ?? []}
-				author={post?.author ?? ''}
-				img={post?.img ?? ''}
-				html={post?.body.html ?? ''}
-				group="news"
-				slug={post?.slug ?? ''}
-			/>
-		</>
-	);
+	if (!post) {
+		return notFound();
+	} else {
+		return (
+			<>
+				<Navbar theme="auto" />
+				<ArticleWrapper documentType={documentType} {...post} />
+			</>
+		);
+	}
 };
 
 export const generateStaticParams = async () => {
