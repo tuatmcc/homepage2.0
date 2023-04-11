@@ -85,7 +85,6 @@
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      color: var(--mcc-color-3);
       background-color: var(--color-gray-200);
       box-shadow: var(--shadow-neumorphism-hover);
     }

@@ -14,7 +14,7 @@
   }
 
   & p {
-    margin: 16px 0;
+    margin: 32px 0;
     font-size: 16px;
     line-height: 2;
     letter-spacing: 0.05em;
@@ -37,7 +37,8 @@
   }
 
   & a {
-    color: var(--mcc-color-3);
+    margin: 0 2px;
+    color: var(--mcc-color-1);
 
     &:hover {
       text-decoration: underline;
@@ -60,7 +61,8 @@
   & blockquote {
     padding-left: 12px;
     font-style: italic;
-    border-left: solid 4px var(--color-blockquote-border);
+    color: var(--color-gray-600);
+    border-left: solid 6px var(--color-gray-300);
   }
 
   & li {
@@ -71,7 +73,7 @@
   & table {
     overflow: auto;
     border-collapse: collapse;
-    background-color: var(--color-background);
+    background-color: var(--color-gray-200);
 
     & thead {
       & tr {
@@ -111,7 +113,7 @@
     padding: 16px;
     overflow: auto;
     font-family: var(--font-family-jetbrains-mono);
-    background-color: var(--color-codeblock-background);
+    background-color: var(--color-gray-700);
     border-radius: 4px;
 
     & button {
@@ -125,7 +127,7 @@
     }
 
     & code {
-      color: inherit;
+      color: var(--color-gray-0);
       background: inherit;
     }
   }
@@ -150,7 +152,7 @@
       color: #ccc;
       overflow-wrap: break-word;
       line-gap-override: 0;
-      background: var(--color-mcc-6);
+      background: var(--color-gray-700);
       border-radius: 4px 4px 0 0;
     }
 
@@ -159,7 +161,7 @@
       margin: 0;
       overflow: auto;
       font-family: var(--font-family-jetbrains-mono);
-      background-color: var(--color-codeblock-background);
+      background-color: var(--color-gray-700);
       border-radius: 4px;
 
       & button {
