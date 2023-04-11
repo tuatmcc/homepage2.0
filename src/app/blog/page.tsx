@@ -20,7 +20,13 @@ const BlogListPage: FC = () => {
 	return (
 		<>
 			<Navbar theme="auto" />
-			<div className={styles.background} />
+			<BasicImage
+				src="images/abstract-7.jpeg"
+				alt=""
+				width={2000}
+				height={1000}
+				className={styles.background}
+			/>
 			<header className={styles.header}>
 				<div className={styles.headerContent}>
 					<h1 className={styles.headerTitle}>Blog</h1>

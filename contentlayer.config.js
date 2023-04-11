@@ -9,11 +9,15 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import remarkToc from 'remark-toc';
 
+const defaultImage = 'https://www.tuatmcc.com/images/wordmark-logo-image.png';
+
 const parseOgImage = (src, rootPath) => {
 	const remoteBase = 'https://raw.githubusercontent.com/tuatmcc/hp-md-content/main';
-	if (src.startsWith('http')) return src;
+	console.log(src);
+	if (!src) return defaultImage;
+	else if (src.startsWith('http')) return src;
 	else if (src.startsWith('./')) return `${remoteBase}/${rootPath}/${src.slice(2)}`;
-	else return 'https://www.tuatmcc.com/images/wordmark-logo-image.png';
+	else return defaultImage;
 };
 
 const generate = (documentType) =>
@@ -34,7 +38,7 @@ const generate = (documentType) =>
 			},
 			img: {
 				type: 'string',
-				resolve: (doc) => parseOgImage(doc._raw.img, doc._raw.flattenedPath),
+				resolve: (doc) => encodeURI(parseOgImage(doc._raw.img, doc._raw.flattenedPath)),
 			},
 			tags: {
 				type: 'list',
@@ -98,7 +102,6 @@ export default makeSource({
 				rehypeAutoLinkHeadings,
 				{
 					behavior: 'append',
-					className: ['anchor'],
 				},
 			],
 		],

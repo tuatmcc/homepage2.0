@@ -16,7 +16,7 @@ const AboutPage: FC = () => {
   return (
   <>
     <Navbar theme="auto"/>
-    <div className={styles.background} />
+    <BasicImage src="/images/tuat-gate-filtered.webp" alt="" width={1920} height={1260} className={styles.background} />
     <header className={styles.header}>
       <div className={styles.headerContent}>
             <h1 className={styles.pageTitle}>What is MCC?</h1>

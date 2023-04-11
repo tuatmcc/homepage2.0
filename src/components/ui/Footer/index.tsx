@@ -7,7 +7,7 @@ import { GitHubIcon } from '~/components/ui/Svg/GithubIcon';
 import { TwitterIcon } from '~/components/ui/Svg/TwitterIcon';
 import { WordmarkLogo } from '~/components/ui/Svg/WordmarkLogo';
 import { ROUTES } from '~/constants/routes';
-import { classNames } from '~/utils/classNames';
+import { classNames } from '~/libs/classNames';
 
 type FotterProps = {
 	semitransparent?: boolean;

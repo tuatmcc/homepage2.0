@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { FC } from 'react';
 
 import type { Metadata } from 'next';
@@ -5,7 +6,7 @@ import type { Metadata } from 'next';
 import { allMembers } from 'contentlayer/generated';
 import { Navbar } from '~/components/Navbar';
 import { ArticleWrapper } from '~/components/md/ArticleWrapper';
-import { parseOgImage } from '~/utils/parseOgImage';
+import { parseOgImage } from '~/libs/parseOgImage';
 
 const documentType = 'members';
 
@@ -34,22 +35,15 @@ export const generateMetadata = async ({
 
 const MemberProfilePage: FC<{ params: { slug: string } }> = ({ params }) => {
 	const post = allMembers.find((x) => x.slug === params.slug);
-	return (
-		<>
-			<Navbar theme="auto" />
-			<ArticleWrapper
-				title={post?.title ?? ''}
-				dateStr={post?.dateStr ?? ''}
-				description={post?.description ?? ''}
-				tags={post?.tags ?? []}
-				author={post?.author ?? ''}
-				img={post?.img ?? ''}
-				html={post?.body.html ?? ''}
-				group="blog"
-				slug={post?.slug ?? ''}
-			/>
-		</>
-	);
+	if (!post) return notFound();
+	else {
+		return (
+			<>
+				<Navbar theme="auto" />
+				<ArticleWrapper documentType={documentType} {...post} />
+			</>
+		);
+	}
 };
 
 export const generateStaticParams = () => {

@@ -4,7 +4,7 @@ import { FC, ReactNode } from 'react';
 import type { Metadata } from 'next';
 
 import '~/styles/global.css';
-import {classNames} from '~/utils/classNames';
+import {classNames} from '~/libs/classNames';
 
 const notoSansJP = Noto_Sans_JP({
   variable: '--font-family-noto-sans-jp',
