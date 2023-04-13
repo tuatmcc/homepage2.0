@@ -15,7 +15,9 @@ export const metadata: Metadata = {
 };
 
 const NewsListPage: FC = () => {
-	allNews.sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
+	const posts = structuredClone(allNews)
+		.filter((x) => x.slug.length === 1)
+		.sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
 	return (
 		<>
 			<Navbar />
@@ -40,7 +42,7 @@ const NewsListPage: FC = () => {
 			<main className={styles.main}>
 				<div className={styles.mainContent}>
 					<ul className={styles.list}>
-						{allNews.map((post, _index) => {
+						{posts.map((post, _index) => {
 							return (
 								<li key={post.rootPath} className={styles.listItem}>
 									<Link href={post.rootPath} className={styles.link}>

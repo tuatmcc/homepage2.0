@@ -19,9 +19,10 @@ export type Blog = {
   img?: string | undefined
   tags?: string[] | undefined
   author?: string | undefined
+  listing?: boolean | undefined
   /** Markdown file body */
   body: Markdown
-  slug: string
+  slug: list
   rootPath: string
   dateStr: string
 }
@@ -37,9 +38,10 @@ export type Members = {
   img?: string | undefined
   tags?: string[] | undefined
   author?: string | undefined
+  listing?: boolean | undefined
   /** Markdown file body */
   body: Markdown
-  slug: string
+  slug: list
   rootPath: string
   dateStr: string
 }
@@ -55,9 +57,10 @@ export type News = {
   img?: string | undefined
   tags?: string[] | undefined
   author?: string | undefined
+  listing?: boolean | undefined
   /** Markdown file body */
   body: Markdown
-  slug: string
+  slug: list
   rootPath: string
   dateStr: string
 }  

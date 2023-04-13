@@ -16,7 +16,9 @@ export const metadata: Metadata = {
 };
 
 const BlogListPage: FC = () => {
-	allBlogs.sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
+	const posts = structuredClone(allBlogs)
+		.filter((x) => x.slug.length === 1)
+		.sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
 	return (
 		<>
 			<Navbar theme="auto" />
@@ -39,7 +41,7 @@ const BlogListPage: FC = () => {
 			<main className={styles.main}>
 				<div className={styles.mainContent}>
 					<ul className={styles.list}>
-						{allBlogs.map((post, _index) => {
+						{posts.map((post) => {
 							return (
 								<li className={styles.listItem} key={post.rootPath}>
 									<Link href={post.rootPath} className={styles.link}>
