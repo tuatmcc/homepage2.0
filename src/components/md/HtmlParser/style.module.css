@@ -98,6 +98,7 @@
   }
 
   & code {
+    position: relative;
     padding: 1px 5px;
     margin: 0 0.2em;
     font-family: var(--font-family-jetbrains-mono);
@@ -107,9 +108,14 @@
     word-break: break-word;
     background-color: var(--color-gray-300);
     border-radius: 5px;
+
+    & span {
+      position: relative;
+    }
   }
 
   & div > pre {
+    position: relative;
     padding: 16px;
     overflow: auto;
     font-family: var(--font-family-jetbrains-mono);
@@ -127,6 +133,7 @@
     }
 
     & code {
+      padding: 0;
       color: var(--color-gray-0);
       background: inherit;
     }
@@ -175,6 +182,7 @@
       }
 
       & code {
+        padding: 0;
         background: inherit;
       }
     }
