@@ -16,7 +16,9 @@ export const metadata: Metadata = {
 };
 
 const MemberListPage: FC = () => {
-	allMembers.sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
+	allMembers
+		.filter((x) => x.slug.length === 1)
+		.sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
 	return (
 		<>
 			<Navbar />

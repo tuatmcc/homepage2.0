@@ -10,10 +10,9 @@ import remarkMath from 'remark-math';
 import remarkToc from 'remark-toc';
 
 const defaultImage = 'https://www.tuatmcc.com/images/wordmark-logo-image.png';
+const remoteBase = 'https://raw.githubusercontent.com/tuatmcc/hp-md-content/main';
 
 const parseOgImage = (src, rootPath) => {
-	const remoteBase = 'https://raw.githubusercontent.com/tuatmcc/hp-md-content/main';
-	console.log(src);
 	if (!src) return defaultImage;
 	else if (src.startsWith('http')) return src;
 	else if (src.startsWith('./')) return `${remoteBase}/${rootPath}/${src.slice(2)}`;
@@ -23,7 +22,7 @@ const parseOgImage = (src, rootPath) => {
 const generate = (documentType) =>
 	defineDocumentType(() => ({
 		name: documentType.charAt(0).toUpperCase() + documentType.slice(1),
-		filePathPattern: `${documentType}/**/index.md`,
+		filePathPattern: `${documentType}/**/*/index.md`,
 		fields: {
 			title: {
 				type: 'string',
@@ -47,11 +46,19 @@ const generate = (documentType) =>
 			author: {
 				type: 'string',
 			},
+			listing: {
+				type: 'boolean',
+			},
 		},
 		computedFields: {
 			slug: {
-				type: 'string',
-				resolve: (doc) => doc._raw.flattenedPath.replace(`${documentType}/`, ''),
+				type: 'list',
+				of: { type: 'string' },
+				resolve: (doc) =>
+					doc._raw.flattenedPath
+						.replace(`${documentType}/`, '')
+						.replace(/\/.+?\.md/, '')
+						.split('/'),
 			},
 			rootPath: {
 				type: 'string',

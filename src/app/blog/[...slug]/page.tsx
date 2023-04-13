@@ -11,8 +11,8 @@ const documentType = 'blog';
 
 export const generateMetadata = async ({
 	params,
-}: { params: { slug: string } }): Promise<Metadata> => {
-	const post = allBlogs.find((x) => x.slug === params.slug);
+}: { params: { slug: string[] } }): Promise<Metadata> => {
+	const post = allBlogs.find((x) => x.slug.join('/') === params.slug.join('/'));
 	if (!post) return notFound();
 	else {
 		return {
@@ -33,8 +33,8 @@ export const generateMetadata = async ({
 	}
 };
 
-const BlogArticlePage: FC<{ params: { slug: string } }> = ({ params }) => {
-	const post = allBlogs.find((x) => x.slug === params.slug);
+const BlogArticlePage: FC<{ params: { slug: string[] } }> = ({ params }) => {
+	const post = allBlogs.find((x) => x.slug.join('/') === params.slug.join('/'));
 	if (!post) {
 		return notFound();
 	} else {
