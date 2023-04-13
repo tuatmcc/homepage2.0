@@ -40,7 +40,7 @@ export const ArticleWrapper: FC<Post> = ({
 					<h1 className={styles.title}>{title}</h1>
 					<div className={styles.info}>
 						{author && (
-							<BasicLink href={`/members/${author}`} className={styles.author}>
+							<BasicLink href={`https://github.com/${author}`} className={styles.author}>
 								@{author}
 							</BasicLink>
 						)}
@@ -53,7 +53,7 @@ export const ArticleWrapper: FC<Post> = ({
 			<main>
 				<div className={styles.mainContent}>
 					<HtmlParser html={body.html} documentType={documentType} slug={slug} />
-					<BasicLink href={`/${documentType}#top`} className={styles.backLink}>
+					<BasicLink href={`/${documentType}`} className={styles.backLink}>
 						← 記事一覧に戻る
 					</BasicLink>
 				</div>

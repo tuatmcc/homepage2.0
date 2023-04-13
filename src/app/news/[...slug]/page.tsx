@@ -13,7 +13,7 @@ const documentType = 'news';
 export const generateMetadata = async ({
 	params,
 }: { params: { slug: string[] } }): Promise<Metadata> => {
-	const post = allNews.find((x) => x.slug === params.slug);
+	const post = allNews.find((x) => x.slug.join('/') === params.slug.join('/'));
 
 	const ogImage = parseOgImage(post?.img ?? '', documentType);
 	return {
@@ -34,7 +34,7 @@ export const generateMetadata = async ({
 };
 
 const NewsArticlePage: FC<{ params: { slug: string[] } }> = ({ params }) => {
-	const post = allNews.find((x) => x.slug === params.slug);
+	const post = allNews.find((x) => x.slug.join('/') === params.slug.join('/'));
 	if (!post) {
 		return notFound();
 	} else {
