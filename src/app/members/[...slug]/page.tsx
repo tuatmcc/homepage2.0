@@ -12,7 +12,7 @@ const documentType = 'members';
 
 export const generateMetadata = async ({
 	params,
-}: { params: { slug: string } }): Promise<Metadata> => {
+}: { params: { slug: string[] } }): Promise<Metadata> => {
 	const post = allMembers.find((x) => x.slug === params.slug);
 
 	const ogImage = parseOgImage(post?.img ?? '', documentType);
@@ -33,7 +33,7 @@ export const generateMetadata = async ({
 	};
 };
 
-const MemberProfilePage: FC<{ params: { slug: string } }> = ({ params }) => {
+const MemberProfilePage: FC<{ params: { slug: string[] } }> = ({ params }) => {
 	const post = allMembers.find((x) => x.slug === params.slug);
 	if (!post) return notFound();
 	else {
