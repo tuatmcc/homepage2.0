@@ -47,7 +47,7 @@ const BlogListPage: FC = () => {
 									<Link href={post.rootPath} className={styles.link}>
 										<BasicImage
 											className={styles.image}
-											src={post.img || '/images/wordmark-logo-image.png'}
+											src={post.img || '/images/wordmark-logo-image.svg'}
 											alt={post.title}
 											width={100}
 											height={100}
