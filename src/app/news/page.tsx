@@ -42,7 +42,7 @@ const NewsListPage: FC = () => {
 			<main className={styles.main}>
 				<div className={styles.mainContent}>
 					<ul className={styles.list}>
-						{posts.map((post, _index) => {
+						{posts.map((post) => {
 							return (
 								<li key={post.rootPath} className={styles.listItem}>
 									<Link href={post.rootPath} className={styles.link}>
