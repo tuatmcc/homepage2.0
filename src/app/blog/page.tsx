@@ -9,10 +9,23 @@ import { allBlogs } from 'contentlayer/generated';
 import { Navbar } from '~/components/Navbar';
 import { BasicImage } from '~/components/ui/BasicImage';
 import { Footer } from '~/components/ui/Footer';
+import { defaultOpenGraph, defaultTwitterCard } from '~/libs/sharedmetadata';
 
 export const metadata: Metadata = {
 	title: 'Blog',
 	description: '農工大公認サークルMCCのブログ記事の一覧です',
+	openGraph: {
+		...defaultOpenGraph,
+		title: { default: 'Blog', template: "%s | MCC's Blog" },
+		description: '農工大公認サークルMCCのブログ一覧です',
+	},
+	twitter: {
+		...defaultTwitterCard,
+		title: {
+			default: 'Blog - MCC',
+			template: "%s | MCC's Blog",
+		},
+	},
 };
 
 const BlogListPage: FC = () => {
