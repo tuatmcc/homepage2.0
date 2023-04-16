@@ -3,30 +3,30 @@ import { FC } from 'react';
 
 import type { Metadata } from 'next';
 
-import { allMembers } from 'contentlayer/generated';
+import { allDocuments, allMembers } from 'contentlayer/generated';
 import { Navbar } from '~/components/Navbar';
-import { ArticleWrapper } from '~/components/md/ArticleWrapper';
 import { parseOgImage } from '~/libs/parseOgImage';
+import { defaultOpenGraph, defaultOpenGraphImage } from '~/libs/sharedmetadata';
 
 const documentType = 'members';
 
 export const generateMetadata = async ({
 	params,
 }: { params: { slug: string[] } }): Promise<Metadata> => {
-	const post = allMembers.find((x) => x.slug === params.slug);
+	const post = allMembers.find((x) => x.slug.join('/') === params.slug.join('/'));
 
 	const ogImage = parseOgImage(post?.img ?? '', documentType);
 	return {
 		title: post?.title,
 		description: post?.description,
 		openGraph: {
+			...defaultOpenGraph,
 			title: { default: post?.title ?? '', template: '%s | Members' },
 			description: post?.description,
 			images: [
 				{
+					...defaultOpenGraphImage,
 					url: encodeURI(ogImage),
-					width: 1200,
-					height: 630,
 				},
 			],
 		},
@@ -34,13 +34,18 @@ export const generateMetadata = async ({
 };
 
 const MemberProfilePage: FC<{ params: { slug: string[] } }> = ({ params }) => {
-	const post = allMembers.find((x) => x.slug === params.slug);
-	if (!post) return notFound();
+	const member = structuredClone(allDocuments)
+		.filter((x, i, self) => self.indexOf(x) === i && x.author === params.slug[0])
+		.map((x) => x.author);
+	const markdown = fetch(`https://raw.githubusercontent.com/${member}/main/README.md`).then(
+		(res) => res.text(),
+	);
+	if (!member) return notFound();
 	else {
 		return (
 			<>
 				<Navbar theme="auto" />
-				<ArticleWrapper documentType={documentType} {...post} />
+				{markdown}
 			</>
 		);
 	}
