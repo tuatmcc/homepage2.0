@@ -19,11 +19,11 @@ const AboutPage: FC = () => {
     <BasicImage src="/images/tuat-gate-filtered.webp" alt="" width={1920} height={1260} className={styles.background} />
     <header className={styles.header}>
       <div className={styles.headerContent}>
-            <h1 className={styles.pageTitle}>What is MCC?</h1>
-            <h2 className={styles.pageSubTitle}>
-              MCCについて
-            </h2>
-          </div>
+        <h1 className={styles.pageTitle}>What is MCC?</h1>
+        <h2 className={styles.pageSubTitle}>
+          MCCについて
+        </h2>
+      </div>
     </header>
 
     <main className={styles.main}>
@@ -52,19 +52,19 @@ const AboutPage: FC = () => {
         </section>
 
         <section>
-        <h2>活動場所</h2>
-        <p className={styles.p}>工学部小金井キャンパス・サークルB棟2階　MCC部室</p>
-        <div className={styles.imageContainer}>
-          <BasicImage className={styles.image} src="/images/campas-map.webp" alt="campas map" width={900} height={1200} />
-          <BasicImage className={styles.image} src="/images/club-building-b.webp" alt="campas map" width={900} height={1200} />
-        </div>
+          <h2>活動場所</h2>
+          <p className={styles.p}>工学部小金井キャンパス・サークルB棟2階　MCC部室</p>
+          <div className={styles.imageContainer}>
+            <BasicImage className={styles.image} src="/images/campas-map.webp" alt="campas map" width={900} height={1200} />
+            <BasicImage className={styles.image} src="/images/club-building-b.webp" alt="campas map" width={900} height={1200} />
+          </div>
         </section>
 
         <section>
-        <h2>部員募集</h2>
-        <p className={styles.p}>
-        MCC では新入部員を随時募集してます。 お問合せ、入部希望者は以下よりご連絡ください。
-        </p>
+          <h2>部員募集</h2>
+          <p className={styles.p}>
+          MCC では新入部員を随時募集してます。 お問合せ、入部希望者は以下よりご連絡ください。
+          </p>
            <BasicLink href="https://twitter.com/messages/compose?recipient_id=227598819&text=はじめまして！○科に所属の○年です！MCCに入部したいです！"
             className={styles.twitterDmButton}
             data-screen-name="@TUATMCC"
@@ -87,11 +87,11 @@ const AboutPage: FC = () => {
 
         <section>
           <h2>活動の様子</h2>
-        <div className={styles.gallery}>
-          <Image className={styles.galleryItem} src="/images/wordmark-logo-image.png" alt="MCC" width={300} height={300} />
-          <Image className={styles.galleryItem} src="/images/noko-fes-2022-illustrace.webp" alt="MCC" width={300} height={300} />
-          <Image className={styles.galleryItem} src="/images/noko-fes-2022-room.webp" alt="MCC" width={300} height={300} />
-        </div>
+          <div className={styles.gallery}>
+            <Image className={styles.galleryItem} src="/images/wordmark-logo-image.png" alt="MCC" width={300} height={300} />
+            <Image className={styles.galleryItem} src="/images/noko-fes-2022-illustrace.webp" alt="MCC" width={300} height={300} />
+            <Image className={styles.galleryItem} src="/images/noko-fes-2022-room.webp" alt="MCC" width={300} height={300} />
+          </div>
         </section>
 
         <section>
