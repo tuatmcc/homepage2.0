@@ -1,14 +1,15 @@
-import Link from 'next/link';
 import { FC } from 'react';
 
 import styles from './style.module.css';
 
 import type { Metadata } from 'next';
 
-import { allMembers } from 'contentlayer/generated';
+import { allDocuments } from 'contentlayer/generated';
 import { Navbar } from '~/components/Navbar';
-import { BasicImage } from '~/components/ui/BasicImage';
+import { BasicLink } from '~/components/ui/BasicLink';
 import { Footer } from '~/components/ui/Footer';
+
+const documentType = 'members';
 
 export const metadata: Metadata = {
 	title: 'Members',
@@ -16,56 +17,35 @@ export const metadata: Metadata = {
 };
 
 const MemberListPage: FC = () => {
-	allMembers
-		.filter((x) => x.slug.length === 1)
-		.sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
+	const members = structuredClone(allDocuments)
+		.filter((x, i, self) => x.author && self.findIndex((t) => t.author === x.author) === i)
+		.map((x) => x.author);
 	return (
 		<>
 			<Navbar />
-			<BasicImage
-				alt=""
-				src="/images/abstract-tech-image-6.webp"
-				width={1920}
-				height={1280}
-				role="presentation"
-				className={styles.background}
-				fallback
-			/>
-			<header>
+			<header className={styles.header}>
 				<div className={styles.headerContent}>
-					<h1 className={styles.headerTitle}>BLOGS</h1>
-					<h2 className={styles.headerSubTitle}>ブログ</h2>
+					<h1 className={styles.headerTitle}>Members</h1>
+					<h2 className={styles.headerSubTitle}>記事を書いてくれた部員たち</h2>
 				</div>
 			</header>
-			<main>
+			<main className={styles.main}>
 				<div className={styles.mainContent}>
-					<div className={styles.list}>
-						{allMembers.map((post, _index) => {
+					<ul className={styles.list}>
+						{members.map((member, _index) => {
 							return (
-								<Link href={post.rootPath} key={post.rootPath} className={styles.listItem}>
-									<BasicImage
-										className={styles.image}
-										src={post.img || '/images/mcc-design.webp'}
-										alt={post.title}
-										width={350}
-										height={200}
-										fallback
-									/>
-									<div className={styles.text}>
-										<h2 className={styles.title}>{post.title}</h2>
-										<div className={styles.details}>
-											{post.date && <div className={styles.date}>{post.date}</div>}
-											{post.author && <div className={styles.author}>@ {post.author}</div>}
-										</div>
-									</div>
-								</Link>
+								<li className={styles.listItem} key={member}>
+									<BasicLink href={`${documentType}/${member}`} className={styles.link}>
+										{member}
+									</BasicLink>
+								</li>
 							);
 						})}
-					</div>
+					</ul>
 				</div>
 			</main>
 
-			<Footer semitransparent />
+			<Footer />
 		</>
 	);
 };

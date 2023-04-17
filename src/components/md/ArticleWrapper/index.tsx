@@ -1,9 +1,9 @@
 import { FC } from 'react';
 
 import { HtmlParser } from '../HtmlParser';
+import { Post } from '../types';
 
 import styles from './style.module.css';
-import { Post } from './types';
 
 import { BackToTop } from '~/components/BackToTop';
 import { BasicImage } from '~/components/ui/BasicImage';
@@ -11,16 +11,8 @@ import { BasicLink } from '~/components/ui/BasicLink';
 import { Footer } from '~/components/ui/Footer';
 import { Tag, TagList } from '~/components/ui/Tag';
 
-export const ArticleWrapper: FC<Post> = ({
-	title,
-	dateStr,
-	img,
-	tags,
-	author,
-	slug,
-	body,
-	documentType,
-}) => {
+export const ArticleWrapper: FC<Post> = (post) => {
+	const { title, author, img, tags, dateStr } = post;
 	const tagList = tags?.map((tag) => <Tag key={tag}>{tag}</Tag>);
 	return (
 		<>
@@ -52,8 +44,8 @@ export const ArticleWrapper: FC<Post> = ({
 
 			<main>
 				<div className={styles.mainContent}>
-					<HtmlParser html={body.html} documentType={documentType} slug={slug} />
-					<BasicLink href={`/${documentType}`} className={styles.backLink}>
+					<HtmlParser {...post} />
+					<BasicLink href={`/${post.rootPath.replace(/\/+.?$/, '')}`} className={styles.backLink}>
 						← 記事一覧に戻る
 					</BasicLink>
 				</div>

@@ -7,6 +7,7 @@ import { allNews } from 'contentlayer/generated';
 import { Navbar } from '~/components/Navbar';
 import { ArticleWrapper } from '~/components/md/ArticleWrapper';
 import { parseOgImage } from '~/libs/parseOgImage';
+import { defaultOpenGraph, defaultOpenGraphImage, defaultTwitterCard } from '~/libs/sharedmetadata';
 
 const documentType = 'news';
 
@@ -15,22 +16,33 @@ export const generateMetadata = async ({
 }: { params: { slug: string[] } }): Promise<Metadata> => {
 	const post = allNews.find((x) => x.slug.join('/') === params.slug.join('/'));
 
-	const ogImage = parseOgImage(post?.img ?? '', documentType);
-	return {
-		title: post?.title,
-		description: post?.description,
-		openGraph: {
-			title: { default: post?.title ?? '', template: '%s | News' },
-			description: post?.description,
-			images: [
-				{
-					url: encodeURI(ogImage),
-					width: 1200,
-					height: 630,
-				},
-			],
-		},
-	};
+	if (!post) return notFound();
+	else {
+		const ogImage = parseOgImage(post.img ?? '', documentType);
+		return {
+			title: post.title,
+			description: post.description,
+			openGraph: {
+				...defaultOpenGraph,
+				title: { default: post.title, template: "%s | MCC's News" },
+				description: post.description,
+				images: [
+					{
+						...defaultOpenGraphImage,
+						url: encodeURI(ogImage),
+					},
+				],
+			},
+			twitter: {
+				...defaultTwitterCard,
+				images: [
+					{
+						url: encodeURI(ogImage),
+					},
+				],
+			},
+		};
+	}
 };
 
 const NewsArticlePage: FC<{ params: { slug: string[] } }> = ({ params }) => {
