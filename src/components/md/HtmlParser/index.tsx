@@ -5,6 +5,8 @@ import rehypeParse from 'rehype-parse';
 import rehypeReact, { Options as RehypeReactOptions } from 'rehype-react';
 import { unified } from 'unified';
 
+import { Post } from '../types';
+
 import { PreWithCopyButton } from './PreWithCopyButton';
 import styles from './style.module.css';
 
@@ -13,17 +15,11 @@ import { BasicLink, BasicLinkProps } from '~/components/ui/BasicLink';
 import { MiniLinkIcon } from '~/components/ui/Svg';
 import { parseImageSrc } from '~/libs/parseImageSrc';
 
-export type ArticleWrapperProps = {
-	children: string;
-};
+export const HtmlParser: FC<Post> = (post) => {
+	const { body, rootPath } = post;
 
-export const HtmlParser: FC<{ html: string; documentType: string; slug: string }> = ({
-	html,
-	documentType,
-	slug,
-}) => {
 	// HTMLをReactNodeに変換する
-	const [content, setContent] = useState<ReactNode>(html);
+	const [content, setContent] = useState<ReactNode>(body.html);
 
 	useEffect(() => {
 		const processor = unified()
@@ -34,7 +30,7 @@ export const HtmlParser: FC<{ html: string; documentType: string; slug: string }
 					a: ({ href, children }: BasicLinkProps) => <BasicLink href={href}>{children}</BasicLink>,
 					img: ({ src, alt }) => (
 						<BasicImage
-							src={parseImageSrc(src || '', documentType, slug)}
+							src={parseImageSrc(src || '', rootPath)}
 							alt={alt || ''}
 							width={640}
 							height={480}
@@ -48,10 +44,10 @@ export const HtmlParser: FC<{ html: string; documentType: string; slug: string }
 					},
 				},
 			} as RehypeReactOptions)
-			.processSync(html);
+			.processSync(body.html);
 
 		setContent(processor.result);
-	}, [html, documentType, slug]);
+	}, [body, rootPath]);
 
 	return <div className={styles.articleContent}>{content}</div>;
 };

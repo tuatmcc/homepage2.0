@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 	description: '404 Page Not Found',
 };
 
-const NotFound = () => {
+export default function NotFound() {
 	return (
 		<>
 			<Navbar />
@@ -24,6 +24,4 @@ const NotFound = () => {
 			<Footer semitransparent />
 		</>
 	);
-};
-
-export default NotFound;
+}

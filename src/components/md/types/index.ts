@@ -1,13 +1,5 @@
-export type Post = {
-	title: string;
-	description: string;
-	date: string;
-	img: string;
-	tags: string[];
-	author: string;
-	slug: string;
-	rootPath: string;
-	dateStr: string;
-	body: string;
-	html: string;
+import type { Blog, Members, News } from 'contentlayer/generated';
+
+export type Post = (Blog | News | Members) & {
+	documentType: 'blog' | 'news' | 'members';
 };

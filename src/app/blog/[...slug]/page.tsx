@@ -6,6 +6,8 @@ import type { Metadata } from 'next';
 import { allBlogs } from 'contentlayer/generated';
 import { Navbar } from '~/components/Navbar';
 import { ArticleWrapper } from '~/components/md/ArticleWrapper';
+import { parseOgImage } from '~/libs/parseOgImage';
+import { defaultOpenGraph, defaultOpenGraphImage, defaultTwitterCard } from '~/libs/sharedmetadata';
 
 const documentType = 'blog';
 
@@ -19,13 +21,21 @@ export const generateMetadata = async ({
 			title: post?.title,
 			description: post?.description,
 			openGraph: {
+				...defaultOpenGraph,
 				title: { default: post?.title ?? '', template: "%s | MCC's Blog" },
 				description: post?.description,
 				images: [
 					{
+						...defaultOpenGraphImage,
 						url: post.img?.replace(/svg$/, 'ping') || '',
-						width: 1200,
-						height: 630,
+					},
+				],
+			},
+			twitter: {
+				...defaultTwitterCard,
+				images: [
+					{
+						url: parseOgImage(post?.img || '', documentType),
 					},
 				],
 			},
