@@ -44,7 +44,7 @@ export const HtmlParser: FC<Post> = (post) => {
 					},
 				},
 			} as RehypeReactOptions)
-			.processSync(body);
+			.processSync(body.html);
 
 		setContent(processor.result);
 	}, [body, rootPath]);

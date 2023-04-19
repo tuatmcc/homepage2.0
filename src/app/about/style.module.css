@@ -75,90 +75,6 @@
     margin: 0 auto 32px;
     color: var(--color-text-default);
 
-    & > section {
-      & > h2 {
-        display: inline-block;
-        padding: 16px 32px;
-        margin: 56px 0 32px;
-        font-size: 24px;
-        font-weight: bold;
-        border-radius: 8px;
-        box-shadow: var(--shadow-neumorphism);
-      }
-
-      & > p {
-        margin: 0 0 16px;
-        font-size: 16px;
-        line-height: 2;
-      }
-
-      & .imageContainer {
-        display: flex;
-        flex-direction: row;
-        gap: 32px;
-        align-items: center;
-        justify-content: center;
-        height: auto;
-
-        & .image {
-          flex: 1;
-          width: 40%;
-          height: auto;
-          border-radius: 8px;
-          object-fit: contain;
-        }
-
-        @media (--bp-sm) {
-          flex-direction: column;
-
-          & .image {
-            width: 100%;
-          }
-        }
-      }
-
-      & .twitterDmButton {
-        display: inline-flex;
-        gap: 4px;
-        align-items: center;
-        padding: 16px;
-        margin: 16px;
-        font-size: 18px;
-        font-weight: bold;
-        color: var(--mcc-color-2);
-        text-decoration: none;
-        border-radius: 24px;
-        box-shadow: var(--shadow-neumorphism);
-        transition: all 0.2s ease-in-out;
-
-        &:hover {
-          background-color: var(--color-gray-200);
-          transform: translateY(-2px);
-        }
-      }
-
-      & .discordButton {
-        display: inline-flex;
-        gap: 4px;
-        align-items: center;
-        padding: 16px;
-        margin: 16px;
-        font-size: 18px;
-        font-weight: bold;
-        color: var(--mcc-color-1);
-        text-decoration: none;
-        border-radius: 24px;
-        box-shadow: var(--shadow-neumorphism);
-        transition: all 0.2s ease-in-out;
-
-        &:hover {
-          background-color: var(--color-gray-200);
-          box-shadow: var(--shadow-neumorphism-hover);
-          transform: translateY(-2px);
-        }
-      }
-    }
-
     & .gallery {
       position: relative;
       display: flex;
@@ -189,13 +105,6 @@
       letter-spacing: 0.1em;
     }
   }
-}
-
-.em {
-  padding: 0 6px;
-  margin: 0 4px;
-  background-color: var(--mcc-color-6);
-  box-shadow: var(--shadow-neumorphism);
 }
 
 @keyframes slide-down {

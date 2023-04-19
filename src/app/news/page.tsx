@@ -12,7 +12,6 @@ import { defaultOpenGraph, defaultTwitterCard } from '~/libs/sharedmetadata';
 
 export const metadata: Metadata = {
 	title: 'NEWS',
-	description: '農工大公認サークルMCCのブログ記事の一覧です',
 	openGraph: {
 		...defaultOpenGraph,
 		title: 'News - MCC 東京農工大学マイクロコンピュータークラブ',
