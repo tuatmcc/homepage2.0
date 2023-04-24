@@ -24,11 +24,11 @@
     ]
   },
   "dependencies": {
-    "@ladle/react": "^2.12.0",
-    "@next/bundle-analyzer": "^13.3.0",
+    "@ladle/react": "^2.12.2",
+    "@next/bundle-analyzer": "^13.3.1",
     "@react-three/cannon": "^6.5.2",
-    "@react-three/drei": "^9.65.3",
-    "@react-three/fiber": "^8.12.1",
+    "@react-three/drei": "^9.65.5",
+    "@react-three/fiber": "^8.12.2",
     "@types/node": "18.15.5",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
@@ -37,18 +37,18 @@
     "@typescript-eslint/parser": "^5.59.0",
     "contentlayer": "^0.3.1",
     "eslint": "8.36.0",
-    "eslint-config-next": "^13.3.0",
+    "eslint-config-next": "^13.3.1",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
-    "framer-motion": "^10.12.2",
+    "framer-motion": "^10.12.4",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.1",
-    "next": "13.3.0",
+    "next": "13.3.1",
     "next-contentlayer": "^0.3.1",
     "next-sitemap": "^4.0.7",
     "normalize.css": "^8.0.1",
-    "postcss": "^8.4.22",
+    "postcss": "^8.4.23",
     "postcss-preset-env": "^8.3.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -56,9 +56,9 @@
     "rehype-autolink-headings": "^6.1.1",
     "rehype-document": "^6.1.0",
     "rehype-highlight": "^6.0.0",
-    "rehype-katex": "^6.0.2",
+    "rehype-katex": "^6.0.3",
     "rehype-parse": "^8.0.4",
-    "rehype-pretty-code": "^0.9.4",
+    "rehype-pretty-code": "^0.9.5",
     "rehype-react": "^7.2.0",
     "rehype-slug": "^5.1.0",
     "remark-emoji": "^3.1.1",
@@ -83,7 +83,7 @@
     "node": "18.15.0"
   },
   "optionalDependencies": {
-    "@next/env": "^13.3.0",
-    "vite": "^4.2.1"
+    "@next/env": "^13.3.1",
+    "vite": "^4.3.1"
   }
 }

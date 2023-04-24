@@ -17,13 +17,13 @@
 
 - [CONTRIBUTING.md](https://github.com/tuatmcc/homepage2.0/blob/develop/CONTRIBUTING.md)を参照
 - 何かあれば Issue や Discord にお願いします。
-- 人員募集中！
+- 作業人員募集中！
 
 ## 環境（2023.3 現在）
 
 - `Node.js`: v18.15.0
 - `PNPM`: v8.1.1
-- `Next.js`: v13.3.0
+- `Next.js`: v13.3.1
 - `TypeScript`: v5.0.2
 - `Volta`: v1.1.1 or `nodenv`
 
