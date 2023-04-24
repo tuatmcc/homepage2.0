@@ -11,12 +11,13 @@
 - [記事データベース](https://github.com/tuatmcc/hp-md-content)
 - [記事の書き方](https://www.tuatmcc.com/blog/how-to-add-article)
 - [デザイン案](https://www.figma.com/file/XTfW4NDafbsoMBCu5lNGkr/MCC-HOME-PAGE?node-id=0%3A1&t=F2uR5Q5TRy6jUzh3-1)
-- [Document](https://github.com/tuatmcc/homepage2.0/wiki)
+- [ドキュメント(お気持が多分に混ざってます)](https://github.com/tuatmcc/homepage2.0/wiki)
 
 ## メンテの仕方
 
-- [CONTRIBUTING.md](https://github.com/tuatmcc/homepage2.0/blob/develop/CONTRIBUTING.md)を参照
-- 何かあれば Issue や Discord にお願いします。
+- [Wikiのこのページ](https://github.com/tuatmcc/homepage2.0/wiki/%E9%96%8B%E7%99%BA%E6%89%8B%E9%A0%86)を参照
+- 興味があればいつでも声を掛けてください！いきなりPR送ったり、Issue立てたりするのも大歓迎です。
+- バグ報告や改善案はDiscordのホームページチャンネルに投げてくれて構いません。
 - 作業人員募集中！
 
 ## 環境（2023.3 現在）
