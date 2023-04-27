@@ -1,28 +1,31 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "files.associations": {
-    "*/**.css": "css"
-  },
-  "[typescriptreact]": { "editor.defaultFormatter": "rome.rome" },
-  "[typescript]": {
-    "editor.defaultFormatter": "rome.rome"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "rome.rome"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint"
-  },
-  "files.autoSave": "afterDelay",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": false,
-    "source.fixAll.rome": true,
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true,
-    "source.organizeImports": false,
-    "source.organizeImports.rome": true
-  },
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "rome.rome"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "rome.rome"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "rome.rome"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    },
+    "files.associations": {
+        "*/**.css": "css"
+    },
+    "files.autoSave": "afterDelay",
+    "editor.formatOnSaveMode": "file",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "quickfix.rome": true,
+        "source.fixAll": true,
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true,
+        "source.organizeImports": true,
+        "source.organizeImports.rome": true
+    },
+    "eslint.codeActionsOnSave.mode": "problems",
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true
 }

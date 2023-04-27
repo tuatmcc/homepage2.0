@@ -32,6 +32,6 @@
 		"enabled": true
 	},
 	"files": {
-		"ignore": ["node_modules", "out", ".next", "dist", ".contentlayer", ".vscode"]
+		"ignore": ["node_modules/", "out/", ".next/", ".contentlayer/", ".vscode/"]
 	}
 }

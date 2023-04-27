@@ -60,14 +60,14 @@ const sections: { heading: string, node: ReactNode }[] = [
     node: (
       <>
         <p className={styles.para}>
-        MCC では新入部員を随時募集してます。 お問合せ、入部希望者は以下よりご連絡ください。
+          MCC では新入部員を随時募集してます。 お問合せ、入部希望者は以下よりご連絡ください。
         </p>
         <BasicLink
           href="https://twitter.com/messages/compose?recipient_id=227598819&text=はじめまして！○科○年です！MCCに興味があるのですが！"
           className={styles.twitterDmButton}
           data-screen-name="@TUATMCC"
           data-size="large">
-            <TwitterIcon color="#1DA1F2" size={24} />
+          <TwitterIcon color="#1DA1F2" size={24} />
           Twitter @MCC
         </BasicLink>
         {/*<BasicLink href="https://twitter.com/messages/compose?recipient_id=1449066255776825344&text=はじめまして！○科に所属の○年です！MCCに入部したいです！"
