@@ -15,9 +15,9 @@
 
 ## メンテの仕方
 
-- [Wikiのこのページ](https://github.com/tuatmcc/homepage2.0/wiki/%E9%96%8B%E7%99%BA%E6%89%8B%E9%A0%86)を参照
-- 興味があればいつでも声を掛けてください！いきなりPR送ったり、Issue立てたりするのも大歓迎です。
-- バグ報告や改善案はDiscordのホームページチャンネルに投げてくれて構いません。
+- [Wiki のこのページ](https://github.com/tuatmcc/homepage2.0/wiki/%E9%96%8B%E7%99%BA%E6%89%8B%E9%A0%86)を参照
+- 興味があればいつでも声を掛けてください！いきなり PR 送ったり、Issue 立てたりするのも大歓迎です。
+- バグ報告や改善案は Discord のホームページチャンネルに投げてくれて構いません。
 - 作業人員募集中！
 
 ## 環境（2023.3 現在）
@@ -33,15 +33,14 @@
 - `TypeScript`
 - `Next.js`: React フレームワーク・静的サイトジェネレーター
 - `React`: JavaScript フレームワーク・ライブラリ
-- `CSS-Modules`, `PostCSS`: CSSライブラリ
-- `ladle`: コンポーネント開発用ライブラリ 
+- `CSS-Modules`, `PostCSS`: CSS ライブラリ
+- `ladle`: コンポーネント開発用ライブラリ
 - `React Three Fiber`, `three.js`: WebGL ライブラリ
 - `Contentlayer`: Markdown -> HTML
 - `unified`, `remark`, `rehype`: Markdown -> HTML -> React
-- `ESLint`, `Rome`, `Stylelint`: Linter, Formatter
+- `ESLint`, `Prettier`, `Stylelint`: Linter, Formatter
 - `GitHub Actions`: CI/CD
 
 ## その他
 
 - 2022 年 11 月、MCC の HP リニューアルが決定しました。
-
