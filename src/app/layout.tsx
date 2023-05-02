@@ -1,10 +1,10 @@
-import { Orbitron, Noto_Sans_JP, JetBrains_Mono } from 'next/font/google';
+import { JetBrains_Mono, Noto_Sans_JP, Orbitron } from 'next/font/google';
 import { FC, ReactNode } from 'react';
 
 import type { Metadata } from 'next';
 
+import { classNames } from '~/libs/classNames';
 import '~/styles/global.css';
-import {classNames} from '~/libs/classNames';
 
 const notoSansJP = Noto_Sans_JP({
   variable: '--font-family-noto-sans-jp',
@@ -35,7 +35,8 @@ export const metadata: Metadata = {
     default: 'MCC - 東京農工大学マイクロコンピュータークラブ',
     template: '%s - MCC',
   },
-  description: 'MCCは、IT系の活動を行っている、東京農工大学の公認サークルです。',
+  description:
+    'MCCは、IT系の活動を行っている、東京農工大学の公認サークルです。',
   openGraph: {
     title: {
       default: 'MCC - 東京農工大学マイクロコンピュータークラブ',
@@ -49,23 +50,25 @@ export const metadata: Metadata = {
         url: 'https://www.tuatmcc.com/images/wordmark-logo-image.png',
         width: 1200,
         height: 630,
-      }
+      },
     ],
     type: 'website',
   },
   icons: {
     shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
-    other: [{
-      rel: 'android-touch-icon',
-      url: '/android-touch-icon.png',
-    }]
+    other: [
+      {
+        rel: 'android-touch-icon',
+        url: '/android-touch-icon.png',
+      },
+    ],
   },
   twitter: {
     creator: '@TUATMCC',
     title: {
       default: 'MCC - 東京農工大学マイクロコンピュータークラブ',
-      template: '%s'
+      template: '%s',
     },
     site: 'https://www.tuatmcc.com',
     card: 'summary_large_image',
@@ -74,22 +77,28 @@ export const metadata: Metadata = {
         url: 'https://www.tuatmcc.com/images/wordmark-logo-image.png',
         width: 1200,
         height: 630,
-      }
-    ]
-  }
-}
+      },
+    ],
+  },
+};
 
-const RootLayout: FC<{ children: ReactNode }> = ({
-  children,
-}) => {
+const RootLayout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <html lang="ja">
       <head>
         <meta charSet="utf-8" />
       </head>
-      <body className={classNames(orbitron.variable, notoSansJP.variable, jetBrainsMono.variable)}>{children}</body>
+      <body
+        className={classNames(
+          orbitron.variable,
+          notoSansJP.variable,
+          jetBrainsMono.variable,
+        )}
+      >
+        {children}
+      </body>
     </html>
-  )
-}
+  );
+};
 
-export default RootLayout
+export default RootLayout;
