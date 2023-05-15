@@ -10,107 +10,115 @@ import remarkMath from 'remark-math';
 import remarkToc from 'remark-toc';
 
 const defaultImage = 'https://www.tuatmcc.com/images/wordmark-logo-image.png';
-const remoteBase = 'https://raw.githubusercontent.com/tuatmcc/hp-md-content/main';
+const remoteBase =
+  'https://raw.githubusercontent.com/tuatmcc/hp-md-content/main';
 
 const parseOgImage = (src, rootPath) => {
-	if (!src) return defaultImage;
-	else if (src.startsWith('http')) return src;
-	else if (src.startsWith('./')) return `${remoteBase}/${rootPath}/${src.slice(2)}`;
-	else return defaultImage;
+  if (!src) return defaultImage;
+  else if (src.startsWith('http')) return src;
+  else if (src.startsWith('./'))
+    return `${remoteBase}/${rootPath}/${src.slice(2)}`;
+  else return defaultImage;
 };
 
 const generate = (documentType) =>
-	defineDocumentType(() => ({
-		name: documentType.charAt(0).toUpperCase() + documentType.slice(1),
-		filePathPattern: `${documentType}/**/*/index.md`,
-		fields: {
-			title: {
-				type: 'string',
-				required: true,
-			},
-			description: {
-				type: 'string',
-			},
-			date: {
-				type: 'date',
-				required: true,
-			},
-			img: {
-				type: 'string',
-				resolve: (doc) => encodeURI(parseOgImage(doc._raw.img, doc._raw.flattenedPath)),
-			},
-			tags: {
-				type: 'list',
-				of: { type: 'string' },
-			},
-			author: {
-				type: 'string',
-			},
-			listing: {
-				type: 'boolean',
-			},
-		},
-		computedFields: {
-			slug: {
-				type: 'list',
-				of: { type: 'string' },
-				resolve: (doc) =>
-					doc._raw.flattenedPath
-						.replace(`${documentType}/`, '')
-						.replace(/\/.+?\.md/, '')
-						.split('/'),
-			},
-			rootPath: {
-				type: 'string',
-				resolve: (doc) => doc._raw.flattenedPath,
-			},
-			dateStr: {
-				type: 'string',
-				resolve: (doc) => doc.date.replace(/T.*/, ''),
-			},
-		},
-	}));
+  defineDocumentType(() => ({
+    name: documentType.charAt(0).toUpperCase() + documentType.slice(1),
+    filePathPattern: `${documentType}/**/*/index.md`,
+    fields: {
+      title: {
+        type: 'string',
+        required: true,
+      },
+      description: {
+        type: 'string',
+      },
+      date: {
+        type: 'date',
+        required: true,
+      },
+      img: {
+        type: 'string',
+        resolve: (doc) =>
+          encodeURI(parseOgImage(doc._raw.img, doc._raw.flattenedPath)),
+      },
+      tags: {
+        type: 'list',
+        of: { type: 'string' },
+      },
+      author: {
+        type: 'string',
+      },
+      listing: {
+        type: 'boolean',
+      },
+    },
+    computedFields: {
+      slug: {
+        type: 'list',
+        of: { type: 'string' },
+        resolve: (doc) =>
+          doc._raw.flattenedPath
+            .replace(`${documentType}/`, '')
+            .replace(/\/.+?\.md/, '')
+            .split('/'),
+      },
+      rootPath: {
+        type: 'string',
+        resolve: (doc) => doc._raw.flattenedPath,
+      },
+      dateStr: {
+        type: 'string',
+        resolve: (doc) => doc.date.replace(/T.*/, ''),
+      },
+    },
+  }));
 
 export const Blog = generate('blog');
 export const News = generate('news');
 export const Members = generate('members');
 
 const rpcOptions = {
-	theme: 'github-dark',
-	onVisitLine(node) {
-		if (node.children.length === 0) {
-			node.children = [{ type: 'text', value: ' ' }];
-		}
-	},
-	onVisitHighlightedLine(node) {
-		node.properties.className.push('line--highlighted');
-	},
-	onVisitHighlightedWord(node) {
-		node.properties.className = ['word--highlighted'];
-	},
+  theme: 'github-dark',
+  onVisitLine(node) {
+    if (node.children.length === 0) {
+      node.children = [{ type: 'text', value: ' ' }];
+    }
+  },
+  onVisitHighlightedLine(node) {
+    node.properties.className.push('line--highlighted');
+  },
+  onVisitHighlightedWord(node) {
+    node.properties.className = ['word--highlighted'];
+  },
 };
 
 export default makeSource({
-	contentDirPath: 'content',
-	documentTypes: [Blog, News, Members],
-	markdown: {
-		remarkPlugins: [remarkGfm, remarkGemoji, remarkMath, [remarkToc, { heading: '', tight: true }]],
-		rehypePlugins: [
-			rehypeKatex,
-			[
-				rehypeDocument,
-				{
-					css: ['https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.css'],
-				},
-			],
-			[rehypePrettyCode, rpcOptions],
-			rehypeSlug,
-			[
-				rehypeAutoLinkHeadings,
-				{
-					behavior: 'append',
-				},
-			],
-		],
-	},
+  contentDirPath: 'content',
+  documentTypes: [Blog, News, Members],
+  markdown: {
+    remarkPlugins: [
+      remarkGfm,
+      remarkGemoji,
+      remarkMath,
+      [remarkToc, { heading: '', tight: true }],
+    ],
+    rehypePlugins: [
+      rehypeKatex, // render math
+      [
+        rehypeDocument, // add
+        {
+          css: ['https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.css'],
+        },
+      ],
+      [rehypePrettyCode, rpcOptions],
+      rehypeSlug, // add id to headings
+      [
+        rehypeAutoLinkHeadings, // add anchor to headings
+        {
+          behavior: 'append',
+        },
+      ],
+    ],
+  },
 });
