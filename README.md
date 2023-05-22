@@ -9,7 +9,7 @@
 
 - <https://www.tuatmcc.com>
 - [記事データベース](https://github.com/tuatmcc/hp-md-content)
-- [記事の書き方](https://www.tuatmcc.com/blog/how-to-add-article)
+- [記事の書き方](https://www.tuatmcc.com/blog/2023-01-adding-articles)
 - [デザイン案](https://www.figma.com/file/XTfW4NDafbsoMBCu5lNGkr/MCC-HOME-PAGE?node-id=0%3A1&t=F2uR5Q5TRy6jUzh3-1)
 - [ドキュメント(お気持が多分に混ざってます)](https://github.com/tuatmcc/homepage2.0/wiki)
 
