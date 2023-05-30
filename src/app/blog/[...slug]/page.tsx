@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 import type { Metadata } from 'next';
 
-import { allBlogs } from 'contentlayer/generated';
+import { allBlog } from '.mdorganizer';
 import { Navbar } from '~/components/Navbar';
 import { ArticleWrapper } from '~/components/md/ArticleWrapper';
 import { parseOgImage } from '~/libs/parseOgImage';
@@ -11,19 +11,34 @@ import {
   defaultOpenGraph,
   defaultOpenGraphImage,
   defaultTwitterCard,
+  metadataBase,
 } from '~/libs/sharedmetadata';
+
+type Params = { slug: string[] }; // [...slug]
 
 const documentType = 'blog';
 
 export const generateMetadata = async ({
   params,
 }: {
-  params: { slug: string[] };
+  params: Params;
 }): Promise<Metadata> => {
-  const post = allBlogs.find((x) => x.slug.join('/') === params.slug.join('/'));
+  const post = allBlog.find(
+    // URLが一致した記事を取得
+    (x) =>
+      x.rootPath
+        .split('/')
+        .filter(
+          (x) =>
+            x !== '' && x !== 'content' && x !== 'blog' && x !== 'index.md',
+        )
+        .join('/') === params.slug.join('/'),
+  );
+
   if (!post) return notFound();
   else {
     return {
+      metadataBase: metadataBase,
       title: post?.title,
       description: post?.description,
       openGraph: {
@@ -49,22 +64,42 @@ export const generateMetadata = async ({
   }
 };
 
-const BlogArticlePage: FC<{ params: { slug: string[] } }> = ({ params }) => {
-  const post = allBlogs.find((x) => x.slug.join('/') === params.slug.join('/'));
+const BlogArticlePage: FC<{ params: Params }> = ({ params }) => {
+  const post = allBlog.find(
+    // URLが一致した記事を取得
+    (post) =>
+      post.rootPath
+        .split('/')
+        .filter(
+          (x) =>
+            x !== '' && x !== 'index.md' && x !== 'blog' && x !== 'content',
+        )
+        .join('/') === params.slug.join('/'),
+  );
   if (!post) {
     return notFound();
   } else {
     return (
       <>
         <Navbar theme="auto" />
-        <ArticleWrapper documentType={documentType} {...post} />
+        <ArticleWrapper {...post} />
       </>
     );
   }
 };
 
-export const generateStaticParams = async () => {
-  return allBlogs.map((post) => ({ slug: post.slug }));
+export const generateStaticParams = async (): Promise<Params[]> => {
+  // すべての記事のパスを生成
+  return allBlog.map((post) => {
+    return {
+      slug: post.rootPath
+        .split('/')
+        .filter(
+          (x) =>
+            x !== '' && x !== 'index.md' && x !== 'blog' && x !== 'content',
+        ),
+    };
+  });
 };
 
 export default BlogArticlePage;

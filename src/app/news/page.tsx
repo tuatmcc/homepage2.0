@@ -4,13 +4,18 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { allNews } from 'contentlayer/generated';
+import { allNews } from '.mdorganizer';
 import { Navbar } from '~/components/Navbar';
 import { BasicImage } from '~/components/ui/BasicImage';
 import { Footer } from '~/components/ui/Footer';
-import { defaultOpenGraph, defaultTwitterCard } from '~/libs/sharedmetadata';
+import {
+  defaultOpenGraph,
+  defaultTwitterCard,
+  metadataBase,
+} from '~/libs/sharedmetadata';
 
 export const metadata: Metadata = {
+  metadataBase: metadataBase,
   title: 'NEWS',
   openGraph: {
     ...defaultOpenGraph,
@@ -24,7 +29,7 @@ export const metadata: Metadata = {
 
 const NewsListPage: FC = () => {
   const posts = structuredClone(allNews)
-    .filter((x) => x.slug.length === 1)
+    .filter((x) => x.rootPath.split('/').length === 4)
     .sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
   return (
     <>
@@ -53,7 +58,10 @@ const NewsListPage: FC = () => {
             {posts.map((post) => {
               return (
                 <li key={post.rootPath} className={styles.listItem}>
-                  <Link href={post.rootPath} className={styles.link}>
+                  <Link
+                    href={post.rootPath.replace(/content|\/index\.mdx?/g, '')}
+                    className={styles.link}
+                  >
                     <BasicImage
                       className={styles.image}
                       src={post.img || '/images/wordmark-logo-image.svg'}

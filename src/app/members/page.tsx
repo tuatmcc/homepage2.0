@@ -4,7 +4,7 @@ import styles from './style.module.css';
 
 import type { Metadata } from 'next';
 
-import { allDocuments } from 'contentlayer/generated';
+import { allPosts } from '.mdorganizer';
 import { Navbar } from '~/components/Navbar';
 import { BasicLink } from '~/components/ui/BasicLink';
 import { Footer } from '~/components/ui/Footer';
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 const MemberListPage: FC = () => {
-  const members = structuredClone(allDocuments)
+  const members = structuredClone(allPosts)
     .filter(
       (x, i, self) =>
         x.author && self.findIndex((t) => t.author === x.author) === i,

@@ -5,13 +5,18 @@ import styles from './style.module.css';
 
 import type { Metadata } from 'next';
 
-import { allBlogs } from 'contentlayer/generated';
+import { PostTypeBlog, allBlog } from '.mdorganizer/index';
 import { Navbar } from '~/components/Navbar';
 import { BasicImage } from '~/components/ui/BasicImage';
 import { Footer } from '~/components/ui/Footer';
-import { defaultOpenGraph, defaultTwitterCard } from '~/libs/sharedmetadata';
+import {
+  defaultOpenGraph,
+  defaultTwitterCard,
+  metadataBase,
+} from '~/libs/sharedmetadata';
 
 export const metadata: Metadata = {
+  metadataBase: metadataBase,
   title: 'Blog',
   description: '農工大公認サークルMCCのブログ記事の一覧です',
   openGraph: {
@@ -29,8 +34,8 @@ export const metadata: Metadata = {
 };
 
 const BlogListPage: FC = () => {
-  const posts = structuredClone(allBlogs)
-    .filter((x) => x.slug.length === 1)
+  const posts: PostTypeBlog[] = structuredClone(allBlog)
+    .filter((x) => x.rootPath.split('/').length === 4) // content,blog,filename,index.md
     .sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
   return (
     <>
@@ -59,7 +64,10 @@ const BlogListPage: FC = () => {
             {posts.map((post) => {
               return (
                 <li className={styles.listItem} key={post.rootPath}>
-                  <Link href={post.rootPath} className={styles.link}>
+                  <Link
+                    href={post.rootPath.replace(/content|index\.md/g, '')}
+                    className={styles.link}
+                  >
                     <BasicImage
                       className={styles.image}
                       src={post.img || '/images/wordmark-logo-image.svg'}
@@ -72,9 +80,7 @@ const BlogListPage: FC = () => {
                       <h2 className={styles.title}>{post.title}</h2>
                       <div className={styles.details}>
                         {post.date && (
-                          <div className={styles.date}>
-                            {post.date.replace(/T.+/, '')}
-                          </div>
+                          <div className={styles.date}>{post.date}</div>
                         )}
                         {post.author && (
                           <div className={styles.author}>@{post.author}</div>

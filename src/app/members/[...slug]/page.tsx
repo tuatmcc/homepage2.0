@@ -3,24 +3,32 @@ import { FC } from 'react';
 
 import type { Metadata } from 'next';
 
-import { allDocuments, allMembers } from 'contentlayer/generated';
+import { allPosts, allMember } from '.mdorganizer';
 import { Navbar } from '~/components/Navbar';
 import { parseOgImage } from '~/libs/parseOgImage';
-import { defaultOpenGraph, defaultOpenGraphImage } from '~/libs/sharedmetadata';
+import {
+  defaultOpenGraph,
+  defaultOpenGraphImage,
+  metadataBase,
+} from '~/libs/sharedmetadata';
 
+type Params = { slug: string[] }; // [...slug]
 const documentType = 'members';
 
 export const generateMetadata = async ({
   params,
 }: {
-  params: { slug: string[] };
+  params: Params;
 }): Promise<Metadata> => {
-  const post = allMembers.find(
-    (x) => x.slug.join('/') === params.slug.join('/'),
+  const post = allMember.find(
+    (x) =>
+      x.rootPath.replace(/content\/members\/|\/index.md/, '') ===
+      params.slug.join('/'),
   );
 
   const ogImage = parseOgImage(post?.img ?? '', documentType);
   return {
+    metadataBase: metadataBase,
     title: post?.title,
     description: post?.description,
     openGraph: {
@@ -38,7 +46,7 @@ export const generateMetadata = async ({
 };
 
 const MemberProfilePage: FC<{ params: { slug: string[] } }> = ({ params }) => {
-  const member = structuredClone(allDocuments)
+  const member = structuredClone(allPosts)
     .filter(
       (x, i, self) => self.indexOf(x) === i && x.author === params.slug[0],
     )
@@ -58,7 +66,9 @@ const MemberProfilePage: FC<{ params: { slug: string[] } }> = ({ params }) => {
 };
 
 export const generateStaticParams = () => {
-  return allMembers.map((post) => post.slug);
+  return allMember.map((post) =>
+    post.rootPath.replace(/^content\/members\/|\/index.md/, ''),
+  );
 };
 
 export default MemberProfilePage;
