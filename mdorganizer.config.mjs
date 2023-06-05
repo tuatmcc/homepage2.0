@@ -10,7 +10,7 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import remarkToc from 'remark-toc';
 
-/** @type {import('@tuatmcc/mdorganizer').Field} */
+/** @type {import('mdorganizer').Field} */
 const metaField = {
   title: { type: 'string', required: true },
   date: { type: 'string', required: true },
@@ -36,7 +36,7 @@ const rpcOptions = {
   },
 };
 
-/** @type {import('@tuatmcc/mdorganizer').OrganizerConfig} */
+/** @type {import('mdorganizer').OrganizerConfig} */
 const organizerConfig = {
   remarkRehypeOptions: {},
   remarkPlugins: [

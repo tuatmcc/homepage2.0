@@ -47,9 +47,9 @@ sitemap*.xml
 robot.txt
 robots.txt
 
-# contentlayer
-.contentlayer/generated/*/*
-.contentlayer/.cache/*
+# mdorganizer
+.mdorganizer/post.ts
 
 # wiki
 *.wiki
+
