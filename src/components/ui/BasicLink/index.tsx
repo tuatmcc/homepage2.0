@@ -2,8 +2,8 @@ import NextLink from 'next/link';
 import { ComponentPropsWithRef, ReactNode } from 'react';
 
 export type BasicLinkProps = ComponentPropsWithRef<'a'> & {
-	children: ReactNode;
-	href: string;
+  children: ReactNode;
+  href: string;
 };
 
 /**
@@ -19,16 +19,16 @@ export type BasicLinkProps = ComponentPropsWithRef<'a'> & {
  * <BasicLink href="/about">About</BasicLink>
  */
 export const BasicLink = ({ children, href, ...props }: BasicLinkProps) => {
-	if (href.startsWith('/') || href.startsWith('#') || !href.includes('://'))
-		return (
-			<NextLink href={href} {...props}>
-				{children}
-			</NextLink>
-		);
-	else
-		return (
-			<a href={href} target="_blank" rel="noopener noreferrer" {...props}>
-				{children}
-			</a>
-		);
+  if (href.startsWith('/') || href.startsWith('#') || !href.includes('://'))
+    return (
+      <NextLink href={href} {...props}>
+        {children}
+      </NextLink>
+    );
+  else
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+        {children}
+      </a>
+    );
 };

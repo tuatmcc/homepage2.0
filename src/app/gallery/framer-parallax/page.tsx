@@ -4,17 +4,17 @@ import { Navbar } from '~/components/Navbar';
 import { FramerPrallaxPrototype } from '~/components/gallery/framer-parallax';
 
 export const metadata: Metadata = {
-	title: 'Framer Prallax',
-	description: 'Framer parallax',
+  title: 'Framer Prallax',
+  description: 'Framer parallax',
 };
 
 const FramerParallax = () => {
-	return (
-		<>
-			<Navbar />
-			<FramerPrallaxPrototype />
-		</>
-	);
+  return (
+    <>
+      <Navbar />
+      <FramerPrallaxPrototype />
+    </>
+  );
 };
 
 export default FramerParallax;

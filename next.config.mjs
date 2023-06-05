@@ -4,19 +4,18 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	output: 'export',
-	experimental: {
-		appDir: true,
-		scrollRestoration: true,
-	},
-	reactStrictMode: true,
-	swcMinify: true,
-	images: {
-		unoptimized: true,
-	},
-	eslint: {
-		ignoreDuringBuilds: true,
-	},
+  output: 'export',
+  experimental: {
+    scrollRestoration: true,
+  },
+  reactStrictMode: true,
+  swcMinify: true,
+  images: {
+    unoptimized: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
