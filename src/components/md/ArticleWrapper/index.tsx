@@ -45,7 +45,7 @@ export const ArticleWrapper: FC<Post> = (post) => {
 			<main>
 				<div className={styles.mainContent}>
 					<HtmlParser {...post} />
-					<BasicLink href={`/${post.rootPath.replace(/\/+.?$/, '')}`} className={styles.backLink}>
+					<BasicLink href={`/${post.rootPath.replace(/\/.+?$/, '')}`} className={styles.backLink}>
 						← 記事一覧に戻る
 					</BasicLink>
 				</div>
