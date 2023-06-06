@@ -13,4 +13,10 @@ export const ROUTES: { [x: string]: ROUTE } = {
 };
 
 /** ナビゲーションなどに使用するリスト。これをループ処理で使う */
-export const BASE_ROUTES_LIST: ROUTE[] = [ROUTES.HOME, ROUTES.ABOUT, ROUTES.NEWS, ROUTES.BLOG, ROUTES.GALLERY];
+export const BASE_ROUTES_LIST: ROUTE[] = [
+  ROUTES.HOME,
+  ROUTES.ABOUT,
+  ROUTES.NEWS,
+  ROUTES.BLOG,
+  ROUTES.GALLERY,
+];
