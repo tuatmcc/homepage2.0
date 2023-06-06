@@ -49,6 +49,7 @@ robots.txt
 
 # mdorganizer
 .mdorganizer/post.ts
+.contentlayer/
 
 # wiki
 *.wiki
