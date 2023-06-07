@@ -16,10 +16,10 @@ import { MiniLinkIcon } from '~/components/ui/Svg';
 import { parseImageSrc } from '~/libs/parseImageSrc';
 
 export const HtmlParser: FC<Post> = (post) => {
-  const { body, rootPath } = post;
+  const { html, rootPath } = post;
 
   // HTMLをReactNodeに変換する
-  const [content, setContent] = useState<ReactNode>(body.html);
+  const [content, setContent] = useState<ReactNode>('');
 
   useEffect(() => {
     const processor = unified()
@@ -32,7 +32,10 @@ export const HtmlParser: FC<Post> = (post) => {
           ),
           img: ({ src, alt }) => (
             <BasicImage
-              src={parseImageSrc(src || '', rootPath)}
+              src={parseImageSrc(
+                src || '',
+                rootPath.replace(/^content|\/index\.mdx?/g, ''),
+              )}
               alt={alt || ''}
               width={640}
               height={480}
@@ -46,10 +49,10 @@ export const HtmlParser: FC<Post> = (post) => {
           },
         },
       } as RehypeReactOptions)
-      .processSync(body.html);
+      .processSync(html);
 
     setContent(processor.result);
-  }, [body, rootPath]);
+  }, [html, rootPath]);
 
   return <div className={styles.articleContent}>{content}</div>;
 };

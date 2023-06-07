@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { allNews } from 'contentlayer/generated';
+import { allNews } from '.mdorganizer';
 import { BasicLink } from '~/components/ui/BasicLink';
 
 export const RecentNews: FC = () => {
@@ -15,8 +15,11 @@ export const RecentNews: FC = () => {
       <h2 className={styles.title}>Recent News</h2>
       <ul className={styles.list}>
         {recentNews.map((news) => (
-          <li key={news.slug} className={styles.listItem}>
-            <BasicLink href={news.rootPath} className={styles.link}>
+          <li key={news.rootPath} className={styles.listItem}>
+            <BasicLink
+              href={news.rootPath.replace(/^content|\/index\.mdx?/g, '')}
+              className={styles.link}
+            >
               <h3 className={styles.newsTitle}>{news.title}</h3>
               <p className={styles.date}>{news.date}</p>
               <p className={styles.description}>{news.description}</p>

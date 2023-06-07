@@ -3,7 +3,7 @@ name: CI
 on:
   pull_request:
     branches:
-      - "develop"
+      - 'develop'
 
   workflow_dispatch:
 
@@ -43,7 +43,7 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: run lint
         run: pnpm run lint

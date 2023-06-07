@@ -12,7 +12,7 @@ import { Footer } from '~/components/ui/Footer';
 import { Tag, TagList } from '~/components/ui/Tag';
 
 export const ArticleWrapper: FC<Post> = (post) => {
-  const { title, author, img, tags, dateStr } = post;
+  const { title, date, img, author, tags } = post;
   const tagList = tags?.map((tag) => <Tag key={tag}>{tag}</Tag>);
   return (
     <>
@@ -39,7 +39,7 @@ export const ArticleWrapper: FC<Post> = (post) => {
                 @{author}
               </BasicLink>
             )}
-            <div className={styles.date}>{dateStr}</div>
+            <div className={styles.date}>{date}</div>
             <TagList className={styles.tagList}>{tagList}</TagList>
           </div>
         </div>
