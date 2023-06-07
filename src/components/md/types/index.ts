@@ -1,5 +1,3 @@
-import type { Blog, Members, News } from 'contentlayer/generated';
+import type { PostTypeBlog, PostTypeNews } from '.mdorganizer';
 
-export type Post = (Blog | News | Members) & {
-  documentType: 'blog' | 'news' | 'members';
-};
+export type Post = PostTypeBlog | PostTypeNews;

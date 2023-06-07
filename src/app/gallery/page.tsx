@@ -6,8 +6,10 @@ import styles from './style.module.css';
 
 import { Navbar } from '~/components/Navbar';
 import { Footer } from '~/components/ui/Footer';
+import { metadataBase } from '~/libs/sharedmetadata';
 
 export const metadata: Metadata = {
+  metadataBase: metadataBase,
   title: 'Gallery',
   description: 'Gallery - where you can see our prototypes and designs',
 };

@@ -6,6 +6,10 @@ const defaultOpenGraphImageURL =
 const defaultDescription =
   'MCCは、東京農工大学の公認サークルで、ITに関することを学び、活動しているサークルです。学祭に制作物を出展したり、学内外のイベントに参加したり、学生同士で交流を深めたりしています。';
 
+export const metadataBase = new URL(
+  'https://www.tuatmcc.com/images/wordmark-logo-image.png',
+);
+
 export const defaultOpenGraphImage = {
   url: defaultOpenGraphImageURL,
   width: 1200,

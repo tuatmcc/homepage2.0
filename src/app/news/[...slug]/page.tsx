@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 import type { Metadata } from 'next';
 
-import { allNews } from 'contentlayer/generated';
+import { allNews } from '.mdorganizer';
 import { Navbar } from '~/components/Navbar';
 import { ArticleWrapper } from '~/components/md/ArticleWrapper';
 import { parseOgImage } from '~/libs/parseOgImage';
@@ -11,21 +11,29 @@ import {
   defaultOpenGraph,
   defaultOpenGraphImage,
   defaultTwitterCard,
+  metadataBase,
 } from '~/libs/sharedmetadata';
 
+type Params = { slug: string[] }; // [...slug]
 const documentType = 'news';
 
 export const generateMetadata = async ({
   params,
 }: {
-  params: { slug: string[] };
+  params: Params;
 }): Promise<Metadata> => {
-  const post = allNews.find((x) => x.slug.join('/') === params.slug.join('/'));
+  const post = allNews.find(
+    // URLが一致した記事を取得
+    (x) =>
+      x.rootPath.replace(/^content\/news\/|\/index\.mdx?/g, '') ===
+      params.slug.join('/'),
+  );
 
   if (!post) return notFound();
   else {
     const ogImage = parseOgImage(post.img ?? '', documentType);
     return {
+      metadataBase: metadataBase,
       title: post.title,
       description: post.description,
       openGraph: {
@@ -51,22 +59,30 @@ export const generateMetadata = async ({
   }
 };
 
-const NewsArticlePage: FC<{ params: { slug: string[] } }> = ({ params }) => {
-  const post = allNews.find((x) => x.slug.join('/') === params.slug.join('/'));
+const NewsArticlePage: FC<{ params: Params }> = ({ params }) => {
+  const post = allNews.find(
+    (x) =>
+      x.rootPath.replace(/^content\/news\/|\/index\.mdx?$/g, '') ===
+      params.slug.join('/'),
+  );
   if (!post) {
     return notFound();
   } else {
     return (
       <>
         <Navbar theme="auto" />
-        <ArticleWrapper documentType={documentType} {...post} />
+        <ArticleWrapper {...post} />
       </>
     );
   }
 };
 
 export const generateStaticParams = async () => {
-  return allNews.map((post) => ({ slug: post.slug }));
+  return allNews.map((post) => ({
+    slug: post.rootPath
+      .replace(/^content\/news\/|\/index\.mdx?$/g, '')
+      .split('/'),
+  }));
 };
 
 export default NewsArticlePage;

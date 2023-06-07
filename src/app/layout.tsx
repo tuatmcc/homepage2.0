@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 
 import { classNames } from '~/libs/classNames';
 import '~/styles/global.css';
+import { metadataBase } from '~/libs/sharedmetadata';
 
 const notoSansJP = Noto_Sans_JP({
   variable: '--font-family-noto-sans-jp',
@@ -31,6 +32,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: metadataBase,
   title: {
     default: 'MCC - 東京農工大学マイクロコンピュータークラブ',
     template: '%s - MCC',
