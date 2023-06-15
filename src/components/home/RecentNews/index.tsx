@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { allNews } from '.mdorganizer';
+import { allNews } from '.contentlayer/generated';
 import { BasicLink } from '~/components/ui/BasicLink';
 
 export const RecentNews: FC = () => {

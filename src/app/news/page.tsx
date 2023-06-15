@@ -4,7 +4,7 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { allNews } from '.mdorganizer';
+import { allNews } from '.contentlayer/generated';
 import { Navbar } from '~/components/Navbar';
 import { BasicImage } from '~/components/ui/BasicImage';
 import { Footer } from '~/components/ui/Footer';

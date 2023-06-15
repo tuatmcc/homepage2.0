@@ -1,37 +1,52 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 
-const generate = (documentType) =>
-  defineDocumentType(() => ({
+/** @type {import('contentlayer/source-files').FieldDefs} */
+const fields = {
+  title: {
+    type: 'string',
+    required: true,
+  },
+  date: {
+    type: 'date',
+    required: true,
+  },
+  description: {
+    type: 'string',
+  },
+  img: {
+    type: 'string',
+  },
+  tags: {
+    type: 'list',
+    of: { type: 'string' },
+  },
+  author: {
+    type: 'string',
+  },
+  unlist: {
+    type: 'boolean',
+  },
+};
+
+/**
+ * @param {string} documentType
+ * @returns {import('contentlayer/source-files').DocumentType<string>}
+ */
+const generateDocumentType = (documentType) => {
+  /** @type {import('contentlayer/source-files').defineDocumentType} */
+  return defineDocumentType(() => ({
     name: documentType.charAt(0).toUpperCase() + documentType.slice(1),
     filePathPattern: `${documentType}/**/*/index.md`,
-    fields: {
-      title: {
-        type: 'string',
-        required: true,
-      },
-      description: {
-        type: 'string',
-      },
-      date: {
-        type: 'date',
-        required: true,
-      },
-      img: {
-        type: 'string',
-      },
-      tags: {
-        type: 'list',
-        of: { type: 'string' },
-      },
-      author: {
-        type: 'string',
-      },
-      listing: {
-        type: 'boolean',
-      },
-    },
+    fields,
     computedFields: {
-      documentType: documentType,
+      documentType: {
+        type: 'string',
+        resolve: () => documentType,
+      },
+      dateStr: {
+        type: 'string',
+        resolve: (doc) => doc.date.replace(/T.*/, ''),
+      },
       rootPath: {
         type: 'string',
         resolve: (doc) => doc._raw.flattenedPath,
@@ -41,20 +56,15 @@ const generate = (documentType) =>
         resolve: (doc) =>
           doc._raw.flattenedPath.split('/').slice(0, -1).join('/'),
       },
-      dateStr: {
-        type: 'string',
-        resolve: (doc) => doc.date.replace(/T.*/, ''),
-      },
     },
   }));
+};
 
-export const Blog = generate('blog');
-export const News = generate('news');
-export const Members = generate('members');
-
+export const Blog = generateDocumentType('blog');
+export const News = generateDocumentType('news');
+export const Members = generateDocumentType('members');
 export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Blog, News, Members],
-  markdown: {},
-  onUnknownDocuments: 'skip-ignore',
+  onUnknownDocuments: 'skip-warn',
 });

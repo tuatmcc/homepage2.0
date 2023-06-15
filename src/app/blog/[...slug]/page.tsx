@@ -1,11 +1,18 @@
+import NextLink from 'next/link';
 import { notFound } from 'next/navigation';
-import { FC } from 'react';
+
+import styles from './style.module.css';
 
 import type { Metadata } from 'next';
 
 import { allBlogs, Blog } from '.contentlayer/generated';
+import { BackToTop } from '~/components/BackToTop';
 import { Navbar } from '~/components/Navbar';
-import { ArticleWrapper } from '~/components/md/ArticleWrapper';
+import { Article } from '~/components/ui/Article';
+import { BasicImage } from '~/components/ui/BasicImage';
+import { Footer } from '~/components/ui/Footer';
+import { TagList } from '~/components/ui/Tag';
+import compile from '~/libs/compiler';
 import { parseOgImage } from '~/libs/parseOgImage';
 import {
   defaultOpenGraph,
@@ -23,9 +30,9 @@ export const generateMetadata = async ({
 }: {
   params: Params;
 }): Promise<Metadata> => {
-  const post: Blog = allBlogs.find(
+  const post: Blog | undefined = allBlogs.find(
     // URLが一致した記事を取得
-    (x) => x.rootPath === post.documentType + '/' + params.slug.join('/'),
+    (post) => post.rootPath === post.documentType + '/' + params.slug.join('/'),
   );
 
   if (!post) return notFound();
@@ -57,42 +64,69 @@ export const generateMetadata = async ({
   }
 };
 
-const BlogArticlePage: FC<{ params: Params }> = ({ params }) => {
-  const post = allBlog.find(
+export default async function Blog({ params }: { params: Params }) {
+  const post = allBlogs.find(
     // URLが一致した記事を取得
-    (post) =>
-      post.rootPath
-        .split('/')
-        .filter(
-          (x) =>
-            x !== '' && x !== 'index.md' && x !== 'blog' && x !== 'content',
-        )
-        .join('/') === params.slug.join('/'),
+    (post) => post.rootPath === post.documentType + '/' + params.slug.join('/'),
   );
   if (!post) {
     return notFound();
   } else {
+    const { title, dateStr, img, author, tags, parentPath } = post;
+    const content = await compile(post.body.raw);
     return (
       <>
         <Navbar theme="auto" />
-        <ArticleWrapper {...post} />
+        <BasicImage
+          src={img || '/images/wordmark-logo-image.svg'}
+          alt="hero image"
+          role="presentation"
+          width={800}
+          height={300}
+          className={styles.heroImage}
+          fallback
+        />
+        <div className={styles.heroImageOverlay} />
+
+        <header className={styles.header}>
+          <div className={styles.headerContent}>
+            <h1 className={styles.title}>{title}</h1>
+            <div className={styles.info}>
+              {author && (
+                <NextLink
+                  href={`https://github.com/${author}`}
+                  className={styles.author}
+                >
+                  @{author}
+                </NextLink>
+              )}
+              <div className={styles.date}>{dateStr}</div>
+              <TagList className={styles.tagList}>{tags}</TagList>
+            </div>
+          </div>
+        </header>
+
+        <main>
+          <div className={styles.mainContent}>
+            <Article>{content}</Article>
+            <NextLink href={`/${parentPath}`} className={styles.backLink}>
+              ← 記事一覧に戻る
+            </NextLink>
+          </div>
+        </main>
+        <Footer />
+
+        <BackToTop />
       </>
     );
   }
-};
+}
 
 export const generateStaticParams = async (): Promise<Params[]> => {
   // すべての記事のパスを生成
-  return allBlog.map((post) => {
+  return allBlogs.map((post) => {
     return {
-      slug: post.rootPath
-        .split('/')
-        .filter(
-          (x) =>
-            x !== '' && x !== 'index.md' && x !== 'blog' && x !== 'content',
-        ),
+      slug: post.rootPath.split('/').slice(1),
     };
   });
 };
-
-export default BlogArticlePage;

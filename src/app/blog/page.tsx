@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 const BlogListPage: FC = () => {
   const posts: Blog[] = structuredClone(allBlogs)
-    .filter((x) => x.rootPath.split('/').length === 4) // content,blog,filename,index.md
+    .filter((x) => !x.unlist)
     .sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
   return (
     <>

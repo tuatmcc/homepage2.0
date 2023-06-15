@@ -45,16 +45,18 @@ export const ArticleWrapper: FC<Post> = (post) => {
         </div>
       </header>
 
-			<main>
-				<div className={styles.mainContent}>
-					<HtmlParser {...post} />
-					<BasicLink href={`/${post.rootPath.replace(/\/.+?$/, '')}`} className={styles.backLink}>
-						← 記事一覧に戻る
-					</BasicLink>
-				</div>
-			</main>
-			<Footer />
-
+      <main>
+        <div className={styles.mainContent}>
+          <HtmlParser {...post} />
+          <BasicLink
+            href={`/${post.rootPath.replace(/\/.+?$/, '')}`}
+            className={styles.backLink}
+          >
+            ← 記事一覧に戻る
+          </BasicLink>
+        </div>
+      </main>
+      <Footer />
 
       <BackToTop />
     </>
