@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  flex-direction: column;
+
+  & .heroImage {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: grayscale(80%);
+  }
+
+  & .title {
+    margin: 16px 0;
+    font-size: 42px;
+    font-weight: bold;
+  }
+
+  & .author {
+    margin: 16px 0;
+    font-weight: bold;
+    color: var(--mcc-color-1);
+    text-decoration: underline;
+  }
+
+  & .date {
+    margin: 8px 0;
+    font-size: 14px;
+    color: var(--color-gray-500);
+  }
+
+  & .tagList {
+    margin: 16px 0;
+    display: flex;
+    gap: 8px;
+
+    & .tagItem {
+      padding: 4px 8px;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: var(--shadow-neumorphism);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}

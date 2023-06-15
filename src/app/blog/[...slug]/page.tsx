@@ -6,6 +6,7 @@ import styles from './style.module.css';
 import type { Metadata } from 'next';
 
 import { allBlogs, Blog } from '.contentlayer/generated';
+import { ArticleHeader } from '~/components/ArticleHeader';
 import { BackToTop } from '~/components/BackToTop';
 import { Navbar } from '~/components/Navbar';
 import { Article } from '~/components/ui/Article';
@@ -77,42 +78,18 @@ export default async function Blog({ params }: { params: Params }) {
     return (
       <>
         <Navbar theme="auto" />
-        <BasicImage
-          src={img || '/images/wordmark-logo-image.svg'}
-          alt="hero image"
-          role="presentation"
-          width={800}
-          height={300}
-          className={styles.heroImage}
-          fallback
-        />
-        <div className={styles.heroImageOverlay} />
-
-        <header className={styles.header}>
-          <div className={styles.headerContent}>
-            <h1 className={styles.title}>{title}</h1>
-            <div className={styles.info}>
-              {author && (
-                <NextLink
-                  href={`https://github.com/${author}`}
-                  className={styles.author}
-                >
-                  @{author}
-                </NextLink>
-              )}
-              <div className={styles.date}>{dateStr}</div>
-              <TagList className={styles.tagList}>{tags}</TagList>
-            </div>
-          </div>
-        </header>
-
-        <main>
-          <div className={styles.mainContent}>
-            <Article>{content}</Article>
-            <NextLink href={`/${parentPath}`} className={styles.backLink}>
-              ← 記事一覧に戻る
-            </NextLink>
-          </div>
+        <main className={styles.main}>
+          <ArticleHeader
+            title={title}
+            image={img}
+            date={dateStr}
+            author={author}
+            tags={tags}
+          />
+          <Article>{content}</Article>
+          <NextLink href={`/${parentPath}`} className={styles.backLink}>
+            ← 記事一覧に戻る
+          </NextLink>
         </main>
         <Footer />
 
