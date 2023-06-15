@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 import type { Metadata } from 'next';
 
-import { allBlog } from '.mdorganizer';
+import { allBlogs, Blog } from '.contentlayer/generated';
 import { Navbar } from '~/components/Navbar';
 import { ArticleWrapper } from '~/components/md/ArticleWrapper';
 import { parseOgImage } from '~/libs/parseOgImage';
@@ -23,16 +23,9 @@ export const generateMetadata = async ({
 }: {
   params: Params;
 }): Promise<Metadata> => {
-  const post = allBlog.find(
+  const post: Blog = allBlogs.find(
     // URLが一致した記事を取得
-    (x) =>
-      x.rootPath
-        .split('/')
-        .filter(
-          (x) =>
-            x !== '' && x !== 'content' && x !== 'blog' && x !== 'index.md',
-        )
-        .join('/') === params.slug.join('/'),
+    (x) => x.rootPath === post.documentType + '/' + params.slug.join('/'),
   );
 
   if (!post) return notFound();

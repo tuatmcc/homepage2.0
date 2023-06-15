@@ -5,7 +5,7 @@ import styles from './style.module.css';
 
 import type { Metadata } from 'next';
 
-import { PostTypeBlog, allBlog } from '.mdorganizer/index';
+import { Blog, allBlogs } from '.contentlayer/generated';
 import { Navbar } from '~/components/Navbar';
 import { BasicImage } from '~/components/ui/BasicImage';
 import { Footer } from '~/components/ui/Footer';
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 };
 
 const BlogListPage: FC = () => {
-  const posts: PostTypeBlog[] = structuredClone(allBlog)
+  const posts: Blog[] = structuredClone(allBlogs)
     .filter((x) => x.rootPath.split('/').length === 4) // content,blog,filename,index.md
     .sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
   return (
@@ -64,10 +64,7 @@ const BlogListPage: FC = () => {
             {posts.map((post) => {
               return (
                 <li className={styles.listItem} key={post.rootPath}>
-                  <Link
-                    href={post.rootPath.replace(/content|index\.md/g, '')}
-                    className={styles.link}
-                  >
+                  <Link href={post.rootPath} className={styles.link}>
                     <BasicImage
                       className={styles.image}
                       src={post.img || '/images/wordmark-logo-image.svg'}

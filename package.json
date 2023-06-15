@@ -16,8 +16,7 @@
     "typecheck": "tsc --noEmit",
     "analyze": "ANALYZE=true next build",
     "ladle": "ladle serve",
-    "contentlayer": "contentlayer build",
-    "images": "tsx ./src/libs/images.ts"
+    "contentlayer": "contentlayer build && tsx ./src/libs/images.ts"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css}": [

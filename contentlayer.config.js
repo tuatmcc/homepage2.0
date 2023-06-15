@@ -18,8 +18,6 @@ const generate = (documentType) =>
       },
       img: {
         type: 'string',
-        resolve: (doc) =>
-          encodeURI(parseOgImage(doc._raw.img, doc._raw.flattenedPath)),
       },
       tags: {
         type: 'list',
@@ -33,18 +31,15 @@ const generate = (documentType) =>
       },
     },
     computedFields: {
-      slug: {
-        type: 'list',
-        of: { type: 'string' },
-        resolve: (doc) =>
-          doc._raw.flattenedPath
-            .replace(`${documentType}/`, '')
-            .replace(/\/.+?\.md/, '')
-            .split('/'),
-      },
+      documentType: documentType,
       rootPath: {
         type: 'string',
         resolve: (doc) => doc._raw.flattenedPath,
+      },
+      parentPath: {
+        type: 'string',
+        resolve: (doc) =>
+          doc._raw.flattenedPath.split('/').slice(0, -1).join('/'),
       },
       dateStr: {
         type: 'string',
