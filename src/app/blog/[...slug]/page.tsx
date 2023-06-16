@@ -1,7 +1,7 @@
 import NextLink from 'next/link';
 import { notFound } from 'next/navigation';
 
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
 import type { Metadata } from 'next';
 
@@ -10,9 +10,7 @@ import { ArticleHeader } from '~/components/ArticleHeader';
 import { BackToTop } from '~/components/BackToTop';
 import { Navbar } from '~/components/Navbar';
 import { Article } from '~/components/ui/Article';
-import { BasicImage } from '~/components/ui/BasicImage';
 import { Footer } from '~/components/ui/Footer';
-import { TagList } from '~/components/ui/Tag';
 import compile from '~/libs/compiler';
 import { parseOgImage } from '~/libs/parseOgImage';
 import {
@@ -78,14 +76,14 @@ export default async function Blog({ params }: { params: Params }) {
     return (
       <>
         <Navbar theme="auto" />
+        <ArticleHeader
+          title={title}
+          image={img}
+          date={dateStr}
+          author={author}
+          tags={tags}
+        />
         <main className={styles.main}>
-          <ArticleHeader
-            title={title}
-            image={img}
-            date={dateStr}
-            author={author}
-            tags={tags}
-          />
           <Article>{content}</Article>
           <NextLink href={`/${parentPath}`} className={styles.backLink}>
             ← 記事一覧に戻る

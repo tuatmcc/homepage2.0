@@ -14,43 +14,44 @@ export type ArticleHeaderProps = {
 
 export const ArticleHeader: FC<ArticleHeaderProps> = ({
   title,
-  image,
   date,
+  image,
   author,
   tags,
 }) => {
   return (
-    <header className={styles.header}>
+    <>
       {image && (
         <NextImageWithFallback
-          className={styles.heroImage}
+          src={image}
+          alt={''}
           width={800}
           height={300}
-          src={image}
-          fallback="/images/wordmark-logo-image.svg"
-          role="presentation"
-          alt=""
+          className={styles.heroImage}
+          fallback={'/images/wordmark-logo.svg'}
         />
       )}
-      {date && <p className={styles.date}>{date}</p>}
-      <h1 className={styles.title}>{title}</h1>
-      {author && (
-        <span>
-          by{' '}
-          <a href={`https://github.com/${author}`} className={styles.author}>
-            @{author}
-          </a>
-        </span>
-      )}
-      {tags && (
-        <ul className={styles.tagList}>
-          {tags.map((x) => (
-            <li key={x} className={styles.tagItem}>
-              {x}
-            </li>
-          ))}
-        </ul>
-      )}
-    </header>
+      <header className={styles.header}>
+        {date && <p className={styles.date}>{date}</p>}
+        <h1 className={styles.title}>{title}</h1>
+        {author && (
+          <span>
+            by{' '}
+            <a href={`https://github.com/${author}`} className={styles.author}>
+              @{author}
+            </a>
+          </span>
+        )}
+        {tags && (
+          <ul className={styles.tagList}>
+            {tags.map((x) => (
+              <li key={x} className={styles.tagItem}>
+                {x}
+              </li>
+            ))}
+          </ul>
+        )}
+      </header>
+    </>
   );
 };

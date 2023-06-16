@@ -1,3 +1,11 @@
+/* ==========================================================================
+ *
+ * We use contentlayer just to generate the typed fromtmatter
+ *
+ * converting markdown to react server components is done by next-remote-mdx
+ *
+ ========================================================================== */
+
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 
 /** @type {import('contentlayer/source-files').FieldDefs} */
