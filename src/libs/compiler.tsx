@@ -13,7 +13,19 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import remarkToc from 'remark-toc';
 
-const components = {} as MDXComponents;
+import {
+  MDLinkComponent,
+  type MDLinkComponentProps,
+} from '~/components/markdown/MDLinkComponent';
+import {
+  MDPreComponent,
+  type MDPreComponentProps,
+} from '~/components/markdown/MDPreComponent';
+
+const components = {
+  a: (props: MDLinkComponentProps) => <MDLinkComponent {...props} />,
+  pre: (props: MDPreComponentProps) => <MDPreComponent {...props} />,
+} as MDXComponents;
 
 const rhypePrettyCodeOptions: Partial<RehypePrettyCodeOption> = {
   theme: 'github-dark',

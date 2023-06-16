@@ -1,3 +1,5 @@
+'use client';
+
 import {
   ComponentPropsWithoutRef,
   FC,
@@ -9,31 +11,31 @@ import {
 
 import { CopyIcon } from '~/components/ui/Svg/CopyIcon';
 
-export const PreWithCopyButton: FC<ComponentPropsWithoutRef<'pre'>> = ({
+export type MDPreComponentProps = ComponentPropsWithoutRef<'pre'>;
+
+export const MDPreComponent: FC<ComponentPropsWithoutRef<'pre'>> = ({
   children,
   ...props
 }) => {
-  const [copyButtonContent, setCopyButtonContent] = useState<ReactNode>(
-    <CopyIcon />,
-  );
+  const [buttonInner, setButtonInner] = useState<ReactNode>(<CopyIcon />);
   const ref = useRef<HTMLPreElement>(null);
 
   const copyCode = useCallback(() => {
     navigator.clipboard.writeText(ref.current?.innerText || '');
-    setCopyButtonContent('Copied!');
-    const timeout = setTimeout(() => setCopyButtonContent(<CopyIcon />), 1000);
+    setButtonInner('Copied!');
+    const timeout = setTimeout(() => setButtonInner(<CopyIcon />), 1000);
 
     return () => clearTimeout(timeout);
   }, []);
 
   return (
-    <div>
+    <>
       <pre ref={ref} {...props}>
-        <button type="button" onClick={copyCode} aria-label="copy">
-          {copyButtonContent}
-        </button>
         {children}
+        <button type="button" onClick={copyCode} aria-label="copy">
+          {buttonInner}
+        </button>
       </pre>
-    </div>
+    </>
   );
 };

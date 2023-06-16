@@ -13,7 +13,6 @@
 /.next/
 /out/
 /docs/
-/content/
 
 # production
 /build
@@ -38,6 +37,12 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# content
+/content
+/public/blog
+/public/news
+/public/members
+
 # editor
 .idea
 .vscode/tasks.json
@@ -47,9 +52,10 @@ sitemap*.xml
 robot.txt
 robots.txt
 
-# mdorganizer
-.mdorganizer/post.ts
+# contentlayer
 .contentlayer/
+!.contentlayer/types.d.ts
+!.contentlayer/index.d.ts
 
 # wiki
 *.wiki

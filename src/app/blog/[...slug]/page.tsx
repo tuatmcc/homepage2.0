@@ -22,15 +22,12 @@ import {
 
 type Params = { slug: string[] }; // [...slug]
 
-const documentType = 'blog';
-
-export const generateMetadata = async ({
+export async function generateMetadata({
   params,
 }: {
   params: Params;
-}): Promise<Metadata> => {
-  const post: Blog | undefined = allBlogs.find(
-    // URLが一致した記事を取得
+}): Promise<Metadata> {
+  const post = allBlogs.find(
     (post) => post.rootPath === post.documentType + '/' + params.slug.join('/'),
   );
 
@@ -42,7 +39,7 @@ export const generateMetadata = async ({
       description: post?.description,
       openGraph: {
         ...defaultOpenGraph,
-        title: { default: post?.title ?? '', template: "%s | MCC's Blog" },
+        title: { default: post.title ?? '', template: "%s | MCC's Blog" },
         description: post?.description,
         images: [
           {
@@ -55,13 +52,13 @@ export const generateMetadata = async ({
         ...defaultTwitterCard,
         images: [
           {
-            url: parseOgImage(post?.img || '', documentType),
+            url: parseOgImage(post.img || '', post.documentType),
           },
         ],
       },
     };
   }
-};
+}
 
 export default async function Blog({ params }: { params: Params }) {
   const post = allBlogs.find(
@@ -97,11 +94,11 @@ export default async function Blog({ params }: { params: Params }) {
   }
 }
 
-export const generateStaticParams = async (): Promise<Params[]> => {
+export async function generateStaticParams(): Promise<Params[]> {
   // すべての記事のパスを生成
   return allBlogs.map((post) => {
     return {
       slug: post.rootPath.split('/').slice(1),
     };
   });
-};
+}

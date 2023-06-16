@@ -11,6 +11,18 @@
   h6 {
     font-weight: bold;
     line-height: 1.5;
+
+    /* This is the link icon */
+    & a {
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    &:hover {
+      & a {
+        opacity: 1;
+      }
+    }
   }
 
   & p {
@@ -58,16 +70,16 @@
     list-style: decimal;
   }
 
+  & li {
+    margin: 0;
+    line-height: 2;
+  }
+
   & blockquote {
     padding-left: 12px;
     font-style: italic;
     color: var(--color-gray-600);
     border-left: solid 6px var(--color-gray-300);
-  }
-
-  & li {
-    margin: 0;
-    line-height: 2;
   }
 
   & table {
@@ -98,11 +110,10 @@
   }
 
   & code {
-    position: relative;
     padding: 1px 5px;
     margin: 0 0.2em;
     font-family: var(--font-family-jetbrains-mono);
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
     color: var(--color-gray-900);
     word-break: break-word;
@@ -114,76 +125,75 @@
     }
   }
 
-  & div > pre {
-    position: relative;
-    padding: 16px;
-    overflow: auto;
-    font-family: var(--font-family-jetbrains-mono);
-    background-color: var(--color-gray-700);
-    border-radius: 4px;
-
-    & button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding: 4px 8px;
-      margin: 8px;
-      color: var(--color-gray-0);
-      border-radius: 2px;
-    }
-
-    & code {
-      padding: 0;
-      color: var(--color-gray-0);
-      background: inherit;
-    }
-  }
-
-  & section[data-footnotes] {
-    & h2 {
-      height: 0;
-      overflow: hidden;
-    }
-  }
-
   & div[data-rehype-pretty-code-fragment] {
-    position: relative;
     margin: 32px 0;
+    border-radius: 4px;
+    overflow: hidden;
 
     & div[data-rehype-pretty-code-title] {
-      position: relative;
-      bottom: -4px;
       display: inline-block;
-      padding: 4px 16px 10px;
+      padding: 8px 16px;
       font-size: 14px;
       color: #ccc;
       overflow-wrap: break-word;
-      line-gap-override: 0;
-      background: var(--color-gray-700);
+      background: var(--color-gray-900);
       border-radius: 4px 4px 0 0;
     }
 
     & pre {
-      padding: 16px;
+      padding: 12px;
       margin: 0;
       overflow: auto;
       font-family: var(--font-family-jetbrains-mono);
       background-color: var(--color-gray-700);
-      border-radius: 4px;
-
-      & button {
-        position: absolute;
-        top: 0;
-        padding: 4px 8px;
-        margin: 8px;
-        color: white;
-        cursor: pointer;
-        border-radius: 2px;
-      }
+      border-radius: 0 6px 6px 6px;
+      display: flex;
 
       & code {
+        width: 100%;
+        position: relative;
+        margin: 0;
         padding: 0;
         background: inherit;
+      }
+
+      /* This is the copy button */
+      & button {
+        opacity: 0;
+        position: absolute;
+        right: 12px;
+        color: white;
+        cursor: pointer;
+        transition: opacity 0.2s ease-in-out;
+      }
+
+      &:hover {
+        & button {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  & details {
+    box-shadow: var(--shadow-neumorphism);
+    padding: 12px;
+
+    & summary {
+      cursor: pointer;
+      font-weight: bold;
+
+      &::marker {
+        content: '▶ ';
+        color: var(--color-gray-600);
+      }
+    }
+
+    &[open] {
+      & summary {
+        &::marker {
+          content: '▼ ';
+        }
       }
     }
   }

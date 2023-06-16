@@ -22,14 +22,16 @@ export const ArticleHeader: FC<ArticleHeaderProps> = ({
   return (
     <>
       {image && (
-        <NextImageWithFallback
-          src={image}
-          alt={''}
-          width={800}
-          height={300}
-          className={styles.heroImage}
-          fallback={'/images/wordmark-logo.svg'}
-        />
+        <div className={styles.heroImageWrapper}>
+          <NextImageWithFallback
+            src={image}
+            alt={''}
+            width={800}
+            height={300}
+            className={styles.heroImage}
+            fallback={'/images/wordmark-logo.svg'}
+          />
+        </div>
       )}
       <header className={styles.header}>
         {date && <p className={styles.date}>{date}</p>}
