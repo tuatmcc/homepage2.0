@@ -1,4 +1,4 @@
-import { copyFile, rm } from 'fs/promises';
+import { cp } from 'fs/promises';
 
 import { glob } from 'glob';
 
@@ -10,8 +10,7 @@ async function moveAllImage() {
   });
   files.forEach(async (filePath) => {
     try {
-      await copyFile(`content/${filePath}`, `public/${filePath}`);
-      await rm(`content/${filePath}`);
+      await cp(`content/${filePath}`, `public/${filePath}`);
     } catch (e) {
       console.log(e);
     }
