@@ -3,7 +3,7 @@
 import { MotionValue, motion, useScroll, useTransform } from 'framer-motion';
 import { FC, useEffect, useRef, useState } from 'react';
 
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
 import { MomentumScroll, useMomentumScroll } from '~/components/MomentumScroll';
 

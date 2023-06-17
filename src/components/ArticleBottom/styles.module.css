@@ -1,0 +1,18 @@
+.articleBottom {
+  margin: 64px 0;
+
+  & .backToParent {
+    display: inline-block;
+    padding: 12px;
+    font-weight: bold;
+    color: var(--mcc-color-1);
+    border-radius: 12px;
+    box-shadow: var(--shadow-neumorphism);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background: var(--color-gray-200);
+      box-shadow: var(--shadow-neumorphism-hover);
+    }
+  }
+}

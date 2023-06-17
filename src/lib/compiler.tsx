@@ -1,9 +1,8 @@
-import { MDXComponents } from 'mdx/types';
-import { compileMDX, CompileMDXResult } from 'next-mdx-remote/rsc';
+import { compileMDX, type CompileMDXResult } from 'next-mdx-remote/rsc';
 import rehypeAutoLinkHeadings from 'rehype-autolink-headings';
 import rehypeKatex from 'rehype-katex';
 import rehypePrettyCode, {
-  Options as RehypePrettyCodeOption,
+  type Options as RehypePrettyCodeOption,
 } from 'rehype-pretty-code';
 import rehypeRaw from 'rehype-raw';
 import rehypeSlug from 'rehype-slug';
@@ -13,18 +12,25 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import remarkToc from 'remark-toc';
 
+import type { MDXComponents } from 'mdx/types';
+
 import {
-  MDLinkComponent,
-  type MDLinkComponentProps,
-} from '~/components/markdown/MDLinkComponent';
+  MDXLinkComponent,
+  type MDXLinkComponentProps,
+} from '~/components/mdx/MDXLinkComponent';
 import {
-  MDPreComponent,
-  type MDPreComponentProps,
-} from '~/components/markdown/MDPreComponent';
+  MDXPreComponent,
+  type MDXPreComponentProps,
+} from '~/components/mdx/MDXPreComponent';
+import {
+  MDXScriptComponent,
+  type MDXScriptComponentProps,
+} from '~/components/mdx/MDXScriptComponent';
 
 const components = {
-  a: (props: MDLinkComponentProps) => <MDLinkComponent {...props} />,
-  pre: (props: MDPreComponentProps) => <MDPreComponent {...props} />,
+  a: (props: MDXLinkComponentProps) => <MDXLinkComponent {...props} />,
+  pre: (props: MDXPreComponentProps) => <MDXPreComponent {...props} />,
+  script: (props: MDXScriptComponentProps) => <MDXScriptComponent {...props} />,
 } as MDXComponents;
 
 const rhypePrettyCodeOptions: Partial<RehypePrettyCodeOption> = {
@@ -55,7 +61,13 @@ export default async function compile(source: string): Promise<JSX.Element> {
         ],
         rehypePlugins: [
           rehypeSlug,
-          [rehypeAutoLinkHeadings, { behavior: 'append' }],
+          [
+            rehypeAutoLinkHeadings,
+            {
+              behavior: 'append',
+              properties: { 'aria-label': 'heading-link' },
+            },
+          ],
           rehypeKatex,
           [rehypePrettyCode, rhypePrettyCodeOptions],
           rehypeRaw,

@@ -6,14 +6,16 @@
   background: var(--color-gray-100);
   border-radius: 40%;
   box-shadow: var(--shadow-neumorphism);
-  transition: all 0.2s ease-in-out;
-
-  &._hidden {
-    display: none;
-  }
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     background: var(--color-gray-200);
     box-shadow: var(--shadow-neumorphism-hover);
+  }
+
+  &[aria-hidden='true'] {
+    opacity: 0;
+    transform: translateY(100%);
   }
 }

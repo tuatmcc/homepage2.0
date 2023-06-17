@@ -3,7 +3,7 @@ import { FC } from 'react';
 import styles from './style.module.css';
 
 import { allNews } from '.contentlayer/generated';
-import { BasicLink } from '~/components/ui/BasicLink';
+import { BasicLink } from '~/components/BasicLink';
 
 export const RecentNews: FC = () => {
   const recentNews = allNews

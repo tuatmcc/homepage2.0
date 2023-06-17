@@ -5,15 +5,16 @@ import styles from './styles.module.css';
 import type { Metadata } from 'next';
 
 import { Blog, allBlogs } from '.contentlayer/generated';
+import { BasicImage } from '~/components/BasicImage';
+import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
-import { BasicImage } from '~/components/ui/BasicImage';
-import { Footer } from '~/components/ui/Footer';
-import { NextImageWithFallback } from '~/components/ui/NextImageWithFallback';
+import { NextImageWithFallback } from '~/components/NextImageWithFallback';
+import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
   defaultOpenGraph,
   defaultTwitterCard,
   metadataBase,
-} from '~/libs/sharedmetadata';
+} from '~/lib/sharedmetadata';
 
 export const metadata: Metadata = {
   metadataBase: metadataBase,
@@ -40,7 +41,7 @@ export default function BlogListPage() {
     .sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
   return (
     <>
-      <Navbar theme="auto" />
+      <Navbar theme="white" />
       <BasicImage
         src="/images/abstract-7.jpeg"
         alt=""
@@ -63,13 +64,15 @@ export default function BlogListPage() {
         <div className={styles.mainContent}>
           <ul className={styles.list}>
             {posts.map((post) => {
-              const { title, dateStr, img, author } = post;
+              const { title, dateStr, img, author, rootPath } = post;
               return (
-                <li className={styles.listItem} key={post.rootPath}>
+                <li className={styles.listItem} key={rootPath}>
                   <Link href={post.rootPath} className={styles.link}>
                     <NextImageWithFallback
                       className={styles.image}
-                      src={img || '/images/mcc-logo.svg'}
+                      src={
+                        parseImageSrc(rootPath, img) || '/images/mcc-logo.svg'
+                      }
                       alt={title}
                       width={900}
                       height={300}

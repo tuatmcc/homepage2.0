@@ -17,7 +17,7 @@
     "analyze": "ANALYZE=true next build",
     "ladle": "ladle serve",
     "contentlayer": "contentlayer build",
-    "organize-image": "tsx ./src/libs/organizeImage.ts"
+    "organize-image": "tsx ./scripts/organizeImage.ts"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css}": [

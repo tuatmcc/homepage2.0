@@ -32,14 +32,21 @@
   --color-gray-900: #171923;
 
   /* Utility Colors */
-  --shadow-neumorphism: 4px 4px 8px var(--color-gray-300),
+  --shadow-neumorphism:
+    4px 4px 8px var(--color-gray-300),
     -4px -4px 8px var(--color-gray-0);
-  --shadow-neumorphism-hover: 6px 6px 12px var(--color-gray-400),
+  --shadow-neumorphism-hover:
+    6px 6px 12px var(--color-gray-400),
     -6px -6px 12px var(--color-gray-0);
-  --shadow-neumorphism-inset: inset 4px 4px 8px var(--color-gray-300),
+  --shadow-neumorphism-inset:
+    inset 4px 4px 8px var(--color-gray-300),
     inset -4px -4px 8px var(--color-gray-0);
-  --mcc-gradient-colors-6: var(--mcc-color-1), var(--mcc-color-2),
-    var(--mcc-color-3), var(--mcc-color-4), var(--mcc-color-5),
+  --mcc-gradient-colors-6:
+    var(--mcc-color-1),
+    var(--mcc-color-2),
+    var(--mcc-color-3),
+    var(--mcc-color-4),
+    var(--mcc-color-5),
     var(--mcc-color-6);
 
   /* Other Colors */
@@ -73,6 +80,7 @@
   --header-height: 100svh;
   --scrollbar-width: 10px;
   --font-size-navbar: 48px;
+  --article-max-width: 900px;
 
   /* Mobile */
   @media (--bp-sm) {

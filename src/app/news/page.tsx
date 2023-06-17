@@ -4,15 +4,16 @@ import Link from 'next/link';
 import styles from './styles.module.css';
 
 import { allNews } from '.contentlayer/generated';
+import { BasicImage } from '~/components/BasicImage';
+import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
-import { BasicImage } from '~/components/ui/BasicImage';
-import { Footer } from '~/components/ui/Footer';
-import { NextImageWithFallback } from '~/components/ui/NextImageWithFallback';
+import { NextImageWithFallback } from '~/components/NextImageWithFallback';
+import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
   defaultOpenGraph,
   defaultTwitterCard,
   metadataBase,
-} from '~/libs/sharedmetadata';
+} from '~/lib/sharedmetadata';
 
 export const metadata: Metadata = {
   metadataBase: metadataBase,
@@ -34,7 +35,7 @@ export default function NewsListPage() {
     .sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
   return (
     <>
-      <Navbar />
+      <Navbar theme="white" />
       <BasicImage
         alt=""
         src="/images/abstract-tech-image-4.webp"
@@ -57,13 +58,16 @@ export default function NewsListPage() {
         <div className={styles.mainContent}>
           <ul className={styles.list}>
             {posts.map((post) => {
-              const { title, dateStr, img, author } = post;
+              const { title, dateStr, img, author, rootPath } = post;
               return (
                 <li key={post.rootPath} className={styles.listItem}>
-                  <Link href={post.rootPath} className={styles.link}>
+                  <Link href={rootPath} className={styles.link}>
                     <NextImageWithFallback
                       className={styles.image}
-                      src={img || '/images/mcc-logo.svg'}
+                      src={
+                        `/${parseImageSrc(rootPath, img)}` ||
+                        '/images/mcc-logo.svg'
+                      }
                       alt=""
                       role="presentation"
                       width={200}

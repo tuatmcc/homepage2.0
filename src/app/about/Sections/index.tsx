@@ -1,10 +1,10 @@
 import { FC, ReactNode } from 'react';
 
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
-import { BasicImage } from '~/components/ui/BasicImage';
-import { BasicLink } from '~/components/ui/BasicLink';
-import { TwitterIcon } from '~/components/ui/Svg';
+import { BasicImage } from '~/components/BasicImage';
+import { BasicLink } from '~/components/BasicLink';
+import { TwitterIcon } from '~/components/Svg';
 
 const sections: { heading: string; node: ReactNode }[] = [
   {

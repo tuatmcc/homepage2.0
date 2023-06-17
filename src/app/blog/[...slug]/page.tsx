@@ -1,4 +1,3 @@
-import NextLink from 'next/link';
 import { notFound } from 'next/navigation';
 
 import styles from './styles.module.css';
@@ -6,19 +5,20 @@ import styles from './styles.module.css';
 import type { Metadata } from 'next';
 
 import { allBlogs, Blog } from '.contentlayer/generated';
+import { Article } from '~/components/Article';
+import { ArticleBottom } from '~/components/ArticleBottom';
 import { ArticleHeader } from '~/components/ArticleHeader';
 import { BackToTop } from '~/components/BackToTop';
+import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
-import { Article } from '~/components/ui/Article';
-import { Footer } from '~/components/ui/Footer';
-import compile from '~/libs/compiler';
-import { parseOgImage } from '~/libs/parseOgImage';
+import compile from '~/lib/compiler';
+import { parseOgImage } from '~/lib/parseOgImage';
 import {
   defaultOpenGraph,
   defaultOpenGraphImage,
   defaultTwitterCard,
   metadataBase,
-} from '~/libs/sharedmetadata';
+} from '~/lib/sharedmetadata';
 
 type Params = { slug: string[] }; // [...slug]
 
@@ -68,12 +68,13 @@ export default async function Blog({ params }: { params: Params }) {
   if (!post) {
     return notFound();
   } else {
-    const { title, dateStr, img, author, tags, parentPath } = post;
+    const { title, dateStr, img, author, tags, rootPath, parentPath } = post;
     const content = await compile(post.body.raw);
     return (
       <>
         <Navbar theme="auto" />
         <ArticleHeader
+          breadcrumb={rootPath.split('/')}
           title={title}
           image={img}
           date={dateStr}
@@ -82,9 +83,12 @@ export default async function Blog({ params }: { params: Params }) {
         />
         <main className={styles.main}>
           <Article>{content}</Article>
-          <NextLink href={`/${parentPath}`} className={styles.backLink}>
-            ← 記事一覧に戻る
-          </NextLink>
+          <ArticleBottom
+            parent={{
+              href: `/${parentPath}`,
+              children: '← 記事一覧に戻る',
+            }}
+          />
         </main>
         <Footer />
 

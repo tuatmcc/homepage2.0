@@ -10,7 +10,7 @@ import {
 import Image from 'next/image';
 import { FC, useRef } from 'react';
 
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);

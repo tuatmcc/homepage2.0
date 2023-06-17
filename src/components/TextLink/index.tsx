@@ -1,7 +1,7 @@
 import NextLink from 'next/link';
 import { ReactNode } from 'react';
 
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
 export type TextLinkProps = {
   href: string;

@@ -1,13 +1,13 @@
 import { FC } from 'react';
 
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
-import { BasicLink } from '~/components/ui/BasicLink';
-import { GitHubIcon } from '~/components/ui/Svg/GithubIcon';
-import { TwitterIcon } from '~/components/ui/Svg/TwitterIcon';
-import { WordmarkLogo } from '~/components/ui/Svg/WordmarkLogo';
+import { BasicLink } from '~/components/BasicLink';
+import { GitHubIcon } from '~/components/Svg/GithubIcon';
+import { TwitterIcon } from '~/components/Svg/TwitterIcon';
+import { WordmarkLogo } from '~/components/Svg/WordmarkLogo';
 import { ROUTES } from '~/constants/routes';
-import { classNames } from '~/libs/classNames';
+import { classNames } from '~/lib/classNames';
 
 type FotterProps = {
   semitransparent?: boolean;

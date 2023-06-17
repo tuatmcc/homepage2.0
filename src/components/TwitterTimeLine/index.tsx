@@ -2,9 +2,9 @@
 
 import { useEffect } from 'react';
 
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
-import { classNames } from '~/libs/classNames';
+import { classNames } from '~/lib/classNames';
 
 export const TwitterTimeline = () => {
   useEffect(() => {

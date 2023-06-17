@@ -9,11 +9,14 @@ import {
   useState,
 } from 'react';
 
-import { CopyIcon } from '~/components/ui/Svg/CopyIcon';
+import { CopyIcon } from '~/components/Svg/CopyIcon';
 
-export type MDPreComponentProps = ComponentPropsWithoutRef<'pre'>;
+export type MDXPreComponentProps = ComponentPropsWithoutRef<'pre'>;
 
-export const MDPreComponent: FC<ComponentPropsWithoutRef<'pre'>> = ({
+// コードブロックは, <div> で囲まれており、その中に <pre> があるので
+// このコンポーネントでは十分なスタイルを当てることができない
+// そのため、このコンポーネントのスタイルは、<Article> で定義している
+export const MDXPreComponent: FC<ComponentPropsWithoutRef<'pre'>> = ({
   children,
   ...props
 }) => {

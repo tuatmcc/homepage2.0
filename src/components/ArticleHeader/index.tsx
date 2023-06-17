@@ -1,10 +1,12 @@
+import NextLink from 'next/link';
 import { FC } from 'react';
 
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
-import { NextImageWithFallback } from '~/components/ui/NextImageWithFallback';
+import { NextImageWithFallback } from '~/components/NextImageWithFallback';
 
 export type ArticleHeaderProps = {
+  breadcrumb: string[];
   title: string;
   image?: string;
   date?: string;
@@ -13,6 +15,7 @@ export type ArticleHeaderProps = {
 };
 
 export const ArticleHeader: FC<ArticleHeaderProps> = ({
+  breadcrumb,
   title,
   date,
   image,
@@ -34,6 +37,15 @@ export const ArticleHeader: FC<ArticleHeaderProps> = ({
         </div>
       )}
       <header className={styles.header}>
+        <ul className={styles.breadcrumb}>
+          {breadcrumb.map((x, i, self) => (
+            <li key={x} className={styles.breadcrumbItem}>
+              <NextLink href={`/${self.slice(0, i + 1).join('/')}`}>
+                {x}
+              </NextLink>
+            </li>
+          ))}
+        </ul>
         {date && <p className={styles.date}>{date}</p>}
         <h1 className={styles.title}>{title}</h1>
         {author && (
