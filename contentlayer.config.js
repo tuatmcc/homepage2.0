@@ -31,7 +31,7 @@ const fields = {
   author: {
     type: 'string',
   },
-  unlist: {
+  unlisted: {
     type: 'boolean',
   },
 };
