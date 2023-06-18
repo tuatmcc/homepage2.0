@@ -67,7 +67,7 @@ export default function BlogListPage() {
               const { title, dateStr, img, author, rootPath } = post;
               return (
                 <li className={styles.listItem} key={rootPath}>
-                  <Link href={post.rootPath} className={styles.link}>
+                  <Link href={`/${post.rootPath}`} className={styles.link}>
                     <NextImageWithFallback
                       className={styles.image}
                       src={
