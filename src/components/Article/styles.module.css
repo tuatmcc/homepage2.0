@@ -39,13 +39,13 @@
     }
 
     /* This is the link icon */
-    & a {
+    & a[aria-label='heading-link'] {
       opacity: 0;
       transition: opacity 0.2s ease-in-out;
     }
 
     &:hover {
-      & a {
+      & a[aria-label='heading-link'] {
         opacity: 1;
       }
     }
