@@ -1,49 +1,50 @@
 import { notFound } from 'next/navigation';
-import { FC } from 'react';
+
+import styles from './styles.module.css';
 
 import type { Metadata } from 'next';
 
-import { allNews } from '.mdorganizer';
+import { allNews } from '.contentlayer/generated';
+import { Article } from '~/components/Article';
+import { ArticleBottom } from '~/components/ArticleBottom';
+import { ArticleHeader } from '~/components/ArticleHeader';
+import { BackToTop } from '~/components/BackToTop';
+import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
-import { ArticleWrapper } from '~/components/md/ArticleWrapper';
-import { parseOgImage } from '~/libs/parseOgImage';
+import compile from '~/lib/compiler';
 import {
   defaultOpenGraph,
   defaultOpenGraphImage,
   defaultTwitterCard,
   metadataBase,
-} from '~/libs/sharedmetadata';
+} from '~/lib/sharedmetadata';
 
 type Params = { slug: string[] }; // [...slug]
-const documentType = 'news';
 
-export const generateMetadata = async ({
+export async function generateMetadata({
   params,
 }: {
   params: Params;
-}): Promise<Metadata> => {
+}): Promise<Metadata> {
   const post = allNews.find(
-    // URLが一致した記事を取得
-    (x) =>
-      x.rootPath.replace(/^content\/news\/|\/index\.mdx?/g, '') ===
-      params.slug.join('/'),
+    (post) => post.rootPath === post.documentType + '/' + params.slug.join('/'),
   );
 
   if (!post) return notFound();
   else {
-    const ogImage = parseOgImage(post.img ?? '', documentType);
+    const { title, img } = post;
     return {
       metadataBase: metadataBase,
-      title: post.title,
+      title: title,
       description: post.description,
       openGraph: {
         ...defaultOpenGraph,
-        title: { default: post.title, template: "%s | MCC's News" },
+        title: { default: post.title, template: "%s | MCC's Blog" },
         description: post.description,
         images: [
           {
             ...defaultOpenGraphImage,
-            url: encodeURI(ogImage),
+            url: post.img?.replace(/svg$/, 'ping') || '',
           },
         ],
       },
@@ -51,38 +52,57 @@ export const generateMetadata = async ({
         ...defaultTwitterCard,
         images: [
           {
-            url: encodeURI(ogImage),
+            url: img?.replace(/svg$/, 'ping') || '',
           },
         ],
       },
     };
   }
-};
+}
 
-const NewsArticlePage: FC<{ params: Params }> = ({ params }) => {
+export default async function Blog({ params }: { params: Params }) {
   const post = allNews.find(
-    (x) =>
-      x.rootPath.replace(/^content\/news\/|\/index\.mdx?$/g, '') ===
-      params.slug.join('/'),
+    // URLが一致した記事を取得
+    (post) => post.rootPath === post.documentType + '/' + params.slug.join('/'),
   );
   if (!post) {
     return notFound();
   } else {
+    const { title, dateStr, img, author, tags, rootPath, parentPath } = post;
+    const content = await compile(post.body.raw);
     return (
       <>
         <Navbar theme="auto" />
-        <ArticleWrapper {...post} />
+        <ArticleHeader
+          breadcrumb={rootPath.split('/')}
+          title={title}
+          image={img}
+          date={dateStr}
+          author={author}
+          tags={tags}
+        />
+        <main className={styles.main}>
+          <Article>{content}</Article>
+          <ArticleBottom
+            parent={{
+              href: '/' + parentPath,
+              children: '← 記事一覧に戻る',
+            }}
+          />
+        </main>
+        <Footer />
+
+        <BackToTop />
       </>
     );
   }
-};
+}
 
-export const generateStaticParams = async () => {
-  return allNews.map((post) => ({
-    slug: post.rootPath
-      .replace(/^content\/news\/|\/index\.mdx?$/g, '')
-      .split('/'),
-  }));
-};
-
-export default NewsArticlePage;
+export async function generateStaticParams(): Promise<Params[]> {
+  // すべての記事のパスを生成
+  return allNews.map((post) => {
+    return {
+      slug: post.rootPath.split('/').slice(1),
+    };
+  });
+}

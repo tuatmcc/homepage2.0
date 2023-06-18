@@ -1,19 +1,20 @@
 import Link from 'next/link';
-import { FC } from 'react';
 
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
 import type { Metadata } from 'next';
 
-import { PostTypeBlog, allBlog } from '.mdorganizer/index';
+import { Blog, allBlogs } from '.contentlayer/generated';
+import { BasicImage } from '~/components/BasicImage';
+import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
-import { BasicImage } from '~/components/ui/BasicImage';
-import { Footer } from '~/components/ui/Footer';
+import { NextImageWithFallback } from '~/components/NextImageWithFallback';
+import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
   defaultOpenGraph,
   defaultTwitterCard,
   metadataBase,
-} from '~/libs/sharedmetadata';
+} from '~/lib/sharedmetadata';
 
 export const metadata: Metadata = {
   metadataBase: metadataBase,
@@ -33,15 +34,16 @@ export const metadata: Metadata = {
   },
 };
 
-const BlogListPage: FC = () => {
-  const posts: PostTypeBlog[] = structuredClone(allBlog)
-    .filter((x) => x.rootPath.split('/').length === 4) // content,blog,filename,index.md
+export default function BlogListPage() {
+  // 暗黙的な参照渡しを防ぐ
+  const posts: Blog[] = structuredClone(allBlogs)
+    .filter((x) => !x.unlisted)
     .sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
   return (
     <>
-      <Navbar theme="auto" />
+      <Navbar theme="white" />
       <BasicImage
-        src="images/abstract-7.jpeg"
+        src="/images/abstract-7.jpeg"
         alt=""
         width={2000}
         height={1000}
@@ -62,28 +64,26 @@ const BlogListPage: FC = () => {
         <div className={styles.mainContent}>
           <ul className={styles.list}>
             {posts.map((post) => {
+              const { title, dateStr, img, author, rootPath } = post;
               return (
-                <li className={styles.listItem} key={post.rootPath}>
-                  <Link
-                    href={post.rootPath.replace(/content|index\.md/g, '')}
-                    className={styles.link}
-                  >
-                    <BasicImage
+                <li className={styles.listItem} key={rootPath}>
+                  <Link href={post.rootPath} className={styles.link}>
+                    <NextImageWithFallback
                       className={styles.image}
-                      src={post.img || '/images/wordmark-logo-image.svg'}
-                      alt={post.title}
-                      width={100}
-                      height={100}
-                      fallback
+                      src={
+                        parseImageSrc(rootPath, img) || '/images/mcc-logo.svg'
+                      }
+                      alt={title}
+                      width={900}
+                      height={300}
+                      fallback="/images/mcc-logo.svg"
                     />
                     <div className={styles.text}>
-                      <h2 className={styles.title}>{post.title}</h2>
+                      <h2 className={styles.title}>{title}</h2>
                       <div className={styles.details}>
-                        {post.date && (
-                          <div className={styles.date}>{post.date}</div>
-                        )}
-                        {post.author && (
-                          <div className={styles.author}>@{post.author}</div>
+                        <div className={styles.date}>{dateStr}</div>
+                        {author && (
+                          <div className={styles.author}>@{author}</div>
                         )}
                       </div>
                     </div>
@@ -98,6 +98,4 @@ const BlogListPage: FC = () => {
       <Footer semitransparent />
     </>
   );
-};
-
-export default BlogListPage;
+}

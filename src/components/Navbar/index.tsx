@@ -2,13 +2,13 @@
 
 import { FC, ReactNode, useEffect, useState } from 'react';
 
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
-import { BasicLink } from '~/components/ui/BasicLink';
-import { TwitterIcon } from '~/components/ui/Svg';
-import { WordmarkLogo } from '~/components/ui/Svg/WordmarkLogo';
+import { BasicLink } from '~/components/BasicLink';
+import { TwitterIcon } from '~/components/Svg';
+import { WordmarkLogo } from '~/components/Svg/WordmarkLogo';
 import { BASE_ROUTES_LIST, ROUTES } from '~/constants/routes';
-import { classNames } from '~/libs/classNames';
+import { classNames } from '~/lib/classNames';
 
 type NavbarProps = {
   noBrand?: boolean;

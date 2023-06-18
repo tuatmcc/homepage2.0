@@ -8,7 +8,7 @@ import threeFontJson from 'three/examples/fonts/helvetiker_bold.typeface.json';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
 
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
 extend({ TextGeometry });
 

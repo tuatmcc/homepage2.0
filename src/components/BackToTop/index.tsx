@@ -2,12 +2,10 @@
 
 import { FC, useEffect, useState } from 'react';
 
-import styles from './style.module.css';
-
-import { classNames } from '~/libs/classNames';
+import styles from './styles.module.css';
 
 export const BackToTop: FC = () => {
-  const [isHidden, setIsHidden] = useState<boolean>(true);
+  const [isHidden, setIsHidden] = useState<boolean>(false);
   useEffect(() => {
     const handleScroll = () => {
       const { scrollY } = window;
@@ -23,13 +21,14 @@ export const BackToTop: FC = () => {
   return (
     <button
       type="button"
-      className={classNames(styles.backToTop, isHidden && styles._hidden)}
+      className={styles.backToTop}
       onClick={() =>
         window.document.body.scrollIntoView({
           behavior: 'smooth',
           block: 'start',
         })
       }
+      aria-hidden={isHidden}
     >
       <svg
         width="44"

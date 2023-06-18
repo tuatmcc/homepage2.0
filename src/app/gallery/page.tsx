@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { FC } from 'react';
 
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
+import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
-import { Footer } from '~/components/ui/Footer';
-import { metadataBase } from '~/libs/sharedmetadata';
+import { metadataBase } from '~/lib/sharedmetadata';
 
 export const metadata: Metadata = {
   metadataBase: metadataBase,

@@ -12,7 +12,7 @@ export const ROUTES: { [x: string]: ROUTE } = {
   GALLERY: { PATH: '/gallery', LABEL: 'Gallery' },
 };
 
-/** ナビゲーションなどに使用するリスト。これをループ処理で使う */
+/** ナビゲーションに使用するパスリスト */
 export const BASE_ROUTES_LIST: ROUTE[] = [
   ROUTES.HOME,
   ROUTES.ABOUT,

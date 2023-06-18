@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
 import { Navbar } from '~/components/Navbar';
 import { HomeScrollControl } from '~/components/home/home-scroll-control';

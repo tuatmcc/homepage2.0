@@ -1,13 +1,13 @@
 import { FC } from 'react';
 
 import { Sections } from './Sections';
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
 import { BackToTop } from '~/components/BackToTop';
+import { BasicImage } from '~/components/BasicImage';
+import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
 import { TwitterTimeline } from '~/components/TwitterTimeLine';
-import { BasicImage } from '~/components/ui/BasicImage';
-import { Footer } from '~/components/ui/Footer';
 
 const AboutPage: FC = () => {
   return (
