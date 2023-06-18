@@ -12,7 +12,7 @@ import { FC, Suspense, useEffect, useState } from 'react';
 
 import { RecentNews } from '../RecentNews';
 
-import styles from './style.module.css';
+import styles from './styles.module.css';
 
 const pageAmout = 3.5;
 

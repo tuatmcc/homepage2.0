@@ -1,19 +1,10 @@
 {
   "compilerOptions": {
     "target": "es2021",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "src/*"
-      ],
-      "contentlayer/generated": [
-        "./.contentlayer/generated"
-      ]
+      "~/*": ["src/*"]
     },
     "module": "esnext",
     "moduleResolution": "node",
@@ -28,11 +19,7 @@
     "isolatedModules": true,
     "sourceMap": true,
     "incremental": true,
-    "types": [
-      "node",
-      "react",
-      "react-dom"
-    ],
+    "types": ["node", "react", "react-dom"],
     "plugins": [
       {
         "name": "next"
@@ -46,7 +33,5 @@
     ".next/types/**/*.ts",
     ".contentlayer/generated"
   ],
-  "exclude": [
-    "node_modules",
-  ]
+  "exclude": ["node_modules"]
 }

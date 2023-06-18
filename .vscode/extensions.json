@@ -5,7 +5,7 @@
         "dbaeumer.vscode-eslint",
         "ecmel.vscode-html-css",
         "vunguyentuan.vscode-css-variables",
-        "rome.rome",
+        "esbenp.prettier-vscode",
         "GitHub.copilot"
     ],
     "unwantedRecommendations": []
