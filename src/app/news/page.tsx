@@ -61,7 +61,7 @@ export default function NewsListPage() {
               const { title, dateStr, img, author, rootPath } = post;
               return (
                 <li key={post.rootPath} className={styles.listItem}>
-                  <Link href={rootPath} className={styles.link}>
+                  <Link href={`/${rootPath}`} className={styles.link}>
                     <NextImageWithFallback
                       className={styles.image}
                       src={
