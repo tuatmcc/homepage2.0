@@ -1,10 +1,11 @@
 'use client';
 
+import NextLink from 'next/link';
 import { FC, ReactNode, useEffect, useState } from 'react';
 
+import { NavbarMenuButton } from './NavbarMenuButton';
 import styles from './styles.module.css';
 
-import { BasicLink } from '~/components/BasicLink';
 import { TwitterIcon } from '~/components/Svg';
 import { WordmarkLogo } from '~/components/Svg/WordmarkLogo';
 import { BASE_ROUTES_LIST, ROUTES } from '~/constants/routes';
@@ -12,56 +13,48 @@ import { classNames } from '~/lib/classNames';
 
 type NavbarProps = {
   noBrand?: boolean;
-  theme?: 'auto' | 'blue' | 'white';
+  theme: 'transparent' | 'opaque' | 'auto';
+  themeSwitchHeight?: number;
 };
 
 const navLinks: ReactNode[] = [
   ...BASE_ROUTES_LIST.map(({ LABEL, PATH }) => (
-    <BasicLink key={PATH} href={PATH} className={styles.linkItem}>
+    <NextLink key={PATH} href={PATH} className={styles.linkItem}>
       {LABEL}
-    </BasicLink>
+    </NextLink>
   )),
-  <BasicLink
+  <NextLink
     key="twitter/tuatmcc"
     href="https://twitter.com/tuatmcc"
     className={styles.linkItem}
   >
     <TwitterIcon width={24} height={24} color="currentColor" />
     MCC
-  </BasicLink>,
-  <BasicLink
+  </NextLink>,
+  <NextLink
     key="twitter/tuatkyopro"
     href="https://twitter.com/tuatkyopro"
     className={styles.linkItem}
   >
     <TwitterIcon width={24} height={24} color="currentColor" />
     Kyopro
-  </BasicLink>,
+  </NextLink>,
 ];
 
 export const Navbar: FC<NavbarProps> = ({
+  theme,
+  themeSwitchHeight,
   noBrand = false,
-  theme = 'white',
 }) => {
   const [isNavDrawerOpen, setNavDrawerState] = useState<boolean>(false);
-  const [opaque, setOpaque] = useState<boolean>(false);
+  const [navTheme, setNavTheme] = useState<string>(styles[`_${theme}`]);
 
   useEffect(() => {
     if (theme !== 'auto') return;
-    const changeColorByScroll = () => {
-      if (window.scrollY >= window.innerHeight) {
-        setOpaque(true);
-        // set scrollbar-gutter: stable to html element
-      } else {
-        setOpaque(false);
-        window.document.documentElement.style.scrollbarGutter = 'auto';
-      }
-    };
-
-    window.addEventListener('scroll', changeColorByScroll);
-
-    return () => window.removeEventListener('scroll', changeColorByScroll);
-  }, [theme]);
+    if (scrollY >= (themeSwitchHeight || window.innerHeight)) {
+      setNavTheme(styles._opaque);
+    }
+  }, [theme, themeSwitchHeight]);
 
   useEffect(() => {
     document.body.style.overflow = isNavDrawerOpen ? 'hidden' : 'auto';
@@ -72,22 +65,23 @@ export const Navbar: FC<NavbarProps> = ({
 
   return (
     <>
-      <div className={classNames(styles.navbar, opaque && styles._white)}>
+      <div className={classNames(styles.navbar, navTheme)}>
         <div>
           {!noBrand && (
-            <BasicLink
+            <NextLink
               href={ROUTES.HOME.PATH}
-              className={classNames(styles.brand, opaque && styles._blue)}
+              className={classNames(styles.brand, navTheme)}
             >
               <WordmarkLogo color="currentColor" />
-            </BasicLink>
+            </NextLink>
           )}
         </div>
+        <NavbarMenuButton />
         <button
           className={classNames(
             styles.hamburgerMenu,
             isNavDrawerOpen && styles._active,
-            opaque && styles._blue,
+            navTheme,
           )}
           onClick={() => setNavDrawerState(!isNavDrawerOpen)}
           aria-label="menu toggler"
@@ -112,7 +106,7 @@ export const Navbar: FC<NavbarProps> = ({
           />
         </button>
 
-        <button
+        <div
           className={classNames(
             styles.overlay,
             isNavDrawerOpen && styles._active,

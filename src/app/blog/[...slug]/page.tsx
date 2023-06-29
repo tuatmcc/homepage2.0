@@ -72,7 +72,7 @@ export default async function Blog({ params }: { params: Params }) {
     const content = await compile(post.body.raw);
     return (
       <>
-        <Navbar theme="auto" />
+        <Navbar theme="opaque" />
         <ArticleHeader
           breadcrumb={rootPath.split('/')}
           title={title}
