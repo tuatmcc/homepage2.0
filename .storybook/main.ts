@@ -5,6 +5,8 @@ const config: StorybookConfig = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    '@storybook/addon-postcss',
+    'storybook-css-modules',
   ],
   framework: {
     name: '@storybook/nextjs',
@@ -14,4 +16,5 @@ const config: StorybookConfig = {
     autodocs: 'tag',
   },
 };
+
 export default config;

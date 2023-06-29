@@ -1,1 +1,23 @@
+.button {
+  border: none;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
 
+  & .svg {
+    & * {
+      transition: all 0.3s ease;
+    }
+  }
+
+  &:hover {
+    & .svg {
+      & .path1 {
+        transform: rotate(45deg) translate(4px, -20px);
+      }
+
+      & .path4 {
+      }
+    }
+  }
+}
