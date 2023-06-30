@@ -10,13 +10,21 @@
     }
   }
 
-  &:hover {
+  &[aria-expanded='true'] {
     & .svg {
       & .path1 {
-        transform: rotate(45deg) translate(4px, -20px);
+        transform-origin: center;
+        transform: rotate(135deg) translate(6px, -6px) scale(0.3, 1);
       }
 
-      & .path4 {
+      & .path2 {
+        transform-origin: center;
+        transform: rotate(45deg);
+      }
+
+      & .path3 {
+        transform-origin: center;
+        transform: rotate(-45deg) translate(6px, 6px) scale(0.3, 1);
       }
     }
   }

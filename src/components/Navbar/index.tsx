@@ -76,35 +76,10 @@ export const Navbar: FC<NavbarProps> = ({
             </NextLink>
           )}
         </div>
-        <NavbarMenuButton />
-        <button
-          className={classNames(
-            styles.hamburgerMenu,
-            isNavDrawerOpen && styles._active,
-            navTheme,
-          )}
+        <NavbarMenuButton
+          isExpanded={isNavDrawerOpen}
           onClick={() => setNavDrawerState(!isNavDrawerOpen)}
-          aria-label="menu toggler"
-        >
-          <span
-            className={classNames(
-              styles.hamburgerMenuLine1,
-              isNavDrawerOpen && styles._active,
-            )}
-          />
-          <span
-            className={classNames(
-              styles.hamburgerMenuLine2,
-              isNavDrawerOpen && styles._active,
-            )}
-          />
-          <span
-            className={classNames(
-              styles.hamburgerMenuLine3,
-              isNavDrawerOpen && styles._active,
-            )}
-          />
-        </button>
+        />
 
         <div
           className={classNames(

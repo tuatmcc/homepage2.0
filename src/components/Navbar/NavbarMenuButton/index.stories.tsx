@@ -9,5 +9,7 @@ const meta: Meta = {
 export default meta;
 
 export const Normal: StoryObj<typeof NavbarMenuButton> = {
-  render: () => <NavbarMenuButton />,
+  args: {
+    isExpanded: false,
+  },
 };
