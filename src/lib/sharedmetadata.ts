@@ -47,13 +47,14 @@ export const defaultTwitterCard: Metadata['twitter'] = {
   ],
 };
 
-export const sharedMetada: Metadata = {
+export const sharedMetadata: Metadata = {
+  metadataBase: metadataBase,
   title: {
     default: defaultTitle,
     template: '%s - MCC',
   },
   description:
-    'MCCは、東京農工大学の公認サークルで、ITに関することを学び、活動しているサークルです。学祭に制作物を出展したり、学内外のイベントに参加したり、学生同士で交流を深めたりしています。',
+    'MCCは、東京農工大学の公認サークルで、ITに関することを学び、活動しているサークルです。学祭に制作物を出展したり、学内外のイベントやコンテストに参加したり、学生同士で交流を深めたりしています。',
   openGraph: defaultOpenGraph,
   icons: {
     shortcut: '/favicon.ico',

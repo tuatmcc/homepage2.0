@@ -1,3 +1,4 @@
+import NextImage from 'next/image';
 import Link from 'next/link';
 
 import styles from './styles.module.css';
@@ -5,7 +6,6 @@ import styles from './styles.module.css';
 import type { Metadata } from 'next';
 
 import { Blog, allBlogs } from '.contentlayer/generated';
-import { BasicImage } from '~/components/BasicImage';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
 import { NextImageWithFallback } from '~/components/NextImageWithFallback';
@@ -42,7 +42,7 @@ export default function BlogListPage() {
   return (
     <>
       <Navbar color="white" />
-      <BasicImage
+      <NextImage
         src="/images/abstract-7.jpeg"
         alt=""
         width={2000}

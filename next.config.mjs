@@ -6,9 +6,6 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  experimental: {
-    scrollRestoration: true,
-  },
   reactStrictMode: true,
   swcMinify: true,
   images: {

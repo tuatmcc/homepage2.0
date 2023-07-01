@@ -1,9 +1,8 @@
+import NextImage from 'next/image';
 import { FC, ReactNode } from 'react';
 
 import styles from './styles.module.css';
 
-import { BasicImage } from '~/components/BasicImage';
-import { BasicLink } from '~/components/BasicLink';
 import { TwitterIcon } from '~/components/Svg';
 
 const sections: { heading: string; node: ReactNode }[] = [
@@ -52,14 +51,14 @@ const sections: { heading: string; node: ReactNode }[] = [
           工学部小金井キャンパス・サークルB棟2階　MCC部室
         </p>
         <div className={styles.imageContainer}>
-          <BasicImage
+          <NextImage
             className={styles.image}
             src="/images/campas-map.webp"
             alt="campas map"
             width={900}
             height={1200}
           />
-          <BasicImage
+          <NextImage
             className={styles.image}
             src="/images/club-building-b.webp"
             alt="campas map"
@@ -75,21 +74,21 @@ const sections: { heading: string; node: ReactNode }[] = [
     node: (
       <>
         <div className={styles.gallery}>
-          <BasicImage
+          <NextImage
             className={styles.galleryItem}
             src="/images/spring-camp-2022-hackathon.webp"
             alt="MCC"
             width={300}
             height={300}
           />
-          <BasicImage
+          <NextImage
             className={styles.galleryItem}
             src="/images/noko-fes-2022-illustrace.webp"
             alt="MCC"
             width={300}
             height={300}
           />
-          <BasicImage
+          <NextImage
             className={styles.galleryItem}
             src="/images/noko-fes-2022-room.webp"
             alt="MCC"
@@ -108,26 +107,16 @@ const sections: { heading: string; node: ReactNode }[] = [
           MCC では新入部員を随時募集してます。
           お問合せ、入部希望者は以下よりご連絡ください。
         </p>
-        <BasicLink
+        <a
           href="https://twitter.com/messages/compose?recipient_id=227598819&text=はじめまして！○科○年です！MCCに興味があるのですが！"
           className={styles.twitterDmButton}
           data-screen-name="@TUATMCC"
           data-size="large"
+          rel="noopener noreferrer"
         >
           <TwitterIcon color="#1DA1F2" size={24} />
-          Twitter @MCC
-        </BasicLink>
-        {/*<BasicLink href="https://twitter.com/messages/compose?recipient_id=1449066255776825344&text=はじめまして！○科に所属の○年です！MCCに入部したいです！"
-          className={styles.twitterDmButton}
-          data-screen-name="@TUATKYOPRO"
-          data-size="large">
-            <TwitterIcon color="#1DA1F2" size={24} />
-            Kyopro
-        </BasicLink>/
-        <BasicLink href="https://discord.gg/mrEsx3w27E" className={styles.discordButton}>
-            <DiscordIcon size={24} />
-          Discord
-        </BasicLink> */}
+          Twitter DM
+        </a>
       </>
     ),
   },
