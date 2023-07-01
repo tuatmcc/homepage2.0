@@ -4,9 +4,9 @@
   left: 0;
   z-index: 1;
   display: none;
-  overflow: hidden;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   backdrop-filter: blur(4px);
 
   &[aria-expanded='true'] {
@@ -14,22 +14,22 @@
   }
 
   .drawer {
-    padding: 60px 20px;
-    backdrop-filter: blur(12px);
     position: fixed;
+    top: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    top: 0;
-    right: 0;
-    max-width: 80%;
     width: 400px;
+    max-width: 80%;
     height: 100%;
-    transition: all 0.3s ease-in-out;
-    background: rgba(150, 150, 150, 0.9);
+    padding: 60px 20px;
     overflow-y: auto;
-    transform: translateX(100%);
     font-family: var(--font-family-orbitron);
+    background: rgb(150 150 150 / 90%);
+    transition: all 0.3s ease-in-out;
+    transform: translateX(100%);
+    backdrop-filter: blur(12px);
 
     &[aria-expanded='true'] {
       transform: translateX(0);
@@ -45,17 +45,17 @@
           display: flex;
           align-items: center;
           padding: 10px 20px;
-          letter-spacing: 0.2em;
           font-size: 20px;
+          letter-spacing: 0.2em;
           transition: all 0.3s ease-in-out;
 
-          &:after {
-            content: '';
+          &::after {
             position: relative;
             top: 5px;
             left: 8px;
             width: 0;
             height: 2px;
+            content: '';
             background-color: var(--color-gray-0);
             transition: all 0.3s ease-in-out;
           }
@@ -63,7 +63,7 @@
           &:hover {
             text-shadow: 0 0 8px var(--mcc-color-2);
 
-            &:after {
+            &::after {
               width: 100%;
             }
           }
@@ -112,8 +112,8 @@
 
     & .socials {
       display: flex;
-      justify-content: center;
       gap: 24px;
+      justify-content: center;
 
       &[data-animated='true'] {
         animation: fade-in 1.3s forwards;

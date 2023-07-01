@@ -41,7 +41,7 @@ export default function BlogListPage() {
     .sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
   return (
     <>
-      <Navbar theme="transparent" />
+      <Navbar color="white" />
       <BasicImage
         src="/images/abstract-7.jpeg"
         alt=""

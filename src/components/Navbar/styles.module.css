@@ -15,9 +15,9 @@
 
     & .brand {
       display: flex;
-      padding: 4px 8px;
       align-items: center;
       justify-content: center;
+      padding: 4px 8px;
     }
   }
 }

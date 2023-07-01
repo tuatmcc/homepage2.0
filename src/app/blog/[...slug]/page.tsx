@@ -12,7 +12,8 @@ import { BackToTop } from '~/components/BackToTop';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
 import compile from '~/lib/compiler';
-import { parseOgImage } from '~/lib/parseOgImage';
+// import { parseOgImage } from '~/lib/parseOgImage';
+import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
   defaultOpenGraph,
   defaultOpenGraphImage,
@@ -52,7 +53,7 @@ export async function generateMetadata({
         ...defaultTwitterCard,
         images: [
           {
-            url: parseOgImage(post.img || '', post.documentType),
+            url: parseImageSrc(post.rootPath, post.img ?? '') ?? '',
           },
         ],
       },

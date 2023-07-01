@@ -1,5 +1,6 @@
 .articleBottom {
   margin: 64px 0;
+  font-family: var(--font-family-noto-sans-jp);
 
   & .backToParent {
     display: inline-block;
