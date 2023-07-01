@@ -6,7 +6,8 @@
   max-width: 900px;
   aspect-ratio: 3.5 / 1;
   margin: 0 auto;
-  margin-top: -70px;
+
+  /* margin-top: -70px; */
 
   .heroImage {
     width: 100%;

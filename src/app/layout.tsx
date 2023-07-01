@@ -12,7 +12,7 @@ const notoSansJP = Noto_Sans_JP({
   weight: ['400', '700'],
   subsets: ['latin'],
   display: 'swap',
-  fallback: ['sans-serif'],
+  fallback: ['JetBrains_Mono', 'sans-serif'],
 });
 
 const orbitron = Orbitron({
@@ -20,7 +20,7 @@ const orbitron = Orbitron({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
-  fallback: ['Noto Sans JP', 'sans-serif'],
+  fallback: ['Noto_Sans_JP', 'sans-serif'],
 });
 
 const jetBrainsMono = JetBrains_Mono({
@@ -28,7 +28,7 @@ const jetBrainsMono = JetBrains_Mono({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
-  fallback: ['Noto Sans JP', 'monospace', 'sans-serif'],
+  fallback: ['Noto_Sans_JP', 'monospace', 'sans-serif'],
 });
 
 export const metadata: Metadata = {
