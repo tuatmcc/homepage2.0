@@ -45,21 +45,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
-  lint-and-typecheck:
-    name: Run lint and typecheck
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
       - name: Run pnpm lint
         run: pnpm lint
 
       - name: Run pnpm typecheck
         run: pnpm run typecheck
 
-  build:
-    name: Run build
-    needs: setup
-    runs-on: ubunt-latest
-    steps:
       - name: Run pnpm build
         run: pnpm build
