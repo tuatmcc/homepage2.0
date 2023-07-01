@@ -53,9 +53,8 @@ robot.txt
 robots.txt
 
 # contentlayer
-.contentlayer/
-!.contentlayer/types.d.ts
-!.contentlayer/index.d.ts
+.contentlayer/.cache
+.contentlayer/generated/*/*
 
 # wiki
 *.wiki
