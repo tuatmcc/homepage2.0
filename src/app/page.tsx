@@ -1,12 +1,10 @@
-import { NextPage } from 'next';
-
 import styles from './styles.module.css';
 
 import { Navbar } from '~/components/Navbar';
 import { HomeScrollControl } from '~/components/home/home-scroll-control';
 import { HomeText3d } from '~/components/home/home-text-3d';
 
-const HomePage: NextPage = () => {
+export default function HomePage() {
   return (
     <>
       <Navbar transparent color="white" noBrand />
@@ -20,6 +18,4 @@ const HomePage: NextPage = () => {
       </div>
     </>
   );
-};
-
-export default HomePage;
+}

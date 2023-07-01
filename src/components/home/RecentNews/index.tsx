@@ -1,9 +1,9 @@
+import NextLink from 'next/link';
 import { FC } from 'react';
 
 import styles from './style.module.css';
 
 import { allNews } from '.contentlayer/generated';
-import { BasicLink } from '~/components/BasicLink';
 
 export const RecentNews: FC = () => {
   const recentNews = allNews
@@ -16,14 +16,14 @@ export const RecentNews: FC = () => {
       <ul className={styles.list}>
         {recentNews.map((news) => (
           <li key={news.rootPath} className={styles.listItem}>
-            <BasicLink
+            <NextLink
               href={news.rootPath.replace(/^content|\/index\.mdx?/g, '')}
               className={styles.link}
             >
               <h3 className={styles.newsTitle}>{news.title}</h3>
               <p className={styles.date}>{news.date}</p>
               <p className={styles.description}>{news.description}</p>
-            </BasicLink>
+            </NextLink>
           </li>
         ))}
       </ul>

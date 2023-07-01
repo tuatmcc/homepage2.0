@@ -1,10 +1,9 @@
 'use client';
 
+import classnames from 'classnames';
 import { useEffect } from 'react';
 
 import styles from './styles.module.css';
-
-import { classNames } from '~/lib/classNames';
 
 export const TwitterTimeline = () => {
   useEffect(() => {
@@ -21,7 +20,7 @@ export const TwitterTimeline = () => {
   return (
     <div id="twitter-timeline">
       <a
-        className={classNames('twitter-timeline', styles.twitterTimeline)}
+        className={classnames('twitter-timeline', styles.twitterTimeline)}
         href="https://twitter.com/TUATMCC?ref_src=twsrc%5Etfw"
         data-height="500"
         data-chrome="nofooter noheader noborders transparent"

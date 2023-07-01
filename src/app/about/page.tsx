@@ -1,10 +1,10 @@
+import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Sections } from './Sections';
 import styles from './styles.module.css';
 
 import { BackToTop } from '~/components/BackToTop';
-import { BasicImage } from '~/components/BasicImage';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
 import { TwitterTimeline } from '~/components/TwitterTimeLine';
@@ -13,7 +13,7 @@ const AboutPage: FC = () => {
   return (
     <>
       <Navbar theme="auto" />
-      <BasicImage
+      <NextImage
         src="/images/tuat-gate-filtered.webp"
         alt=""
         width={1920}
