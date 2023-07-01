@@ -1,5 +1,6 @@
 'use client';
 
+import classnames from 'classnames';
 import NextLink from 'next/link';
 import { FC, useCallback, useState } from 'react';
 
@@ -8,7 +9,6 @@ import { MenuButton } from './MenuButton';
 import styles from './styles.module.css';
 
 import { WordmarkLogo } from '~/components/Svg/WordmarkLogo';
-import { classNames } from '~/lib/classNames';
 
 type NavbarProps = {
   noBrand?: boolean;
@@ -37,7 +37,7 @@ export const Navbar: FC<NavbarProps> = ({
     <>
       <nav className={styles.nav}>
         <div
-          className={classNames(
+          className={classnames(
             styles.navbar,
             transparent && styles._transparent,
           )}

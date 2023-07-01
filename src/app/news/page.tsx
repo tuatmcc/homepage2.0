@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
+import NextImage from 'next/image';
 import Link from 'next/link';
 
 import styles from './styles.module.css';
 
 import { allNews } from '.contentlayer/generated';
-import { BasicImage } from '~/components/BasicImage';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
 import { NextImageWithFallback } from '~/components/NextImageWithFallback';
@@ -36,14 +36,13 @@ export default function NewsListPage() {
   return (
     <>
       <Navbar color="white" />
-      <BasicImage
+      <NextImage
         alt=""
         src="/images/abstract-tech-image-4.webp"
         width={1920}
         height={1280}
         role="presentation"
         className={styles.background}
-        fallback
       />
       <header className={styles.header}>
         <div className={styles.headerContent}>

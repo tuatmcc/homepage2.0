@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import NextLink from 'next/link';
 import { FC } from 'react';
 
@@ -6,8 +7,6 @@ import styles from './styles.module.css';
 import { GitHubIcon } from '~/components/Svg/GithubIcon';
 import { TwitterIcon } from '~/components/Svg/TwitterIcon';
 import { WordmarkLogo } from '~/components/Svg/WordmarkLogo';
-import { ROUTES } from '~/constants/routes';
-import { classNames } from '~/lib/classNames';
 
 type FotterProps = {
   semitransparent?: boolean;
@@ -17,12 +16,12 @@ export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
   return (
     <footer>
       <div
-        className={classNames(
+        className={classnames(
           styles.footer,
           semitransparent && styles._semitransparent,
         )}
       >
-        <NextLink href={ROUTES.HOME.path} className={styles.wordmarkLogo}>
+        <NextLink href="/" className={styles.wordmarkLogo}>
           <WordmarkLogo size={32} />
         </NextLink>
         <div className={styles.socials}>
