@@ -8,7 +8,7 @@ const meta: Meta = {
 
 export default meta;
 
-export const Normal: StoryObj<typeof Navbar> = {
+export const Default: StoryObj<typeof Navbar> = {
   args: {
     theme: 'opaque',
   },

@@ -1,119 +1,63 @@
 'use client';
 
 import NextLink from 'next/link';
-import { FC, ReactNode, useEffect, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 
-import { NavbarMenuButton } from './NavbarMenuButton';
+import { Drawer } from './Drawer';
+import { MenuButton } from './MenuButton';
 import styles from './styles.module.css';
 
-import { TwitterIcon } from '~/components/Svg';
 import { WordmarkLogo } from '~/components/Svg/WordmarkLogo';
-import { BASE_ROUTES_LIST, ROUTES } from '~/constants/routes';
 import { classNames } from '~/lib/classNames';
 
 type NavbarProps = {
   noBrand?: boolean;
-  theme: 'transparent' | 'opaque' | 'auto';
-  themeSwitchHeight?: number;
+  transparent?: boolean;
+  color?: 'mcc' | 'white';
+  theme?: 'transparent' | 'opaque' | 'auto';
 };
 
-const navLinks: ReactNode[] = [
-  ...BASE_ROUTES_LIST.map(({ LABEL, PATH }) => (
-    <NextLink key={PATH} href={PATH} className={styles.linkItem}>
-      {LABEL}
-    </NextLink>
-  )),
-  <NextLink
-    key="twitter/tuatmcc"
-    href="https://twitter.com/tuatmcc"
-    className={styles.linkItem}
-  >
-    <TwitterIcon width={24} height={24} color="currentColor" />
-    MCC
-  </NextLink>,
-  <NextLink
-    key="twitter/tuatkyopro"
-    href="https://twitter.com/tuatkyopro"
-    className={styles.linkItem}
-  >
-    <TwitterIcon width={24} height={24} color="currentColor" />
-    Kyopro
-  </NextLink>,
-];
-
 export const Navbar: FC<NavbarProps> = ({
-  theme,
-  themeSwitchHeight,
+  transparent = false,
+  color = 'mcc',
   noBrand = false,
 }) => {
-  const [isNavDrawerOpen, setNavDrawerState] = useState<boolean>(false);
-  const [navTheme, setNavTheme] = useState<string>(styles[`_${theme}`]);
-
-  useEffect(() => {
-    if (theme !== 'auto') return;
-    if (scrollY >= (themeSwitchHeight || window.innerHeight)) {
-      setNavTheme(styles._opaque);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const setNavDrawerState = useCallback((bool: boolean) => {
+    if (document.startViewTransition) {
+      document.startViewTransition(() => {
+        setIsOpen(bool);
+      });
+    } else {
+      setIsOpen(bool);
     }
-  }, [theme, themeSwitchHeight]);
-
-  useEffect(() => {
-    document.body.style.overflow = isNavDrawerOpen ? 'hidden' : 'auto';
-    document.documentElement.style.scrollbarGutter = isNavDrawerOpen
-      ? 'stable'
-      : 'auto';
-  }, [isNavDrawerOpen]);
+  }, []);
 
   return (
     <>
-      <div className={classNames(styles.navbar, navTheme)}>
-        <div>
+      <nav className={styles.nav}>
+        <div
+          className={classNames(
+            styles.navbar,
+            transparent && styles._transparent,
+          )}
+        >
           {!noBrand && (
-            <NextLink
-              href={ROUTES.HOME.PATH}
-              className={classNames(styles.brand, navTheme)}
-            >
-              <WordmarkLogo color="currentColor" />
+            <NextLink href="/" className={styles.brand}>
+              <WordmarkLogo color={color == 'white' ? 'white' : undefined} />
             </NextLink>
           )}
         </div>
-        <NavbarMenuButton
-          isExpanded={isNavDrawerOpen}
-          onClick={() => setNavDrawerState(!isNavDrawerOpen)}
+        <Drawer
+          isOpen={isOpen}
+          onClickOutside={() => setNavDrawerState(false)}
         />
-
-        <div
-          className={classNames(
-            styles.overlay,
-            isNavDrawerOpen && styles._active,
-          )}
-          onClick={() => setNavDrawerState(false)}
-          aria-label="drawer-closure"
+        <MenuButton
+          isExpanded={isOpen}
+          onClick={() => setNavDrawerState(!isOpen)}
+          color={isOpen ? 'white' : color.replace('mcc', '#06c')}
         />
-
-        <div
-          className={classNames(
-            styles.drawer,
-            isNavDrawerOpen && styles._active,
-          )}
-        >
-          <nav>
-            <ul className={styles.drawerContent}>
-              {navLinks.map((elem, index) => (
-                <li
-                  key={`${index}`}
-                  className={classNames(
-                    styles.drawerContentItem,
-                    isNavDrawerOpen && styles._active,
-                  )}
-                  style={{ transitionDelay: `${index * 0.03}s` }}
-                >
-                  {elem}
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </div>
+      </nav>
     </>
   );
 };

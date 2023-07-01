@@ -1,2 +1,23 @@
-.navbar {
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  & .navbar {
+    display: flex;
+    height: 56px;
+    backdrop-filter: blur(10px);
+    padding: 4px 16px;
+
+    &._transparent {
+      backdrop-filter: none;
+    }
+
+    & .brand {
+      display: flex;
+      padding: 4px 8px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }

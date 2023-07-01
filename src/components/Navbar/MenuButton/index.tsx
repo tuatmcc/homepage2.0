@@ -4,16 +4,18 @@ import { FC } from 'react';
 
 import styles from './styles.module.css';
 
-type NavbarMenuButtonProps = {
+type MenuButtonProps = {
   isExpanded: boolean;
   onClick?: () => void;
   color?: string;
+  shadow?: boolean;
 };
 
-export const NavbarMenuButton: FC<NavbarMenuButtonProps> = ({
+export const MenuButton: FC<MenuButtonProps> = ({
   isExpanded,
   onClick,
   color,
+  shadow,
 }) => {
   return (
     <button
@@ -21,6 +23,7 @@ export const NavbarMenuButton: FC<NavbarMenuButtonProps> = ({
       aria-label="Menu Button"
       aria-expanded={isExpanded}
       onClick={onClick}
+      data-shadow={shadow}
     >
       <svg
         className={styles.svg}
