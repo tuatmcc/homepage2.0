@@ -84,7 +84,7 @@
 
   /* Mobile */
   @media (--bp-sm) {
-    --navbar-height: 60px;
+    --navbar-height: 56px;
     --navbar-logo-size: 32px;
     --font-size-navbar: 32px;
   }

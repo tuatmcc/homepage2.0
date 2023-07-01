@@ -9,7 +9,7 @@ import { HomeText3d } from '~/components/home/home-text-3d';
 const HomePage: NextPage = () => {
   return (
     <>
-      <Navbar noBrand />
+      <Navbar transparent color="white" noBrand />
       <div className={styles.container}>
         <div className={styles.topScreen}>
           <HomeText3d />

@@ -1,150 +1,63 @@
 'use client';
 
-import { FC, ReactNode, useEffect, useState } from 'react';
+import NextLink from 'next/link';
+import { FC, useCallback, useState } from 'react';
 
+import { Drawer } from './Drawer';
+import { MenuButton } from './MenuButton';
 import styles from './styles.module.css';
 
-import { BasicLink } from '~/components/BasicLink';
-import { TwitterIcon } from '~/components/Svg';
 import { WordmarkLogo } from '~/components/Svg/WordmarkLogo';
-import { BASE_ROUTES_LIST, ROUTES } from '~/constants/routes';
 import { classNames } from '~/lib/classNames';
 
 type NavbarProps = {
   noBrand?: boolean;
-  theme?: 'auto' | 'blue' | 'white';
+  transparent?: boolean;
+  color?: 'mcc' | 'white';
+  theme?: 'transparent' | 'opaque' | 'auto';
 };
 
-const navLinks: ReactNode[] = [
-  ...BASE_ROUTES_LIST.map(({ LABEL, PATH }) => (
-    <BasicLink key={PATH} href={PATH} className={styles.linkItem}>
-      {LABEL}
-    </BasicLink>
-  )),
-  <BasicLink
-    key="twitter/tuatmcc"
-    href="https://twitter.com/tuatmcc"
-    className={styles.linkItem}
-  >
-    <TwitterIcon width={24} height={24} color="currentColor" />
-    MCC
-  </BasicLink>,
-  <BasicLink
-    key="twitter/tuatkyopro"
-    href="https://twitter.com/tuatkyopro"
-    className={styles.linkItem}
-  >
-    <TwitterIcon width={24} height={24} color="currentColor" />
-    Kyopro
-  </BasicLink>,
-];
-
 export const Navbar: FC<NavbarProps> = ({
+  transparent = false,
+  color = 'mcc',
   noBrand = false,
-  theme = 'white',
 }) => {
-  const [isNavDrawerOpen, setNavDrawerState] = useState<boolean>(false);
-  const [opaque, setOpaque] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (theme !== 'auto') return;
-    const changeColorByScroll = () => {
-      if (window.scrollY >= window.innerHeight) {
-        setOpaque(true);
-        // set scrollbar-gutter: stable to html element
-      } else {
-        setOpaque(false);
-        window.document.documentElement.style.scrollbarGutter = 'auto';
-      }
-    };
-
-    window.addEventListener('scroll', changeColorByScroll);
-
-    return () => window.removeEventListener('scroll', changeColorByScroll);
-  }, [theme]);
-
-  useEffect(() => {
-    document.body.style.overflow = isNavDrawerOpen ? 'hidden' : 'auto';
-    document.documentElement.style.scrollbarGutter = isNavDrawerOpen
-      ? 'stable'
-      : 'auto';
-  }, [isNavDrawerOpen]);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const setNavDrawerState = useCallback((bool: boolean) => {
+    if (document.startViewTransition) {
+      document.startViewTransition(() => {
+        setIsOpen(bool);
+      });
+    } else {
+      setIsOpen(bool);
+    }
+  }, []);
 
   return (
     <>
-      <div className={classNames(styles.navbar, opaque && styles._white)}>
-        <div>
-          {!noBrand && (
-            <BasicLink
-              href={ROUTES.HOME.PATH}
-              className={classNames(styles.brand, opaque && styles._blue)}
-            >
-              <WordmarkLogo color="currentColor" />
-            </BasicLink>
-          )}
-        </div>
-        <button
-          className={classNames(
-            styles.hamburgerMenu,
-            isNavDrawerOpen && styles._active,
-            opaque && styles._blue,
-          )}
-          onClick={() => setNavDrawerState(!isNavDrawerOpen)}
-          aria-label="menu toggler"
-        >
-          <span
-            className={classNames(
-              styles.hamburgerMenuLine1,
-              isNavDrawerOpen && styles._active,
-            )}
-          />
-          <span
-            className={classNames(
-              styles.hamburgerMenuLine2,
-              isNavDrawerOpen && styles._active,
-            )}
-          />
-          <span
-            className={classNames(
-              styles.hamburgerMenuLine3,
-              isNavDrawerOpen && styles._active,
-            )}
-          />
-        </button>
-
-        <button
-          className={classNames(
-            styles.overlay,
-            isNavDrawerOpen && styles._active,
-          )}
-          onClick={() => setNavDrawerState(false)}
-          aria-label="drawer-closure"
-        />
-
+      <nav className={styles.nav}>
         <div
           className={classNames(
-            styles.drawer,
-            isNavDrawerOpen && styles._active,
+            styles.navbar,
+            transparent && styles._transparent,
           )}
         >
-          <nav>
-            <ul className={styles.drawerContent}>
-              {navLinks.map((elem, index) => (
-                <li
-                  key={`${index}`}
-                  className={classNames(
-                    styles.drawerContentItem,
-                    isNavDrawerOpen && styles._active,
-                  )}
-                  style={{ transitionDelay: `${index * 0.03}s` }}
-                >
-                  {elem}
-                </li>
-              ))}
-            </ul>
-          </nav>
+          {!noBrand && (
+            <NextLink href="/" className={styles.brand}>
+              <WordmarkLogo color={color == 'white' ? 'white' : undefined} />
+            </NextLink>
+          )}
         </div>
-      </div>
+        <Drawer
+          isOpen={isOpen}
+          onClickOutside={() => setNavDrawerState(false)}
+        />
+        <MenuButton
+          isExpanded={isOpen}
+          onClick={() => setNavDrawerState(!isOpen)}
+          color={isOpen ? 'white' : color.replace('mcc', '#06c')}
+        />
+      </nav>
     </>
   );
 };

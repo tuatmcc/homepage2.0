@@ -19,7 +19,7 @@ const GalleryPage: FC = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar theme="auto" />
       <div className={styles.background} />
       <header>
         <div className={styles.headerContent}>

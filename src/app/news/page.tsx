@@ -35,7 +35,7 @@ export default function NewsListPage() {
     .sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
   return (
     <>
-      <Navbar theme="white" />
+      <Navbar color="white" />
       <BasicImage
         alt=""
         src="/images/abstract-tech-image-4.webp"

@@ -1,8 +1,8 @@
+import NextLink from 'next/link';
 import { FC } from 'react';
 
 import styles from './styles.module.css';
 
-import { BasicLink } from '~/components/BasicLink';
 import { GitHubIcon } from '~/components/Svg/GithubIcon';
 import { TwitterIcon } from '~/components/Svg/TwitterIcon';
 import { WordmarkLogo } from '~/components/Svg/WordmarkLogo';
@@ -22,9 +22,9 @@ export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
           semitransparent && styles._semitransparent,
         )}
       >
-        <BasicLink href={ROUTES.HOME.PATH} className={styles.wordmarkLogo}>
+        <NextLink href={ROUTES.HOME.path} className={styles.wordmarkLogo}>
           <WordmarkLogo size={32} />
-        </BasicLink>
+        </NextLink>
         <div className={styles.socials}>
           <a
             href="https://twitter.com/TUATMCC"

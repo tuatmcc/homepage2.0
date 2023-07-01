@@ -3,14 +3,26 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:import/warnings",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:storybook/recommended"
   ],
-  "plugins": ["import"],
+  "plugins": [
+    "import"
+  ],
   "rules": {
-    "quote-props": ["error", "as-needed"],
-    "jsx-quotes": ["warn", "prefer-double"],
+    "quote-props": [
+      "error",
+      "as-needed"
+    ],
+    "jsx-quotes": [
+      "warn",
+      "prefer-double"
+    ],
     "jsx-a11y/alt-text": "off",
-    "linebreak-style": ["error", "unix"],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
     "import/order": [
       "error",
       {
@@ -30,7 +42,9 @@
             "position": "before"
           }
         ],
-        "pathGroupsExcludedImportTypes": ["builtin"],
+        "pathGroupsExcludedImportTypes": [
+          "builtin"
+        ],
         "newlines-between": "always",
         "alphabetize": {
           "order": "asc"
@@ -41,7 +55,13 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+          ".json"
+        ]
       },
       "typescript": {
         "config": "tsconfig.json",
