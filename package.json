@@ -5,7 +5,7 @@
   "scripts": {
     "start": "next start",
     "dev": "next dev",
-    "setup": "bash ./src/setup.sh",
+    "setup": "bash ./scripts/setup.sh",
     "build": "next build",
     "sitemap": "next-sitemap",
     "export": "next export",
