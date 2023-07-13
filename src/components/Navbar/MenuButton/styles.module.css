@@ -1,12 +1,14 @@
 .button {
+  display: flex;
   position: fixed;
   top: 4px;
   right: 8px;
+  justify-content: center;
+  align-items: center;
   z-index: 100;
-  display: inline-block;
+  border: none;
   width: 48px;
   height: 48px;
-  border: none;
 
   & .svg {
     transition: all 0.3s ease;

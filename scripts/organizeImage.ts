@@ -4,7 +4,6 @@ import { glob } from 'glob';
 
 // Move all images to public folder. This should be run before next build.
 async function moveAllImage() {
-  // jpg, jpeg, png, gif, svg
   const files = await glob('**/*.{html,jpg,jpeg,png,gif,svg,webp,avif}', {
     cwd: 'content',
   });

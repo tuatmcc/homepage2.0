@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/react';
+import type { Preview, Parameters } from '@storybook/react';
 
 import '~/styles/global.css';
 
@@ -11,6 +11,7 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    layout: 'fullscreen',
   },
 };
 

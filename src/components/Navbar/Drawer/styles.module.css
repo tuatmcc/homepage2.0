@@ -1,35 +1,35 @@
 .overlay {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
-  display: none;
+  backdrop-filter: blur(4px);
   width: 100%;
   height: 100%;
   overflow: hidden;
-  backdrop-filter: blur(4px);
 
   &[aria-expanded='true'] {
     display: block;
   }
 
   .drawer {
+    display: flex;
     position: fixed;
     top: 0;
     right: 0;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transform: translateX(100%);
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease-in-out;
+    background: rgb(150 150 150 / 90%);
+    padding: 60px 20px;
     width: 400px;
     max-width: 80%;
     height: 100%;
-    padding: 60px 20px;
     overflow-y: auto;
     font-family: var(--font-family-orbitron);
-    background: rgb(150 150 150 / 90%);
-    transition: all 0.3s ease-in-out;
-    transform: translateX(100%);
-    backdrop-filter: blur(12px);
 
     &[aria-expanded='true'] {
       transform: translateX(0);
@@ -44,20 +44,20 @@
         & .link {
           display: flex;
           align-items: center;
+          transition: all 0.3s ease-in-out;
           padding: 10px 20px;
           font-size: 20px;
           letter-spacing: 0.2em;
-          transition: all 0.3s ease-in-out;
 
           &::after {
             position: relative;
             top: 5px;
             left: 8px;
+            transition: all 0.3s ease-in-out;
+            background-color: var(--color-gray-0);
             width: 0;
             height: 2px;
             content: '';
-            background-color: var(--color-gray-0);
-            transition: all 0.3s ease-in-out;
           }
 
           &:hover {
@@ -112,8 +112,8 @@
 
     & .socials {
       display: flex;
-      gap: 24px;
       justify-content: center;
+      gap: 24px;
 
       &[data-animated='true'] {
         animation: fade-in 1.3s forwards;

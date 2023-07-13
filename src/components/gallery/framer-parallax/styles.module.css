@@ -1,18 +1,18 @@
 .layer {
-  position: relative;
   display: flex;
-  align-items: center;
+  position: relative;
   justify-content: center;
+  align-items: center;
+  perspective: 500px;
   height: 100svh;
   scroll-snap-align: center;
-  perspective: 500px;
 
   & .layerContent {
     position: relative;
+    margin: 20px;
     width: 300px;
     height: 400px;
     max-height: 90svh;
-    margin: 20px;
 
     & .image {
       position: absolute;

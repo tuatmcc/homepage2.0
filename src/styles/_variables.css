@@ -2,15 +2,6 @@
 
 :root {
   /* Brand Colors */
-
-  /* TODO: 絞る・整理する */
-  --color-mcc-primary: #009dae;
-  --color-mcc-secondary: #71dfe7;
-  --color-mcc-tertiary: #c2fff9;
-  --color-mcc-quaternary: #ffe652;
-  --color-mcc-brand: #06c;
-
-  /* Renewal Colors */
   --mcc-color-1: #06c; /* Royal Blue */
   --mcc-color-2: #0092e6; /* Blue */
   --mcc-color-3: #00b6d8; /* Cyan */
@@ -18,7 +9,7 @@
   --mcc-color-5: #85eb83; /* Light Green */
   --mcc-color-6: #f9f871; /* Lemon Yellow */
 
-  /* Gray (Chakra UI) */
+  /* Gray (From Chakra UI) */
   --color-gray-0: #fff;
   --color-gray-50: #f7fafc;
   --color-gray-100: #edf2f7;
@@ -30,64 +21,24 @@
   --color-gray-700: #2d3748;
   --color-gray-800: #1a202c;
   --color-gray-900: #171923;
+  --color-gray-1000: #000;
 
   /* Utility Colors */
-  --shadow-neumorphism:
-    4px 4px 8px var(--color-gray-300),
+  --shadow-neumorphism: 4px 4px 8px var(--color-gray-300),
     -4px -4px 8px var(--color-gray-0);
-  --shadow-neumorphism-hover:
-    6px 6px 12px var(--color-gray-400),
+  --shadow-neumorphism-hover: 6px 6px 12px var(--color-gray-400),
     -6px -6px 12px var(--color-gray-0);
-  --shadow-neumorphism-inset:
-    inset 4px 4px 8px var(--color-gray-300),
+  --shadow-neumorphism-inset: inset 4px 4px 8px var(--color-gray-300),
     inset -4px -4px 8px var(--color-gray-0);
-  --mcc-gradient-colors-6:
-    var(--mcc-color-1),
-    var(--mcc-color-2),
-    var(--mcc-color-3),
-    var(--mcc-color-4),
-    var(--mcc-color-5),
+  --color-gradient-mcc: var(--mcc-color-1), var(--mcc-color-2),
+    var(--mcc-color-3), var(--mcc-color-4), var(--mcc-color-5),
     var(--mcc-color-6);
 
-  /* Other Colors */
-  --color-background: #f6f4f4;
-  --color-text-muted: #57606a;
-  --color-text-subtle: #6e7781;
-  --color-text-white: #fff;
-  --color-code-text: #6f4612;
-  --color-code-background: var(--color-gray-300);
-  --color-codeblock-text: #fff;
-  --color-codeblock-background: #16283a;
-  --color-codeblock-title-background: #0d1e2f;
-  --color-footer-background: #ccc;
-  --color-blockquote-border: #999;
-  --color-table-head-background: #ddd;
-  --color-border-default: #d0d7de;
-  --color-border-muted: hsl(210deg 18% 87% / 100%);
-  --color-border-subtle: rgb(27 31 36 / 15%);
-  --color-marker-emphasis-plus: #24292f;
-  --color-marker-emphasis: #6e7781;
-  --color-marker-muted: rgb(175 184 193 / 20%);
-  --color-shadow-small: 0 1px 0 rgb(27 31 36 / 4%);
-  --color-shadow-medium: 0 3px 6px rgb(140 149 159 / 15%);
-  --color-shadow-large: 0 0 24px rgb(10 90 100 / 20%);
-  --color-shadow-extra-large: 0 12px 28px rgb(140 149 159 / 30%);
-  --color-shadow-dark: 0 0 16px rgb(27 31 36 / 60%);
-
   /* Size */
-  --navbar-height: 70px;
-  --navbar-logo-size: 56px;
-  --header-height: 100svh;
+  --navbar-height: 56px;
   --scrollbar-width: 10px;
-  --font-size-navbar: 48px;
+  --font-size-navbar: 36px;
   --article-max-width: 900px;
-
-  /* Mobile */
-  @media (--bp-sm) {
-    --navbar-height: 56px;
-    --navbar-logo-size: 32px;
-    --font-size-navbar: 32px;
-  }
 
   /* Font Family is defined in layout.tsx */
 
