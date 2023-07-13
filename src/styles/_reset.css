@@ -8,8 +8,8 @@
 ::before,
 ::after {
   box-sizing: border-box;
-  border-style: solid;
   border-width: 0;
+  border-style: solid;
 }
 
 /* Document */
@@ -23,9 +23,9 @@
  */
 
 html {
-  line-height: 1.15; /* 1 */
   text-size-adjust: 100%; /* 2 */
   -webkit-tap-highlight-color: transparent; /* 3 */
+  line-height: 1.15; /* 1 */
 }
 
 /* Sections */
@@ -75,8 +75,8 @@ h4,
 h5,
 h6 {
   margin: 0;
-  font-size: inherit;
   font-weight: inherit;
+  font-size: inherit;
 }
 
 /* Lists (enumeration) */
@@ -85,8 +85,8 @@ h6 {
 
 ul,
 ol {
-  padding: 0;
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -112,13 +112,13 @@ dd {
  */
 
 hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  margin: 0;
-  overflow: visible; /* 2 */
   clear: both;
-  color: inherit;
+  box-sizing: content-box; /* 1 */
+  margin: 0;
   border-top-width: 1px;
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+  color: inherit;
 }
 
 /**
@@ -144,9 +144,9 @@ address {
  */
 
 a {
+  background-color: transparent;
   color: inherit;
   text-decoration: none;
-  background-color: transparent;
 }
 
 /**
@@ -175,8 +175,8 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace; /* 1 */
   font-size: inherit; /* 2 */
+  font-family: monospace, monospace; /* 1 */
 }
 
 /**
@@ -195,9 +195,9 @@ small {
 sub,
 sup {
   position: relative;
+  vertical-align: baseline;
   font-size: 75%;
   line-height: 0;
-  vertical-align: baseline;
 }
 
 sub {
@@ -239,17 +239,17 @@ input,
 optgroup,
 select,
 textarea {
-  padding: 0;
-  margin: 0;
-  font: inherit;
-  color: inherit;
-  text-align: inherit;
-  text-transform: inherit; /* 2 */
   vertical-align: middle;
-  background: transparent;
-  border-radius: 0;
   appearance: none; /* 1 */
   appearance: none;
+  margin: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  text-transform: inherit; /* 2 */
 }
 
 /**
@@ -309,9 +309,9 @@ option {
  */
 
 fieldset {
-  min-width: 0;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  min-width: 0;
 }
 
 legend {
@@ -414,8 +414,8 @@ summary {
 */
 
 table {
-  border-collapse: collapse;
   border-color: inherit; /* 1 */
+  border-collapse: collapse;
 }
 
 caption {
@@ -424,8 +424,8 @@ caption {
 
 td,
 th {
-  padding: 0;
   vertical-align: top;
+  padding: 0;
 }
 
 th {

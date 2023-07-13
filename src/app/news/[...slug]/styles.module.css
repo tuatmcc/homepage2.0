@@ -2,18 +2,18 @@
 
 .heroImage {
   display: block;
+  margin: 0 auto;
+  margin-top: -64px;
   width: 100%;
   max-width: 1000px;
   height: 300px;
-  margin: 0 auto;
-  margin-top: -64px;
   object-fit: cover;
 }
 
 .main {
-  max-width: 900px;
-  padding: 0 8px 48px;
   margin: auto;
+  padding: 0 8px 48px;
+  max-width: 900px;
 
   @media (--bp-sm) {
     width: 92vw;
@@ -22,19 +22,19 @@
   & .backLink {
     display: inline-flex;
     align-items: center;
-    padding: 8px 16px;
-    margin-top: 64px;
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--mcc-color-1);
-    text-decoration: none;
-    border-radius: 8px;
-    box-shadow: var(--shadow-neumorphism);
     transition: all 0.2s ease-in-out;
+    margin-top: 64px;
+    box-shadow: var(--shadow-neumorphism);
+    border-radius: 8px;
+    padding: 8px 16px;
+    color: var(--mcc-color-1);
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
 
     &:hover {
-      background-color: var(--color-gray-200);
       box-shadow: var(--shadow-neumorphism-hover);
+      background-color: var(--color-gray-200);
     }
   }
 }

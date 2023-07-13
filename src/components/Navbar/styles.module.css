@@ -2,12 +2,13 @@
   position: sticky;
   top: 0;
   z-index: 1;
+  height: var(--navbar-height);
 
   & .navbar {
     display: flex;
-    height: 56px;
     backdrop-filter: blur(10px);
-    padding: 4px 16px;
+    padding: 0 8px;
+    height: inherit;
 
     &._transparent {
       backdrop-filter: none;
@@ -15,9 +16,8 @@
 
     & .brand {
       display: flex;
-      align-items: center;
       justify-content: center;
-      padding: 4px 8px;
+      align-items: center;
     }
   }
 }
