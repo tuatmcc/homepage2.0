@@ -15,21 +15,21 @@
   & .headerContent {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    align-items: center;
     justify-content: center;
-    padding: 48px 8px;
-    margin: 0 auto;
-    color: var(--color-gray-50);
-    background-color: #0003;
-    border-radius: 8px;
-    box-shadow: 0 0 16px var(--color-gray-0);
+    align-items: center;
+    gap: 16px;
     backdrop-filter: blur(16px);
+    margin: 0 auto;
+    box-shadow: 0 0 16px var(--color-gray-0);
+    border-radius: 8px;
+    background-color: #0003;
+    padding: 48px 8px;
+    color: var(--color-gray-50);
 
     & .headerTitle {
       margin: 0;
-      font-family: var(--font-family-orbitron);
       font-size: 64px;
+      font-family: var(--font-family-orbitron);
       letter-spacing: 0.1em;
 
       @media (--bp-sm) {
@@ -43,20 +43,20 @@
 
       & .headerSubTitle {
         position: relative;
-        overflow: hidden;
-        font-size: 16px;
-        font-weight: normal;
-        text-align: center;
-        letter-spacing: 0.1em;
-        white-space: nowrap;
         animation: typing 3s steps(21, end) forwards;
+        overflow: hidden;
+        font-weight: normal;
+        font-size: 16px;
+        letter-spacing: 0.1em;
+        text-align: center;
+        white-space: nowrap;
 
         &::after {
+          display: inline-block;
           position: absolute;
           right: -4px;
-          display: inline-block;
-          content: '|';
           animation: blink-caret 0.75s step-end infinite;
+          content: '|';
         }
       }
     }
@@ -71,12 +71,12 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 16px;
-      padding: 16px;
-      margin: 16px auto;
-      background-color: #0003;
-      border-radius: 8px;
-      box-shadow: 0 0 16px var(--color-gray-0);
       backdrop-filter: blur(32px);
+      margin: 16px auto;
+      box-shadow: 0 0 16px var(--color-gray-0);
+      border-radius: 8px;
+      background-color: #0003;
+      padding: 16px;
 
       @media (--bp-sm) {
         grid-template-columns: repeat(1, 1fr);
@@ -85,28 +85,28 @@
 
       & .listItem {
         & .link {
-          position: relative;
           display: flex;
-          gap: 16px;
+          position: relative;
           align-items: center;
+          gap: 16px;
+          transition: all 0.2s ease-in-out;
+          border: solid 1px transparent;
           padding: 8px;
           color: white;
-          border: solid 1px transparent;
-          transition: all 0.2s ease-in-out;
 
           @media (hover: hover) {
             &:hover {
-              border: solid 1px var(--mcc-color-6);
               box-shadow: 0 0 8px var(--mcc-color-6);
+              border: solid 1px var(--mcc-color-6);
             }
           }
 
           & .image {
+            box-shadow: 0 0 16px #0003;
+            border-radius: 8px;
             width: 100px;
             height: 100px;
             object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 0 16px #0003;
 
             @media (--bp-sm) {
               width: 64px;
@@ -117,13 +117,13 @@
           & .text {
             display: flex;
             flex-direction: column;
-            gap: 8px;
             justify-content: space-around;
+            gap: 8px;
 
             & .title {
               margin: 0;
-              font-size: 20px;
               color: var(--color-gray-0);
+              font-size: 20px;
 
               @media (--bp-sm) {
                 font-size: 16px;
@@ -133,8 +133,8 @@
             & .details {
               display: flex;
               justify-content: space-between;
-              font-size: 14px;
               color: var(--color-gray-400);
+              font-size: 14px;
 
               & .author {
                 padding-right: 12px;
@@ -160,8 +160,8 @@
 @keyframes blink-caret {
   0%,
   100% {
-    color: transparent;
     background-color: transparent;
+    color: transparent;
   }
 
   50% {

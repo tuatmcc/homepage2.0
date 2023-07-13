@@ -10,7 +10,7 @@
   --mcc-color-6: #f9f871; /* Lemon Yellow */
 
   /* Gray (From Chakra UI) */
-  --color-gray-0: #ffffff;
+  --color-gray-0: #fff;
   --color-gray-50: #f7fafc;
   --color-gray-100: #edf2f7;
   --color-gray-200: #e2e8f0;
@@ -21,7 +21,7 @@
   --color-gray-700: #2d3748;
   --color-gray-800: #1a202c;
   --color-gray-900: #171923;
-  --color-gray-1000: #000000;
+  --color-gray-1000: #000;
 
   /* Utility Colors */
   --shadow-neumorphism: 4px 4px 8px var(--color-gray-300),
@@ -41,7 +41,10 @@
   --article-max-width: 900px;
 
   /* Font Family is defined in layout.tsx */
+
   /* --font-family-noto-sans-jp: 'Noto Sans JP', sans-serif; */
+
   /* --font-family-orbitron: 'Orbitron', sans-serif; */
+
   /* --font-family-jetbrains-mono: 'JetBrains Mono', monospace; */
 }
