@@ -20,7 +20,7 @@
     font-family: var(--font-family-orbitron);
     font-size: 32px;
     font-weight: bold;
-    color: var(--color-mcc-brand);
+    color: var(--mcc-color-1);
     letter-spacing: 0.1em;
   }
 

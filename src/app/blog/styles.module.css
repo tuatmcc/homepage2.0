@@ -123,7 +123,7 @@
             & .title {
               margin: 0;
               font-size: 20px;
-              color: var(--color-text-white);
+              color: var(--color-gray-0);
 
               @media (--bp-sm) {
                 font-size: 16px;
