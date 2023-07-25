@@ -32,7 +32,7 @@
 - `pnpm`: v8.1.1
 - `Next.js`: v13.3.1
 - `TypeScript`: v5.0.2
-- `Volta`: v1.1.1 or `nodenv`
+- `nodenv`, `corepack`
 
 ## 主なスタック
 
