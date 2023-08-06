@@ -4,6 +4,7 @@ import { FC } from 'react';
 import styles from './styles.module.css';
 
 import { GitHubIcon, TwitterIcon } from '~/components/Svg';
+import { XIcon } from '~/components/Svg/XIcon';
 import { BASE_ROUTES_LIST } from '~/constants/routes';
 
 type DrawerProps = {
@@ -49,7 +50,16 @@ export const Drawer: FC<DrawerProps> = ({ isOpen, onClickOutside }) => {
               aria-label="twitter link"
               className={styles.socialLink}
             >
-              <TwitterIcon width={24} height={24} />
+              <TwitterIcon size={28} color="white" />
+            </a>
+            <a
+              href="https://x.com/tuatmcc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="x link"
+              className={styles.socialLink}
+            >
+              <XIcon size={28} color="white" />
             </a>
             <a
               href="https://github.com/tuatmcc"
@@ -58,7 +68,7 @@ export const Drawer: FC<DrawerProps> = ({ isOpen, onClickOutside }) => {
               aria-label="github link"
               className={styles.socialLink}
             >
-              <GitHubIcon width={24} height={24} />
+              <GitHubIcon size={28} color="white" />
             </a>
           </div>
         </div>
