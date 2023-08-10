@@ -1,14 +1,5 @@
 @custom-media --bp-sm (max-width: 780px);
 
-.background {
-  position: fixed;
-  top: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100lvh;
-  object-fit: cover;
-}
-
 .header {
   padding: 16px 5% 32px;
 
@@ -18,13 +9,13 @@
     justify-content: center;
     align-items: center;
     gap: 16px;
-    backdrop-filter: blur(16px);
+    /* backdrop-filter: blur(16px); */
     margin: 0 auto;
-    box-shadow: 0 0 16px var(--color-gray-0);
-    border-radius: 8px;
-    background-color: #0003;
+    /* box-shadow: 0 0 16px var(--color-gray-0); */
+    /* border-radius: 8px; */
+    /* background-color: #0003; */
     padding: 48px 8px;
-    color: var(--color-gray-50);
+    color: var(--color-gray-800);
 
     & .headerTitle {
       margin: 0;
@@ -68,14 +59,16 @@
 
   & .mainContent {
     & .list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      backdrop-filter: blur(32px);
-      margin: 16px auto;
-      box-shadow: 0 0 16px var(--color-gray-0);
-      border-radius: 8px;
-      background-color: #0003;
+      display: flex;
+      flex-direction: column;
+      /* display: grid; */
+      /* grid-template-columns: repeat(2, 1fr); */
+      /* gap: 16px; */
+      /* backdrop-filter: blur(32px); */
+      /* margin: 16px auto; */
+      /* box-shadow: 0 0 16px var(--color-gray-0); */
+      /* border-radius: 8px; */
+      /* background-color: #0003; */
       padding: 16px;
 
       @media (--bp-sm) {
