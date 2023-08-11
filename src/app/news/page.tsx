@@ -1,14 +1,11 @@
 import { Metadata } from 'next';
-import NextImage from 'next/image';
-import Link from 'next/link';
 
 import styles from './styles.module.css';
 
 import { allNews } from '.contentlayer/generated';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
-import { NextImageWithFallback } from '~/components/NextImageWithFallback';
-import { NewsItem } from '~/components/news/NewsItem';
+import { NewsList } from '~/components/news/NewsList';
 import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
   defaultOpenGraph,
@@ -31,9 +28,7 @@ export const metadata: Metadata = {
 
 export default function NewsListPage() {
   // 暗黙的な参照渡しを防ぐ
-  const posts = structuredClone(allNews)
-    .filter((x) => !x.unlisted)
-    .sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
+  const posts = structuredClone(allNews).filter((x) => !x.unlisted);
   return (
     <>
       <Navbar color="mcc" />
@@ -47,54 +42,20 @@ export default function NewsListPage() {
       </header>
 
       <main className={styles.main}>
-        <div className={styles.mainContent}>
-          <ul className={styles.list}>
-            {posts.map((post) => {
-              const { title, dateStr, img, rootPath, tags } = post;
-              return (
-                <li className={styles.litItem} key={rootPath}>
-                  <NewsItem
-                    href={`/${rootPath}`}
-                    title={title}
-                    date={dateStr}
-                    image={
-                      `${parseImageSrc(rootPath, img)}` ||
-                      '/images/wordmark-logo-image.png'
-                    }
-                    tags={tags}
-                  />
-                </li>
-              );
-              // return (
-              //   <li key={post.rootPath} className={styles.listItem}>
-              //     <Link href={`/${rootPath}`} className={styles.link}>
-              //       <NextImageWithFallback
-              //         className={styles.image}
-              //         src={
-              //           `/${parseImageSrc(rootPath, img)}` ||
-              //           '/images/mcc-logo.svg'
-              //         }
-              //         alt=""
-              //         role="presentation"
-              //         width={200}
-              //         height={200}
-              //         fallback="/images/mcc-logo.svg"
-              //       />
-              //       <div className={styles.text}>
-              //         <h2 className={styles.title}>{title}</h2>
-              //         <div className={styles.details}>
-              //           <div className={styles.date}>{dateStr}</div>
-              //           {author && (
-              //             <div className={styles.author}>@{author}</div>
-              //           )}
-              //         </div>
-              //       </div>
-              //     </Link>
-              //   </li>
-              // );
-            })}
-          </ul>
-        </div>
+        <NewsList
+          unorderedNews={posts.map((post) => {
+            const { title, dateStr, img, rootPath, tags } = post;
+            return {
+              href: `/${rootPath}`,
+              title,
+              date: dateStr,
+              image:
+                `/${parseImageSrc(rootPath, img)}` ||
+                '/images/wordmark-logo-image.png',
+              tags,
+            };
+          })}
+        />
       </main>
 
       <Footer semitransparent />

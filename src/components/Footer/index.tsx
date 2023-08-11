@@ -32,7 +32,7 @@ export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
             aria-label="twitter link"
             className={styles.socialLink}
           >
-            <TwitterIcon width={32} height={32} />
+            <TwitterIcon size={32} color="currentColor" />
             MCC
           </a>
           <a
@@ -42,7 +42,7 @@ export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
             aria-label="twitter link"
             className={styles.socialLink}
           >
-            <TwitterIcon width={32} height={32} />
+            <TwitterIcon size={32} color="currentColor" />
             競プロ
           </a>
           <a
@@ -52,7 +52,7 @@ export const Footer: FC<FotterProps> = ({ semitransparent = false }) => {
             aria-label="github link"
             className={styles.socialLink}
           >
-            <GitHubIcon width={32} height={32} />
+            <GitHubIcon size={32} color="currentColor" />
             GitHub
           </a>
         </div>
