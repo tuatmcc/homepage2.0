@@ -11,12 +11,12 @@
     "export": "next export",
     "build:prod": "bash ./scripts/setup.sh && bash ./scripts/prod.sh",
     "build:dev": "bash ./scripts/setup.sh && bash ./scripts/dev.sh",
-    "lint": "next lint && stylelint './src/**/*.css' && prettier -c ./src/**/*.{js,jsx,ts,tsx,css}",
-    "lint:fix": "next lint --fix && stylelint './src/**/*.css' --fix && prettier -c --write ./src/**/*.{js,jsx,ts,tsx,css}",
+    "lint": "next lint && stylelint './src/**/*.css' && prettier -c ./src/**/*.{ts,tsx,css}",
+    "lint:fix": "next lint --fix && stylelint './src/**/*.css' --fix && prettier -c --write ./src/**/*.{ts,tsx,css}",
     "typecheck": "tsc --noEmit",
     "contentlayer": "contentlayer build",
     "organize-image": "tsx ./scripts/organizeImage.ts",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build"
   },
   "lint-staged": {
@@ -42,6 +42,7 @@
     "@typescript-eslint/parser": "^5.62.0",
     "classnames": "^2.3.2",
     "contentlayer": "^0.3.4",
+    "date-fns": "^2.30.0",
     "framer-motion": "^10.13.1",
     "glob": "^10.3.3",
     "husky": "^8.0.3",
@@ -78,6 +79,7 @@
     "remark-toc": "^8.0.1",
     "shiki": "^0.14.3",
     "storybook": "^7.1.1",
+    "temporal-polyfill": "^0.1.1",
     "three": "^0.150.1"
   },
   "devDependencies": {
