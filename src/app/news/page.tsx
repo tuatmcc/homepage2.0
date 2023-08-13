@@ -5,6 +5,7 @@ import styles from './styles.module.css';
 import { allNews } from '.contentlayer/generated';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
+import { NewsEyeCatch } from '~/components/news/NewsEyeCatch';
 import { NewsList } from '~/components/news/NewsList';
 import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
@@ -32,33 +33,39 @@ export default function NewsListPage() {
   return (
     <>
       <Navbar color="mcc" />
-      <header className={styles.header}>
+      <div className={styles.smHeader}>
         <div className={styles.headerContent}>
           <h1 className={styles.headerTitle}>News</h1>
-          <div className={styles.typeWriterContainer}>
-            <h2 className={styles.headerSubTitle}>MCCからのお知らせ</h2>
+        </div>
+      </div>
+
+      <main>
+        <div className={styles.main}>
+          <div className={styles.left}>
+            {/* ニュースの分量が増えてきたらここに年別のタブを用意するなど */}
+            <NewsEyeCatch />
+          </div>
+
+          <div className={styles.right}>
+            <NewsList
+              unorderedNews={posts.map((post) => {
+                const { title, dateStr, img, rootPath, tags } = post;
+                return {
+                  href: `/${rootPath}`,
+                  title,
+                  date: dateStr,
+                  image:
+                    `/${parseImageSrc(rootPath, img)}` ||
+                    '/images/wordmark-logo-image.png',
+                  tags,
+                };
+              })}
+            />
           </div>
         </div>
-      </header>
-
-      <main className={styles.main}>
-        <NewsList
-          unorderedNews={posts.map((post) => {
-            const { title, dateStr, img, rootPath, tags } = post;
-            return {
-              href: `/${rootPath}`,
-              title,
-              date: dateStr,
-              image:
-                `/${parseImageSrc(rootPath, img)}` ||
-                '/images/wordmark-logo-image.png',
-              tags,
-            };
-          })}
-        />
       </main>
 
-      <Footer semitransparent />
+      <Footer />
     </>
   );
 }

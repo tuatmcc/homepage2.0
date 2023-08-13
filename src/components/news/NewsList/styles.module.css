@@ -1,8 +1,10 @@
 @custom-media --small-viewport (max-width: 768px);
 
 .list {
+  display: flex;
   position: relative;
   flex-direction: column;
+  align-items: start;
   gap: 8px;
   container-type: inline-size;
 
@@ -54,11 +56,16 @@
           font-size: 12px;
         }
       }
+    }
 
-      @container (max-width: 600px) {
+    /* newsItem */
+    @container (max-width: 600px) {
+      align-self: center;
+      width: 320px;
+
+      & .newsItem {
         grid-template-rows: 1fr repeat(3, auto);
         grid-template-columns: 1fr;
-        width: 320px;
 
         & .image {
           grid-area: 1 / 1 / 2 / 2;

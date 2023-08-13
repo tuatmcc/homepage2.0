@@ -1,7 +1,12 @@
 @custom-media --bp-sm (max-width: 780px);
 
-.header {
+.smHeader {
+  display: none;
   padding: 16px 5% 32px;
+
+  @media (--bp-sm) {
+    display: block;
+  }
 
   & .headerContent {
     display: flex;
@@ -11,47 +16,34 @@
     gap: 16px;
     margin: 0 auto;
     padding: 48px 8px;
-    color: var(--color-gray-800);
+    color: var(--color-gray-600);
 
     & .headerTitle {
       margin: 0;
-      font-size: 64px;
+      font-weight: bold;
+      font-size: 32px;
       font-family: var(--font-family-orbitron);
       letter-spacing: 0.1em;
-
-      @media (--bp-sm) {
-        font-size: 48px;
-      }
-    }
-
-    & .typeWriterContainer {
-      display: inline-block;
-      margin: 0 auto;
-
-      & .headerSubTitle {
-        position: relative;
-        animation: typing 2s steps(9, end) forwards;
-        overflow: hidden;
-        font-weight: normal;
-        font-size: 16px;
-        letter-spacing: 0.1em;
-        text-align: center;
-        white-space: nowrap;
-
-        &::after {
-          display: inline-block;
-          position: absolute;
-          right: -4px;
-          animation: blink-caret 0.75s step-end infinite;
-          content: '|';
-        }
-      }
     }
   }
 }
 
 .main {
+  display: flex;
+  position: relative;
   padding: 0 5%;
+
+  & .left {
+    flex: 1;
+
+    @media (--bp-sm) {
+      display: none;
+    }
+  }
+
+  & .right {
+    flex: 2;
+  }
 }
 
 @keyframes typing {

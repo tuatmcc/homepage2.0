@@ -12,6 +12,24 @@ const preview: Preview = {
       },
     },
     layout: 'fullscreen',
+    viewport: {
+      viewports: {
+        xs: {
+          name: 'xs',
+          styles: {
+            width: '500px',
+            height: '500px',
+          },
+        },
+        sm: {
+          name: 'sm',
+          styles: {
+            width: '768px',
+            height: '768px',
+          },
+        },
+      },
+    },
   },
 };
 
