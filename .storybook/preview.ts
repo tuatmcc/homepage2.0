@@ -1,4 +1,4 @@
-import type { Preview, Parameters } from '@storybook/react';
+import type { Preview } from '@storybook/react';
 
 import '~/styles/global.css';
 
@@ -12,6 +12,24 @@ const preview: Preview = {
       },
     },
     layout: 'fullscreen',
+    viewport: {
+      viewports: {
+        xs: {
+          name: 'xs',
+          styles: {
+            width: '500px',
+            height: '500px',
+          },
+        },
+        sm: {
+          name: 'sm',
+          styles: {
+            width: '768px',
+            height: '768px',
+          },
+        },
+      },
+    },
   },
 };
 

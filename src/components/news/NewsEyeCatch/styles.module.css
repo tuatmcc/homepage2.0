@@ -1,0 +1,42 @@
+.newsEyeCatch {
+  position: sticky;
+  top: var(--navbar-height);
+  padding: 32px;
+
+  & .container {
+    & .title {
+      margin-top: 64px;
+      color: var(--color-gray-600);
+      font-weight: bold;
+      font-size: 32px;
+      font-family: var(--font-family-orbitron);
+      letter-spacing: 0.1em;
+      text-align: center;
+    }
+
+    & .poem {
+      margin-top: 32px;
+      color: var(--color-gray-500);
+      font-weight: bold;
+      font-size: 18px;
+      font-family: var(--font-family-orbitron);
+      letter-spacing: 0.1em;
+      text-align: center;
+
+      & .typography {
+        animation: fadein 5s;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

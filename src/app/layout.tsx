@@ -12,7 +12,7 @@ const notoSansJP = Noto_Sans_JP({
   weight: ['400', '700'],
   subsets: ['latin'],
   display: 'swap',
-  fallback: ['JetBrains_Mono', 'sans-serif'],
+  fallback: ['sans-serif'],
 });
 
 const orbitron = Orbitron({
@@ -20,7 +20,7 @@ const orbitron = Orbitron({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
-  fallback: ['Noto_Sans_JP', 'sans-serif'],
+  fallback: ['Noto Sans JP', 'sans-serif'],
 });
 
 const jetBrainsMono = JetBrains_Mono({
@@ -28,7 +28,7 @@ const jetBrainsMono = JetBrains_Mono({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
-  fallback: ['Noto_Sans_JP', 'monospace', 'sans-serif'],
+  fallback: ['Noto Sans JP', 'monospace', 'sans-serif'],
 });
 
 export const metadata: Metadata = sharedMetadata;
@@ -44,6 +44,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           orbitron.variable,
           notoSansJP.variable,
           jetBrainsMono.variable,
+          notoSansJP.className,
         )}
       >
         {children}

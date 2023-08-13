@@ -1,13 +1,12 @@
 import { Metadata } from 'next';
-import NextImage from 'next/image';
-import Link from 'next/link';
 
 import styles from './styles.module.css';
 
 import { allNews } from '.contentlayer/generated';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
-import { NextImageWithFallback } from '~/components/NextImageWithFallback';
+import { NewsEyeCatch } from '~/components/news/NewsEyeCatch';
+import { NewsList } from '~/components/news/NewsList';
 import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
   defaultOpenGraph,
@@ -30,67 +29,43 @@ export const metadata: Metadata = {
 
 export default function NewsListPage() {
   // 暗黙的な参照渡しを防ぐ
-  const posts = structuredClone(allNews)
-    .filter((x) => !x.unlisted)
-    .sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
+  const posts = structuredClone(allNews).filter((x) => !x.unlisted);
   return (
     <>
-      <Navbar color="white" />
-      <NextImage
-        alt=""
-        src="/images/abstract-tech-image-4.webp"
-        width={1920}
-        height={1280}
-        role="presentation"
-        className={styles.background}
-      />
-      <header className={styles.header}>
+      <Navbar color="mcc" />
+      <div className={styles.smHeader}>
         <div className={styles.headerContent}>
           <h1 className={styles.headerTitle}>News</h1>
-          <div className={styles.typeWriterContainer}>
-            <h2 className={styles.headerSubTitle}>MCCからのお知らせ</h2>
-          </div>
         </div>
-      </header>
+      </div>
 
-      <main className={styles.main}>
-        <div className={styles.mainContent}>
-          <ul className={styles.list}>
-            {posts.map((post) => {
-              const { title, dateStr, img, author, rootPath } = post;
-              return (
-                <li key={post.rootPath} className={styles.listItem}>
-                  <Link href={`/${rootPath}`} className={styles.link}>
-                    <NextImageWithFallback
-                      className={styles.image}
-                      src={
-                        `/${parseImageSrc(rootPath, img)}` ||
-                        '/images/mcc-logo.svg'
-                      }
-                      alt=""
-                      role="presentation"
-                      width={200}
-                      height={200}
-                      fallback="/images/mcc-logo.svg"
-                    />
-                    <div className={styles.text}>
-                      <h2 className={styles.title}>{title}</h2>
-                      <div className={styles.details}>
-                        <div className={styles.date}>{dateStr}</div>
-                        {author && (
-                          <div className={styles.author}>@{author}</div>
-                        )}
-                      </div>
-                    </div>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+      <main>
+        <div className={styles.main}>
+          <div className={styles.left}>
+            {/* ニュースの分量が増えてきたらここに年別のタブを用意するなど */}
+            <NewsEyeCatch />
+          </div>
+
+          <div className={styles.right}>
+            <NewsList
+              unorderedNews={posts.map((post) => {
+                const { title, dateStr, img, rootPath, tags } = post;
+                return {
+                  href: `/${rootPath}`,
+                  title,
+                  date: dateStr,
+                  image:
+                    `/${parseImageSrc(rootPath, img)}` ||
+                    '/images/wordmark-logo-image.png',
+                  tags,
+                };
+              })}
+            />
+          </div>
         </div>
       </main>
 
-      <Footer semitransparent />
+      <Footer />
     </>
   );
 }
