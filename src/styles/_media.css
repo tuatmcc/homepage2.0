@@ -1,5 +1,2 @@
-/* FIX: このファイルをインポートしても使えないため、今は各ファイルにべた書き */
-@custom-media --bp-sm (max-width: 780px);
-
-/* based on tailwindcss's default */
-@custom-media --small-viewport (max-width: 768px);
+/* this value based on the default of tailwindcss */
+@custom-media --bp-sm (max-width: 768px);
