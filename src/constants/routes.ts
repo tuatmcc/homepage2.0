@@ -3,20 +3,17 @@ type Route = {
   label: string;
 };
 
-export const ROUTES: { [x: string]: Route } = {
-  HOME: { path: '/', label: 'Home' },
-  ABOUT: { path: '/about', label: 'AboutUs' },
-  NEWS: { path: '/news', label: 'News' },
-  BLOG: { path: '/blog', label: 'Blog' },
-  MEMBERS: { path: '/members', label: 'Members' },
-  GALLERY: { path: '/gallery', label: 'Gallery' },
+export const routes: { [x: string]: Route } = {
+  home: { path: '/', label: 'Home' },
+  about: { path: '/about', label: 'AboutUs' },
+  news: { path: '/news', label: 'News' },
+  blog: { path: '/blog', label: 'Blog' },
 };
 
 /** ナビゲーションに使用するパスリスト */
-export const BASE_ROUTES_LIST: Route[] = [
-  ROUTES.HOME,
-  ROUTES.ABOUT,
-  ROUTES.NEWS,
-  ROUTES.BLOG,
-  ROUTES.GALLERY,
+export const baseRouteList: Route[] = [
+  routes.home,
+  routes.about,
+  routes.news,
+  routes.blog,
 ];
