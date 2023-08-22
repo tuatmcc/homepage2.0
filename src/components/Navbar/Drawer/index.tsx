@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 
 import { GitHubIcon, TwitterIcon } from '~/components/Svg';
 import { XIcon } from '~/components/Svg/XIcon';
-import { BASE_ROUTES_LIST } from '~/constants/routes';
+import { baseRouteList } from '~/constants/routes';
 
 type DrawerProps = {
   isOpen: boolean;
@@ -26,7 +26,7 @@ export const Drawer: FC<DrawerProps> = ({ isOpen, onClickOutside }) => {
           onClick={(e) => e.stopPropagation()}
         >
           <ul className={styles.list}>
-            {BASE_ROUTES_LIST.map(({ label, path }, index) => (
+            {baseRouteList.map(({ label, path }, index) => (
               <li key={label} className={styles.listItem}>
                 <NextLink href={path} className={styles.link}>
                   <span className={styles.linkTextWrapper}>
