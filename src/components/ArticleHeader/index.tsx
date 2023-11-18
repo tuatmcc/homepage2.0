@@ -40,9 +40,7 @@ export const ArticleHeader: FC<ArticleHeaderProps> = ({
         <ul className={styles.breadcrumb}>
           {breadcrumb.map((x, i, self) => (
             <li key={x} className={styles.breadcrumbItem}>
-              <NextLink href={`/${self.slice(0, i + 1).join('/')}`}>
-                {x}
-              </NextLink>
+              <NextLink href={self.slice(0, i + 1).join('/')}>{x}</NextLink>
             </li>
           ))}
         </ul>

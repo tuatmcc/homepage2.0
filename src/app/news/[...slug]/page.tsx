@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 import type { Metadata } from 'next';
 
-import { allNews } from '.contentlayer/generated';
+import { allNewsDocuments } from '.mdorganizer/generated';
 import { Article } from '~/components/Article';
 import { ArticleBottom } from '~/components/ArticleBottom';
 import { ArticleHeader } from '~/components/ArticleHeader';
@@ -26,25 +26,28 @@ export async function generateMetadata({
 }: {
   params: Params;
 }): Promise<Metadata> {
-  const post = allNews.find(
-    (post) => post.rootPath === post.documentType + '/' + params.slug.join('/'),
-  );
+  const post = allNewsDocuments.find((post) => {
+    const rootPath = post.rootPath.replace(/^content|\/index\.md$/g, '');
+    const urlPath = `/${post.documentCategory}/${params.slug.join('/')}`;
+    console.log(rootPath, urlPath);
+    return rootPath === urlPath;
+  });
 
   if (!post) return notFound();
   else {
-    const { title, img } = post;
+    const { title, img } = post.fields;
     return {
       metadataBase: metadataBase,
       title: title,
-      description: post.description,
+      description: post.fields.description,
       openGraph: {
         ...defaultOpenGraph,
-        title: { default: post.title, template: "%s | MCC's Blog" },
-        description: post.description,
+        title: { default: post.fields.title, template: "%s | MCC's Blog" },
+        description: post.fields.description,
         images: [
           {
             ...defaultOpenGraphImage,
-            url: post.img?.replace(/svg$/, 'ping') || '',
+            url: post.fields.img?.replace(/svg$/, 'ping') || '',
           },
         ],
       },
@@ -61,15 +64,21 @@ export async function generateMetadata({
 }
 
 export default async function Blog({ params }: { params: Params }) {
-  const post = allNews.find(
+  const post = allNewsDocuments.find(
     // URLが一致した記事を取得
-    (post) => post.rootPath === post.documentType + '/' + params.slug.join('/'),
+    (post) => {
+      const rootPath = post.rootPath.replace(/^content|\/index\.md$/g, '');
+      const urlPath = `/${post.documentCategory}/${params.slug.join('/')}`;
+      return rootPath === urlPath;
+    },
   );
   if (!post) {
     return notFound();
   } else {
-    const { title, dateStr, img, author, tags, rootPath, parentPath } = post;
-    const content = await compile(post.body.raw);
+    const rootPath = post.rootPath.replace(/^content|\/index\.md$/g, '');
+    const parentPath = rootPath.split('/').slice(0, -1).join('/');
+    const { title, date, img, author, tags } = post.fields;
+    const content = await compile(post.content);
     return (
       <>
         <Navbar theme="auto" />
@@ -77,7 +86,7 @@ export default async function Blog({ params }: { params: Params }) {
           breadcrumb={rootPath.split('/')}
           title={title}
           image={img}
-          date={dateStr}
+          date={date}
           author={author}
           tags={tags}
         />
@@ -85,7 +94,7 @@ export default async function Blog({ params }: { params: Params }) {
           <Article>{content}</Article>
           <ArticleBottom
             parent={{
-              href: '/' + parentPath,
+              href: parentPath,
               children: '← 記事一覧に戻る',
             }}
           />
@@ -100,9 +109,9 @@ export default async function Blog({ params }: { params: Params }) {
 
 export async function generateStaticParams(): Promise<Params[]> {
   // すべての記事のパスを生成
-  return allNews.map((post) => {
+  return allNewsDocuments.map((post) => {
     return {
       slug: post.rootPath.split('/').slice(1),
-    };
+    } satisfies Params;
   });
 }
