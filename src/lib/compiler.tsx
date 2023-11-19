@@ -43,7 +43,7 @@ const rhypePrettyCodeOptions: Partial<RehypePrettyCodeOption> = {
   onVisitHighlightedLine(node) {
     node.properties.className?.push('line--highlighted');
   },
-  onVisitHighlightedWord(node) {
+  onVisitHighlightedChars(node) {
     node.properties.className = ['word--highlighted'];
   },
 };
@@ -68,10 +68,10 @@ export default async function compile(source: string): Promise<JSX.Element> {
               properties: { 'aria-label': 'heading-link' },
             },
           ],
-          rehypeKatex,
           [rehypePrettyCode, rhypePrettyCodeOptions],
-          rehypeRaw,
-          [rehypeStringify, { allowDangerousHtml: true }],
+          // rehypeKatex,
+          // rehypeRaw,
+          // [rehypeStringify, { allowDangerousHtml: true }],
         ],
         remarkRehypeOptions: {
           allowDangerousHtml: true,

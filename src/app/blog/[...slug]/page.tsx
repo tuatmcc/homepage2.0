@@ -113,8 +113,9 @@ export default async function Blog({ params }: { params: Params }) {
 export async function generateStaticParams(): Promise<Params[]> {
   // すべての記事のパスを生成
   return allBlogDocuments.map((post) => {
+    const rootPath = post.rootPath.replace(/^\/?content\/|\/index\.md$/g, '');
     return {
-      slug: post.rootPath.split('/').slice(1),
+      slug: rootPath.split('/').slice(1),
     } satisfies Params;
   });
 }
