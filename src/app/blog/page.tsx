@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 
 import type { Metadata } from 'next';
 
-import { Blog, allBlogs } from '.contentlayer/generated';
+import { BlogDocument, allBlogDocuments } from '.mdorganizer/generated';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
 import { NextImageWithFallback } from '~/components/NextImageWithFallback';
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
 
 export default function BlogListPage() {
   // 暗黙的な参照渡しを防ぐ
-  const posts: Blog[] = structuredClone(allBlogs)
-    .filter((x) => !x.unlisted)
-    .sort((a, b) => ((a.date || 1) < (b.date || 1) ? 1 : -1));
+  const posts: BlogDocument[] = structuredClone(allBlogDocuments).sort((a, b) =>
+    (a.fields.date || 1) < (b.fields.date || 1) ? 1 : -1,
+  );
   return (
     <>
       <Navbar color="white" />
@@ -64,10 +64,14 @@ export default function BlogListPage() {
         <div className={styles.mainContent}>
           <ul className={styles.list}>
             {posts.map((post) => {
-              const { title, dateStr, img, author, rootPath } = post;
+              const rootPath = post.rootPath.replace(
+                /^content|\/index\.md$/g,
+                '',
+              );
+              const { title, date, img, author } = post.fields;
               return (
                 <li className={styles.listItem} key={rootPath}>
-                  <Link href={`/${post.rootPath}`} className={styles.link}>
+                  <Link href={`${rootPath}`} className={styles.link}>
                     <NextImageWithFallback
                       className={styles.image}
                       src={
@@ -81,7 +85,7 @@ export default function BlogListPage() {
                     <div className={styles.text}>
                       <h2 className={styles.title}>{title}</h2>
                       <div className={styles.details}>
-                        <div className={styles.date}>{dateStr}</div>
+                        <div className={styles.date}>{date}</div>
                         {author && (
                           <div className={styles.author}>@{author}</div>
                         )}

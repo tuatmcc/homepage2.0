@@ -4,6 +4,12 @@ on:
   pull_request:
     branches:
       - 'develop'
+  push:
+    branches:
+      - 'feature/**'
+      - 'feat/**'
+      - 'hotfix/**'
+      - 'fix/**'
 
   workflow_dispatch:
 
@@ -46,9 +52,6 @@ jobs:
 
       - name: Run pnpm lint
         run: pnpm lint
-
-      - name: Run pnpm typecheck
-        run: pnpm run typecheck
 
       - name: Run pnpm build:prod
         run: pnpm build:prod

@@ -3,11 +3,12 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-import { allNews } from '.contentlayer/generated';
+// import { allNews } from '.contentlayer/generated';
+import { allNewsDocuments } from '.mdorganizer/generated';
 
 export const RecentNews: FC = () => {
-  const recentNews = allNews
-    .sort((a, b) => b.date.localeCompare(a.date))
+  const recentNews = allNewsDocuments
+    .sort((a, b) => b.fields.date.localeCompare(a.fields.date))
     .slice(0, 4);
 
   return (
@@ -20,9 +21,9 @@ export const RecentNews: FC = () => {
               href={news.rootPath.replace(/^content|\/index\.mdx?/g, '')}
               className={styles.link}
             >
-              <h3 className={styles.newsTitle}>{news.title}</h3>
-              <p className={styles.date}>{news.date}</p>
-              <p className={styles.description}>{news.description}</p>
+              <h3 className={styles.newsTitle}>{news.fields.title}</h3>
+              <p className={styles.date}>{news.fields.date}</p>
+              <p className={styles.description}>{news.fields.description}</p>
             </NextLink>
           </li>
         ))}

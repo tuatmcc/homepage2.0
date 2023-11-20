@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 import styles from './styles.module.css';
 
-import { allNews } from '.contentlayer/generated';
+import { allNewsDocuments } from '.mdorganizer/generated';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
 import { NewsEyeCatch } from '~/components/news/NewsEyeCatch';
@@ -29,7 +29,9 @@ export const metadata: Metadata = {
 
 export default function NewsListPage() {
   // 暗黙的な参照渡しを防ぐ
-  const posts = structuredClone(allNews).filter((x) => !x.unlisted);
+  const posts = structuredClone(allNewsDocuments).sort((a, b) =>
+    (a.fields.date || 1) < (b.fields.date || 1) ? 1 : -1,
+  );
   return (
     <>
       <Navbar color="mcc" />
@@ -49,11 +51,15 @@ export default function NewsListPage() {
           <div className={styles.right}>
             <NewsList
               unorderedNews={posts.map((post) => {
-                const { title, dateStr, img, rootPath, tags } = post;
+                const rootPath = post.rootPath.replace(
+                  /^content|\/index\.md$/g,
+                  '',
+                );
+                const { title, date, img, tags } = post.fields;
                 return {
-                  href: `/${rootPath}`,
+                  href: `${rootPath}`,
                   title,
-                  date: dateStr,
+                  date: date,
                   image:
                     `/${parseImageSrc(rootPath, img)}` ||
                     '/images/wordmark-logo-image.png',
