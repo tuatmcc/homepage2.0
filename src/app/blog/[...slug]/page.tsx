@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 import type { Metadata } from 'next';
 
-import { allBlogs, Blog } from '.contentlayer/generated';
+import { allBlogDocuments } from '.mdorganizer/generated';
 import { Article } from '~/components/Article';
 import { ArticleBottom } from '~/components/ArticleBottom';
 import { ArticleHeader } from '~/components/ArticleHeader';
@@ -28,24 +28,29 @@ export async function generateMetadata({
 }: {
   params: Params;
 }): Promise<Metadata> {
-  const post = allBlogs.find(
-    (post) => post.rootPath === post.documentType + '/' + params.slug.join('/'),
-  );
+  const post = allBlogDocuments.find((post) => {
+    const rootPath = post.rootPath.replace(/^content|\/index\.md$/g, '');
+    const urlPath = `/${post.documentCategory}/${params.slug.join('/')}`;
+    return rootPath === urlPath;
+  });
 
   if (!post) return notFound();
   else {
     return {
       metadataBase: metadataBase,
-      title: post?.title,
-      description: post?.description,
+      title: post?.fields.title,
+      description: post?.fields.description,
       openGraph: {
         ...defaultOpenGraph,
-        title: { default: post.title ?? '', template: "%s | MCC's Blog" },
-        description: post?.description,
+        title: {
+          default: post.fields.title ?? '',
+          template: "%s | MCC's Blog",
+        },
+        description: post?.fields.description,
         images: [
           {
             ...defaultOpenGraphImage,
-            url: post.img?.replace(/svg$/, 'ping') || '',
+            url: post.fields.img?.replace(/svg$/, 'ping') || '',
           },
         ],
       },
@@ -53,7 +58,7 @@ export async function generateMetadata({
         ...defaultTwitterCard,
         images: [
           {
-            url: parseImageSrc(post.rootPath, post.img ?? '') ?? '',
+            url: parseImageSrc(post.rootPath, post.fields.img ?? '') ?? '',
           },
         ],
       },
@@ -62,15 +67,21 @@ export async function generateMetadata({
 }
 
 export default async function Blog({ params }: { params: Params }) {
-  const post = allBlogs.find(
+  const post = allBlogDocuments.find(
     // URLが一致した記事を取得
-    (post) => post.rootPath === post.documentType + '/' + params.slug.join('/'),
+    (post) => {
+      const rootPath = post.rootPath.replace(/^content|\/index\.md$/g, '');
+      const urlPath = `/${post.documentCategory}/${params.slug.join('/')}`;
+      return rootPath === urlPath;
+    },
   );
   if (!post) {
     return notFound();
   } else {
-    const { title, dateStr, img, author, tags, rootPath, parentPath } = post;
-    const content = await compile(post.body.raw);
+    const rootPath = post.rootPath.replace(/^content|\/index\.md$/g, '');
+    const parentPath = rootPath.split('/').slice(0, -1).join('/');
+    const { title, date, img, author, tags } = post.fields;
+    const content = await compile(post.content);
     return (
       <>
         <Navbar theme="opaque" />
@@ -78,7 +89,7 @@ export default async function Blog({ params }: { params: Params }) {
           breadcrumb={rootPath.split('/')}
           title={title}
           image={img}
-          date={dateStr}
+          date={date}
           author={author}
           tags={tags}
         />
@@ -86,7 +97,7 @@ export default async function Blog({ params }: { params: Params }) {
           <Article>{content}</Article>
           <ArticleBottom
             parent={{
-              href: `/${parentPath}`,
+              href: parentPath,
               children: '← 記事一覧に戻る',
             }}
           />
@@ -101,9 +112,10 @@ export default async function Blog({ params }: { params: Params }) {
 
 export async function generateStaticParams(): Promise<Params[]> {
   // すべての記事のパスを生成
-  return allBlogs.map((post) => {
+  return allBlogDocuments.map((post) => {
+    const rootPath = post.rootPath.replace(/^\/?content\/|\/index\.md$/g, '');
     return {
-      slug: post.rootPath.split('/').slice(1),
-    };
+      slug: rootPath.split('/').slice(1),
+    } satisfies Params;
   });
 }

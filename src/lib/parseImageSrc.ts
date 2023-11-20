@@ -11,7 +11,7 @@ export const parseImageSrc = (
   if (!imagePath) {
     return imagePath;
   } else if (imagePath.startsWith('.')) {
-    return join(rootPath, imagePath);
+    return join(rootPath.replace(/^\//, ''), imagePath);
   } else {
     return imagePath;
   }

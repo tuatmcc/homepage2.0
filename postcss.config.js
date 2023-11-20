@@ -1,15 +1,14 @@
 module.exports = {
   plugins: [
+    'autoprefixer',
     [
-      'postcss-preset-env',
+      '@csstools/postcss-global-data',
       {
-        stage: 3,
-        features: {
-          'nesting-rules': true,
-          'custom-media-queries': true,
-        },
+        files: ['./src/styles/_media.css'],
       },
     ],
-    'postcss-nesting',
+    'postcss-nested',
+    'postcss-custom-media',
+    'postcss-media-minmax',
   ],
 };

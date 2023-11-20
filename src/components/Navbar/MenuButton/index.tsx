@@ -36,22 +36,22 @@ export const MenuButton: FC<MenuButtonProps> = ({
         <path
           d="M4 18L20 18"
           stroke={color ? color : '#ffffff'}
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
           className={styles.path1}
         />
         <path
           d="M4 12L20 12"
           stroke={color ? color : '#ffffff'}
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
           className={styles.path2}
         />
         <path
           d="M4 6L20 6"
           stroke={color ? color : '#ffffff'}
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
           className={styles.path3}
         />
       </svg>

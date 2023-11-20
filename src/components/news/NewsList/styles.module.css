@@ -1,10 +1,8 @@
-@custom-media --small-viewport (max-width: 768px);
-
 .list {
   display: flex;
   position: relative;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   gap: 8px;
   container-type: inline-size;
 
@@ -13,8 +11,7 @@
       display: grid;
       grid-template-rows: auto auto 1fr;
       grid-template-columns: 320px 1fr;
-      column-gap: 8px;
-      row-gap: 8px;
+      gap: 8px 8px;
       padding: 8px;
       overflow: hidden;
       font-family: var(--font-family-noto-sans-jp);
