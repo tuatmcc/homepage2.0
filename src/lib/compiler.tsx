@@ -69,9 +69,9 @@ export default async function compile(source: string): Promise<JSX.Element> {
             },
           ],
           [rehypePrettyCode, rhypePrettyCodeOptions],
-          // rehypeKatex,
-          // rehypeRaw,
-          // [rehypeStringify, { allowDangerousHtml: true }],
+          rehypeKatex as () => void,
+          rehypeRaw as () => void,
+          [rehypeStringify as () => void, { allowDangerousHtml: true }],
         ],
         remarkRehypeOptions: {
           allowDangerousHtml: true,
