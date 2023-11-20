@@ -77,7 +77,7 @@ export default async function Blog({ params }: { params: Params }) {
   } else {
     const rootPath = post.rootPath.replace(/^content|\/index\.md$/g, '');
     const parentPath = rootPath.split('/').slice(0, -1).join('/');
-    const { title, date, img, author, tags } = post.fields;
+    const { title, date, img, tags } = post.fields;
     const content = await compile(post.content);
     return (
       <>
@@ -87,7 +87,6 @@ export default async function Blog({ params }: { params: Params }) {
           title={title}
           image={img}
           date={date}
-          author={author}
           tags={tags}
         />
         <main className={styles.main}>

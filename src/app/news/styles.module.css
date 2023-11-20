@@ -43,25 +43,3 @@
     flex: 2;
   }
 }
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-caret {
-  0%,
-  100% {
-    background-color: transparent;
-    color: transparent;
-  }
-
-  50% {
-    background-color: var(--color-gray-50);
-  }
-}
