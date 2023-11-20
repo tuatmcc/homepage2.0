@@ -11,7 +11,7 @@
     "build:prod": "bash ./scripts/setup.sh && bash ./scripts/prod.sh",
     "build:dev": "bash ./scripts/setup.sh && bash ./scripts/dev.sh",
     "lint": "next lint && stylelint './src/**/*.css' && prettier -c ./src/**/*.{ts,tsx,css}",
-    "lint:fix": "next lint --fix && stylelint './src/**/*.css' --fix && prettier -c --write ./src/**/*.{ts,tsx,css}",
+    "fmt": "next lint --fix && stylelint './src/**/*.css' --fix && prettier -c --write ./src/**/*.{ts,tsx,css}",
     "typecheck": "tsc --noEmit",
     "contentlayer": "contentlayer build",
     "organize-image": "tsx ./scripts/organizeImage.ts",
@@ -78,7 +78,8 @@
     "remark-toc": "^9.0.0",
     "shiki": "^0.14.5",
     "storybook": "^7.5.3",
-    "three": "^0.158.0"
+    "three": "^0.158.0",
+    "typescript-plugin-css-modules": "^5.0.2"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.5.3",

@@ -1,6 +1,3 @@
-import NextImage from 'next/image';
-import Link from 'next/link';
-
 import styles from './styles.module.css';
 
 import type { Metadata } from 'next';
@@ -8,7 +5,8 @@ import type { Metadata } from 'next';
 import { BlogDocument, allBlogDocuments } from '.mdorganizer/generated';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
-import { NextImageWithFallback } from '~/components/NextImageWithFallback';
+import { BlogEyeCatch } from '~/components/blog/BlogEyeCatch';
+import { BlogList } from '~/components/blog/BlogList';
 import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
   defaultOpenGraph,
@@ -35,67 +33,45 @@ export const metadata: Metadata = {
 };
 
 export default function BlogListPage() {
-  // 暗黙的な参照渡しを防ぐ
-  const posts: BlogDocument[] = structuredClone(allBlogDocuments).sort((a, b) =>
-    (a.fields.date || 1) < (b.fields.date || 1) ? 1 : -1,
+  // 暗黙的な参照渡しを防ぐ(いるのか？)
+  const posts: BlogDocument[] = structuredClone(allBlogDocuments).sort(
+    (a, b) => ((a.fields.date || 1) < (b.fields.date || 1) ? 1 : -1),
   );
   return (
     <>
-      <Navbar color="white" />
-      <NextImage
-        src="/images/abstract-7.jpeg"
-        alt=""
-        width={2000}
-        height={1000}
-        className={styles.background}
-      />
-      <header className={styles.header}>
+      <Navbar color="mcc" />
+      <div className={styles.smHeader}>
         <div className={styles.headerContent}>
           <h1 className={styles.headerTitle}>Blog</h1>
-          <div className={styles.typeWriterContainer}>
-            <h2 className={styles.headerSubTitle}>
-              MCC部員が書いたブログ・ポエム
-            </h2>
-          </div>
         </div>
-      </header>
+      </div>
 
-      <main className={styles.main}>
-        <div className={styles.mainContent}>
-          <ul className={styles.list}>
-            {posts.map((post) => {
+      <main>
+        <div className={styles.main}>
+          <div className={styles.left}>
+            {/* 虚無スペース(?) */}
+            <BlogEyeCatch />
+          </div>
+          <BlogList
+            unorderedBlogs={posts.map((post) => {
               const rootPath = post.rootPath.replace(
                 /^content|\/index\.md$/g,
                 '',
               );
-              const { title, date, img, author } = post.fields;
-              return (
-                <li className={styles.listItem} key={rootPath}>
-                  <Link href={`${rootPath}`} className={styles.link}>
-                    <NextImageWithFallback
-                      className={styles.image}
-                      src={
-                        parseImageSrc(rootPath, img) || '/images/mcc-logo.svg'
-                      }
-                      alt={title}
-                      width={900}
-                      height={300}
-                      fallback="/images/mcc-logo.svg"
-                    />
-                    <div className={styles.text}>
-                      <h2 className={styles.title}>{title}</h2>
-                      <div className={styles.details}>
-                        <div className={styles.date}>{date}</div>
-                        {author && (
-                          <div className={styles.author}>@{author}</div>
-                        )}
-                      </div>
-                    </div>
-                  </Link>
-                </li>
-              );
+              const { title, date, img, tags, author } = post.fields;
+              return {
+                href: `${rootPath}`,
+                title,
+                date: date,
+                author: author,
+                image:
+                  parseImageSrc(rootPath.replace(/^\/blog/, ''), img) ||
+                  '/images/wordmark-logo-image.png',
+                tags,
+              };
             })}
-          </ul>
+          />
+          <div className={styles.right}></div>
         </div>
       </main>
 

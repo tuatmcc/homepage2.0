@@ -1,6 +1,6 @@
-import {} from 'mdorganizer';
+import type { UserConfig, CategoryConfig } from 'mdorganizer';
 
-const fields: UserConfig['documents'][0]['fields'] = {
+const fields: CategoryConfig['fields'] = {
   title: {
     type: 'string',
     required: true,
@@ -11,9 +11,6 @@ const fields: UserConfig['documents'][0]['fields'] = {
   },
   tags: {
     type: 'string[]',
-  },
-  author: {
-    type: 'string',
   },
   description: {
     type: 'string',
@@ -28,7 +25,12 @@ export default {
     {
       documentCategory: 'blog',
       globPattern: 'content/blog/**/index.md',
-      fields,
+      fields: {
+        ...fields,
+        author: {
+          type: 'string',
+        },
+      },
     },
     {
       documentCategory: 'news',
