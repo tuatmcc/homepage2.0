@@ -5,8 +5,8 @@ import { Canvas, Object3DNode, extend, useFrame } from '@react-three/fiber';
 import { FC, ReactNode, Suspense, useRef } from 'react';
 import { Group, MathUtils } from 'three';
 import threeFontJson from 'three/examples/fonts/helvetiker_bold.typeface.json';
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 
 import styles from './styles.module.css';
 

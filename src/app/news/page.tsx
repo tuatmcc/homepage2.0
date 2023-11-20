@@ -61,7 +61,7 @@ export default function NewsListPage() {
                   title,
                   date: date,
                   image:
-                    `/${parseImageSrc(rootPath, img)}` ||
+                    `${parseImageSrc(rootPath.replace(/^\/news/, ''), img)}` ||
                     '/images/wordmark-logo-image.png',
                   tags,
                 };
