@@ -1,4 +1,6 @@
 .article {
+  padding: 0 8px;
+
   & div {
     position: relative;
   }
@@ -13,6 +15,21 @@
     }
   }
 
+  & h1 {
+    margin: 48px 0;
+    border-bottom: 2px solid var(--mcc-color-3);
+    border-left: 5px solid var(--mcc-color-3);
+    padding: 2px 10px 0;
+    font-size: 24px;
+  }
+
+  & h2 {
+    margin: 32px 0;
+    border-bottom: 2px solid var(--mcc-color-3);
+    padding: 2px;
+    font-size: 1.4rem;
+  }
+
   & h1,
   h2,
   h3,
@@ -20,26 +37,10 @@
   h5,
   h6 {
     font-weight: bold;
-    line-height: 1.5;
-
-    &h1 {
-      margin: 48px 0;
-      border-bottom: 2px solid var(--mcc-color-3);
-      border-left: 5px solid var(--mcc-color-3);
-      padding: 2px 10px 0;
-      font-size: 24px;
-      line-height: 1.6;
-    }
-
-    &h2 {
-      margin: 32px 0;
-      border-bottom: 2px solid var(--mcc-color-3);
-      padding: 2px;
-      font-size: 1.4rem;
-    }
+    line-height: 1.6;
 
     /* This is the link icon */
-    & a[aria-label='heading-link'] {
+    & > a[aria-label='heading-link'] {
       opacity: 0;
       transition: opacity 0.2s ease-in-out;
     }
@@ -56,6 +57,10 @@
     font-size: 16px;
     line-height: 2;
     letter-spacing: 0.05em;
+
+    @media (--bp-sm) {
+      font-size: 14px;
+    }
   }
 
   & img {
@@ -124,6 +129,10 @@
     line-height: 1.5;
     font-family: var(--font-family-jetbrains-mono);
     word-break: break-word;
+
+    @media (--bp-sm) {
+      font-size: 14px;
+    }
 
     & span {
       position: relative;
