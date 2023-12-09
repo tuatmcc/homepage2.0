@@ -37,6 +37,7 @@ export const BackToTop: FC = () => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <title>Back to Top</title>
         <path
           d="M12 4L12.01 20"
           stroke="currentColor"

@@ -5,11 +5,13 @@ import styles from './styles.module.css';
 
 import { MiniLinkIcon } from '~/components/Svg';
 
-export type MDXLinkComponentProps = ComponentPropsWithoutRef<'a'> & {
+// biome-ignore lint/style/useNamingConvention: <explanation>
+type MDXLinkComponentProps = ComponentPropsWithoutRef<'a'> & {
   children: ReactNode;
   href: string;
 };
 
+// biome-ignore lint/style/useNamingConvention: <explanation>
 export const MDXLinkComponent: FC<MDXLinkComponentProps> = ({
   children,
   href,
@@ -21,13 +23,13 @@ export const MDXLinkComponent: FC<MDXLinkComponentProps> = ({
         <MiniLinkIcon />
       </a>
     );
-  } else if (href.startsWith('/')) {
-    return <NextLink href={href}>{children}</NextLink>;
-  } else {
-    return (
-      <a {...props} href={href} rel="noopener noreferrer">
-        {children}
-      </a>
-    );
   }
+  if (href.startsWith('/')) {
+    return <NextLink href={href}>{children}</NextLink>;
+  }
+  return (
+    <a {...props} href={href} rel="noopener noreferrer">
+      {children}
+    </a>
+  );
 };

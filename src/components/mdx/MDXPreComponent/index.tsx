@@ -11,12 +11,14 @@ import {
 
 import { CopyIcon } from '~/components/Svg/CopyIcon';
 
-export type MDXPreComponentProps = ComponentPropsWithoutRef<'pre'>;
+// biome-ignore lint/style/useNamingConvention: <explanation>
+type MDXPreComponentProps = ComponentPropsWithoutRef<'pre'>;
 
 // コードブロックは, <div> で囲まれており、その中に <pre> があるので
 // このコンポーネントでは十分なスタイルを当てることができない
 // そのため、このコンポーネントのスタイルは、<Article> で定義している
-export const MDXPreComponent: FC<ComponentPropsWithoutRef<'pre'>> = ({
+// biome-ignore lint/style/useNamingConvention: <explanation>
+export const MDXPreComponent: FC<MDXPreComponentProps> = ({
   children,
   ...props
 }) => {

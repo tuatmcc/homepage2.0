@@ -1,19 +1,19 @@
 .twitterTimeline {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 1rem;
+  align-items: center;
+  justify-content: center;
 
   & .spinnerBorder {
     display: inline-block;
+    width: 64px;
+    height: 64px;
     vertical-align: text-bottom;
-    animation: spinner-border 0.75s linear infinite;
     border: 8px solid currentcolor;
     border-right-color: transparent;
     border-radius: 50%;
-    width: 64px;
-    height: 64px;
+    animation: spinner-border 0.75s linear infinite;
   }
 }
 

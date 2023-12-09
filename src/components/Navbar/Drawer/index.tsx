@@ -19,11 +19,21 @@ export const Drawer: FC<DrawerProps> = ({ isOpen, onClickOutside }) => {
         className={styles.overlay}
         aria-expanded={isOpen}
         onClick={onClickOutside}
+        onKeyDown={(e) => {
+          if (e.key === 'Escape') {
+            onClickOutside();
+          }
+        }}
       >
         <div
           className={styles.drawer}
           aria-expanded={isOpen}
           onClick={(e) => e.stopPropagation()}
+          onKeyDown={(e) => {
+            if (e.key === 'Escape') {
+              onClickOutside();
+            }
+          }}
         >
           <ul className={styles.list}>
             {baseRouteList.map(({ label, path }, index) => (
@@ -48,7 +58,6 @@ export const Drawer: FC<DrawerProps> = ({ isOpen, onClickOutside }) => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="twitter link"
-              className={styles.socialLink}
             >
               <TwitterIcon size={28} color="white" />
             </a>
@@ -57,7 +66,6 @@ export const Drawer: FC<DrawerProps> = ({ isOpen, onClickOutside }) => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="x link"
-              className={styles.socialLink}
             >
               <XIcon size={28} color="white" />
             </a>
@@ -66,7 +74,6 @@ export const Drawer: FC<DrawerProps> = ({ isOpen, onClickOutside }) => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="github link"
-              className={styles.socialLink}
             >
               <GitHubIcon size={28} color="white" />
             </a>

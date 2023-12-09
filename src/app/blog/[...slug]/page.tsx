@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 import type { Metadata } from 'next';
 
-import { allBlogDocuments } from '.mdorganizer/generated';
+import { allBlogDocuments } from '@/content';
 import { Article } from '~/components/Article';
 import { ArticleBottom } from '~/components/ArticleBottom';
 import { ArticleHeader } from '~/components/ArticleHeader';
@@ -34,8 +34,7 @@ export async function generateMetadata({
     return rootPath === urlPath;
   });
 
-  if (!post) return notFound();
-  else {
+  if (post) {
     return {
       metadataBase: metadataBase,
       title: post?.fields.title,
@@ -64,6 +63,7 @@ export async function generateMetadata({
       },
     };
   }
+  return notFound();
 }
 
 export default async function Blog({ params }: { params: Params }) {
@@ -75,9 +75,7 @@ export default async function Blog({ params }: { params: Params }) {
       return rootPath === urlPath;
     },
   );
-  if (!post) {
-    return notFound();
-  } else {
+  if (post) {
     const rootPath = post.rootPath.replace(/^content|\/index\.md$/g, '');
     const parentPath = rootPath.split('/').slice(0, -1).join('/');
     const { title, date, img, author, tags } = post.fields;
@@ -108,6 +106,7 @@ export default async function Blog({ params }: { params: Params }) {
       </>
     );
   }
+  return notFound();
 }
 
 export async function generateStaticParams(): Promise<Params[]> {

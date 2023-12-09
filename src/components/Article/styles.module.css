@@ -16,18 +16,18 @@
   }
 
   & h1 {
+    padding: 2px 10px 0;
     margin: 48px 0;
+    font-size: 24px;
     border-bottom: 2px solid var(--mcc-color-3);
     border-left: 5px solid var(--mcc-color-3);
-    padding: 2px 10px 0;
-    font-size: 24px;
   }
 
   & h2 {
-    margin: 32px 0;
-    border-bottom: 2px solid var(--mcc-color-3);
     padding: 2px;
+    margin: 32px 0;
     font-size: 1.4rem;
+    border-bottom: 2px solid var(--mcc-color-3);
   }
 
   & h1,
@@ -86,16 +86,16 @@
   }
 
   & blockquote {
-    border-left: solid 6px var(--color-gray-300);
     padding-left: 12px;
-    color: var(--color-gray-600);
     font-style: italic;
+    color: var(--color-gray-600);
+    border-left: solid 6px var(--color-gray-300);
   }
 
   & table {
+    overflow: auto;
     border-collapse: collapse;
     background-color: var(--color-gray-200);
-    overflow: auto;
 
     & thead {
       & tr {
@@ -112,23 +112,23 @@
     & tbody {
       & tr {
         & td {
-          background-color: var(--color-gray-0);
           padding: 4px 8px;
+          background-color: var(--color-gray-0);
         }
       }
     }
   }
 
   & code {
-    margin: 0 0.2em;
-    border-radius: 5px;
-    background-color: var(--color-gray-300);
     padding: 1px 5px;
-    color: var(--color-gray-900);
+    margin: 0 0.2em;
+    font-family: var(--font-family-jetbrains-mono);
     font-size: 16px;
     line-height: 1.5;
-    font-family: var(--font-family-jetbrains-mono);
+    color: var(--color-gray-900);
     word-break: break-word;
+    background-color: var(--color-gray-300);
+    border-radius: 5px;
 
     @media (--bp-sm) {
       font-size: 14px;
@@ -141,32 +141,32 @@
 
   & pre {
     display: flex;
-    margin: 0;
-    border-radius: 0 6px 6px;
-    background-color: var(--color-gray-700);
 
     /* code block without file type */
     padding: 12px;
+    margin: 0;
     overflow: auto;
     font-family: var(--font-family-jetbrains-mono);
+    background-color: var(--color-gray-700);
+    border-radius: 0 6px 6px;
 
     & code {
       position: relative;
-      margin: 0;
-      background: inherit;
-      padding: 0;
       width: 100%;
+      padding: 0;
+      margin: 0;
       color: white;
+      background: inherit;
     }
 
     /* This is the copy button */
     & button {
       position: absolute;
       right: 12px;
+      color: white;
+      cursor: pointer;
       opacity: 0;
       transition: opacity 0.2s ease-in-out;
-      cursor: pointer;
-      color: white;
     }
 
     &:hover {
@@ -179,45 +179,45 @@
   & div[data-rehype-pretty-code-fragment] {
     /* codeblock with file type */
     margin: 32px 0;
-    border-radius: 4px;
     overflow: hidden;
+    border-radius: 4px;
 
     & div[data-rehype-pretty-code-title] {
-      display: inline-block;
       bottom: -4px;
-      border-radius: 4px 4px 0 0;
-      background: var(--color-gray-900);
+      display: inline-block;
       padding: 8px 16px;
-      color: #ccc;
       font-size: 14px;
+      color: #ccc;
       overflow-wrap: break-word;
+      background: var(--color-gray-900);
+      border-radius: 4px 4px 0 0;
     }
 
     & pre {
       display: flex;
-      margin: 0;
-      border-radius: 6px;
-      background-color: var(--color-gray-700);
       padding: 12px;
+      margin: 0;
       overflow: auto;
       font-family: var(--font-family-jetbrains-mono);
+      background-color: var(--color-gray-700);
+      border-radius: 6px;
 
       & code {
         position: relative;
+        width: 100%;
+        padding: 0;
         margin: 0;
         background: inherit;
-        padding: 0;
-        width: 100%;
       }
 
       /* This is the copy button */
       & button {
         position: absolute;
         right: 12px;
+        color: white;
+        cursor: pointer;
         opacity: 0;
         transition: opacity 0.2s ease-in-out;
-        cursor: pointer;
-        color: white;
       }
 
       &:hover {
@@ -229,17 +229,17 @@
   }
 
   & details {
-    box-shadow: var(--shadow-neumorphism);
-    border-radius: 8px;
     padding: 12px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-neumorphism);
 
     & summary {
-      cursor: pointer;
       font-weight: bold;
+      cursor: pointer;
 
       &::marker {
-        content: '▶ ';
         color: var(--color-gray-600);
+        content: '▶ ';
       }
     }
 

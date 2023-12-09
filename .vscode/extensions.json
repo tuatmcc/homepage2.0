@@ -1,12 +1,11 @@
 {
-    "recommendations": [
-        "csstools.postcss",
-        "stylelint.vscode-stylelint",
-        "dbaeumer.vscode-eslint",
-        "ecmel.vscode-html-css",
-        "vunguyentuan.vscode-css-variables",
-        "esbenp.prettier-vscode",
-        "GitHub.copilot"
-    ],
-    "unwantedRecommendations": []
+  "recommendations": [
+    "csstools.postcss",
+    "stylelint.vscode-stylelint",
+    "ecmel.vscode-html-css",
+    "vunguyentuan.vscode-css-variables",
+    "github.copilot",
+    "biomejs.biome"
+  ],
+  "unwantedRecommendations": []
 }

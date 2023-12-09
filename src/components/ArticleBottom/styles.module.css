@@ -4,16 +4,16 @@
 
   & .backToParent {
     display: inline-block;
-    transition: all 0.2s ease-in-out;
-    box-shadow: var(--shadow-neumorphism);
-    border-radius: 12px;
     padding: 12px;
-    color: var(--mcc-color-1);
     font-weight: bold;
+    color: var(--mcc-color-1);
+    border-radius: 12px;
+    box-shadow: var(--shadow-neumorphism);
+    transition: all 0.2s ease-in-out;
 
     &:hover {
-      box-shadow: var(--shadow-neumorphism-hover);
       background: var(--color-gray-200);
+      box-shadow: var(--shadow-neumorphism-hover);
     }
   }
 }
