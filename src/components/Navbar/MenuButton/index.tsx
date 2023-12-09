@@ -19,6 +19,7 @@ export const MenuButton: FC<MenuButtonProps> = ({
 }) => {
   return (
     <button
+      type="button"
       className={styles.button}
       aria-label="Menu Button"
       aria-expanded={isExpanded}
@@ -33,6 +34,7 @@ export const MenuButton: FC<MenuButtonProps> = ({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <title>Menu</title>
         <path
           d="M4 18L20 18"
           stroke={color ? color : '#ffffff'}

@@ -3,7 +3,7 @@ import { FC, ReactNode } from 'react';
 
 import styles from './styles.module.css';
 
-import { TwitterIcon } from '~/components/Svg';
+import { MiniLinkIcon, TwitterIcon } from '~/components/Svg';
 
 const sections: { heading: string; node: ReactNode }[] = [
   {
@@ -75,21 +75,21 @@ const sections: { heading: string; node: ReactNode }[] = [
       <>
         <div className={styles.gallery}>
           <NextImage
-            className={styles.galleryItem}
+            className={styles.galleryImage}
             src="/images/spring-camp-2022-hackathon.webp"
             alt="MCC"
             width={300}
             height={300}
           />
           <NextImage
-            className={styles.galleryItem}
+            className={styles.galleryImage}
             src="/images/noko-fes-2022-illustrace.webp"
             alt="MCC"
             width={300}
             height={300}
           />
           <NextImage
-            className={styles.galleryItem}
+            className={styles.galleryImage}
             src="/images/noko-fes-2022-room.webp"
             alt="MCC"
             width={300}
@@ -126,8 +126,10 @@ export const Sections: FC = () => (
   <div className={styles.sections}>
     {sections.map((section) => (
       <section className={styles.section} key={section.heading}>
-        <h2 className={styles.h2}>{section.heading}</h2>
-        <a href={`#${section.heading}`} className={styles.anchor} />
+        <h2 className={styles.heading}>{section.heading}</h2>
+        <a href={`#${section.heading}`} className={styles.anchor}>
+          <MiniLinkIcon />
+        </a>
         {section.node}
       </section>
     ))}

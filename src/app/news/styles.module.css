@@ -9,26 +9,26 @@
   & .headerContent {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 16px;
-    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
     padding: 48px 8px;
+    margin: 0 auto;
     color: var(--color-gray-600);
 
     & .headerTitle {
       margin: 0;
-      font-weight: bold;
-      font-size: 32px;
       font-family: var(--font-family-orbitron);
+      font-size: 32px;
+      font-weight: bold;
       letter-spacing: 0.1em;
     }
   }
 }
 
 .main {
-  display: flex;
   position: relative;
+  display: flex;
   padding: 0 5%;
 
   & .left {

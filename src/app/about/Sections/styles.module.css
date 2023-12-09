@@ -1,13 +1,17 @@
 .sections {
   & .section {
-    & .h2 {
+    & .heading {
       display: inline-block;
-      margin: 56px 0 32px;
-      box-shadow: var(--shadow-neumorphism);
-      border-radius: 8px;
       padding: 16px 32px;
-      font-weight: bold;
+      margin: 56px 0;
       font-size: 24px;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: var(--shadow-neumorphism);
+    }
+
+    .anchor {
+      visibility : hidden;
     }
 
     & .para {
@@ -19,16 +23,16 @@
     & .imageContainer {
       display: flex;
       flex-direction: row;
-      justify-content: center;
-      align-items: center;
       gap: 32px;
+      align-items: center;
+      justify-content: center;
       height: auto;
 
       & .image {
         flex: 1;
-        border-radius: 8px;
         width: 40%;
         height: auto;
+        border-radius: 8px;
         object-fit: contain;
       }
 
@@ -43,50 +47,65 @@
 
     & .twitterDmButton {
       display: inline-flex;
-      align-items: center;
       gap: 4px;
-      transition: all 0.2s ease-in-out;
-      margin: 16px;
-      box-shadow: var(--shadow-neumorphism);
-      border-radius: 24px;
+      align-items: center;
       padding: 16px;
-      color: var(--mcc-color-2);
-      font-weight: bold;
+      margin: 16px;
       font-size: 18px;
+      font-weight: bold;
+      color: var(--mcc-color-2);
       text-decoration: none;
+      border-radius: 24px;
+      box-shadow: var(--shadow-neumorphism);
+      transition: all 0.2s ease-in-out;
 
       &:hover {
-        transform: translateY(-2px);
         background-color: var(--color-gray-200);
+        transform: translateY(-2px);
       }
     }
 
     & .discordButton {
       display: inline-flex;
-      align-items: center;
       gap: 4px;
-      transition: all 0.2s ease-in-out;
-      margin: 16px;
-      box-shadow: var(--shadow-neumorphism);
-      border-radius: 24px;
+      align-items: center;
       padding: 16px;
-      color: var(--mcc-color-1);
-      font-weight: bold;
+      margin: 16px;
       font-size: 18px;
+      font-weight: bold;
+      color: var(--mcc-color-1);
       text-decoration: none;
+      border-radius: 24px;
+      box-shadow: var(--shadow-neumorphism);
+      transition: all 0.2s ease-in-out;
 
       &:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-neumorphism-hover);
         background-color: var(--color-gray-200);
+        box-shadow: var(--shadow-neumorphism-hover);
+        transform: translateY(-2px);
       }
     }
   }
 }
 
 .em {
-  margin: 0 4px;
-  box-shadow: var(--shadow-neumorphism);
-  background-color: var(--mcc-color-6);
   padding: 0 6px;
+  margin: 0 4px;
+  background-color: var(--mcc-color-6);
+  box-shadow: var(--shadow-neumorphism);
+}
+
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 16px;
+
+  .galleryImage {
+    flex: 1 1 300px;
+    height: 300px;
+    background-color: var(--color-gray-200);
+    border-radius: 8px;
+    box-shadow: var(--shadow-neumorphism);
+    object-fit: cover;
+  }
 }

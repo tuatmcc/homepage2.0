@@ -10,9 +10,9 @@ export const parseImageSrc = (
 ): string | undefined => {
   if (!imagePath) {
     return imagePath;
-  } else if (imagePath.startsWith('.')) {
-    return join(rootPath.replace(/^\//, ''), imagePath);
-  } else {
-    return imagePath;
   }
+  if (imagePath.startsWith('.')) {
+    return join(rootPath.replace(/^\//, ''), imagePath);
+  }
+  return imagePath;
 };

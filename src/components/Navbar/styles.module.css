@@ -6,9 +6,9 @@
 
   & .navbar {
     display: flex;
-    backdrop-filter: blur(10px);
-    padding: 0 8px;
     height: inherit;
+    padding: 0 8px;
+    backdrop-filter: blur(10px);
 
     &._transparent {
       backdrop-filter: none;
@@ -16,8 +16,8 @@
 
     & .brand {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
     }
   }
 }

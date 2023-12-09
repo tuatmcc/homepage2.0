@@ -1,0 +1,50 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.4.1/schema.json",
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": true,
+    "indentStyle": "space",
+    "lineWidth": 80,
+    "lineEnding": "lf"
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "all": true,
+      "nursery": {
+        "all": true,
+        "noDefaultExport": "off"
+      },
+      "style": {
+        "all": true,
+        "noImplicitBoolean": "off"
+      }
+    }
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "javascript": {
+    "formatter": {
+      "enabled": true,
+      "jsxQuoteStyle": "double",
+      "lineWidth": 80,
+      "quoteStyle": "single",
+      "semicolons": "always",
+      "trailingComma": "all"
+    }
+  },
+  "files": {
+    "include": ["src/**/*.tsx?"],
+    "ignore": ["node_modules", ".mdorganizer", ".storybook", "out", ".next"]
+  },
+  "json": {
+    "formatter": {
+      "enabled": true,
+      "lineEnding": "lf"
+    },
+    "parser": {
+      "allowTrailingCommas": true
+    }
+  }
+}

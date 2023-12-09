@@ -3,8 +3,7 @@ import { FC } from 'react';
 
 import styles from './style.module.css';
 
-// import { allNews } from '.contentlayer/generated';
-import { allNewsDocuments } from '.mdorganizer/generated';
+import { allNewsDocuments } from '@/content';
 
 export const RecentNews: FC = () => {
   const recentNews = allNewsDocuments

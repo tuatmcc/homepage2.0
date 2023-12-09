@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 import styles from './styles.module.css';
 
-import { allNewsDocuments } from '.mdorganizer/generated';
+import { allNewsDocuments } from '@/content';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
 import { NewsEyeCatch } from '~/components/news/NewsEyeCatch';
