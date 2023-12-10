@@ -46,15 +46,13 @@ next-env.d.ts
 # editor
 .idea
 .vscode/tasks.json
+.vim
+biome-*
 
 # sitemap
 sitemap*.xml
 robot.txt
 robots.txt
-
-# contentlayer
-.contentlayer/.cache
-.contentlayer/generated/*/*
 
 # mdorganizer
 .mdorganizer/generated/*/*

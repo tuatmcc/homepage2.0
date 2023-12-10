@@ -1,11 +1,11 @@
 .canvas {
   width: 100%;
   height: 100svh;
-  scroll-behavior: auto;
-  color: white;
+  font-family: var(--font-family-orbitron);
   font-weight: bold;
   line-height: 1;
-  font-family: var(--font-family-orbitron);
+  color: white;
+  scroll-behavior: auto;
 
   & .intro {
     position: absolute;
@@ -15,17 +15,17 @@
   }
 
   & .mcc {
-    -webkit-text-fill-color: transparent;
     position: absolute;
     left: 40svw;
-    opacity: 1;
-    animation: mcc 5s linear;
+    width: 90svw;
     margin: 0;
+    font-size: 20svw;
+    font-weight: normal;
     background-image: linear-gradient(10deg, #fff0, #eeee, #fffd, #fffe, #ffff);
     background-clip: text;
-    width: 90svw;
-    font-weight: normal;
-    font-size: 20svw;
+    opacity: 1;
+    animation: mcc 5s linear;
+    -webkit-text-fill-color: transparent;
 
     @keyframes mcc {
       0% {
@@ -45,8 +45,8 @@
   & .name2 {
     position: absolute;
     left: 1vw;
-    margin: 0;
     width: 100svw;
+    margin: 0;
     font-size: min(24px, 6vw);
     line-height: 2;
 
@@ -58,13 +58,13 @@
   & .downArrow {
     position: absolute;
     left: 10svw;
-    animation: down-arrow 1s infinite;
+    width: 0;
+    height: 0;
+    padding: 0;
     border-top: 20px solid white;
     border-right: 20px solid transparent;
     border-left: 20px solid transparent;
-    padding: 0;
-    width: 0;
-    height: 0;
+    animation: down-arrow 1s infinite;
   }
 
   @keyframes down-arrow {
@@ -84,29 +84,29 @@
   & .information {
     position: absolute;
     left: 30svw;
-    opacity: 0.5;
     margin: 0;
-    pointer-events: none;
-    font-weight: bold;
     font-size: 20svw;
+    font-weight: bold;
+    pointer-events: none;
+    opacity: 0.5;
   }
 
   & .and {
     position: absolute;
     left: 20svw;
     margin: 0;
-    pointer-events: none;
-    font-weight: bold;
     font-size: 50vmin;
+    font-weight: bold;
+    pointer-events: none;
   }
 
   & .technology {
     position: absolute;
     left: -5svw;
     margin: 0;
-    pointer-events: none;
-    font-weight: bold;
     font-size: 20svw;
+    font-weight: bold;
+    pointer-events: none;
   }
 
   & .catchCopy {
@@ -114,8 +114,8 @@
     top: 210svh;
     left: 0.5svw;
     width: 95svw;
-    font-weight: bold;
     font-size: min(24px, 6vw);
+    font-weight: bold;
     line-height: 1.5;
 
     & .sentence {
@@ -125,54 +125,54 @@
   }
 
   & .bottms {
-    display: flex;
     position: absolute;
     bottom: 0;
     left: 0;
-    justify-content: space-around;
+    display: flex;
     align-items: flex-start;
+    justify-content: space-around;
     width: 98svw;
 
     & .cards {
       display: flex;
       flex: 1;
       flex-direction: column;
-      justify-content: space-between;
       align-items: stretch;
+      justify-content: space-between;
       max-width: 600px;
       height: 100%;
 
       & .cardItem {
         display: block;
-        margin: 0 8px;
-        background: rgb(0 0 0 / 50%);
         padding: 8px;
-        color: white;
-        font-weight: bold;
+        margin: 0 8px;
         font-size: min(24px, 6vw);
+        font-weight: bold;
         line-height: 2;
+        color: white;
+        background: rgb(0 0 0 / 50%);
 
         &:hover {
-          background: rgb(0 0 0 / 70%);
           text-decoration: underline;
+          background: rgb(0 0 0 / 70%);
         }
       }
 
       & .socials {
         display: flex;
-        align-self: flex-end;
         gap: 16px;
-        margin: 0 8px;
+        align-self: flex-end;
         padding: 8px;
+        margin: 0 8px;
 
         & .socialLink {
           display: flex;
           flex-direction: column;
           gap: 2px;
-          color: white;
           font-size: 12px;
-          letter-spacing: 0.1em;
+          color: white;
           text-align: center;
+          letter-spacing: 0.1em;
         }
       }
     }
@@ -187,10 +187,10 @@
         font-size: 12px;
 
         & > div {
-          border: none;
           width: 100%;
           height: 60svh;
           font-size: 12px;
+          border: none;
         }
 
         &::-webkit-scrollbar {

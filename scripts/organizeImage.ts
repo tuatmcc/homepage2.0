@@ -7,13 +7,14 @@ async function moveAllImage() {
   const files = await glob('**/*.{html,jpg,jpeg,png,gif,svg,webp,avif}', {
     cwd: 'content',
   });
-  files.forEach(async (filePath) => {
+
+  for (const file of files) {
     try {
-      await cp(`content/${filePath}`, `public/${filePath}`);
+      await cp(`content/${file}`, `public/${file}`);
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
-  });
+  }
 }
 
 moveAllImage();

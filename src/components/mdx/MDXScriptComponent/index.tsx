@@ -2,10 +2,12 @@
 
 import { ComponentPropsWithoutRef, FC, useEffect } from 'react';
 
-export type MDXScriptComponentProps = ComponentPropsWithoutRef<'script'> & {
+// biome-ignore lint/style/useNamingConvention: <explanation>
+type MDXScriptComponentProps = ComponentPropsWithoutRef<'script'> & {
   children?: string;
 };
 
+// biome-ignore lint/style/useNamingConvention: <explanation>
 export const MDXScriptComponent: FC<MDXScriptComponentProps> = ({
   src,
   children,

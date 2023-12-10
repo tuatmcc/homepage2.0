@@ -4,17 +4,17 @@ html {
 
 body {
   top: 0;
-  background-color: var(--color-gray-100);
   width: 100%;
   min-height: 100%;
-  color: var(--color-gray-800);
   font-family: var(--font-family-noto-sans-jp);
+  color: var(--color-gray-800);
+  background-color: var(--color-gray-100);
 }
 
 ::-webkit-scrollbar {
-  background: transparent;
   width: var(--scrollbar-width);
   height: 5px;
+  background: transparent;
 
   @media (--bp-sm) {
     width: 5px;
@@ -22,8 +22,8 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 1ex;
   background: var(--mcc-color-3);
+  border-radius: 1ex;
 }
 
 ::-webkit-scrollbar-corner {

@@ -8,7 +8,9 @@ export const useMomentumScroll = (speed: number) => {
     const framId = requestAnimationFrame(() => {
       setCurrentY(currentY + (targetY - currentY) * speed);
     });
-    if (Math.abs(currentY - targetY) < offset) cancelAnimationFrame(framId);
+    if (Math.abs(currentY - targetY) < offset) {
+      cancelAnimationFrame(framId);
+    }
   }, [currentY, targetY, speed]);
   useEffect(() => {
     move();

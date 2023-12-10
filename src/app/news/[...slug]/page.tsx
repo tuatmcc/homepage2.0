@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 import type { Metadata } from 'next';
 
-import { allNewsDocuments } from '.mdorganizer/generated';
+import { allNewsDocuments } from '@/content';
 import { Article } from '~/components/Article';
 import { ArticleBottom } from '~/components/ArticleBottom';
 import { ArticleHeader } from '~/components/ArticleHeader';
@@ -29,12 +29,10 @@ export async function generateMetadata({
   const post = allNewsDocuments.find((post) => {
     const rootPath = post.rootPath.replace(/^content|\/index\.md$/g, '');
     const urlPath = `/${post.documentCategory}/${params.slug.join('/')}`;
-    console.log(rootPath, urlPath);
     return rootPath === urlPath;
   });
 
-  if (!post) return notFound();
-  else {
+  if (post) {
     const { title, img } = post.fields;
     return {
       metadataBase: metadataBase,
@@ -61,6 +59,7 @@ export async function generateMetadata({
       },
     };
   }
+  return notFound();
 }
 
 export default async function Blog({ params }: { params: Params }) {
@@ -72,9 +71,7 @@ export default async function Blog({ params }: { params: Params }) {
       return rootPath === urlPath;
     },
   );
-  if (!post) {
-    return notFound();
-  } else {
+  if (post) {
     const rootPath = post.rootPath.replace(/^content|\/index\.md$/g, '');
     const parentPath = rootPath.split('/').slice(0, -1).join('/');
     const { title, date, img, tags } = post.fields;
@@ -104,6 +101,7 @@ export default async function Blog({ params }: { params: Params }) {
       </>
     );
   }
+  return notFound();
 }
 
 export async function generateStaticParams(): Promise<Params[]> {

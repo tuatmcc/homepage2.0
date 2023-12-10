@@ -1,6 +1,6 @@
-import { FC } from 'react';
-
 import { IconProps } from './types';
+
+import { FC } from 'react';
 
 const defaultColor = '#5865f2';
 
@@ -16,6 +16,7 @@ export const DiscordIcon: FC<IconProps> = ({ size }) => {
       viewBox="0 0 127.14 96.36"
       fill={defaultColor}
     >
+      <title>Discord</title>
       <g id="图层_2" data-name="图层 2">
         <g id="Discord_Logos" data-name="Discord Logos">
           <g

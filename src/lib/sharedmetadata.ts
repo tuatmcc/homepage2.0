@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 
 const defaultTitle = 'MCC - 東京農工大学マイクロコンピュータークラブ';
-const defaultOpenGraphImageURL =
+const defaultOpenGraphImageUrl =
   'https://www.tuatmcc.com/images/wordmark-logo-image.png';
 const defaultDescription =
   'MCCは、東京農工大学の公認サークルで、ITに関することを学び、活動しているサークルです。学祭に制作物を出展したり、学内外のイベントに参加したり、学生同士で交流を深めたりしています。';
@@ -9,7 +9,7 @@ const defaultDescription =
 export const metadataBase = new URL('https://www.tuatmcc.com/');
 
 export const defaultOpenGraphImage = {
-  url: defaultOpenGraphImageURL,
+  url: defaultOpenGraphImageUrl,
   width: 1200,
   height: 630,
 };
@@ -38,7 +38,7 @@ export const defaultTwitterCard: Metadata['twitter'] = {
   card: 'summary_large_image',
   images: [
     {
-      url: defaultOpenGraphImageURL,
+      url: defaultOpenGraphImageUrl,
       width: 1200,
       height: 630,
     },

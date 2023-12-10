@@ -1,13 +1,11 @@
 import NextImage from 'next/image';
 import { FC } from 'react';
-
-import { Sections } from './Sections';
-import styles from './styles.module.css';
-
 import { BackToTop } from '~/components/BackToTop';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
 import { TwitterTimeline } from '~/components/TwitterTimeLine';
+import { Sections } from './Sections';
+import styles from './styles.module.css';
 
 const AboutPage: FC = () => {
   return (
@@ -31,8 +29,7 @@ const AboutPage: FC = () => {
         <div className={styles.mainContent}>
           <Sections />
 
-          <section className={styles.section}>
-            <h2 className={styles.heading2}>Twitter</h2>
+          <section>
             <div className={styles.twitterFeed}>
               <TwitterTimeline />
             </div>

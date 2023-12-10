@@ -2,7 +2,7 @@ import styles from './styles.module.css';
 
 import type { Metadata } from 'next';
 
-import { BlogDocument, allBlogDocuments } from '.mdorganizer/generated';
+import { BlogDocument, allBlogDocuments } from '@/content';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
 import { BlogEyeCatch } from '~/components/blog/BlogEyeCatch';
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
 
 export default function BlogListPage() {
   // 暗黙的な参照渡しを防ぐ(いるのか？)
-  const posts: BlogDocument[] = structuredClone(allBlogDocuments).sort(
-    (a, b) => ((a.fields.date || 1) < (b.fields.date || 1) ? 1 : -1),
+  const posts: BlogDocument[] = structuredClone(allBlogDocuments).sort((a, b) =>
+    (a.fields.date || 1) < (b.fields.date || 1) ? 1 : -1,
   );
   return (
     <>
@@ -71,7 +71,7 @@ export default function BlogListPage() {
               };
             })}
           />
-          <div className={styles.right}></div>
+          <div className={styles.right} />
         </div>
       </main>
 

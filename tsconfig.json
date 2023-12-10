@@ -4,7 +4,8 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*"],
+      "@/content": ["./.mdorganizer/generated"]
     },
     "module": "esnext",
     "moduleResolution": "bundler",

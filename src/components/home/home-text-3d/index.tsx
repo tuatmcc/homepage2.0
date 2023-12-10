@@ -23,9 +23,9 @@ type RigProps = {
 };
 
 const Rig: FC<RigProps> = ({ children }) => {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  // biome-ignore lint/style/noNonNullAssertion: <explanation>
   const outer = useRef<Group>(null!);
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  // biome-ignore lint/style/noNonNullAssertion: <explanation>
   const inner = useRef<Group>(null!);
   useFrame(({ clock }) => {
     outer.current.position.y = MathUtils.lerp(

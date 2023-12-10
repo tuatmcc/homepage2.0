@@ -1,6 +1,7 @@
+import { FC } from 'react';
 import styles from './styles.module.css';
 
-export const NewsEyeCatch = (): JSX.Element => {
+export const NewsEyeCatch: FC = () => {
   // famous poem or serif appropriate for tech news
   const poemList = [
     'Technology is best when it brings people together.',

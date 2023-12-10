@@ -1,4 +1,4 @@
-import { compileMDX, type CompileMDXResult } from 'next-mdx-remote/rsc';
+import { type CompileMDXResult, compileMDX } from 'next-mdx-remote/rsc';
 import rehypeAutoLinkHeadings from 'rehype-autolink-headings';
 import rehypeKatex from 'rehype-katex';
 import rehypePrettyCode, {
@@ -12,25 +12,24 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import remarkToc from 'remark-toc';
 
+import { ComponentPropsWithoutRef, ReactElement } from 'react';
+
 import type { MDXComponents } from 'mdx/types';
 
-import {
-  MDXLinkComponent,
-  type MDXLinkComponentProps,
-} from '~/components/mdx/MDXLinkComponent';
-import {
-  MDXPreComponent,
-  type MDXPreComponentProps,
-} from '~/components/mdx/MDXPreComponent';
-import {
-  MDXScriptComponent,
-  type MDXScriptComponentProps,
-} from '~/components/mdx/MDXScriptComponent';
+import { MDXLinkComponent } from '~/components/mdx/MDXLinkComponent';
+import { MDXPreComponent } from '~/components/mdx/MDXPreComponent';
+import { MDXScriptComponent } from '~/components/mdx/MDXScriptComponent';
 
 const components = {
-  a: (props: MDXLinkComponentProps) => <MDXLinkComponent {...props} />,
-  pre: (props: MDXPreComponentProps) => <MDXPreComponent {...props} />,
-  script: (props: MDXScriptComponentProps) => <MDXScriptComponent {...props} />,
+  a: (props: ComponentPropsWithoutRef<typeof MDXLinkComponent>) => (
+    <MDXLinkComponent {...props} />
+  ),
+  pre: (props: ComponentPropsWithoutRef<typeof MDXPreComponent>) => (
+    <MDXPreComponent {...props} />
+  ),
+  script: (props: ComponentPropsWithoutRef<typeof MDXScriptComponent>) => (
+    <MDXScriptComponent {...props} />
+  ),
 } as MDXComponents;
 
 const rhypePrettyCodeOptions: Partial<RehypePrettyCodeOption> = {
@@ -48,7 +47,7 @@ const rhypePrettyCodeOptions: Partial<RehypePrettyCodeOption> = {
   },
 };
 
-export default async function compile(source: string): Promise<JSX.Element> {
+export default async function compile(source: string): Promise<ReactElement> {
   const { content }: CompileMDXResult = await compileMDX({
     source,
     options: {

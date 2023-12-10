@@ -10,22 +10,24 @@
     "sitemap": "next-sitemap",
     "build:prod": "bash ./scripts/setup.sh && bash ./scripts/prod.sh",
     "build:dev": "bash ./scripts/setup.sh && bash ./scripts/dev.sh",
-    "lint": "next lint && stylelint './src/**/*.css' && prettier -c ./src/**/*.{ts,tsx,css}",
-    "fmt": "next lint --fix && stylelint './src/**/*.css' --fix && prettier -c --write ./src/**/*.{ts,tsx,css}",
-    "typecheck": "tsc --noEmit",
-    "contentlayer": "contentlayer build",
+    "lint": "run-p lint:ts lint:css",
+    "fmt": "run-p --continue-on-error fmt:*",
+    "lint:ts": "biome check .",
+    "lint:css": "stylelint './src/**/*.css' --fix",
+    "fmt:ts": "biome check . --apply",
+    "fmt:css": "stylelint './src/**/*.css' --fix",
     "organize-image": "tsx ./scripts/organizeImage.ts",
     "mdorganizer": "mdorganizer",
     "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build"
   },
   "engines": {
-    "node": ">=18.15.0"
+    "node": ">=20"
   },
   "volta": {
-    "node": "18.16.1"
+    "node": "20.10.0"
   },
-  "packageManager": "pnpm@8.10.5",
+  "packageManager": "pnpm@8.12.0+sha256.553e4eb0e2a2c9abcb419b3262bdc7aee8ae3c42e2301a1807d44575786160c9",
   "dependencies": {
     "@csstools/postcss-global-data": "^2.1.0",
     "@react-three/cannon": "^6.6.0",
@@ -49,6 +51,7 @@
     "next-mdx-remote": "^4.4.1",
     "next-sitemap": "^4.2.3",
     "normalize.css": "^8.0.1",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.31",
     "postcss-custom-media": "^10.0.2",
     "postcss-media-minmax": "^5.0.0",
@@ -82,6 +85,7 @@
     "typescript-plugin-css-modules": "^5.0.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.4.1",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/addon-links": "^7.5.3",
@@ -99,6 +103,7 @@
     "prettier-plugin-css-order": "^2.0.1",
     "storybook-css-modules": "^1.0.8",
     "stylelint": "^15.11.0",
+    "stylelint-config-recess-order": "^4.4.0",
     "stylelint-config-standard": "^34.0.0",
     "tsx": "^4.1.4",
     "typescript": "5.2.2"
