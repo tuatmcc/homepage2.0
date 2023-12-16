@@ -87,7 +87,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.4.1",
     "@storybook/addon-essentials": "^7.5.3",
-    "@storybook/addon-interactions": "^7.5.3",
+    "@storybook/addon-interactions": "^7.6.5",
     "@storybook/addon-links": "^7.5.3",
     "@storybook/blocks": "^7.5.3",
     "@storybook/nextjs": "^7.5.3",
