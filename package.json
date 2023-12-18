@@ -90,7 +90,7 @@
     "@storybook/addon-interactions": "^7.6.5",
     "@storybook/addon-links": "^7.5.3",
     "@storybook/blocks": "^7.5.3",
-    "@storybook/nextjs": "^7.5.3",
+    "@storybook/nextjs": "^7.6.5",
     "@storybook/react": "^7.5.3",
     "@storybook/testing-library": "0.2.2",
     "eslint": "8.54.0",
