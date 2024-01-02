@@ -107,7 +107,7 @@
   },
   "optionalDependencies": {
     "@next/env": "^14.0.3",
-    "esbuild": "^0.19.6",
+    "esbuild": "^0.19.11",
     "webpack": "^5.89.0"
   }
 }
