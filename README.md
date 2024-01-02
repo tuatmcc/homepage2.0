@@ -35,9 +35,7 @@
 
 3. Install **corepack** (package manager manager) `volta install corepack`
 
-4. Install **pnpm** (package manager) `corepack up` (Automatically read corepack settings from `package.json`)
-
-5. Install dependencies `pnpm install`
+4. Install dependencies `pnpm install` (`pnpm(package manager)` will be auto managed by `corepack` according to `package.json`)
 
 ## 開発
 
