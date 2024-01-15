@@ -214,11 +214,11 @@ devDependencies:
     specifier: ^0.6.15
     version: 0.6.15(eslint@8.54.0)(typescript@5.3.3)
   prettier:
-    specifier: ^3.1.0
-    version: 3.1.0
+    specifier: ^3.2.2
+    version: 3.2.2
   prettier-plugin-css-order:
     specifier: ^2.0.1
-    version: 2.0.1(postcss@8.4.31)(prettier@3.1.0)
+    version: 2.0.1(postcss@8.4.31)(prettier@3.2.2)
   storybook-css-modules:
     specifier: ^1.0.8
     version: 1.0.8
@@ -11801,7 +11801,7 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-css-order@2.0.1(postcss@8.4.31)(prettier@3.1.0):
+  /prettier-plugin-css-order@2.0.1(postcss@8.4.31)(prettier@3.2.2):
     resolution: {integrity: sha512-Y+wZ0wI7/qFUritirJksQn13KqbcNC3OZXSxGh1ui/X39hAeMW9md+Mp7fjk8H4ZQQ8c5CTYZxShoBfAal/79A==}
     engines: {node: '>=16'}
     peerDependencies:
@@ -11810,7 +11810,7 @@ packages:
       css-declaration-sorter: 7.1.1(postcss@8.4.31)
       postcss-less: 6.0.0(postcss@8.4.31)
       postcss-scss: 4.0.9(postcss@8.4.31)
-      prettier: 3.1.0
+      prettier: 3.2.2
     transitivePeerDependencies:
       - postcss
     dev: true
@@ -11821,8 +11821,8 @@ packages:
     hasBin: true
     dev: false
 
-  /prettier@3.1.0:
-    resolution: {integrity: sha512-TQLvXjq5IAibjh8EpBIkNKxO749UEWABoiIZehEPiY4GNpVdhaFKqSTu+QrlU6D2dPAfubRmtJTi4K4YkQ5eXw==}
+  /prettier@3.2.2:
+    resolution: {integrity: sha512-HTByuKZzw7utPiDO523Tt2pLtEyK7OibUD9suEJQrPUCYQqrHr74GGX6VidMrovbf/I50mPqr8j/II6oBAuc5A==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
