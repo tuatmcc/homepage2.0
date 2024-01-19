@@ -34,7 +34,7 @@
     "@react-three/drei": "^9.92.6",
     "@react-three/fiber": "^8.15.11",
     "@types/mdx": "^2.0.10",
-    "@types/node": "20.10.7",
+    "@types/node": "20.11.2",
     "@types/react": "18.2.37",
     "@types/react-dom": "18.2.18",
     "@types/three": "^0.158.2",
