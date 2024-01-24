@@ -27,7 +27,7 @@
   "volta": {
     "node": "20.11.0"
   },
-  "packageManager": "pnpm@8.14.1+sha256.2df78e65d433d7693b9d3fbdaf431b2d96bb4f96a2ffecd51a50efe16e50a6a8",
+  "packageManager": "pnpm@8.14.3+sha256.2d0363bb6c314daa67087ef07743eea1ba2e2d360c835e8fec6b5575e4ed9484",
   "dependencies": {
     "@csstools/postcss-global-data": "^2.1.0",
     "@react-three/cannon": "^6.6.0",
@@ -48,7 +48,7 @@
     "next-mdx-remote": "^4.4.1",
     "next-sitemap": "^4.2.3",
     "normalize.css": "^8.0.1",
-    "npm-run-all": "^4.1.5",
+    "npm-run-all2": "^6.1.1",
     "postcss": "^8.4.31",
     "postcss-custom-media": "^10.0.2",
     "postcss-media-minmax": "^5.0.0",
@@ -90,14 +90,6 @@
     "@storybook/nextjs": "^7.6.6",
     "@storybook/react": "^7.6.5",
     "@storybook/testing-library": "0.2.2",
-    "eslint": "8.54.0",
-    "eslint-config-next": "^14.0.3",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-storybook": "^0.6.15",
-    "prettier": "^3.1.0",
-    "prettier-plugin-css-order": "^2.0.1",
     "storybook-css-modules": "^1.0.8",
     "stylelint": "^15.11.0",
     "stylelint-config-recess-order": "^4.4.0",
