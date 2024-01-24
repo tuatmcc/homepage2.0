@@ -88,7 +88,7 @@
     "@storybook/addon-links": "^7.5.3",
     "@storybook/blocks": "^7.5.3",
     "@storybook/nextjs": "^7.6.6",
-    "@storybook/react": "^7.6.5",
+    "@storybook/react": "^7.6.10",
     "@storybook/testing-library": "0.2.2",
     "storybook-css-modules": "^1.0.8",
     "stylelint": "^15.11.0",
