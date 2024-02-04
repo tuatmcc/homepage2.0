@@ -6,13 +6,13 @@ import { BlogDocument, allBlogDocuments } from '@/content';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
 import { BlogEyeCatch } from '~/components/blog/BlogEyeCatch';
-import { BlogList } from '~/components/blog/BlogList';
 import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
   defaultOpenGraph,
   defaultTwitterCard,
   metadataBase,
 } from '~/lib/sharedmetadata';
+import { ArticleList } from '~/components/ArticleList';
 
 export const metadata: Metadata = {
   metadataBase: metadataBase,
@@ -52,8 +52,8 @@ export default function BlogListPage() {
             {/* 虚無スペース(?) */}
             <BlogEyeCatch />
           </div>
-          <BlogList
-            unorderedBlogs={posts.map((post) => {
+          <ArticleList
+            unorderedArticles={posts.map((post) => {
               const rootPath = post.rootPath.replace(
                 /^content|\/index\.md$/g,
                 '',

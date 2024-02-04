@@ -1,0 +1,12 @@
+.articleCard {
+  display: grid;
+  gap: 8px;
+
+  & .thumbnail {
+    width: 320px;
+    max-width: 100%;
+  }
+
+  & .textInfo {
+  }
+}
