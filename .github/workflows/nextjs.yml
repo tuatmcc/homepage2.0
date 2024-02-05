@@ -34,7 +34,7 @@ jobs:
           ref: main
 
       - name: Setup bun
-        uses: oven-sh/bun@v1
+        uses: oven-sh/setup-bun@v1
 
       - name: Install dependencies
         run: bun install
