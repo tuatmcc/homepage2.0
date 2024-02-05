@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 const defaultTitle = 'MCC - 東京農工大学マイクロコンピュータークラブ';
 const defaultOpenGraphImageUrl =

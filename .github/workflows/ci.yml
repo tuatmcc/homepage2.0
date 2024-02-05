@@ -21,19 +21,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v1
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
 
       - name: Install dependencies
-        run: pnpm install
+        run: bun install
 
-      - name: Run pnpm lint
-        run: pnpm lint
+      - name: Run lint
+        run: bun lint
 
-      - name: Run pnpm build:prod
-        run: pnpm build:prod
+      - name: Run production build
+        run: bun build:prod

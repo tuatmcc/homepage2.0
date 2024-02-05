@@ -20,7 +20,7 @@ const fields: CategoryConfig['fields'] = {
   },
 };
 
-export default ({
+export default {
   documents: [
     {
       documentCategory: 'blog',
@@ -38,4 +38,4 @@ export default ({
       fields,
     },
   ],
-} satisfies UserConfig);
+} satisfies UserConfig;

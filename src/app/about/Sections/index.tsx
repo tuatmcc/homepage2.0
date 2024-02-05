@@ -1,9 +1,10 @@
 import NextImage from 'next/image';
-import { FC, ReactNode } from 'react';
+
+import type { FC, ReactNode } from 'react';
 
 import styles from './styles.module.css';
 
-import { MiniLinkIcon, TwitterIcon } from '~/components/Svg';
+import { LinkIcon, TwitterIcon } from '~/components/Svg';
 
 const sections: { heading: string; node: ReactNode }[] = [
   {
@@ -128,7 +129,7 @@ export const Sections: FC = () => (
       <section className={styles.section} key={section.heading}>
         <h2 className={styles.heading}>{section.heading}</h2>
         <a href={`#${section.heading}`} className={styles.anchor}>
-          <MiniLinkIcon />
+          <LinkIcon />
         </a>
         {section.node}
       </section>

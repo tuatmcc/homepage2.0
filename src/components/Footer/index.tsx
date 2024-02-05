@@ -1,12 +1,10 @@
 import classnames from 'classnames';
 import NextLink from 'next/link';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import styles from './styles.module.css';
 
-import { GitHubIcon } from '~/components/Svg/GithubIcon';
-import { TwitterIcon } from '~/components/Svg/TwitterIcon';
-import { WordmarkLogo } from '~/components/Svg/WordmarkLogo';
+import { GitHubIcon, TwitterIcon, WordmarkLogo } from '~/components/Svg';
 
 type FotterProps = {
   semitransparent?: boolean;

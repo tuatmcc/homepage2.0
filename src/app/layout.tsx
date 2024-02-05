@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import type { Metadata } from 'next';
 import { JetBrains_Mono, Noto_Sans_JP, Orbitron } from 'next/font/google';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { sharedMetadata } from '~/lib/sharedmetadata';
 import '~/styles/global.css';
 

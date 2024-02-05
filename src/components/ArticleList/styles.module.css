@@ -1,4 +1,4 @@
-.list {
+.articleList {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -15,13 +15,17 @@
       overflow: hidden;
       font-family: var(--font-family-noto-sans-jp);
 
-      & .image {
-        flex: 0 0 320px;
+      & .thumbnail {
+        width: 320px;
         max-width: 100%;
         height: 180px;
-        aspect-ratio: 16 / 9;
-        border-radius: 8px;
-        object-fit: cover;
+
+        & .image {
+          width: inherit;
+          height: inherit;
+          border-radius: 8px;
+          object-fit: cover;
+        }
       }
 
       & .text {

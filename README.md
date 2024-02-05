@@ -12,6 +12,7 @@
 `Next.js`を React フレームワーク・静的サイトジェネレーターとして用いて, GitHub Pages でホストします。
 
 - `TypeScript`
+- `Bun`: JavaScript 実行環境 & パッケージマネージャー
 - `Next.js`: React フレームワーク・静的サイトジェネレーター
 - `React`: JavaScript フレームワーク・ライブラリ
 - `CSS-Modules`, `PostCSS`: CSS ライブラリ
@@ -29,23 +30,21 @@
 
 ## 環境構築
 
-1. Install and setup [**Volta**](https://volta.sh/) (Node.js version manager)
+1. Install and [Bun](https://bun.sh/)
 
-2. Install **Node.js** (JavaScript runtime) `volta install node`
+2. Install dependencies and setup for development. `bun install && bun setup`
 
-3. Install **corepack** (package manager manager) `volta install corepack`
-
-4. Install **pnpm** (package manager) `corepack up` (Automatically read corepack settings from `package.json`)
-
-5. Install dependencies `pnpm install`
+3. Start development server. `bun dev`
 
 ## 開発
 
-- Fetch markdown content `pnpm setup`
-- Start development server `pnpm dev`
-- Start storybook `pnpm storybook`
-- Format code `pnpm fmt`
+- マークダウン記事を取得&パース. `bun setup`
+- 開発用サーバーを立てる. `bun dev` コマンド後、ブラウザで `http://localhost:3000` を開く.
+- storybook を起動. `bun storybook` コマンド後、ブラウザで `http://localhost:6006` を開く.
+- コードフォーマット. `bun fmt`
 
-`some-component`ディレクトリを作成し, その中に`index.tsx`と`styles.module.css`を作成します。(ページの場合は`page.tsx`)
+`app/`以下がそのままウェブサイトのパスになります。詳しくはNext.jsのドキュメントを参照してください。
+
+コンポーネントを作成する際は、コンポーネント名のディレクトリを作成し、その中に`index.tsx`を作成してください.
 
 必要に応じて`index.stories.tsx`を作成することで, Storybook でコンポーネントを確認できます。

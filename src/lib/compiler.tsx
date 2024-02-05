@@ -12,7 +12,7 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import remarkToc from 'remark-toc';
 
-import { ComponentPropsWithoutRef, ReactElement } from 'react';
+import type { ComponentPropsWithoutRef, ReactElement } from 'react';
 
 import type { MDXComponents } from 'mdx/types';
 
@@ -67,6 +67,7 @@ export default async function compile(source: string): Promise<ReactElement> {
               properties: { 'aria-label': 'heading-link' },
             },
           ],
+          // @ts-expect-error
           [rehypePrettyCode, rhypePrettyCodeOptions],
           rehypeKatex as () => void,
           rehypeRaw as () => void,
