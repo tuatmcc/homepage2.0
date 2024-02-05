@@ -1,9 +1,10 @@
 import { FC } from "react";
-import { NextImageWithFallback } from "../NextImageWithFallback";
+import NextLink from "next/link";
+import { NextImageWithFallback } from "~/components/NextImageWithFallback";
 import styles from "./styles.module.css";
 
 type Props = {
-  href?: string;
+  href: string;
   image: string;
   title: string;
   date: string;
@@ -20,7 +21,7 @@ export const ArticleCard: FC<Props> = ({
   author,
 }) => {
   return (
-    <div className={styles.articleCard}>
+    <NextLink href={href} className={styles.articleCard}>
       <div className={styles.thumbnail}>
         <NextImageWithFallback
           width={320}
@@ -33,8 +34,12 @@ export const ArticleCard: FC<Props> = ({
       </div>
       <div className={styles.textInfo}>
         <h3 className={styles.title}>{title}</h3>
-        {author && <div className={styles.author}>@{author}</div>}
         <div className={styles.date}>{date}</div>
+        {author && (
+          <a href={`https://github.com/${author}`} className={styles.author}>
+            @{author}
+          </a>
+        )}
         <ul className={styles.tags}>
           {tags?.map((tag) => (
             <li className={styles.tag} key={tag}>
@@ -43,6 +48,6 @@ export const ArticleCard: FC<Props> = ({
           ))}
         </ul>
       </div>
-    </div>
+    </NextLink>
   );
 };

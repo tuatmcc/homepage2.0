@@ -1,36 +1,36 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
-import styles from './styles.module.css';
+import styles from "./styles.module.css";
 
-import { allNewsDocuments } from '@/content';
-import { Footer } from '~/components/Footer';
-import { Navbar } from '~/components/Navbar';
-import { NewsEyeCatch } from '~/components/news/NewsEyeCatch';
-import { NewsList } from '~/components/news/NewsList';
-import { parseImageSrc } from '~/lib/parseImageSrc';
+import { allNewsDocuments } from "@/content";
+import { Footer } from "~/components/Footer";
+import { Navbar } from "~/components/Navbar";
+import { NewsEyeCatch } from "~/components/news/NewsEyeCatch";
+import { parseImageSrc } from "~/lib/parseImageSrc";
 import {
   defaultOpenGraph,
   defaultTwitterCard,
   metadataBase,
-} from '~/lib/sharedmetadata';
+} from "~/lib/sharedmetadata";
+import { ArticleList } from "~/components/ArticleList";
 
 export const metadata: Metadata = {
   metadataBase: metadataBase,
-  title: 'NEWS',
+  title: "NEWS",
   openGraph: {
     ...defaultOpenGraph,
-    title: 'News - MCC 東京農工大学マイクロコンピュータークラブ',
+    title: "News - MCC 東京農工大学マイクロコンピュータークラブ",
   },
   twitter: {
     ...defaultTwitterCard,
-    title: 'News - MCC 東京農工大学マイクロコンピュータークラブ',
+    title: "News - MCC 東京農工大学マイクロコンピュータークラブ",
   },
 };
 
 export default function NewsListPage() {
   // 暗黙的な参照渡しを防ぐ
   const posts = structuredClone(allNewsDocuments).sort((a, b) =>
-    (a.fields.date || 1) < (b.fields.date || 1) ? 1 : -1,
+    (a.fields.date || 1) < (b.fields.date || 1) ? 1 : -1
   );
   return (
     <>
@@ -49,11 +49,11 @@ export default function NewsListPage() {
           </div>
 
           <div className={styles.right}>
-            <NewsList
-              unorderedNews={posts.map((post) => {
+            <ArticleList
+              unorderedArticles={posts.map((post) => {
                 const rootPath = post.rootPath.replace(
                   /^content|\/index\.md$/g,
-                  '',
+                  ""
                 );
                 const { title, date, img, tags } = post.fields;
                 return {
@@ -61,8 +61,8 @@ export default function NewsListPage() {
                   title,
                   date: date,
                   image:
-                    `${parseImageSrc(rootPath.replace(/^\/news/, ''), img)}` ||
-                    '/images/wordmark-logo-image.png',
+                    `${parseImageSrc(rootPath.replace(/^\/news/, ""), img)}` ||
+                    "/images/wordmark-logo-image.png",
                   tags,
                 };
               })}
