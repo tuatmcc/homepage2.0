@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
-import { IconProps } from './types';
+import type { IconProps } from './types';
 
-export const MiniLinkIcon: FC<IconProps> = ({ ...props }) => {
+export const LinkIcon: FC<IconProps> = ({ ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

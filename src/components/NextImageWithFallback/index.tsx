@@ -1,7 +1,7 @@
 'use client';
 
-import NextImage, { ImageProps } from 'next/image';
-import { FC } from 'react';
+import NextImage, { type ImageProps } from 'next/image';
+import type { FC } from 'react';
 
 type NextImageWithFallbackProps = ImageProps & {
   fallback: string;

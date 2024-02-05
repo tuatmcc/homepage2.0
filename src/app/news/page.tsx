@@ -1,12 +1,12 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 import styles from './styles.module.css';
 
 import { allNewsDocuments } from '@/content';
+import { ArticleList } from '~/components/ArticleList';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
 import { NewsEyeCatch } from '~/components/news/NewsEyeCatch';
-import { NewsList } from '~/components/news/NewsList';
 import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
   defaultOpenGraph,
@@ -49,8 +49,8 @@ export default function NewsListPage() {
           </div>
 
           <div className={styles.right}>
-            <NewsList
-              unorderedNews={posts.map((post) => {
+            <ArticleList
+              unorderedArticles={posts.map((post) => {
                 const rootPath = post.rootPath.replace(
                   /^content|\/index\.md$/g,
                   '',

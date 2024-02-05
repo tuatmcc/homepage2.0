@@ -2,7 +2,7 @@
 
 import classnames from 'classnames';
 import NextLink from 'next/link';
-import { FC, useCallback, useState } from 'react';
+import { type FC, useCallback, useState } from 'react';
 
 import { Drawer } from './Drawer';
 import { MenuButton } from './MenuButton';

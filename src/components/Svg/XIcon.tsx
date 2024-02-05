@@ -1,4 +1,4 @@
-import { IconProps } from './types';
+import type { IconProps } from './types';
 
 // biome-ignore lint/style/useNamingConvention: <explanation>
 export const XIcon = ({ color, size = 24 }: IconProps) => (

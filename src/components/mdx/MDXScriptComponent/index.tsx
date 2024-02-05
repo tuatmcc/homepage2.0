@@ -1,6 +1,6 @@
 'use client';
 
-import { ComponentPropsWithoutRef, FC, useEffect } from 'react';
+import { type ComponentPropsWithoutRef, type FC, useEffect } from 'react';
 
 // biome-ignore lint/style/useNamingConvention: <explanation>
 type MDXScriptComponentProps = ComponentPropsWithoutRef<'script'> & {

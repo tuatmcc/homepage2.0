@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
-import { IconProps } from './types';
+import type { IconProps } from './types';
 
-export const MenuBurgerIcon: FC<IconProps> = ({ ...props }) => (
+export const HamburgerMenuIcon: FC<IconProps> = ({ ...props }) => (
   <svg
     width="32"
     height="33"

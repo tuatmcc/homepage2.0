@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.4.1/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": true,
@@ -13,11 +13,11 @@
       "all": true,
       "nursery": {
         "all": true,
-        "noDefaultExport": "off"
+        "noNodejsModules": "off"
       },
       "style": {
         "all": true,
-        "noImplicitBoolean": "off"
+        "noDefaultExport": "off"
       }
     }
   },
@@ -34,10 +34,6 @@
       "trailingComma": "all"
     }
   },
-  "files": {
-    "include": ["src/**/*.tsx?"],
-    "ignore": ["node_modules", ".mdorganizer", ".storybook", "out", ".next"]
-  },
   "json": {
     "formatter": {
       "enabled": true,
@@ -46,5 +42,13 @@
     "parser": {
       "allowTrailingCommas": true
     }
+  },
+  "files": {
+    "ignore": []
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
   }
 }

@@ -1,8 +1,7 @@
 export * from './BrowserIcon';
 export * from './CloseIcon';
 export * from './DownArrowIcon';
-export * from './EnvelopIcon';
-export * from './GithubIcon';
+export * from './GitHubIcon';
 export * from './HamburgerMenuIcon';
 export * from './HomeIcon';
 export * from './InfoIcon';
@@ -10,3 +9,5 @@ export * from './LinkIcon';
 export * from './Logo';
 export * from './StarIcon';
 export * from './TwitterIcon';
+export * from './WordmarkLogo';
+export * from './WordmarkLogo';
