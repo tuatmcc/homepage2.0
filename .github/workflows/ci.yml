@@ -31,5 +31,8 @@ jobs:
       - name: Run lint
         run: bun lint
 
+      - name: Run typecheck
+        run: bun typecheck
+
       - name: Run production build
         run: bun build:prod
