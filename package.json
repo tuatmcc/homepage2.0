@@ -1,25 +1,26 @@
 {
-  "name": "homepage2.0",
+  "name": "tuatmcc.com",
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "start": "next start",
-    "dev": "next dev",
-    "setup": "bash ./scripts/setup.sh",
     "build": "next build",
-    "sitemap": "next-sitemap",
-    "build:prod": "bash ./scripts/setup.sh && bash ./scripts/prod.sh",
+    "build-storybook": "storybook build",
     "build:dev": "bash ./scripts/setup.sh && bash ./scripts/dev.sh",
-    "lint": "run-p lint:ts lint:css",
+    "build:prod": "bash ./scripts/setup.sh && bash ./scripts/prod.sh",
+    "dev": "next dev",
     "fmt": "run-p --continue-on-error fmt:*",
-    "lint:ts": "biome check .",
-    "lint:css": "stylelint './src/**/*.css' --fix",
-    "fmt:ts": "biome check --apply .",
     "fmt:css": "stylelint './src/**/*.css' --fix",
-    "organize-image": "tsx ./scripts/organizeImage.ts",
+    "fmt:ts": "biome check --apply .",
+    "lint": "run-p lint:ts lint:css",
+    "lint:css": "stylelint './src/**/*.css' --fix",
+    "lint:ts": "biome check .",
     "mdorganizer": "mdorganizer",
+    "organize-image": "bun ./scripts/organizeImage.ts",
+    "setup": "bash ./scripts/setup.sh",
+    "sitemap": "next-sitemap",
+    "start": "next start",
     "storybook": "storybook dev -p 6006 --no-open",
-    "build-storybook": "storybook build"
+    "typecheck": "tsc --noEmit"
   },
   "engines": {
     "node": ">=20"
@@ -27,7 +28,6 @@
   "volta": {
     "node": "20.11.0"
   },
-  "packageManager": "pnpm@8.14.3+sha256.2d0363bb6c314daa67087ef07743eea1ba2e2d360c835e8fec6b5575e4ed9484",
   "dependencies": {
     "@csstools/postcss-global-data": "^2.1.0",
     "@react-three/cannon": "^6.6.0",
@@ -94,12 +94,10 @@
     "stylelint": "^15.11.0",
     "stylelint-config-recess-order": "^4.4.0",
     "stylelint-config-standard": "^34.0.0",
-    "tsx": "^4.1.4",
     "typescript": "5.3.3"
   },
   "optionalDependencies": {
     "@next/env": "^14.0.3",
-    "esbuild": "^0.19.11",
     "webpack": "^5.89.0"
   }
 }

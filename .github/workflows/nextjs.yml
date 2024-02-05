@@ -33,18 +33,13 @@ jobs:
         with:
           ref: main
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
+      - name: Setup bun
+        uses: oven-sh/bun@v1
 
       - name: Install dependencies
-        run: pnpm install
+        run: bun install
       - name: Build with Next.js
-        run: pnpm build:prod
+        run: bun build:prod
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
