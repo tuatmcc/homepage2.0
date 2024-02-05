@@ -1,9 +1,9 @@
 import NextLink from 'next/link';
-import { ComponentPropsWithoutRef, FC, ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, FC, ReactNode } from 'react';
 
 import styles from './styles.module.css';
 
-import { MiniLinkIcon } from '~/components/Svg';
+import { LinkIcon } from '~/components/Svg';
 
 // biome-ignore lint/style/useNamingConvention: <explanation>
 type MDXLinkComponentProps = ComponentPropsWithoutRef<'a'> & {
@@ -20,7 +20,7 @@ export const MDXLinkComponent: FC<MDXLinkComponentProps> = ({
   if (href.startsWith('#') && props['aria-label'] === 'heading-link') {
     return (
       <a {...props} href={href} className={styles.linkedHeading}>
-        <MiniLinkIcon />
+        <LinkIcon />
       </a>
     );
   }

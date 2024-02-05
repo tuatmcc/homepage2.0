@@ -1,5 +1,5 @@
-import { FC } from 'react';
 import NextLink from 'next/link';
+import type { FC } from 'react';
 import { NextImageWithFallback } from '~/components/NextImageWithFallback';
 import styles from './styles.module.css';
 

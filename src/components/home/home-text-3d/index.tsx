@@ -1,9 +1,14 @@
 'use client';
 
 import { Float } from '@react-three/drei';
-import { Canvas, Object3DNode, extend, useFrame } from '@react-three/fiber';
-import { FC, ReactNode, Suspense, useRef } from 'react';
-import { Group, MathUtils } from 'three';
+import {
+  Canvas,
+  type Object3DNode,
+  extend,
+  useFrame,
+} from '@react-three/fiber';
+import { type FC, type ReactNode, Suspense, useRef } from 'react';
+import { type Group, MathUtils } from 'three';
 import threeFontJson from 'three/examples/fonts/helvetiker_bold.typeface.json';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
@@ -72,8 +77,8 @@ const RandomText: FC = () => {
   ];
   return (
     <>
-      {random.map((text, index) => (
-        <Float key={text + index} floatIntensity={5} speed={3}>
+      {random.map((text) => (
+        <Float key={text + Math.random()} floatIntensity={5} speed={3}>
           <mesh
             position={[
               Math.random() * 50 - 25,

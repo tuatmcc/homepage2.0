@@ -1,5 +1,5 @@
 import NextImage from 'next/image';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { BackToTop } from '~/components/BackToTop';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';

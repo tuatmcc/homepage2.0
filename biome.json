@@ -12,11 +12,12 @@
     "rules": {
       "all": true,
       "nursery": {
-        "all": true
+        "all": true,
+        "noNodejsModules": "off"
       },
       "style": {
         "all": true,
-        "noImplicitBoolean": "off"
+        "noDefaultExport": "off"
       }
     }
   },
@@ -33,9 +34,6 @@
       "trailingComma": "all"
     }
   },
-  "files": {
-    "ignore": ["node_modules", ".mdorganizer", ".storybook", "out", ".next"]
-  },
   "json": {
     "formatter": {
       "enabled": true,
@@ -44,5 +42,13 @@
     "parser": {
       "allowTrailingCommas": true
     }
+  },
+  "files": {
+    "ignore": []
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
   }
 }

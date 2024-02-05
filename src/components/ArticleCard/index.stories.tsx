@@ -1,4 +1,4 @@
-import { StoryObj, Meta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleCard } from '.';
 
 const meta: Meta = {

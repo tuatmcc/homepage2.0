@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
-import { IconProps } from './types';
+import type { IconProps } from './types';
 
 export const CopyIcon: FC<IconProps> = () => (
   <svg

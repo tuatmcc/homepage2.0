@@ -1,4 +1,4 @@
-import { cp } from 'fs/promises';
+import { cp } from 'node:fs/promises';
 
 import { glob } from 'glob';
 

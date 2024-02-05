@@ -8,7 +8,7 @@ import {
   useScroll,
 } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { FC, Suspense, useEffect, useState } from 'react';
+import { type FC, Suspense, useEffect, useState } from 'react';
 
 import { RecentNews } from '../RecentNews';
 
@@ -176,7 +176,7 @@ export const HomeScrollControl: FC = () => {
           <Scroll>
             <Images />
           </Scroll>
-          <Scroll html>
+          <Scroll html={true}>
             <Html />
           </Scroll>
         </ScrollControls>

@@ -2,7 +2,7 @@ import { compareAsc } from 'date-fns';
 
 import styles from './styles.module.css';
 
-import { FC } from 'react';
+import type { FC } from 'react';
 import { ArticleCard } from '../ArticleCard';
 
 type Props = {

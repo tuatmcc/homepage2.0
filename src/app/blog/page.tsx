@@ -2,7 +2,8 @@ import styles from './styles.module.css';
 
 import type { Metadata } from 'next';
 
-import { BlogDocument, allBlogDocuments } from '@/content';
+import { type BlogDocument, allBlogDocuments } from '@/content';
+import { ArticleList } from '~/components/ArticleList';
 import { Footer } from '~/components/Footer';
 import { Navbar } from '~/components/Navbar';
 import { BlogEyeCatch } from '~/components/blog/BlogEyeCatch';
@@ -12,7 +13,6 @@ import {
   defaultTwitterCard,
   metadataBase,
 } from '~/lib/sharedmetadata';
-import { ArticleList } from '~/components/ArticleList';
 
 export const metadata: Metadata = {
   metadataBase: metadataBase,
@@ -75,7 +75,7 @@ export default function BlogListPage() {
         </div>
       </main>
 
-      <Footer semitransparent />
+      <Footer semitransparent={true} />
     </>
   );
 }

@@ -1,9 +1,9 @@
 'use client';
 
 import {
-  ComponentPropsWithoutRef,
-  FC,
-  ReactNode,
+  type ComponentPropsWithoutRef,
+  type FC,
+  type ReactNode,
   useCallback,
   useRef,
   useState,
