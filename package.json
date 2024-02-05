@@ -14,7 +14,7 @@
     "fmt": "run-p --continue-on-error fmt:*",
     "lint:ts": "biome check .",
     "lint:css": "stylelint './src/**/*.css' --fix",
-    "fmt:ts": "biome format .",
+    "fmt:ts": "biome format --write .",
     "fmt:css": "stylelint './src/**/*.css' --fix",
     "organize-image": "tsx ./scripts/organizeImage.ts",
     "mdorganizer": "mdorganizer",

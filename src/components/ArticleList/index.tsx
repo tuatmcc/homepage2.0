@@ -1,9 +1,9 @@
-import { compareAsc } from "date-fns";
+import { compareAsc } from 'date-fns';
 
-import styles from "./styles.module.css";
+import styles from './styles.module.css';
 
-import { FC } from "react";
-import { ArticleCard } from "../ArticleCard";
+import { FC } from 'react';
+import { ArticleCard } from '../ArticleCard';
 
 type Props = {
   unorderedArticles: {
@@ -18,7 +18,7 @@ type Props = {
 
 export const ArticleList: FC<Props> = ({ unorderedArticles }) => {
   const news = unorderedArticles.sort((a, b) =>
-    compareAsc(new Date(b.date), new Date(a.date))
+    compareAsc(new Date(b.date), new Date(a.date)),
   );
 
   return (

@@ -1,7 +1,7 @@
-import { FC } from "react";
-import NextLink from "next/link";
-import { NextImageWithFallback } from "~/components/NextImageWithFallback";
-import styles from "./styles.module.css";
+import { FC } from 'react';
+import NextLink from 'next/link';
+import { NextImageWithFallback } from '~/components/NextImageWithFallback';
+import styles from './styles.module.css';
 
 type Props = {
   href: string;
