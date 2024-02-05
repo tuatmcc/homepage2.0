@@ -40,13 +40,13 @@
     line-height: 1.6;
 
     /* This is the link icon */
-    & > a[aria-label='heading-link'] {
+    & > a[aria-label="heading-link"] {
       opacity: 0;
       transition: opacity 0.2s ease-in-out;
     }
 
     &:hover {
-      & a[aria-label='heading-link'] {
+      & a[aria-label="heading-link"] {
         opacity: 1;
       }
     }
@@ -93,11 +93,14 @@
   }
 
   & table {
-    overflow: auto;
+    display: block;
+    margin: 32px 0;
+    overflow-x: auto;
     border-collapse: collapse;
-    background-color: var(--color-gray-200);
 
     & thead {
+      overflow: hidden;
+
       & tr {
         background: var(--color-gray-300);
 
@@ -105,6 +108,7 @@
           padding: 4px 8px;
           font-weight: bold;
           text-align: left;
+          border-right: 1px solid var(--color-gray-0);
         }
       }
     }
@@ -114,6 +118,16 @@
         & td {
           padding: 4px 8px;
           background-color: var(--color-gray-0);
+
+          &:not(:last-child) {
+            border-right: 1px solid var(--color-gray-100);
+          }
+        }
+
+        &:not(:last-child) {
+          & td {
+            border-bottom: 1px solid var(--color-gray-100);
+          }
         }
       }
     }
@@ -239,14 +253,14 @@
 
       &::marker {
         color: var(--color-gray-600);
-        content: '▶ ';
+        content: "▶ ";
       }
     }
 
     &[open] {
       & summary {
         &::marker {
-          content: '▼ ';
+          content: "▼ ";
         }
       }
     }
