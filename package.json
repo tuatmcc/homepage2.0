@@ -14,7 +14,7 @@
     "fmt": "run-p --continue-on-error fmt:*",
     "lint:ts": "biome check .",
     "lint:css": "stylelint './src/**/*.css' --fix",
-    "fmt:ts": "biome check . --apply",
+    "fmt:ts": "biome format .",
     "fmt:css": "stylelint './src/**/*.css' --fix",
     "organize-image": "tsx ./scripts/organizeImage.ts",
     "mdorganizer": "mdorganizer",
@@ -82,7 +82,7 @@
     "typescript-plugin-css-modules": "^5.0.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.4.1",
+    "@biomejs/biome": "^1.5.3",
     "@storybook/addon-essentials": "^7.6.5",
     "@storybook/addon-interactions": "^7.6.5",
     "@storybook/addon-links": "^7.6.10",
