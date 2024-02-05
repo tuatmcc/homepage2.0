@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.4.1/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": true,
@@ -12,8 +12,7 @@
     "rules": {
       "all": true,
       "nursery": {
-        "all": true,
-        "noDefaultExport": "off"
+        "all": true
       },
       "style": {
         "all": true,
@@ -35,7 +34,6 @@
     }
   },
   "files": {
-    "include": ["src/**/*.tsx?"],
     "ignore": ["node_modules", ".mdorganizer", ".storybook", "out", ".next"]
   },
   "json": {
