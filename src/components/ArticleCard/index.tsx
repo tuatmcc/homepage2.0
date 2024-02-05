@@ -28,7 +28,7 @@ export const ArticleCard: FC<Props> = ({
           className={styles.image}
           src={image}
           fallback="/images/wordmark-logo-image.png"
-          alt="blog image"
+          alt="article thumbnail"
         />
       </div>
       <div className={styles.textInfo}>

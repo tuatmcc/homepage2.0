@@ -1,10 +1,16 @@
 .articleCard {
   display: grid;
   gap: 8px;
+  padding: 8px;
 
   & .thumbnail {
     width: 320px;
     max-width: 100%;
+
+    & .image {
+      width: 320px;
+      aspect-ratio: 16 / 9;
+    }
   }
 
   & .textInfo {
