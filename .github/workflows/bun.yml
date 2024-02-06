@@ -36,5 +36,5 @@ jobs:
             git config --global user.name "github-actions[bot]"
             git add .
             git commit -m "chore(deps): bump bun"
-            git push orign HEAD
+            git push origin HEAD
           fi
