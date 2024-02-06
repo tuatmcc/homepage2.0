@@ -30,22 +30,25 @@ jobs:
 
       - name: Show diff
         id: show_diff
-        run: git diff --name-only
-
-      - name: Commit lockfile
-        if: |
-          startsWith(github.head_ref, 'dependabot/') &&
-          steps.show_diff.outputs.stdout != ''
         run: |
-          git config --global user.email "41898282+dependabot[bot]@users.noreply.github.com"
-          git config --global user.name "dependabot[bot]"
-          git add .
-          git commit -m "chore(deps): update dependencies"
-          git push origin HEAD
+          git add -N .
+          git diff --name-only --exit-code
+        continue-on-error: true
 
       - name: Run lint
         run: bun lint
 
       - name: Run production build
         run: bun build:prod
+
+      - name: Commit lockfile
+        if: |
+          startsWith(github.head_ref, 'dependabot/') &&
+          steps.show_diff.outcome == 'failure'
+        run: |
+          git config --global user.email "41898282+dependabot[bot]@users.noreply.github.com"
+          git config --global user.name "dependabot[bot]"
+          git add .
+          git commit -m "chore(deps): update dependencies"
+          git push origin HEAD
 
