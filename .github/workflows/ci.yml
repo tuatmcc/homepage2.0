@@ -32,8 +32,7 @@ jobs:
         id: show_diff
         run: |
           git add -N .
-          git diff --name-only --exit-code
-        continue-on-error: true
+          git diff --name-only
 
       - name: Run lint
         run: bun lint
@@ -44,7 +43,7 @@ jobs:
       - name: Commit lockfile
         if: |
           startsWith(github.head_ref, 'dependabot/') &&
-          steps.show_diff.outcome == 'failure'
+          steps.show_diff.outputs.stdout != ''
         run: |
           git config --global user.email "41898282+dependabot[bot]@users.noreply.github.com"
           git config --global user.name "dependabot[bot]"
