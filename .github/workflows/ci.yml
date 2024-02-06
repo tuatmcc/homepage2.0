@@ -2,10 +2,14 @@ name: CI
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, edited]
+    types: [opened, synchronize, reopened]
     branches:
       - 'develop'
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
 
 jobs:
   ci:
@@ -15,6 +19,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Setup bun
         uses: oven-sh/setup-bun@v1
@@ -22,16 +28,20 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      - name: Show diff
+        id: show_diff
+        run: git diff --name-only
+
       - name: Commit lockfile
-        if: startsWith(github.head_ref, 'dependabot/')
+        if: |
+          startsWith(github.head_ref, 'dependabot/') &&
+          steps.show_diff.outputs.stdout != ''
         run: |
           git config --global user.email "41898282+dependabot[bot]@users.noreply.github.com"
           git config --global user.name "dependabot[bot]"
-          if [ -n "$(git diff --name-only | grep -E 'bun.lockb')" ]; then
-            git add .
-            git commit -m "chore(deps): update dependencies"
-            git push
-          fi
+          git add .
+          git commit -m "chore(deps): update dependencies"
+          git push origin HEAD
 
       - name: Run lint
         run: bun lint
