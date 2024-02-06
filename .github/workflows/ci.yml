@@ -30,7 +30,7 @@ jobs:
           if [ -n "$(git diff --name-only | grep -E 'bun.lockb')" ]; then
             git add .
             git commit -m "chore(deps): update dependencies"
-            git push
+            git push origin HEAD:${{ github.head_ref }}
           fi
 
       - name: Run lint
