@@ -1,9 +1,9 @@
 name: Dependabot for Bun
 
 on:
-  push:
-    branches:
-      - dependabot/*
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: ["develop"]
   workflow_dispatch:
 
 permissions:
@@ -12,7 +12,8 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  run_if_dependabot:
+    if: startsWith(github.head_ref, 'dependabot/')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
