@@ -78,7 +78,7 @@
     "remark-toc": "^9.0.0",
     "shiki": "^0.14.5",
     "storybook": "^7.6.7",
-    "three": "^0.160.1",
+    "three": "^0.161.0",
     "typescript-plugin-css-modules": "^5.0.2"
   },
   "devDependencies": {
