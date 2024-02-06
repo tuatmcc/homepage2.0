@@ -10,7 +10,8 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -18,11 +19,11 @@ jobs:
       - name: Setup bun
         uses: oven-sh/setup-bun@v1
 
-
       - name: Install dependencies
         run: bun install
 
-      - if: startsWith(github.head_ref, 'dependabot/')
+      - name: Commit lockfile
+        if: startsWith(github.head_ref, 'dependabot/')
         run: |
           git config --global user.email "41898282+dependabot[bot]@users.noreply.github.com"
           git config --global user.name "dependabot[bot]"
