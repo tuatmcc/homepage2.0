@@ -2,15 +2,9 @@ name: CI
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened]
     branches:
       - 'develop'
-  push:
-    branches:
-      - 'feature/**'
-      - 'feat/**'
-      - 'hotfix/**'
-      - 'fix/**'
-
   workflow_dispatch:
 
 jobs:
