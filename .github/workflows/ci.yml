@@ -28,12 +28,6 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Show diff
-        id: show_diff
-        run: |
-          git add -N .
-          git diff --name-only
-
       - name: Run lint
         run: bun lint
 
@@ -42,12 +36,13 @@ jobs:
 
       - name: Commit lockfile
         if: |
-          startsWith(github.head_ref, 'dependabot/') &&
-          steps.show_diff.outputs.stdout != ''
+          startsWith(github.head_ref, 'dependabot/')
         run: |
-          git config --global user.email "41898282+dependabot[bot]@users.noreply.github.com"
-          git config --global user.name "dependabot[bot]"
-          git add .
-          git commit -m "chore(deps): update dependencies"
-          git push origin HEAD
+          if [ -n "$(git status --porcelain)" ]; then
+            git config --global user.email "41898282+dependabot[bot]@users.noreply.github.com"
+            git config --global user.name "dependabot[bot]"
+            git add .
+            git commit -m "chore(deps): update lockfile"
+            git push origin HEAD
+          fi
 
