@@ -2,14 +2,10 @@ name: CI
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened, edited]
     branches:
       - 'develop'
   workflow_dispatch:
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   ci:
@@ -26,8 +22,19 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      - if: startsWith(github.head_ref, 'dependabot/')
+        run: |
+          git config --global user.email "41898282+dependabot[bot]@users.noreply.github.com"
+          git config --global user.name "dependabot[bot]"
+          if [ -n "$(git diff --name-only | grep -E 'bun.lockb')" ]; then
+            git add .
+            git commit -m "chore(deps): update dependencies"
+            git push
+          fi
+
       - name: Run lint
         run: bun lint
 
       - name: Run production build
         run: bun build:prod
+
