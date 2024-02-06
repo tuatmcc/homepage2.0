@@ -14,8 +14,6 @@ concurrency:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,16 +31,3 @@ jobs:
 
       - name: Run production build
         run: bun build:prod
-
-      - name: Commit lockfile
-        if: |
-          startsWith(github.head_ref, 'dependabot/')
-        run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            git config --global user.email "41898282+dependabot[bot]@users.noreply.github.com"
-            git config --global user.name "dependabot[bot]"
-            git add .
-            git commit -m "chore(deps): update lockfile"
-            git push origin
-          fi
-
