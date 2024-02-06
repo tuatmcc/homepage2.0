@@ -31,7 +31,7 @@
   "dependencies": {
     "@csstools/postcss-global-data": "^2.1.0",
     "@react-three/cannon": "^6.6.0",
-    "@react-three/drei": "^9.96.5",
+    "@react-three/drei": "^9.97.2",
     "@react-three/fiber": "^8.15.11",
     "@types/mdx": "^2.0.10",
     "@types/node": "20.11.2",
