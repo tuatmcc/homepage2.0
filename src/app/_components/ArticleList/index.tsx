@@ -1,5 +1,4 @@
 import { compareAsc } from 'date-fns';
-
 import styles from './styles.module.css';
 
 import type { FC } from 'react';
@@ -24,7 +23,7 @@ export const ArticleList: FC<Props> = ({ unorderedArticles }) => {
   return (
     <ul className={styles.articleList}>
       {news.map(({ href, image, title, date, tags, author }) => (
-        <li className={styles.listItem} key={href}>
+        <li key={href}>
           <ArticleCard
             href={href}
             image={image}

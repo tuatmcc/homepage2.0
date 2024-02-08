@@ -3,16 +3,16 @@ import styles from './styles.module.css';
 import type { Metadata } from 'next';
 
 import { type BlogDocument, allBlogDocuments } from '@/content';
-import { ArticleList } from '~/components/ArticleList';
-import { Footer } from '~/components/Footer';
-import { Navbar } from '~/components/Navbar';
-import { BlogEyeCatch } from '~/components/blog/BlogEyeCatch';
+import { ArticleList } from '~/app/_components/ArticleList';
+import { Footer } from '~/app/_components/Footer';
+import { Navbar } from '~/app/_components/Navbar';
 import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
   defaultOpenGraph,
   defaultTwitterCard,
   metadataBase,
 } from '~/lib/sharedmetadata';
+import { BlogEyeCatch } from './_components';
 
 export const metadata: Metadata = {
   metadataBase: metadataBase,
@@ -52,26 +52,27 @@ export default function BlogListPage() {
             {/* 虚無スペース(?) */}
             <BlogEyeCatch />
           </div>
-          <ArticleList
-            unorderedArticles={posts.map((post) => {
-              const rootPath = post.rootPath.replace(
-                /^content|\/index\.md$/g,
-                '',
-              );
-              const { title, date, img, tags, author } = post.fields;
-              return {
-                href: `${rootPath}`,
-                title,
-                date: date,
-                author: author,
-                image:
-                  parseImageSrc(rootPath.replace(/^\/blog/, ''), img) ||
-                  '/images/wordmark-logo-image.png',
-                tags,
-              };
-            })}
-          />
-          <div className={styles.right} />
+          <div className={styles.right}>
+            <ArticleList
+              unorderedArticles={posts.map((post) => {
+                const rootPath = post.rootPath.replace(
+                  /^content|\/index\.md$/g,
+                  '',
+                );
+                const { title, date, img, tags, author } = post.fields;
+                return {
+                  href: `${rootPath}`,
+                  title,
+                  date: date,
+                  author: author,
+                  image:
+                    parseImageSrc(rootPath.replace(/^\/blog/, ''), img) ||
+                    '/images/wordmark-logo-image.png',
+                  tags,
+                };
+              })}
+            />
+          </div>
         </div>
       </main>
 

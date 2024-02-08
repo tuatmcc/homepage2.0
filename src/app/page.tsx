@@ -1,8 +1,8 @@
 import styles from './styles.module.css';
 
-import { Navbar } from '~/components/Navbar';
-import { HomeScrollControl } from '~/components/home/home-scroll-control';
-import { HomeText3d } from '~/components/home/home-text-3d';
+import { Navbar } from '~/app/_components/Navbar';
+import { HomeScrollControl } from '~/app/_components/home/home-scroll-control';
+import { HomeText3d } from '~/app/_components/home/home-text-3d';
 
 export default function HomePage() {
   return (

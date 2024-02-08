@@ -1,0 +1,8 @@
+.articleList {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+  width: fit-content;
+  margin: 0 auto;
+}

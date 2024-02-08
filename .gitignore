@@ -44,10 +44,10 @@ next-env.d.ts
 /public/members
 
 # editor
-.idea
-.vscode/tasks.json
-.vim
-biome-*
+/.idea
+/.vscode/tasks.json
+/.vim
+/biome-*
 
 # sitemap
 sitemap*.xml
@@ -57,6 +57,5 @@ robots.txt
 # mdorganizer
 .mdorganizer/generated/*/*
 
-# wiki
-*.wiki
-
+# pathpida
+src/utils/$path.ts

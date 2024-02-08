@@ -1,6 +1,6 @@
 import NextLink from 'next/link';
 import type { FC } from 'react';
-import { NextImageWithFallback } from '~/components/NextImageWithFallback';
+import { NextImageWithFallback } from '~/app/_components/NextImageWithFallback';
 import styles from './styles.module.css';
 
 type Props = {

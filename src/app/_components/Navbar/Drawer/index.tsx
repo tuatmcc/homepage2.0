@@ -3,9 +3,9 @@ import type { FC } from 'react';
 
 import styles from './styles.module.css';
 
-import { GitHubIcon, TwitterIcon } from '~/components/Svg';
-import { XIcon } from '~/components/Svg/XIcon';
-import { baseRouteList } from '~/constants/routes';
+import { GitHubIcon, TwitterIcon } from '~/app/_components/Svg';
+import { XIcon } from '~/app/_components/Svg/XIcon';
+import { navigationRoutes } from '~/constants/routes';
 
 type DrawerProps = {
   isOpen: boolean;
@@ -36,7 +36,7 @@ export const Drawer: FC<DrawerProps> = ({ isOpen, onClickOutside }) => {
           }}
         >
           <ul className={styles.list}>
-            {baseRouteList.map(({ label, path }, index) => (
+            {navigationRoutes.map(({ label, path }, index) => (
               <li key={label} className={styles.listItem}>
                 <NextLink href={path} className={styles.link}>
                   <span className={styles.linkTextWrapper}>

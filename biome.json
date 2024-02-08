@@ -43,12 +43,12 @@
       "allowTrailingCommas": true
     }
   },
-  "files": {
-    "ignore": []
-  },
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
+  },
+  "files": {
+    "ignore": []
   }
 }
