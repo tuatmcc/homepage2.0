@@ -8,7 +8,7 @@ import { Drawer } from './Drawer';
 import { MenuButton } from './MenuButton';
 import styles from './styles.module.css';
 
-import { WordmarkLogo } from '~/components/Svg/WordmarkLogo';
+import { WordmarkLogo } from '~/app/_components/Svg/WordmarkLogo';
 
 type NavbarProps = {
   noBrand?: boolean;

@@ -3,16 +3,16 @@ import styles from './styles.module.css';
 import type { Metadata } from 'next';
 
 import { type BlogDocument, allBlogDocuments } from '@/content';
-import { ArticleList } from '~/components/ArticleList';
-import { Footer } from '~/components/Footer';
-import { Navbar } from '~/components/Navbar';
-import { BlogEyeCatch } from '~/components/blog/BlogEyeCatch';
+import { ArticleList } from '~/app/_components/ArticleList';
+import { Footer } from '~/app/_components/Footer';
+import { Navbar } from '~/app/_components/Navbar';
 import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
   defaultOpenGraph,
   defaultTwitterCard,
   metadataBase,
 } from '~/lib/sharedmetadata';
+import { BlogEyeCatch } from './_components';
 
 export const metadata: Metadata = {
   metadataBase: metadataBase,
