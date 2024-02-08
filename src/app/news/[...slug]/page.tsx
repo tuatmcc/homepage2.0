@@ -5,12 +5,12 @@ import styles from './styles.module.css';
 import type { Metadata } from 'next';
 
 import { allNewsDocuments } from '@/content';
-import { Article } from '~/components/Article';
-import { ArticleBottom } from '~/components/ArticleBottom';
-import { ArticleHeader } from '~/components/ArticleHeader';
-import { BackToTop } from '~/components/BackToTop';
-import { Footer } from '~/components/Footer';
-import { Navbar } from '~/components/Navbar';
+import { Article } from '~/app/_components/Article';
+import { ArticleBottom } from '~/app/_components/ArticleBottom';
+import { ArticleHeader } from '~/app/_components/ArticleHeader';
+import { BackToTop } from '~/app/_components/BackToTop';
+import { Footer } from '~/app/_components/Footer';
+import { Navbar } from '~/app/_components/Navbar';
 import compile from '~/lib/compiler';
 import {
   defaultOpenGraph,

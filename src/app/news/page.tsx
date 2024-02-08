@@ -3,10 +3,10 @@ import type { Metadata } from 'next';
 import styles from './styles.module.css';
 
 import { allNewsDocuments } from '@/content';
-import { ArticleList } from '~/components/ArticleList';
-import { Footer } from '~/components/Footer';
-import { Navbar } from '~/components/Navbar';
-import { NewsEyeCatch } from '~/components/news/NewsEyeCatch';
+import { ArticleList } from '~/app/_components/ArticleList';
+import { Footer } from '~/app/_components/Footer';
+import { Navbar } from '~/app/_components/Navbar';
+import { NewsEyeCatch } from '~/app/_components/news/NewsEyeCatch';
 import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
   defaultOpenGraph,

@@ -16,9 +16,9 @@ import type { ComponentPropsWithoutRef, ReactElement } from 'react';
 
 import type { MDXComponents } from 'mdx/types';
 
-import { MDXLinkComponent } from '~/components/mdx/MDXLinkComponent';
-import { MDXPreComponent } from '~/components/mdx/MDXPreComponent';
-import { MDXScriptComponent } from '~/components/mdx/MDXScriptComponent';
+import { MDXLinkComponent } from '~/app/_components/mdx/MDXLinkComponent';
+import { MDXPreComponent } from '~/app/_components/mdx/MDXPreComponent';
+import { MDXScriptComponent } from '~/app/_components/mdx/MDXScriptComponent';
 
 const components = {
   a: (props: ComponentPropsWithoutRef<typeof MDXLinkComponent>) => (

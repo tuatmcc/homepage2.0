@@ -2,7 +2,7 @@
   display: none;
   padding: 16px 5% 32px;
 
-  @media (--bp-sm) {
+  @media (--bp-md) {
     display: block;
   }
 
@@ -32,14 +32,14 @@
   padding: 0 5%;
 
   & .left {
-    flex: 1;
+    flex: 1 2 auto;
 
-    @media (--bp-sm) {
+    @media (--bp-md) {
       display: none;
     }
   }
 
   & .right {
-    flex: 2;
+    flex: 2 1 auto;
   }
 }

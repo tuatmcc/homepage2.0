@@ -1,9 +1,9 @@
 import NextImage from 'next/image';
 import type { FC } from 'react';
-import { BackToTop } from '~/components/BackToTop';
-import { Footer } from '~/components/Footer';
-import { Navbar } from '~/components/Navbar';
-import { TwitterTimeline } from '~/components/TwitterTimeLine';
+import { BackToTop } from '~/app/_components/BackToTop';
+import { Footer } from '~/app/_components/Footer';
+import { Navbar } from '~/app/_components/Navbar';
+import { TwitterTimeline } from '~/app/_components/TwitterTimeLine';
 import { Sections } from './Sections';
 import styles from './styles.module.css';
 

@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 import styles from './styles.module.css';
 
-import { NextImageWithFallback } from '~/components/NextImageWithFallback';
+import { NextImageWithFallback } from '~/app/_components/NextImageWithFallback';
 
 export type ArticleHeaderProps = {
   breadcrumb: string[];
