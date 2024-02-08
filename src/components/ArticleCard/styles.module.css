@@ -1,11 +1,11 @@
 .articleCard {
-  display: flex;
+  display: grid;
+  grid-template-columns: 320px 1fr;
   gap: 8px;
   padding: 8px;
 
   @media (--bp-sm) {
-    flex-flow: column;
-    gap: 16px;
+    grid-template-columns: 1fr;
     width: 336px;
   }
 
@@ -24,8 +24,9 @@
 
   & .textInfo {
     display: flex;
-    flex-flow: column;
+    flex-flow: column nowrap;
     gap: 8px;
+    padding: 8px 0;
 
     @media (--bp-sm) {
       width: 320px;

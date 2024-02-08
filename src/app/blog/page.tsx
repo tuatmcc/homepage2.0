@@ -52,26 +52,27 @@ export default function BlogListPage() {
             {/* 虚無スペース(?) */}
             <BlogEyeCatch />
           </div>
-          <ArticleList
-            unorderedArticles={posts.map((post) => {
-              const rootPath = post.rootPath.replace(
-                /^content|\/index\.md$/g,
-                '',
-              );
-              const { title, date, img, tags, author } = post.fields;
-              return {
-                href: `${rootPath}`,
-                title,
-                date: date,
-                author: author,
-                image:
-                  parseImageSrc(rootPath.replace(/^\/blog/, ''), img) ||
-                  '/images/wordmark-logo-image.png',
-                tags,
-              };
-            })}
-          />
-          <div className={styles.right} />
+          <div className={styles.right}>
+            <ArticleList
+              unorderedArticles={posts.map((post) => {
+                const rootPath = post.rootPath.replace(
+                  /^content|\/index\.md$/g,
+                  '',
+                );
+                const { title, date, img, tags, author } = post.fields;
+                return {
+                  href: `${rootPath}`,
+                  title,
+                  date: date,
+                  author: author,
+                  image:
+                    parseImageSrc(rootPath.replace(/^\/blog/, ''), img) ||
+                    '/images/wordmark-logo-image.png',
+                  tags,
+                };
+              })}
+            />
+          </div>
         </div>
       </main>
 
