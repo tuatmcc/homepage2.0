@@ -90,7 +90,7 @@
     "@storybook/addon-links": "^7.6.10",
     "@storybook/blocks": "^7.5.3",
     "@storybook/nextjs": "^7.6.10",
-    "@storybook/react": "^7.6.10",
+    "@storybook/react": "^7.6.15",
     "@storybook/testing-library": "0.2.2",
     "pathpida": "^0.22.0",
     "storybook-css-modules": "^1.0.8",
