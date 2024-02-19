@@ -49,6 +49,6 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignore": []
+    "ignore": ["./src/utils/$path.ts"]
   }
 }
