@@ -57,5 +57,3 @@ robots.txt
 # mdorganizer
 .mdorganizer/generated/*/*
 
-# pathpida
-src/utils/$path.ts
