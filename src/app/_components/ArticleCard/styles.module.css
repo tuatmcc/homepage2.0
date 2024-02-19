@@ -16,9 +16,9 @@
     & .image {
       width: 320px;
       aspect-ratio: 16 / 9;
-      border-radius: 12px;
       object-fit: cover;
       object-position: center;
+      border-radius: 12px;
     }
   }
 
