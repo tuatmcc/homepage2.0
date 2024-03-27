@@ -77,7 +77,7 @@
     "remark-rehype": "^11.0.0",
     "remark-slug": "^7.0.1",
     "remark-toc": "^9.0.0",
-    "shiki": "^1.2.0",
+    "shiki": "^1.2.1",
     "simple-git": "^3.22.0",
     "storybook": "^8.0.4",
     "three": "^0.162.0",
