@@ -3,7 +3,7 @@ import type { ComponentPropsWithoutRef, FC, ReactNode } from 'react';
 
 import styles from './styles.module.css';
 
-import { LinkIcon } from '~/app/_components/Svg';
+import LinkIcon from '/public/icons/link.svg';
 
 // biome-ignore lint/style/useNamingConvention: <explanation>
 type MDXLinkComponentProps = ComponentPropsWithoutRef<'a'> & {
