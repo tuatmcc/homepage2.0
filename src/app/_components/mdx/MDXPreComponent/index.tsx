@@ -9,7 +9,7 @@ import {
   useState,
 } from 'react';
 
-import { CopyIcon } from '~/app/_components/Svg/CopyIcon';
+import CopyIcon from '/public/icons/copy.svg';
 
 // biome-ignore lint/style/useNamingConvention: <explanation>
 type MDXPreComponentProps = ComponentPropsWithoutRef<'pre'>;

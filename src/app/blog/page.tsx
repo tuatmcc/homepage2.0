@@ -34,8 +34,8 @@ export const metadata: Metadata = {
 
 export default function BlogListPage() {
   // 暗黙的な参照渡しを防ぐ(いるのか？)
-  const posts: BlogDocument[] = structuredClone(allBlogDocuments).sort((a, b) =>
-    (a.fields.date || 1) < (b.fields.date || 1) ? 1 : -1,
+  const posts: BlogDocument[] = structuredClone(allBlogDocuments).sort(
+    (a, b) => ((a.fields.date || 1) < (b.fields.date || 1) ? 1 : -1),
   );
   return (
     <>

@@ -4,7 +4,9 @@ import type { FC, ReactNode } from 'react';
 
 import styles from './styles.module.css';
 
-import { LinkIcon, TwitterIcon } from '~/app/_components/Svg';
+// TODO: FIX THIS
+import LinkIcon from '/public/icons/link.svg';
+import TwitterIcon from '/public/icons/twitter-x.svg';
 
 const sections: { heading: string; node: ReactNode }[] = [
   {

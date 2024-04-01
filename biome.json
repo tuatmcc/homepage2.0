@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.5.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.6.3/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": true,
@@ -13,7 +13,8 @@
       "all": true,
       "nursery": {
         "all": true,
-        "noNodejsModules": "off"
+        "noNodejsModules": "off",
+        "noUndeclaredDependencies": "off"
       },
       "style": {
         "all": true,
