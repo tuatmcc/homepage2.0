@@ -12,9 +12,7 @@
     "rules": {
       "all": true,
       "nursery": {
-        "all": true,
-        "noNodejsModules": "off",
-        "noUndeclaredDependencies": "off"
+        "recommended": true
       },
       "style": {
         "all": true,
@@ -50,6 +48,6 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignore": ["./src/utils/$path.ts"]
+    "ignore": ["./src/utils/$path.ts", "./mdorganizer/**", ".vscode/**"]
   }
 }

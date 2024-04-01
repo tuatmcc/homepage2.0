@@ -12,7 +12,7 @@ import {
   defaultTwitterCard,
   metadataBase,
 } from '~/lib/sharedmetadata';
-import { BlogEyeCatch } from './_components';
+import { BlogEyeCatch } from './_components/BlogEyeCatch';
 
 export const metadata: Metadata = {
   metadataBase: metadataBase,
