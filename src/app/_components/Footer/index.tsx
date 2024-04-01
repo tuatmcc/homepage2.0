@@ -4,7 +4,9 @@ import type { FC } from 'react';
 
 import styles from './styles.module.css';
 
-import { GitHubIcon, TwitterIcon, WordmarkLogo } from '~/app/_components/Svg';
+import GitHubIcon from '/public/icons/github.svg';
+import TwitterIcon from '/public/icons/twitter-x.svg';
+import WordmarkLogo from '/public/icons/wordmark-logo.svg';
 
 type FotterProps = {
   semitransparent?: boolean;
