@@ -22,20 +22,25 @@ export const MDXPreComponent: FC<MDXPreComponentProps> = ({
   children,
   ...props
 }) => {
-  const [buttonInner, setButtonInner] = useState<ReactNode>(<CopyIcon />);
+  const [buttonInner, setButtonInner] = useState<ReactNode>(
+    <CopyIcon width={24} height={24} />,
+  );
   const ref = useRef<HTMLPreElement>(null);
 
   const copyCode = useCallback(() => {
     navigator.clipboard.writeText(ref.current?.innerText || '');
     setButtonInner('Copied!');
-    const timeout = setTimeout(() => setButtonInner(<CopyIcon />), 1000);
+    const timeout = setTimeout(
+      () => setButtonInner(<CopyIcon width={24} height={24} />),
+      1000,
+    );
 
     return () => clearTimeout(timeout);
   }, []);
 
   return (
     <>
-      <pre ref={ref} {...props}>
+      <pre {...props} ref={ref}>
         {children}
         <button type="button" onClick={copyCode} aria-label="copy">
           {buttonInner}
