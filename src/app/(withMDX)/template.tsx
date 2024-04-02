@@ -7,7 +7,7 @@ export default function Template({ children }: { children: ReactNode }) {
   return (
     <>
       <Navbar />
-        <Article>{children}</Article>
+      <Article>{children}</Article>
       <Footer />
     </>
   );

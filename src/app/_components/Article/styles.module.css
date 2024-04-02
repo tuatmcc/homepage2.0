@@ -14,6 +14,11 @@
     &:hover {
       text-decoration: underline;
     }
+
+    &[aria-label="heading-link"] {
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
   }
 
   & h1:not([class]) {
@@ -22,6 +27,12 @@
     font-size: 24px;
     border-bottom: 2px solid var(--mcc-color-3);
     border-left: 5px solid var(--mcc-color-3);
+
+    &:hover {
+      & a[aria-label="heading-link"] {
+        opacity: 1;
+      }
+    }
   }
 
   & h2 {
@@ -31,24 +42,22 @@
       margin: 48px 0 24px;
       font-size: 1.4rem;
       border-bottom: 2px solid var(--mcc-color-3);
+
+      &:hover {
+        & a[aria-label="heading-link"] {
+          opacity: 1;
+        }
+      }
     }
   }
 
-  & h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
     &:not([class]) {
       font-weight: bold;
       line-height: 1.6;
-
-      /* This is the link icon */
-      & > a[aria-label="heading-link"] {
-        opacity: 0;
-        transition: opacity 0.2s ease-in-out;
-      }
 
       &:hover {
         & a[aria-label="heading-link"] {
@@ -73,20 +82,20 @@
     max-width: 100%;
   }
 
-  & ul,
-  & ol {
-    &:not([class]),
-    &[class="contains-task-list"] {
-      padding-left: 32px;
-    }
-  }
-
   & ul {
     list-style: disc;
   }
 
   & ol {
     list-style: decimal;
+  }
+
+  & ul,
+  & ol {
+    &:not([class]),
+    &[class="contains-task-list"] {
+      padding-left: 32px;
+    }
   }
 
   & li {
@@ -104,10 +113,10 @@
 
   & table:not([class]) {
     margin: 32px 0;
+    overflow: hidden;
     overflow-x: auto;
     border-collapse: collapse;
     border-radius: 8px;
-    overflow: hidden;
     box-shadow: var(--shadow-neumorphism);
 
     & thead {
@@ -120,7 +129,7 @@
           text-align: left;
 
           &:first-of-type {
-            border-radius: 8px 0 0 0;
+            border-radius: 8px 0 0;
           }
 
           &:last-of-type {
@@ -177,8 +186,8 @@
   }
 
   & details:not([class]) {
-    margin: 12px 0;
     padding: 12px;
+    margin: 12px 0;
     border-radius: 8px;
     box-shadow: var(--shadow-neumorphism);
 
