@@ -1,7 +1,8 @@
 .article {
   padding: 0 8px;
+  font-family: var(--font-family-noto-sans-jp);
 
-  & div {
+  & div:not([class]) {
     position: relative;
   }
 
@@ -15,19 +16,22 @@
     }
   }
 
-  & h1 {
+  & h1:not([class]) {
     padding: 2px 10px 0;
-    margin: 48px 0;
+    margin: 64px 0 32px;
     font-size: 24px;
     border-bottom: 2px solid var(--mcc-color-3);
     border-left: 5px solid var(--mcc-color-3);
   }
 
   & h2 {
-    padding: 2px;
-    margin: 32px 0;
-    font-size: 1.4rem;
-    border-bottom: 2px solid var(--mcc-color-3);
+    &:not([class]),
+    &[class="sr-only"] {
+      padding: 2px;
+      margin: 48px 0 24px;
+      font-size: 1.4rem;
+      border-bottom: 2px solid var(--mcc-color-3);
+    }
   }
 
   & h1,
@@ -36,24 +40,26 @@
   h4,
   h5,
   h6 {
-    font-weight: bold;
-    line-height: 1.6;
+    &:not([class]) {
+      font-weight: bold;
+      line-height: 1.6;
 
-    /* This is the link icon */
-    & > a[aria-label="heading-link"] {
-      opacity: 0;
-      transition: opacity 0.2s ease-in-out;
-    }
+      /* This is the link icon */
+      & > a[aria-label="heading-link"] {
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+      }
 
-    &:hover {
-      & a[aria-label="heading-link"] {
-        opacity: 1;
+      &:hover {
+        & a[aria-label="heading-link"] {
+          opacity: 1;
+        }
       }
     }
   }
 
   & p {
-    margin: 32px 0;
+    margin: 24px 0;
     font-size: 16px;
     line-height: 2;
     letter-spacing: 0.05em;
@@ -63,13 +69,16 @@
     }
   }
 
-  & img {
+  & img:not([class]) {
     max-width: 100%;
   }
 
   & ul,
   & ol {
-    padding-left: 32px;
+    &:not([class]),
+    &[class="contains-task-list"] {
+      padding-left: 32px;
+    }
   }
 
   & ul {
@@ -85,30 +94,39 @@
     line-height: 2;
   }
 
-  & blockquote {
-    padding-left: 12px;
+  & blockquote:not([class]) {
+    padding: 12px 0 12px 12px;
     font-style: italic;
     color: var(--color-gray-600);
     border-left: solid 6px var(--color-gray-300);
+    box-shadow: var(--shadow-neumorphism-inset);
   }
 
-  & table {
-    display: block;
+  & table:not([class]) {
     margin: 32px 0;
     overflow-x: auto;
     border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-neumorphism);
 
     & thead {
-      overflow: hidden;
-
       & tr {
-        background: var(--color-gray-300);
+        background: var(--color-gray-200);
 
         & th {
-          padding: 4px 8px;
+          padding: 8px 12px;
           font-weight: bold;
           text-align: left;
-          border-right: 1px solid var(--color-gray-0);
+
+          &:first-of-type {
+            border-radius: 8px 0 0 0;
+          }
+
+          &:last-of-type {
+            border-right: none;
+            border-radius: 0 8px 0 0;
+          }
         }
       }
     }
@@ -116,7 +134,7 @@
     & tbody {
       & tr {
         & td {
-          padding: 4px 8px;
+          padding: 8px 12px;
           background-color: var(--color-gray-0);
 
           &:not(:last-child) {
@@ -133,7 +151,12 @@
     }
   }
 
-  & code {
+  & figure {
+    margin: 32px 0;
+  }
+
+  /* code but not in code block */
+  & code:not([data-language]) {
     padding: 1px 5px;
     margin: 0 0.2em;
     font-family: var(--font-family-jetbrains-mono);
@@ -153,101 +176,8 @@
     }
   }
 
-  & pre {
-    position: relative;
-    display: flex;
-
-    /* code block without file type */
-    padding: 12px;
-    margin: 0;
-    overflow: auto;
-    font-family: var(--font-family-jetbrains-mono);
-    background-color: var(--color-gray-700);
-    border-radius: 0 6px 6px;
-
-    & code {
-      position: relative;
-      width: 100%;
-      padding: 0;
-      margin: 0;
-      color: white;
-      background: inherit;
-    }
-
-    /* This is the copy button */
-    & button {
-      position: absolute;
-      right: 12px;
-      color: white;
-      cursor: pointer;
-      opacity: 0;
-      transition: opacity 0.2s ease-in-out;
-    }
-
-    & + pre {
-      margin-top: 16px;
-    }
-
-    &:hover {
-      & button {
-        opacity: 1;
-      }
-    }
-  }
-
-  & div[data-rehype-pretty-code-fragment] {
-    /* codeblock with file type */
-    margin: 32px 0;
-    overflow: hidden;
-    border-radius: 4px;
-
-    & div[data-rehype-pretty-code-title] {
-      bottom: -4px;
-      display: inline-block;
-      padding: 8px 16px;
-      font-size: 14px;
-      color: #ccc;
-      overflow-wrap: break-word;
-      background: var(--color-gray-900);
-      border-radius: 4px 4px 0 0;
-    }
-
-    & pre {
-      display: flex;
-      padding: 12px;
-      margin: 0;
-      overflow: auto;
-      font-family: var(--font-family-jetbrains-mono);
-      background-color: var(--color-gray-700);
-      border-radius: 6px;
-
-      & code {
-        position: relative;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        background: inherit;
-      }
-
-      /* This is the copy button */
-      & button {
-        position: absolute;
-        right: 12px;
-        color: white;
-        cursor: pointer;
-        opacity: 0;
-        transition: opacity 0.2s ease-in-out;
-      }
-
-      &:hover {
-        & button {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  & details {
+  & details:not([class]) {
+    margin: 12px 0;
     padding: 12px;
     border-radius: 8px;
     box-shadow: var(--shadow-neumorphism);
