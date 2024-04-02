@@ -31,6 +31,9 @@
   },
   "dependencies": {
     "@csstools/postcss-global-data": "^2.1.0",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.1.4",
     "@react-three/cannon": "^6.6.0",
     "@react-three/drei": "^9.102.6",
     "@react-three/fiber": "^8.15.19",
@@ -81,6 +84,7 @@
     "simple-git": "^3.22.0",
     "storybook": "^8.0.4",
     "three": "^0.162.0",
+    "tsconfig-paths-webpack-plugin": "^4.1.0",
     "typescript-plugin-css-modules": "^5.1.0"
   },
   "devDependencies": {
@@ -94,11 +98,13 @@
     "@storybook/testing-library": "0.2.2",
     "@svgr/webpack": "^8.1.0",
     "pathpida": "^0.22.0",
+    "postcss-selector-not": "^7.0.2",
     "storybook-css-modules": "^1.0.8",
     "stylelint": "^15.11.0",
     "stylelint-config-recess-order": "^4.4.0",
     "stylelint-config-standard": "^34.0.0",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "unified": "^11.0.4"
   },
   "optionalDependencies": {
     "@next/env": "^14.0.3",
