@@ -32,6 +32,8 @@
   },
   "include": [
     "next-env.d.ts",
+    "svgr.d.ts",
+    "mdx-components.tsx",
     "src/**/*.ts",
     "src/**/*.tsx",
     ".next/types/**/*.ts",

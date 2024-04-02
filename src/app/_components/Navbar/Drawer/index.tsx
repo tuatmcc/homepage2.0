@@ -3,9 +3,9 @@ import type { FC } from 'react';
 
 import styles from './styles.module.css';
 
-import { GitHubIcon, TwitterIcon } from '~/app/_components/Svg';
-import { XIcon } from '~/app/_components/Svg/XIcon';
 import { navigationRoutes } from '~/constants/routes';
+import GitHubIcon from '/public/icons/github.svg';
+import TwitterIcon from '/public/icons/twitter-x.svg';
 
 type DrawerProps = {
   isOpen: boolean;
@@ -54,20 +54,12 @@ export const Drawer: FC<DrawerProps> = ({ isOpen, onClickOutside }) => {
           </ul>
           <div className={styles.socials} data-animated={isOpen}>
             <a
-              href="https://twitter.com/TUATMCC"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="twitter link"
-            >
-              <TwitterIcon size={28} color="white" />
-            </a>
-            <a
               href="https://x.com/tuatmcc"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="x link"
             >
-              <XIcon size={28} color="white" />
+              <TwitterIcon width={36} height={36} color="white" />
             </a>
             <a
               href="https://github.com/tuatmcc"
@@ -75,7 +67,7 @@ export const Drawer: FC<DrawerProps> = ({ isOpen, onClickOutside }) => {
               rel="noopener noreferrer"
               aria-label="github link"
             >
-              <GitHubIcon size={28} color="white" />
+              <GitHubIcon width={36} height={36} color="white" />
             </a>
           </div>
         </div>
