@@ -16,23 +16,23 @@ import type { ComponentPropsWithoutRef, ReactElement } from 'react';
 
 import type { MDXComponents } from 'mdx/types';
 
+import { MDXFigureComponent } from '~/app/_components/mdx/MDXFigureComponent';
 import { MDXLinkComponent } from '~/app/_components/mdx/MDXLinkComponent';
-import { MDXPreComponent } from '~/app/_components/mdx/MDXPreComponent';
 import { MDXScriptComponent } from '~/app/_components/mdx/MDXScriptComponent';
 
-const components = {
+export const components = {
   a: (props: ComponentPropsWithoutRef<typeof MDXLinkComponent>) => (
     <MDXLinkComponent {...props} />
   ),
-  pre: (props: ComponentPropsWithoutRef<typeof MDXPreComponent>) => (
-    <MDXPreComponent {...props} />
+  figure: (props: ComponentPropsWithoutRef<typeof MDXFigureComponent>) => (
+    <MDXFigureComponent {...props} />
   ),
   script: (props: ComponentPropsWithoutRef<typeof MDXScriptComponent>) => (
     <MDXScriptComponent {...props} />
   ),
 } as MDXComponents;
 
-const rhypePrettyCodeOptions: Partial<RehypePrettyCodeOption> = {
+const rehypePrettyCodeOptions: Partial<RehypePrettyCodeOption> = {
   theme: 'github-dark',
   onVisitLine(node) {
     if (node.children.length === 0) {
@@ -67,8 +67,7 @@ export default async function compile(source: string): Promise<ReactElement> {
               properties: { 'aria-label': 'heading-link' },
             },
           ],
-          // @ts-expect-error
-          [rehypePrettyCode, rhypePrettyCodeOptions],
+          [rehypePrettyCode as () => void, rehypePrettyCodeOptions],
           rehypeKatex as () => void,
           rehypeRaw as () => void,
           [rehypeStringify as () => void, { allowDangerousHtml: true }],
