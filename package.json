@@ -6,7 +6,7 @@
     "vercel-build": "next build",
     "build:next": "next build",
     "build-storybook": "storybook build",
-    "build:prod": "run-s setup build:next-on-pages sitemap",
+    "build:prod": "run-s setup build:next sitemap",
     "build:next-on-pages": "pnpx @cloudflare/next-on-pages",
     "dev": "run-p dev:*",
     "dev:next": "next dev",
@@ -115,3 +115,4 @@
     "webpack": "^5.91.0"
   }
 }
+

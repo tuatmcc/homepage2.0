@@ -21,7 +21,6 @@ import {
 
 type Params = { slug: string[] }; // [...slug]
 
-export const runtime = 'edge';
 export async function generateMetadata({
   params,
 }: {

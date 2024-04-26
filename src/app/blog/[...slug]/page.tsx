@@ -21,7 +21,6 @@ import {
   metadataBase,
 } from '~/lib/sharedmetadata';
 
-export const runtime = "edge"
 type Params = { slug: string[] }; // [...slug]
 
 export async function generateMetadata({
