@@ -1,6 +1,9 @@
+import fs from 'node:fs';
 import { cp, rm } from 'node:fs/promises';
+import path from 'node:path';
 import { glob } from 'glob';
-import { simpleGit as git } from 'simple-git';
+import { clone } from 'isomorphic-git';
+import http from 'isomorphic-git/http/node';
 
 const CONTENT_REPO = 'https://github.com/tuatmcc/hp-md-content.git';
 
@@ -10,7 +13,14 @@ async function fetchContent() {
   await rm('content', { recursive: true, force: true });
 
   // clone the content repo
-  await git().clone(CONTENT_REPO, 'content', ['--depth', '1']);
+  await clone({
+    depth: 1,
+    url: CONTENT_REPO,
+    fs: fs,
+    dir: path.join(process.cwd(), 'content'),
+    http: http,
+  });
+
   console.info('Successfully cloned content repo');
 
   // move all images to public folder
