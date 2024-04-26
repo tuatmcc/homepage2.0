@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
+    "vercel-build": "next build",
     "build:next": "next build",
     "build-storybook": "storybook build",
     "build:prod": "run-s setup build:next-on-pages sitemap",
