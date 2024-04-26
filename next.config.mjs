@@ -11,6 +11,8 @@ import remarkMath from "remark-math";
 import remarkToc from "remark-toc";
 import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
 
+export const runtime = "edge";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
