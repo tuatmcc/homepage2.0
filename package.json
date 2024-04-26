@@ -5,7 +5,8 @@
   "scripts": {
     "build:next": "next build",
     "build-storybook": "storybook build",
-    "build:prod": "run-s setup build:next sitemap",
+    "build:prod": "run-s setup build:next-on-pages sitemap",
+    "build:next-on-pages": "pnpx @cloudflare/next-on-pages",
     "dev": "run-p dev:*",
     "dev:next": "next dev",
     "dev:path": "pathpida --ignorepath .gitignore --output ./src/utils",
@@ -88,6 +89,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.7.1",
+    "@cloudflare/next-on-pages": "^1.11.1",
     "@storybook/addon-essentials": "^7.6.18",
     "@storybook/addon-interactions": "^8.0.9",
     "@storybook/addon-links": "^7.6.18",
