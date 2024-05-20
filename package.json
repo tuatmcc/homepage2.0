@@ -91,7 +91,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.7.1",
     "@cloudflare/next-on-pages": "^1.11.1",
-    "@storybook/addon-essentials": "^7.6.18",
+    "@storybook/addon-essentials": "^8.1.1",
     "@storybook/addon-interactions": "^8.0.9",
     "@storybook/addon-links": "^7.6.18",
     "@storybook/blocks": "^7.6.18",
