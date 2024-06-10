@@ -12,10 +12,8 @@ import {
 import CopyIcon from '/public/icons/copy.svg';
 import styles from './styles.module.css';
 
-// biome-ignore lint/style/useNamingConvention: <explanation>
 type MDXFigureComponentProps = ComponentPropsWithoutRef<'figure'>;
 
-// biome-ignore lint/style/useNamingConvention: <explanation>
 export const MDXFigureComponent: FC<MDXFigureComponentProps> = ({
   children,
   ...props

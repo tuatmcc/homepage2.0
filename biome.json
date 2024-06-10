@@ -10,14 +10,7 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "all": true,
-      "nursery": {
-        "recommended": true
-      },
-      "style": {
-        "all": true,
-        "noDefaultExport": "off"
-      }
+      "recommended": true
     }
   },
   "organizeImports": {

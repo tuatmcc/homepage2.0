@@ -1,23 +1,22 @@
-// biome-ignore lint/style/useNamingConvention: <explanation>
-import createMDX from "@next/mdx";
-import rehypeAutoLinkHeadings from "rehype-autolink-headings";
-import rehypeKatex from "rehype-katex";
-import rehypePrettyCode from "rehype-pretty-code";
-import rehypeSlug from "rehype-slug";
-import rehypeStringify from "rehype-stringify";
-import remarkGemoji from "remark-gemoji";
-import remarkGfm from "remark-gfm";
-import remarkMath from "remark-math";
-import remarkToc from "remark-toc";
-import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
+import createMDX from '@next/mdx';
+import rehypeAutoLinkHeadings from 'rehype-autolink-headings';
+import rehypeKatex from 'rehype-katex';
+import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeSlug from 'rehype-slug';
+import rehypeStringify from 'rehype-stringify';
+import remarkGemoji from 'remark-gemoji';
+import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import remarkToc from 'remark-toc';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  output: 'export',
   trailingSlash: true,
   reactStrictMode: true,
   swcMinify: true,
-  pageExtensions: ["tsx", "mdx"],
+  pageExtensions: ['tsx', 'mdx'],
   images: {
     unoptimized: true,
   },
@@ -28,7 +27,7 @@ const nextConfig = {
     // ------------------ SVG ------------------
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
-      rule.test?.test?.(".svg"),
+      rule.test?.test?.('.svg'),
     );
     config.module.rules.push(
       {
@@ -41,7 +40,7 @@ const nextConfig = {
         test: /\.svg$/i,
         issuer: fileLoaderRule.issuer,
         resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
-        use: ["@svgr/webpack"],
+        use: ['@svgr/webpack'],
       },
     );
     // Modify the file loader rule to ignore *.svg, since we have it handled now.
@@ -50,7 +49,7 @@ const nextConfig = {
     // ------------------ MDX ------------------
     config.resolve.plugins = [
       new TsconfigPathsPlugin({
-        extensions: [".ts", ".tsx", ".mdx"],
+        extensions: ['.ts', '.tsx', '.mdx'],
       }),
     ];
 
@@ -58,38 +57,37 @@ const nextConfig = {
   },
 };
 
-// biome-ignore lint/style/useNamingConvention: <explanation>
 const withMDX = createMDX({
   options: {
     remarkPlugins: [
       remarkGfm,
       remarkGemoji,
       remarkMath,
-      [remarkToc, { heading: "目次", tight: true }],
+      [remarkToc, { heading: '目次', tight: true }],
     ],
     rehypePlugins: [
       rehypeSlug,
       [
         rehypeAutoLinkHeadings,
         {
-          behavior: "append",
-          properties: { "aria-label": "heading-link" },
+          behavior: 'append',
+          properties: { 'aria-label': 'heading-link' },
         },
       ],
       [
         rehypePrettyCode,
         {
-          theme: "github-dark",
+          theme: 'github-dark',
           onVisitLine(node) {
             if (node.children.length === 0) {
-              node.children = [{ type: "text", value: " " }];
+              node.children = [{ type: 'text', value: ' ' }];
             }
           },
           onVisitHighlightedLine(node) {
-            node.properties.className?.push("line--highlighted");
+            node.properties.className?.push('line--highlighted');
           },
           onVisitHighlightedChars(node) {
-            node.properties.className = ["word--highlighted"];
+            node.properties.className = ['word--highlighted'];
           },
         },
       ],
@@ -98,10 +96,10 @@ const withMDX = createMDX({
     ],
     remarkRehypeOptions: {
       allowDangerousHtml: true,
-      footnoteLabel: "脚注",
-      footnoteBackLabel: "戻る",
+      footnoteLabel: '脚注',
+      footnoteBackLabel: '戻る',
     },
-    format: "mdx",
+    format: 'mdx',
   },
 });
 
