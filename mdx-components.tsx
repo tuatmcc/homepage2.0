@@ -18,7 +18,6 @@ export const mdxComponents = {
   ),
 } as MDXComponents;
 
-// biome-ignore lint/style/useNamingConvention: <explanation>
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...mdxComponents,

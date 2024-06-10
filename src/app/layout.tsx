@@ -5,7 +5,6 @@ import type { ReactNode } from 'react';
 import { sharedMetadata } from '~/lib/sharedmetadata';
 import '~/styles/global.css';
 
-// biome-ignore lint/style/useNamingConvention: <explanation>
 const notoSansJP = Noto_Sans_JP({
   variable: '--font-family-noto-sans-jp',
   weight: ['400', '700'],

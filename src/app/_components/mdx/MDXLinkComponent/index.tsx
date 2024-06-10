@@ -5,13 +5,11 @@ import styles from './styles.module.css';
 
 import LinkIcon from '/public/icons/link.svg';
 
-// biome-ignore lint/style/useNamingConvention: <explanation>
 type MDXLinkComponentProps = ComponentPropsWithoutRef<'a'> & {
   children: ReactNode;
   href: string;
 };
 
-// biome-ignore lint/style/useNamingConvention: <explanation>
 export const MDXLinkComponent: FC<MDXLinkComponentProps> = ({
   children,
   href,
