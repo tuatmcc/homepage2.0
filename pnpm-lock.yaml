@@ -4230,7 +4230,7 @@ packages:
       util: 0.12.5
       util-deprecate: 1.0.2
       watchpack: 2.4.1
-      ws: 8.17.0
+      ws: 8.17.1
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -10595,7 +10595,7 @@ packages:
       stoppable: 1.1.0
       undici: 5.28.4
       workerd: 1.20240419.0
-      ws: 8.17.0
+      ws: 8.17.1
       youch: 3.3.3
       zod: 3.23.5
     transitivePeerDependencies:
@@ -14046,8 +14046,8 @@ packages:
       signal-exit: 3.0.7
     dev: true
 
-  /ws@8.17.0:
-    resolution: {integrity: sha512-uJq6108EgZMAl20KagGkzCKfMEjxmKvZHG7Tlq0Z6nOky7YF7aq4mOx6xK8TJ/i1LeK4Qus7INktacctDgY8Ow==}
+  /ws@8.17.1:
+    resolution: {integrity: sha512-6XQFvXTkbfUOZOKKILFG1PDK2NDQs4azKQl26T0YS5CxqWLgXajbPZ+h4gZekJyRqFU8pvnbAbbs/3TgRPy+GQ==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
