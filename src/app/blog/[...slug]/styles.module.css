@@ -1,5 +1,5 @@
 .main {
-  width: 95%;
-  max-width: var(--article-max-width);
-  margin: 0 auto;
+	width: 95%;
+	max-width: var(--article-max-width);
+	margin: 0 auto;
 }
