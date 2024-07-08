@@ -98,7 +98,7 @@
     "pathpida": "^0.22.0",
     "postcss-selector-not": "^7.0.2",
     "storybook-css-modules": "^1.0.8",
-    "tsx": "^4.7.3",
+    "tsx": "^4.16.2",
     "typescript": "5.4.5",
     "unified": "^11.0.4",
     "wrangler": "^3.53.0"
