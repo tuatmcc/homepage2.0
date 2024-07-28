@@ -1,38 +1,38 @@
 .heroImage {
-	display: block;
-	width: 100%;
-	max-width: 1000px;
-	height: 300px;
-	margin: 0 auto;
-	margin-top: -64px;
-	object-fit: cover;
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+  height: 300px;
+  margin: 0 auto;
+  margin-top: -64px;
+  object-fit: cover;
 }
 
 .main {
-	max-width: 900px;
-	padding: 0 8px 48px;
-	margin: auto;
+  max-width: 900px;
+  padding: 0 8px 48px;
+  margin: auto;
 
-	@media (--bp-sm) {
-		width: 92vw;
-	}
+  @media (--bp-sm) {
+    width: 92vw;
+  }
 
-	& .backLink {
-		display: inline-flex;
-		align-items: center;
-		padding: 8px 16px;
-		margin-top: 64px;
-		font-size: 16px;
-		font-weight: bold;
-		color: var(--mcc-color-1);
-		text-decoration: none;
-		border-radius: 8px;
-		box-shadow: var(--shadow-neumorphism);
-		transition: all 0.2s ease-in-out;
+  & .backLink {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    margin-top: 64px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--mcc-color-1);
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: var(--shadow-neumorphism);
+    transition: all 0.2s ease-in-out;
 
-		&:hover {
-			background-color: var(--color-gray-200);
-			box-shadow: var(--shadow-neumorphism-hover);
-		}
-	}
+    &:hover {
+      background-color: var(--color-gray-200);
+      box-shadow: var(--shadow-neumorphism-hover);
+    }
+  }
 }
