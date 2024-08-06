@@ -35,7 +35,7 @@ export const MDXFigureComponent: FC<MDXFigureComponentProps> = ({
   }, []);
 
   return Object.hasOwn(props, 'data-rehype-pretty-code-figure') ? (
-    <figure {...props} className={styles.codeFigure}>
+    <figure {...props} ref={ref} className={styles.codeFigure}>
       {children}
       <button
         type="button"
