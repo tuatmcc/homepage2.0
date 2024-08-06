@@ -14,7 +14,7 @@
     box-shadow: var(--shadow-neumorphism-hover);
   }
 
-  &[aria-hidden='true'] {
+  &[aria-hidden="true"] {
     opacity: 0;
     transform: translateY(100%);
   }

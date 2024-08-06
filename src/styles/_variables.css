@@ -22,12 +22,12 @@
   --color-gray-1000: #000;
 
   /* Utility Colors */
-  --shadow-neumorphism: 4px 4px 8px var(--color-gray-300),
+  --shadow-neumorphism: 4px 4px 8px var(--color-gray-300), -4px -4px 8px
+    var(--color-gray-0);
+  --shadow-neumorphism-hover: 6px 6px 12px var(--color-gray-400), -6px -6px 12px
+    var(--color-gray-0);
+  --shadow-neumorphism-inset: inset 4px 4px 8px var(--color-gray-300), inset
     -4px -4px 8px var(--color-gray-0);
-  --shadow-neumorphism-hover: 6px 6px 12px var(--color-gray-400),
-    -6px -6px 12px var(--color-gray-0);
-  --shadow-neumorphism-inset: inset 4px 4px 8px var(--color-gray-300),
-    inset -4px -4px 8px var(--color-gray-0);
   --color-gradient-mcc: var(--mcc-color-1), var(--mcc-color-2),
     var(--mcc-color-3), var(--mcc-color-4), var(--mcc-color-5),
     var(--mcc-color-6);

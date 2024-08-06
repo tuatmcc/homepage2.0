@@ -22,7 +22,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    content: '';
+    content: "";
     background: linear-gradient(
       60deg,
       var(--mcc-color-1),
@@ -68,7 +68,7 @@
         display: inline-block;
         margin: 0 8px;
         text-decoration: none;
-        content: '/';
+        content: "/";
       }
     }
   }

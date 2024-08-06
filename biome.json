@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.6.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.8.1/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": true,
@@ -10,14 +10,7 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "all": true,
-      "nursery": {
-        "recommended": true
-      },
-      "style": {
-        "all": true,
-        "noDefaultExport": "off"
-      }
+      "recommended": true
     }
   },
   "organizeImports": {
@@ -30,7 +23,7 @@
       "lineWidth": 80,
       "quoteStyle": "single",
       "semicolons": "always",
-      "trailingComma": "all"
+      "trailingCommas": "all"
     }
   },
   "json": {
@@ -40,6 +33,17 @@
     },
     "parser": {
       "allowTrailingCommas": true
+    }
+  },
+  "css": {
+    "linter": {
+      "enabled": true
+    },
+    "formatter": {
+      "enabled": true
+    },
+    "parser": {
+      "cssModules": true
     }
   },
   "vcs": {
