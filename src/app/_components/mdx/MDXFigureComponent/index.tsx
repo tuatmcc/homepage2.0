@@ -24,7 +24,7 @@ export const MDXFigureComponent: FC<MDXFigureComponentProps> = ({
   const ref = useRef<HTMLElement>(null);
 
   const copyCode = useCallback(() => {
-    const code = ref.current?.querySelector('pre code');
+    const code = ref.current?.querySelector('pre');
     navigator.clipboard.writeText(code?.innerText || '');
     setButtonInner('Copied!');
     const timeout = setTimeout(
