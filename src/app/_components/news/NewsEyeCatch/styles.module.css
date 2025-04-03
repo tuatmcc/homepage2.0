@@ -1,42 +1,42 @@
 .newsEyeCatch {
-  position: sticky;
-  top: var(--navbar-height);
-  padding: 32px;
+	position: sticky;
+	top: var(--navbar-height);
+	padding: 32px;
 
-  & .container {
-    & .title {
-      margin-top: 64px;
-      font-family: var(--font-family-orbitron);
-      font-size: 32px;
-      font-weight: bold;
-      color: var(--color-gray-600);
-      text-align: center;
-      letter-spacing: 0.1em;
-    }
+	& .container {
+		& .title {
+			margin-top: 64px;
+			font-family: var(--font-family-orbitron);
+			font-size: 32px;
+			font-weight: bold;
+			color: var(--color-gray-600);
+			text-align: center;
+			letter-spacing: 0.1em;
+		}
 
-    & .poem {
-      margin-top: 32px;
-      font-family: var(--font-family-orbitron);
-      font-size: 18px;
-      font-weight: bold;
-      color: var(--color-gray-500);
-      text-align: center;
-      letter-spacing: 0.1em;
+		& .poem {
+			margin-top: 32px;
+			font-family: var(--font-family-orbitron);
+			font-size: 18px;
+			font-weight: bold;
+			color: var(--color-gray-500);
+			text-align: center;
+			letter-spacing: 0.1em;
 
-      & .typography {
-        overflow: hidden;
-        animation: fadein 5s;
-      }
-    }
-  }
+			& .typography {
+				overflow: hidden;
+				animation: fadein 5s;
+			}
+		}
+	}
 }
 
 @keyframes fadein {
-  from {
-    opacity: 0;
-  }
+	from {
+		opacity: 0;
+	}
 
-  to {
-    opacity: 1;
-  }
+	to {
+		opacity: 1;
+	}
 }

@@ -1,23 +1,23 @@
 .nav {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  height: var(--navbar-height);
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	height: var(--navbar-height);
 
-  & .navbar {
-    display: flex;
-    height: inherit;
-    padding: 0 8px;
-    backdrop-filter: blur(10px);
+	& .navbar {
+		display: flex;
+		height: inherit;
+		padding: 0 8px;
+		backdrop-filter: blur(10px);
 
-    &._transparent {
-      backdrop-filter: none;
-    }
+		&._transparent {
+			backdrop-filter: none;
+		}
 
-    & .brand {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
+		& .brand {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
 }

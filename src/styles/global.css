@@ -1,4 +1,4 @@
-@import url("./_reset.css");
+@import "tailwindcss";
 @import url("./_base.css");
 @import url("./_variables.css");
 @import url("./_media.css");

@@ -1,45 +1,45 @@
 .button {
-  position: fixed;
-  top: 4px;
-  right: 8px;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border: none;
+	position: fixed;
+	top: 4px;
+	right: 8px;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	border: none;
 
-  & .svg {
-    transition: all 0.3s ease;
+	& .svg {
+		transition: all 0.3s ease;
 
-    & * {
-      transition: all 0.3s ease;
-    }
-  }
+		& * {
+			transition: all 0.3s ease;
+		}
+	}
 
-  &[data-shadow="true"] {
-    & .svg {
-      filter: drop-shadow(0 0 8px var(--mcc-color-2));
-    }
-  }
+	&[data-shadow="true"] {
+		& .svg {
+			filter: drop-shadow(0 0 8px var(--mcc-color-2));
+		}
+	}
 
-  &[aria-expanded="true"] {
-    & .svg {
-      & .path1 {
-        transform: rotate(135deg) translate(6px, -6px) scale(0.3, 1);
-        transform-origin: center;
-      }
+	&[aria-expanded="true"] {
+		& .svg {
+			& .path1 {
+				transform: rotate(135deg) translate(6px, -6px) scale(0.3, 1);
+				transform-origin: center;
+			}
 
-      & .path2 {
-        transform: rotate(45deg);
-        transform-origin: center;
-      }
+			& .path2 {
+				transform: rotate(45deg);
+				transform-origin: center;
+			}
 
-      & .path3 {
-        transform: rotate(-45deg) translate(6px, 6px) scale(0.3, 1);
-        transform-origin: center;
-      }
-    }
-  }
+			& .path3 {
+				transform: rotate(-45deg) translate(6px, 6px) scale(0.3, 1);
+				transform-origin: center;
+			}
+		}
+	}
 }
