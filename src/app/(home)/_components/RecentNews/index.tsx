@@ -1,7 +1,6 @@
 'use client';
 
 import type { FC } from 'react';
-import tw from 'twin.macro';
 
 import { allNewsDocuments } from '@/content';
 import classNames from 'classnames';
