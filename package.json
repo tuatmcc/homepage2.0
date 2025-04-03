@@ -6,7 +6,7 @@
     "vercel-build": "next build",
     "build:next": "next build",
     "build-storybook": "storybook build",
-    "build:prod": "run-s setup build:next sitemap",
+    "build:prod": "pnpm run setup && pnpm build:next & pnpm sitemap",
     "dev": "run-p dev:*",
     "dev:next": "next dev",
     "dev:path": "pathpida --ignorepath .gitignore --output ./src/utils",
@@ -20,12 +20,6 @@
     "storybook": "storybook dev -p 6006 --no-open",
     "typecheck": "tsc --noEmit",
     "wrangler": "wrangler"
-  },
-  "engines": {
-    "node": ">=20"
-  },
-  "volta": {
-    "node": "20.11.0"
   },
   "dependencies": {
     "@csstools/postcss-global-data": "^2.1.1",
@@ -110,5 +104,5 @@
   "optionalDependencies": {
     "@next/env": "^14.2.3",
     "webpack": "^5.91.0"
-  },
+  }
 }
