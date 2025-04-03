@@ -1,0 +1,17 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  theme: {
+    extend: {},
+    fontFamily: {
+      sans: ['Hiragino Kaku Gothic ProN', 'sans-serif'],
+      orbitron: ['Orbitron', 'sans-serif'],
+      tektur: ['Tektur', 'sans-serif'],
+      mono: ['JetBrains Mono', 'monospace'],
+    },
+    colors: {
+      mcc: '#0066cc',
+    },
+  },
+  plugins: [],
+};

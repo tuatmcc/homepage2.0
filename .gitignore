@@ -57,3 +57,6 @@ robots.txt
 # mdorganizer
 .mdorganizer/generated/*/*
 
+
+.envrc
+.direnv

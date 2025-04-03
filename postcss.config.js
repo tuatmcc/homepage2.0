@@ -11,5 +11,6 @@ module.exports = {
     'postcss-custom-media',
     'postcss-media-minmax',
     'postcss-selector-not',
+    '@tailwindcss/postcss',
   ],
 };
