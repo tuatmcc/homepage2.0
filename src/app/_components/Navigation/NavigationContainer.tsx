@@ -23,7 +23,7 @@ export const NavigationContainer = ({ children }: { children: ReactNode }) => {
       <header>
         <button
           type="button"
-          className="fixed top-0 right-0 p-2"
+          className="fixed top-0 right-0 p-2 z-10"
           aria-label="Menu Button"
           onClick={() => setActive((prev) => !prev)}
         >

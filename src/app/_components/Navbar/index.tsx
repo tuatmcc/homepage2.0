@@ -22,16 +22,16 @@ export const Navbar: FC<NavbarProps> = ({
   color = 'mcc',
   noBrand = false,
 }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const setNavDrawerState = useCallback((bool: boolean) => {
-    if (document.startViewTransition) {
-      document.startViewTransition(() => {
-        setIsOpen(bool);
-      });
-    } else {
-      setIsOpen(bool);
-    }
-  }, []);
+  // const [isOpen, setIsOpen] = useState<boolean>(false);
+  // const setNavDrawerState = useCallback((bool: boolean) => {
+  //   if (document.startViewTransition) {
+  //     document.startViewTransition(() => {
+  //       setIsOpen(bool);
+  //     });
+  //   } else {
+  //     setIsOpen(bool);
+  //   }
+  // }, []);
 
   return (
     <>
@@ -51,15 +51,15 @@ export const Navbar: FC<NavbarProps> = ({
             </NextLink>
           )}
         </div>
-        <Drawer
-          isOpen={isOpen}
-          onClickOutside={() => setNavDrawerState(false)}
-        />
-        <MenuButton
-          isExpanded={isOpen}
-          onClick={() => setNavDrawerState(!isOpen)}
-          color={isOpen ? 'white' : color.replace('mcc', '#06c')}
-        />
+        {/* <Drawer */}
+        {/*   isOpen={isOpen} */}
+        {/*   onClickOutside={() => setNavDrawerState(false)} */}
+        {/* /> */}
+        {/* <MenuButton */}
+        {/*   isExpanded={isOpen} */}
+        {/*   onClick={() => setNavDrawerState(!isOpen)} */}
+        {/*   color={isOpen ? 'white' : color.replace('mcc', '#06c')} */}
+        {/* /> */}
       </nav>
     </>
   );

@@ -1,9 +1,11 @@
 import { Navigation } from '../_components/Navigation/Navigation';
-import { AmbientWireframeImage } from './_components/AmbientWireframeImage';
+import { Footer } from './_components/Footer';
 import { Introduction } from './_components/Introduction';
 import { Progress } from './_components/Progress';
+import { Pulse } from './_components/Pulse';
 import { RecentNews } from './_components/RecentNews';
 import { Top } from './_components/Top';
+import { WireframeImage } from './_components/WireframeImage';
 
 export default function HomePage() {
   return (
@@ -11,16 +13,11 @@ export default function HomePage() {
       <Navigation>
         <main className="relative">
           <Top />
-          <AmbientWireframeImage />
+          <WireframeImage />
+          <Pulse />
           <Introduction />
           <RecentNews />
-          <div className="flex flex-col items-center justify-center h-svh">
-            <h1 className="text-4xl font-bold text-center">MCC</h1>
-
-            <p className="text-center">
-              The official website of the Model Christian College, Dimapur
-            </p>
-          </div>
+          <Footer />
           <Progress />
         </main>
       </Navigation>

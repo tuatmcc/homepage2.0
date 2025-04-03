@@ -20,7 +20,7 @@ export const SlideIn: FC<Props> = () => {
       }}
     >
       <motion.div
-        className="flex flex-col justify-center h-full p-[1px] bg-black w-[700px] max-w-full"
+        className="flex flex-col justify-center h-full p-[1px] bg-blue-800 w-[700px] max-w-full"
         variants={{
           visible: {
             backgroundPosition: '0% 0%',
@@ -45,7 +45,7 @@ export const SlideIn: FC<Props> = () => {
           backgroundPosition: '100% 100%',
           backgroundSize: '200% 200%',
           backgroundImage:
-            'linear-gradient(to bottom right, #000 50%, #f6f3f4 50%)',
+            'linear-gradient(to bottom right, #193cb8 50%, #f6f3f4 50%)',
         }}
       >
         <div
@@ -68,7 +68,7 @@ export const SlideIn: FC<Props> = () => {
           <motion.h3
             className={classNames(
               orbitron.className,
-              'text-2xl font-bold tracking-wider mb-2',
+              'text-xl font-bold tracking-wider mb-2',
             )}
             variants={{
               hidden: {

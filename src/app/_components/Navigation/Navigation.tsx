@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 const links = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/achievements', label: 'Achievements' },
+  { href: '/news', label: 'News' },
   { href: '/blog', label: 'Blog' },
 ];
 

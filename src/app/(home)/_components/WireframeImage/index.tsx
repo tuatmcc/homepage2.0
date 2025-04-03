@@ -4,12 +4,12 @@ import { motion, useScroll } from 'framer-motion';
 import Image from 'next/image';
 import { type FC, useCallback, useEffect, useState } from 'react';
 
-export const AmbientWireframeImage: FC = () => {
+export const WireframeImage: FC = () => {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
 
   scrollY.updateAndNotify = useCallback((y: number) => {
-    if (y > innerHeight) {
+    if (y > innerHeight * 1.5) {
       setVisible(true);
     } else {
       setVisible(false);
@@ -29,7 +29,7 @@ export const AmbientWireframeImage: FC = () => {
         src="/images/untitled.png"
         alt="Untitled"
         fill
-        className="w-full h-full object-cover opacity-50"
+        className="w-full h-full object-cover opacity-60"
       />
     </motion.div>
   );

@@ -12,12 +12,7 @@ type Props = ComponentPropsWithoutRef<typeof motion.div>;
 
 export const FadeOutOnScroll = ({ children, className }: Props) => {
   const { scrollY } = useScroll();
-  const [fadeOut, setFadeOut] = useState(false); // 初期値をfalseに設定
-
-  // コンポーネントがマウントされた後にwindowオブジェクトを使う
-  useEffect(() => {
-    setFadeOut(window.scrollY > 200);
-  }, []);
+  const [fadeOut, setFadeOut] = useState(true); // 初期値をfalseに設定
 
   scrollY.updateAndNotify = useCallback((y: number) => {
     if (y > 200) {

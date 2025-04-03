@@ -12,6 +12,7 @@ import {
   defaultTwitterCard,
   metadataBase,
 } from '~/lib/sharedmetadata';
+import { Navigation } from '../_components/Navigation/Navigation';
 import { BlogEyeCatch } from './_components/BlogEyeCatch';
 
 export const metadata: Metadata = {
@@ -40,43 +41,45 @@ export default function BlogListPage() {
   return (
     <>
       <Navbar color="mcc" />
-      <div className={styles.smHeader}>
-        <div className={styles.headerContent}>
-          <h1 className={styles.headerTitle}>Blog</h1>
-        </div>
-      </div>
-
-      <main>
-        <div className={styles.main}>
-          <div className={styles.left}>
-            {/* 虚無スペース(?) */}
-            <BlogEyeCatch />
-          </div>
-          <div className={styles.right}>
-            <ArticleList
-              unorderedArticles={posts.map((post) => {
-                const rootPath = post.rootPath.replace(
-                  /^content|\/index\.md$/g,
-                  '',
-                );
-                const { title, date, img, tags, author } = post.fields;
-                return {
-                  href: `${rootPath}`,
-                  title,
-                  date: date,
-                  author: author,
-                  image:
-                    parseImageSrc(rootPath.replace(/^\/blog/, ''), img) ||
-                    '/images/wordmark-logo-image.png',
-                  tags,
-                };
-              })}
-            />
+      <Navigation>
+        <div className={styles.smHeader}>
+          <div className={styles.headerContent}>
+            <h1 className={styles.headerTitle}>Blog</h1>
           </div>
         </div>
-      </main>
 
-      <Footer semitransparent={true} />
+        <main>
+          <div className={styles.main}>
+            <div className={styles.left}>
+              {/* 虚無スペース(?) */}
+              <BlogEyeCatch />
+            </div>
+            <div className={styles.right}>
+              <ArticleList
+                unorderedArticles={posts.map((post) => {
+                  const rootPath = post.rootPath.replace(
+                    /^content|\/index\.md$/g,
+                    '',
+                  );
+                  const { title, date, img, tags, author } = post.fields;
+                  return {
+                    href: `${rootPath}`,
+                    title,
+                    date: date,
+                    author: author,
+                    image:
+                      parseImageSrc(rootPath.replace(/^\/blog/, ''), img) ||
+                      '/images/wordmark-logo-image.png',
+                    tags,
+                  };
+                })}
+              />
+            </div>
+          </div>
+        </main>
+
+        <Footer semitransparent={true} />
+      </Navigation>
     </>
   );
 }
