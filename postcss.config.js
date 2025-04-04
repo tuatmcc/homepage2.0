@@ -1,6 +1,7 @@
 module.exports = {
   plugins: [
     'autoprefixer',
+    '@tailwindcss/postcss',
     [
       '@csstools/postcss-global-data',
       {

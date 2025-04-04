@@ -18,8 +18,7 @@ export const pagesPath = {
       $url: (url?: { hash?: string }) => ({ pathname: '/news/[...slug]' as const, query: { slug }, hash: url?.hash, path: `/news/${slug?.join('/')}${buildSuffix(url)}` })
     }),
     $url: (url?: { hash?: string }) => ({ pathname: '/news' as const, hash: url?.hash, path: `/news${buildSuffix(url)}` })
-  },
-  $url: (url?: { hash?: string }) => ({ pathname: '/' as const, hash: url?.hash, path: `/${buildSuffix(url)}` })
+  }
 };
 
 export type PagesPath = typeof pagesPath;

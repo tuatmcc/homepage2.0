@@ -7,7 +7,7 @@ type Route = {
 
 /** ナビゲーションに使用するパスリスト */
 export const navigationRoutes: Route[] = [
-  { label: 'Home', path: pagesPath.$url().pathname },
+  { label: 'Home', path: '/' },
   { label: 'AboutUs', path: '/about' },
   { label: 'News', path: pagesPath.news.$url().pathname },
   { label: 'Blog', path: pagesPath.blog.$url().pathname },

@@ -13,6 +13,7 @@ import {
   defaultTwitterCard,
   metadataBase,
 } from '~/lib/sharedmetadata';
+import { Navigation } from '../_components/Navigation/Navigation';
 
 export const metadata: Metadata = {
   metadataBase: metadataBase,
@@ -35,43 +36,45 @@ export default function NewsListPage() {
   return (
     <>
       <Navbar color="mcc" />
-      <div className={styles.smHeader}>
-        <div className={styles.headerContent}>
-          <h1 className={styles.headerTitle}>News</h1>
-        </div>
-      </div>
-
-      <main>
-        <div className={styles.main}>
-          <div className={styles.left}>
-            {/* ニュースの分量が増えてきたらここに年別のタブを用意するなど */}
-            <NewsEyeCatch />
-          </div>
-
-          <div className={styles.right}>
-            <ArticleList
-              unorderedArticles={posts.map((post) => {
-                const rootPath = post.rootPath.replace(
-                  /^content|\/index\.md$/g,
-                  '',
-                );
-                const { title, date, img, tags } = post.fields;
-                return {
-                  href: `${rootPath}`,
-                  title,
-                  date: date,
-                  image:
-                    `${parseImageSrc(rootPath.replace(/^\/news/, ''), img)}` ||
-                    '/images/wordmark-logo-image.png',
-                  tags,
-                };
-              })}
-            />
+      <Navigation>
+        <div className={styles.smHeader}>
+          <div className={styles.headerContent}>
+            <h1 className={styles.headerTitle}>News</h1>
           </div>
         </div>
-      </main>
 
-      <Footer />
+        <main>
+          <div className={styles.main}>
+            <div className={styles.left}>
+              {/* ニュースの分量が増えてきたらここに年別のタブを用意するなど */}
+              <NewsEyeCatch />
+            </div>
+
+            <div className={styles.right}>
+              <ArticleList
+                unorderedArticles={posts.map((post) => {
+                  const rootPath = post.rootPath.replace(
+                    /^content|\/index\.md$/g,
+                    '',
+                  );
+                  const { title, date, img, tags } = post.fields;
+                  return {
+                    href: `${rootPath}`,
+                    title,
+                    date: date,
+                    image:
+                      `${parseImageSrc(rootPath.replace(/^\/news/, ''), img)}` ||
+                      '/images/wordmark-logo-image.png',
+                    tags,
+                  };
+                })}
+              />
+            </div>
+          </div>
+        </main>
+
+        <Footer />
+      </Navigation>
     </>
   );
 }
