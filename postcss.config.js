@@ -1,16 +1,16 @@
 module.exports = {
   plugins: [
-    "autoprefixer",
-    "@tailwindcss/postcss",
+    'autoprefixer',
+    '@tailwindcss/postcss',
     [
-      "@csstools/postcss-global-data",
+      '@csstools/postcss-global-data',
       {
-        files: ["./src/styles/_media.css"],
+        files: ['./src/styles/_media.css'],
       },
     ],
-    "postcss-nested",
-    "postcss-custom-media",
-    "postcss-media-minmax",
-    "postcss-selector-not",
+    'postcss-nested',
+    'postcss-custom-media',
+    'postcss-media-minmax',
+    'postcss-selector-not',
   ],
 };
