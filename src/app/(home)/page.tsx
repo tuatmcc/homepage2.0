@@ -14,7 +14,6 @@ export default function HomePage() {
         <main className="relative">
           <Top />
           <WireframeImage />
-          <Pulse />
           <Introduction />
           <RecentNews />
           <Footer />

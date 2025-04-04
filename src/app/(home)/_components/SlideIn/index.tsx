@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import type { ComponentPropsWithRef, FC } from 'react';
+import { FaPlus } from 'react-icons/fa6';
 import { orbitron } from '~/app/fonts';
 
 type Props = ComponentPropsWithRef<typeof motion.div>;
@@ -110,17 +111,21 @@ export const SlideIn: FC<Props> = () => {
             We are
             <span className="text-[#0066cc]"> MCC </span>!
           </motion.h2>
-          <p className="text-lg mb-2">
+          <p className="text-lg mb-6">
             マイクロコンピュータクラブ (通称MCC)は、
             <br />
             東京農工大学のプログラミングサークルです。
             講習会や合宿を開催したり、競プロやWeb開発、ゲーム制作等を行っています。
-            <br />
-            <br />
-            <Link href="/about" className="text-blue-600 text-lg">
-              詳しくはこちら →
-            </Link>
           </p>
+          <Link
+            href="/about"
+            className={classNames(
+              orbitron.className,
+              'flex items-center gap-2 font-bold text-blue-600 mr-8 px-4 tracking-wider self-start hover:bg-blue-600 hover:text-gray-100 transition-all duration-300',
+            )}
+          >
+            <FaPlus /> MORE ABOUT US
+          </Link>
         </div>
       </motion.div>
     </motion.div>
