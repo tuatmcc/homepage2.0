@@ -11,6 +11,7 @@ import { ArticleHeader } from '~/app/_components/ArticleHeader';
 import { BackToTop } from '~/app/_components/BackToTop';
 import { Footer } from '~/app/_components/Footer';
 import { Navbar } from '~/app/_components/Navbar';
+import { Navigation } from '~/app/_components/Navigation/Navigation';
 import compile from '~/lib/compiler';
 import {
   defaultOpenGraph,
@@ -79,25 +80,27 @@ export default async function Blog({ params }: { params: Params }) {
     return (
       <>
         <Navbar theme="auto" />
-        <ArticleHeader
-          breadcrumb={rootPath.split('/')}
-          title={title}
-          image={img}
-          date={date}
-          tags={tags}
-        />
-        <main className={styles.main}>
-          <Article>{content}</Article>
-          <ArticleBottom
-            parent={{
-              href: parentPath,
-              children: '← 記事一覧に戻る',
-            }}
+        <Navigation>
+          <ArticleHeader
+            breadcrumb={rootPath.split('/')}
+            title={title}
+            image={img}
+            date={date}
+            tags={tags}
           />
-        </main>
-        <Footer />
+          <main className={styles.main}>
+            <Article>{content}</Article>
+            <ArticleBottom
+              parent={{
+                href: parentPath,
+                children: '← 記事一覧に戻る',
+              }}
+            />
+          </main>
+          <Footer />
 
-        <BackToTop />
+          <BackToTop />
+        </Navigation>
       </>
     );
   }

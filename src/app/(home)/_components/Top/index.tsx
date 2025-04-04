@@ -16,7 +16,7 @@ export const Top: FC = () => (
           className="md:flex flex-col items-center hidden"
           initial={{ x: 0 }}
           animate={{
-            x: -160,
+            x: -170,
             scale: 0.6,
             transition: { duration: 1, delay: 3 },
           }}
@@ -41,12 +41,12 @@ export const Top: FC = () => (
         <motion.div
           className={classNames(
             orbitron.className,
-            'absolute md:flex top-1/2 left-1/2 flex-col text-[120px] tracking-wide translate-y-[-50%] translate-x-[-20%] font-bold text-center text-[#0066cc] hidden',
+            'absolute md:flex top-1/2 left-1/2 flex-col text-[120px] tracking-wide translate-y-[-50%] translate-x-[-25%] font-bold text-center text-[#0066cc] hidden',
           )}
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { duration: 1, delay: 3 },
+            transition: { duration: 1, delay: 4 },
           }}
         >
           MCC

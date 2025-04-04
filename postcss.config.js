@@ -1,6 +1,7 @@
 module.exports = {
   plugins: [
     'autoprefixer',
+    '@tailwindcss/postcss',
     [
       '@csstools/postcss-global-data',
       {
@@ -11,6 +12,5 @@ module.exports = {
     'postcss-custom-media',
     'postcss-media-minmax',
     'postcss-selector-not',
-    '@tailwindcss/postcss',
   ],
 };
