@@ -4,7 +4,6 @@ import styles from './styles.module.css';
 
 import type { Metadata } from 'next';
 
-import { allBlogDocuments } from '@/content';
 import { Article } from '~/app/_components/Article';
 import { ArticleBottom } from '~/app/_components/ArticleBottom';
 import { ArticleHeader } from '~/app/_components/ArticleHeader';
@@ -13,7 +12,6 @@ import { Footer } from '~/app/_components/Footer';
 import { Navbar } from '~/app/_components/Navbar';
 import { Navigation } from '~/app/_components/Navigation/Navigation';
 import compile from '~/lib/compiler';
-// import { parseOgImage } from '~/lib/parseOgImage';
 import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
   defaultOpenGraph,
@@ -21,6 +19,7 @@ import {
   defaultTwitterCard,
   metadataBase,
 } from '~/lib/sharedmetadata';
+import { blog } from '.velite';
 
 type Params = { slug: string[] }; // [...slug]
 
@@ -29,28 +28,24 @@ export async function generateMetadata({
 }: {
   params: Params;
 }): Promise<Metadata> {
-  const post = allBlogDocuments.find((post) => {
-    const rootPath = post.rootPath.replace(/^content|\/index\.md$/g, '');
-    const urlPath = `/${post.documentCategory}/${params.slug.join('/')}`;
-    return rootPath === urlPath;
+  const post = blog.find((post) => {
+    return post.slug.split('/').slice(1).join('/') === params.slug.join('/');
   });
 
   if (post) {
     return {
       metadataBase: metadataBase,
-      title: post?.fields.title,
-      description: post?.fields.description,
+      title: post?.title,
       openGraph: {
         ...defaultOpenGraph,
         title: {
-          default: post.fields.title ?? '',
+          default: post.title ?? '',
           template: "%s | MCC's Blog",
         },
-        description: post?.fields.description,
         images: [
           {
             ...defaultOpenGraphImage,
-            url: post.fields.img?.replace(/svg$/, 'ping') || '',
+            url: post.img?.src.replace(/svg$/, 'ping') || '',
           },
         ],
       },
@@ -58,7 +53,7 @@ export async function generateMetadata({
         ...defaultTwitterCard,
         images: [
           {
-            url: parseImageSrc(post.rootPath, post.fields.img ?? '') ?? '',
+            url: parseImageSrc(post.slug, post.img?.src ?? '') ?? '',
           },
         ],
       },
@@ -68,18 +63,16 @@ export async function generateMetadata({
 }
 
 export default async function Blog({ params }: { params: Params }) {
-  const post = allBlogDocuments.find(
+  const post = blog.find(
     // URLが一致した記事を取得
     (post) => {
-      const rootPath = post.rootPath.replace(/^content|\/index\.md$/g, '');
-      const urlPath = `/${post.documentCategory}/${params.slug.join('/')}`;
-      return rootPath === urlPath;
+      return post.slug.split('/').slice(1).join('/') === params.slug.join('/');
     },
   );
   if (post) {
-    const rootPath = post.rootPath.replace(/^content|\/index\.md$/g, '');
+    const rootPath = `/${post.slug}`;
     const parentPath = rootPath.split('/').slice(0, -1).join('/');
-    const { title, date, img, author, tags } = post.fields;
+    const { title, date, img, author, tags } = post;
     const content = await compile(post.content);
     return (
       <>
@@ -88,7 +81,7 @@ export default async function Blog({ params }: { params: Params }) {
           <ArticleHeader
             breadcrumb={rootPath.split('/')}
             title={title}
-            image={img}
+            image={img?.src}
             date={date}
             author={author}
             tags={tags}
@@ -114,10 +107,9 @@ export default async function Blog({ params }: { params: Params }) {
 
 export async function generateStaticParams(): Promise<Params[]> {
   // すべての記事のパスを生成
-  return allBlogDocuments.map((post) => {
-    const rootPath = post.rootPath.replace(/^\/?content\/|\/index\.md$/g, '');
+  return blog.map((post) => {
     return {
-      slug: rootPath.split('/').slice(1),
+      slug: post.slug.split('/').slice(1),
     } satisfies Params;
   });
 }

@@ -6,20 +6,20 @@
     "vercel-build": "next build",
     "build:next": "next build",
     "build-storybook": "storybook build",
-    "build:prod": "pnpm run setup && pnpm build:next && pnpm sitemap",
+    "build:prod": "bun run setup && bun build:next && bun sitemap",
     "dev": "run-p dev:*",
     "dev:next": "next dev",
     "dev:path": "pathpida --ignorepath .gitignore --output ./src/utils",
     "fmt": "biome check --write .",
     "lint": "biome check .",
-    "mdorganizer": "mdorganizer",
-    "fetch-content": "tsx ./scripts/fetch-content.ts",
-    "setup": "run-s fetch-content mdorganizer dev:path",
+    "fetch-content": "bun ./scripts/fetch-content.ts",
+    "setup": "run-s fetch-content velite dev:path",
     "sitemap": "next-sitemap",
     "start": "next start",
     "storybook": "storybook dev -p 6006 --no-open",
     "typecheck": "tsc --noEmit",
-    "wrangler": "wrangler"
+    "wrangler": "wrangler",
+    "velite": "velite"
   },
   "dependencies": {
     "@csstools/postcss-global-data": "^2.1.1",
@@ -39,7 +39,6 @@
     "date-fns": "^3.6.0",
     "framer-motion": "^12.6.3",
     "glob": "^10.3.12",
-    "mdorganizer": "^2.4.2",
     "next": "14.1.4",
     "next-mdx-remote": "^4.4.1",
     "next-sitemap": "^4.2.3",
@@ -99,10 +98,11 @@
     "tsx": "^4.8.0",
     "typescript": "5.4.5",
     "unified": "^11.0.4",
+    "velite": "^0.2.2",
     "wrangler": "^3.53.0"
   },
   "optionalDependencies": {
     "@next/env": "^14.2.3",
     "webpack": "^5.91.0"
-  },
+  }
 }

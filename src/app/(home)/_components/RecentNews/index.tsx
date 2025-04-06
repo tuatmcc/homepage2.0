@@ -2,16 +2,16 @@
 
 import { type FC, useState } from 'react';
 
-import { allNewsDocuments } from '@/content';
 import classNames from 'classnames';
 import { motion, useScroll } from 'framer-motion';
 import Link from 'next/link';
 import { FaPlus } from 'react-icons/fa6';
 import { orbitron } from '~/app/fonts';
+import { news } from '.velite';
 
 export const RecentNews: FC = () => {
-  const recentNews = allNewsDocuments
-    .sort((a, b) => b.fields.date.localeCompare(a.fields.date))
+  const recentNews = news
+    .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 4);
 
   const { scrollY } = useScroll();
@@ -112,9 +112,9 @@ export const RecentNews: FC = () => {
           </motion.h2>
           <ul className="list-none pl-6 flex flex-col gap-2 mb-6">
             {recentNews.map((news) => (
-              <li key={news.rootPath} className="mb-2 text-gray-100">
+              <li key={news.slug} className="mb-2 text-gray-100">
                 <a
-                  href={news.rootPath.replace(/^content|\/index\.mdx?/g, '')}
+                  href={news.slug}
                   className="flex items-center gap-4 hover:before:content-[''] before:absolute hover:before:w-0 before:h-0 before:border-t-[5px] hover:before:border-t-transparent hover:before:border-b-[5px] hover:before:border-b-transparent hover:before:border-l-[10px] before:border-l-gray-100 hover:before:translate-x-[-200%] hover:before:translate-y-[-50%] hover:before:left-0 hover:before:top-1/2 relative"
                 >
                   <p
@@ -122,9 +122,9 @@ export const RecentNews: FC = () => {
                       'text-xs font-bold tracking-wider min-w-[80px]',
                     )}
                   >
-                    {news.fields.date}
+                    {news.date}
                   </p>
-                  <h3 className="">{news.fields.title}</h3>
+                  <h3 className="">{news.title}</h3>
                 </a>
               </li>
             ))}

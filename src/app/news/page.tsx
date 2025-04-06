@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 
 import styles from './styles.module.css';
 
-import { allNewsDocuments } from '@/content';
 import { ArticleList } from '~/app/_components/ArticleList';
 import { Footer } from '~/app/_components/Footer';
 import { Navbar } from '~/app/_components/Navbar';
@@ -14,6 +13,8 @@ import {
   metadataBase,
 } from '~/lib/sharedmetadata';
 import { Navigation } from '../_components/Navigation/Navigation';
+// import { allNewsDocuments } from '@/content';
+import { news } from '.velite';
 
 export const metadata: Metadata = {
   metadataBase: metadataBase,
@@ -30,8 +31,8 @@ export const metadata: Metadata = {
 
 export default function NewsListPage() {
   // 暗黙的な参照渡しを防ぐ
-  const posts = structuredClone(allNewsDocuments).sort((a, b) =>
-    (a.fields.date || 1) < (b.fields.date || 1) ? 1 : -1,
+  const posts = structuredClone(news).sort((a, b) =>
+    (a.date || 1) < (b.date || 1) ? 1 : -1,
   );
   return (
     <>
@@ -53,17 +54,17 @@ export default function NewsListPage() {
             <div className={styles.right}>
               <ArticleList
                 unorderedArticles={posts.map((post) => {
-                  const rootPath = post.rootPath.replace(
+                  const rootPath = post.slug.replace(
                     /^content|\/index\.md$/g,
                     '',
                   );
-                  const { title, date, img, tags } = post.fields;
+                  const { title, date, img, tags } = post;
                   return {
-                    href: `${rootPath}`,
+                    href: post.slug.split('/').slice(1).join('/'),
                     title,
                     date: date,
                     image:
-                      `${parseImageSrc(rootPath.replace(/^\/news/, ''), img)}` ||
+                      `${parseImageSrc(rootPath.replace(/^\/news/, ''), img?.src)}` ||
                       '/images/wordmark-logo-image.png',
                     tags,
                   };

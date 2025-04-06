@@ -4,7 +4,6 @@ import styles from './styles.module.css';
 
 import type { Metadata } from 'next';
 
-import { allNewsDocuments } from '@/content';
 import { Article } from '~/app/_components/Article';
 import { ArticleBottom } from '~/app/_components/ArticleBottom';
 import { ArticleHeader } from '~/app/_components/ArticleHeader';
@@ -19,6 +18,7 @@ import {
   defaultTwitterCard,
   metadataBase,
 } from '~/lib/sharedmetadata';
+import { news } from '.velite';
 
 type Params = { slug: string[] }; // [...slug]
 
@@ -27,26 +27,22 @@ export async function generateMetadata({
 }: {
   params: Params;
 }): Promise<Metadata> {
-  const post = allNewsDocuments.find((post) => {
-    const rootPath = post.rootPath.replace(/^content|\/index\.md$/g, '');
-    const urlPath = `/${post.documentCategory}/${params.slug.join('/')}`;
-    return rootPath === urlPath;
+  const post = news.find((post) => {
+    return post.slug.split('/').slice(1).join('/') === params.slug.join('/');
   });
 
   if (post) {
-    const { title, img } = post.fields;
+    const { title, img } = post;
     return {
       metadataBase: metadataBase,
       title: title,
-      description: post.fields.description,
       openGraph: {
         ...defaultOpenGraph,
-        title: { default: post.fields.title, template: "%s | MCC's Blog" },
-        description: post.fields.description,
+        title: { default: post.title, template: "%s | MCC's Blog" },
         images: [
           {
             ...defaultOpenGraphImage,
-            url: post.fields.img?.replace(/svg$/, 'ping') || '',
+            url: post.img?.src.replace(/svg$/, 'ping') || '',
           },
         ],
       },
@@ -54,7 +50,7 @@ export async function generateMetadata({
         ...defaultTwitterCard,
         images: [
           {
-            url: img?.replace(/svg$/, 'ping') || '',
+            url: img?.src.replace(/svg$/, 'ping') || '',
           },
         ],
       },
@@ -64,18 +60,16 @@ export async function generateMetadata({
 }
 
 export default async function Blog({ params }: { params: Params }) {
-  const post = allNewsDocuments.find(
+  const post = news.find(
     // URLが一致した記事を取得
     (post) => {
-      const rootPath = post.rootPath.replace(/^content|\/index\.md$/g, '');
-      const urlPath = `/${post.documentCategory}/${params.slug.join('/')}`;
-      return rootPath === urlPath;
+      return post.slug.split('/').slice(1).join('/') === params.slug.join('/');
     },
   );
   if (post) {
-    const rootPath = post.rootPath.replace(/^content|\/index\.md$/g, '');
+    const rootPath = `/${post.slug}`;
     const parentPath = rootPath.split('/').slice(0, -1).join('/');
-    const { title, date, img, tags } = post.fields;
+    const { title, date, img, tags } = post;
     const content = await compile(post.content);
     return (
       <>
@@ -84,7 +78,7 @@ export default async function Blog({ params }: { params: Params }) {
           <ArticleHeader
             breadcrumb={rootPath.split('/')}
             title={title}
-            image={img}
+            image={img?.src}
             date={date}
             tags={tags}
           />
@@ -109,10 +103,9 @@ export default async function Blog({ params }: { params: Params }) {
 
 export async function generateStaticParams(): Promise<Params[]> {
   // すべての記事のパスを生成
-  return allNewsDocuments.map((post) => {
-    const rootPath = post.rootPath.replace(/^\/?content\/|\/index\.md$/g, '');
+  return news.map((post) => {
     return {
-      slug: rootPath.split('/').slice(1),
+      slug: post.slug.split('/').slice(1),
     } satisfies Params;
   });
 }
