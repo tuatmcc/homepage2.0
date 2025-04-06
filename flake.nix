@@ -8,12 +8,7 @@
   };
 
   outputs =
-    inputs@{ self
-    , systems
-    , nixpkgs
-    , flake-parts
-    , ...
-    }:
+    inputs@{ self, systems, nixpkgs, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = import inputs.systems;
       perSystem = { config, pkgs, system, ... }: {
