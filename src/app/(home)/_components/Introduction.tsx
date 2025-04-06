@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { SlideIn } from '../SlideIn';
+import { SlideIn } from './SlideIn';
 
 export const Introduction: FC = () => (
   <div className="relative w-full flex flex-col">

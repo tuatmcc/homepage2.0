@@ -6,7 +6,7 @@ import type { FC } from 'react';
 
 import { motion } from 'framer-motion';
 import { orbitron } from '~/app/fonts';
-import { FadeOutOnScroll } from '../FadeOutOnScroll';
+import { FadeOutOnScroll } from './FadeOutOnScroll';
 
 export const Top: FC = () => (
   <div className="sticky top-0 h-svh w-full flex flex-col items-center justify-center z-[-1]">

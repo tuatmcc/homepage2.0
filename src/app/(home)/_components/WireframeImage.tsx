@@ -2,7 +2,7 @@
 
 import { motion, useScroll } from 'framer-motion';
 import Image from 'next/image';
-import { type FC, useCallback, useEffect, useState } from 'react';
+import { type FC, useCallback, useState } from 'react';
 
 export const WireframeImage: FC = () => {
   const { scrollY } = useScroll();
