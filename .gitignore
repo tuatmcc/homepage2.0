@@ -39,9 +39,6 @@ next-env.d.ts
 
 # content
 /content
-/public/blog
-/public/news
-/public/members
 
 # editor
 /.idea
