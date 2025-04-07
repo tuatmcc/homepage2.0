@@ -1,11 +1,12 @@
+import { Article } from '~/app/_components/Article';
+import { Footer } from '~/app/_components/Footer';
+import { Navbar } from '~/app/_components/Navbar';
+import { Navigation } from '~/app/_components/Navigation/Navigation';
+import compile from '~/lib/compiler';
 import { Thumbnail } from './_components/Thumbnail';
 
-
-<Thumbnail />
-
-<div style={{ maxWidth: 1000, margin: "0 auto" }}>
-
-
+export default async function About() {
+  const content = await compile(`
 # MCCとは
 
 マイクロコンピュータークラブの略称で、IT系の活動全般をしている東京農工大学の公認サークルです。
@@ -77,3 +78,18 @@ Discord に参加すると入部フォームがあるので、そちらを提出
 みなさんの参加をお待ちしています！
 
 </div>
+`);
+
+  return (
+    <>
+      <Navbar />
+      <Navigation>
+        <Article>
+          <Thumbnail />
+          <div className="max-w-[1000px] mx-auto">{content}</div>
+        </Article>
+      </Navigation>
+      <Footer />
+    </>
+  );
+}
