@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
+    "preview": "serve out",
     "build": "next build",
     "build-storybook": "storybook build",
     "build:prod": "run-s setup build",
@@ -63,6 +64,7 @@
     "remark-rehype": "^11.1.2",
     "remark-slug": "^8.0.0",
     "remark-toc": "^9.0.0",
+    "serve": "^14.2.4",
     "shiki": "^3.2.1",
     "simple-git": "^3.27.0",
     "storybook": "^8.6.12",
