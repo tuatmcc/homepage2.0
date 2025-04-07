@@ -25,10 +25,11 @@ type Params = { slug: string[] }; // [...slug]
 export async function generateMetadata({
   params,
 }: {
-  params: Params;
+  params: Promise<Params>;
 }): Promise<Metadata> {
+  const { slug } = await params;
   const post = news.find((post) => {
-    return post.slug.split('/').slice(1).join('/') === params.slug.join('/');
+    return post.slug.split('/').slice(1).join('/') === slug.join('/');
   });
 
   if (post) {
@@ -59,11 +60,12 @@ export async function generateMetadata({
   return notFound();
 }
 
-export default async function Blog({ params }: { params: Params }) {
+export default async function Blog({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
   const post = news.find(
     // URLが一致した記事を取得
     (post) => {
-      return post.slug.split('/').slice(1).join('/') === params.slug.join('/');
+      return post.slug.split('/').slice(1).join('/') === slug.join('/');
     },
   );
   if (post) {

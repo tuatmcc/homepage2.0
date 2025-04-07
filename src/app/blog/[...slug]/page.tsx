@@ -26,10 +26,11 @@ type Params = { slug: string[] }; // [...slug]
 export async function generateMetadata({
   params,
 }: {
-  params: Params;
+  params: Promise<Params>;
 }): Promise<Metadata> {
+  const { slug } = await params;
   const post = blog.find((post) => {
-    return post.slug.split('/').slice(1).join('/') === params.slug.join('/');
+    return post.slug.split('/').slice(1).join('/') === slug.join('/');
   });
 
   if (post) {
@@ -62,13 +63,11 @@ export async function generateMetadata({
   return notFound();
 }
 
-export default async function Blog({ params }: { params: Params }) {
-  const post = blog.find(
-    // URLが一致した記事を取得
-    (post) => {
-      return post.slug.split('/').slice(1).join('/') === params.slug.join('/');
-    },
-  );
+export default async function Blog({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+  const post = blog.find((post) => {
+    return post.slug.split('/').slice(1).join('/') === slug.join('/');
+  });
   if (post) {
     const rootPath = `/${post.slug}`;
     const parentPath = rootPath.split('/').slice(0, -1).join('/');
@@ -110,6 +109,6 @@ export async function generateStaticParams(): Promise<Params[]> {
   return blog.map((post) => {
     return {
       slug: post.slug.split('/').slice(1),
-    } satisfies Params;
+    };
   });
 }
