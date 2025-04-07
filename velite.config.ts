@@ -3,6 +3,12 @@ import { defineConfig, s } from 'velite';
 // `s` is extended from Zod with some custom schemas,
 // you can also import re-exported `z` from `velite` if you don't need these extension schemas.
 
+// Function to format ISO date to YYYY-MM-DD
+const formatDate = (isoDate: string): string => {
+  const date = new Date(isoDate);
+  return date.toISOString().split('T')[0]; // Gets YYYY-MM-DD part
+};
+
 export default defineConfig({
   collections: {
     blog: {
@@ -21,7 +27,11 @@ export default defineConfig({
           author: s.string().optional(),
         })
         // more additional fields (computed fields)
-        .transform((data) => ({ ...data, permalink: `/blog/${data.slug}` })),
+        .transform((data) => ({
+          ...data,
+          date: formatDate(data.date),
+          permalink: `/blog/${data.slug}`,
+        })),
     },
     news: {
       name: 'News',
@@ -37,7 +47,11 @@ export default defineConfig({
           content: s.markdown(),
           tags: s.array(s.string()).optional(),
         })
-        .transform((data) => ({ ...data, permalink: `/news/${data.slug}` })),
+        .transform((data) => ({
+          ...data,
+          date: formatDate(data.date),
+          permalink: `/news/${data.slug}`,
+        })),
     },
   },
 });
