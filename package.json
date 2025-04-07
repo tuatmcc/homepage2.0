@@ -12,7 +12,7 @@
     "fmt": "biome check --write .",
     "lint": "biome check .",
     "fetch-content": "bun ./scripts/fetch-content.ts",
-    "setup": "run-s fetch-content velite dev:path",
+    "setup": "run-s fetch-content velite",
     "start": "next start",
     "storybook": "storybook dev -p 6006 --no-open",
     "typecheck": "tsc --noEmit",
