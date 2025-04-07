@@ -54,13 +54,10 @@ export default function NewsListPage() {
             <div className={styles.right}>
               <ArticleList
                 unorderedArticles={posts.map((post) => {
-                  const rootPath = post.slug.replace(
-                    /^content|\/index\.md$/g,
-                    '',
-                  );
+                  const rootPath = `/${post.slug}`;
                   const { title, date, img, tags } = post;
                   return {
-                    href: post.slug.split('/').slice(1).join('/'),
+                    href: rootPath,
                     title,
                     date: date,
                     image:

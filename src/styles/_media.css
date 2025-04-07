@@ -1,3 +1,0 @@
-/* this value based on the default of tailwindcss */
-@custom-media --bp-sm (max-width: 768px);
-@custom-media --bp-md (max-width: 1024px);

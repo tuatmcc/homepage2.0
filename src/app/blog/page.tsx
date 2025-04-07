@@ -57,10 +57,10 @@ export default function BlogListPage() {
             <div className={styles.right}>
               <ArticleList
                 unorderedArticles={posts.map((post) => {
-                  const rootPath = post.slug;
+                  const rootPath = `/${post.slug}`;
                   const { title, date, img, tags, author } = post;
                   return {
-                    href: `${rootPath}`,
+                    href: rootPath,
                     title,
                     date: date,
                     author: author,
