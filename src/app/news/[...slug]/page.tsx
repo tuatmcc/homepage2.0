@@ -13,8 +13,8 @@ import { Navbar } from '~/app/_components/Navbar';
 import { Navigation } from '~/app/_components/Navigation/Navigation';
 import compile from '~/lib/compiler';
 import {
+  defaultOgImage,
   defaultOpenGraph,
-  defaultOpenGraphImage,
   defaultTwitterCard,
   metadataBase,
 } from '~/lib/sharedmetadata';
@@ -32,75 +32,70 @@ export async function generateMetadata({
     return post.slug.split('/').slice(1).join('/') === slug.join('/');
   });
 
-  if (post) {
-    const { title, img } = post;
-    return {
-      metadataBase: metadataBase,
-      title: title,
-      openGraph: {
-        ...defaultOpenGraph,
-        title: { default: post.title, template: "%s | MCC's Blog" },
-        images: [
-          {
-            ...defaultOpenGraphImage,
-            url: post.img?.src.replace(/svg$/, 'ping') || '',
-          },
-        ],
-      },
-      twitter: {
-        ...defaultTwitterCard,
-        images: [
-          {
-            url: img?.src.replace(/svg$/, 'ping') || '',
-          },
-        ],
-      },
-    };
-  }
-  return notFound();
+  if (!post) return notFound();
+
+  const { title, img } = post;
+  return {
+    metadataBase,
+    title,
+    openGraph: {
+      ...defaultOpenGraph,
+      title: { default: post.title, template: '%s - MCC' },
+      images: [
+        {
+          ...defaultOgImage,
+          url: img?.src ? `https://tuatmcc.com${img.src}` : defaultOgImage.url,
+        },
+      ],
+    },
+    twitter: {
+      ...defaultTwitterCard,
+      images: [
+        {
+          url: img?.src ? `https://tuatmcc.com${img.src}` : defaultOgImage.url,
+        },
+      ],
+    },
+  };
 }
 
-export default async function Blog({ params }: { params: Promise<Params> }) {
+export default async function News({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
-  const post = news.find(
-    // URLが一致した記事を取得
-    (post) => {
-      return post.slug.split('/').slice(1).join('/') === slug.join('/');
-    },
-  );
-  if (post) {
-    const rootPath = `/${post.slug}`;
-    const parentPath = rootPath.split('/').slice(0, -1).join('/');
-    const { title, date, img, tags } = post;
-    const content = await compile(post.content);
-    return (
-      <>
-        <Navbar theme="auto" />
-        <Navigation>
-          <ArticleHeader
-            breadcrumb={rootPath.split('/')}
-            title={title}
-            image={img?.src}
-            date={date}
-            tags={tags}
-          />
-          <main className={styles.main}>
-            <Article>{content}</Article>
-            <ArticleBottom
-              parent={{
-                href: parentPath,
-                children: '← 記事一覧に戻る',
-              }}
-            />
-          </main>
-          <Footer />
+  const post = news.find((post) => {
+    return post.slug.split('/').slice(1).join('/') === slug.join('/');
+  });
 
-          <BackToTop />
-        </Navigation>
-      </>
-    );
-  }
-  return notFound();
+  if (!post) return notFound();
+
+  const { title, date, img, tags, permalink } = post;
+  const parentPath = permalink.split('/').slice(0, -1).join('/');
+  const content = await compile(post.content); // Tips: これはビルド中にコンパイルされる。
+  return (
+    <>
+      <Navbar theme="auto" />
+      <Navigation>
+        <ArticleHeader
+          breadcrumb={permalink.split('/')}
+          title={title}
+          image={img?.src}
+          date={date}
+          tags={tags}
+        />
+        <main className={styles.main}>
+          <Article>{content}</Article>
+          <ArticleBottom
+            parent={{
+              href: parentPath,
+              children: '← 記事一覧に戻る',
+            }}
+          />
+        </main>
+        <Footer />
+
+        <BackToTop />
+      </Navigation>
+    </>
+  );
 }
 
 export async function generateStaticParams(): Promise<Params[]> {

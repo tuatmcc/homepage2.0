@@ -5,7 +5,6 @@ import type { Metadata } from 'next';
 import { ArticleList } from '~/app/_components/ArticleList';
 import { Footer } from '~/app/_components/Footer';
 import { Navbar } from '~/app/_components/Navbar';
-import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
   defaultOpenGraph,
   defaultTwitterCard,
@@ -57,18 +56,13 @@ export default function BlogListPage() {
             <div className={styles.right}>
               <ArticleList
                 unorderedArticles={posts.map((post) => {
-                  const rootPath = `/${post.slug}`;
                   const { title, date, img, tags, author } = post;
                   return {
-                    href: rootPath,
+                    href: post.permalink,
                     title,
                     date: date,
                     author: author,
-                    image:
-                      parseImageSrc(
-                        rootPath.replace(/^\/blog/, ''),
-                        img?.src,
-                      ) || '/images/wordmark-logo-image.png',
+                    image: img?.src || '/images/wordmark-logo-image.png',
                     tags,
                   };
                 })}

@@ -6,7 +6,6 @@ import { ArticleList } from '~/app/_components/ArticleList';
 import { Footer } from '~/app/_components/Footer';
 import { Navbar } from '~/app/_components/Navbar';
 import { NewsEyeCatch } from '~/app/_components/news/NewsEyeCatch';
-import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
   defaultOpenGraph,
   defaultTwitterCard,
@@ -54,15 +53,12 @@ export default function NewsListPage() {
             <div className={styles.right}>
               <ArticleList
                 unorderedArticles={posts.map((post) => {
-                  const rootPath = `/${post.slug}`;
                   const { title, date, img, tags } = post;
                   return {
-                    href: rootPath,
+                    href: post.permalink,
                     title,
                     date: date,
-                    image:
-                      `${parseImageSrc(rootPath.replace(/^\/news/, ''), img?.src)}` ||
-                      '/images/wordmark-logo-image.png',
+                    image: img?.src || '/images/wordmark-logo-image.png',
                     tags,
                   };
                 })}

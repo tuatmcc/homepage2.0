@@ -62,7 +62,7 @@ export const RecentNews: FC = () => {
             {recentNews.map((news) => (
               <li key={news.slug} className="mb-2 text-gray-100">
                 <a
-                  href={news.slug}
+                  href={news.permalink}
                   className="flex items-center gap-4 hover:before:content-[''] before:absolute hover:before:w-0 before:h-0 before:border-t-[5px] hover:before:border-t-transparent hover:before:border-b-[5px] hover:before:border-b-transparent hover:before:border-l-[10px] before:border-l-gray-100 hover:before:translate-x-[-200%] hover:before:translate-y-[-50%] hover:before:left-0 hover:before:top-1/2 relative"
                 >
                   <p

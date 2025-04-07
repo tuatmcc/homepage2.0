@@ -30,7 +30,7 @@ export default defineConfig({
         .transform((data) => ({
           ...data,
           date: formatDate(data.date),
-          permalink: `/blog/${data.slug}`,
+          permalink: `/${data.slug}`,
         })),
     },
     news: {
@@ -50,7 +50,7 @@ export default defineConfig({
         .transform((data) => ({
           ...data,
           date: formatDate(data.date),
-          permalink: `/news/${data.slug}`,
+          permalink: `/${data.slug}`,
         })),
     },
   },
