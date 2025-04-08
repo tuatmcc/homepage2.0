@@ -9,8 +9,8 @@ export default async function About() {
     <>
       <Navbar />
       <Navigation>
-        <Thumbnail />
         <Article>
+          <Thumbnail />
           <div className="max-w-[1000px] mx-auto">
             <h1>MCCとは</h1>
             <p>
