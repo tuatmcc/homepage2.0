@@ -1,11 +1,11 @@
-import NextImage from 'next/image';
+import Image from 'next/image';
 import type { FC } from 'react';
 
 import styles from './styles.module.css';
 
 export const Thumbnail: FC = () => (
   <>
-    <NextImage
+    <Image
       src="/images/tuat-gate-filtered.webp"
       alt=""
       width={1920}

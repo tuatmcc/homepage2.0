@@ -1,22 +1,22 @@
 .linkItem {
-	&::after {
-		position: absolute;
-		content: "";
-		display: block;
-		bottom: 0;
-		right: 0;
-		width: 0;
-		bottom: 0;
-		height: 2px;
-		background: white;
-		transition: all 0.2s;
-		opacity: 0;
-	}
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    bottom: 0;
+    height: 2px;
+    background: white;
+    transition: all 0.2s;
+    opacity: 0;
+  }
 
-	&:hover {
-		&::after {
-			width: 100%;
-			opacity: 1;
-		}
-	}
+  &:hover {
+    &::after {
+      width: 100%;
+      opacity: 1;
+    }
+  }
 }

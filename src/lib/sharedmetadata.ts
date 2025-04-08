@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
 
+const url = 'https://tuatmcc.com';
 const defaultTitle = 'MCC - 東京農工大学マイクロコンピュータークラブ';
-const defaultOpenGraphImageUrl =
-  'https://www.tuatmcc.com/images/wordmark-logo-image.png';
-const defaultDescription =
+const ogImageUrl = 'https://tuatmcc.com/images/wordmark-logo-image.png';
+const description =
   'MCCは、東京農工大学の公認サークルで、ITに関することを学び、活動しているサークルです。学祭に制作物を出展したり、学内外のイベントに参加したり、学生同士で交流を深めたりしています。';
 
-export const metadataBase = new URL('https://www.tuatmcc.com/');
+export const metadataBase = new URL('https://tuatmcc.com/');
 
-export const defaultOpenGraphImage = {
-  url: defaultOpenGraphImageUrl,
+export const defaultOgImage = {
+  url: ogImageUrl,
   width: 1200,
   height: 630,
 };
@@ -19,11 +19,11 @@ export const defaultOpenGraph: Metadata['openGraph'] = {
     default: defaultTitle,
     template: '%s - MCC 東京農工大学マイクロコンピュータークラブ',
   },
-  description: defaultDescription,
-  images: [defaultOpenGraphImage],
+  description,
+  images: [defaultOgImage],
   locale: 'ja_JP',
-  url: 'https://www.tuatmcc.com',
-  siteName: 'MCC Homepage',
+  url,
+  siteName: 'MCC 東京農工大学マイクロコンピュータークラブ',
   type: 'website',
 };
 
@@ -33,12 +33,12 @@ export const defaultTwitterCard: Metadata['twitter'] = {
     default: defaultTitle,
     template: '%s - MCC',
   },
-  description: defaultDescription,
-  site: 'https://www.tuatmcc.com',
+  description,
+  site: url,
   card: 'summary_large_image',
   images: [
     {
-      url: defaultOpenGraphImageUrl,
+      url: ogImageUrl,
       width: 1200,
       height: 630,
     },
@@ -51,8 +51,7 @@ export const sharedMetadata: Metadata = {
     default: defaultTitle,
     template: '%s - MCC',
   },
-  description:
-    'MCCは、東京農工大学の公認サークルで、ITに関することを学び、活動しているサークルです。学祭に制作物を出展したり、学内外のイベントやコンテストに参加したり、学生同士で交流を深めたりしています。',
+  description,
   openGraph: defaultOpenGraph,
   icons: {
     shortcut: '/favicon.ico',

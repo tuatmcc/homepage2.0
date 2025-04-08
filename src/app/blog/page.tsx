@@ -2,11 +2,9 @@ import styles from './styles.module.css';
 
 import type { Metadata } from 'next';
 
-import { type BlogDocument, allBlogDocuments } from '@/content';
 import { ArticleList } from '~/app/_components/ArticleList';
 import { Footer } from '~/app/_components/Footer';
 import { Navbar } from '~/app/_components/Navbar';
-import { parseImageSrc } from '~/lib/parseImageSrc';
 import {
   defaultOpenGraph,
   defaultTwitterCard,
@@ -14,6 +12,7 @@ import {
 } from '~/lib/sharedmetadata';
 import { Navigation } from '../_components/Navigation/Navigation';
 import { BlogEyeCatch } from './_components/BlogEyeCatch';
+import { type Blog, blog } from '.velite';
 
 export const metadata: Metadata = {
   metadataBase: metadataBase,
@@ -35,8 +34,8 @@ export const metadata: Metadata = {
 
 export default function BlogListPage() {
   // 暗黙的な参照渡しを防ぐ(いるのか？)
-  const posts: BlogDocument[] = structuredClone(allBlogDocuments).sort(
-    (a, b) => ((a.fields.date || 1) < (b.fields.date || 1) ? 1 : -1),
+  const posts: Blog[] = structuredClone(blog).sort((a, b) =>
+    (a.date || 1) < (b.date || 1) ? 1 : -1,
   );
   return (
     <>
@@ -57,19 +56,13 @@ export default function BlogListPage() {
             <div className={styles.right}>
               <ArticleList
                 unorderedArticles={posts.map((post) => {
-                  const rootPath = post.rootPath.replace(
-                    /^content|\/index\.md$/g,
-                    '',
-                  );
-                  const { title, date, img, tags, author } = post.fields;
+                  const { title, date, img, tags, author } = post;
                   return {
-                    href: `${rootPath}`,
+                    href: post.permalink,
                     title,
                     date: date,
                     author: author,
-                    image:
-                      parseImageSrc(rootPath.replace(/^\/blog/, ''), img) ||
-                      '/images/wordmark-logo-image.png',
+                    image: img?.src || '/images/wordmark-logo-image.png',
                     tags,
                   };
                 })}

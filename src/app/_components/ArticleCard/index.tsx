@@ -29,17 +29,13 @@ export const ArticleCard: FC<Props> = ({
           className={styles.image}
           src={image}
           fallback="/images/wordmark-logo-image.png"
-          alt="article thumbnail"
+          alt=""
         />
       </div>
       <div className={styles.textInfo}>
         <h3 className={styles.title}>{title}</h3>
         <div className={styles.date}>{date}</div>
-        {author && (
-          <a href={`https://github.com/${author}`} className={styles.author}>
-            @{author}
-          </a>
-        )}
+        {author && <span className={styles.author}>@{author}</span>}
         <ul className={styles.tags}>
           {tags?.map((tag) => (
             <li className={styles.tag} key={tag}>

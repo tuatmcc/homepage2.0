@@ -1,12 +1,7 @@
 'use client';
 
 import { motion, useScroll } from 'framer-motion';
-import {
-  type ComponentPropsWithoutRef,
-  useCallback,
-  useEffect,
-  useState,
-} from 'react';
+import { type ComponentPropsWithoutRef, useCallback, useState } from 'react';
 
 type Props = ComponentPropsWithoutRef<typeof motion.div>;
 

@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import type { FC } from 'react';
 import { FaGithub, FaXTwitter } from 'react-icons/fa6';
-import WordmarkLogo from '/public/icons/wordmark-logo.svg';
 
 export const Footer: FC = () => {
   return (

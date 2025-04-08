@@ -1,7 +1,6 @@
 import fs from 'node:fs';
-import { cp, rm } from 'node:fs/promises';
+import { rm } from 'node:fs/promises';
 import path from 'node:path';
-import { glob } from 'glob';
 import { clone } from 'isomorphic-git';
 import http from 'isomorphic-git/http/node';
 
@@ -22,20 +21,6 @@ async function fetchContent() {
   });
 
   console.info('Successfully cloned content repo');
-
-  // move all images to public folder
-  const files = await glob('**/*.{html,jpg,jpeg,png,gif,svg,webp,avif}', {
-    cwd: 'content',
-  });
-
-  for (const file of files) {
-    try {
-      cp(`content/${file}`, `public/${file}`);
-    } catch (e) {
-      console.error(e);
-    }
-  }
-  console.info('Successfully moved all images to public/ folder');
 }
 
 fetchContent();
