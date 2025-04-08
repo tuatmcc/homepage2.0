@@ -190,26 +190,60 @@
 
   & figure {
     margin: 32px 0;
+    position: relative;
   }
 
-  /* code but not in code block */
-  & code:not([data-language]) {
-    padding: 1px 5px;
-    margin: 0 0.2em;
+  & code {
     font-family: var(--font-family-jetbrains-mono);
-    font-size: 16px;
-    line-height: 1.5;
-    color: var(--color-gray-900);
-    word-break: break-word;
-    background-color: var(--color-gray-300);
-    border-radius: 5px;
 
-    @media (max-width: 768px) {
-      font-size: 14px;
+    /* code but not in code block */
+    &:not([data-language]) {
+      padding: 1px 5px;
+      margin: 0 0.2em;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--color-gray-900);
+      word-break: break-word;
+      background-color: var(--color-gray-300);
+      border-radius: 5px;
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
     }
 
     & span {
       position: relative;
+    }
+  }
+
+  & figcaption {
+    display: inline-block;
+    padding: 8px 16px 16px;
+    margin-bottom: -8px;
+    font-size: 14px;
+    color: var(--color-gray-100);
+    background-color: var(--color-gray-700);
+    border-radius: 8px 8px 0 0;
+  }
+
+  & pre {
+    position: relative;
+    display: flex;
+    padding: 12px;
+    margin: 0;
+    overflow: auto;
+    font-family: var(--font-family-jetbrains-mono);
+    background-color: var(--color-gray-700);
+    border-radius: 6px;
+
+    & code {
+      position: relative;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      color: white;
+      background: inherit;
     }
   }
 

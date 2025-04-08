@@ -1,4 +1,34 @@
+import { transformerCopyButton } from '@rehype-pretty/transformers';
+import rehypeAutoLinkHeadings from 'rehype-autolink-headings';
+import rehypeKatex from 'rehype-katex';
+import rehypePrettyCode, {
+  type Options as RehypePrettyCodeOption,
+} from 'rehype-pretty-code';
+import rehypeRaw from 'rehype-raw';
+import rehypeSlug from 'rehype-slug';
+import rehypeStringify from 'rehype-stringify';
+import remarkGemoji from 'remark-gemoji';
+import remarkMath from 'remark-math';
+import remarkToc from 'remark-toc';
 import { defineConfig, s } from 'velite';
+
+const rehypePrettyCodeOptions: Partial<RehypePrettyCodeOption> = {
+  theme: 'github-dark',
+  onVisitLine(node) {
+    if (node.children.length === 0) {
+      node.children = [{ type: 'text', value: ' ' }];
+    }
+  },
+  onVisitHighlightedLine(node) {
+    node.properties.className?.push('line--highlighted');
+  },
+  onVisitHighlightedChars(node) {
+    node.properties.className = ['word--highlighted'];
+  },
+  transformers: [
+    transformerCopyButton({ visibility: 'always', feedbackDuration: 2000 }),
+  ],
+};
 
 // `s` is extended from Zod with some custom schemas,
 // you can also import re-exported `z` from `velite` if you don't need these extension schemas.
@@ -53,5 +83,27 @@ export default defineConfig({
           permalink: `/${data.slug}`,
         })),
     },
+  },
+  markdown: {
+    gfm: true,
+    remarkPlugins: [
+      remarkGemoji,
+      remarkMath,
+      [remarkToc, { heading: '目次', tight: true }],
+    ],
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypeAutoLinkHeadings,
+        {
+          behavior: 'append',
+          properties: { 'aria-label': 'heading-link' },
+        },
+      ],
+      [rehypePrettyCode as () => void, rehypePrettyCodeOptions],
+      rehypeKatex as () => void,
+      rehypeRaw as () => void,
+      [rehypeStringify as () => void, { allowDangerousHtml: true }],
+    ],
   },
 });
