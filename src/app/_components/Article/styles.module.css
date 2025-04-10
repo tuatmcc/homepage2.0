@@ -13,6 +13,8 @@
   /* Utility Colors */
   --shadow-neumorphism: 4px 4px 8px var(--color-gray-300), -4px -4px 8px
     var(--color-gray-0);
+  --shadow-neumorphism-bottom: 4px 4px 8px var(--color-gray-300);
+  --shadow-neumorphism-top: -4px -4px 8px var(--color-gray-0);
   --shadow-neumorphism-hover: 6px 6px 12px var(--color-gray-400), -6px -6px 12px
     var(--color-gray-0);
   --shadow-neumorphism-inset: inset 4px 4px 8px var(--color-gray-300), inset
@@ -188,11 +190,6 @@
     }
   }
 
-  & figure {
-    margin: 32px 0;
-    position: relative;
-  }
-
   & code {
     font-family: var(--font-family-jetbrains-mono);
 
@@ -206,6 +203,7 @@
       word-break: break-word;
       background-color: var(--color-gray-300);
       border-radius: 5px;
+      box-shadow: var(--shadow-neumorphism);
 
       @media (max-width: 768px) {
         font-size: 14px;
@@ -217,33 +215,46 @@
     }
   }
 
-  & figcaption {
-    display: inline-block;
-    padding: 8px 16px 16px;
-    margin-bottom: -8px;
-    font-size: 14px;
-    color: var(--color-gray-100);
-    background-color: var(--color-gray-700);
-    border-radius: 8px 8px 0 0;
-  }
-
   & pre {
     position: relative;
     display: flex;
     padding: 12px;
     margin: 0;
     overflow: auto;
-    font-family: var(--font-family-jetbrains-mono);
     background-color: var(--color-gray-700);
     border-radius: 6px;
+    box-shadow: var(--shadow-neumorphism-bottom);
 
     & code {
+      font-family: var(--font-family-jetbrains-mono);
       position: relative;
       width: 100%;
       padding: 0;
       margin: 0;
       color: white;
-      background: inherit;
+      background-color: inherit;
+    }
+  }
+
+  & figure {
+    margin: 24px 0;
+    padding: 8px 0;
+    position: relative;
+
+    & figcaption {
+      font-family: var(--font-family-jetbrains-mono);
+      display: inline-block;
+      padding: 8px 16px 16px;
+      margin-bottom: -8px;
+      font-size: 14px;
+      color: var(--color-gray-100);
+      background-color: var(--color-gray-700);
+      border-radius: 8px 8px 0 0;
+      box-shadow: var(--shadow-neumorphism-top);
+    }
+
+    &:not(:has(figcaption)) pre {
+      box-shadow: var(--shadow-neumorphism);
     }
   }
 
@@ -269,6 +280,36 @@
           content: "▼ ";
         }
       }
+    }
+  }
+
+  & input[type="checkbox"] {
+    position: relative;
+    margin-right: 4px;
+
+    &:after {
+      content: " ";
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+      border-radius: 4px;
+      border: 1px solid var(--color-gray-600);
+      background-color: var(--color-gray-0);
+    }
+
+    &:checked:after {
+      content: "✓";
+      display: inline-flex;
+      text-align: center;
+      line-height: 16px;
+      font-size: 12px;
+      color: var(--color-gray-0);
+      background-color: var(--color-blue-600);
     }
   }
 }

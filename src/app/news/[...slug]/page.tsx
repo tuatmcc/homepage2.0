@@ -82,7 +82,13 @@ export default async function News({ params }: { params: Promise<Params> }) {
           tags={tags}
         />
         <main className={styles.main}>
-          <Article>{content}</Article>
+          <Article>
+            <div
+              // biome-ignore lint/security/noDangerouslySetInnerHtml: しかたがない
+              dangerouslySetInnerHTML={{ __html: post.content }}
+              suppressHydrationWarning
+            />
+          </Article>
           <ArticleBottom
             parent={{
               href: parentPath,
