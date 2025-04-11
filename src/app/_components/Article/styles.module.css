@@ -13,6 +13,8 @@
   /* Utility Colors */
   --shadow-neumorphism: 4px 4px 8px var(--color-gray-300), -4px -4px 8px
     var(--color-gray-0);
+  --shadow-neumorphism-bottom: 4px 4px 8px var(--color-gray-300);
+  --shadow-neumorphism-top: -4px -4px 8px var(--color-gray-0);
   --shadow-neumorphism-hover: 6px 6px 12px var(--color-gray-400), -6px -6px 12px
     var(--color-gray-0);
   --shadow-neumorphism-inset: inset 4px 4px 8px var(--color-gray-300), inset
@@ -188,28 +190,71 @@
     }
   }
 
-  & figure {
-    margin: 32px 0;
-  }
-
-  /* code but not in code block */
-  & code:not([data-language]) {
-    padding: 1px 5px;
-    margin: 0 0.2em;
+  & code {
     font-family: var(--font-family-jetbrains-mono);
-    font-size: 16px;
-    line-height: 1.5;
-    color: var(--color-gray-900);
-    word-break: break-word;
-    background-color: var(--color-gray-300);
-    border-radius: 5px;
 
-    @media (max-width: 768px) {
-      font-size: 14px;
+    /* code but not in code block */
+    &:not([data-language]) {
+      padding: 1px 5px;
+      margin: 0 0.2em;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--color-gray-900);
+      word-break: break-word;
+      background-color: var(--color-gray-300);
+      border-radius: 5px;
+      box-shadow: var(--shadow-neumorphism);
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
     }
 
     & span {
       position: relative;
+    }
+  }
+
+  & pre {
+    position: relative;
+    display: flex;
+    padding: 12px;
+    margin: 0;
+    overflow: auto;
+    background-color: var(--color-gray-700);
+    border-radius: 6px;
+    box-shadow: var(--shadow-neumorphism-bottom);
+
+    & code {
+      font-family: var(--font-family-jetbrains-mono);
+      position: relative;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      color: white;
+      background-color: inherit;
+    }
+  }
+
+  & figure {
+    margin: 24px 0;
+    padding: 8px 0;
+    position: relative;
+
+    & figcaption {
+      font-family: var(--font-family-jetbrains-mono);
+      display: inline-block;
+      padding: 8px 16px 16px;
+      margin-bottom: -8px;
+      font-size: 14px;
+      color: var(--color-gray-100);
+      background-color: var(--color-gray-700);
+      border-radius: 8px 8px 0 0;
+      box-shadow: var(--shadow-neumorphism-top);
+    }
+
+    &:not(:has(figcaption)) pre {
+      box-shadow: var(--shadow-neumorphism);
     }
   }
 
@@ -222,17 +267,27 @@
     & summary {
       font-weight: bold;
       cursor: pointer;
+      user-select: none;
 
       &::marker {
-        color: var(--color-gray-600);
-        content: "▶ ";
+        content: "";
+        display: none;
+      }
+
+      &::before {
+        content: "▶";
+        display: inline-block;
+        margin-left: 8px;
+        transform: rotate(0deg);
+        margin-right: 8px;
+        transition: transform 0.2s ease-in-out;
       }
     }
 
     &[open] {
       & summary {
-        &::marker {
-          content: "▼ ";
+        &::before {
+          transform: rotate(90deg);
         }
       }
     }
